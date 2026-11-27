@@ -126,7 +126,7 @@
     },
     {
       "id": "IP-C04",
-      "texte": "Se servir d'une calculatrice",
+      "texte": "Faire des calculs à la calculatrice (comptes, budgets, factures)",
       "texte_original": "Operate a calculator",
       "domaine": "C",
       "cle": "plus",
@@ -214,7 +214,7 @@
     },
     {
       "id": "IP-E08",
-      "texte": "Commercialiser une nouvelle ligne de vêtements",
+      "texte": "Faire la promotion et la vente d'une nouvelle collection de vêtements",
       "texte_original": "Market a new line of clothing",
       "domaine": "E",
       "cle": "plus",
