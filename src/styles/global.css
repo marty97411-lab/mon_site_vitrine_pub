@@ -101,6 +101,20 @@ td {
   text-align: left;
 }
 
+.discret {
+  color: var(--couleur-texte-doux);
+  font-size: 0.9rem;
+}
+
+.bouton.secondaire {
+  background: transparent;
+  color: var(--couleur-primaire);
+}
+
+[hidden] {
+  display: none !important;
+}
+
 .bouton {
   display: inline-block;
   font: inherit;

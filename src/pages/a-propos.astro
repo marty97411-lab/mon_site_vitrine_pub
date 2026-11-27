@@ -15,15 +15,49 @@ import Avertissement from '../components/Avertissement.astro';
     <li>
       Il ne vous range pas dans un « type » : vos scores sont des positions sur des continuums.
     </li>
+    <li>Il ne désigne pas de « métier idéal » : il propose des pistes à explorer.</li>
     <li>Il ne remplace pas un entretien avec un conseiller ou une conseillère en orientation.</li>
   </ul>
-  <h2>Limites connues du prototype</h2>
+  <h2>Limites connues</h2>
   <ul>
-    <li>Le questionnaire ne compte que 10 items d'exemple sur les 120 de l'IPIP-NEO-120.</li>
-    <li>Les traductions françaises des items n'ont pas été validées scientifiquement.</li>
-    <li>Aucune norme n'est encore intégrée : les percentiles ne sont pas disponibles.</li>
-    <li>La correspondance entre profil et métiers n'est pas encore définie.</li>
+    <li>
+      <strong>Traductions</strong> : les questions de personnalité ont été traduites par le projet,
+      et cette traduction n'est pas validée. Une adaptation française publiée existe pour une
+      version plus longue du questionnaire (IPIP-NEO-300) ; elle n'a pas encore pu être examinée.
+    </li>
+    <li>
+      <strong>Questions en anglais</strong> : les questions d'intérêts O*NET sont présentées en
+      anglais, car leur licence interdit de diffuser une traduction non validée.
+    </li>
+    <li>
+      <strong>Pas de comparaison à une population</strong> : aucun percentile n'est affiché, faute
+      de normes adaptées (en particulier françaises).
+    </li>
+    <li>
+      <strong>Métiers américains</strong> : les métiers proposés viennent de la base américaine
+      O*NET. Leurs intitulés sont en anglais et les niveaux de préparation décrivent le système de
+      formation américain. La correspondance avec le répertoire français des métiers (ROME) est en
+      préparation.
+    </li>
+    <li>
+      <strong>Profils des métiers estimés</strong> : O*NET indique que les profils d'intérêts des
+      métiers sont obtenus par apprentissage automatique contrôlé par des experts.
+    </li>
+    <li>
+      <strong>Personnalité et métiers</strong> : aucun lien entre vos traits de personnalité et les
+      métiers proposés n'est encore affiché, faute de source vérifiée.
+    </li>
+    <li>
+      <strong>Parcours rapide</strong> : moins de questions par échelle, donc des scores moins
+      précis, et pas de facettes de personnalité.
+    </li>
   </ul>
+  <h2>Vos données</h2>
+  <p>
+    Vos réponses sont enregistrées uniquement dans votre navigateur (localStorage) pour vous
+    permettre de reprendre plus tard. Elles ne sont jamais envoyées. Vous pouvez les effacer à tout
+    moment depuis la page des résultats.
+  </p>
   <h2>Le projet</h2>
   <p>
     Projet ouvert : code sous licence MIT, contenu sous licence CC BY 4.0. Toute affirmation

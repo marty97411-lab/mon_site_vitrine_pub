@@ -1,23 +1,51 @@
 ---
 import Base from '../layouts/Base.astro';
 import ListeSources from '../components/ListeSources.astro';
-import { chargerContenu } from '../lib/contenu';
+import { chargerContenu, sourcesParIds } from '../lib/contenu';
 
 const contenu = await chargerContenu();
+const aVerifier = (id: string) =>
+  contenu.sources.find((s) => s.id === id)?.data.statut === 'a-verifier';
 ---
 
 <Base
   titre="La science derrière"
-  description="Les modèles scientifiques utilisés : Big Five (IPIP-NEO-120), RIASEC et O*NET, avec leurs sources."
+  description="Pourquoi deux questionnaires, comment les scores sont calculés et comment les métiers sont rapprochés de votre profil, avec les sources."
 >
   <h1>La science derrière</h1>
-  <p class="avertissement">Page en cours de rédaction : chaque section devra être sourcée.</p>
+  <p class="avertissement">
+    Page en cours de rédaction. Les références marquées « à vérifier » n'ont pas encore été relues
+    par le projet : les affirmations qui en dépendent sont provisoires.
+  </p>
+
+  <h2 id="deux-questionnaires">Pourquoi deux questionnaires ?</h2>
+  <p>
+    <strong>En bref :</strong> votre personnalité décrit <em>comment</em> vous fonctionnez ; vos
+    intérêts professionnels indiquent <em>ce que</em> vous aimeriez faire. Pour suggérer des
+    métiers, ce sont surtout les intérêts qui comptent.
+  </p>
+  <p>
+    Des méta-analyses ont étudié les liens entre les cinq grands traits de personnalité et les six
+    types d'intérêts du modèle RIASEC (Larson, Rottinghaus et Borgen, 2002 ; Barrick, Mount et
+    Gupta, 2003). Elles décrivent des liens qualifiés de modestes : la personnalité seule ne permet
+    pas de bien prédire le type de métier qui convient à quelqu'un.
+    {(aVerifier('larson-2002') || aVerifier('barrick-mount-gupta-2003')) && (
+      <span class="etiquette">références à vérifier</span>
+    )}
+  </p>
+  <p>
+    Le site utilise donc deux questionnaires distincts : un questionnaire de personnalité (Big Five)
+    pour décrire votre façon de fonctionner, et un questionnaire d'intérêts (RIASEC) pour le
+    rapprochement avec les métiers.
+  </p>
 
   <h2>Le modèle des cinq grands facteurs (Big Five)</h2>
   <p>
-    Le site mesure cinq grands traits, chacun décomposé en six facettes, avec les items de
-    l'IPIP-NEO-120 (Johnson, 2014), placés dans le domaine public par l'International Personality
-    Item Pool. Les scores sont continus : il n'y a pas de « types ».
+    Le parcours complet utilise l'IPIP-NEO-120 (Johnson, 2014) : 120 questions, 5 traits et 30
+    facettes. Le parcours rapide utilise les 50 marqueurs du Big Five de Goldberg (1992). Ces deux
+    questionnaires appartiennent à l'International Personality Item Pool et sont dans le domaine
+    public. Dans les marqueurs de Goldberg, le quatrième facteur mesure la stabilité émotionnelle :
+    le site l'exprime dans le sens du névrosisme, pour rester cohérent avec l'IPIP-NEO.
   </p>
   <ul>
     {contenu.traits.map(({ id, data }) => (
@@ -27,25 +55,71 @@ const contenu = await chargerContenu();
     ))}
   </ul>
 
-  <h2>Des intérêts professionnels au modèle RIASEC</h2>
+  <h2 id="scores">Pourquoi pas de percentile ?</h2>
   <p>
-    Le modèle de Holland décrit six grands types d'intérêts professionnels (Réaliste, Investigateur,
-    Artistique, Social, Entreprenant, Conventionnel). La base O*NET attribue à chaque métier un code
-    d'intérêts selon ce modèle.
-  </p>
-  <p>
-    TODO : expliquer, avec des sources vérifiées, pourquoi la personnalité et les intérêts sont des
-    concepts distincts, et ce que l'on sait de leurs liens. Aucun chiffre ne sera ajouté sans source
-    vérifiée.
+    Votre score à un trait est la moyenne de vos réponses (de 1 à 5), après inversion des questions
+    formulées en sens contraire. Un percentile vous situerait par rapport à une population de
+    référence. Le site de l'IPIP ne fournit pas de normes et déconseille d'utiliser des normes «
+    toutes faites », car on trouve rarement une population dont on fait vraiment partie. Les normes
+    publiées portent en outre surtout sur des populations anglophones. Le site affiche donc votre
+    position sur l'échelle de 1 à 5, sans comparaison à une population.
   </p>
 
-  <h2>Du score au percentile</h2>
+  <h2>Les intérêts professionnels : le modèle RIASEC</h2>
   <p>
-    Votre score à une échelle est la moyenne de vos réponses (de 1 à 5), après inversion des items
-    formulés en sens contraire. Un percentile ne peut être calculé qu'en le comparant à des normes,
-    c'est-à-dire aux scores d'une population de référence. Tant qu'aucune norme publiée et vérifiée
-    n'est intégrée, le site n'affiche pas de percentile.
+    Le modèle de Holland décrit six grands types d'intérêts : Réaliste, Investigateur, Artistique,
+    Social, Entreprenant et Conventionnel. Le site utilise l'O*NET Interest Profiler du département
+    américain du Travail : 60 activités dans le parcours complet, 30 dans le parcours rapide
+    (Mini-IP). Vous indiquez à quel point chaque activité vous plairait (de 0 à 4) ; le score de
+    chaque dimension est la somme de vos réponses.
+  </p>
+  <p>
+    Ces questions sont affichées en anglais : leur licence autorise la diffusion à l'identique, mais
+    toute modification, y compris une traduction, doit d'abord faire l'objet d'une étude de
+    validation.
   </p>
 
-  <ListeSources sources={contenu.sources} titre="Toutes les sources du projet" />
+  <h2 id="rapprochement">Comment les métiers sont-ils rapprochés de votre profil ?</h2>
+  <p>
+    Le site applique la méthode décrite dans le manuel de l'O*NET Interest Profiler. Il calcule la
+    corrélation entre votre profil d'intérêts et celui de chacun des 923 métiers de la base O*NET.
+    La corrélation compare la <em>forme</em> des profils (quelles dimensions sont hautes ou basses),
+    et non leur niveau. Les seuils du manuel servent à qualifier la correspondance :
+  </p>
+  <ul>
+    <li>corrélation d'au moins 0,729 : correspondance très forte (« Best Fit ») ;</li>
+    <li>de 0,608 à 0,728 : correspondance forte (« Great Fit ») ;</li>
+    <li>de 0 à 0,607 : correspondance modérée (« Good Fit ») ;</li>
+    <li>les métiers à corrélation négative ne sont pas proposés.</li>
+  </ul>
+  <p>
+    Les métiers sont ensuite regroupés par famille, pour vous proposer plusieurs pistes plutôt qu'un
+    seul « métier idéal ». Les profils d'intérêts des métiers proviennent de la base O*NET 31.0, qui
+    indique les avoir obtenus par apprentissage automatique contrôlé par des experts.
+  </p>
+  <p>
+    Votre personnalité n'intervient pas dans ce classement. Elle pourra servir à expliquer en quoi
+    un métier peut mettre en valeur certains de vos traits ou demander de la vigilance, mais
+    uniquement lorsqu'une source vérifiée le permettra.
+  </p>
+
+  <ListeSources
+    sources={sourcesParIds(contenu, [
+      'larson-2002',
+      'barrick-mount-gupta-2003',
+      'johnson-2014',
+      'goldberg-1992',
+      'ipip',
+      'ipip-normes',
+      'holland-1997',
+      'onet-ip-manual-2021',
+      'rounds-2016-mini-ip',
+      'onet-career-tools-licence',
+      'onet-31',
+    ])}
+    titre="Sources de cette page"
+  />
+  <p>
+    <a href="/sources">Toutes les sources du projet</a>
+  </p>
 </Base>

@@ -4,16 +4,27 @@
  */
 import { defineCollection } from 'astro:content';
 import { file, glob } from 'astro/loaders';
-import { itemSchema, metierSchema, sourceSchema, traitSchema } from './lib/schemas';
+import {
+  metierSchema,
+  parcoursSchema,
+  questionnaireSchema,
+  sourceSchema,
+  traitSchema,
+} from './lib/schemas';
 
 const sources = defineCollection({
   loader: file('src/content/sources/sources.json'),
   schema: sourceSchema,
 });
 
-const items = defineCollection({
-  loader: file('src/data/items/items.json'),
-  schema: itemSchema,
+const questionnaires = defineCollection({
+  loader: glob({ pattern: '*.json', base: './src/data/questionnaires' }),
+  schema: questionnaireSchema,
+});
+
+const parcours = defineCollection({
+  loader: file('src/data/parcours.json'),
+  schema: parcoursSchema,
 });
 
 const traits = defineCollection({
@@ -26,4 +37,4 @@ const metiers = defineCollection({
   schema: metierSchema,
 });
 
-export const collections = { sources, items, traits, metiers };
+export const collections = { sources, questionnaires, parcours, traits, metiers };

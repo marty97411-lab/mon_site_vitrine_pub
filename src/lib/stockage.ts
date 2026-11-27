@@ -1,38 +1,73 @@
 /**
- * Conservation temporaire des réponses dans sessionStorage : les données restent
- * dans l'onglet du navigateur et disparaissent à sa fermeture. Rien n'est envoyé.
+ * Sauvegarde locale des réponses dans le localStorage du navigateur, pour pouvoir
+ * reprendre plus tard. Rien n'est envoyé à un serveur. Les réponses sont indexées par
+ * identifiant d'item : un item commun à deux questionnaires n'est posé qu'une fois.
  */
 import type { Reponses } from './scoring';
 
-const CLE = 'orientation-personnalite:reponses';
+const CLE = 'orientation-personnalite:v2';
 
-export function enregistrerReponses(reponses: Reponses): void {
-  try {
-    sessionStorage.setItem(CLE, JSON.stringify(reponses));
-  } catch {
-    // Stockage indisponible (navigation privée stricte…) : les résultats ne pourront pas s'afficher.
-  }
+export type IdParcours = 'rapide' | 'complet';
+
+export interface EtatSauvegarde {
+  version: 2;
+  reponses: Record<string, number>;
+  parcours: IdParcours | null;
+  maj: string | null;
 }
 
-export function lireReponses(): Reponses | null {
+const vide = (): EtatSauvegarde => ({ version: 2, reponses: {}, parcours: null, maj: null });
+
+export function lireEtat(): EtatSauvegarde {
   try {
-    const brut = sessionStorage.getItem(CLE);
-    if (brut === null) return null;
+    const brut = localStorage.getItem(CLE);
+    if (brut === null) return vide();
     const valeur: unknown = JSON.parse(brut);
-    if (typeof valeur !== 'object' || valeur === null || Array.isArray(valeur)) return null;
+    if (typeof valeur !== 'object' || valeur === null) return vide();
+    const v = valeur as Partial<EtatSauvegarde>;
+    if (v.version !== 2) return vide();
     const reponses: Record<string, number> = {};
-    for (const [cle, v] of Object.entries(valeur)) {
-      if (typeof v === 'number') reponses[cle] = v;
+    for (const [cle, rep] of Object.entries(v.reponses ?? {})) {
+      if (typeof rep === 'number' && Number.isInteger(rep)) reponses[cle] = rep;
     }
-    return reponses;
+    const parcours = v.parcours === 'rapide' || v.parcours === 'complet' ? v.parcours : null;
+    return { version: 2, reponses, parcours, maj: typeof v.maj === 'string' ? v.maj : null };
   } catch {
-    return null;
+    return vide();
   }
 }
 
-export function effacerReponses(): void {
+function ecrire(etat: EtatSauvegarde): boolean {
   try {
-    sessionStorage.removeItem(CLE);
+    localStorage.setItem(CLE, JSON.stringify({ ...etat, maj: new Date().toISOString() }));
+    return true;
+  } catch {
+    // Stockage indisponible (navigation privée stricte, quota…) : on continue sans sauvegarde.
+    return false;
+  }
+}
+
+export function enregistrerReponse(idItem: string, valeur: number): boolean {
+  const etat = lireEtat();
+  etat.reponses[idItem] = valeur;
+  return ecrire(etat);
+}
+
+export function definirParcours(parcours: IdParcours): boolean {
+  const etat = lireEtat();
+  etat.parcours = parcours;
+  return ecrire(etat);
+}
+
+export function lireReponses(): Reponses {
+  return lireEtat().reponses;
+}
+
+export function effacerTout(): void {
+  try {
+    localStorage.removeItem(CLE);
+    // Ancienne clé de l'étape 1 (sessionStorage).
+    sessionStorage.removeItem('orientation-personnalite:reponses');
   } catch {
     // Rien à faire.
   }

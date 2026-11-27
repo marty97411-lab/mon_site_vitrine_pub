@@ -10,7 +10,7 @@ const { titre, description } = Astro.props;
 const titreComplet = `${titre} · Orientation et personnalité`;
 const navigation = [
   { href: '/', libelle: 'Accueil' },
-  { href: '/test', libelle: 'Le test' },
+  { href: '/parcours', libelle: 'Le test' },
   { href: '/metiers', libelle: 'Métiers' },
   { href: '/la-science', libelle: 'La science derrière' },
   { href: '/a-propos', libelle: 'À propos et limites' },
@@ -53,7 +53,8 @@ const cheminActuel = Astro.url.pathname.replace(/\/$/, '') || '/';
     <footer class="conteneur">
       <hr />
       <p>
-        Aucune réponse n'est envoyée à un serveur : les calculs se font dans votre navigateur.
+        Aucune réponse n'est envoyée à un serveur : les calculs se font dans votre navigateur, et
+        vos réponses n'y sont conservées que pour vous permettre de reprendre plus tard.
         <a href="/mentions-legales">Mentions légales</a>.
       </p>
       <p>
@@ -70,6 +71,16 @@ const cheminActuel = Astro.url.pathname.replace(/\/$/, '') || '/';
           <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> license. O*NET® is a
           trademark of USDOL/ETA. The contributors of this project have modified all or some of this
           information. USDOL/ETA has not approved, endorsed, or tested these modifications.
+        </small>
+      </p>
+      <p lang="en">
+        <small>
+          This site includes information from the
+          <a href="https://www.onetcenter.org/tools.html">O*NET Career Exploration Tools</a> by the
+          U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). Used under
+          the
+          <a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a> license. O*NET®
+          is a trademark of USDOL/ETA.
         </small>
       </p>
     </footer>

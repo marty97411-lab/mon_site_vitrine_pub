@@ -1,0 +1,108 @@
+---
+import Base from '../layouts/Base.astro';
+import Avertissement from '../components/Avertissement.astro';
+import { chargerContenu, questionnaireParId } from '../lib/contenu';
+
+const contenu = await chargerContenu();
+const cartes = contenu.parcours.map(({ data: p }) => {
+  const qs = p.questionnaires.map((id) => questionnaireParId(contenu, id));
+  return { p, qs, nbQuestions: qs.reduce((n, q) => n + q.items.length, 0) };
+});
+---
+
+<Base
+  titre="Choisir un parcours"
+  description="Deux parcours au choix : rapide (environ 80 questions) ou complet (environ 180 questions)."
+>
+  <h1>Choisir un parcours</h1>
+  <p>
+    Chaque parcours comporte deux questionnaires : l'un sur votre <strong>personnalité</strong>, qui
+    décrit votre façon de fonctionner, l'autre sur vos <strong>intérêts professionnels</strong>, qui
+    sert à rapprocher votre profil de familles de métiers.
+    <a href="/la-science#deux-questionnaires">Pourquoi deux questionnaires ?</a>
+  </p>
+  <Avertissement />
+
+  <div class="cartes">
+    {cartes.map(({ p, qs, nbQuestions }) => (
+      <section class="carte" aria-labelledby={`titre-${p.id}`}>
+        <h2 id={`titre-${p.id}`}>{p.nom}</h2>
+        <p>
+          <strong>{nbQuestions} questions</strong>, environ {p.duree}
+          <span class="etiquette">estimation</span>
+        </p>
+        <ul>
+          {qs.map((q) => (
+            <li>
+              {q.nom} : {q.items.length} questions
+            </li>
+          ))}
+        </ul>
+        <h3>Ce qu'il apporte</h3>
+        <ul>
+          {p.apporte.map((a) => (
+            <li>{a}</li>
+          ))}
+        </ul>
+        <h3>Ses limites</h3>
+        <ul>
+          {p.limites.map((l) => (
+            <li>{l}</li>
+          ))}
+        </ul>
+        <p class="progression-sauvegardee" data-parcours={p.id} hidden />
+        <p>
+          <a class="bouton" href={`/questionnaire/${p.id}`}>
+            Commencer le {p.nom.toLowerCase()}
+          </a>
+        </p>
+      </section>
+    ))}
+  </div>
+
+  <h2>Langue des questions</h2>
+  <ul>
+    <li>
+      Les questions de personnalité ont été traduites en français par le projet ; cette traduction
+      n'a pas encore été validée scientifiquement.
+    </li>
+    <li>
+      Les questions d'intérêts sont présentées <strong>en anglais</strong>, dans leur version
+      originale : leur licence n'autorise pas la diffusion d'une traduction non validée.
+    </li>
+  </ul>
+  <p>
+    Vos réponses sont enregistrées uniquement dans votre navigateur, pour que vous puissiez
+    reprendre plus tard. Elles ne sont jamais envoyées.
+  </p>
+</Base>
+
+<script>
+  import { lireReponses } from '../lib/stockage';
+
+  const reponses = lireReponses();
+  const nb = Object.keys(reponses).length;
+  if (nb > 0) {
+    for (const el of document.querySelectorAll<HTMLElement>('.progression-sauvegardee')) {
+      el.textContent = `Des réponses sont déjà enregistrées dans ce navigateur (${nb}) : elles seront reprises.`;
+      el.hidden = false;
+    }
+  }
+</script>
+
+<style>
+  .cartes {
+    display: grid;
+    gap: var(--espace);
+  }
+  @media (min-width: 48rem) {
+    .cartes {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .carte {
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 0.5rem;
+    padding: 0 var(--espace);
+  }
+</style>
