@@ -1,43 +1,54 @@
 ---
 import Base from '../layouts/Base.astro';
 import ListeSources from '../components/ListeSources.astro';
+import Badge from '../components/Badge.astro';
+import Essentiel from '../components/Essentiel.astro';
+import EnSavoirPlus from '../components/EnSavoirPlus.astro';
 import { chargerContenu, sourcesParIds } from '../lib/contenu';
 
 const contenu = await chargerContenu();
-const aVerifier = (id: string) =>
-  contenu.sources.find((s) => s.id === id)?.data.statut === 'a-verifier';
 ---
 
 <Base
   titre="La science derrière"
   description="Pourquoi deux questionnaires, comment les scores sont calculés et comment les métiers sont rapprochés de votre profil, avec les sources."
+  fil={[{ libelle: 'Comprendre', href: '/comprendre' }, { libelle: 'La science derrière le test' }]}
 >
-  <h1>La science derrière</h1>
-  <p class="avertissement">
-    Page en cours de rédaction. Les références marquées « à vérifier » n'ont pas encore été relues
-    par le projet : les affirmations qui en dépendent sont provisoires.
+  <p>
+    <Badge type="science" />
   </p>
+  <h1>La science derrière le test</h1>
+  <Essentiel>
+    <p>
+      Votre personnalité décrit comment vous fonctionnez ; vos intérêts indiquent ce que vous
+      aimeriez faire. Les deux sont mesurés séparément, et ce sont les intérêts qui servent à
+      proposer des métiers.
+    </p>
+  </Essentiel>
 
   <h2 id="deux-questionnaires">Pourquoi deux questionnaires ?</h2>
   <p>
-    <strong>En bref :</strong> votre personnalité décrit <em>comment</em> vous fonctionnez ; vos
-    intérêts professionnels indiquent <em>ce que</em> vous aimeriez faire. Pour suggérer des
-    métiers, ce sont surtout les intérêts qui comptent.
+    Personnalité et intérêts sont liés, mais ce ne sont pas les mêmes choses. Une méta-analyse
+    (Barrick, Mount et Gupta, 2003) décrit des liens réels entre certains traits et certains types
+    d'intérêts : les plus forts relient l'extraversion au type Entreprenant et l'ouverture au type
+    Artistique, avec des corrélations d'environ 0,4. D'autres liens sont plus faibles, et le type
+    Réaliste n'est lié à aucun trait. La personnalité seule ne suffit donc pas pour décrire vos
+    intérêts.
   </p>
   <p>
-    Des méta-analyses ont étudié les liens entre les cinq grands traits de personnalité et les six
-    types d'intérêts du modèle RIASEC (Larson, Rottinghaus et Borgen, 2002 ; Barrick, Mount et
-    Gupta, 2003). Elles décrivent des liens qualifiés de modestes : la personnalité seule ne permet
-    pas de bien prédire le type de métier qui convient à quelqu'un.
-    {(aVerifier('larson-2002') || aVerifier('barrick-mount-gupta-2003')) && (
-      <span class="etiquette">références à vérifier</span>
-    )}
-  </p>
-  <p>
-    Le site utilise donc deux questionnaires distincts : un questionnaire de personnalité (Big Five)
-    pour décrire votre façon de fonctionner, et un questionnaire d'intérêts (RIASEC) pour le
+    Le site utilise ainsi deux questionnaires distincts : un questionnaire de personnalité (Big
+    Five) pour décrire votre façon de fonctionner, et un questionnaire d'intérêts (RIASEC) pour le
     rapprochement avec les métiers.
   </p>
+  <EnSavoirPlus titre="Approfondir : les méta-analyses sur personnalité et intérêts">
+    <p>
+      Barrick, Mount et Gupta (2003) rapportent des corrélations corrigées (ρ) de 0,41 entre
+      Entreprenant et Extraversion et de 0,39 entre Artistique et Ouverture ; trois autres types ont
+      des liens modérés avec au moins un trait ; le type Réaliste n'est lié à aucun trait (d'après
+      le résumé de l'article, seul lu à ce jour). Larson, Rottinghaus et Borgen (2002) ont mené une
+      méta-analyse sur le même sujet : TODO, relire l'article avant d'en citer les résultats.
+    </p>
+  </EnSavoirPlus>
 
   <h2>Le modèle des cinq grands facteurs (Big Five)</h2>
   <p>

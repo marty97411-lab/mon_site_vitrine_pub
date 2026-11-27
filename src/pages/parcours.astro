@@ -11,6 +11,7 @@ const cartes = contenu.parcours.map(({ data: p }) => {
 ---
 
 <Base
+  fil={[{ libelle: 'Le test' }]}
   titre="Choisir un parcours"
   description="Deux parcours au choix : rapide (environ 80 questions) ou complet (environ 180 questions)."
 >
@@ -93,7 +94,7 @@ const cartes = contenu.parcours.map(({ data: p }) => {
 <style>
   .cartes {
     display: grid;
-    gap: var(--espace);
+    gap: var(--espace-3);
   }
   @media (min-width: 48rem) {
     .cartes {
@@ -101,8 +102,8 @@ const cartes = contenu.parcours.map(({ data: p }) => {
     }
   }
   .carte {
-    border: 1px solid var(--couleur-bordure);
+    border: 1px solid var(--c-bordure);
     border-radius: 0.5rem;
-    padding: 0 var(--espace);
+    padding: 0 var(--espace-3);
   }
 </style>

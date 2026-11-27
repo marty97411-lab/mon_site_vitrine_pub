@@ -5,7 +5,11 @@ import { chargerContenu } from '../../lib/contenu';
 const { metiers } = await chargerContenu();
 ---
 
-<Base titre="Fiches métiers" description="Fiches métiers d'exemple (prototype).">
+<Base
+  fil={[{ libelle: 'Comprendre', href: '/comprendre' }, { libelle: 'Fiches métiers' }]}
+  titre="Fiches métiers"
+  description="Fiches métiers d'exemple (prototype)."
+>
   <h1>Fiches métiers</h1>
   <p class="avertissement">
     Ces fiches sont des <strong>exemples</strong> destinés à tester la structure du site. Leur
