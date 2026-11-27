@@ -1,0 +1,450 @@
+{
+  "id": "onet-ip-60",
+  "nom": "O*NET Interest Profiler Short Form (60 items)",
+  "description": "60 activités professionnelles, 10 par dimension RIASEC.",
+  "modele": "riasec",
+  "source": "onet-ip-manual-2021",
+  "sources_complementaires": ["onet-ip-short-form", "onet-career-tools-licence"],
+  "licence": {
+    "nom": "CC BY-ND 4.0",
+    "url": "https://creativecommons.org/licenses/by-nd/4.0/",
+    "attribution": "This page includes information from the O*NET Career Exploration Tools by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). Used under the CC BY-ND 4.0 license. O*NET® is a trademark of USDOL/ETA."
+  },
+  "langue_items": "en",
+  "traduction": {
+    "statut": "sans-objet",
+    "note": "Items en anglais : la licence CC BY-ND interdit d'en diffuser une traduction, et la licence développeur impose une étude de validation préalable."
+  },
+  "consigne": "Lisez chaque activité professionnelle et indiquez à quel point elle vous plairait. Ne pensez ni à la formation nécessaire ni au salaire : demandez-vous seulement si cette activité vous plairait. Les items et les réponses sont présentés en anglais, dans leur version originale (voir la licence ci-dessous).",
+  "echelle": {
+    "min": 0,
+    "max": 4,
+    "libelles": ["Strongly Dislike", "Dislike", "Unsure", "Like", "Strongly Like"],
+    "langue": "en"
+  },
+  "agregation": "somme",
+  "seuil_completude": 1,
+  "avec_facettes": false,
+  "items": [
+    {
+      "id": "IP-R01",
+      "texte": "Build kitchen cabinets",
+      "texte_original": "Build kitchen cabinets",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-R02",
+      "texte": "Lay brick or tile",
+      "texte_original": "Lay brick or tile",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-R03",
+      "texte": "Repair household appliances",
+      "texte_original": "Repair household appliances",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-R04",
+      "texte": "Raise fish in a fish hatchery",
+      "texte_original": "Raise fish in a fish hatchery",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-R05",
+      "texte": "Assemble electronic parts",
+      "texte_original": "Assemble electronic parts",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-R06",
+      "texte": "Drive a truck to deliver packages to offices and homes",
+      "texte_original": "Drive a truck to deliver packages to offices and homes",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-R07",
+      "texte": "Test the quality of parts before shipment",
+      "texte_original": "Test the quality of parts before shipment",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-R08",
+      "texte": "Repair and install locks",
+      "texte_original": "Repair and install locks",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-R09",
+      "texte": "Set up and operate machines to make products",
+      "texte_original": "Set up and operate machines to make products",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-R10",
+      "texte": "Put out forest fires",
+      "texte_original": "Put out forest fires",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I01",
+      "texte": "Develop a new medicine",
+      "texte_original": "Develop a new medicine",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I02",
+      "texte": "Study ways to reduce water pollution",
+      "texte_original": "Study ways to reduce water pollution",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I03",
+      "texte": "Conduct chemical experiments",
+      "texte_original": "Conduct chemical experiments",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I04",
+      "texte": "Study the movement of planets",
+      "texte_original": "Study the movement of planets",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I05",
+      "texte": "Examine blood samples using a microscope",
+      "texte_original": "Examine blood samples using a microscope",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I06",
+      "texte": "Investigate the cause of a fire",
+      "texte_original": "Investigate the cause of a fire",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I07",
+      "texte": "Develop a way to better predict the weather",
+      "texte_original": "Develop a way to better predict the weather",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I08",
+      "texte": "Work in a biology lab",
+      "texte_original": "Work in a biology lab",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I09",
+      "texte": "Invent a replacement for sugar",
+      "texte_original": "Invent a replacement for sugar",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I10",
+      "texte": "Do laboratory tests to identify diseases",
+      "texte_original": "Do laboratory tests to identify diseases",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A01",
+      "texte": "Write books or plays",
+      "texte_original": "Write books or plays",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A02",
+      "texte": "Play a musical instrument",
+      "texte_original": "Play a musical instrument",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A03",
+      "texte": "Compose or arrange music",
+      "texte_original": "Compose or arrange music",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A04",
+      "texte": "Draw pictures",
+      "texte_original": "Draw pictures",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A05",
+      "texte": "Create special effects for movies",
+      "texte_original": "Create special effects for movies",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A06",
+      "texte": "Paint sets for plays",
+      "texte_original": "Paint sets for plays",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A07",
+      "texte": "Write scripts for movies or television shows",
+      "texte_original": "Write scripts for movies or television shows",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A08",
+      "texte": "Perform jazz or tap dance",
+      "texte_original": "Perform jazz or tap dance",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A09",
+      "texte": "Sing in a band",
+      "texte_original": "Sing in a band",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A10",
+      "texte": "Edit movies",
+      "texte_original": "Edit movies",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S01",
+      "texte": "Teach an individual an exercise routine",
+      "texte_original": "Teach an individual an exercise routine",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S02",
+      "texte": "Help people with personal or emotional problems",
+      "texte_original": "Help people with personal or emotional problems",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S03",
+      "texte": "Give career guidance to people",
+      "texte_original": "Give career guidance to people",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S04",
+      "texte": "Perform rehabilitation therapy",
+      "texte_original": "Perform rehabilitation therapy",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S05",
+      "texte": "Do volunteer work at a non-profit organization",
+      "texte_original": "Do volunteer work at a non-profit organization",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S06",
+      "texte": "Teach children how to play sports",
+      "texte_original": "Teach children how to play sports",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S07",
+      "texte": "Teach sign language to people who are deaf or hard of hearing",
+      "texte_original": "Teach sign language to people who are deaf or hard of hearing",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S08",
+      "texte": "Help conduct a group therapy session",
+      "texte_original": "Help conduct a group therapy session",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S09",
+      "texte": "Take care of children at a day-care center",
+      "texte_original": "Take care of children at a day-care center",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S10",
+      "texte": "Teach a high-school class",
+      "texte_original": "Teach a high-school class",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E01",
+      "texte": "Buy and sell stocks and bonds",
+      "texte_original": "Buy and sell stocks and bonds",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E02",
+      "texte": "Manage a retail store",
+      "texte_original": "Manage a retail store",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E03",
+      "texte": "Operate a beauty salon or barber shop",
+      "texte_original": "Operate a beauty salon or barber shop",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E04",
+      "texte": "Manage a department within a large company",
+      "texte_original": "Manage a department within a large company",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E05",
+      "texte": "Start your own business",
+      "texte_original": "Start your own business",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E06",
+      "texte": "Negotiate business contracts",
+      "texte_original": "Negotiate business contracts",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E07",
+      "texte": "Represent a client in a lawsuit",
+      "texte_original": "Represent a client in a lawsuit",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E08",
+      "texte": "Market a new line of clothing",
+      "texte_original": "Market a new line of clothing",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E09",
+      "texte": "Sell merchandise at a department store",
+      "texte_original": "Sell merchandise at a department store",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E10",
+      "texte": "Manage a clothing store",
+      "texte_original": "Manage a clothing store",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C01",
+      "texte": "Develop a spreadsheet using computer software",
+      "texte_original": "Develop a spreadsheet using computer software",
+      "domaine": "C",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C02",
+      "texte": "Proofread records or forms",
+      "texte_original": "Proofread records or forms",
+      "domaine": "C",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C03",
+      "texte": "Install software across computers on a large network",
+      "texte_original": "Install software across computers on a large network",
+      "domaine": "C",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C04",
+      "texte": "Operate a calculator",
+      "texte_original": "Operate a calculator",
+      "domaine": "C",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C05",
+      "texte": "Keep shipping and receiving records",
+      "texte_original": "Keep shipping and receiving records",
+      "domaine": "C",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C06",
+      "texte": "Calculate the wages of employees",
+      "texte_original": "Calculate the wages of employees",
+      "domaine": "C",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C07",
+      "texte": "Inventory supplies using a hand-held computer",
+      "texte_original": "Inventory supplies using a hand-held computer",
+      "domaine": "C",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C08",
+      "texte": "Record rent payments",
+      "texte_original": "Record rent payments",
+      "domaine": "C",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C09",
+      "texte": "Keep inventory records",
+      "texte_original": "Keep inventory records",
+      "domaine": "C",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C10",
+      "texte": "Stamp, sort, and distribute mail for an organization",
+      "texte_original": "Stamp, sort, and distribute mail for an organization",
+      "domaine": "C",
+      "cle": "plus"
+    }
+  ]
+}

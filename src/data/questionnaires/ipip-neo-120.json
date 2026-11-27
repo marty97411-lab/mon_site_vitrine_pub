@@ -1,0 +1,995 @@
+{
+  "id": "ipip-neo-120",
+  "nom": "IPIP-NEO-120",
+  "description": "120 items mesurant les 5 grands traits et leurs 30 facettes (4 items par facette).",
+  "modele": "big-five",
+  "source": "johnson-2014",
+  "sources_complementaires": ["ipip", "ipip-scoring"],
+  "licence": {
+    "nom": "Domaine public",
+    "url": "https://ipip.ori.org/newPermission.htm"
+  },
+  "langue_items": "fr",
+  "traduction": {
+    "statut": "non-validee",
+    "note": "Traduction du projet. Une adaptation française européenne de l'IPIP-NEO-300 (Thiry et Piolti, 2023) existe mais n'a pas pu être consultée."
+  },
+  "consigne": "Décrivez-vous tel ou telle que vous êtes généralement aujourd'hui, et non tel ou telle que vous aimeriez être. Comparez-vous honnêtement aux personnes de votre âge que vous connaissez. Pour chaque affirmation, indiquez dans quelle mesure elle vous décrit avec exactitude.",
+  "echelle": {
+    "min": 1,
+    "max": 5,
+    "libelles": [
+      "Très inexact",
+      "Plutôt inexact",
+      "Ni exact ni inexact",
+      "Plutôt exact",
+      "Très exact"
+    ],
+    "langue": "fr"
+  },
+  "agregation": "moyenne",
+  "seuil_completude": 0.5,
+  "avec_facettes": true,
+  "items": [
+    {
+      "id": "N1-01",
+      "texte": "Je me fais du souci.",
+      "texte_original": "Worry about things.",
+      "domaine": "N",
+      "facette": "N1",
+      "cle": "plus"
+    },
+    {
+      "id": "E1-01",
+      "texte": "Je me fais facilement des ami·es.",
+      "texte_original": "Make friends easily.",
+      "domaine": "E",
+      "facette": "E1",
+      "cle": "plus"
+    },
+    {
+      "id": "O1-01",
+      "texte": "J'ai une imagination débordante.",
+      "texte_original": "Have a vivid imagination.",
+      "domaine": "O",
+      "facette": "O1",
+      "cle": "plus"
+    },
+    {
+      "id": "A1-01",
+      "texte": "Je fais confiance aux autres.",
+      "texte_original": "Trust others.",
+      "domaine": "A",
+      "facette": "A1",
+      "cle": "plus"
+    },
+    {
+      "id": "C1-01",
+      "texte": "Je mène mes tâches à bien.",
+      "texte_original": "Complete tasks successfully.",
+      "domaine": "C",
+      "facette": "C1",
+      "cle": "plus"
+    },
+    {
+      "id": "N2-01",
+      "texte": "Je me mets facilement en colère.",
+      "texte_original": "Get angry easily.",
+      "domaine": "N",
+      "facette": "N2",
+      "cle": "plus"
+    },
+    {
+      "id": "E2-01",
+      "texte": "J'adore les grandes fêtes.",
+      "texte_original": "Love large parties.",
+      "domaine": "E",
+      "facette": "E2",
+      "cle": "plus"
+    },
+    {
+      "id": "O2-01",
+      "texte": "Je crois en l'importance de l'art.",
+      "texte_original": "Believe in the importance of art.",
+      "domaine": "O",
+      "facette": "O2",
+      "cle": "plus"
+    },
+    {
+      "id": "A2-01",
+      "texte": "Je me sers des autres pour arriver à mes fins.",
+      "texte_original": "Use others for my own ends.",
+      "domaine": "A",
+      "facette": "A2",
+      "cle": "moins"
+    },
+    {
+      "id": "C2-01",
+      "texte": "J'aime ranger.",
+      "texte_original": "Like to tidy up.",
+      "domaine": "C",
+      "facette": "C2",
+      "cle": "plus"
+    },
+    {
+      "id": "N3-01",
+      "texte": "Je me sens souvent triste.",
+      "texte_original": "Often feel blue.",
+      "domaine": "N",
+      "facette": "N3",
+      "cle": "plus"
+    },
+    {
+      "id": "E3-01",
+      "texte": "Je prends les choses en main.",
+      "texte_original": "Take charge.",
+      "domaine": "E",
+      "facette": "E3",
+      "cle": "plus"
+    },
+    {
+      "id": "O3-01",
+      "texte": "Je vis mes émotions intensément.",
+      "texte_original": "Experience my emotions intensely.",
+      "domaine": "O",
+      "facette": "O3",
+      "cle": "plus"
+    },
+    {
+      "id": "A3-01",
+      "texte": "Je me soucie des autres.",
+      "texte_original": "Am concerned about others.",
+      "domaine": "A",
+      "facette": "A3",
+      "cle": "plus"
+    },
+    {
+      "id": "C3-01",
+      "texte": "Je tiens mes promesses.",
+      "texte_original": "Keep my promises.",
+      "domaine": "C",
+      "facette": "C3",
+      "cle": "plus"
+    },
+    {
+      "id": "N4-01",
+      "texte": "J'ai du mal à aller vers les autres.",
+      "texte_original": "Find it difficult to approach others.",
+      "domaine": "N",
+      "facette": "N4",
+      "cle": "plus"
+    },
+    {
+      "id": "E4-01",
+      "texte": "Je suis toujours occupé·e.",
+      "texte_original": "Am always busy.",
+      "domaine": "E",
+      "facette": "E4",
+      "cle": "plus"
+    },
+    {
+      "id": "O4-01",
+      "texte": "Je préfère la variété à la routine.",
+      "texte_original": "Prefer variety to routine.",
+      "domaine": "O",
+      "facette": "O4",
+      "cle": "plus"
+    },
+    {
+      "id": "A4-01",
+      "texte": "J'adore une bonne dispute.",
+      "texte_original": "Love a good fight.",
+      "domaine": "A",
+      "facette": "A4",
+      "cle": "moins"
+    },
+    {
+      "id": "C4-01",
+      "texte": "J'en fais plus que ce qu'on attend de moi.",
+      "texte_original": "Do more than what's expected of me.",
+      "domaine": "C",
+      "facette": "C4",
+      "cle": "plus"
+    },
+    {
+      "id": "N5-01",
+      "texte": "Il m'arrive de faire des excès.",
+      "texte_original": "Go on binges.",
+      "domaine": "N",
+      "facette": "N5",
+      "cle": "plus"
+    },
+    {
+      "id": "E5-01",
+      "texte": "J'adore les sensations fortes.",
+      "texte_original": "Love excitement.",
+      "domaine": "E",
+      "facette": "E5",
+      "cle": "plus"
+    },
+    {
+      "id": "O5-01",
+      "texte": "J'adore lire des textes exigeants.",
+      "texte_original": "Love to read challenging material.",
+      "domaine": "O",
+      "facette": "O5",
+      "cle": "plus"
+    },
+    {
+      "id": "A5-01",
+      "texte": "Je pense être meilleur·e que les autres.",
+      "texte_original": "Believe that I am better than others.",
+      "domaine": "A",
+      "facette": "A5",
+      "cle": "moins"
+    },
+    {
+      "id": "C5-01",
+      "texte": "Je suis toujours prêt·e.",
+      "texte_original": "Am always prepared.",
+      "domaine": "C",
+      "facette": "C5",
+      "cle": "plus"
+    },
+    {
+      "id": "N6-01",
+      "texte": "Je panique facilement.",
+      "texte_original": "Panic easily.",
+      "domaine": "N",
+      "facette": "N6",
+      "cle": "plus"
+    },
+    {
+      "id": "E6-01",
+      "texte": "Je rayonne de joie.",
+      "texte_original": "Radiate joy.",
+      "domaine": "E",
+      "facette": "E6",
+      "cle": "plus"
+    },
+    {
+      "id": "O6-01",
+      "texte": "J'ai tendance à voter pour des candidat·es progressistes.",
+      "texte_original": "Tend to vote for liberal political candidates.",
+      "domaine": "O",
+      "facette": "O6",
+      "cle": "plus"
+    },
+    {
+      "id": "A6-01",
+      "texte": "Je compatis au sort des personnes sans abri.",
+      "texte_original": "Sympathize with the homeless.",
+      "domaine": "A",
+      "facette": "A6",
+      "cle": "plus"
+    },
+    {
+      "id": "C6-01",
+      "texte": "Je me lance dans les choses sans réfléchir.",
+      "texte_original": "Jump into things without thinking.",
+      "domaine": "C",
+      "facette": "C6",
+      "cle": "moins"
+    },
+    {
+      "id": "N1-02",
+      "texte": "Je crains le pire.",
+      "texte_original": "Fear for the worst.",
+      "domaine": "N",
+      "facette": "N1",
+      "cle": "plus"
+    },
+    {
+      "id": "E1-02",
+      "texte": "Je me sens à l'aise avec les gens.",
+      "texte_original": "Feel comfortable around people.",
+      "domaine": "E",
+      "facette": "E1",
+      "cle": "plus"
+    },
+    {
+      "id": "O1-02",
+      "texte": "J'aime me laisser emporter par mon imagination.",
+      "texte_original": "Enjoy wild flights of fantasy.",
+      "domaine": "O",
+      "facette": "O1",
+      "cle": "plus"
+    },
+    {
+      "id": "A1-02",
+      "texte": "Je pense que les autres ont de bonnes intentions.",
+      "texte_original": "Believe that others have good intentions.",
+      "domaine": "A",
+      "facette": "A1",
+      "cle": "plus"
+    },
+    {
+      "id": "C1-02",
+      "texte": "J'excelle dans ce que je fais.",
+      "texte_original": "Excel in what I do.",
+      "domaine": "C",
+      "facette": "C1",
+      "cle": "plus"
+    },
+    {
+      "id": "N2-02",
+      "texte": "Je m'irrite facilement.",
+      "texte_original": "Get irritated easily.",
+      "domaine": "N",
+      "facette": "N2",
+      "cle": "plus"
+    },
+    {
+      "id": "E2-02",
+      "texte": "En soirée, je parle avec beaucoup de personnes différentes.",
+      "texte_original": "Talk to a lot of different people at parties.",
+      "domaine": "E",
+      "facette": "E2",
+      "cle": "plus"
+    },
+    {
+      "id": "O2-02",
+      "texte": "Je vois de la beauté dans des choses que d'autres ne remarquent pas.",
+      "texte_original": "See beauty in things that others might not notice.",
+      "domaine": "O",
+      "facette": "O2",
+      "cle": "plus"
+    },
+    {
+      "id": "A2-02",
+      "texte": "Je triche pour réussir.",
+      "texte_original": "Cheat to get ahead.",
+      "domaine": "A",
+      "facette": "A2",
+      "cle": "moins"
+    },
+    {
+      "id": "C2-02",
+      "texte": "J'oublie souvent de remettre les choses à leur place.",
+      "texte_original": "Often forget to put things back in their proper place.",
+      "domaine": "C",
+      "facette": "C2",
+      "cle": "moins"
+    },
+    {
+      "id": "N3-02",
+      "texte": "Je ne m'aime pas.",
+      "texte_original": "Dislike myself.",
+      "domaine": "N",
+      "facette": "N3",
+      "cle": "plus"
+    },
+    {
+      "id": "E3-02",
+      "texte": "J'essaie de diriger les autres.",
+      "texte_original": "Try to lead others.",
+      "domaine": "E",
+      "facette": "E3",
+      "cle": "plus"
+    },
+    {
+      "id": "O3-02",
+      "texte": "Je ressens les émotions des autres.",
+      "texte_original": "Feel others' emotions.",
+      "domaine": "O",
+      "facette": "O3",
+      "cle": "plus"
+    },
+    {
+      "id": "A3-02",
+      "texte": "J'adore aider les autres.",
+      "texte_original": "Love to help others.",
+      "domaine": "A",
+      "facette": "A3",
+      "cle": "plus"
+    },
+    {
+      "id": "C3-02",
+      "texte": "Je dis la vérité.",
+      "texte_original": "Tell the truth.",
+      "domaine": "C",
+      "facette": "C3",
+      "cle": "plus"
+    },
+    {
+      "id": "N4-02",
+      "texte": "J'ai peur d'attirer l'attention sur moi.",
+      "texte_original": "Am afraid to draw attention to myself.",
+      "domaine": "N",
+      "facette": "N4",
+      "cle": "plus"
+    },
+    {
+      "id": "E4-02",
+      "texte": "Je suis toujours en mouvement.",
+      "texte_original": "Am always on the go.",
+      "domaine": "E",
+      "facette": "E4",
+      "cle": "plus"
+    },
+    {
+      "id": "O4-02",
+      "texte": "Je préfère m'en tenir à ce que je connais.",
+      "texte_original": "Prefer to stick with things that I know.",
+      "domaine": "O",
+      "facette": "O4",
+      "cle": "moins"
+    },
+    {
+      "id": "A4-02",
+      "texte": "Je crie sur les gens.",
+      "texte_original": "Yell at people.",
+      "domaine": "A",
+      "facette": "A4",
+      "cle": "moins"
+    },
+    {
+      "id": "C4-02",
+      "texte": "Je travaille dur.",
+      "texte_original": "Work hard.",
+      "domaine": "C",
+      "facette": "C4",
+      "cle": "plus"
+    },
+    {
+      "id": "N5-02",
+      "texte": "Je fais rarement des excès.",
+      "texte_original": "Rarely overindulge.",
+      "domaine": "N",
+      "facette": "N5",
+      "cle": "moins"
+    },
+    {
+      "id": "E5-02",
+      "texte": "Je recherche l'aventure.",
+      "texte_original": "Seek adventure.",
+      "domaine": "E",
+      "facette": "E5",
+      "cle": "plus"
+    },
+    {
+      "id": "O5-02",
+      "texte": "J'évite les discussions philosophiques.",
+      "texte_original": "Avoid philosophical discussions.",
+      "domaine": "O",
+      "facette": "O5",
+      "cle": "moins"
+    },
+    {
+      "id": "A5-02",
+      "texte": "J'ai une haute opinion de moi.",
+      "texte_original": "Think highly of myself.",
+      "domaine": "A",
+      "facette": "A5",
+      "cle": "moins"
+    },
+    {
+      "id": "C5-02",
+      "texte": "Je mène mes projets à terme.",
+      "texte_original": "Carry out my plans.",
+      "domaine": "C",
+      "facette": "C5",
+      "cle": "plus"
+    },
+    {
+      "id": "N6-02",
+      "texte": "Je me laisse dépasser par les événements.",
+      "texte_original": "Become overwhelmed by events.",
+      "domaine": "N",
+      "facette": "N6",
+      "cle": "plus"
+    },
+    {
+      "id": "E6-02",
+      "texte": "Je m'amuse beaucoup.",
+      "texte_original": "Have a lot of fun.",
+      "domaine": "E",
+      "facette": "E6",
+      "cle": "plus"
+    },
+    {
+      "id": "O6-02",
+      "texte": "Je pense qu'il n'y a pas de bien ni de mal absolus.",
+      "texte_original": "Believe that there is no absolute right and wrong.",
+      "domaine": "O",
+      "facette": "O6",
+      "cle": "plus"
+    },
+    {
+      "id": "A6-02",
+      "texte": "J'éprouve de la compassion pour les personnes moins favorisées que moi.",
+      "texte_original": "Feel sympathy for those who are worse off than myself.",
+      "domaine": "A",
+      "facette": "A6",
+      "cle": "plus"
+    },
+    {
+      "id": "C6-02",
+      "texte": "Je prends des décisions hâtives.",
+      "texte_original": "Make rash decisions.",
+      "domaine": "C",
+      "facette": "C6",
+      "cle": "moins"
+    },
+    {
+      "id": "N1-03",
+      "texte": "J'ai peur de beaucoup de choses.",
+      "texte_original": "Am afraid of many things.",
+      "domaine": "N",
+      "facette": "N1",
+      "cle": "plus"
+    },
+    {
+      "id": "E1-03",
+      "texte": "J'évite les contacts avec les autres.",
+      "texte_original": "Avoid contacts with others.",
+      "domaine": "E",
+      "facette": "E1",
+      "cle": "moins"
+    },
+    {
+      "id": "O1-03",
+      "texte": "J'adore rêvasser.",
+      "texte_original": "Love to daydream.",
+      "domaine": "O",
+      "facette": "O1",
+      "cle": "plus"
+    },
+    {
+      "id": "A1-03",
+      "texte": "Je crois ce que les gens me disent.",
+      "texte_original": "Trust what people say.",
+      "domaine": "A",
+      "facette": "A1",
+      "cle": "plus"
+    },
+    {
+      "id": "C1-03",
+      "texte": "Je gère mes tâches sans accroc.",
+      "texte_original": "Handle tasks smoothly.",
+      "domaine": "C",
+      "facette": "C1",
+      "cle": "plus"
+    },
+    {
+      "id": "N2-03",
+      "texte": "Je perds mon sang-froid.",
+      "texte_original": "Lose my temper.",
+      "domaine": "N",
+      "facette": "N2",
+      "cle": "plus"
+    },
+    {
+      "id": "E2-03",
+      "texte": "Je préfère être seul·e.",
+      "texte_original": "Prefer to be alone.",
+      "domaine": "E",
+      "facette": "E2",
+      "cle": "moins"
+    },
+    {
+      "id": "O2-03",
+      "texte": "Je n'aime pas la poésie.",
+      "texte_original": "Do not like poetry.",
+      "domaine": "O",
+      "facette": "O2",
+      "cle": "moins"
+    },
+    {
+      "id": "A2-03",
+      "texte": "Je profite des autres.",
+      "texte_original": "Take advantage of others.",
+      "domaine": "A",
+      "facette": "A2",
+      "cle": "moins"
+    },
+    {
+      "id": "C2-03",
+      "texte": "Je laisse ma chambre en désordre.",
+      "texte_original": "Leave a mess in my room.",
+      "domaine": "C",
+      "facette": "C2",
+      "cle": "moins"
+    },
+    {
+      "id": "N3-03",
+      "texte": "J'ai souvent le moral à zéro.",
+      "texte_original": "Am often down in the dumps.",
+      "domaine": "N",
+      "facette": "N3",
+      "cle": "plus"
+    },
+    {
+      "id": "E3-03",
+      "texte": "Je prends le contrôle des situations.",
+      "texte_original": "Take control of things.",
+      "domaine": "E",
+      "facette": "E3",
+      "cle": "plus"
+    },
+    {
+      "id": "O3-03",
+      "texte": "Je remarque rarement mes réactions émotionnelles.",
+      "texte_original": "Rarely notice my emotional reactions.",
+      "domaine": "O",
+      "facette": "O3",
+      "cle": "moins"
+    },
+    {
+      "id": "A3-03",
+      "texte": "Les sentiments des autres me sont indifférents.",
+      "texte_original": "Am indifferent to the feelings of others.",
+      "domaine": "A",
+      "facette": "A3",
+      "cle": "moins"
+    },
+    {
+      "id": "C3-03",
+      "texte": "J'enfreins les règles.",
+      "texte_original": "Break rules.",
+      "domaine": "C",
+      "facette": "C3",
+      "cle": "moins"
+    },
+    {
+      "id": "N4-03",
+      "texte": "Je ne me sens à l'aise qu'avec mes ami·es.",
+      "texte_original": "Only feel comfortable with friends.",
+      "domaine": "N",
+      "facette": "N4",
+      "cle": "plus"
+    },
+    {
+      "id": "E4-03",
+      "texte": "Je fais beaucoup de choses pendant mon temps libre.",
+      "texte_original": "Do a lot in my spare time.",
+      "domaine": "E",
+      "facette": "E4",
+      "cle": "plus"
+    },
+    {
+      "id": "O4-03",
+      "texte": "Je n'aime pas les changements.",
+      "texte_original": "Dislike changes.",
+      "domaine": "O",
+      "facette": "O4",
+      "cle": "moins"
+    },
+    {
+      "id": "A4-03",
+      "texte": "J'insulte les gens.",
+      "texte_original": "Insult people.",
+      "domaine": "A",
+      "facette": "A4",
+      "cle": "moins"
+    },
+    {
+      "id": "C4-03",
+      "texte": "Je consacre peu de temps et d'efforts à mon travail.",
+      "texte_original": "Put little time and effort into my work.",
+      "domaine": "C",
+      "facette": "C4",
+      "cle": "moins"
+    },
+    {
+      "id": "N5-03",
+      "texte": "Je résiste facilement aux tentations.",
+      "texte_original": "Easily resist temptations.",
+      "domaine": "N",
+      "facette": "N5",
+      "cle": "moins"
+    },
+    {
+      "id": "E5-03",
+      "texte": "J'aime prendre des risques inconsidérés.",
+      "texte_original": "Enjoy being reckless.",
+      "domaine": "E",
+      "facette": "E5",
+      "cle": "plus"
+    },
+    {
+      "id": "O5-03",
+      "texte": "J'ai du mal à comprendre les idées abstraites.",
+      "texte_original": "Have difficulty understanding abstract ideas.",
+      "domaine": "O",
+      "facette": "O5",
+      "cle": "moins"
+    },
+    {
+      "id": "A5-03",
+      "texte": "Je me tiens en très haute estime.",
+      "texte_original": "Have a high opinion of myself.",
+      "domaine": "A",
+      "facette": "A5",
+      "cle": "moins"
+    },
+    {
+      "id": "C5-03",
+      "texte": "Je perds mon temps.",
+      "texte_original": "Waste my time.",
+      "domaine": "C",
+      "facette": "C5",
+      "cle": "moins"
+    },
+    {
+      "id": "N6-03",
+      "texte": "J'ai le sentiment de ne pas être capable de faire face.",
+      "texte_original": "Feel that I'm unable to deal with things.",
+      "domaine": "N",
+      "facette": "N6",
+      "cle": "plus"
+    },
+    {
+      "id": "E6-03",
+      "texte": "J'aime la vie.",
+      "texte_original": "Love life.",
+      "domaine": "E",
+      "facette": "E6",
+      "cle": "plus"
+    },
+    {
+      "id": "O6-03",
+      "texte": "J'ai tendance à voter pour des candidat·es conservateurs ou conservatrices.",
+      "texte_original": "Tend to vote for conservative political candidates.",
+      "domaine": "O",
+      "facette": "O6",
+      "cle": "moins"
+    },
+    {
+      "id": "A6-03",
+      "texte": "Les problèmes des autres ne m'intéressent pas.",
+      "texte_original": "Am not interested in other people's problems.",
+      "domaine": "A",
+      "facette": "A6",
+      "cle": "moins"
+    },
+    {
+      "id": "C6-03",
+      "texte": "Je me précipite.",
+      "texte_original": "Rush into things.",
+      "domaine": "C",
+      "facette": "C6",
+      "cle": "moins"
+    },
+    {
+      "id": "N1-04",
+      "texte": "Je stresse facilement.",
+      "texte_original": "Get stressed out easily.",
+      "domaine": "N",
+      "facette": "N1",
+      "cle": "plus"
+    },
+    {
+      "id": "E1-04",
+      "texte": "Je garde les autres à distance.",
+      "texte_original": "Keep others at a distance.",
+      "domaine": "E",
+      "facette": "E1",
+      "cle": "moins"
+    },
+    {
+      "id": "O1-04",
+      "texte": "J'aime me perdre dans mes pensées.",
+      "texte_original": "Like to get lost in thought.",
+      "domaine": "O",
+      "facette": "O1",
+      "cle": "plus"
+    },
+    {
+      "id": "A1-04",
+      "texte": "Je me méfie des gens.",
+      "texte_original": "Distrust people.",
+      "domaine": "A",
+      "facette": "A1",
+      "cle": "moins"
+    },
+    {
+      "id": "C1-04",
+      "texte": "Je sais comment faire avancer les choses.",
+      "texte_original": "Know how to get things done.",
+      "domaine": "C",
+      "facette": "C1",
+      "cle": "plus"
+    },
+    {
+      "id": "N2-04",
+      "texte": "Je ne suis pas facilement agacé·e.",
+      "texte_original": "Am not easily annoyed.",
+      "domaine": "N",
+      "facette": "N2",
+      "cle": "moins"
+    },
+    {
+      "id": "E2-04",
+      "texte": "J'évite la foule.",
+      "texte_original": "Avoid crowds.",
+      "domaine": "E",
+      "facette": "E2",
+      "cle": "moins"
+    },
+    {
+      "id": "O2-04",
+      "texte": "Je n'aime pas aller dans les musées d'art.",
+      "texte_original": "Do not enjoy going to art museums.",
+      "domaine": "O",
+      "facette": "O2",
+      "cle": "moins"
+    },
+    {
+      "id": "A2-04",
+      "texte": "Je fais obstacle aux projets des autres.",
+      "texte_original": "Obstruct others' plans.",
+      "domaine": "A",
+      "facette": "A2",
+      "cle": "moins"
+    },
+    {
+      "id": "C2-04",
+      "texte": "Je laisse traîner mes affaires.",
+      "texte_original": "Leave my belongings around.",
+      "domaine": "C",
+      "facette": "C2",
+      "cle": "moins"
+    },
+    {
+      "id": "N3-04",
+      "texte": "Je me sens bien dans ma peau.",
+      "texte_original": "Feel comfortable with myself.",
+      "domaine": "N",
+      "facette": "N3",
+      "cle": "moins"
+    },
+    {
+      "id": "E3-04",
+      "texte": "J'attends que les autres montrent la voie.",
+      "texte_original": "Wait for others to lead the way.",
+      "domaine": "E",
+      "facette": "E3",
+      "cle": "moins"
+    },
+    {
+      "id": "O3-04",
+      "texte": "Je ne comprends pas les gens qui se laissent gagner par l'émotion.",
+      "texte_original": "Don't understand people who get emotional.",
+      "domaine": "O",
+      "facette": "O3",
+      "cle": "moins"
+    },
+    {
+      "id": "A3-04",
+      "texte": "Je ne prends pas de temps pour les autres.",
+      "texte_original": "Take no time for others.",
+      "domaine": "A",
+      "facette": "A3",
+      "cle": "moins"
+    },
+    {
+      "id": "C3-04",
+      "texte": "Je ne tiens pas mes promesses.",
+      "texte_original": "Break my promises.",
+      "domaine": "C",
+      "facette": "C3",
+      "cle": "moins"
+    },
+    {
+      "id": "N4-04",
+      "texte": "Les situations sociales difficiles ne me dérangent pas.",
+      "texte_original": "Am not bothered by difficult social situations.",
+      "domaine": "N",
+      "facette": "N4",
+      "cle": "moins"
+    },
+    {
+      "id": "E4-04",
+      "texte": "J'aime prendre les choses tranquillement.",
+      "texte_original": "Like to take it easy.",
+      "domaine": "E",
+      "facette": "E4",
+      "cle": "moins"
+    },
+    {
+      "id": "O4-04",
+      "texte": "Je suis attaché·e aux façons de faire traditionnelles.",
+      "texte_original": "Am attached to conventional ways.",
+      "domaine": "O",
+      "facette": "O4",
+      "cle": "moins"
+    },
+    {
+      "id": "A4-04",
+      "texte": "Je me venge des autres.",
+      "texte_original": "Get back at others.",
+      "domaine": "A",
+      "facette": "A4",
+      "cle": "moins"
+    },
+    {
+      "id": "C4-04",
+      "texte": "J'en fais juste assez pour m'en sortir.",
+      "texte_original": "Do just enough work to get by.",
+      "domaine": "C",
+      "facette": "C4",
+      "cle": "moins"
+    },
+    {
+      "id": "N5-04",
+      "texte": "Je suis capable de maîtriser mes envies.",
+      "texte_original": "Am able to control my cravings.",
+      "domaine": "N",
+      "facette": "N5",
+      "cle": "moins"
+    },
+    {
+      "id": "E5-04",
+      "texte": "Il m'arrive de faire des folies.",
+      "texte_original": "Act wild and crazy.",
+      "domaine": "E",
+      "facette": "E5",
+      "cle": "plus"
+    },
+    {
+      "id": "O5-04",
+      "texte": "Les discussions théoriques ne m'intéressent pas.",
+      "texte_original": "Am not interested in theoretical discussions.",
+      "domaine": "O",
+      "facette": "O5",
+      "cle": "moins"
+    },
+    {
+      "id": "A5-04",
+      "texte": "Je vante mes qualités.",
+      "texte_original": "Boast about my virtues.",
+      "domaine": "A",
+      "facette": "A5",
+      "cle": "moins"
+    },
+    {
+      "id": "C5-04",
+      "texte": "J'ai du mal à me mettre au travail.",
+      "texte_original": "Have difficulty starting tasks.",
+      "domaine": "C",
+      "facette": "C5",
+      "cle": "moins"
+    },
+    {
+      "id": "N6-04",
+      "texte": "Je reste calme sous la pression.",
+      "texte_original": "Remain calm under pressure.",
+      "domaine": "N",
+      "facette": "N6",
+      "cle": "moins"
+    },
+    {
+      "id": "E6-04",
+      "texte": "Je vois le bon côté de la vie.",
+      "texte_original": "Look at the bright side of life.",
+      "domaine": "E",
+      "facette": "E6",
+      "cle": "plus"
+    },
+    {
+      "id": "O6-04",
+      "texte": "Je pense qu'il faut être sévère avec la délinquance.",
+      "texte_original": "Believe that we should be tough on crime.",
+      "domaine": "O",
+      "facette": "O6",
+      "cle": "moins"
+    },
+    {
+      "id": "A6-04",
+      "texte": "J'essaie de ne pas penser aux personnes dans le besoin.",
+      "texte_original": "Try not to think about the needy.",
+      "domaine": "A",
+      "facette": "A6",
+      "cle": "moins"
+    },
+    {
+      "id": "C6-04",
+      "texte": "J'agis sans réfléchir.",
+      "texte_original": "Act without thinking.",
+      "domaine": "C",
+      "facette": "C6",
+      "cle": "moins"
+    }
+  ]
+}

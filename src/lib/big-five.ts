@@ -52,3 +52,13 @@ export const FACETTE_IDS = Object.keys(FACETTES) as [FacetteId, ...FacetteId[]];
 /** Modèle RIASEC de Holland : Réaliste, Investigateur, Artistique, Social, Entreprenant, Conventionnel. */
 export const RIASEC = ['R', 'I', 'A', 'S', 'E', 'C'] as const;
 export type RiasecId = (typeof RIASEC)[number];
+
+/** Libellés des dimensions RIASEC (traductions usuelles, non officielles). */
+export const RIASEC_NOMS: Record<RiasecId, { nomFr: string; nomOriginal: string }> = {
+  R: { nomFr: 'Réaliste', nomOriginal: 'Realistic' },
+  I: { nomFr: 'Investigateur', nomOriginal: 'Investigative' },
+  A: { nomFr: 'Artistique', nomOriginal: 'Artistic' },
+  S: { nomFr: 'Social', nomOriginal: 'Social' },
+  E: { nomFr: 'Entreprenant', nomOriginal: 'Enterprising' },
+  C: { nomFr: 'Conventionnel', nomOriginal: 'Conventional' },
+};

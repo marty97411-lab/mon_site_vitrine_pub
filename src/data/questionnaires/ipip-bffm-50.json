@@ -1,0 +1,445 @@
+{
+  "id": "ipip-bffm-50",
+  "nom": "IPIP Big-Five Factor Markers (50 items)",
+  "description": "50 items mesurant les 5 grands traits (10 items par trait), sans facettes.",
+  "modele": "big-five",
+  "source": "goldberg-1992",
+  "sources_complementaires": ["ipip", "ipip-bffm-50", "ipip-scoring"],
+  "licence": {
+    "nom": "Domaine public",
+    "url": "https://ipip.ori.org/newPermission.htm"
+  },
+  "langue_items": "fr",
+  "traduction": {
+    "statut": "non-validee",
+    "note": "Traduction du projet. Aucune traduction française de ces 50 items n'est répertoriée sur le site de l'IPIP."
+  },
+  "consigne": "Décrivez-vous tel ou telle que vous êtes généralement aujourd'hui, et non tel ou telle que vous aimeriez être. Comparez-vous honnêtement aux personnes de votre âge que vous connaissez. Pour chaque affirmation, indiquez dans quelle mesure elle vous décrit avec exactitude.",
+  "echelle": {
+    "min": 1,
+    "max": 5,
+    "libelles": [
+      "Très inexact",
+      "Plutôt inexact",
+      "Ni exact ni inexact",
+      "Plutôt exact",
+      "Très exact"
+    ],
+    "langue": "fr"
+  },
+  "agregation": "moyenne",
+  "seuil_completude": 0.5,
+  "avec_facettes": false,
+  "items": [
+    {
+      "id": "BF-01",
+      "texte": "Je suis le boute-en-train de la soirée.",
+      "texte_original": "Am the life of the party.",
+      "domaine": "E",
+      "cle": "plus",
+      "position_originale": 1
+    },
+    {
+      "id": "BF-02",
+      "texte": "Je me soucie peu des autres.",
+      "texte_original": "Feel little concern for others.",
+      "domaine": "A",
+      "cle": "moins",
+      "position_originale": 2
+    },
+    {
+      "id": "C5-01",
+      "texte": "Je suis toujours prêt·e.",
+      "texte_original": "Am always prepared.",
+      "domaine": "C",
+      "cle": "plus",
+      "position_originale": 3
+    },
+    {
+      "id": "N1-04",
+      "texte": "Je stresse facilement.",
+      "texte_original": "Get stressed out easily.",
+      "domaine": "N",
+      "cle": "plus",
+      "note": "Échelle originale : Emotional Stability (-). Clé inversée pour exprimer le score en névrosisme.",
+      "position_originale": 4
+    },
+    {
+      "id": "BF-05",
+      "texte": "J'ai un vocabulaire riche.",
+      "texte_original": "Have a rich vocabulary.",
+      "domaine": "O",
+      "cle": "plus",
+      "position_originale": 5
+    },
+    {
+      "id": "BF-06",
+      "texte": "Je ne parle pas beaucoup.",
+      "texte_original": "Don't talk a lot.",
+      "domaine": "E",
+      "cle": "moins",
+      "position_originale": 6
+    },
+    {
+      "id": "BF-07",
+      "texte": "Je m'intéresse aux gens.",
+      "texte_original": "Am interested in people.",
+      "domaine": "A",
+      "cle": "plus",
+      "position_originale": 7
+    },
+    {
+      "id": "C2-04",
+      "texte": "Je laisse traîner mes affaires.",
+      "texte_original": "Leave my belongings around.",
+      "domaine": "C",
+      "cle": "moins",
+      "position_originale": 8
+    },
+    {
+      "id": "BF-09",
+      "texte": "Je suis détendu·e la plupart du temps.",
+      "texte_original": "Am relaxed most of the time.",
+      "domaine": "N",
+      "cle": "moins",
+      "note": "Échelle originale : Emotional Stability (+). Clé inversée pour exprimer le score en névrosisme.",
+      "position_originale": 9
+    },
+    {
+      "id": "O5-03",
+      "texte": "J'ai du mal à comprendre les idées abstraites.",
+      "texte_original": "Have difficulty understanding abstract ideas.",
+      "domaine": "O",
+      "cle": "moins",
+      "position_originale": 10
+    },
+    {
+      "id": "E1-02",
+      "texte": "Je me sens à l'aise avec les gens.",
+      "texte_original": "Feel comfortable around people.",
+      "domaine": "E",
+      "cle": "plus",
+      "position_originale": 11
+    },
+    {
+      "id": "A4-03",
+      "texte": "J'insulte les gens.",
+      "texte_original": "Insult people.",
+      "domaine": "A",
+      "cle": "moins",
+      "position_originale": 12
+    },
+    {
+      "id": "BF-13",
+      "texte": "Je fais attention aux détails.",
+      "texte_original": "Pay attention to details.",
+      "domaine": "C",
+      "cle": "plus",
+      "position_originale": 13
+    },
+    {
+      "id": "N1-01",
+      "texte": "Je me fais du souci.",
+      "texte_original": "Worry about things.",
+      "domaine": "N",
+      "cle": "plus",
+      "note": "Échelle originale : Emotional Stability (-). Clé inversée pour exprimer le score en névrosisme.",
+      "position_originale": 14
+    },
+    {
+      "id": "O1-01",
+      "texte": "J'ai une imagination débordante.",
+      "texte_original": "Have a vivid imagination.",
+      "domaine": "O",
+      "cle": "plus",
+      "position_originale": 15
+    },
+    {
+      "id": "BF-16",
+      "texte": "Je reste en retrait.",
+      "texte_original": "Keep in the background.",
+      "domaine": "E",
+      "cle": "moins",
+      "position_originale": 16
+    },
+    {
+      "id": "BF-17",
+      "texte": "Je suis sensible à ce que ressentent les autres.",
+      "texte_original": "Sympathize with others' feelings.",
+      "domaine": "A",
+      "cle": "plus",
+      "position_originale": 17
+    },
+    {
+      "id": "BF-18",
+      "texte": "Je mets la pagaille.",
+      "texte_original": "Make a mess of things.",
+      "domaine": "C",
+      "cle": "moins",
+      "position_originale": 18
+    },
+    {
+      "id": "BF-19",
+      "texte": "Je me sens rarement triste.",
+      "texte_original": "Seldom feel blue.",
+      "domaine": "N",
+      "cle": "moins",
+      "note": "Échelle originale : Emotional Stability (+). Clé inversée pour exprimer le score en névrosisme.",
+      "position_originale": 19
+    },
+    {
+      "id": "BF-20",
+      "texte": "Les idées abstraites ne m'intéressent pas.",
+      "texte_original": "Am not interested in abstract ideas.",
+      "domaine": "O",
+      "cle": "moins",
+      "position_originale": 20
+    },
+    {
+      "id": "BF-21",
+      "texte": "J'engage la conversation.",
+      "texte_original": "Start conversations.",
+      "domaine": "E",
+      "cle": "plus",
+      "position_originale": 21
+    },
+    {
+      "id": "A6-03",
+      "texte": "Les problèmes des autres ne m'intéressent pas.",
+      "texte_original": "Am not interested in other people's problems.",
+      "domaine": "A",
+      "cle": "moins",
+      "position_originale": 22
+    },
+    {
+      "id": "BF-23",
+      "texte": "Je fais les corvées tout de suite.",
+      "texte_original": "Get chores done right away.",
+      "domaine": "C",
+      "cle": "plus",
+      "position_originale": 23
+    },
+    {
+      "id": "BF-24",
+      "texte": "Je suis facilement perturbé·e.",
+      "texte_original": "Am easily disturbed.",
+      "domaine": "N",
+      "cle": "plus",
+      "note": "Échelle originale : Emotional Stability (-). Clé inversée pour exprimer le score en névrosisme.",
+      "position_originale": 24
+    },
+    {
+      "id": "BF-25",
+      "texte": "J'ai d'excellentes idées.",
+      "texte_original": "Have excellent ideas.",
+      "domaine": "O",
+      "cle": "plus",
+      "position_originale": 25
+    },
+    {
+      "id": "BF-26",
+      "texte": "J'ai peu de choses à dire.",
+      "texte_original": "Have little to say.",
+      "domaine": "E",
+      "cle": "moins",
+      "position_originale": 26
+    },
+    {
+      "id": "BF-27",
+      "texte": "J'ai le cœur tendre.",
+      "texte_original": "Have a soft heart.",
+      "domaine": "A",
+      "cle": "plus",
+      "position_originale": 27
+    },
+    {
+      "id": "C2-02",
+      "texte": "J'oublie souvent de remettre les choses à leur place.",
+      "texte_original": "Often forget to put things back in their proper place.",
+      "domaine": "C",
+      "cle": "moins",
+      "position_originale": 28
+    },
+    {
+      "id": "BF-29",
+      "texte": "Je suis facilement contrarié·e.",
+      "texte_original": "Get upset easily.",
+      "domaine": "N",
+      "cle": "plus",
+      "note": "Échelle originale : Emotional Stability (-). Clé inversée pour exprimer le score en névrosisme.",
+      "position_originale": 29
+    },
+    {
+      "id": "BF-30",
+      "texte": "Je n'ai pas beaucoup d'imagination.",
+      "texte_original": "Do not have a good imagination.",
+      "domaine": "O",
+      "cle": "moins",
+      "position_originale": 30
+    },
+    {
+      "id": "E2-02",
+      "texte": "En soirée, je parle avec beaucoup de personnes différentes.",
+      "texte_original": "Talk to a lot of different people at parties.",
+      "domaine": "E",
+      "cle": "plus",
+      "position_originale": 31
+    },
+    {
+      "id": "BF-32",
+      "texte": "Je ne m'intéresse pas vraiment aux autres.",
+      "texte_original": "Am not really interested in others.",
+      "domaine": "A",
+      "cle": "moins",
+      "position_originale": 32
+    },
+    {
+      "id": "BF-33",
+      "texte": "J'aime l'ordre.",
+      "texte_original": "Like order.",
+      "domaine": "C",
+      "cle": "plus",
+      "position_originale": 33
+    },
+    {
+      "id": "BF-34",
+      "texte": "Mon humeur change beaucoup.",
+      "texte_original": "Change my mood a lot.",
+      "domaine": "N",
+      "cle": "plus",
+      "note": "Échelle originale : Emotional Stability (-). Clé inversée pour exprimer le score en névrosisme.",
+      "position_originale": 34
+    },
+    {
+      "id": "BF-35",
+      "texte": "Je comprends vite.",
+      "texte_original": "Am quick to understand things.",
+      "domaine": "O",
+      "cle": "plus",
+      "position_originale": 35
+    },
+    {
+      "id": "BF-36",
+      "texte": "Je n'aime pas attirer l'attention sur moi.",
+      "texte_original": "Don't like to draw attention to myself.",
+      "domaine": "E",
+      "cle": "moins",
+      "position_originale": 36
+    },
+    {
+      "id": "BF-37",
+      "texte": "Je prends du temps pour les autres.",
+      "texte_original": "Take time out for others.",
+      "domaine": "A",
+      "cle": "plus",
+      "position_originale": 37
+    },
+    {
+      "id": "BF-38",
+      "texte": "Je me dérobe à mes obligations.",
+      "texte_original": "Shirk my duties.",
+      "domaine": "C",
+      "cle": "moins",
+      "position_originale": 38
+    },
+    {
+      "id": "BF-39",
+      "texte": "J'ai de fréquentes sautes d'humeur.",
+      "texte_original": "Have frequent mood swings.",
+      "domaine": "N",
+      "cle": "plus",
+      "note": "Échelle originale : Emotional Stability (-). Clé inversée pour exprimer le score en névrosisme.",
+      "position_originale": 39
+    },
+    {
+      "id": "BF-40",
+      "texte": "J'emploie des mots recherchés.",
+      "texte_original": "Use difficult words.",
+      "domaine": "O",
+      "cle": "plus",
+      "position_originale": 40
+    },
+    {
+      "id": "BF-41",
+      "texte": "Être le centre de l'attention ne me dérange pas.",
+      "texte_original": "Don't mind being the center of attention.",
+      "domaine": "E",
+      "cle": "plus",
+      "position_originale": 41
+    },
+    {
+      "id": "O3-02",
+      "texte": "Je ressens les émotions des autres.",
+      "texte_original": "Feel others' emotions.",
+      "domaine": "A",
+      "cle": "plus",
+      "position_originale": 42
+    },
+    {
+      "id": "BF-43",
+      "texte": "Je suis un planning.",
+      "texte_original": "Follow a schedule.",
+      "domaine": "C",
+      "cle": "plus",
+      "position_originale": 43
+    },
+    {
+      "id": "N2-02",
+      "texte": "Je m'irrite facilement.",
+      "texte_original": "Get irritated easily.",
+      "domaine": "N",
+      "cle": "plus",
+      "note": "Échelle originale : Emotional Stability (-). Clé inversée pour exprimer le score en névrosisme.",
+      "position_originale": 44
+    },
+    {
+      "id": "BF-45",
+      "texte": "Je prends le temps de réfléchir aux choses.",
+      "texte_original": "Spend time reflecting on things.",
+      "domaine": "O",
+      "cle": "plus",
+      "position_originale": 45
+    },
+    {
+      "id": "BF-46",
+      "texte": "Je suis silencieux ou silencieuse avec les inconnu·es.",
+      "texte_original": "Am quiet around strangers.",
+      "domaine": "E",
+      "cle": "moins",
+      "position_originale": 46
+    },
+    {
+      "id": "BF-47",
+      "texte": "Je mets les gens à l'aise.",
+      "texte_original": "Make people feel at ease.",
+      "domaine": "A",
+      "cle": "plus",
+      "position_originale": 47
+    },
+    {
+      "id": "BF-48",
+      "texte": "Je suis exigeant·e dans mon travail.",
+      "texte_original": "Am exacting in my work.",
+      "domaine": "C",
+      "cle": "plus",
+      "position_originale": 48
+    },
+    {
+      "id": "N3-01",
+      "texte": "Je me sens souvent triste.",
+      "texte_original": "Often feel blue.",
+      "domaine": "N",
+      "cle": "plus",
+      "note": "Échelle originale : Emotional Stability (-). Clé inversée pour exprimer le score en névrosisme.",
+      "position_originale": 49
+    },
+    {
+      "id": "BF-50",
+      "texte": "Je déborde d'idées.",
+      "texte_original": "Am full of ideas.",
+      "domaine": "O",
+      "cle": "plus",
+      "position_originale": 50
+    }
+  ]
+}
