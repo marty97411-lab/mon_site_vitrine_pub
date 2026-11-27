@@ -14,7 +14,7 @@
     "statut": "non-validee",
     "note": "Traduction du projet. Une adaptation française européenne de l'IPIP-NEO-300 (Thiry et Piolti, 2023) existe ; le projet a choisi de ne pas l'utiliser à ce stade."
   },
-  "consigne": "Décrivez-vous tel que vous êtes généralement aujourd'hui, et non tel que vous aimeriez être. Comparez-vous honnêtement aux personnes de votre âge que vous connaissez. Pour chaque affirmation, indiquez dans quelle mesure elle vous correspond.",
+  "consigne": "Décrivez-vous tel que vous êtes généralement aujourd'hui, et non tel que vous aimeriez être. Comparez-vous honnêtement aux personnes de même sexe et d'âge proche que vous connaissez. Pour chaque affirmation, indiquez dans quelle mesure elle vous correspond.",
   "echelle": {
     "min": 1,
     "max": 5,
@@ -249,11 +249,12 @@
     },
     {
       "id": "O6-01",
-      "texte": "J'ai tendance à voter pour des candidats progressistes.",
+      "texte": "J'ai tendance à voter pour des candidats de gauche.",
       "texte_original": "Tend to vote for liberal political candidates.",
       "domaine": "O",
       "facette": "O6",
-      "cle": "plus"
+      "cle": "plus",
+      "note": "Adaptation culturelle du projet : « liberal » et « conservative » (vocabulaire politique américain) rendus par « de gauche » et « de droite »."
     },
     {
       "id": "A6-01",
@@ -729,11 +730,12 @@
     },
     {
       "id": "O6-03",
-      "texte": "J'ai tendance à voter pour des candidats conservateurs.",
+      "texte": "J'ai tendance à voter pour des candidats de droite.",
       "texte_original": "Tend to vote for conservative political candidates.",
       "domaine": "O",
       "facette": "O6",
-      "cle": "moins"
+      "cle": "moins",
+      "note": "Adaptation culturelle du projet : « liberal » et « conservative » (vocabulaire politique américain) rendus par « de gauche » et « de droite »."
     },
     {
       "id": "A6-03",
