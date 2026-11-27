@@ -106,6 +106,23 @@ describe('questionnaires', () => {
     }
   });
 
+  it('les reformulations gardent le texte original et la dimension mesurée', () => {
+    const attendus = [
+      { id: 'IP-C04', domaine: 'C', original: 'Operate a calculator' },
+      { id: 'IP-E08', domaine: 'E', original: 'Market a new line of clothing' },
+    ];
+    for (const q of [qIp60, qMini]) {
+      for (const { id, domaine, original } of attendus) {
+        const item = q.items.find((i) => i.id === id);
+        expect(item?.domaine, `${q.id} ${id}`).toBe(domaine);
+        expect(item?.texte_original, `${q.id} ${id}`).toBe(original);
+      }
+    }
+    // Positions 12 et 23 du Mini-IP (rapport de développement, annexe A).
+    expect(qMini.items[11]?.id).toBe('IP-C04');
+    expect(qMini.items[22]?.id).toBe('IP-E08');
+  });
+
   it('les questionnaires O*NET modifiés citent la licence développeur et sa mention', () => {
     for (const q of [qIp60, qMini]) {
       expect(q.licence.nom).toBe('O*NET Tools Developer License');

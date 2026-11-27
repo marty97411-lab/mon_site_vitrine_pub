@@ -227,7 +227,7 @@
     },
     {
       "id": "IP-A08",
-      "texte": "Danser le jazz ou les claquettes en spectacle",
+      "texte": "Danser sur scène (modern jazz ou claquettes)",
       "texte_original": "Perform jazz or tap dance",
       "domaine": "A",
       "cle": "plus"
@@ -269,7 +269,7 @@
     },
     {
       "id": "IP-S04",
-      "texte": "Pratiquer des soins de rééducation",
+      "texte": "Faire de la rééducation avec des patients (kinésithérapie, ergothérapie)",
       "texte_original": "Perform rehabilitation therapy",
       "domaine": "S",
       "cle": "plus"
@@ -367,7 +367,7 @@
     },
     {
       "id": "IP-E08",
-      "texte": "Commercialiser une nouvelle ligne de vêtements",
+      "texte": "Faire la promotion et la vente d'une nouvelle collection de vêtements",
       "texte_original": "Market a new line of clothing",
       "domaine": "E",
       "cle": "plus"
@@ -388,7 +388,7 @@
     },
     {
       "id": "IP-C01",
-      "texte": "Concevoir un tableur sur ordinateur",
+      "texte": "Créer un tableau de calcul sur ordinateur (type Excel)",
       "texte_original": "Develop a spreadsheet using computer software",
       "domaine": "C",
       "cle": "plus"
@@ -409,28 +409,28 @@
     },
     {
       "id": "IP-C04",
-      "texte": "Se servir d'une calculatrice",
+      "texte": "Faire des calculs à la calculatrice (comptes, budgets, factures)",
       "texte_original": "Operate a calculator",
       "domaine": "C",
       "cle": "plus"
     },
     {
       "id": "IP-C05",
-      "texte": "Tenir les registres d'expédition et de réception",
+      "texte": "Tenir à jour le suivi des expéditions et des livraisons",
       "texte_original": "Keep shipping and receiving records",
       "domaine": "C",
       "cle": "plus"
     },
     {
       "id": "IP-C06",
-      "texte": "Calculer les salaires des employés",
+      "texte": "Calculer la paie des salariés",
       "texte_original": "Calculate the wages of employees",
       "domaine": "C",
       "cle": "plus"
     },
     {
       "id": "IP-C07",
-      "texte": "Faire l'inventaire des fournitures avec un terminal portable",
+      "texte": "Faire l'inventaire des fournitures avec un lecteur portable (scanner)",
       "texte_original": "Inventory supplies using a hand-held computer",
       "domaine": "C",
       "cle": "plus"
@@ -451,7 +451,7 @@
     },
     {
       "id": "IP-C10",
-      "texte": "Affranchir, trier et distribuer le courrier d'un organisme",
+      "texte": "Tamponner, trier et distribuer le courrier d'une entreprise ou d'une administration",
       "texte_original": "Stamp, sort, and distribute mail for an organization",
       "domaine": "C",
       "cle": "plus"

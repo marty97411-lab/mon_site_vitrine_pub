@@ -14,16 +14,16 @@
     "statut": "non-validee",
     "note": "Traduction du projet. Une adaptation française européenne de l'IPIP-NEO-300 (Thiry et Piolti, 2023) existe ; le projet a choisi de ne pas l'utiliser à ce stade."
   },
-  "consigne": "Décrivez-vous tel que vous êtes généralement aujourd'hui, et non tel que vous aimeriez être. Comparez-vous honnêtement aux personnes de votre âge que vous connaissez. Pour chaque affirmation, indiquez dans quelle mesure elle vous décrit avec exactitude.",
+  "consigne": "Décrivez-vous tel que vous êtes généralement aujourd'hui, et non tel que vous aimeriez être. Comparez-vous honnêtement aux personnes de même sexe et d'âge proche que vous connaissez. Pour chaque affirmation, indiquez dans quelle mesure elle vous correspond.",
   "echelle": {
     "min": 1,
     "max": 5,
     "libelles": [
-      "Très inexact",
-      "Plutôt inexact",
-      "Ni exact ni inexact",
-      "Plutôt exact",
-      "Très exact"
+      "Ne me correspond pas du tout",
+      "Ne me correspond plutôt pas",
+      "Ni l'un ni l'autre",
+      "Me correspond plutôt",
+      "Me correspond tout à fait"
     ],
     "langue": "fr"
   },
@@ -33,7 +33,7 @@
   "items": [
     {
       "id": "N1-01",
-      "texte": "Je me fais du souci.",
+      "texte": "Je suis du genre à me faire du souci.",
       "texte_original": "Worry about things.",
       "domaine": "N",
       "facette": "N1",
@@ -49,7 +49,7 @@
     },
     {
       "id": "O1-01",
-      "texte": "J'ai une imagination débordante.",
+      "texte": "J'ai beaucoup d'imagination.",
       "texte_original": "Have a vivid imagination.",
       "domaine": "O",
       "facette": "O1",
@@ -177,7 +177,7 @@
     },
     {
       "id": "A4-01",
-      "texte": "J'adore une bonne dispute.",
+      "texte": "J'aime bien les disputes et les affrontements.",
       "texte_original": "Love a good fight.",
       "domaine": "A",
       "facette": "A4",
@@ -193,7 +193,7 @@
     },
     {
       "id": "N5-01",
-      "texte": "Il m'arrive de faire des excès.",
+      "texte": "Je me laisse aller à des excès.",
       "texte_original": "Go on binges.",
       "domaine": "N",
       "facette": "N5",
@@ -225,7 +225,7 @@
     },
     {
       "id": "C5-01",
-      "texte": "Je suis toujours prêt.",
+      "texte": "Je suis toujours bien préparé.",
       "texte_original": "Am always prepared.",
       "domaine": "C",
       "facette": "C5",
@@ -249,11 +249,12 @@
     },
     {
       "id": "O6-01",
-      "texte": "J'ai tendance à voter pour des candidats progressistes.",
+      "texte": "J'ai tendance à voter pour des candidats de gauche.",
       "texte_original": "Tend to vote for liberal political candidates.",
       "domaine": "O",
       "facette": "O6",
-      "cle": "plus"
+      "cle": "plus",
+      "note": "Adaptation culturelle du projet : « liberal » et « conservative » (vocabulaire politique américain) rendus par « de gauche » et « de droite »."
     },
     {
       "id": "A6-01",
@@ -553,7 +554,7 @@
     },
     {
       "id": "N2-03",
-      "texte": "Je perds mon sang-froid.",
+      "texte": "Je m'emporte.",
       "texte_original": "Lose my temper.",
       "domaine": "N",
       "facette": "N2",
@@ -729,11 +730,12 @@
     },
     {
       "id": "O6-03",
-      "texte": "J'ai tendance à voter pour des candidats conservateurs.",
+      "texte": "J'ai tendance à voter pour des candidats de droite.",
       "texte_original": "Tend to vote for conservative political candidates.",
       "domaine": "O",
       "facette": "O6",
-      "cle": "moins"
+      "cle": "moins",
+      "note": "Adaptation culturelle du projet : « liberal » et « conservative » (vocabulaire politique américain) rendus par « de gauche » et « de droite »."
     },
     {
       "id": "A6-03",
@@ -745,7 +747,7 @@
     },
     {
       "id": "C6-03",
-      "texte": "Je me précipite.",
+      "texte": "Je me lance dans les choses sans attendre.",
       "texte_original": "Rush into things.",
       "domaine": "C",
       "facette": "C6",
@@ -921,7 +923,7 @@
     },
     {
       "id": "E5-04",
-      "texte": "Il m'arrive de faire des folies.",
+      "texte": "Je me lâche complètement, je fais le fou.",
       "texte_original": "Act wild and crazy.",
       "domaine": "E",
       "facette": "E5",

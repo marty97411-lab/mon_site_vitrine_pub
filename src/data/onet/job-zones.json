@@ -1,31 +1,41 @@
 {
   "source": "onet-31",
-  "note": "Intitulés vérifiés dans job_zone_reference.csv (O*NET 31.0), où les zones 1 et 2 sont regroupées. Traductions du projet.",
+  "note": "Intitulés et descriptions résumés depuis job_zone_reference.csv (O*NET 31.0), où les zones 1 et 2 sont regroupées. Traductions du projet. L'équivalence française est une approximation proposée par le projet, non officielle.",
   "zones": [
     {
       "zone": 1,
       "nom_original": "Job Zone 1-2: Very Little to Some Preparation Needed",
-      "nom": "Peu ou pas de préparation"
+      "nom": "Peu ou pas de préparation",
+      "description": "Le plus souvent, diplôme de fin d'études secondaires américain (high school diploma), parfois aucun ; formation sur le poste de quelques jours à un an.",
+      "equivalence_fr": "Sans diplôme, CAP-BEP ou bac"
     },
     {
       "zone": 2,
       "nom_original": "Job Zone 1-2: Very Little to Some Preparation Needed",
-      "nom": "Peu ou pas de préparation"
+      "nom": "Peu ou pas de préparation",
+      "description": "Le plus souvent, diplôme de fin d'études secondaires américain (high school diploma), parfois aucun ; formation sur le poste de quelques jours à un an.",
+      "equivalence_fr": "Sans diplôme, CAP-BEP ou bac"
     },
     {
       "zone": 3,
       "nom_original": "Job Zone Three: Medium Preparation Needed",
-      "nom": "Préparation moyenne"
+      "nom": "Préparation moyenne",
+      "description": "Formation en école professionnelle, expérience du métier ou diplôme américain en deux ans après le secondaire (associate's degree) ; souvent un à deux ans de formation, parfois un apprentissage.",
+      "equivalence_fr": "Bac professionnel à bac+2 (BTS), souvent avec apprentissage"
     },
     {
       "zone": 4,
       "nom_original": "Job Zone Four: Considerable Preparation Needed",
-      "nom": "Préparation importante"
+      "nom": "Préparation importante",
+      "description": "Le plus souvent, diplôme universitaire américain en quatre ans (bachelor's degree), et plusieurs années d'expérience.",
+      "equivalence_fr": "Bac+3 à bac+4 (licence, BUT)"
     },
     {
       "zone": 5,
       "nom_original": "Job Zone Five: Extensive Preparation Needed",
-      "nom": "Préparation très importante"
+      "nom": "Préparation très importante",
+      "description": "Études supérieures longues (master, doctorat, diplômes de médecine ou de droit) et, souvent, plus de cinq ans d'expérience.",
+      "equivalence_fr": "Bac+5 et plus (master, doctorat, études de santé)"
     }
   ]
 }
