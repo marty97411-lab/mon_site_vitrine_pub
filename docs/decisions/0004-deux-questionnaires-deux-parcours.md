@@ -53,5 +53,9 @@ orientent vers un métier.
 - Libellés de réponse : IPIP « Ne me correspond pas du tout » … « Me correspond tout à fait »
   (adaptation de l'échelle d'exactitude « Very Inaccurate » … « Very Accurate ») ; O*NET
   « Je n'aimerais pas du tout » … « J'aimerais beaucoup ».
+- Consigne IPIP : reprend celle de l'IPIP, y compris la comparaison aux personnes « de même sexe
+  et d'âge proche » (décision du 2026-11-27).
+- Items O6-01 et O6-03 (vote « liberal » / « conservative ») : adaptés en « de gauche » / « de
+  droite » (adaptation culturelle, décision du 2026-11-27), signalée dans le champ `note`.
 - **Pas d'écriture inclusive** (décision du 2026-11-27) : formes neutres quand elles sont naturelles,
   masculin générique sinon.

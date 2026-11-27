@@ -14,7 +14,7 @@
     "statut": "non-validee",
     "note": "Traduction du projet. Aucune traduction française de ces 50 items n'est répertoriée sur le site de l'IPIP."
   },
-  "consigne": "Décrivez-vous tel que vous êtes généralement aujourd'hui, et non tel que vous aimeriez être. Comparez-vous honnêtement aux personnes de votre âge que vous connaissez. Pour chaque affirmation, indiquez dans quelle mesure elle vous correspond.",
+  "consigne": "Décrivez-vous tel que vous êtes généralement aujourd'hui, et non tel que vous aimeriez être. Comparez-vous honnêtement aux personnes de même sexe et d'âge proche que vous connaissez. Pour chaque affirmation, indiquez dans quelle mesure elle vous correspond.",
   "echelle": {
     "min": 1,
     "max": 5,
