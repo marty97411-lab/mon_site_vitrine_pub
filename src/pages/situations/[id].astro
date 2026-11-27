@@ -1,0 +1,37 @@
+---
+import { render } from 'astro:content';
+import Article from '../../layouts/Article.astro';
+import Bouton from '../../components/Bouton.astro';
+import { chargerContenu } from '../../lib/contenu';
+
+export async function getStaticPaths() {
+  const { situations } = await chargerContenu();
+  return situations.map((page) => ({ params: { id: page.id }, props: { page } }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+const d = page.data;
+---
+
+<Article
+  titre={d.titre}
+  description={d.description}
+  badge={d.badge}
+  essentiel={d.essentiel}
+  comprendre={d.comprendre}
+  corps={page.body}
+  sources={d.sources}
+  pourAllerPlusLoin={d.pour_aller_plus_loin}
+  brouillon={d.brouillon}
+  fil={[{ libelle: 'Ma situation', href: '/situations' }, { libelle: d.titre }]}
+  illustration="chemin"
+>
+  <div slot="apres-comprendre" class="actions">
+    <Bouton href="/parcours">Faire le test</Bouton>
+    <Bouton href="/besoin-d-en-parler" variante="secondaire">
+      Parler à quelqu'un
+    </Bouton>
+  </div>
+  <Content />
+</Article>

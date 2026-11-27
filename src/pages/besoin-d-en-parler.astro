@@ -1,0 +1,99 @@
+---
+import Base from '../layouts/Base.astro';
+import Carte from '../components/Carte.astro';
+import Essentiel from '../components/Essentiel.astro';
+import Source from '../components/Source.astro';
+---
+
+<Base
+  titre="Besoin d'en parler ?"
+  description="Des personnes peuvent vous écouter et vous accompagner, gratuitement : 3114, conseil en évolution professionnelle, Onisep, France Travail."
+  fil={[{ libelle: "Besoin d'en parler ?" }]}
+>
+  <h1>Besoin d'en parler ?</h1>
+  <Essentiel>
+    <p>
+      Réfléchir à sa vie et à son travail peut remuer beaucoup de choses. Vous n'avez pas à le faire
+      seul : des personnes sont là pour vous écouter et vous accompagner, gratuitement.
+    </p>
+  </Essentiel>
+
+  <section aria-labelledby="ecoute">
+    <h2 id="ecoute">Si vous traversez un moment difficile</h2>
+    <Carte class="carte-3114">
+      <p class="numero">
+        <a href="tel:3114">3114</a>
+      </p>
+      <p>
+        <strong>Numéro national de prévention du suicide.</strong> Si vous êtes en détresse, si vous
+        avez des pensées suicidaires, ou si vous vous inquiétez pour un proche, vous pouvez appeler
+        le 3114. Un professionnel du soin, formé à la prévention du suicide, vous écoute.
+      </p>
+      <p>
+        Gratuit, 24 h/24 et 7 j/7, en métropole et en outre-mer.{' '}
+        <a href="https://3114.fr/">3114.fr</a>
+      </p>
+      <p class="discret">En cas de danger immédiat, appelez le 15 ou le 112.</p>
+    </Carte>
+    <Source id="site-3114" />
+  </section>
+
+  <section aria-labelledby="accompagnement">
+    <h2 id="accompagnement">Pour être accompagné dans votre parcours</h2>
+    <div class="grille deux">
+      <Carte titre="Conseil en évolution professionnelle (CEP)">
+        <p>
+          Un conseiller vous aide à faire le point et à construire un projet professionnel. Le
+          service est gratuit, personnalisé, confidentiel et neutre.
+        </p>
+        <p>
+          <a href="https://mon-cep.org/">mon-cep.org</a>
+        </p>
+      </Carte>
+      <Carte titre="Élèves et étudiants : Onisep et CIO">
+        <p>
+          Le service « Mon orientation en ligne » de l'Onisep vous met en relation avec des
+          conseillers, par téléphone ou par tchat, gratuitement. Les centres d'information et
+          d'orientation (CIO) vous reçoivent aussi.
+        </p>
+        <p>
+          <a href="https://www.onisep.fr/mon-orientation-en-ligne">Mon orientation en ligne</a>
+        </p>
+      </Carte>
+      <Carte titre="Demandeurs d'emploi : France Travail">
+        <p>
+          France Travail accompagne les personnes à la recherche d'un emploi, notamment pour définir
+          un projet et trouver une formation.
+        </p>
+        <p>
+          <a href="https://www.francetravail.fr/">francetravail.fr</a>
+        </p>
+      </Carte>
+    </div>
+  </section>
+
+  <div class="lecture">
+    <h2>Sources</h2>
+    <Source id="mon-cep" />
+    <Source id="onisep-moel" />
+    <Source id="france-travail" />
+    <p class="discret">
+      Informations vérifiées sur les sites officiels le 27 novembre 2026. TODO : vérifier le numéro
+      d'urgence 15/112 sur une source officielle et un lien officiel vers l'annuaire des CIO.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .numero {
+    font-family: var(--police-titre);
+    font-variation-settings: 'SOFT' 100;
+    font-size: 2.6rem;
+    font-weight: 650;
+    margin: 0;
+  }
+  .numero a {
+    color: var(--c-primaire);
+    text-decoration: none;
+  }
+</style>

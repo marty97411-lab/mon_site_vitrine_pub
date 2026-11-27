@@ -1,0 +1,164 @@
+---
+/**
+ * Mise en page commune des articles en trois niveaux :
+ * 1. L'essentiel (visible) ; 2. Comprendre (visible) ; 3. Approfondir (dépliable, corps Markdown).
+ */
+import Base from './Base.astro';
+import Badge from '../components/Badge.astro';
+import Essentiel from '../components/Essentiel.astro';
+import EnSavoirPlus from '../components/EnSavoirPlus.astro';
+import ListeSources from '../components/ListeSources.astro';
+import ScienceOuReflexion from '../components/ScienceOuReflexion.astro';
+import Illustration from '../components/Illustration.astro';
+import { chargerContenu, sourcesParIds } from '../lib/contenu';
+import { minutesDeLecture } from '../lib/lecture';
+
+interface Props {
+  titre: string;
+  description: string;
+  badge: 'science' | 'reflexion';
+  essentiel: string;
+  comprendre: string;
+  corps?: string | undefined;
+  sources: string[];
+  pourAllerPlusLoin: { href: string; libelle: string }[];
+  brouillon: boolean;
+  fil: { libelle: string; href?: string }[];
+  illustration?: 'chemin' | 'bulles' | 'horizon';
+}
+
+const {
+  titre,
+  description,
+  badge,
+  essentiel,
+  comprendre,
+  corps,
+  sources,
+  pourAllerPlusLoin,
+  brouillon,
+  fil,
+  illustration = 'chemin',
+} = Astro.props;
+const contenu = await chargerContenu();
+const minutes = minutesDeLecture(essentiel, comprendre, corps);
+---
+
+<Base titre={titre} description={description} fil={fil} typeOg="article">
+  <header class="tete">
+    <Illustration variante={illustration} class="deco" />
+    <div class="tete-texte">
+      <p class="meta">
+        <Badge type={badge} /> <span class="discret">{minutes} min de lecture</span>
+      </p>
+      <h1>{titre}</h1>
+      <p class="chapeau">{description}</p>
+    </div>
+  </header>
+
+  {brouillon && (
+    <p class="avertissement brouillon">
+      <strong>Brouillon à relire.</strong> Cette page est une première version : son contenu doit
+      encore être relu et validé.
+    </p>
+  )}
+
+  {badge === 'reflexion' && <ScienceOuReflexion />}
+
+  <Essentiel>
+    <p>{essentiel}</p>
+  </Essentiel>
+
+  <section class="lecture" aria-labelledby="comprendre">
+    <h2 id="comprendre">Comprendre</h2>
+    {comprendre.split(/\n\s*\n/).map((p) => (
+      <p>{p}</p>
+    ))}
+  </section>
+
+  <slot name="apres-comprendre" />
+
+  <div class="lecture approfondir">
+    <EnSavoirPlus titre="Approfondir : études, limites et références">
+      <slot />
+      <ListeSources
+        sources={sourcesParIds(contenu, sources)}
+        titre="Références"
+        niveau={3}
+        idTitre="references-article"
+      />
+    </EnSavoirPlus>
+  </div>
+
+  <slot name="apres" />
+
+  {pourAllerPlusLoin.length > 0 && (
+    <section aria-labelledby="plus-loin" class="plus-loin">
+      <h2 id="plus-loin">Pour aller plus loin</h2>
+      <ul>
+        {pourAllerPlusLoin.map((l) => (
+          <li>
+            <a href={l.href}>{l.libelle}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+</Base>
+
+<style>
+  .tete {
+    position: relative;
+    overflow: hidden;
+    background: var(--c-surface-douce);
+    border-radius: var(--rayon);
+    padding: var(--espace-4);
+    margin-top: var(--espace-3);
+  }
+  .tete-texte {
+    position: relative;
+    max-width: 44rem;
+  }
+  :global(.deco) {
+    position: absolute;
+    right: -3.5rem;
+    top: -3.5rem;
+    width: 10rem;
+    opacity: 0.35;
+  }
+  @media (min-width: 48rem) {
+    .tete {
+      padding: var(--espace-5);
+    }
+    :global(.deco) {
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16rem;
+      opacity: 1;
+    }
+    .tete-texte {
+      max-width: calc(100% - 17rem);
+    }
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--espace-3);
+    margin: 0;
+  }
+  .chapeau {
+    font-size: 1.1rem;
+    color: var(--c-texte-doux);
+    margin-bottom: 0;
+  }
+  .approfondir :global(h2) {
+    font-size: 1.35rem;
+  }
+  .plus-loin ul {
+    display: grid;
+    gap: var(--espace-2);
+    padding-left: 1.2rem;
+  }
+</style>

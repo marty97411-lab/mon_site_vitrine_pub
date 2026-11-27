@@ -1,0 +1,30 @@
+---
+import Badge from './Badge.astro';
+---
+
+<aside class="science-reflexion" aria-label="Science ou réflexion ?">
+  <p class="titre">Science ou réflexion ?</p>
+  <p>
+    Les pages <Badge type="science" /> résument ce que montrent des études : elles décrivent, avec
+    des chiffres et des limites. Les pages <Badge type="reflexion" /> présentent des idées de
+    philosophes : elles ne prouvent rien, elles proposent des manières de penser sa vie et son
+    travail. Les deux sont utiles, à condition de ne pas les confondre.
+  </p>
+</aside>
+
+<style>
+  .science-reflexion {
+    background: var(--c-surface-douce);
+    border-radius: var(--rayon);
+    padding: var(--espace-3) var(--espace-4);
+    margin-block: var(--espace-4);
+    max-width: var(--mesure);
+  }
+  .titre {
+    font-weight: 700;
+    margin-top: 0;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+</style>

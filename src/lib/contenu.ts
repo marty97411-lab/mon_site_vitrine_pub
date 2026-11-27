@@ -21,6 +21,8 @@ export interface Contenu {
   parcours: CollectionEntry<'parcours'>[];
   traits: CollectionEntry<'traits'>[];
   metiers: CollectionEntry<'metiers'>[];
+  situations: CollectionEntry<'situations'>[];
+  philosophie: CollectionEntry<'philosophie'>[];
 }
 
 let cache: Promise<Contenu> | undefined;
@@ -32,13 +34,16 @@ function refsAffirmations(origine: string, affirmations: readonly Affirmation[])
 }
 
 async function charger(): Promise<Contenu> {
-  const [sources, questionnaires, parcours, traits, metiers] = await Promise.all([
-    getCollection('sources'),
-    getCollection('questionnaires'),
-    getCollection('parcours'),
-    getCollection('traits'),
-    getCollection('metiers'),
-  ]);
+  const [sources, questionnaires, parcours, traits, metiers, situations, philosophie] =
+    await Promise.all([
+      getCollection('sources'),
+      getCollection('questionnaires'),
+      getCollection('parcours'),
+      getCollection('traits'),
+      getCollection('metiers'),
+      getCollection('situations'),
+      getCollection('philosophie'),
+    ]);
 
   const refs: Reference[] = [];
   for (const { data: q } of questionnaires) {
@@ -58,6 +63,16 @@ async function charger(): Promise<Contenu> {
   }
   for (const { id, data } of traits) {
     refs.push(...data.sources.map((idSource) => ({ origine: `traits/${id}`, idSource })));
+    refs.push(...refsAffirmations(`traits/${id} → atouts`, data.atouts));
+    refs.push(...refsAffirmations(`traits/${id} → couts`, data.couts));
+  }
+  for (const [nom, entrees] of [
+    ['situations', situations],
+    ['philosophie', philosophie],
+  ] as const) {
+    for (const { id, data } of entrees) {
+      refs.push(...data.sources.map((idSource) => ({ origine: `${nom}/${id}`, idSource })));
+    }
   }
   for (const { id, data } of metiers) {
     const o = `metiers/${id}`;
@@ -85,7 +100,9 @@ async function charger(): Promise<Contenu> {
   traits.sort((a, b) => a.data.ordre - b.data.ordre);
   metiers.sort((a, b) => a.data.intitule.localeCompare(b.data.intitule, 'fr'));
   parcours.sort((a) => (a.data.id === 'rapide' ? -1 : 1));
-  return { sources, questionnaires, parcours, traits, metiers };
+  situations.sort((a, b) => a.data.ordre - b.data.ordre);
+  philosophie.sort((a, b) => a.data.ordre - b.data.ordre);
+  return { sources, questionnaires, parcours, traits, metiers, situations, philosophie };
 }
 
 export function chargerContenu(): Promise<Contenu> {

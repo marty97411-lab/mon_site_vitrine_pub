@@ -1,0 +1,30 @@
+---
+import { render } from 'astro:content';
+import Article from '../../layouts/Article.astro';
+import { chargerContenu } from '../../lib/contenu';
+
+export async function getStaticPaths() {
+  const { philosophie } = await chargerContenu();
+  return philosophie.map((page) => ({ params: { id: page.id }, props: { page } }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+const d = page.data;
+---
+
+<Article
+  titre={d.titre}
+  description={d.description}
+  badge={d.badge}
+  essentiel={d.essentiel}
+  comprendre={d.comprendre}
+  corps={page.body}
+  sources={d.sources}
+  pourAllerPlusLoin={d.pour_aller_plus_loin}
+  brouillon={d.brouillon}
+  fil={[{ libelle: 'Philosophie', href: '/philosophie' }, { libelle: d.titre }]}
+  illustration="horizon"
+>
+  <Content />
+</Article>
