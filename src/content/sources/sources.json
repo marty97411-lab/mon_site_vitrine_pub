@@ -1,0 +1,133 @@
+[
+  {
+    "id": "ipip",
+    "type": "site-web",
+    "auteurs": ["Goldberg, L. R."],
+    "annee": null,
+    "titre": "International Personality Item Pool: A Scientific Collaboratory for the Development of Advanced Measures of Personality Traits and Other Individual Differences",
+    "url": "https://ipip.ori.org/",
+    "licence": "Domaine public",
+    "statut": "verifie",
+    "consulte_le": "2026-11-27",
+    "notes": "Page de permission (https://ipip.ori.org/newPermission.htm) : « Because the IPIP has been placed in the public domain, permission has already been automatically granted for any person to use IPIP items, scales, and inventories for any purpose, commercial or non-commercial. » Titre complet du site à revérifier."
+  },
+  {
+    "id": "johnson-2014",
+    "type": "article",
+    "auteurs": ["Johnson, J. A."],
+    "annee": 2014,
+    "titre": "Measuring thirty facets of the Five Factor Model with a 120-item public domain inventory: Development of the IPIP-NEO-120",
+    "publication": "Journal of Research in Personality",
+    "volume": "51",
+    "pages": "78-89",
+    "doi": "10.1016/j.jrp.2014.05.003",
+    "url": "https://ipip.ori.org/30FacetNEO-PI-RItems.htm",
+    "licence": "Items : domaine public (IPIP). Article : droits de l'éditeur.",
+    "statut": "a-verifier",
+    "notes": "Référence et liste des 120 items vérifiées sur la page IPIP (consultée le 2026-11-27). Le DOI n'a pas encore été vérifié. Vérifier si l'article publie des normes utilisables (moyennes, écarts-types)."
+  },
+  {
+    "id": "onet-31",
+    "type": "base-de-donnees",
+    "auteurs": ["U.S. Department of Labor, Employment and Training Administration (USDOL/ETA)"],
+    "annee": null,
+    "titre": "O*NET 31.0 Database",
+    "url": "https://www.onetcenter.org/database.html",
+    "licence": "CC BY 4.0",
+    "statut": "verifie",
+    "consulte_le": "2026-11-27",
+    "notes": "Licence vérifiée sur https://www.onetcenter.org/license_db.html. Mention obligatoire en cas de modification : « This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). Used under the CC BY 4.0 license. O*NET® is a trademark of USDOL/ETA. [Nom] has modified all or some of this information. USDOL/ETA has not approved, endorsed, or tested these modifications. » La licence CC BY ne couvre que les fichiers téléchargeables de la base, pas les outils (Interest Profiler) ni le reste du site."
+  },
+  {
+    "id": "onet-online",
+    "type": "site-web",
+    "auteurs": ["National Center for O*NET Development"],
+    "annee": null,
+    "titre": "O*NET OnLine",
+    "url": "https://www.onetonline.org/",
+    "licence": "À vérifier (O*NET Resource Center Content License)",
+    "statut": "verifie",
+    "consulte_le": "2026-11-27",
+    "notes": "Utilisé pour vérifier les codes O*NET-SOC, les intitulés et les codes d'intérêts (« Interest code ») des fiches d'exemple. À terme, reprendre ces valeurs directement depuis le fichier « Interests » de la base O*NET 31.0 (licence CC BY 4.0)."
+  },
+  {
+    "id": "onet-tools-licence",
+    "type": "site-web",
+    "auteurs": ["National Center for O*NET Development"],
+    "annee": null,
+    "titre": "O*NET Tools Developer License",
+    "url": "https://www.onetcenter.org/license_toolsdev.html",
+    "licence": "O*NET Tools Developer License",
+    "statut": "verifie",
+    "consulte_le": "2026-11-27",
+    "notes": "Licence distincte qui s'applique aux outils d'exploration (dont l'Interest Profiler). Conditions à lire en détail avant toute réutilisation de ses items."
+  },
+  {
+    "id": "holland-1997",
+    "type": "livre",
+    "auteurs": ["Holland, J. L."],
+    "annee": 1997,
+    "titre": "Making vocational choices: A theory of vocational personalities and work environments (3e éd.)",
+    "publication": "Psychological Assessment Resources",
+    "statut": "a-verifier",
+    "notes": "Référence de base du modèle RIASEC. Éditeur, édition et ISBN à vérifier."
+  },
+  {
+    "id": "larson-2002",
+    "type": "article",
+    "auteurs": ["Larson, L. M.", "Rottinghaus, P. J.", "Borgen, F. H."],
+    "annee": 2002,
+    "titre": "Meta-analyses of Big Six interests and Big Five personality factors",
+    "publication": "Journal of Vocational Behavior",
+    "volume": "61",
+    "pages": "217-239",
+    "doi": "10.1006/jvbe.2001.1854",
+    "statut": "a-verifier",
+    "notes": "Méta-analyse des liens entre intérêts RIASEC et Big Five. Toutes les métadonnées (DOI compris) et les coefficients sont à vérifier sur l'article avant tout usage."
+  },
+  {
+    "id": "barrick-mount-1991",
+    "type": "article",
+    "auteurs": ["Barrick, M. R.", "Mount, M. K."],
+    "annee": 1991,
+    "titre": "The Big Five personality dimensions and job performance: A meta-analysis",
+    "publication": "Personnel Psychology",
+    "volume": "44",
+    "pages": "1-26",
+    "doi": "10.1111/j.1744-6570.1991.tb00688.x",
+    "statut": "a-verifier",
+    "notes": "Méta-analyse sur personnalité et performance au travail. À vérifier, et à compléter par des méta-analyses plus récentes."
+  },
+  {
+    "id": "armstrong-2008",
+    "type": "article",
+    "auteurs": ["Armstrong, P. I.", "Allison, W.", "Rounds, J."],
+    "annee": 2008,
+    "titre": "Development and initial validation of brief public domain RIASEC marker scales",
+    "publication": "Journal of Vocational Behavior",
+    "volume": "73",
+    "pages": "287-299",
+    "statut": "a-verifier",
+    "notes": "Piste pour un futur questionnaire d'intérêts RIASEC libre de droits. Métadonnées, DOI et statut « domaine public » des items à vérifier."
+  },
+  {
+    "id": "rome-france-travail",
+    "type": "base-de-donnees",
+    "auteurs": ["France Travail"],
+    "annee": null,
+    "titre": "Répertoire opérationnel des métiers et des emplois (ROME)",
+    "licence": "Licence Ouverte Etalab 2.0 (supposée, à vérifier)",
+    "statut": "a-verifier",
+    "notes": "Prévu pour la correspondance avec les métiers français. URL officielle, version et licence à vérifier."
+  },
+  {
+    "id": "abramowitz-stegun-1964",
+    "type": "livre",
+    "auteurs": ["Abramowitz, M.", "Stegun, I. A."],
+    "annee": 1964,
+    "titre": "Handbook of Mathematical Functions with Formulas, Graphs, and Mathematical Tables",
+    "publication": "National Bureau of Standards",
+    "statut": "a-verifier",
+    "notes": "Approximation de la fonction d'erreur (formule 7.1.26) utilisée dans src/lib/scoring/percentiles.ts. Numéro de formule et précision annoncée à vérifier."
+  }
+]
