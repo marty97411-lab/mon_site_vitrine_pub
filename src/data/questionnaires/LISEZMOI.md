@@ -2,12 +2,12 @@
 
 Un fichier JSON par questionnaire, validé par `questionnaireSchema` (`src/lib/schemas/questionnaire.ts`).
 
-| Fichier                | Source des items                                                                                                     | Licence        | Langue                            |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------- | --------------------------------- |
-| `ipip-neo-120.json`    | <https://ipip.ori.org/30FacetNEO-PI-RItems.htm> (Johnson, 2014)                                                      | Domaine public | Français (traduction non validée) |
-| `ipip-bffm-50.json`    | <https://ipip.ori.org/New_IPIP-50-item-scale.htm> et <https://ipip.ori.org/newBigFive5broadKey.htm> (Goldberg, 1992) | Domaine public | Français (traduction non validée) |
-| `onet-ip-60.json`      | <https://www.onetcenter.org/dl_tools/ipsf/Interest_Profiler.pdf>                                                     | CC BY-ND 4.0   | Anglais, à l'identique            |
-| `onet-mini-ip-30.json` | Rounds et coll. (2016), annexe A, <https://www.onetcenter.org/reports/Mini-IP.html>                                  | CC BY-ND 4.0   | Anglais, à l'identique            |
+| Fichier                | Source des items                                                                                                     | Licence                       | Langue                            |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------- | ----------------------------- | --------------------------------- |
+| `ipip-neo-120.json`    | <https://ipip.ori.org/30FacetNEO-PI-RItems.htm> (Johnson, 2014)                                                      | Domaine public                | Français (traduction non validée) |
+| `ipip-bffm-50.json`    | <https://ipip.ori.org/New_IPIP-50-item-scale.htm> et <https://ipip.ori.org/newBigFive5broadKey.htm> (Goldberg, 1992) | Domaine public                | Français (traduction non validée) |
+| `onet-ip-60.json`      | <https://www.onetcenter.org/dl_tools/ipsf/Interest_Profiler.pdf>                                                     | O*NET Tools Developer License | Français (traduction non validée) |
+| `onet-mini-ip-30.json` | Rounds et coll. (2016), annexe A, <https://www.onetcenter.org/reports/Mini-IP.html>                                  | O*NET Tools Developer License | Français (traduction non validée) |
 
 Toutes les sources ont été consultées le 2026-11-27. Textes et clés extraits automatiquement des
 pages ci-dessus, puis contrôlés par les tests de `src/lib/schemas/donnees.test.ts`.
@@ -19,4 +19,10 @@ pages ci-dessus, puis contrôlés par les tests de `src/lib/schemas/donnees.test
 - Interest Profiler : `IP-<dimension><rang>`, rang = position dans le bloc de la dimension du PDF.
   Le Mini-IP réutilise les identifiants de l'IP 60.
 
-**Ne jamais modifier** le texte des items O*NET (licence CC BY-ND).
+**Items O\*NET** : traduits par le projet sous O*NET Tools Developer License. Le texte original
+(`texte_original`) ne doit jamais être modifié. La licence impose une mention de modification
+(pied de page, page du questionnaire, README), la page `/modifications-onet` et une étude de
+validation avant diffusion, **non réalisée**.
+
+**Pas d'écriture inclusive** dans les traductions (décision du projet) : formes neutres quand elles
+sont naturelles, masculin générique sinon.

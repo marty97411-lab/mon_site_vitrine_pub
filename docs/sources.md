@@ -24,18 +24,18 @@ vérifié**.
 | `ipip-scoring`      | Scoring Instructions, <https://ipip.ori.org/newScoringInstructions.htm>                                             | ✅         | Échelle 1-5 « Very Inaccurate » … « Very Accurate », inversion, somme.                                                                                                                                                     |
 | `ipip-normes`       | Norms and Data Sets, <https://ipip.ori.org/newNorms.htm>                                                            | ✅         | L'IPIP ne fournit pas de normes et déconseille les normes « toutes faites ». Données brutes de Johnson sur OSF (non consultées).                                                                                           |
 | `ipip-traductions`  | Item Translations, <https://ipip.ori.org/newItemTranslations.htm>                                                   | ✅         | Traduction québécoise de l'IPIP-NEO-300 (Gravel) et adaptation européenne (Thiry et Piolti, 2023). Aucune traduction française des 50 marqueurs.                                                                           |
-| `thiry-piolti-2023` | Adaptation en français européen de l'IPIP-NEO-300                                                                   | ⚠️         | Document et licence **non consultés** (site inaccessible depuis l'environnement).                                                                                                                                          |
+| `thiry-piolti-2023` | Adaptation en français européen de l'IPIP-NEO-300                                                                   | ⚠️         | Non consulté ; non utilisé par décision du projet (2026-11-27).                                                                                                                                                            |
 
 ## Questionnaires d'intérêts (O*NET Interest Profiler)
 
-| Id                          | Source                                                               | Licence                                | Statut | Notes                                                                                                                                      |
-| --------------------------- | -------------------------------------------------------------------- | -------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `onet-ip-manual-2021`       | Rounds, Hoff et Lewis (dir.), *O*NET Interest Profiler Manual*, 2021 | —                                      | ✅     | Cotation (ch. 3) et rapprochement par corrélation avec seuils (ch. 2).                                                                     |
-| `rounds-2016-mini-ip`       | Rounds et coll. (2016), Mini-IP                                      | —                                      | ✅     | 30 items et ordre (annexe A). Forme du nom d'un auteur à vérifier.                                                                         |
-| `onet-ip-short-form`        | Interest Profiler Short Form (PDF)                                   | CC BY-ND 4.0                           | ✅     | 60 items et leur dimension.                                                                                                                |
-| `onet-career-tools-licence` | Career Exploration Tools Content License                             | CC BY-ND 4.0 / Tools Developer License | ✅     | Toute modification, **traduction comprise**, exige une étude de validation préalable (Tools Developer License). D'où des items en anglais. |
-| `onet-tools-licence`        | O*NET Tools Developer License                                        | —                                      | ✅     | Clause « Validation » lue.                                                                                                                 |
-| `gregory-lewis-2016`        | Rapport technique sur le rapprochement (cité par le manuel)          | —                                      | ⚠️     | Non consulté.                                                                                                                              |
+| Id                          | Source                                                               | Licence                                    | Statut | Notes                                                                                                                                                                                           |
+| --------------------------- | -------------------------------------------------------------------- | ------------------------------------------ | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `onet-ip-manual-2021`       | Rounds, Hoff et Lewis (dir.), *O*NET Interest Profiler Manual*, 2021 | —                                          | ✅     | Cotation (ch. 3) et rapprochement par corrélation avec seuils (ch. 2).                                                                                                                          |
+| `rounds-2016-mini-ip`       | Rounds et coll. (2016), Mini-IP                                      | —                                          | ✅     | 30 items et ordre (annexe A). Forme du nom d'un auteur à vérifier.                                                                                                                              |
+| `onet-ip-short-form`        | Interest Profiler Short Form (PDF)                                   | Tools Developer License (version traduite) | ✅     | 60 items et leur dimension.                                                                                                                                                                     |
+| `onet-career-tools-licence` | Career Exploration Tools Content License                             | CC BY-ND 4.0 / Tools Developer License     | ✅     | Toute modification, **traduction comprise**, relève de la Tools Developer License, qui exige une étude de validation préalable. Items traduits par décision du projet : **étude non réalisée**. |
+| `onet-tools-licence`        | O*NET Tools Developer License                                        | —                                          | ✅     | Clause « Validation » lue.                                                                                                                                                                      |
+| `gregory-lewis-2016`        | Rapport technique sur le rapprochement (cité par le manuel)          | —                                          | ⚠️     | Non consulté.                                                                                                                                                                                   |
 
 ## Métiers (base O*NET)
 
@@ -65,9 +65,9 @@ vérifié**.
 ## Données encore manquantes (TODO)
 
 - Vérification des DOI et métadonnées des articles (Crossref ou accès aux éditeurs).
-- Examen de l'adaptation française de Thiry et Piolti (2023) et de sa licence.
+- Étude de validation de la traduction des questionnaires O*NET (exigée par leur licence avant diffusion).
 - Sources permettant de relier un trait de personnalité à un atout ou une vigilance dans un métier.
 - Sources pour l'avertissement « la personnalité n'explique qu'une partie de la réussite et de la
   satisfaction au travail ».
 - Correspondance O*NET → ROME et intitulés français.
-- Effet du passage à des profils « Machine Learning/Expert » sur les seuils de rapprochement.
+- Effet du passage à des profils « Machine Learning/Expert » sur les seuils (seuils gardés et signalés).

@@ -35,9 +35,13 @@ qu'une partie de la réussite et de la satisfaction au travail.
   maison non justifiée.
 - **Métiers** : base O*NET 31.0 (CC BY 4.0, attribution obligatoire), importée par
   `scripts/import-onet.mjs` ; à terme, correspondance vers le ROME (France Travail).
-- **Licences des items** : IPIP = domaine public. O*NET Interest Profiler = **CC BY-ND 4.0** :
-  items reproduits **à l'identique, en anglais** ; ne jamais les traduire ni les modifier sans
-  étude de validation (O*NET Tools Developer License).
+- **Licences des items** : IPIP = domaine public. O*NET Interest Profiler = items **traduits** par
+  le projet sous \**O*NET Tools Developer License** : garder le texte original intact, afficher la
+  mention de modification (pied de page, questionnaire, README) et la page `/modifications-onet`.
+  L'étude de validation exigée par la licence avant diffusion **n'est pas faite** : la signaler et
+  ne pas présenter la traduction comme validée.
+- **Pas d'écriture inclusive** (ni point médian ni doublets) : formes neutres si naturelles, sinon
+  masculin générique.
 - **Pas de percentile** : l'IPIP déconseille les normes « toutes faites » ; on affiche la position
   sur l'échelle 1–5.
 - **Toute affirmation affichée doit être reliée à une source** de
@@ -118,7 +122,7 @@ Avant chaque commit : `npm run lint && npm test && npm run build`.
 - **Contenus** :
   - les fiches d'exemple portent `statut: exemple` (métiers) ou `brouillon: true` (traits) ;
   - les traductions d'items portent `traduction.statut: "non-validee"` tant qu'aucune
-    validation n'est citée ; les items O*NET sont en anglais (`"sans-objet"`) ;
+    validation n'est citée (c'est le cas de tous les items actuels, IPIP comme O*NET) ;
   - un item commun à deux questionnaires garde le même identifiant (réponse réutilisée) ;
   - une nouvelle source s'ajoute d'abord dans `sources.json` (avec `statut`), puis dans
     `docs/sources.md`.
@@ -128,6 +132,6 @@ Avant chaque commit : `npm run lint && npm test && npm run build`.
 
 ## Points ouverts
 
-Voir les sections « TODO » de `docs/sources.md` : vérification des DOI, adaptation française de
-Thiry et Piolti (2023), liens sourcés personnalité → métiers, correspondance ROME, filtre par
-niveau de préparation, choix de l'hébergeur.
+Voir les sections « TODO » de `docs/sources.md` : vérification des DOI, étude de validation de la
+traduction O*NET (avant toute mise en ligne publique), liens sourcés personnalité → métiers,
+correspondance ROME, filtre par niveau de préparation, choix de l'hébergeur.

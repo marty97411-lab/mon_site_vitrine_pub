@@ -60,7 +60,7 @@
     "licence": "O*NET Tools Developer License",
     "statut": "verifie",
     "consulte_le": "2026-11-27",
-    "notes": "Licence distincte qui s'applique aux outils d'exploration (dont l'Interest Profiler). Conditions à lire en détail avant toute réutilisation de ses items."
+    "notes": "Licence appliquée aux questionnaires d'intérêts traduits. Obligations : mention de modification visible et dans le README, page « modifications and disclaimers » (/modifications-onet), étude de validation avant diffusion (NON réalisée)."
   },
   {
     "id": "holland-1997",
@@ -198,7 +198,7 @@
     "titre": "Adaptation en français européen de l'IPIP-NEO-300",
     "url": "https://benjaminthiry.netlify.app/posts/2023-02-12-ipipneo300fr",
     "statut": "a-verifier",
-    "notes": "Lien relevé sur la page des traductions de l'IPIP. Document, méthode et licence non consultés (site inaccessible depuis l'environnement de travail)."
+    "notes": "Lien relevé sur la page des traductions de l'IPIP. Non consulté ; le projet a choisi de ne pas l'utiliser à ce stade (décision du 2026-11-27)."
   },
   {
     "id": "onet-ip-manual-2021",
@@ -231,7 +231,7 @@
     "annee": null,
     "titre": "O*NET Interest Profiler Short Form (version papier)",
     "url": "https://www.onetcenter.org/dl_tools/ipsf/Interest_Profiler.pdf",
-    "licence": "CC BY-ND 4.0 ou O*NET Tools Developer License",
+    "licence": "O*NET Tools Developer License (version traduite)",
     "statut": "verifie",
     "consulte_le": "2026-11-27",
     "notes": "Texte des 60 items et leur dimension. L'ordre de présentation de la version web n'a pas été vérifié : le site reprend l'ordre du PDF."
@@ -246,7 +246,7 @@
     "licence": "CC BY-ND 4.0 / O*NET Tools Developer License",
     "statut": "verifie",
     "consulte_le": "2026-11-27",
-    "notes": "Copie à l'identique : CC BY-ND 4.0. Modification (dont traduction) : O*NET Tools Developer License, qui impose une étude de validation avant diffusion. D'où des items affichés en anglais."
+    "notes": "Copie à l'identique : CC BY-ND 4.0. Modification (dont traduction) : O*NET Tools Developer License, qui impose une étude de validation avant diffusion. Le projet a choisi de traduire les items (décision du 2026-11-27) : il applique la licence développeur, mais l'étude de validation n'a pas été réalisée."
   },
   {
     "id": "onet-familles",

@@ -48,15 +48,21 @@ const ITEMS_PAR_PAGE = 10;
           {q.nom} ·{' '}
           {q.traduction.statut === 'non-validee'
             ? 'traduction française non validée'
-            : 'items en anglais (version originale)'}{' '}
+            : 'version originale'}{' '}
           · licence <a href={q.licence.url}>{q.licence.nom}</a>
         </p>
         <p>{q.consigne}</p>
         {q.modele === 'riasec' && (
+          <p class="avertissement">
+            Ces questions sont une traduction française, réalisée par le projet et non validée, de
+            l'O*NET Interest Profiler. Le texte original anglais est rappelé sous chaque question.
+          </p>
+        )}
+        {q.modele === 'riasec' && (
           <p>
-            Échelle de réponse : <span lang="en">Strongly Dislike</span> (je n'aimerais pas du
-            tout), <span lang="en">Dislike</span>, <span lang="en">Unsure</span> (je ne sais pas),{' '}
-            <span lang="en">Like</span>, <span lang="en">Strongly Like</span> (j'aimerais beaucoup).
+            <a href="/modifications-onet">
+              Modifications et avertissements (<span lang="en">modifications and disclaimers</span>)
+            </a>
           </p>
         )}
         {q.items.map((item, i) => (
@@ -66,6 +72,11 @@ const ITEMS_PAR_PAGE = 10;
                 {i + 1}.
               </span>{' '}
               {item.texte}
+              {q.modele === 'riasec' && item.texte !== item.texte_original && (
+                <span class="original" lang="en">
+                  {item.texte_original}
+                </span>
+              )}
             </legend>
             <div class="choix">
               {q.echelle.libelles.map((libelle, k) => (
@@ -245,6 +256,12 @@ const ITEMS_PAR_PAGE = 10;
   legend {
     font-weight: 600;
     padding-inline: 0.3rem;
+  }
+  .original {
+    display: block;
+    font-weight: normal;
+    font-size: 0.85rem;
+    color: var(--couleur-texte-doux);
   }
   .choix label {
     display: block;

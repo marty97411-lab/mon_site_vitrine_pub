@@ -39,10 +39,18 @@ orientent vers un métier.
 ## Traductions et licences
 
 - Items IPIP : domaine public, traduction du projet **non validée**. Une adaptation française
-  européenne de l'IPIP-NEO-300 (Thiry et Piolti, 2023) est signalée par l'IPIP mais n'a pas pu être
-  consultée.
-- Items O*NET : **affichés en anglais, à l'identique, sous CC BY-ND 4.0**. La licence développeur
-  O*NET autorise la modification (dont la traduction) mais impose une étude de validation avant
-  toute diffusion. Option « items en anglais » retenue par le projet le 2026-11-27.
-- Libellés de réponse IPIP : échelle d'exactitude (« Very Inaccurate » … « Very Accurate »),
-  traduite « Très inexact » … « Très exact ».
+  européenne de l'IPIP-NEO-300 (Thiry et Piolti, 2023) est signalée par l'IPIP ; le projet a choisi
+  de ne pas la consulter ni l'utiliser à ce stade (décision du 2026-11-27).
+- Items O*NET : **traduits par le projet** (décision du 2026-11-27, qui remplace l'option « items en
+  anglais »). La traduction est une modification : elle relève de l'O*NET Tools Developer License et
+  non de la CC BY-ND. Le projet applique les obligations de cette licence :
+  - mention de modification dans le pied de page, sur la page du questionnaire et dans le README ;
+  - page « modifications et avertissements » (`/modifications-onet`) décrivant les modifications et
+    reproduisant l'avertissement de non-responsabilité ;
+  - texte original anglais affiché sous chaque question.
+    **Obligation non remplie** : la licence exige une étude de validation _avant_ la diffusion d'une
+    version modifiée. Elle n'a pas été réalisée ; à traiter avant toute mise en ligne publique.
+- Libellés de réponse : IPIP « Très inexact » … « Très exact » (échelle d'exactitude) ; O*NET
+  « Je n'aimerais pas du tout » … « J'aimerais beaucoup ».
+- **Pas d'écriture inclusive** (décision du 2026-11-27) : formes neutres quand elles sont naturelles,
+  masculin générique sinon.

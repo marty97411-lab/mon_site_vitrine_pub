@@ -40,8 +40,8 @@ Code : `src/lib/rapprochement/`, tests : `src/lib/rapprochement/rapprochement.te
 ## Limites
 
 - Les seuils ont été établis pour des profils de métiers notés par des experts ; dans la base
-  O*NET 31.0, ces profils sont produits par « Machine Learning/Expert ». L'effet de ce changement
-  sur les seuils n'est pas documenté ici (TODO : vérifier dans les rapports O*NET).
+  O*NET 31.0, ces profils sont produits par « Machine Learning/Expert ». Décision du 2026-11-27 :
+  **garder les seuils tels quels et le signaler** (pages résultats, science et limites).
 - Le Big Five **n'intervient pas** dans le classement. Il ne servira qu'à expliquer, lorsqu'une
   source vérifiée le permet.
 - Work Styles O*NET 31.0 : non utilisés. Cette version introduit une nouvelle grille de 21 styles,

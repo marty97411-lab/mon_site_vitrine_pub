@@ -99,9 +99,24 @@ describe('questionnaires', () => {
     }
   });
 
-  it('les items O*NET sont reproduits à l’identique (licence CC BY-ND)', () => {
+  it('les items traduits gardent leur texte original et une traduction distincte', () => {
+    for (const q of questionnaires) {
+      expect(q.langue_items).toBe('fr');
+      for (const item of q.items) expect(item.texte, item.id).not.toBe(item.texte_original);
+    }
+  });
+
+  it('les questionnaires O*NET modifiés citent la licence développeur et sa mention', () => {
     for (const q of [qIp60, qMini]) {
-      for (const item of q.items) expect(item.texte).toBe(item.texte_original);
+      expect(q.licence.nom).toBe('O*NET Tools Developer License');
+      expect(q.licence.attribution).toMatch(/has not approved, endorsed, or tested/);
+      expect(q.traduction.statut).toBe('non-validee');
+    }
+  });
+
+  it('aucune écriture inclusive dans les items (point médian)', () => {
+    for (const q of questionnaires) {
+      for (const item of q.items) expect(item.texte, item.id).not.toMatch(/\p{L}·\p{L}/u);
     }
   });
 });

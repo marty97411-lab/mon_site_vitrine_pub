@@ -8,7 +8,7 @@ import { idSource } from './source';
  */
 export const itemQuestionnaireSchema = z.object({
   id: z.string().regex(/^([NEOAC][1-6]-\d{2}|BF-\d{2}|IP-[RIASEC]\d{2})$/, 'Identifiant invalide'),
-  /** Texte présenté (français pour l'IPIP, anglais original pour O*NET). */
+  /** Texte présenté (traduction française du projet). */
   texte: z.string().min(1),
   texte_original: z.string().min(1),
   /** Trait Big Five ou dimension RIASEC. */
