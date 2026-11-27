@@ -14,16 +14,16 @@
     "statut": "non-validee",
     "note": "Traduction du projet. Aucune traduction française de ces 50 items n'est répertoriée sur le site de l'IPIP."
   },
-  "consigne": "Décrivez-vous tel que vous êtes généralement aujourd'hui, et non tel que vous aimeriez être. Comparez-vous honnêtement aux personnes de votre âge que vous connaissez. Pour chaque affirmation, indiquez dans quelle mesure elle vous décrit avec exactitude.",
+  "consigne": "Décrivez-vous tel que vous êtes généralement aujourd'hui, et non tel que vous aimeriez être. Comparez-vous honnêtement aux personnes de votre âge que vous connaissez. Pour chaque affirmation, indiquez dans quelle mesure elle vous correspond.",
   "echelle": {
     "min": 1,
     "max": 5,
     "libelles": [
-      "Très inexact",
-      "Plutôt inexact",
-      "Ni exact ni inexact",
-      "Plutôt exact",
-      "Très exact"
+      "Ne me correspond pas du tout",
+      "Ne me correspond plutôt pas",
+      "Ni l'un ni l'autre",
+      "Me correspond plutôt",
+      "Me correspond tout à fait"
     ],
     "langue": "fr"
   },
@@ -49,7 +49,7 @@
     },
     {
       "id": "C5-01",
-      "texte": "Je suis toujours prêt.",
+      "texte": "Je suis toujours bien préparé.",
       "texte_original": "Am always prepared.",
       "domaine": "C",
       "cle": "plus",
@@ -139,7 +139,7 @@
     },
     {
       "id": "N1-01",
-      "texte": "Je me fais du souci.",
+      "texte": "Je suis du genre à me faire du souci.",
       "texte_original": "Worry about things.",
       "domaine": "N",
       "cle": "plus",
@@ -148,7 +148,7 @@
     },
     {
       "id": "O1-01",
-      "texte": "J'ai une imagination débordante.",
+      "texte": "J'ai beaucoup d'imagination.",
       "texte_original": "Have a vivid imagination.",
       "domaine": "O",
       "cle": "plus",
@@ -172,7 +172,7 @@
     },
     {
       "id": "BF-18",
-      "texte": "Je mets la pagaille.",
+      "texte": "Je fais les choses de travers.",
       "texte_original": "Make a mess of things.",
       "domaine": "C",
       "cle": "moins",
@@ -361,7 +361,7 @@
     },
     {
       "id": "BF-41",
-      "texte": "Être le centre de l'attention ne me dérange pas.",
+      "texte": "Être au centre de l'attention ne me dérange pas.",
       "texte_original": "Don't mind being the center of attention.",
       "domaine": "E",
       "cle": "plus",
@@ -377,7 +377,7 @@
     },
     {
       "id": "BF-43",
-      "texte": "Je suis un planning.",
+      "texte": "Je respecte un emploi du temps.",
       "texte_original": "Follow a schedule.",
       "domaine": "C",
       "cle": "plus",

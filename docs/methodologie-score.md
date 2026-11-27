@@ -5,7 +5,8 @@ par un fichier de `src/data/questionnaires/` (échelle, agrégation, seuil, item
 
 ## 1. Personnalité (IPIP-NEO-120 et Big-Five Factor Markers)
 
-- Réponses de 1 (« Très inexact ») à 5 (« Très exact »), selon la consigne IPIP.
+- Réponses de 1 (« Ne me correspond pas du tout ») à 5 (« Me correspond tout à fait ») ; ces libellés
+  adaptent l'échelle d'exactitude de l'IPIP (« Very Inaccurate » … « Very Accurate »).
 - Item à clé `plus` : valeur conservée ; item à clé `moins` : `min + max − x` (soit `6 − x`).
 - **Score** : moyenne des items cotés. L'IPIP indique de sommer ; la moyenne est une transformation
   linéaire de la somme quand toutes les réponses sont données, et reste sur l'échelle 1–5.
