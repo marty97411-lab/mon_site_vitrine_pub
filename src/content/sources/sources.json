@@ -24,7 +24,7 @@
     "url": "https://ipip.ori.org/30FacetNEO-PI-RItems.htm",
     "licence": "Items : domaine public (IPIP). Article : droits de l'éditeur.",
     "statut": "a-verifier",
-    "notes": "Référence et liste des 120 items vérifiées sur la page IPIP (consultée le 2026-11-27). Le DOI n'a pas encore été vérifié. Vérifier si l'article publie des normes utilisables (moyennes, écarts-types)."
+    "notes": "Référence et liste des 120 items (avec leur clé) vérifiées sur la page IPIP (consultée le 2026-11-27). DOI non vérifié. Les données brutes de Johnson sont sur OSF (non consultées)."
   },
   {
     "id": "onet-31",
@@ -108,7 +108,7 @@
     "volume": "73",
     "pages": "287-299",
     "statut": "a-verifier",
-    "notes": "Piste pour un futur questionnaire d'intérêts RIASEC libre de droits. Métadonnées, DOI et statut « domaine public » des items à vérifier."
+    "notes": "Piste écartée à l'étape 2 (choix de l'Interest Profiler O*NET). Métadonnées à vérifier."
   },
   {
     "id": "rome-france-travail",
@@ -129,5 +129,156 @@
     "publication": "National Bureau of Standards",
     "statut": "a-verifier",
     "notes": "Approximation de la fonction d'erreur (formule 7.1.26) utilisée dans src/lib/scoring/percentiles.ts. Numéro de formule et précision annoncée à vérifier."
+  },
+  {
+    "id": "goldberg-1992",
+    "type": "article",
+    "auteurs": ["Goldberg, L. R."],
+    "annee": 1992,
+    "titre": "The development of markers for the Big-Five factor structure",
+    "publication": "Psychological Assessment",
+    "volume": "4",
+    "pages": "26-42",
+    "url": "https://ipip.ori.org/New_IPIP-50-item-scale.htm",
+    "licence": "Items : domaine public (IPIP). Article : droits de l'éditeur.",
+    "statut": "a-verifier",
+    "notes": "Référence vérifiée telle que citée sur le site de l'IPIP (consulté le 2026-11-27). DOI non vérifié."
+  },
+  {
+    "id": "ipip-bffm-50",
+    "type": "instrument",
+    "auteurs": ["International Personality Item Pool"],
+    "annee": null,
+    "titre": "Administering IPIP Measures, with a 50-item Sample Questionnaire",
+    "url": "https://ipip.ori.org/New_IPIP-50-item-scale.htm",
+    "licence": "Domaine public",
+    "statut": "verifie",
+    "consulte_le": "2026-11-27",
+    "notes": "Ordre officiel des 50 items, clés de cotation et consigne d'origine. Clés recoupées avec https://ipip.ori.org/newBigFive5broadKey.htm. Le facteur IV est la stabilité émotionnelle (Emotional Stability), le facteur V Intellect/Imagination."
+  },
+  {
+    "id": "ipip-scoring",
+    "type": "site-web",
+    "auteurs": ["International Personality Item Pool"],
+    "annee": null,
+    "titre": "IPIP Scale Scoring Instructions",
+    "url": "https://ipip.ori.org/newScoringInstructions.htm",
+    "licence": "Domaine public",
+    "statut": "verifie",
+    "consulte_le": "2026-11-27",
+    "notes": "Réponses de 1 (Very Inaccurate) à 5 (Very Accurate), inversées pour les items à clé négative, puis sommées. Le projet utilise la moyenne, qui est une transformation linéaire de la somme."
+  },
+  {
+    "id": "ipip-normes",
+    "type": "site-web",
+    "auteurs": ["International Personality Item Pool"],
+    "annee": null,
+    "titre": "Information about Norms and Data Sets",
+    "url": "https://ipip.ori.org/newNorms.htm",
+    "statut": "verifie",
+    "consulte_le": "2026-11-27",
+    "notes": "« No norms are available on the IPIP website […] Most \"norms\" are misleading, and therefore they should not be used. » Justifie l'absence de percentiles sur le site."
+  },
+  {
+    "id": "ipip-traductions",
+    "type": "site-web",
+    "auteurs": ["International Personality Item Pool"],
+    "annee": null,
+    "titre": "IPIP Item Translations",
+    "url": "https://ipip.ori.org/newItemTranslations.htm",
+    "statut": "verifie",
+    "consulte_le": "2026-11-27",
+    "notes": "Mentionne une traduction québécoise de l'IPIP-NEO-300 (M. Gravel) et son adaptation en français européen (B. Thiry et M. Piolti, 2023). Aucune traduction française des 50 marqueurs n'y figure."
+  },
+  {
+    "id": "thiry-piolti-2023",
+    "type": "site-web",
+    "auteurs": ["Thiry, B.", "Piolti, M."],
+    "annee": 2023,
+    "titre": "Adaptation en français européen de l'IPIP-NEO-300",
+    "url": "https://benjaminthiry.netlify.app/posts/2023-02-12-ipipneo300fr",
+    "statut": "a-verifier",
+    "notes": "Lien relevé sur la page des traductions de l'IPIP. Document, méthode et licence non consultés (site inaccessible depuis l'environnement de travail)."
+  },
+  {
+    "id": "onet-ip-manual-2021",
+    "type": "livre",
+    "auteurs": ["Rounds, J. (dir.)", "Hoff, K. (dir.)", "Lewis, P. (dir.)"],
+    "annee": 2021,
+    "titre": "O*NET Interest Profiler Manual",
+    "publication": "National Center for O*NET Development",
+    "url": "https://www.onetcenter.org/reports/IP_Manual.html",
+    "statut": "verifie",
+    "consulte_le": "2026-11-27",
+    "notes": "Chapitre 2 : rapprochement personne-métier par corrélation de profils (forme et non niveau), seuils r ≥ 0,729 (Best Fit) et 0,608 à 0,728 (Great Fit), règle du profil « strongly dislike » partout. Chapitre 3 : réponses de 0 (strongly dislike) à 4 (strongly like), sommées par dimension (0 à 40 pour la Short Form, 0 à 20 pour le Mini-IP)."
+  },
+  {
+    "id": "rounds-2016-mini-ip",
+    "type": "article",
+    "auteurs": ["Rounds, J.", "Colin Wee Jian Ming", "Cao, M.", "Song, C.", "Lewis, P."],
+    "annee": 2016,
+    "titre": "Development of an O*NET Mini Interest Profiler (Mini-IP) for Mobile Devices: Psychometric Characteristics",
+    "publication": "National Center for O*NET Development",
+    "url": "https://www.onetcenter.org/reports/Mini-IP.html",
+    "statut": "verifie",
+    "consulte_le": "2026-11-27",
+    "notes": "Annexe A : les 30 items du Mini-IP et leur ordre suggéré. Forme du nom du 2e auteur à vérifier."
+  },
+  {
+    "id": "onet-ip-short-form",
+    "type": "instrument",
+    "auteurs": ["National Center for O*NET Development"],
+    "annee": null,
+    "titre": "O*NET Interest Profiler Short Form (version papier)",
+    "url": "https://www.onetcenter.org/dl_tools/ipsf/Interest_Profiler.pdf",
+    "licence": "CC BY-ND 4.0 ou O*NET Tools Developer License",
+    "statut": "verifie",
+    "consulte_le": "2026-11-27",
+    "notes": "Texte des 60 items et leur dimension. L'ordre de présentation de la version web n'a pas été vérifié : le site reprend l'ordre du PDF."
+  },
+  {
+    "id": "onet-career-tools-licence",
+    "type": "site-web",
+    "auteurs": ["National Center for O*NET Development"],
+    "annee": null,
+    "titre": "O*NET Career Exploration Tools Content License",
+    "url": "https://www.onetcenter.org/license_tools.html",
+    "licence": "CC BY-ND 4.0 / O*NET Tools Developer License",
+    "statut": "verifie",
+    "consulte_le": "2026-11-27",
+    "notes": "Copie à l'identique : CC BY-ND 4.0. Modification (dont traduction) : O*NET Tools Developer License, qui impose une étude de validation avant diffusion. D'où des items affichés en anglais."
+  },
+  {
+    "id": "onet-familles",
+    "type": "site-web",
+    "auteurs": ["National Center for O*NET Development"],
+    "annee": null,
+    "titre": "O*NET OnLine — Browse by Job Family",
+    "url": "https://www.onetonline.org/find/family",
+    "statut": "verifie",
+    "consulte_le": "2026-11-27",
+    "notes": "Intitulés des 23 familles de métiers et codes à deux chiffres correspondants."
+  },
+  {
+    "id": "gregory-lewis-2016",
+    "type": "livre",
+    "auteurs": ["Gregory", "Lewis"],
+    "annee": 2016,
+    "titre": "Linking Client Assessment Profiles to O*NET Occupational Profiles Within the O*NET Interest Profiler Short Form and Mini Interest Profiler (Mini-IP)",
+    "publication": "National Center for O*NET Development",
+    "statut": "a-verifier",
+    "notes": "Rapport technique cité dans le manuel de l'Interest Profiler (tableau 4). Non consulté ; initiales des auteurs à compléter."
+  },
+  {
+    "id": "barrick-mount-gupta-2003",
+    "type": "article",
+    "auteurs": ["Barrick, M. R.", "Mount, M. K.", "Gupta, R."],
+    "annee": 2003,
+    "titre": "Meta-analysis of the relationship between the five-factor model of personality and Holland's occupational types",
+    "publication": "Personnel Psychology",
+    "volume": "56",
+    "pages": "45-74",
+    "statut": "a-verifier",
+    "notes": "Cité de mémoire : métadonnées et DOI à vérifier. Aucun coefficient ne doit être repris avant lecture."
   }
 ]
