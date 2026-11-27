@@ -1,17 +1,19 @@
 # Orientation et personnalité
 
-Site web en français d'aide à la réflexion sur l'orientation professionnelle. Le visiteur passe
-un questionnaire de personnalité (modèle Big Five, items du domaine public de l'IPIP), obtient
-un profil sous forme de scores continus, puis des pistes de familles de métiers (modèle RIASEC,
-données O*NET) avec des explications sourcées.
+Site web en français d'aide à la réflexion sur l'orientation professionnelle. Le visiteur choisit
+un parcours rapide (80 questions) ou complet (180 questions) et répond à deux questionnaires :
 
-> **Statut : prototype.** Le questionnaire ne compte que 10 items d'exemple, les traductions ne
-> sont pas validées, aucune norme n'est encore intégrée et la correspondance profil → métiers
-> reste à définir. Voir `docs/sources.md`.
+- **personnalité** (Big Five, items du domaine public de l'IPIP) : profil en scores continus ;
+- **intérêts professionnels** (RIASEC, O*NET Interest Profiler) : rapprochement avec des familles
+  de métiers de la base O*NET, selon la méthode de corrélation documentée par O*NET.
+
+> **Statut : prototype.** Les traductions des items de personnalité ne sont pas validées, les items
+> d'intérêts sont en anglais (licence), les métiers sont américains (intitulés en anglais) et
+> plusieurs références restent à vérifier. Voir `docs/sources.md`.
 
 Un test de personnalité est une aide à la réflexion, pas un verdict. **Aucune réponse n'est
-envoyée à un serveur** : les calculs se font dans le navigateur, sans compte ni cookie ni outil
-de mesure d'audience.
+envoyée à un serveur** : les calculs se font dans le navigateur, les réponses y sont enregistrées
+localement pour pouvoir reprendre, sans compte ni cookie ni outil de mesure d'audience.
 
 ## Installation
 
@@ -49,5 +51,6 @@ npm run dev       # http://localhost:4321
 - Code : [MIT](LICENSE).
 - Contenu : [CC BY 4.0](LICENSE-CONTENU.md).
 - Items : International Personality Item Pool, domaine public.
-- Données métiers : base O*NET 31.0 (USDOL/ETA), CC BY 4.0. O*NET® est une marque déposée de
-  l'USDOL/ETA.
+- Données métiers : base O*NET 31.0 (USDOL/ETA), CC BY 4.0.
+- Questionnaires d'intérêts : O*NET Interest Profiler (USDOL/ETA), CC BY-ND 4.0, reproduits à
+  l'identique. O*NET® est une marque déposée de l'USDOL/ETA.

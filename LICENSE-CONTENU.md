@@ -15,4 +15,8 @@ Le code source est publié sous licence MIT (voir `LICENSE`).
   Les informations reprises ont été modifiées (traduction, sélection) ; l'USDOL/ETA n'a pas
   approuvé, cautionné ni testé ces modifications.
 
+- **Questionnaires d'intérêts** : O*NET Interest Profiler (Short Form et Mini-IP), USDOL/ETA,
+  licence CC BY-ND 4.0 (<https://www.onetcenter.org/license_tools.html>). Reproduits à l'identique ;
+  ils ne sont pas couverts par la licence CC BY 4.0 du projet.
+
 TODO : ajouter le texte intégral de la licence CC BY 4.0, copié depuis creativecommons.org.
