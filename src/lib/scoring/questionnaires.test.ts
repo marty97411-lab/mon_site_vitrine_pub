@@ -61,7 +61,7 @@ describe('IPIP Big-Five Factor Markers (50)', () => {
     const detendu = q.items.find((i) => i.texte_original === 'Am relaxed most of the time.');
     expect(detendu?.domaine).toBe('N');
     expect(detendu?.cle).toBe('moins');
-    // Très exact (5) à cet item et neutre ailleurs : N = (9 × 3 + 1) / 10.
+    // « Me correspond tout à fait » (5) à cet item et neutre ailleurs : N = (9 × 3 + 1) / 10.
     const p = calculerProfil(
       q,
       repondre(q, (i) => (i === detendu ? 5 : 3)),

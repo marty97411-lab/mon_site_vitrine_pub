@@ -50,7 +50,8 @@ orientent vers un métier.
   - texte original anglais affiché sous chaque question.
     **Obligation non remplie** : la licence exige une étude de validation _avant_ la diffusion d'une
     version modifiée. Elle n'a pas été réalisée ; à traiter avant toute mise en ligne publique.
-- Libellés de réponse : IPIP « Très inexact » … « Très exact » (échelle d'exactitude) ; O*NET
+- Libellés de réponse : IPIP « Ne me correspond pas du tout » … « Me correspond tout à fait »
+  (adaptation de l'échelle d'exactitude « Very Inaccurate » … « Very Accurate ») ; O*NET
   « Je n'aimerais pas du tout » … « J'aimerais beaucoup ».
 - **Pas d'écriture inclusive** (décision du 2026-11-27) : formes neutres quand elles sont naturelles,
   masculin générique sinon.
