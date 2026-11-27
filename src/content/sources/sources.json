@@ -36,7 +36,7 @@
     "licence": "CC BY 4.0",
     "statut": "verifie",
     "consulte_le": "2026-11-27",
-    "notes": "Licence vérifiée sur https://www.onetcenter.org/license_db.html. Mention obligatoire en cas de modification : « This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). Used under the CC BY 4.0 license. O*NET® is a trademark of USDOL/ETA. [Nom] has modified all or some of this information. USDOL/ETA has not approved, endorsed, or tested these modifications. » La licence CC BY ne couvre que les fichiers téléchargeables de la base, pas les outils (Interest Profiler) ni le reste du site."
+    "notes": "Licence vérifiée sur https://www.onetcenter.org/license_db.html. Mention obligatoire en cas de modification : « This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). Used under the CC BY 4.0 license. O*NET® is a trademark of USDOL/ETA. [Nom] has modified all or some of this information. USDOL/ETA has not approved, endorsed, or tested these modifications. » La licence CC BY ne couvre que les fichiers téléchargeables de la base, pas les outils (Interest Profiler) ni le reste du site. Descriptions des Job Zones lues dans job_zone_reference.csv (zones 1 et 2 regroupées dans la version 31.0)."
   },
   {
     "id": "onet-online",
@@ -280,5 +280,15 @@
     "pages": "45-74",
     "statut": "a-verifier",
     "notes": "Cité de mémoire : métadonnées et DOI à vérifier. Aucun coefficient ne doit être repris avant lecture."
+  },
+  {
+    "id": "cadre-national-certifications-2019",
+    "type": "site-web",
+    "auteurs": ["République française"],
+    "annee": 2019,
+    "titre": "Décret n° 2019-14 du 8 janvier 2019 relatif au cadre national des certifications professionnelles",
+    "statut": "a-verifier",
+    "licence": "Texte réglementaire (réutilisation libre)",
+    "notes": "Nomenclature française des niveaux de qualification (CAP-BEP, bac, bac+2, licence, master, doctorat). Citée de mémoire : référence, URL et contenu à vérifier sur Légifrance. Le projet s'en sert pour une équivalence indicative avec les Job Zones O*NET ; aucune table de correspondance officielle entre les deux n'a été trouvée."
   }
 ]

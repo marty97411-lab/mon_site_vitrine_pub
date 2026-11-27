@@ -43,6 +43,10 @@ export const jobZonesSchema = z.object({
       zone: z.number().int().min(1).max(5),
       nom_original: z.string().min(1),
       nom: z.string().min(1),
+      /** Résumé traduit de la description O*NET (formation, expérience). */
+      description: z.string().min(1),
+      /** Équivalence indicative en France, proposée par le projet (approximation). */
+      equivalence_fr: z.string().min(1),
     }),
   ),
 });

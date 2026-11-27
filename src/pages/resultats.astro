@@ -1,9 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
 import Avertissement from '../components/Avertissement.astro';
-import { chargerContenu } from '../lib/contenu';
+import ListeSources from '../components/ListeSources.astro';
+import { chargerContenu, sourcesParIds } from '../lib/contenu';
+import { jobZonesSchema } from '../lib/schemas';
+import { SEUIL_FORTE, SEUIL_TRES_FORTE } from '../lib/rapprochement';
+import jobZonesJson from '../data/onet/job-zones.json';
 
 const contenu = await chargerContenu();
+// Les zones 1 et 2 sont regroupées dans O*NET 31.0 : une seule ligne pour les deux.
+const zones = jobZonesSchema
+  .parse(jobZonesJson)
+  .zones.filter((z, i, toutes) => toutes.findIndex((x) => x.nom_original === z.nom_original) === i);
+const virgule = (n: number) => n.toLocaleString('fr-FR', { maximumFractionDigits: 3 });
 // Données minimales transmises au script client.
 const donnees = {
   parcours: contenu.parcours.map(({ data: p }) => ({
@@ -43,6 +52,125 @@ const donnees = {
       Effacer toutes mes réponses de ce navigateur
     </button>
   </p>
+
+  <!-- Explications insérées par le script dans la section des métiers. -->
+  <template id="explication-correspondance">
+    <p>
+      Le niveau de correspondance indique à quel point vos intérêts ressemblent à ceux qui
+      caractérisent un métier. Ce n'est ni une note, ni une probabilité de réussite.
+    </p>
+    <details class="explication">
+      <summary>En savoir plus sur la correspondance</summary>
+      <h3>Ce que signifie le niveau affiché</h3>
+      <ul>
+        <li>
+          <strong>Correspondance très forte</strong> : vos intérêts les plus marqués et les moins
+          marqués sont très proches de ceux du métier (corrélation d'au moins{' '}
+          {virgule(SEUIL_TRES_FORTE)}).
+        </li>
+        <li>
+          <strong>Correspondance forte</strong> : ressemblance nette, un peu moins étroite (de
+          {virgule(SEUIL_FORTE)} à {virgule(SEUIL_TRES_FORTE - 0.001)}).
+        </li>
+        <li>
+          <strong>Correspondance modérée</strong> : ressemblance partielle (de 0 à
+          {virgule(SEUIL_FORTE - 0.001)}). Ce n'est pas un avis défavorable.
+        </li>
+      </ul>
+      <p>Les métiers dont le profil est à l'opposé du vôtre ne sont pas proposés.</p>
+      <h3>Comment il est calculé</h3>
+      <p>
+        Votre profil d'intérêts se compose de vos six scores RIASEC (Réaliste, Investigateur,
+        Artistique, Social, Entreprenant, Conventionnel). Chaque métier a lui aussi un profil de six
+        scores dans la base américaine O*NET 31.0. Le site compare la <em>forme</em> des deux
+        profils : quelles dimensions sont hautes et lesquelles sont basses, chez vous et dans le
+        métier. Le niveau de vos scores ne compte pas, seulement leur ordre et leurs écarts. Cette
+        comparaison (une corrélation) et les seuils ci-dessus sont ceux du manuel de l'O*NET
+        Interest Profiler.
+      </p>
+      <p>
+        Les profils des métiers sont estimés par O*NET par apprentissage automatique contrôlé par
+        des experts. Les seuils ont été établis pour des profils notés par des experts ; le site les
+        applique tels quels.
+      </p>
+      <h3>Ce qu'il ne veut pas dire</h3>
+      <ul>
+        <li>Ce n'est pas une garantie de réussite ni d'épanouissement dans le métier.</li>
+        <li>
+          Il ne tient compte ni de vos compétences, ni de vos diplômes, ni de votre expérience, ni
+          de votre personnalité.
+        </li>
+        <li>
+          Il ne dit rien de l'accès au métier ni de l'emploi en France : les données décrivent des
+          métiers américains.
+        </li>
+      </ul>
+      <ListeSources
+        sources={sourcesParIds(contenu, ['onet-ip-manual-2021', 'onet-31'])}
+        titre="Sources"
+        niveau={3}
+        idTitre="sources-correspondance"
+      />
+    </details>
+  </template>
+
+  <template id="explication-preparation">
+    <p>
+      Le niveau de préparation indique la formation et l'expérience habituellement demandées pour le
+      métier aux États-Unis. L'équivalent français indiqué entre parenthèses est approximatif.
+    </p>
+    <details class="explication">
+      <summary>En savoir plus sur les niveaux de préparation</summary>
+      <p>
+        La base O*NET classe les métiers en « Job Zones », de 1 (peu de préparation) à 5
+        (préparation très importante). Dans la version 31.0 utilisée ici, les zones 1 et 2 sont
+        regroupées.
+      </p>
+      <div
+        class="tableau-defilant"
+        tabindex="0"
+        role="region"
+        aria-label="Tableau des niveaux de préparation"
+      >
+        <table>
+          <caption>Niveaux de préparation O*NET et équivalence indicative en France</caption>
+          <thead>
+            <tr>
+              <th scope="col">Niveau</th>
+              <th scope="col">Ce que décrit O*NET (États-Unis)</th>
+              <th scope="col">Équivalence indicative en France</th>
+            </tr>
+          </thead>
+          <tbody>
+            {zones.map((z) => (
+              <tr>
+                <th scope="row">
+                  {z.nom}{' '}
+                  <span class="discret" lang="en">
+                    ({z.nom_original})
+                  </span>
+                </th>
+                <td>{z.description}</td>
+                <td>{z.equivalence_fr}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="avertissement">
+        <strong>Équivalence approximative.</strong> Elle est proposée par le projet : aucune table
+        de correspondance officielle entre les niveaux O*NET et les diplômes français n'a été
+        trouvée. Les données décrivent le système de formation américain, et les conditions d'accès
+        en France (diplômes, concours, professions réglementées) peuvent être très différentes.
+      </p>
+      <ListeSources
+        sources={sourcesParIds(contenu, ['onet-31', 'cadre-national-certifications-2019'])}
+        titre="Sources"
+        niveau={3}
+        idTitre="sources-preparation"
+      />
+    </details>
+  </template>
 </Base>
 
 <script
@@ -95,6 +223,14 @@ const donnees = {
     for (const [k, v] of Object.entries(attributs)) e.setAttribute(k, v);
     for (const enfant of enfants) if (enfant !== null) e.append(enfant);
     return e;
+  }
+
+  /** Copie le contenu d'un <template> rendu côté serveur (explications et sources). */
+  function cloner(id: string): Node {
+    const modele = document.getElementById(id);
+    return modele instanceof HTMLTemplateElement
+      ? modele.content.cloneNode(true)
+      : document.createTextNode('');
   }
 
   function lien(href: string, texte: string) {
@@ -227,8 +363,8 @@ const donnees = {
         'p',
         {},
         'Ces pistes comparent la forme de votre profil d’intérêts à celle de 923 métiers de la base O*NET, selon la méthode de l’O*NET Interest Profiler. Il n’y a pas de « métier idéal » : ce sont des idées à explorer. ',
-        lien('/la-science#rapprochement', 'Comment est-ce calculé ?'),
       ),
+      cloner('explication-correspondance'),
     );
     const resultat = rapprocher(scores, metiersOnet.metiers);
     if (resultat.statut === 'profil-plat') {
@@ -243,7 +379,9 @@ const donnees = {
     }
     const familles = regrouperParFamille(resultat.correspondances, 5).slice(0, 6);
     const nomFamille = new Map(famillesOnet.familles.map((f) => [f.code, f]));
-    const nomZone = new Map(jobZonesOnet.zones.map((z) => [z.zone, z.nom]));
+    const nomZone = new Map(
+      jobZonesOnet.zones.map((z) => [z.zone, `${z.nom} (≈ ${z.equivalence_fr})`]),
+    );
     for (const f of familles) {
       const info = nomFamille.get(f.famille);
       const bloc = el('article', { class: 'famille' });
@@ -277,10 +415,12 @@ const donnees = {
       section.append(bloc);
     }
     section.append(
+      el('h3', {}, 'Niveaux de préparation'),
+      cloner('explication-preparation'),
       el(
         'p',
         { class: 'discret' },
-        'Intitulés en anglais (base américaine O*NET 31.0) ; la correspondance avec les métiers français (ROME) est en préparation. Les niveaux de préparation décrivent le système de formation américain. Les profils d’intérêts des métiers sont estimés par O*NET (« Machine Learning/Expert ») ; les seuils de correspondance, établis par O*NET pour des profils notés par des experts, sont appliqués tels quels.',
+        'Intitulés en anglais (base américaine O*NET 31.0) ; la correspondance avec les métiers français (ROME) est en préparation. Pour en savoir plus sur un métier, son intitulé renvoie à sa fiche O*NET OnLine (en anglais).',
       ),
       el(
         'p',
@@ -368,6 +508,14 @@ const donnees = {
   meter {
     width: min(100%, 16rem);
     vertical-align: middle;
+  }
+  .explication {
+    margin-block: var(--espace);
+  }
+  .explication summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--couleur-primaire);
   }
   .famille {
     border-left: 4px solid var(--couleur-primaire);

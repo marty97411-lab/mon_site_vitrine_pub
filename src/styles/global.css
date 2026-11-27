@@ -47,6 +47,8 @@ body {
 
 a {
   color: var(--couleur-primaire);
+  /* Les longues URL (sources) se coupent au lieu d'élargir la page. */
+  overflow-wrap: anywhere;
 }
 
 :focus-visible {
@@ -92,6 +94,21 @@ a {
 table {
   border-collapse: collapse;
   width: 100%;
+}
+
+/* Tableau large : défilement horizontal limité au tableau, jamais à la page. */
+.tableau-defilant {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.tableau-defilant table {
+  min-width: 36rem;
+}
+
+th,
+td {
+  overflow-wrap: anywhere;
 }
 
 th,

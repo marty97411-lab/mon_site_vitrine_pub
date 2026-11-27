@@ -4,14 +4,18 @@ import type { CollectionEntry } from 'astro:content';
 interface Props {
   sources: CollectionEntry<'sources'>[];
   titre?: string;
+  /** Niveau du titre (2 par défaut) et identifiant unique, pour plusieurs listes sur une page. */
+  niveau?: 2 | 3 | 4;
+  idTitre?: string;
 }
 
-const { sources, titre = 'Sources' } = Astro.props;
+const { sources, titre = 'Sources', niveau = 2, idTitre = 'titre-sources' } = Astro.props;
+const Titre = `h${niveau}` as 'h2' | 'h3' | 'h4';
 ---
 
 {sources.length > 0 && (
-  <section aria-labelledby="titre-sources">
-    <h2 id="titre-sources">{titre}</h2>
+  <section aria-labelledby={idTitre}>
+    <Titre id={idTitre}>{titre}</Titre>
     <ul>
       {sources.map(({ data: s }) => (
         <li>
