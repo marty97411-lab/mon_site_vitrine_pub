@@ -1,21 +1,34 @@
 ---
 import '../styles/global.css';
+import Logo from '../components/Logo.astro';
+import FilAriane from '../components/FilAriane.astro';
 
 interface Props {
   titre: string;
   description: string;
+  /** Fil d'Ariane (sans l'accueil). Absent sur l'accueil. */
+  fil?: { libelle: string; href?: string }[];
+  typeOg?: 'website' | 'article';
 }
 
-const { titre, description } = Astro.props;
-const titreComplet = `${titre} · Orientation et personnalité`;
+const { titre, description, fil, typeOg = 'website' } = Astro.props;
+const NOM = 'Personnalisé';
+const titreComplet = titre === NOM ? NOM : `${titre} · ${NOM}`;
 const navigation = [
   { href: '/', libelle: 'Accueil' },
   { href: '/parcours', libelle: 'Le test' },
-  { href: '/metiers', libelle: 'Métiers' },
-  { href: '/la-science', libelle: 'La science derrière' },
-  { href: '/a-propos', libelle: 'À propos et limites' },
+  { href: '/situations', libelle: 'Ma situation' },
+  { href: '/comprendre', libelle: 'Comprendre' },
+  { href: '/philosophie', libelle: 'Philosophie' },
+  { href: '/a-propos', libelle: 'À propos' },
 ];
-const cheminActuel = Astro.url.pathname.replace(/\/$/, '') || '/';
+const chemin = Astro.url.pathname.replace(/\/$/, '') || '/';
+const actif = (href: string) =>
+  href === '/' ? chemin === '/' : chemin === href || chemin.startsWith(`${href}/`);
+// TODO(domaine) : renseigner `site` dans astro.config.mjs pour activer l'URL canonique,
+// og:url et og:image (qui exigent des adresses absolues).
+const urlCanonique = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const imageOg = Astro.site ? new URL('/og-personnalise.png', Astro.site).href : undefined;
 ---
 
 <!doctype html>
@@ -23,58 +36,113 @@ const cheminActuel = Astro.url.pathname.replace(/\/$/, '') || '/';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{titreComplet}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#5A3FD9" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {urlCanonique && <link rel="canonical" href={urlCanonique} />}
+    <meta property="og:site_name" content={NOM} />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:type" content={typeOg} />
+    <meta property="og:title" content={titreComplet} />
+    <meta property="og:description" content={description} />
+    {urlCanonique && <meta property="og:url" content={urlCanonique} />}
+    {imageOg && <meta property="og:image" content={imageOg} />}
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
     <a class="lien-evitement" href="#contenu">
       Aller au contenu
     </a>
-    <header class="conteneur">
-      <p>
-        <strong>Orientation et personnalité</strong> <span class="etiquette">prototype</span>
-      </p>
-      <nav aria-label="Navigation principale">
-        <ul>
-          {navigation.map(({ href, libelle }) => (
-            <li>
-              <a href={href} aria-current={cheminActuel === href ? 'page' : undefined}>
-                {libelle}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+    <header class="entete">
+      <div class="conteneur barre">
+        <a class="accueil" href="/" aria-label="Personnalisé, accueil">
+          <Logo />
+        </a>
+        <nav aria-label="Navigation principale" class="nav-large">
+          <ul>
+            {navigation.slice(1).map(({ href, libelle }) => (
+              <li>
+                <a href={href} aria-current={actif(href) ? 'page' : undefined}>
+                  {libelle}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <details class="nav-mobile">
+          <summary>Menu</summary>
+          <nav aria-label="Navigation principale (mobile)">
+            <ul>
+              {navigation.map(({ href, libelle }) => (
+                <li>
+                  <a href={href} aria-current={actif(href) ? 'page' : undefined}>
+                    {libelle}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a href="/besoin-d-en-parler">Besoin d'en parler ?</a>
+              </li>
+            </ul>
+          </nav>
+        </details>
+      </div>
     </header>
+
     <main id="contenu" class="conteneur">
+      {fil && <FilAriane elements={fil} />}
       <slot />
     </main>
-    <footer class="conteneur">
-      <hr />
-      <p>
-        Aucune réponse n'est envoyée à un serveur : les calculs se font dans votre navigateur, et
-        vos réponses n'y sont conservées que pour vous permettre de reprendre plus tard.
-        <a href="/mentions-legales">Mentions légales</a>.
-      </p>
-      <p>
-        <small>
-          Items : International Personality Item Pool (IPIP), domaine public. Contenu publié sous
-          licence CC BY 4.0, code sous licence MIT.
-        </small>
-      </p>
-      <p lang="en">
-        <small>
+
+    <footer class="pied">
+      <div class="conteneur">
+        <div class="pied-haut">
+          <div>
+            <Logo taille={28} />
+            <p class="discret">
+              Une aide à la réflexion sur l'orientation, pas un verdict. Vos réponses restent dans
+              votre navigateur : rien n'est envoyé, aucun traceur.
+            </p>
+          </div>
+          <p class="aide">
+            <a href="/besoin-d-en-parler">Besoin d'en parler ?</a>
+            <span class="discret">Des personnes peuvent vous écouter et vous accompagner.</span>
+          </p>
+        </div>
+        <ul class="liens-pied">
+          <li>
+            <a href="/comprendre">Comprendre</a>
+          </li>
+          <li>
+            <a href="/sources">Sources</a>
+          </li>
+          <li>
+            <a href="/plan-du-site">Plan du site</a>
+          </li>
+          <li>
+            <a href="/a-propos">À propos et limites</a>
+          </li>
+          <li>
+            <a href="/mentions-legales">Mentions légales</a>
+          </li>
+          <li>
+            <a href="/modifications-onet">Modifications O*NET</a>
+          </li>
+        </ul>
+        <p class="discret">
+          Items de personnalité : International Personality Item Pool (IPIP), domaine public.
+          Contenu sous licence CC BY 4.0, code sous licence MIT.
+        </p>
+        <p class="discret" lang="en">
           This page includes information from the
           <a href="https://www.onetcenter.org/database.html">O*NET 31.0 Database</a> by the U.S.
           Department of Labor, Employment and Training Administration (USDOL/ETA). Used under the
           <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> license. O*NET® is a
           trademark of USDOL/ETA. The contributors of this project have modified all or some of this
           information. USDOL/ETA has not approved, endorsed, or tested these modifications.
-        </small>
-      </p>
-      <p lang="en">
-        <small>
+        </p>
+        <p class="discret" lang="en">
           This site includes information from the
           <a href="https://www.onetcenter.org/tools.html">O*NET Career Exploration Tools</a> by the
           U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). Used under
@@ -84,13 +152,136 @@ const cheminActuel = Astro.url.pathname.replace(/\/$/, '') || '/';
           </a>
           . O*NET® is a trademark of USDOL/ETA. The contributors of this project have modified all
           or some of this information. USDOL/ETA has not approved, endorsed, or tested these
-          modifications.{' '}
+          modifications.
           <a href="/modifications-onet" lang="fr">
             Modifications et avertissements (modifications and disclaimers)
           </a>
           .
-        </small>
-      </p>
+        </p>
+      </div>
     </footer>
   </body>
 </html>
+
+<style>
+  .entete {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: color-mix(in srgb, var(--c-fond) 92%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--c-bordure);
+  }
+  .barre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--espace-3);
+    min-height: 4rem;
+  }
+  .accueil {
+    text-decoration: none;
+  }
+  .nav-large {
+    display: none;
+  }
+  .nav-large ul,
+  .nav-mobile ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-large ul {
+    display: flex;
+    gap: var(--espace-4);
+  }
+  .nav-large a,
+  .nav-mobile a {
+    color: var(--c-texte);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding-block: 0.4rem;
+    border-bottom: 2px solid transparent;
+  }
+  .nav-large a:hover,
+  .nav-large a[aria-current='page'] {
+    border-bottom-color: var(--c-primaire);
+  }
+  .nav-mobile summary {
+    list-style: none;
+    cursor: pointer;
+    font-weight: 700;
+    border: 1px solid var(--c-bordure);
+    background: var(--c-surface);
+    border-radius: var(--rayon-pilule);
+    padding: 0.4rem 1rem;
+  }
+  .nav-mobile summary::-webkit-details-marker {
+    display: none;
+  }
+  .nav-mobile[open] nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: var(--c-surface);
+    border-bottom: 1px solid var(--c-bordure);
+    box-shadow: var(--ombre);
+    padding: var(--espace-2) var(--espace-3) var(--espace-3);
+  }
+  .nav-mobile li a {
+    display: block;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--c-bordure);
+  }
+  .nav-mobile a[aria-current='page'] {
+    color: var(--c-primaire);
+  }
+  @media (min-width: 64rem) {
+    .nav-large {
+      display: block;
+    }
+    .nav-mobile {
+      display: none;
+    }
+  }
+  .pied {
+    margin-top: var(--espace-6);
+    background: var(--c-surface-douce);
+    padding-block: var(--espace-5);
+  }
+  .pied-haut {
+    display: grid;
+    gap: var(--espace-4);
+  }
+  @media (min-width: 48rem) {
+    .pied-haut {
+      grid-template-columns: 2fr 1fr;
+      align-items: start;
+    }
+  }
+  .aide {
+    background: var(--c-surface);
+    border-radius: var(--rayon);
+    padding: var(--espace-3) var(--espace-4);
+    box-shadow: var(--ombre);
+    margin: 0;
+  }
+  .aide a {
+    display: block;
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+  .liens-pied {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espace-2) var(--espace-4);
+    margin: var(--espace-4) 0;
+  }
+  .pied p.discret {
+    max-width: var(--mesure);
+  }
+</style>

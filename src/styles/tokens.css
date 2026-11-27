@@ -1,0 +1,86 @@
+/*
+ * Design tokens de « Personnalisé » — source unique des couleurs, typographies, espacements,
+ * rayons, ombres et durées. Contrastes vérifiés par src/lib/contraste.test.ts (WCAG AA).
+ * Règle : aucune couleur ne code un « bon » ou un « mauvais » score (pas de rouge/vert).
+ */
+:root {
+  /* Couleurs — mode clair (prioritaire) */
+  --c-fond: #fffcf7;
+  --c-surface: #ffffff;
+  --c-surface-douce: #f5f2fc;
+  --c-texte: #1e1b2e;
+  --c-texte-doux: #575370;
+  --c-bordure: #e7e2f0;
+  --c-primaire: #5a3fd9;
+  --c-primaire-fonce: #4429b8;
+  --c-primaire-clair: #eee9ff;
+  --c-sur-primaire: #ffffff;
+  --c-secondaire: #ff9e6d; /* décoratif uniquement, jamais pour du texte sur fond clair */
+  --c-secondaire-texte: #a3410f;
+  --c-secondaire-clair: #ffe9dc;
+  --c-science: #0e6e77;
+  --c-science-fond: #e3f5f6;
+  --c-reflexion: #8a4b08;
+  --c-reflexion-fond: #fff1e2;
+  --c-focus: #a3410f;
+  --c-graphique: #5a3fd9;
+  --c-graphique-doux: #8c79f0;
+
+  /* Typographies (auto-hébergées, voir src/styles/polices.css) */
+  --police-texte: 'Atkinson Hyperlegible Next', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --police-titre: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
+  --taille-base: 112.5%; /* 18 px */
+  --interligne: 1.65;
+  --mesure: 68ch; /* 65 à 75 caractères par ligne */
+
+  /* Espacements, rayons, ombres, durées */
+  --espace-1: 0.25rem;
+  --espace-2: 0.5rem;
+  --espace-3: 1rem;
+  --espace-4: 1.5rem;
+  --espace-5: 2.5rem;
+  --espace-6: 4rem;
+  --rayon: 1.25rem;
+  --rayon-petit: 0.75rem;
+  --rayon-pilule: 999px;
+  --ombre: 0 1px 2px rgb(30 27 46 / 6%), 0 8px 24px rgb(90 63 217 / 8%);
+  --ombre-survol: 0 2px 4px rgb(30 27 46 / 8%), 0 14px 32px rgb(90 63 217 / 14%);
+  --duree: 180ms;
+  --largeur-max: 72rem;
+
+  color-scheme: light dark;
+}
+
+/* Mode sombre automatique (optionnel) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-fond: #15131f;
+    --c-surface: #1e1b2b;
+    --c-surface-douce: #272339;
+    --c-texte: #f1eef8;
+    --c-texte-doux: #b9b4cc;
+    --c-bordure: #3a3550;
+    --c-primaire: #a99bff;
+    --c-primaire-fonce: #c9c0ff;
+    --c-primaire-clair: #2e2850;
+    --c-sur-primaire: #15131f;
+    --c-secondaire: #ffb48f;
+    --c-secondaire-texte: #ffb48f;
+    --c-secondaire-clair: #3a2a22;
+    --c-science: #7fd3da;
+    --c-science-fond: #163437;
+    --c-reflexion: #f5c27a;
+    --c-reflexion-fond: #3a2c16;
+    --c-focus: #ffb48f;
+    --c-graphique: #a99bff;
+    --c-graphique-doux: #6f5fd6;
+    --ombre: 0 1px 2px rgb(0 0 0 / 30%), 0 8px 24px rgb(0 0 0 / 25%);
+    --ombre-survol: 0 2px 4px rgb(0 0 0 / 35%), 0 14px 32px rgb(0 0 0 / 30%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duree: 0ms;
+  }
+}

@@ -1,0 +1,60 @@
+---
+/** Formes abstraites décoratives (cercles et courbe de chemin), cohérentes sur tout le site. */
+interface Props {
+  variante?: 'chemin' | 'bulles' | 'horizon';
+  class?: string;
+}
+const { variante = 'chemin', class: classe } = Astro.props;
+---
+
+<svg
+  class:list={['illustration', classe]}
+  viewBox="0 0 260 220"
+  aria-hidden="true"
+  focusable="false"
+>
+  {variante === 'chemin' && (
+    <>
+      <circle cx="170" cy="85" r="78" fill="var(--c-primaire-clair)" />
+      <circle cx="96" cy="140" r="44" fill="var(--c-secondaire-clair)" />
+      <path
+        d="M24 196 Q120 110 236 182"
+        stroke="var(--c-primaire)"
+        stroke-width="4"
+        fill="none"
+        stroke-linecap="round"
+        opacity="0.5"
+      />
+      <circle cx="218" cy="166" r="9" fill="var(--c-secondaire)" />
+      <circle cx="40" cy="183" r="6" fill="var(--c-primaire)" />
+    </>
+  )}
+  {variante === 'bulles' && (
+    <>
+      <circle cx="90" cy="110" r="70" fill="var(--c-primaire-clair)" />
+      <circle cx="165" cy="80" r="50" fill="var(--c-secondaire-clair)" />
+      <circle cx="185" cy="160" r="34" fill="var(--c-science-fond)" />
+      <circle cx="140" cy="125" r="8" fill="var(--c-primaire)" />
+    </>
+  )}
+  {variante === 'horizon' && (
+    <>
+      <circle cx="130" cy="150" r="62" fill="var(--c-secondaire-clair)" />
+      <path
+        d="M10 160 H250"
+        stroke="var(--c-primaire)"
+        stroke-width="3"
+        opacity="0.4"
+        stroke-linecap="round"
+      />
+      <path
+        d="M40 185 H220"
+        stroke="var(--c-primaire)"
+        stroke-width="3"
+        opacity="0.25"
+        stroke-linecap="round"
+      />
+      <circle cx="130" cy="150" r="20" fill="var(--c-secondaire)" />
+    </>
+  )}
+</svg>

@@ -1,0 +1,11 @@
+---
+interface Props {
+  href: string;
+  variante?: 'principal' | 'secondaire';
+}
+const { href, variante = 'principal' } = Astro.props;
+---
+
+<a class:list={['bouton', { secondaire: variante === 'secondaire' }]} href={href}>
+  <slot />
+</a>

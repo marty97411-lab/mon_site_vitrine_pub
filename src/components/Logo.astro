@@ -1,0 +1,31 @@
+---
+/** Logotype « Personnalisé » : deux cercles qui se chevauchent (deux facettes d'une même personne). */
+interface Props {
+  taille?: number;
+}
+const { taille = 36 } = Astro.props;
+---
+
+<span class="logo">
+  <svg width={taille} height={taille} viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+    <circle cx="17" cy="22" r="14" fill="var(--c-primaire)"></circle>
+    <circle cx="26" cy="15" r="9" fill="var(--c-secondaire)" opacity="0.92"></circle>
+  </svg>
+  <span class="logo-texte">Personnalisé</span>
+</span>
+
+<style>
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .logo-texte {
+    font-family: var(--police-titre);
+    font-variation-settings: 'SOFT' 100;
+    font-weight: 650;
+    font-size: 1.45rem;
+    letter-spacing: -0.015em;
+    color: var(--c-texte);
+  }
+</style>
