@@ -4,7 +4,7 @@ Référence pour toutes les sessions de travail sur ce dépôt. À lire avant to
 
 ## Le projet
 
-Site web en français d'aide à la réflexion sur l'orientation professionnelle, fondé sur la
+**Personnalisé** : site web en français d'aide à la réflexion sur l'orientation professionnelle, fondé sur la
 personnalité :
 
 1. le visiteur passe un questionnaire de personnalité ;
@@ -47,12 +47,51 @@ qu'une partie de la réussite et de la satisfaction au travail.
 - **Toute affirmation affichée doit être reliée à une source** de
   `src/content/sources/sources.json` (référence avec DOI ou lien). Dans les fiches, une
   affirmation sans source doit porter `todo_source: true` ; sinon, le schéma la refuse.
+- Statuts de source : `verifie` (contenu contrôlé), `metadonnees-verifiees` (référence vérifiée
+  dans Crossref, contenu non relu : affiché « contenu à relire »), `a-verifier`.
 - **Ne jamais inventer** de chiffres, de corrélations, de normes, de codes métiers ni de
   références. Si une donnée n'est pas sourcée : `TODO` explicite ou valeur `null`, jamais une
   valeur plausible. Une référence citée de mémoire reste au statut `a-verifier`.
 - Vérifier la licence de chaque nouvelle source et la documenter dans `docs/sources.md`.
 - Personnalité ≠ intérêts : le modèle RIASEC décrit des intérêts. Ne pas présenter un lien
   Big Five → métier comme établi sans source vérifiée.
+
+## Ton et structure des contenus
+
+- **Vouvoiement** partout. Ton chaleureux, rassurant, mais toujours honnête : pas de promesse
+  (« trouvez le métier de vos rêves »), pas de positivité forcée, pas de dramatisation.
+- **Il n'existe pas de bon ou de mauvais profil** : chaque trait est présenté avec ses atouts et ses
+  coûts (champs `atouts` et `couts`, sourcés ou `todo_source: true`).
+- **Trois niveaux partout** :
+  1. **L'essentiel** : une ou deux phrases simples, visibles tout de suite (`essentiel`) ;
+  2. **Comprendre** : un paragraphe accessible, jargon expliqué (`comprendre`) ;
+  3. **Approfondir** : détails, chiffres, limites et références, dans un bloc dépliable (corps
+     Markdown).
+- **Science / Réflexion** : badge « Science » pour ce qui résume la recherche, « Réflexion » pour la
+  philosophie ; ne jamais mélanger les deux registres sans le dire.
+- **Citations** : courtes, avec leur référence complète ; de préférence des œuvres ou traductions du
+  domaine public vérifiées (Wikisource). Œuvres protégées : très courte citation ou simple
+  présentation des idées.
+- Toute page mentionnant une situation difficile renvoie vers « Besoin d'en parler ? ».
+- Les nouvelles pages de contenu portent `brouillon: true` jusqu'à relecture humaine.
+
+## Charte graphique
+
+- Tokens uniques dans `src/styles/tokens.css` (couleurs `--c-*`, typographies, espacements, rayons,
+  ombres, durées). Ne jamais écrire une couleur en dur ailleurs.
+- Contrastes WCAG AA vérifiés par `src/lib/contraste.test.ts` : toute nouvelle paire texte/fond
+  doit y être ajoutée.
+- Polices auto-hébergées via `@fontsource` (Atkinson Hyperlegible Next, Fraunces « soft ») ; aucun
+  appel à un service de polices distant.
+- Texte de base 18 px, lignes ≤ 68 caractères (`.lecture`, `--mesure`).
+- Cartes arrondies, ombres légères, animations courtes, coupées par `prefers-reduced-motion`.
+- Illustrations : formes abstraites SVG (`Illustration.astro`), jamais de photos de banque d'images.
+- Graphiques : une seule teinte (violet), jamais de rouge/vert qui jugerait un score ; toujours une
+  phrase explicative et une alternative textuelle (titre SVG, tableau de valeurs).
+- Composants : `src/components/` (Bouton, Carte, Essentiel, EnSavoirPlus, Source, Badge, FilAriane,
+  Illustration, ScienceOuReflexion, ListeSources, Logo). Mise en page d'article :
+  `src/layouts/Article.astro`.
+- Vérifier le rendu à 375, 768 et 1280 px (aucun défilement horizontal).
 
 ## Choix techniques
 
@@ -69,8 +108,11 @@ qu'une partie de la réussite et de la satisfaction au travail.
 
 ```
 src/
-  content.config.ts      collections Astro (sources, questionnaires, parcours, traits, metiers)
-  content/traits/        une fiche Markdown par trait Big Five
+  content.config.ts      collections Astro (sources, questionnaires, parcours, traits, metiers,
+                         situations, philosophie)
+  content/traits/        une fiche Markdown par trait Big Five (trois niveaux, atouts / coûts)
+  content/situations/    pages « Ma situation » (badge Science)
+  content/philosophie/   pages « Philosophie » (badge Réflexion)
   content/metiers/       fiches métiers (Markdown + frontmatter structuré)
   content/sources/       sources.json : bibliographie, citée par identifiant
   data/questionnaires/   un JSON par questionnaire (items, clés, échelle, licence)
@@ -83,8 +125,14 @@ src/
   lib/rapprochement/     corrélation de profils, seuils O*NET, familles + tests
   lib/contenu.ts         accès au contenu + contrôle des références au build
   lib/stockage.ts        localStorage
-  pages/                 accueil, parcours, questionnaire/[parcours], résultats, la-science, sources,
-                         a-propos, mentions-legales, traits, metiers
+  lib/contraste.ts       calcul des contrastes WCAG (+ test sur tokens.css)
+  lib/visualisation.ts   géométrie des barres et de l'hexagone RIASEC (+ tests)
+  lib/lecture.ts         temps de lecture estimé
+  styles/tokens.css      design tokens (source unique)
+  components/, layouts/  composants et mises en page (Base, Article)
+  pages/                 accueil, parcours, questionnaire/[parcours], résultats, situations,
+                         philosophie, comprendre, traits, la-science, besoin-d-en-parler,
+                         plan-du-site, sources, a-propos, mentions-legales, metiers
 scripts/
   import-onet.mjs        import des profils RIASEC O*NET (CC BY 4.0)
 docs/
@@ -104,6 +152,7 @@ npm test             # tests unitaires Vitest
 npm run lint         # ESLint
 npm run format       # Prettier (écriture) ; format:check pour vérifier
 npm run import:onet  # régénérer src/data/onet/metiers.json (réseau requis)
+npm run doc:sources  # régénérer docs/sources.md depuis sources.json (après toute modification)
 ```
 
 Dans l'environnement cloud, le `fetch` de Node exige `NODE_USE_ENV_PROXY=1` pour passer par le
@@ -124,14 +173,15 @@ Avant chaque commit : `npm run lint && npm test && npm run build`.
   - les traductions d'items portent `traduction.statut: "non-validee"` tant qu'aucune
     validation n'est citée (c'est le cas de tous les items actuels, IPIP comme O*NET) ;
   - un item commun à deux questionnaires garde le même identifiant (réponse réutilisée) ;
-  - une nouvelle source s'ajoute d'abord dans `sources.json` (avec `statut`), puis dans
-    `docs/sources.md`.
+  - une nouvelle source s'ajoute dans `sources.json` (avec `statut`), puis `npm run doc:sources`
+    régénère `docs/sources.md`.
 - **Accessibilité** : HTML sémantique, `lang="fr"`, labels sur tous les champs, focus visible,
   contraste AA, `prefers-reduced-motion` respecté.
 - **Git** : petits commits explicites ; ne jamais committer de secrets.
 
 ## Points ouverts
 
-Voir les sections « TODO » de `docs/sources.md` : vérification des DOI, étude de validation de la
-traduction O*NET (avant toute mise en ligne publique), liens sourcés personnalité → métiers,
-correspondance ROME, filtre par niveau de préparation, choix de l'hébergeur.
+Voir les sections « TODO » de `docs/sources.md` : relecture du contenu des articles cités
+(statut `metadonnees-verifiees`), relecture des brouillons, étude de validation de la traduction
+O*NET (avant toute mise en ligne publique), liens sourcés personnalité → métiers, origine du
+diagramme de l'ikigai, correspondance ROME, nom de domaine (sitemap, Open Graph), hébergeur.

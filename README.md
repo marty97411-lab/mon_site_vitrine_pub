@@ -1,11 +1,15 @@
-# Orientation et personnalité
+# Personnalisé
 
-Site web en français d'aide à la réflexion sur l'orientation professionnelle. Le visiteur choisit
+**Personnalisé** est un site web en français d'aide à la réflexion sur l'orientation
+professionnelle et sur la vie que l'on veut mener. Le visiteur choisit
 un parcours rapide (80 questions) ou complet (180 questions) et répond à deux questionnaires :
 
 - **personnalité** (Big Five, items du domaine public de l'IPIP) : profil en scores continus ;
 - **intérêts professionnels** (RIASEC, O*NET Interest Profiler) : rapprochement avec des familles
   de métiers de la base O*NET, selon la méthode de corrélation documentée par O*NET.
+
+Le site propose aussi des contenus à lire sans faire le test : « Ma situation » (repères
+scientifiques), « Comprendre », « Philosophie » (réflexion) et « Besoin d'en parler ? ».
 
 > **Statut : prototype.** Les traductions des items ne sont pas validées, les métiers sont
 > américains (intitulés en anglais) et plusieurs références restent à vérifier. La traduction des
@@ -32,20 +36,22 @@ npm run dev       # http://localhost:4321
 
 ## Autres commandes
 
-| Commande          | Rôle                                               |
-| ----------------- | -------------------------------------------------- |
-| `npm run build`   | Vérifie les types puis génère le site dans `dist/` |
-| `npm run preview` | Prévisualise le build                              |
-| `npm test`        | Lance les tests unitaires (Vitest)                 |
-| `npm run lint`    | Analyse le code (ESLint)                           |
-| `npm run format`  | Formate le code (Prettier)                         |
+| Commande              | Rôle                                                  |
+| --------------------- | ----------------------------------------------------- |
+| `npm run build`       | Vérifie les types puis génère le site dans `dist/`    |
+| `npm run preview`     | Prévisualise le build                                 |
+| `npm test`            | Lance les tests unitaires (Vitest)                    |
+| `npm run lint`        | Analyse le code (ESLint)                              |
+| `npm run format`      | Formate le code (Prettier)                            |
+| `npm run import:onet` | Régénère les profils de métiers O*NET (réseau requis) |
+| `npm run doc:sources` | Régénère `docs/sources.md` depuis `sources.json`      |
 
 ## Documentation
 
 - `CLAUDE.md` : principes scientifiques, conventions et organisation du projet.
 - `docs/sources.md` : sources, licences et statut de vérification.
 - `docs/methodologie-score.md` : règles de calcul des scores.
-- `docs/decisions/` : décisions de conception.
+- `docs/decisions/` : décisions de conception (dont 0007 : identité visuelle et contenus).
 
 ## Licences
 
