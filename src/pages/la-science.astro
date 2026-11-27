@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro';
+import ListeSources from '../components/ListeSources.astro';
+import { chargerContenu } from '../lib/contenu';
+
+const contenu = await chargerContenu();
+---
+
+<Base
+  titre="La science derrière"
+  description="Les modèles scientifiques utilisés : Big Five (IPIP-NEO-120), RIASEC et O*NET, avec leurs sources."
+>
+  <h1>La science derrière</h1>
+  <p class="avertissement">Page en cours de rédaction : chaque section devra être sourcée.</p>
+
+  <h2>Le modèle des cinq grands facteurs (Big Five)</h2>
+  <p>
+    Le site mesure cinq grands traits, chacun décomposé en six facettes, avec les items de
+    l'IPIP-NEO-120 (Johnson, 2014), placés dans le domaine public par l'International Personality
+    Item Pool. Les scores sont continus : il n'y a pas de « types ».
+  </p>
+  <ul>
+    {contenu.traits.map(({ id, data }) => (
+      <li>
+        <a href={`/traits/${id}`}>{data.nom}</a> : {data.resume}
+      </li>
+    ))}
+  </ul>
+
+  <h2>Des intérêts professionnels au modèle RIASEC</h2>
+  <p>
+    Le modèle de Holland décrit six grands types d'intérêts professionnels (Réaliste, Investigateur,
+    Artistique, Social, Entreprenant, Conventionnel). La base O*NET attribue à chaque métier un code
+    d'intérêts selon ce modèle.
+  </p>
+  <p>
+    TODO : expliquer, avec des sources vérifiées, pourquoi la personnalité et les intérêts sont des
+    concepts distincts, et ce que l'on sait de leurs liens. Aucun chiffre ne sera ajouté sans source
+    vérifiée.
+  </p>
+
+  <h2>Du score au percentile</h2>
+  <p>
+    Votre score à une échelle est la moyenne de vos réponses (de 1 à 5), après inversion des items
+    formulés en sens contraire. Un percentile ne peut être calculé qu'en le comparant à des normes,
+    c'est-à-dire aux scores d'une population de référence. Tant qu'aucune norme publiée et vérifiée
+    n'est intégrée, le site n'affiche pas de percentile.
+  </p>
+
+  <ListeSources sources={contenu.sources} titre="Toutes les sources du projet" />
+</Base>

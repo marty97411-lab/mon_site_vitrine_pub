@@ -1,0 +1,112 @@
+---
+import Base from '../layouts/Base.astro';
+import Avertissement from '../components/Avertissement.astro';
+import { chargerContenu } from '../lib/contenu';
+import normes from '../data/normes/normes.json';
+
+const { items, traits } = await chargerContenu();
+// Données minimales transmises au script client : rien de plus que nécessaire au calcul.
+const donneesCalcul = {
+  items: items.map(({ data }) => ({
+    id: data.id,
+    trait: data.trait,
+    facette: data.facette,
+    cle: data.cle,
+  })),
+  traits: traits.map(({ id, data }) => ({ trait: data.trait, nom: data.nom, fiche: id })),
+  normes: normes.traits,
+};
+---
+
+<Base titre="Vos résultats" description="Vos scores au questionnaire de personnalité (prototype).">
+  <h1>Vos résultats</h1>
+  <Avertissement />
+  <p class="avertissement">
+    <strong>Prototype :</strong> ces scores reposent sur 10 items d'exemple seulement (2 par trait)
+    ; ils ne sont pas interprétables.
+  </p>
+  <div id="resultats" aria-live="polite">
+    <p>
+      Aucun résultat à afficher. <a href="/test">Passer le questionnaire</a> (JavaScript
+      nécessaire).
+    </p>
+  </div>
+  <h2>Pistes de familles de métiers</h2>
+  <p>
+    TODO : la correspondance entre profil et familles de métiers n'est pas encore définie. Elle
+    devra s'appuyer sur des liens documentés entre Big Five et intérêts RIASEC, et idéalement sur un
+    questionnaire d'intérêts (voir <a href="/la-science">la science derrière</a>). En attendant,
+    vous pouvez consulter les <a href="/metiers">fiches métiers d'exemple</a>.
+  </p>
+  <p>
+    <button class="bouton" type="button" id="effacer">
+      Effacer mes réponses
+    </button>
+  </p>
+</Base>
+
+<script
+  is:inline
+  id="donnees-calcul"
+  type="application/json"
+  set:html={JSON.stringify(donneesCalcul)}
+/>
+<script>
+  import { calculerProfil, versPercentile, type ItemCotation, type Norme } from '../lib/scoring';
+  import { effacerReponses, lireReponses } from '../lib/stockage';
+  import type { TraitId } from '../lib/big-five';
+
+  interface DonneesCalcul {
+    items: ItemCotation[];
+    traits: { trait: TraitId; nom: string; fiche: string }[];
+    normes: Record<TraitId, Norme>;
+  }
+
+  const brut = document.querySelector('#donnees-calcul')?.textContent ?? '{}';
+  const donnees = JSON.parse(brut) as DonneesCalcul;
+  const zone = document.querySelector<HTMLElement>('#resultats');
+  const reponses = lireReponses();
+
+  const formater = (n: number) =>
+    n.toLocaleString('fr-FR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+
+  if (zone && reponses) {
+    const profil = calculerProfil(donnees.items, reponses);
+    const tableau = document.createElement('table');
+    tableau.innerHTML =
+      '<caption>Scores moyens (de 1 à 5) par trait</caption>' +
+      '<thead><tr><th scope="col">Trait</th><th scope="col">Score moyen</th><th scope="col">Percentile</th></tr></thead>';
+    const corps = document.createElement('tbody');
+    for (const { trait, nom, fiche } of donnees.traits) {
+      const score = profil.traits[trait];
+      const moyenne = score?.moyenne ?? null;
+      const percentile = versPercentile(moyenne, donnees.normes[trait]);
+      const ligne = document.createElement('tr');
+      const cellNom = document.createElement('th');
+      cellNom.scope = 'row';
+      const lien = document.createElement('a');
+      lien.href = `/traits/${fiche}`;
+      lien.textContent = nom;
+      cellNom.append(lien);
+      const cellScore = document.createElement('td');
+      cellScore.textContent =
+        moyenne === null ? 'Réponses insuffisantes' : `${formater(moyenne)} / 5`;
+      const cellPercentile = document.createElement('td');
+      cellPercentile.textContent =
+        percentile === null ? 'Indisponible (normes non sourcées)' : `${Math.round(percentile)}e`;
+      ligne.append(cellNom, cellScore, cellPercentile);
+      corps.append(ligne);
+    }
+    tableau.append(corps);
+    zone.replaceChildren(tableau);
+    const note = document.createElement('p');
+    note.textContent =
+      'Le percentile indiquerait la part des personnes d’une population de référence ayant un score inférieur au vôtre. Il ne sera affiché que lorsque des normes publiées et vérifiées seront intégrées.';
+    zone.append(note);
+  }
+
+  document.querySelector('#effacer')?.addEventListener('click', () => {
+    effacerReponses();
+    window.location.reload();
+  });
+</script>

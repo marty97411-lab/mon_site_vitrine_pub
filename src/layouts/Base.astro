@@ -1,0 +1,77 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  titre: string;
+  description: string;
+}
+
+const { titre, description } = Astro.props;
+const titreComplet = `${titre} · Orientation et personnalité`;
+const navigation = [
+  { href: '/', libelle: 'Accueil' },
+  { href: '/test', libelle: 'Le test' },
+  { href: '/metiers', libelle: 'Métiers' },
+  { href: '/la-science', libelle: 'La science derrière' },
+  { href: '/a-propos', libelle: 'À propos et limites' },
+];
+const cheminActuel = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{titreComplet}</title>
+  </head>
+  <body>
+    <a class="lien-evitement" href="#contenu">
+      Aller au contenu
+    </a>
+    <header class="conteneur">
+      <p>
+        <strong>Orientation et personnalité</strong> <span class="etiquette">prototype</span>
+      </p>
+      <nav aria-label="Navigation principale">
+        <ul>
+          {navigation.map(({ href, libelle }) => (
+            <li>
+              <a href={href} aria-current={cheminActuel === href ? 'page' : undefined}>
+                {libelle}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+    <main id="contenu" class="conteneur">
+      <slot />
+    </main>
+    <footer class="conteneur">
+      <hr />
+      <p>
+        Aucune réponse n'est envoyée à un serveur : les calculs se font dans votre navigateur.
+        <a href="/mentions-legales">Mentions légales</a>.
+      </p>
+      <p>
+        <small>
+          Items : International Personality Item Pool (IPIP), domaine public. Contenu publié sous
+          licence CC BY 4.0, code sous licence MIT.
+        </small>
+      </p>
+      <p lang="en">
+        <small>
+          This page includes information from the
+          <a href="https://www.onetcenter.org/database.html">O*NET 31.0 Database</a> by the U.S.
+          Department of Labor, Employment and Training Administration (USDOL/ETA). Used under the
+          <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> license. O*NET® is a
+          trademark of USDOL/ETA. The contributors of this project have modified all or some of this
+          information. USDOL/ETA has not approved, endorsed, or tested these modifications.
+        </small>
+      </p>
+    </footer>
+  </body>
+</html>

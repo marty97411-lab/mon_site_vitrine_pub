@@ -6,4 +6,7 @@ export default defineConfig({
   output: 'static',
   // TODO(déploiement) : renseigner `site` (et `base` pour GitHub Pages) une fois l'hébergeur choisi.
   trailingSlash: 'ignore',
+  // La compression HTML supprime les espaces entre un texte et un lien placé à la ligne suivante
+  // (« navigateur.<a> »). On la désactive : le gain de poids est négligeable pour ce site.
+  compressHTML: false,
 });

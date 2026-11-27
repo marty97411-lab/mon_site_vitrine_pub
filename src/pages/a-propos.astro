@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import Avertissement from '../components/Avertissement.astro';
+---
+
+<Base
+  titre="À propos et limites"
+  description="Ce que ce site peut et ne peut pas vous apprendre, et pourquoi."
+>
+  <h1>À propos et limites</h1>
+  <Avertissement />
+  <h2>Ce que ce site n'est pas</h2>
+  <ul>
+    <li>Ce n'est pas un test diagnostique ni un outil de recrutement.</li>
+    <li>
+      Il ne vous range pas dans un « type » : vos scores sont des positions sur des continuums.
+    </li>
+    <li>Il ne remplace pas un entretien avec un conseiller ou une conseillère en orientation.</li>
+  </ul>
+  <h2>Limites connues du prototype</h2>
+  <ul>
+    <li>Le questionnaire ne compte que 10 items d'exemple sur les 120 de l'IPIP-NEO-120.</li>
+    <li>Les traductions françaises des items n'ont pas été validées scientifiquement.</li>
+    <li>Aucune norme n'est encore intégrée : les percentiles ne sont pas disponibles.</li>
+    <li>La correspondance entre profil et métiers n'est pas encore définie.</li>
+  </ul>
+  <h2>Le projet</h2>
+  <p>
+    Projet ouvert : code sous licence MIT, contenu sous licence CC BY 4.0. Toute affirmation
+    affichée sur le site doit pouvoir être reliée à une source.
+  </p>
+</Base>

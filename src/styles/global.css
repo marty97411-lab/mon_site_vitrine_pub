@@ -1,0 +1,122 @@
+/* Styles de base, mobile d'abord. Design volontairement sobre (pas de design final). */
+:root {
+  --couleur-texte: #1b1f24;
+  --couleur-texte-doux: #4a525c;
+  --couleur-fond: #ffffff;
+  --couleur-fond-doux: #f3f5f7;
+  --couleur-primaire: #1f4e79;
+  --couleur-bordure: #c9d1d9;
+  --couleur-alerte-fond: #fff8e1;
+  --couleur-alerte-bordure: #8a6d00;
+  --couleur-focus: #b35c00;
+  --police: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --largeur-max: 46rem;
+  --espace: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --couleur-texte: #e6e9ec;
+    --couleur-texte-doux: #b3bac2;
+    --couleur-fond: #14181c;
+    --couleur-fond-doux: #1e242a;
+    --couleur-primaire: #8cc4f5;
+    --couleur-bordure: #3a434c;
+    --couleur-alerte-fond: #2b2510;
+    --couleur-alerte-bordure: #e0b84a;
+    --couleur-focus: #ffb366;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--police);
+  line-height: 1.6;
+  color: var(--couleur-texte);
+  background: var(--couleur-fond);
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: var(--couleur-primaire);
+}
+
+:focus-visible {
+  outline: 3px solid var(--couleur-focus);
+  outline-offset: 2px;
+}
+
+.conteneur {
+  width: 100%;
+  max-width: var(--largeur-max);
+  margin-inline: auto;
+  padding-inline: var(--espace);
+}
+
+.lien-evitement {
+  position: absolute;
+  left: -999rem;
+}
+
+.lien-evitement:focus {
+  left: var(--espace);
+  top: var(--espace);
+  background: var(--couleur-fond);
+  padding: 0.5rem;
+}
+
+.avertissement {
+  border-left: 4px solid var(--couleur-alerte-bordure);
+  background: var(--couleur-alerte-fond);
+  padding: 0.75rem var(--espace);
+  margin-block: var(--espace);
+}
+
+.etiquette {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 999px;
+  color: var(--couleur-texte-doux);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid var(--couleur-bordure);
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+}
+
+.bouton {
+  display: inline-block;
+  font: inherit;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--couleur-primaire);
+  border-radius: 0.4rem;
+  background: var(--couleur-primaire);
+  color: var(--couleur-fond);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
