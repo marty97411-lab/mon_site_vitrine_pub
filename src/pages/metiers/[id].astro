@@ -1,0 +1,89 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import ListeSources from '../../components/ListeSources.astro';
+import { chargerContenu, sourcesParIds } from '../../lib/contenu';
+import { FACETTES, type TraitId } from '../../lib/big-five';
+import type { Affirmation } from '../../lib/schemas';
+
+export async function getStaticPaths() {
+  const { metiers } = await chargerContenu();
+  return metiers.map((metier) => ({ params: { id: metier.id }, props: { metier } }));
+}
+
+const { metier } = Astro.props;
+const contenu = await chargerContenu();
+const { Content } = await render(metier);
+const m = metier.data;
+
+const nomTrait = (t: TraitId) => contenu.traits.find((x) => x.data.trait === t)?.data.nom ?? t;
+const sens = { eleve: 'plutôt élevé', faible: 'plutôt faible', variable: 'variable' } as const;
+
+const toutesSources = [
+  ...m.sources,
+  m.riasec.source,
+  ...m.traits_pertinents.flatMap((t) => t.justification.sources),
+  ...m.points_forts.flatMap((a) => a.sources),
+  ...m.points_vigilance.flatMap((a) => a.sources),
+];
+
+const marqueur = (a: Affirmation) => (a.todo_source ? ' [source à ajouter]' : '');
+---
+
+<Base titre={m.intitule} description={`Fiche métier : ${m.intitule} (exemple).`}>
+  <h1>{m.intitule}</h1>
+  {m.statut !== 'valide' && <p class="etiquette">Statut : {m.statut}, à valider</p>}
+  <dl>
+    {m.codes.onet && (
+      <>
+        <dt>Code O*NET-SOC</dt>
+        <dd>
+          {m.codes.onet} ({m.intitule_original})
+        </dd>
+      </>
+    )}
+    {m.codes.rome && (
+      <>
+        <dt>Code ROME</dt>
+        <dd>{m.codes.rome}</dd>
+      </>
+    )}
+    <dt>Code d'intérêts RIASEC</dt>
+    <dd>{m.riasec.code}</dd>
+  </dl>
+  <Content />
+
+  <h2>Traits de personnalité potentiellement pertinents</h2>
+  <ul>
+    {m.traits_pertinents.map((t) => (
+      <li>
+        <strong>{nomTrait(t.trait)}</strong> ({sens[t.sens]}
+        {t.facettes && <>; facettes : {t.facettes.map((f) => FACETTES[f].nomFr).join(', ')}</>}) :{' '}
+        {t.justification.texte}
+        {marqueur(t.justification)}
+      </li>
+    ))}
+  </ul>
+
+  <h2>Points forts</h2>
+  <ul>
+    {m.points_forts.map((a) => (
+      <li>
+        {a.texte}
+        {marqueur(a)}
+      </li>
+    ))}
+  </ul>
+
+  <h2>Points de vigilance</h2>
+  <ul>
+    {m.points_vigilance.map((a) => (
+      <li>
+        {a.texte}
+        {marqueur(a)}
+      </li>
+    ))}
+  </ul>
+
+  <ListeSources sources={sourcesParIds(contenu, toutesSources)} />
+</Base>

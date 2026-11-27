@@ -1,0 +1,377 @@
+---
+import Base from '../layouts/Base.astro';
+import Avertissement from '../components/Avertissement.astro';
+import { chargerContenu } from '../lib/contenu';
+
+const contenu = await chargerContenu();
+// Données minimales transmises au script client.
+const donnees = {
+  parcours: contenu.parcours.map(({ data: p }) => ({
+    id: p.id,
+    nom: p.nom,
+    precision: p.precision,
+    questionnaires: p.questionnaires,
+  })),
+  questionnaires: contenu.questionnaires.map(({ data: q }) => ({
+    id: q.id,
+    nom: q.nom,
+    modele: q.modele,
+    echelle: { min: q.echelle.min, max: q.echelle.max },
+    agregation: q.agregation,
+    seuil_completude: q.seuil_completude,
+    avec_facettes: q.avec_facettes,
+    items: q.items.map((i) => ({ id: i.id, domaine: i.domaine, facette: i.facette, cle: i.cle })),
+  })),
+  traits: contenu.traits.map(({ id, data }) => ({ trait: data.trait, nom: data.nom, fiche: id })),
+};
+---
+
+<Base
+  titre="Vos résultats"
+  description="Votre profil de personnalité, vos intérêts professionnels et des familles de métiers proches."
+>
+  <h1>Vos résultats</h1>
+  <Avertissement />
+  <div id="resultats" aria-live="polite">
+    <p>
+      Aucun résultat à afficher dans ce navigateur. <a href="/parcours">Choisir un parcours</a>{' '}
+      (JavaScript nécessaire).
+    </p>
+  </div>
+  <p>
+    <button class="bouton secondaire" type="button" id="effacer">
+      Effacer toutes mes réponses de ce navigateur
+    </button>
+  </p>
+</Base>
+
+<script
+  is:inline
+  id="donnees-resultats"
+  type="application/json"
+  set:html={JSON.stringify(donnees)}
+/>
+<script>
+  import metiersOnet from '../data/onet/metiers.json';
+  import famillesOnet from '../data/onet/familles.json';
+  import jobZonesOnet from '../data/onet/job-zones.json';
+  import { FACETTES, RIASEC, RIASEC_NOMS, type FacetteId, type TraitId } from '../lib/big-five';
+  import {
+    calculerProfil,
+    codeRiasec,
+    compterReponses,
+    profilRiasec,
+    type ConfigCotation,
+  } from '../lib/scoring';
+  import { LIBELLES_NIVEAU, rapprocher, regrouperParFamille } from '../lib/rapprochement';
+  import { effacerTout, lireEtat } from '../lib/stockage';
+
+  interface QuestionnaireClient extends ConfigCotation {
+    id: string;
+    nom: string;
+    modele: 'big-five' | 'riasec';
+    avec_facettes: boolean;
+  }
+  interface DonneesResultats {
+    parcours: { id: string; nom: string; precision: string; questionnaires: string[] }[];
+    questionnaires: QuestionnaireClient[];
+    traits: { trait: TraitId; nom: string; fiche: string }[];
+  }
+
+  const donnees = JSON.parse(
+    document.querySelector('#donnees-resultats')?.textContent ?? '{}',
+  ) as DonneesResultats;
+  const zone = document.querySelector<HTMLElement>('#resultats');
+  const fmt = (n: number, d = 1) =>
+    n.toLocaleString('fr-FR', { minimumFractionDigits: d, maximumFractionDigits: d });
+
+  /** Petit utilitaire de création d'éléments (textes insérés via textContent, jamais en HTML). */
+  function el<K extends keyof HTMLElementTagNameMap>(
+    balise: K,
+    attributs: Record<string, string> = {},
+    ...enfants: (Node | string | null)[]
+  ): HTMLElementTagNameMap[K] {
+    const e = document.createElement(balise);
+    for (const [k, v] of Object.entries(attributs)) e.setAttribute(k, v);
+    for (const enfant of enfants) if (enfant !== null) e.append(enfant);
+    return e;
+  }
+
+  function lien(href: string, texte: string) {
+    return el('a', { href }, texte);
+  }
+
+  function sectionPersonnalite(q: QuestionnaireClient, reponses: Record<string, number>) {
+    const profil = calculerProfil(q, reponses);
+    const section = el('section', { 'aria-labelledby': 'titre-personnalite' });
+    section.append(
+      el('h2', { id: 'titre-personnalite' }, 'Votre personnalité'),
+      el(
+        'p',
+        {},
+        'Chaque score est la moyenne de vos réponses (de 1 à 5) aux questions du trait. C’est une position sur un continuum, pas une catégorie. Le milieu de l’échelle (3) n’est pas la moyenne de la population : le site ne vous compare à aucune population de référence, faute de normes adaptées. ',
+        lien('/la-science#scores', 'Pourquoi ?'),
+      ),
+    );
+    const liste = el('dl', { class: 'scores' });
+    for (const { trait, nom, fiche } of donnees.traits) {
+      const s = profil.domaines[trait];
+      if (!s) continue;
+      const dt = el('dt', {}, lien(`/traits/${fiche}`, nom));
+      const dd = el('dd');
+      if (s.valeur === null) {
+        dd.append('Réponses insuffisantes');
+      } else {
+        dd.append(
+          el('meter', { min: '1', max: '5', value: String(s.valeur), 'aria-hidden': 'true' }),
+          ` ${fmt(s.valeur)} sur une échelle de 1 à 5`,
+        );
+      }
+      liste.append(dt, dd);
+      if (q.avec_facettes) {
+        const details = el('details', {}, el('summary', {}, `Les 6 facettes de « ${nom} »`));
+        const table = el('table');
+        table.append(
+          el(
+            'thead',
+            {},
+            el(
+              'tr',
+              {},
+              el('th', { scope: 'col' }, 'Facette'),
+              el('th', { scope: 'col' }, 'Score (1 à 5)'),
+            ),
+          ),
+        );
+        const corps = el('tbody');
+        for (const [id, f] of Object.entries(FACETTES)) {
+          if (f.trait !== trait) continue;
+          const sf = profil.facettes[id as FacetteId];
+          corps.append(
+            el(
+              'tr',
+              {},
+              el('th', { scope: 'row' }, f.nomFr),
+              el('td', {}, sf?.valeur === null || !sf ? '—' : fmt(sf.valeur)),
+            ),
+          );
+        }
+        table.append(corps);
+        details.append(table);
+        dd.append(details);
+      }
+    }
+    section.append(liste);
+    if (!q.avec_facettes) {
+      section.append(
+        el(
+          'p',
+          { class: 'discret' },
+          'Le parcours rapide ne mesure pas les facettes de personnalité.',
+        ),
+      );
+    }
+    return section;
+  }
+
+  function sectionInterets(q: QuestionnaireClient, reponses: Record<string, number>) {
+    const section = el('section', { 'aria-labelledby': 'titre-interets' });
+    section.append(el('h2', { id: 'titre-interets' }, 'Vos intérêts professionnels (RIASEC)'));
+    const profil = calculerProfil(q, reponses);
+    const scores = profilRiasec(profil);
+    if (!scores) {
+      section.append(el('p', {}, 'Profil d’intérêts incomplet.'));
+      return { section, scores: null };
+    }
+    const max = profil.domaines['R']?.max ?? 0;
+    const table = el('table');
+    table.append(
+      el('caption', {}, `Score par dimension (somme des réponses, de 0 à ${max})`),
+      el(
+        'thead',
+        {},
+        el('tr', {}, el('th', { scope: 'col' }, 'Dimension'), el('th', { scope: 'col' }, 'Score')),
+      ),
+    );
+    const corps = el('tbody');
+    for (const l of RIASEC) {
+      corps.append(
+        el(
+          'tr',
+          {},
+          el('th', { scope: 'row' }, `${RIASEC_NOMS[l].nomFr} (${l})`),
+          el('td', {}, `${scores[l]} / ${max}`),
+        ),
+      );
+    }
+    table.append(corps);
+    const { code, egalite } = codeRiasec(scores);
+    section.append(table, el('p', {}, 'Votre code d’intérêts : ', el('strong', {}, code), '.'));
+    if (egalite) {
+      section.append(
+        el(
+          'p',
+          { class: 'discret' },
+          'Certaines dimensions sont à égalité : l’ordre des lettres concernées est alors arbitraire. Choisissez celle dont les activités vous parlent le plus.',
+        ),
+      );
+    }
+    return { section, scores };
+  }
+
+  function sectionMetiers(scores: Record<(typeof RIASEC)[number], number>) {
+    const section = el('section', { 'aria-labelledby': 'titre-metiers' });
+    section.append(
+      el('h2', { id: 'titre-metiers' }, 'Familles de métiers proches de vos intérêts'),
+      el(
+        'p',
+        {},
+        'Ces pistes comparent la forme de votre profil d’intérêts à celle de 923 métiers de la base O*NET, selon la méthode de l’O*NET Interest Profiler. Il n’y a pas de « métier idéal » : ce sont des idées à explorer. ',
+        lien('/la-science#rapprochement', 'Comment est-ce calculé ?'),
+      ),
+    );
+    const resultat = rapprocher(scores, metiersOnet.metiers);
+    if (resultat.statut === 'profil-plat') {
+      section.append(
+        el(
+          'p',
+          { class: 'avertissement' },
+          'Toutes vos dimensions d’intérêts ont le même score : aucun rapprochement n’est possible. Si vous avez répondu de la même façon à toutes les activités, vos résultats ne reflètent peut-être pas vos intérêts ; vous pouvez reprendre le questionnaire à un autre moment.',
+        ),
+      );
+      return section;
+    }
+    const familles = regrouperParFamille(resultat.correspondances, 5).slice(0, 6);
+    const nomFamille = new Map(famillesOnet.familles.map((f) => [f.code, f]));
+    const nomZone = new Map(jobZonesOnet.zones.map((z) => [z.zone, z.nom]));
+    for (const f of familles) {
+      const info = nomFamille.get(f.famille);
+      const bloc = el('article', { class: 'famille' });
+      bloc.append(
+        el('h3', {}, info?.nom ?? f.famille),
+        el(
+          'p',
+          { class: 'discret' },
+          `${LIBELLES_NIVEAU[f.niveau]} pour le métier le plus proche · famille O*NET « `,
+          el('span', { lang: 'en' }, info?.nom_original ?? ''),
+          ' »',
+        ),
+      );
+      const ul = el('ul');
+      for (const c of f.metiers) {
+        const zone = c.metier.job_zone === null ? '' : ` · ${nomZone.get(c.metier.job_zone) ?? ''}`;
+        ul.append(
+          el(
+            'li',
+            {},
+            el(
+              'a',
+              { href: `https://www.onetonline.org/link/summary/${c.metier.code}`, lang: 'en' },
+              c.metier.titre,
+            ),
+            ` (${c.metier.code}, code ${c.metier.code_riasec || '—'}) · ${LIBELLES_NIVEAU[c.niveau]}${zone}`,
+          ),
+        );
+      }
+      bloc.append(ul);
+      section.append(bloc);
+    }
+    section.append(
+      el(
+        'p',
+        { class: 'discret' },
+        'Intitulés en anglais (base américaine O*NET 31.0) ; la correspondance avec les métiers français (ROME) est en préparation. Les niveaux de préparation décrivent le système de formation américain. Les profils d’intérêts des métiers sont estimés par O*NET (« Machine Learning/Expert ») ; les seuils de correspondance, établis par O*NET pour des profils notés par des experts, sont appliqués tels quels.',
+      ),
+      el(
+        'p',
+        {},
+        el('strong', {}, 'Et votre personnalité ? '),
+        'Elle n’intervient pas dans ce classement. Le site n’affiche pas encore de lien entre vos traits de personnalité et ces métiers : aucune source vérifiée ne permet pour l’instant de l’affirmer.',
+      ),
+    );
+    return section;
+  }
+
+  const etat = lireEtat();
+  const demande = new URLSearchParams(window.location.search).get('parcours');
+  const idParcours = demande === 'rapide' || demande === 'complet' ? demande : etat.parcours;
+  const parcours = donnees.parcours.find((p) => p.id === idParcours);
+
+  if (zone && parcours) {
+    const qs = parcours.questionnaires
+      .map((id) => donnees.questionnaires.find((q) => q.id === id))
+      .filter((q): q is QuestionnaireClient => q !== undefined);
+    const manquantes = qs.reduce(
+      (n, q) => n + q.items.length - compterReponses(q, etat.reponses),
+      0,
+    );
+    const contenu: Node[] = [];
+    const entete = el(
+      'p',
+      { class: 'avertissement' },
+      el('strong', {}, `${parcours.nom}. `),
+      parcours.precision === 'indicative'
+        ? 'Précision indicative : moins de questions par échelle et pas de facettes. '
+        : 'Précision plus fine : davantage de questions par échelle et 30 facettes de personnalité. ',
+      `Questionnaires : ${qs.map((q) => q.nom).join(' et ')}.`,
+    );
+    contenu.push(entete);
+    if (manquantes > 0) {
+      contenu.push(
+        el(
+          'p',
+          {},
+          `Il reste ${manquantes} question(s) sans réponse. `,
+          lien(`/questionnaire/${parcours.id}`, 'Reprendre le questionnaire'),
+          '.',
+        ),
+      );
+    } else {
+      for (const q of qs) {
+        if (q.modele === 'big-five') {
+          contenu.push(sectionPersonnalite(q, etat.reponses));
+        } else {
+          const { section, scores } = sectionInterets(q, etat.reponses);
+          contenu.push(section);
+          if (scores) contenu.push(sectionMetiers(scores));
+        }
+      }
+      if (parcours.id === 'rapide') {
+        contenu.push(
+          el(
+            'p',
+            { class: 'avertissement' },
+            'Pour un profil plus précis, avec les 30 facettes de personnalité, vous pouvez passer le ',
+            lien('/questionnaire/complet', 'parcours complet'),
+            '. Les questions communes aux deux parcours seront reprises.',
+          ),
+        );
+      }
+    }
+    zone.replaceChildren(...contenu);
+  }
+
+  document.querySelector('#effacer')?.addEventListener('click', () => {
+    effacerTout();
+    window.location.assign('/resultats');
+  });
+</script>
+
+<style>
+  .scores dt {
+    font-weight: 600;
+    margin-top: var(--espace);
+  }
+  .scores dd {
+    margin-left: 0;
+  }
+  meter {
+    width: min(100%, 16rem);
+    vertical-align: middle;
+  }
+  .famille {
+    border-left: 4px solid var(--couleur-primaire);
+    padding-left: var(--espace);
+    margin-block: var(--espace);
+  }
+</style>

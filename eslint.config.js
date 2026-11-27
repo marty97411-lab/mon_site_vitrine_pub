@@ -1,0 +1,25 @@
+// Configuration ESLint (format « flat config »).
+import js from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import astro from 'eslint-plugin-astro';
+import prettier from 'eslint-config-prettier';
+import globals from 'globals';
+import { defineConfig } from 'eslint/config';
+
+export default defineConfig(
+  { ignores: ['dist/', '.astro/', 'node_modules/', 'coverage/'] },
+  js.configs.recommended,
+  ...tseslint.configs.strict,
+  ...astro.configs.recommended,
+  {
+    languageOptions: {
+      globals: { ...globals.browser, ...globals.node },
+    },
+    rules: {
+      'no-var': 'error',
+      'prefer-const': 'error',
+      eqeqeq: ['error', 'always'],
+    },
+  },
+  prettier,
+);

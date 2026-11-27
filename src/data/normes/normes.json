@@ -1,0 +1,34 @@
+{
+  "instrument": "IPIP-NEO-120",
+  "statut": "todo",
+  "source": null,
+  "population": null,
+  "echelle": {
+    "min": 1,
+    "max": 5
+  },
+  "note": "TODO : aucune norme sourcée pour l'instant. Toutes les valeurs restent à null : le site affiche alors les scores bruts, sans percentile. Ne jamais remplacer ces null par des valeurs plausibles non sourcées.",
+  "traits": {
+    "O": {
+      "moyenne": null,
+      "ecart_type": null
+    },
+    "C": {
+      "moyenne": null,
+      "ecart_type": null
+    },
+    "E": {
+      "moyenne": null,
+      "ecart_type": null
+    },
+    "A": {
+      "moyenne": null,
+      "ecart_type": null
+    },
+    "N": {
+      "moyenne": null,
+      "ecart_type": null
+    }
+  },
+  "facettes": {}
+}

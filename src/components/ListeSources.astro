@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  sources: CollectionEntry<'sources'>[];
+  titre?: string;
+}
+
+const { sources, titre = 'Sources' } = Astro.props;
+---
+
+{sources.length > 0 && (
+  <section aria-labelledby="titre-sources">
+    <h2 id="titre-sources">{titre}</h2>
+    <ul>
+      {sources.map(({ data: s }) => (
+        <li>
+          {s.auteurs.join(', ')} ({s.annee ?? 's. d.'}). <cite>{s.titre}</cite>
+          {s.publication && <>. {s.publication}</>}
+          {s.volume && <>, {s.volume}</>}
+          {s.pages && <>, {s.pages}</>}.
+          {s.doi && (
+            <>
+              {' '}
+              <a href={`https://doi.org/${s.doi}`}>doi:{s.doi}</a>
+            </>
+          )}
+          {!s.doi && s.url && (
+            <>
+              {' '}
+              <a href={s.url}>{s.url}</a>
+            </>
+          )}{' '}
+          {s.statut === 'a-verifier' && <span class="etiquette">référence à vérifier</span>}
+        </li>
+      ))}
+    </ul>
+  </section>
+)}

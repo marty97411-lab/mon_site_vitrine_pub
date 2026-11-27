@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import { chargerContenu } from '../../lib/contenu';
+
+const { metiers } = await chargerContenu();
+---
+
+<Base titre="Fiches métiers" description="Fiches métiers d'exemple (prototype).">
+  <h1>Fiches métiers</h1>
+  <p class="avertissement">
+    Ces fiches sont des <strong>exemples</strong> destinés à tester la structure du site. Leur
+    contenu n'est pas validé.
+  </p>
+  <ul>
+    {metiers.map(({ id, data }) => (
+      <li>
+        <a href={`/metiers/${id}`}>{data.intitule}</a> <span class="etiquette">{data.statut}</span>
+      </li>
+    ))}
+  </ul>
+</Base>

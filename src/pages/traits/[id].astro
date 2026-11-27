@@ -1,0 +1,23 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import ListeSources from '../../components/ListeSources.astro';
+import { chargerContenu, sourcesParIds } from '../../lib/contenu';
+
+export async function getStaticPaths() {
+  const { traits } = await chargerContenu();
+  return traits.map((trait) => ({ params: { id: trait.id }, props: { trait } }));
+}
+
+const { trait } = Astro.props;
+const contenu = await chargerContenu();
+const { Content } = await render(trait);
+---
+
+<Base titre={trait.data.nom} description={trait.data.resume}>
+  <h1>{trait.data.nom}</h1>
+  {trait.data.brouillon && <p class="etiquette">Brouillon à valider</p>}
+  <p>{trait.data.resume}</p>
+  <Content />
+  <ListeSources sources={sourcesParIds(contenu, trait.data.sources)} />
+</Base>

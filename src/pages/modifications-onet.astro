@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  titre="Modifications et avertissements O*NET"
+  description="Modifications apportées aux outils O*NET (Interest Profiler) et avertissements requis par leur licence."
+>
+  <h1>Modifications et avertissements</h1>
+  <p lang="en">
+    <em>Modifications and disclaimers</em>
+  </p>
+
+  <h2>Avertissement requis par la licence</h2>
+  <blockquote lang="en">
+    <p>
+      The contributors of this project have modified all of, a portion of, or the purpose of the
+      O*NET® Career Exploration Tools. The U.S. Department of Labor, Employment and Training
+      Administration (USDOL/ETA) has not approved, endorsed, or tested these modifications. As such,
+      USDOL/ETA will not be liable to any third party or end-user for any damages arising out of or
+      from the use or misuse of the modified O*NET Career Exploration Tools or any products
+      incorporating or containing the modified O*NET Career Exploration Tools.
+    </p>
+  </blockquote>
+  <p>
+    En français : les contributeurs de ce projet ont modifié tout ou partie des outils d'exploration
+    de carrière O*NET. Le département du Travail des États-Unis (USDOL/ETA) n'a ni approuvé, ni
+    cautionné, ni testé ces modifications, et ne pourra être tenu responsable des dommages liés à
+    leur utilisation.
+  </p>
+
+  <h2>Outils concernés</h2>
+  <ul>
+    <li>O*NET Interest Profiler Short Form (60 questions), utilisé dans le parcours complet ;</li>
+    <li>O*NET Mini Interest Profiler (30 questions), utilisé dans le parcours rapide.</li>
+  </ul>
+  <p>
+    Licence :{' '}
+    <a href="https://www.onetcenter.org/license_toolsdev.html">O*NET Tools Developer License</a>.
+  </p>
+
+  <h2>Nature des modifications</h2>
+  <ul>
+    <li>
+      <strong>Traduction</strong> : les 60 activités et les 5 libellés de réponse ont été traduits
+      en français par le projet. Le texte original anglais est affiché sous chaque question.
+    </li>
+    <li>
+      <strong>Présentation</strong> : questions affichées par pages de 10 ; ordre du Mini-IP
+      conforme à son rapport de développement, ordre de la Short Form repris de sa version papier.
+    </li>
+    <li>
+      <strong>Rapprochement avec les métiers</strong> : mis en œuvre par le projet d'après le manuel
+      de l'Interest Profiler (corrélation de profils et seuils publiés), avec les profils d'intérêts
+      de la base O*NET 31.0. Les métiers sont regroupés par famille, sans présentation par niveau de
+      préparation.
+    </li>
+    <li>
+      <strong>Cotation</strong> : inchangée (réponses de 0 à 4, somme par dimension).
+    </li>
+  </ul>
+
+  <h2>Étude de validation</h2>
+  <p class="avertissement">
+    La licence prévoit qu'une version modifiée fasse l'objet d'une étude de validation, conforme aux
+    normes professionnelles des tests psychologiques, avant sa diffusion.{' '}
+    <strong>Cette étude n'a pas été réalisée.</strong> La traduction française n'est donc pas
+    validée, et les résultats doivent être lus avec prudence.
+  </p>
+</Base>
