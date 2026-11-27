@@ -37,6 +37,15 @@ Code : `src/lib/rapprochement/`, tests : `src/lib/rapprochement/rapprochement.te
   niveau pour chaque métier mais ne filtre pas encore dessus (TODO).
 - La famille 55 (« Military Specific ») est exclue à l'import.
 
+## Explications affichées (page de résultats)
+
+- **Correspondance** : une phrase courte, puis « En savoir plus » (signification des trois niveaux
+  et des seuils, méthode, ce que le niveau ne veut pas dire), avec les sources.
+- **Préparation** : une phrase courte, puis « En savoir plus » (tableau des Job Zones O*NET 31.0,
+  zones 1 et 2 regroupées, avec une **équivalence indicative en France proposée par le projet** :
+  sans diplôme, CAP-BEP ou bac / bac pro à bac+2 / bac+3 à bac+4 / bac+5 et plus). L'équivalence
+  est présentée comme approximative ; elle figure dans `src/data/onet/job-zones.json`.
+
 ## Limites
 
 - Les seuils ont été établis pour des profils de métiers notés par des experts ; dans la base

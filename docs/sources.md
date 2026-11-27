@@ -46,6 +46,12 @@ vérifié**.
 | `onet-online`         | O*NET OnLine                       | ⚠️ licence à lire      | ✅ (contenu) | Codes des fiches d'exemple.                                                                                                                                                                 |
 | `rome-france-travail` | ROME, France Travail               | ⚠️ Etalab 2.0 supposée | ⚠️           | TODO : correspondance O*NET → ROME.                                                                                                                                                         |
 
+## Niveaux de formation en France
+
+| Id                                   | Source                                                                                  | Statut | Notes                                                                                                                                                                                                                       |
+| ------------------------------------ | --------------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `cadre-national-certifications-2019` | Décret n° 2019-14 du 8 janvier 2019, cadre national des certifications professionnelles | ⚠️     | Cité de mémoire, à vérifier sur Légifrance. Sert à l'**équivalence indicative**, proposée par le projet, entre Job Zones O*NET et diplômes français (page de résultats). Aucune table de correspondance officielle trouvée. |
+
 ## Liens entre personnalité, intérêts et travail
 
 | Id                         | Source                                                                      | Statut | Notes                                                                              |
