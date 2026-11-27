@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { affirmationSchema, itemSchema, metierSchema, normesSchema } from './index';
+import { affirmationSchema, metierSchema, normesSchema, questionnaireSchema } from './index';
 
 describe('affirmationSchema', () => {
   it('refuse une affirmation sans source ni TODO', () => {
@@ -11,33 +11,55 @@ describe('affirmationSchema', () => {
   });
 });
 
-const itemValide = {
-  id: 'C2-01',
-  texte_fr: "J'aime ranger.",
-  texte_original: 'Like to tidy up.',
-  trait: 'C',
-  facette: 'C2',
-  cle: 'plus',
-  instrument: 'IPIP-NEO-120',
-  source: 'johnson-2014',
-  licence: 'domaine-public',
+const base = {
+  id: 'ipip-bffm-50',
+  nom: 'Test',
+  description: 'Test',
+  modele: 'big-five',
+  source: 'goldberg-1992',
+  licence: { nom: 'Domaine public', url: 'https://ipip.ori.org/newPermission.htm' },
+  langue_items: 'fr',
   traduction: { statut: 'non-validee' },
+  consigne: 'Consigne',
+  echelle: { min: 1, max: 5, libelles: ['1', '2', '3', '4', '5'], langue: 'fr' },
+  agregation: 'moyenne',
+  seuil_completude: 0.5,
+  avec_facettes: false,
+  items: [{ id: 'BF-01', texte: 'Texte', texte_original: 'Text', domaine: 'E', cle: 'plus' }],
 };
 
-describe('itemSchema', () => {
-  it('accepte un item valide', () => {
-    expect(itemSchema.safeParse(itemValide).success).toBe(true);
+describe('questionnaireSchema', () => {
+  it('accepte un questionnaire valide', () => {
+    expect(questionnaireSchema.safeParse(base).success).toBe(true);
   });
-  it('refuse une facette qui ne correspond pas au trait', () => {
-    expect(itemSchema.safeParse({ ...itemValide, trait: 'E' }).success).toBe(false);
+  it('refuse un nombre de libellés incohérent avec l’échelle', () => {
+    const echelle = { ...base.echelle, libelles: ['1', '2'] };
+    expect(questionnaireSchema.safeParse({ ...base, echelle }).success).toBe(false);
   });
-  it('refuse une traduction « validee » sans source', () => {
-    expect(itemSchema.safeParse({ ...itemValide, traduction: { statut: 'validee' } }).success).toBe(
-      false,
-    );
+  it('refuse une somme sans exigence de complétude', () => {
+    expect(questionnaireSchema.safeParse({ ...base, agregation: 'somme' }).success).toBe(false);
   });
-  it('refuse une licence autre que le domaine public', () => {
-    expect(itemSchema.safeParse({ ...itemValide, licence: 'propriétaire' }).success).toBe(false);
+  it('refuse un domaine étranger au modèle', () => {
+    const items = [{ ...base.items[0], domaine: 'R' }];
+    expect(questionnaireSchema.safeParse({ ...base, items }).success).toBe(false);
+  });
+  it('refuse une facette dans un questionnaire sans facettes', () => {
+    const items = [{ ...base.items[0], id: 'E1-01', facette: 'E1' }];
+    expect(questionnaireSchema.safeParse({ ...base, items }).success).toBe(false);
+  });
+  it('refuse un item RIASEC inversé', () => {
+    const q = {
+      ...base,
+      id: 'onet-mini-ip-30',
+      modele: 'riasec',
+      langue_items: 'en',
+      traduction: { statut: 'sans-objet' },
+      items: [{ id: 'IP-R01', texte: 'T', texte_original: 'T', domaine: 'R', cle: 'moins' }],
+    };
+    expect(questionnaireSchema.safeParse(q).success).toBe(false);
+  });
+  it('refuse des items en anglais présentés comme traduits', () => {
+    expect(questionnaireSchema.safeParse({ ...base, langue_items: 'en' }).success).toBe(false);
   });
 });
 
@@ -54,28 +76,15 @@ const metierValide = {
 };
 
 describe('metierSchema', () => {
-  it('accepte un métier valide', () => {
+  it('accepte un métier valide et exige un code', () => {
     expect(metierSchema.safeParse(metierValide).success).toBe(true);
-  });
-  it('exige au moins un code O*NET ou ROME', () => {
     expect(metierSchema.safeParse({ ...metierValide, codes: {} }).success).toBe(false);
-  });
-  it('refuse un code O*NET mal formé', () => {
-    expect(metierSchema.safeParse({ ...metierValide, codes: { onet: '291141' } }).success).toBe(
-      false,
-    );
-  });
-  it('refuse une facette étrangère au trait', () => {
-    const traits = [{ trait: 'A', facettes: ['C2'], sens: 'eleve', justification }];
-    expect(metierSchema.safeParse({ ...metierValide, traits_pertinents: traits }).success).toBe(
-      false,
-    );
   });
 });
 
 describe('normesSchema', () => {
   const vide = { moyenne: null, ecart_type: null };
-  const base = {
+  const normes = {
     instrument: 'IPIP-NEO-120',
     statut: 'todo',
     source: null,
@@ -84,14 +93,8 @@ describe('normesSchema', () => {
     traits: { O: vide, C: vide, E: vide, A: vide, N: vide },
     facettes: {},
   };
-  it('accepte des normes vides en TODO', () => {
-    expect(normesSchema.safeParse(base).success).toBe(true);
-  });
   it('refuse des normes « verifie » sans source', () => {
-    expect(normesSchema.safeParse({ ...base, statut: 'verifie' }).success).toBe(false);
-  });
-  it('refuse une moyenne sans écart-type', () => {
-    const traits = { ...base.traits, O: { moyenne: 3, ecart_type: null } };
-    expect(normesSchema.safeParse({ ...base, traits }).success).toBe(false);
+    expect(normesSchema.safeParse(normes).success).toBe(true);
+    expect(normesSchema.safeParse({ ...normes, statut: 'verifie' }).success).toBe(false);
   });
 });

@@ -1,0 +1,31 @@
+{
+  "source": "onet-31",
+  "note": "Intitulés vérifiés dans job_zone_reference.csv (O*NET 31.0), où les zones 1 et 2 sont regroupées. Traductions du projet.",
+  "zones": [
+    {
+      "zone": 1,
+      "nom_original": "Job Zone 1-2: Very Little to Some Preparation Needed",
+      "nom": "Peu ou pas de préparation"
+    },
+    {
+      "zone": 2,
+      "nom_original": "Job Zone 1-2: Very Little to Some Preparation Needed",
+      "nom": "Peu ou pas de préparation"
+    },
+    {
+      "zone": 3,
+      "nom_original": "Job Zone Three: Medium Preparation Needed",
+      "nom": "Préparation moyenne"
+    },
+    {
+      "zone": 4,
+      "nom_original": "Job Zone Four: Considerable Preparation Needed",
+      "nom": "Préparation importante"
+    },
+    {
+      "zone": 5,
+      "nom_original": "Job Zone Five: Extensive Preparation Needed",
+      "nom": "Préparation très importante"
+    }
+  ]
+}
