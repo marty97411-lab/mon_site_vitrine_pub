@@ -1,5 +1,5 @@
 ---
-intitule: 'Développeur / développeuse logiciel'
+intitule: 'Développeur logiciel'
 intitule_original: Software Developers
 codes:
   onet: 15-1252.00

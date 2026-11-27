@@ -12,9 +12,9 @@
   "langue_items": "fr",
   "traduction": {
     "statut": "non-validee",
-    "note": "Traduction du projet. Une adaptation française européenne de l'IPIP-NEO-300 (Thiry et Piolti, 2023) existe mais n'a pas pu être consultée."
+    "note": "Traduction du projet. Une adaptation française européenne de l'IPIP-NEO-300 (Thiry et Piolti, 2023) existe ; le projet a choisi de ne pas l'utiliser à ce stade."
   },
-  "consigne": "Décrivez-vous tel ou telle que vous êtes généralement aujourd'hui, et non tel ou telle que vous aimeriez être. Comparez-vous honnêtement aux personnes de votre âge que vous connaissez. Pour chaque affirmation, indiquez dans quelle mesure elle vous décrit avec exactitude.",
+  "consigne": "Décrivez-vous tel que vous êtes généralement aujourd'hui, et non tel que vous aimeriez être. Comparez-vous honnêtement aux personnes de votre âge que vous connaissez. Pour chaque affirmation, indiquez dans quelle mesure elle vous décrit avec exactitude.",
   "echelle": {
     "min": 1,
     "max": 5,
@@ -41,7 +41,7 @@
     },
     {
       "id": "E1-01",
-      "texte": "Je me fais facilement des ami·es.",
+      "texte": "Je me fais facilement des amis.",
       "texte_original": "Make friends easily.",
       "domaine": "E",
       "facette": "E1",
@@ -161,7 +161,7 @@
     },
     {
       "id": "E4-01",
-      "texte": "Je suis toujours occupé·e.",
+      "texte": "Je suis toujours occupé.",
       "texte_original": "Am always busy.",
       "domaine": "E",
       "facette": "E4",
@@ -217,7 +217,7 @@
     },
     {
       "id": "A5-01",
-      "texte": "Je pense être meilleur·e que les autres.",
+      "texte": "Je pense être meilleur que les autres.",
       "texte_original": "Believe that I am better than others.",
       "domaine": "A",
       "facette": "A5",
@@ -225,7 +225,7 @@
     },
     {
       "id": "C5-01",
-      "texte": "Je suis toujours prêt·e.",
+      "texte": "Je suis toujours prêt.",
       "texte_original": "Am always prepared.",
       "domaine": "C",
       "facette": "C5",
@@ -249,7 +249,7 @@
     },
     {
       "id": "O6-01",
-      "texte": "J'ai tendance à voter pour des candidat·es progressistes.",
+      "texte": "J'ai tendance à voter pour des candidats progressistes.",
       "texte_original": "Tend to vote for liberal political candidates.",
       "domaine": "O",
       "facette": "O6",
@@ -561,7 +561,7 @@
     },
     {
       "id": "E2-03",
-      "texte": "Je préfère être seul·e.",
+      "texte": "Je préfère être seul.",
       "texte_original": "Prefer to be alone.",
       "domaine": "E",
       "facette": "E2",
@@ -633,7 +633,7 @@
     },
     {
       "id": "N4-03",
-      "texte": "Je ne me sens à l'aise qu'avec mes ami·es.",
+      "texte": "Je ne me sens à l'aise qu'avec mes amis.",
       "texte_original": "Only feel comfortable with friends.",
       "domaine": "N",
       "facette": "N4",
@@ -729,7 +729,7 @@
     },
     {
       "id": "O6-03",
-      "texte": "J'ai tendance à voter pour des candidat·es conservateurs ou conservatrices.",
+      "texte": "J'ai tendance à voter pour des candidats conservateurs.",
       "texte_original": "Tend to vote for conservative political candidates.",
       "domaine": "O",
       "facette": "O6",
@@ -793,7 +793,7 @@
     },
     {
       "id": "N2-04",
-      "texte": "Je ne suis pas facilement agacé·e.",
+      "texte": "Je ne m'agace pas facilement.",
       "texte_original": "Am not easily annoyed.",
       "domaine": "N",
       "facette": "N2",
@@ -889,7 +889,7 @@
     },
     {
       "id": "O4-04",
-      "texte": "Je suis attaché·e aux façons de faire traditionnelles.",
+      "texte": "Je suis attaché aux façons de faire traditionnelles.",
       "texte_original": "Am attached to conventional ways.",
       "domaine": "O",
       "facette": "O4",

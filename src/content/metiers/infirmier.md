@@ -1,5 +1,5 @@
 ---
-intitule: 'Infirmier / infirmière'
+intitule: 'Infirmier'
 intitule_original: Registered Nurses
 codes:
   onet: 29-1141.00

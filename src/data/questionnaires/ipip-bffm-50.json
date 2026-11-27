@@ -14,7 +14,7 @@
     "statut": "non-validee",
     "note": "Traduction du projet. Aucune traduction française de ces 50 items n'est répertoriée sur le site de l'IPIP."
   },
-  "consigne": "Décrivez-vous tel ou telle que vous êtes généralement aujourd'hui, et non tel ou telle que vous aimeriez être. Comparez-vous honnêtement aux personnes de votre âge que vous connaissez. Pour chaque affirmation, indiquez dans quelle mesure elle vous décrit avec exactitude.",
+  "consigne": "Décrivez-vous tel que vous êtes généralement aujourd'hui, et non tel que vous aimeriez être. Comparez-vous honnêtement aux personnes de votre âge que vous connaissez. Pour chaque affirmation, indiquez dans quelle mesure elle vous décrit avec exactitude.",
   "echelle": {
     "min": 1,
     "max": 5,
@@ -49,7 +49,7 @@
     },
     {
       "id": "C5-01",
-      "texte": "Je suis toujours prêt·e.",
+      "texte": "Je suis toujours prêt.",
       "texte_original": "Am always prepared.",
       "domaine": "C",
       "cle": "plus",
@@ -98,7 +98,7 @@
     },
     {
       "id": "BF-09",
-      "texte": "Je suis détendu·e la plupart du temps.",
+      "texte": "Je suis détendu la plupart du temps.",
       "texte_original": "Am relaxed most of the time.",
       "domaine": "N",
       "cle": "moins",
@@ -221,7 +221,7 @@
     },
     {
       "id": "BF-24",
-      "texte": "Je suis facilement perturbé·e.",
+      "texte": "Je suis facilement perturbé.",
       "texte_original": "Am easily disturbed.",
       "domaine": "N",
       "cle": "plus",
@@ -262,7 +262,7 @@
     },
     {
       "id": "BF-29",
-      "texte": "Je suis facilement contrarié·e.",
+      "texte": "Je suis facilement contrarié.",
       "texte_original": "Get upset easily.",
       "domaine": "N",
       "cle": "plus",
@@ -402,7 +402,7 @@
     },
     {
       "id": "BF-46",
-      "texte": "Je suis silencieux ou silencieuse avec les inconnu·es.",
+      "texte": "Je parle peu en présence d'inconnus.",
       "texte_original": "Am quiet around strangers.",
       "domaine": "E",
       "cle": "moins",
@@ -418,7 +418,7 @@
     },
     {
       "id": "BF-48",
-      "texte": "Je suis exigeant·e dans mon travail.",
+      "texte": "Je suis exigeant dans mon travail.",
       "texte_original": "Am exacting in my work.",
       "domaine": "C",
       "cle": "plus",

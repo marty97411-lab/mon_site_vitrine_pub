@@ -1,5 +1,5 @@
 ---
-intitule: 'Comptable / auditeur ou auditrice'
+intitule: 'Comptable, auditeur'
 intitule_original: Accountants and Auditors
 codes:
   onet: 13-2011.00
