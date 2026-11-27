@@ -1,0 +1,276 @@
+---
+import Base from '../../layouts/Base.astro';
+import { chargerContenu, questionnaireParId } from '../../lib/contenu';
+
+export async function getStaticPaths() {
+  const { parcours } = await chargerContenu();
+  return parcours.map(({ data }) => ({ params: { parcours: data.id }, props: { parcours: data } }));
+}
+
+const { parcours } = Astro.props;
+const contenu = await chargerContenu();
+const questionnaires = parcours.questionnaires.map((id) => questionnaireParId(contenu, id));
+const total = questionnaires.reduce((n, q) => n + q.items.length, 0);
+const ITEMS_PAR_PAGE = 10;
+---
+
+<Base titre={parcours.nom} description={`Questionnaires du ${parcours.nom.toLowerCase()}.`}>
+  <h1>{parcours.nom}</h1>
+  <p>
+    {total} questions en deux parties. Vos réponses sont enregistrées au fur et à mesure dans votre
+    navigateur : vous pouvez fermer la page et reprendre plus tard.
+  </p>
+
+  <div class="progression" aria-live="polite">
+    <label for="barre-progression">Progression</label>
+    <progress id="barre-progression" max={total} value="0">
+      0 sur {total}
+    </progress>
+    <span id="texte-progression">0 réponse sur {total}</span>
+  </div>
+  <p id="message-reprise" class="avertissement" hidden></p>
+
+  <noscript>
+    <p class="avertissement">
+      Le calcul des résultats et la sauvegarde nécessitent JavaScript. Sans JavaScript, vous pouvez
+      lire les questions mais pas obtenir vos résultats.
+    </p>
+  </noscript>
+
+  <form id="questionnaire" data-parcours={parcours.id} data-par-page={ITEMS_PAR_PAGE} novalidate>
+    {questionnaires.map((q, indexQ) => (
+      <section class="partie" data-questionnaire={q.id} aria-labelledby={`titre-${q.id}`}>
+        <h2 id={`titre-${q.id}`}>
+          Partie {indexQ + 1} sur {questionnaires.length} :{' '}
+          {q.modele === 'big-five' ? 'votre personnalité' : 'vos intérêts professionnels'}
+        </h2>
+        <p class="discret">
+          {q.nom} ·{' '}
+          {q.traduction.statut === 'non-validee'
+            ? 'traduction française non validée'
+            : 'version originale'}{' '}
+          · licence <a href={q.licence.url}>{q.licence.nom}</a>
+        </p>
+        <p>{q.consigne}</p>
+        {q.modele === 'riasec' && (
+          <p class="avertissement">
+            Ces questions sont une traduction française, réalisée par le projet et non validée, de
+            l'O*NET Interest Profiler. Le texte original anglais est rappelé sous chaque question.
+          </p>
+        )}
+        {q.modele === 'riasec' && (
+          <p>
+            <a href="/modifications-onet">
+              Modifications et avertissements (<span lang="en">modifications and disclaimers</span>)
+            </a>
+          </p>
+        )}
+        {q.items.map((item, i) => (
+          <fieldset class="question" data-item={item.id} data-rang={i}>
+            <legend lang={q.langue_items}>
+              <span class="numero" lang="fr">
+                {i + 1}.
+              </span>{' '}
+              {item.texte}
+              {q.modele === 'riasec' && item.texte !== item.texte_original && (
+                <span class="original" lang="en">
+                  {item.texte_original}
+                </span>
+              )}
+            </legend>
+            <div class="choix">
+              {q.echelle.libelles.map((libelle, k) => (
+                <label lang={q.echelle.langue}>
+                  <input type="radio" name={item.id} value={q.echelle.min + k} />
+                  {libelle}
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        ))}
+        {q.licence.attribution && (
+          <p class="discret" lang="en">
+            {q.licence.attribution}
+          </p>
+        )}
+      </section>
+    ))}
+    <p id="message-erreur" role="alert"></p>
+    <div class="navigation">
+      <button type="button" class="bouton secondaire" id="precedent">
+        Page précédente
+      </button>
+      <button type="button" class="bouton" id="suivant">
+        Page suivante
+      </button>
+      <button type="submit" class="bouton" id="terminer">
+        Voir mes résultats
+      </button>
+    </div>
+  </form>
+</Base>
+
+<script>
+  import { definirParcours, enregistrerReponse, lireReponses } from '../../lib/stockage';
+  import type { IdParcours } from '../../lib/stockage';
+
+  const formulaire = document.querySelector<HTMLFormElement>('#questionnaire');
+  if (formulaire) {
+    const parcours = formulaire.dataset['parcours'] as IdParcours;
+    const parPage = Number(formulaire.dataset['parPage'] ?? '10');
+    const questions = [...formulaire.querySelectorAll<HTMLFieldSetElement>('.question')];
+    const parties = [...formulaire.querySelectorAll<HTMLElement>('.partie')];
+    const barre = document.querySelector<HTMLProgressElement>('#barre-progression');
+    const texte = document.querySelector<HTMLElement>('#texte-progression');
+    const erreur = document.querySelector<HTMLElement>('#message-erreur');
+    const reprise = document.querySelector<HTMLElement>('#message-reprise');
+    const precedent = document.querySelector<HTMLButtonElement>('#precedent');
+    const suivant = document.querySelector<HTMLButtonElement>('#suivant');
+    const terminer = document.querySelector<HTMLButtonElement>('#terminer');
+
+    definirParcours(parcours);
+
+    // Pages : découpage de chaque partie en blocs de `parPage` questions.
+    const pages: HTMLFieldSetElement[][] = [];
+    for (const partie of parties) {
+      const qs = [...partie.querySelectorAll<HTMLFieldSetElement>('.question')];
+      for (let i = 0; i < qs.length; i += parPage) pages.push(qs.slice(i, i + parPage));
+    }
+
+    const repondu = (q: HTMLFieldSetElement) => q.querySelector('input:checked') !== null;
+
+    // Reprise des réponses enregistrées (y compris celles d'un autre parcours pour les items communs).
+    const sauvegarde = lireReponses();
+    let repris = 0;
+    for (const q of questions) {
+      const id = q.dataset['item'] ?? '';
+      const valeur = sauvegarde[id];
+      if (valeur === undefined) continue;
+      const radio = q.querySelector<HTMLInputElement>(`input[value="${valeur}"]`);
+      if (radio) {
+        radio.checked = true;
+        repris++;
+      }
+    }
+    if (reprise && repris > 0) {
+      reprise.textContent = `${repris} réponse(s) déjà enregistrée(s) dans ce navigateur ont été reprises. Vous pouvez les modifier.`;
+      reprise.hidden = false;
+    }
+
+    const majProgression = () => {
+      const n = questions.filter(repondu).length;
+      if (barre) {
+        barre.value = n;
+        barre.textContent = `${n} sur ${questions.length}`;
+      }
+      if (texte) texte.textContent = `${n} réponse(s) sur ${questions.length}`;
+    };
+
+    // Première page contenant une question sans réponse.
+    let pageCourante = Math.max(
+      0,
+      pages.findIndex((p) => p.some((q) => !repondu(q))),
+    );
+
+    const afficher = (index: number, focus = false) => {
+      pageCourante = Math.min(Math.max(index, 0), pages.length - 1);
+      const visibles = new Set(pages[pageCourante]);
+      for (const q of questions) q.hidden = !visibles.has(q);
+      for (const partie of parties) {
+        partie.hidden = ![...partie.querySelectorAll('.question')].some((q) =>
+          visibles.has(q as HTMLFieldSetElement),
+        );
+      }
+      if (precedent) precedent.hidden = pageCourante === 0;
+      const derniere = pageCourante === pages.length - 1;
+      if (suivant) suivant.hidden = derniere;
+      if (terminer) terminer.hidden = !derniere;
+      if (erreur) erreur.textContent = '';
+      if (focus) {
+        const titre = parties.find((p) => !p.hidden)?.querySelector('h2');
+        titre?.setAttribute('tabindex', '-1');
+        titre?.focus();
+      }
+    };
+
+    formulaire.addEventListener('change', (e) => {
+      const cible = e.target;
+      if (cible instanceof HTMLInputElement && cible.type === 'radio') {
+        enregistrerReponse(cible.name, Number(cible.value));
+        majProgression();
+      }
+    });
+
+    const verifierPage = (page: HTMLFieldSetElement[]) => {
+      const manquante = page.find((q) => !repondu(q));
+      if (manquante && erreur) {
+        erreur.textContent = 'Merci de répondre à toutes les questions de cette page.';
+        manquante.querySelector('input')?.focus();
+        return false;
+      }
+      return true;
+    };
+
+    suivant?.addEventListener('click', () => {
+      const page = pages[pageCourante];
+      if (page && verifierPage(page)) afficher(pageCourante + 1, true);
+    });
+    precedent?.addEventListener('click', () => afficher(pageCourante - 1, true));
+    formulaire.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const indexIncomplete = pages.findIndex((p) => p.some((q) => !repondu(q)));
+      if (indexIncomplete >= 0) {
+        afficher(indexIncomplete);
+        const page = pages[indexIncomplete];
+        if (page) verifierPage(page);
+        return;
+      }
+      window.location.assign(`/resultats?parcours=${parcours}`);
+    });
+
+    majProgression();
+    afficher(pageCourante);
+  }
+</script>
+
+<style>
+  .progression {
+    position: sticky;
+    top: 0;
+    background: var(--couleur-fond);
+    padding-block: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    z-index: 1;
+  }
+  progress {
+    flex: 1 1 10rem;
+  }
+  fieldset {
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 0.4rem;
+    margin-block: var(--espace);
+  }
+  legend {
+    font-weight: 600;
+    padding-inline: 0.3rem;
+  }
+  .original {
+    display: block;
+    font-weight: normal;
+    font-size: 0.85rem;
+    color: var(--couleur-texte-doux);
+  }
+  .choix label {
+    display: block;
+    padding-block: 0.35rem;
+  }
+  .navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-block: var(--espace);
+  }
+</style>

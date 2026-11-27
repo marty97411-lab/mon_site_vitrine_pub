@@ -1,24 +1,24 @@
-import { ECHELLE, type ItemCotation } from './types';
+import type { Echelle, ItemCotation } from './types';
 
 /** Vérifie qu'une réponse est un entier de l'échelle. */
-export function estReponseValide(valeur: unknown): valeur is number {
+export function estReponseValide(valeur: unknown, echelle: Echelle): valeur is number {
   return (
     typeof valeur === 'number' &&
     Number.isInteger(valeur) &&
-    valeur >= ECHELLE.min &&
-    valeur <= ECHELLE.max
+    valeur >= echelle.min &&
+    valeur <= echelle.max
   );
 }
 
 /**
  * Cote une réponse : inchangée pour un item direct, inversée pour un item
- * à clé négative (sur une échelle 1–5 : 1↔5, 2↔4, 3 inchangé).
+ * à clé négative (min + max − valeur ; sur une échelle 1–5 : 1↔5, 2↔4, 3 inchangé).
  */
-export function coterItem(valeur: number, cle: ItemCotation['cle']): number {
-  if (!estReponseValide(valeur)) {
+export function coterItem(valeur: number, cle: ItemCotation['cle'], echelle: Echelle): number {
+  if (!estReponseValide(valeur, echelle)) {
     throw new RangeError(
-      `Réponse invalide : ${String(valeur)} (entier attendu entre ${ECHELLE.min} et ${ECHELLE.max})`,
+      `Réponse invalide : ${String(valeur)} (entier attendu entre ${echelle.min} et ${echelle.max})`,
     );
   }
-  return cle === 'moins' ? ECHELLE.min + ECHELLE.max - valeur : valeur;
+  return cle === 'moins' ? echelle.min + echelle.max - valeur : valeur;
 }

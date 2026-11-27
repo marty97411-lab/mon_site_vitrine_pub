@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import ListeSources from '../components/ListeSources.astro';
+import { chargerContenu } from '../lib/contenu';
+
+const contenu = await chargerContenu();
+---
+
+<Base
+  titre="Sources"
+  description="Toutes les sources scientifiques et données utilisées par le site."
+>
+  <h1>Sources</h1>
+  <p>
+    Liste de toutes les références et données utilisées par le projet. Les références marquées « à
+    vérifier » n'ont pas encore été relues.
+  </p>
+  <ListeSources sources={contenu.sources} titre="Références et données" />
+</Base>

@@ -1,0 +1,460 @@
+{
+  "id": "onet-ip-60",
+  "nom": "O*NET Interest Profiler Short Form (60 items)",
+  "description": "60 activités professionnelles, 10 par dimension RIASEC.",
+  "modele": "riasec",
+  "source": "onet-ip-manual-2021",
+  "sources_complementaires": [
+    "onet-ip-short-form",
+    "onet-career-tools-licence",
+    "onet-tools-licence"
+  ],
+  "licence": {
+    "nom": "O*NET Tools Developer License",
+    "url": "https://www.onetcenter.org/license_toolsdev.html",
+    "attribution": "This page includes information from the O*NET Career Exploration Tools by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). Used under the O*NET Tools Developer License. O*NET® is a trademark of USDOL/ETA. The contributors of this project have modified all or some of this information. USDOL/ETA has not approved, endorsed, or tested these modifications."
+  },
+  "langue_items": "fr",
+  "traduction": {
+    "statut": "non-validee",
+    "note": "Traduction du projet, non validée. La licence O*NET Tools Developer License impose une étude de validation avant la diffusion d'une version modifiée ; cette étude n'a pas été réalisée."
+  },
+  "consigne": "Lisez chaque activité professionnelle et indiquez à quel point elle vous plairait. Ne pensez ni à la formation nécessaire ni au salaire : demandez-vous seulement si cette activité vous plairait.",
+  "echelle": {
+    "min": 0,
+    "max": 4,
+    "libelles": [
+      "Je n'aimerais pas du tout",
+      "Je n'aimerais pas",
+      "Je ne sais pas",
+      "J'aimerais",
+      "J'aimerais beaucoup"
+    ],
+    "langue": "fr"
+  },
+  "agregation": "somme",
+  "seuil_completude": 1,
+  "avec_facettes": false,
+  "items": [
+    {
+      "id": "IP-R01",
+      "texte": "Fabriquer des meubles de cuisine",
+      "texte_original": "Build kitchen cabinets",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-R02",
+      "texte": "Poser des briques ou du carrelage",
+      "texte_original": "Lay brick or tile",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-R03",
+      "texte": "Réparer des appareils électroménagers",
+      "texte_original": "Repair household appliances",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-R04",
+      "texte": "Élever des poissons dans une pisciculture",
+      "texte_original": "Raise fish in a fish hatchery",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-R05",
+      "texte": "Assembler des composants électroniques",
+      "texte_original": "Assemble electronic parts",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-R06",
+      "texte": "Conduire un camion pour livrer des colis dans des bureaux et chez des particuliers",
+      "texte_original": "Drive a truck to deliver packages to offices and homes",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-R07",
+      "texte": "Contrôler la qualité de pièces avant leur expédition",
+      "texte_original": "Test the quality of parts before shipment",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-R08",
+      "texte": "Réparer et installer des serrures",
+      "texte_original": "Repair and install locks",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-R09",
+      "texte": "Régler et faire fonctionner des machines de fabrication",
+      "texte_original": "Set up and operate machines to make products",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-R10",
+      "texte": "Éteindre des feux de forêt",
+      "texte_original": "Put out forest fires",
+      "domaine": "R",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I01",
+      "texte": "Mettre au point un nouveau médicament",
+      "texte_original": "Develop a new medicine",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I02",
+      "texte": "Étudier des moyens de réduire la pollution de l'eau",
+      "texte_original": "Study ways to reduce water pollution",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I03",
+      "texte": "Réaliser des expériences de chimie",
+      "texte_original": "Conduct chemical experiments",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I04",
+      "texte": "Étudier le mouvement des planètes",
+      "texte_original": "Study the movement of planets",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I05",
+      "texte": "Examiner des échantillons de sang au microscope",
+      "texte_original": "Examine blood samples using a microscope",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I06",
+      "texte": "Enquêter sur la cause d'un incendie",
+      "texte_original": "Investigate the cause of a fire",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I07",
+      "texte": "Mettre au point une méthode pour mieux prévoir la météo",
+      "texte_original": "Develop a way to better predict the weather",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I08",
+      "texte": "Travailler dans un laboratoire de biologie",
+      "texte_original": "Work in a biology lab",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I09",
+      "texte": "Inventer un substitut au sucre",
+      "texte_original": "Invent a replacement for sugar",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-I10",
+      "texte": "Faire des analyses de laboratoire pour identifier des maladies",
+      "texte_original": "Do laboratory tests to identify diseases",
+      "domaine": "I",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A01",
+      "texte": "Écrire des livres ou des pièces de théâtre",
+      "texte_original": "Write books or plays",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A02",
+      "texte": "Jouer d'un instrument de musique",
+      "texte_original": "Play a musical instrument",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A03",
+      "texte": "Composer ou arranger de la musique",
+      "texte_original": "Compose or arrange music",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A04",
+      "texte": "Dessiner",
+      "texte_original": "Draw pictures",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A05",
+      "texte": "Créer des effets spéciaux pour le cinéma",
+      "texte_original": "Create special effects for movies",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A06",
+      "texte": "Peindre des décors de théâtre",
+      "texte_original": "Paint sets for plays",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A07",
+      "texte": "Écrire des scénarios pour le cinéma ou la télévision",
+      "texte_original": "Write scripts for movies or television shows",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A08",
+      "texte": "Danser le jazz ou les claquettes en spectacle",
+      "texte_original": "Perform jazz or tap dance",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A09",
+      "texte": "Chanter dans un groupe",
+      "texte_original": "Sing in a band",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-A10",
+      "texte": "Faire le montage de films",
+      "texte_original": "Edit movies",
+      "domaine": "A",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S01",
+      "texte": "Apprendre à une personne un programme d'exercices physiques",
+      "texte_original": "Teach an individual an exercise routine",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S02",
+      "texte": "Aider des personnes qui ont des difficultés personnelles ou émotionnelles",
+      "texte_original": "Help people with personal or emotional problems",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S03",
+      "texte": "Conseiller des personnes sur leur orientation professionnelle",
+      "texte_original": "Give career guidance to people",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S04",
+      "texte": "Pratiquer des soins de rééducation",
+      "texte_original": "Perform rehabilitation therapy",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S05",
+      "texte": "Faire du bénévolat dans une association",
+      "texte_original": "Do volunteer work at a non-profit organization",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S06",
+      "texte": "Apprendre un sport à des enfants",
+      "texte_original": "Teach children how to play sports",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S07",
+      "texte": "Enseigner la langue des signes à des personnes sourdes ou malentendantes",
+      "texte_original": "Teach sign language to people who are deaf or hard of hearing",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S08",
+      "texte": "Aider à animer une séance de thérapie de groupe",
+      "texte_original": "Help conduct a group therapy session",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S09",
+      "texte": "S'occuper d'enfants dans une crèche",
+      "texte_original": "Take care of children at a day-care center",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-S10",
+      "texte": "Faire cours à une classe de lycée",
+      "texte_original": "Teach a high-school class",
+      "domaine": "S",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E01",
+      "texte": "Acheter et vendre des actions et des obligations",
+      "texte_original": "Buy and sell stocks and bonds",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E02",
+      "texte": "Gérer un magasin",
+      "texte_original": "Manage a retail store",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E03",
+      "texte": "Tenir un salon de beauté ou de coiffure",
+      "texte_original": "Operate a beauty salon or barber shop",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E04",
+      "texte": "Diriger un service dans une grande entreprise",
+      "texte_original": "Manage a department within a large company",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E05",
+      "texte": "Créer sa propre entreprise",
+      "texte_original": "Start your own business",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E06",
+      "texte": "Négocier des contrats commerciaux",
+      "texte_original": "Negotiate business contracts",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E07",
+      "texte": "Représenter un client dans un procès",
+      "texte_original": "Represent a client in a lawsuit",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E08",
+      "texte": "Commercialiser une nouvelle ligne de vêtements",
+      "texte_original": "Market a new line of clothing",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E09",
+      "texte": "Vendre des articles dans un grand magasin",
+      "texte_original": "Sell merchandise at a department store",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-E10",
+      "texte": "Gérer un magasin de vêtements",
+      "texte_original": "Manage a clothing store",
+      "domaine": "E",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C01",
+      "texte": "Concevoir un tableur sur ordinateur",
+      "texte_original": "Develop a spreadsheet using computer software",
+      "domaine": "C",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C02",
+      "texte": "Relire des dossiers ou des formulaires pour en corriger les erreurs",
+      "texte_original": "Proofread records or forms",
+      "domaine": "C",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C03",
+      "texte": "Installer des logiciels sur les ordinateurs d'un grand réseau",
+      "texte_original": "Install software across computers on a large network",
+      "domaine": "C",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C04",
+      "texte": "Se servir d'une calculatrice",
+      "texte_original": "Operate a calculator",
+      "domaine": "C",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C05",
+      "texte": "Tenir les registres d'expédition et de réception",
+      "texte_original": "Keep shipping and receiving records",
+      "domaine": "C",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C06",
+      "texte": "Calculer les salaires des employés",
+      "texte_original": "Calculate the wages of employees",
+      "domaine": "C",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C07",
+      "texte": "Faire l'inventaire des fournitures avec un terminal portable",
+      "texte_original": "Inventory supplies using a hand-held computer",
+      "domaine": "C",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C08",
+      "texte": "Enregistrer le paiement des loyers",
+      "texte_original": "Record rent payments",
+      "domaine": "C",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C09",
+      "texte": "Tenir les registres d'inventaire",
+      "texte_original": "Keep inventory records",
+      "domaine": "C",
+      "cle": "plus"
+    },
+    {
+      "id": "IP-C10",
+      "texte": "Affranchir, trier et distribuer le courrier d'un organisme",
+      "texte_original": "Stamp, sort, and distribute mail for an organization",
+      "domaine": "C",
+      "cle": "plus"
+    }
+  ]
+}

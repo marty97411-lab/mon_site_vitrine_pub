@@ -1,52 +1,73 @@
 # Sources scientifiques et données
 
-Liste des sources envisagées, avec leur licence et leur statut. La version qui fait foi pour le
-site est `src/content/sources/sources.json` (validée par schéma au build) ; ce document en donne
-la vue d'ensemble et le suivi des vérifications.
+Liste des sources, avec leur licence et leur statut de vérification. La version qui fait foi pour
+le site est `src/content/sources/sources.json` (validée par schéma au build) ; ce document en
+donne la vue d'ensemble.
 
 **Statuts**
 
-- ✅ **Vérifié** : la source (ou la page de licence) a été consultée directement, à la date indiquée.
-- ⚠️ **À vérifier** : référence citée de mémoire ou incomplète. Ne pas s'appuyer dessus pour
-  afficher une affirmation tant qu'elle n'est pas vérifiée.
+- ✅ **Vérifié** : source ou page consultée directement, à la date indiquée (2026-11-27 sauf mention).
+- ⚠️ **À vérifier** : référence citée de mémoire, incomplète ou non consultée. Ne pas s'appuyer
+  dessus pour une affirmation tant qu'elle n'est pas vérifiée.
 
-## Personnalité (Big Five)
+L'environnement de travail n'a pas accès à doi.org ni à Crossref : **aucun DOI n'a pu être
+vérifié**.
 
-| Id             | Source                                                                                                                                                                                             | Licence                | Statut           | Notes                                                                                                                                                                                                                                                                                 |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ipip`         | International Personality Item Pool, <https://ipip.ori.org/>                                                                                                                                       | Domaine public         | ✅ 2026-11-27    | Page de permission : « Because the IPIP has been placed in the public domain, permission has already been automatically granted for any person to use IPIP items, scales, and inventories for any purpose, commercial or non-commercial. » (<https://ipip.ori.org/newPermission.htm>) |
-| `johnson-2014` | Johnson, J. A. (2014). Measuring thirty facets of the Five Factor Model with a 120-item public domain inventory: Development of the IPIP-NEO-120. _Journal of Research in Personality, 51_, 78-89. | Items : domaine public | ⚠️ partiellement | Référence et liste des 120 items (avec leur clé) vérifiées sur <https://ipip.ori.org/30FacetNEO-PI-RItems.htm>. **DOI (10.1016/j.jrp.2014.05.003) non vérifié.** Vérifier si l'article publie des normes.                                                                             |
+## Questionnaires de personnalité (IPIP, domaine public)
 
-## Intérêts professionnels et métiers
+| Id                  | Source                                                                                                              | Statut     | Notes                                                                                                                                                                                                                      |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ipip`              | International Personality Item Pool, <https://ipip.ori.org/>                                                        | ✅         | Domaine public : « permission has already been automatically granted for any person to use IPIP items, scales, and inventories for any purpose, commercial or non-commercial » (<https://ipip.ori.org/newPermission.htm>). |
+| `johnson-2014`      | Johnson (2014), IPIP-NEO-120, _J. Research in Personality, 51_, 78-89                                               | ⚠️ partiel | Référence et 120 items avec leurs clés vérifiés sur <https://ipip.ori.org/30FacetNEO-PI-RItems.htm>. DOI non vérifié.                                                                                                      |
+| `goldberg-1992`     | Goldberg (1992), The development of markers for the Big-Five factor structure, _Psychological Assessment, 4_, 26-42 | ⚠️ partiel | Référence vérifiée telle que citée par l'IPIP. DOI non vérifié.                                                                                                                                                            |
+| `ipip-bffm-50`      | 50-item Sample Questionnaire, <https://ipip.ori.org/New_IPIP-50-item-scale.htm>                                     | ✅         | Ordre officiel, clés, consigne. Clés recoupées avec <https://ipip.ori.org/newBigFive5broadKey.htm>.                                                                                                                        |
+| `ipip-scoring`      | Scoring Instructions, <https://ipip.ori.org/newScoringInstructions.htm>                                             | ✅         | Échelle 1-5 « Very Inaccurate » … « Very Accurate », inversion, somme.                                                                                                                                                     |
+| `ipip-normes`       | Norms and Data Sets, <https://ipip.ori.org/newNorms.htm>                                                            | ✅         | L'IPIP ne fournit pas de normes et déconseille les normes « toutes faites ». Données brutes de Johnson sur OSF (non consultées).                                                                                           |
+| `ipip-traductions`  | Item Translations, <https://ipip.ori.org/newItemTranslations.htm>                                                   | ✅         | Traduction québécoise de l'IPIP-NEO-300 (Gravel) et adaptation européenne (Thiry et Piolti, 2023). Aucune traduction française des 50 marqueurs.                                                                           |
+| `thiry-piolti-2023` | Adaptation en français européen de l'IPIP-NEO-300                                                                   | ⚠️         | Non consulté ; non utilisé par décision du projet (2026-11-27).                                                                                                                                                            |
 
-| Id                    | Source                                                                                                                                                                             | Licence                                              | Statut                    | Notes                                                                                                                                                                                                  |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `onet-31`             | O*NET 31.0 Database, USDOL/ETA, <https://www.onetcenter.org/database.html>                                                                                                         | CC BY 4.0                                            | ✅ 2026-11-27             | Licence : <https://www.onetcenter.org/license_db.html>. Attribution obligatoire (texte repris dans le pied de page du site). La licence couvre **uniquement les fichiers téléchargeables** de la base. |
-| `onet-online`         | O*NET OnLine, <https://www.onetonline.org/>                                                                                                                                        | ⚠️ « O*NET Resource Center Content License », à lire | ✅ 2026-11-27 (contenu)   | Utilisé pour vérifier les codes et les codes d'intérêts des 3 fiches d'exemple. TODO : reprendre ces données depuis le fichier _Interests_ de la base (CC BY 4.0).                                     |
-| `onet-tools-licence`  | O*NET Tools Developer License, <https://www.onetcenter.org/license_toolsdev.html>                                                                                                  | Licence spécifique                                   | ✅ 2026-11-27 (existence) | S'applique à l'Interest Profiler. Conditions détaillées **à lire** avant d'en réutiliser les items.                                                                                                    |
-| `holland-1997`        | Holland, J. L. (1997). _Making vocational choices_ (3e éd.).                                                                                                                       | Droits de l'éditeur (citation seulement)             | ⚠️                        | Éditeur, édition et ISBN à vérifier.                                                                                                                                                                   |
-| `armstrong-2008`      | Armstrong, P. I., Allison, W., & Rounds, J. (2008). Development and initial validation of brief public domain RIASEC marker scales. _Journal of Vocational Behavior, 73_, 287-299. | ⚠️ Items annoncés « domaine public », à confirmer    | ⚠️                        | Piste pour un futur questionnaire d'intérêts.                                                                                                                                                          |
-| `rome-france-travail` | ROME, France Travail                                                                                                                                                               | ⚠️ Licence Ouverte Etalab 2.0 supposée               | ⚠️                        | URL officielle, version, licence et format à vérifier.                                                                                                                                                 |
+## Questionnaires d'intérêts (O*NET Interest Profiler)
+
+| Id                          | Source                                                               | Licence                                    | Statut | Notes                                                                                                                                                                                           |
+| --------------------------- | -------------------------------------------------------------------- | ------------------------------------------ | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `onet-ip-manual-2021`       | Rounds, Hoff et Lewis (dir.), *O*NET Interest Profiler Manual*, 2021 | —                                          | ✅     | Cotation (ch. 3) et rapprochement par corrélation avec seuils (ch. 2).                                                                                                                          |
+| `rounds-2016-mini-ip`       | Rounds et coll. (2016), Mini-IP                                      | —                                          | ✅     | 30 items et ordre (annexe A). Forme du nom d'un auteur à vérifier.                                                                                                                              |
+| `onet-ip-short-form`        | Interest Profiler Short Form (PDF)                                   | Tools Developer License (version traduite) | ✅     | 60 items et leur dimension.                                                                                                                                                                     |
+| `onet-career-tools-licence` | Career Exploration Tools Content License                             | CC BY-ND 4.0 / Tools Developer License     | ✅     | Toute modification, **traduction comprise**, relève de la Tools Developer License, qui exige une étude de validation préalable. Items traduits par décision du projet : **étude non réalisée**. |
+| `onet-tools-licence`        | O*NET Tools Developer License                                        | —                                          | ✅     | Clause « Validation » lue.                                                                                                                                                                      |
+| `gregory-lewis-2016`        | Rapport technique sur le rapprochement (cité par le manuel)          | —                                          | ⚠️     | Non consulté.                                                                                                                                                                                   |
+
+## Métiers (base O*NET)
+
+| Id                    | Source                             | Licence                | Statut       | Notes                                                                                                                                                                                       |
+| --------------------- | ---------------------------------- | ---------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `onet-31`             | O*NET 31.0 Database                | CC BY 4.0              | ✅           | Fichiers `career_interest_types`, `occupation_data`, `job_zones`, `job_zone_reference` consultés. Profils d'intérêts produits par « Machine Learning/Expert ». Attribution en pied de page. |
+| `onet-familles`       | O*NET OnLine, Browse by Job Family | —                      | ✅           | 22 familles utilisées (la 55, militaire, est exclue).                                                                                                                                       |
+| `onet-online`         | O*NET OnLine                       | ⚠️ licence à lire      | ✅ (contenu) | Codes des fiches d'exemple.                                                                                                                                                                 |
+| `rome-france-travail` | ROME, France Travail               | ⚠️ Etalab 2.0 supposée | ⚠️           | TODO : correspondance O*NET → ROME.                                                                                                                                                         |
 
 ## Liens entre personnalité, intérêts et travail
 
-| Id                   | Source                                                                                                                                                                         | Statut | Notes                                                                                                |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------ | ---------------------------------------------------------------------------------------------------- |
-| `larson-2002`        | Larson, L. M., Rottinghaus, P. J., & Borgen, F. H. (2002). Meta-analyses of Big Six interests and Big Five personality factors. _Journal of Vocational Behavior, 61_, 217-239. | ⚠️     | Métadonnées et DOI à vérifier. **Aucun coefficient ne doit être repris avant lecture de l'article.** |
-| `barrick-mount-1991` | Barrick, M. R., & Mount, M. K. (1991). The Big Five personality dimensions and job performance: A meta-analysis. _Personnel Psychology, 44_, 1-26.                             | ⚠️     | À compléter par des méta-analyses plus récentes.                                                     |
+| Id                         | Source                                                                      | Statut | Notes                                                                              |
+| -------------------------- | --------------------------------------------------------------------------- | ------ | ---------------------------------------------------------------------------------- |
+| `larson-2002`              | Larson, Rottinghaus et Borgen (2002), _J. Vocational Behavior, 61_, 217-239 | ⚠️     | Cité sur la page « la science derrière » avec la mention « référence à vérifier ». |
+| `barrick-mount-gupta-2003` | Barrick, Mount et Gupta (2003), _Personnel Psychology, 56_, 45-74           | ⚠️     | Idem.                                                                              |
+| `barrick-mount-1991`       | Barrick et Mount (1991), _Personnel Psychology, 44_, 1-26                   | ⚠️     | —                                                                                  |
+| `holland-1997`             | Holland (1997), _Making vocational choices_                                 | ⚠️     | —                                                                                  |
+| `armstrong-2008`           | Armstrong, Allison et Rounds (2008)                                         | ⚠️     | Piste écartée à l'étape 2.                                                         |
 
 ## Méthodes
 
-| Id                       | Source                                                                        | Statut | Notes                                                                                                                                      |
-| ------------------------ | ----------------------------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `abramowitz-stegun-1964` | Abramowitz, M., & Stegun, I. A. (1964). _Handbook of Mathematical Functions_. | ⚠️     | Approximation de erf (formule 7.1.26) utilisée pour les percentiles. Les tests vérifient la précision à 10⁻⁵ près sur des valeurs connues. |
+| Id                       | Source                        | Statut | Notes                                                    |
+| ------------------------ | ----------------------------- | ------ | -------------------------------------------------------- |
+| `abramowitz-stegun-1964` | Approximation de erf (7.1.26) | ⚠️     | Utilisée par `percentiles.ts`, actuellement non affiché. |
 
 ## Données encore manquantes (TODO)
 
-- **Normes** pour convertir les scores en percentiles (moyennes et écarts-types par trait et
-  facette, idéalement sur une population francophone). `src/data/normes/normes.json` est vide.
-- **Adaptation française validée** des items IPIP-NEO-120.
-- **Sources pour l'avertissement** affiché sur le site (« la personnalité n'explique qu'une partie
-  de la réussite et de la satisfaction au travail ») : méta-analyses vérifiées à citer.
-- **Scores RIASEC détaillés** des métiers (fichier _Interests_ d'O*NET 31.0).
-- **Table de correspondance O\*NET-SOC → ROME**.
+- Vérification des DOI et métadonnées des articles (Crossref ou accès aux éditeurs).
+- Étude de validation de la traduction des questionnaires O*NET (exigée par leur licence avant diffusion).
+- Sources permettant de relier un trait de personnalité à un atout ou une vigilance dans un métier.
+- Sources pour l'avertissement « la personnalité n'explique qu'une partie de la réussite et de la
+  satisfaction au travail ».
+- Correspondance O*NET → ROME et intitulés français.
+- Effet du passage à des profils « Machine Learning/Expert » sur les seuils (seuils gardés et signalés).

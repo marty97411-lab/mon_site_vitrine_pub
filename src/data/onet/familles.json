@@ -1,0 +1,116 @@
+{
+  "source": "onet-familles",
+  "note": "Intitulés anglais vérifiés sur O*NET OnLine (Browse by Job Family). Traductions françaises du projet, non officielles.",
+  "familles": [
+    {
+      "code": "11",
+      "nom_original": "Management",
+      "nom": "Direction et management"
+    },
+    {
+      "code": "13",
+      "nom_original": "Business and Financial Operations",
+      "nom": "Gestion, finance et commerce"
+    },
+    {
+      "code": "15",
+      "nom_original": "Computer and Mathematical",
+      "nom": "Informatique et mathématiques"
+    },
+    {
+      "code": "17",
+      "nom_original": "Architecture and Engineering",
+      "nom": "Architecture et ingénierie"
+    },
+    {
+      "code": "19",
+      "nom_original": "Life, Physical, and Social Science",
+      "nom": "Sciences de la vie, sciences physiques et sciences sociales"
+    },
+    {
+      "code": "21",
+      "nom_original": "Community and Social Service",
+      "nom": "Action sociale et services à la collectivité"
+    },
+    {
+      "code": "23",
+      "nom_original": "Legal",
+      "nom": "Droit"
+    },
+    {
+      "code": "25",
+      "nom_original": "Educational Instruction and Library",
+      "nom": "Enseignement, formation et bibliothèques"
+    },
+    {
+      "code": "27",
+      "nom_original": "Arts, Design, Entertainment, Sports, and Media",
+      "nom": "Arts, design, spectacle, sport et médias"
+    },
+    {
+      "code": "29",
+      "nom_original": "Healthcare Practitioners and Technical",
+      "nom": "Professions de santé et techniques médicales"
+    },
+    {
+      "code": "31",
+      "nom_original": "Healthcare Support",
+      "nom": "Aide et assistance aux soins"
+    },
+    {
+      "code": "33",
+      "nom_original": "Protective Service",
+      "nom": "Sécurité et protection"
+    },
+    {
+      "code": "35",
+      "nom_original": "Food Preparation and Serving Related",
+      "nom": "Restauration"
+    },
+    {
+      "code": "37",
+      "nom_original": "Building and Grounds Cleaning and Maintenance",
+      "nom": "Nettoyage et entretien des bâtiments et espaces verts"
+    },
+    {
+      "code": "39",
+      "nom_original": "Personal Care and Service",
+      "nom": "Services à la personne"
+    },
+    {
+      "code": "41",
+      "nom_original": "Sales and Related",
+      "nom": "Vente"
+    },
+    {
+      "code": "43",
+      "nom_original": "Office and Administrative Support",
+      "nom": "Secrétariat et soutien administratif"
+    },
+    {
+      "code": "45",
+      "nom_original": "Farming, Fishing, and Forestry",
+      "nom": "Agriculture, pêche et sylviculture"
+    },
+    {
+      "code": "47",
+      "nom_original": "Construction and Extraction",
+      "nom": "Bâtiment, travaux publics et extraction"
+    },
+    {
+      "code": "49",
+      "nom_original": "Installation, Maintenance, and Repair",
+      "nom": "Installation, maintenance et réparation"
+    },
+    {
+      "code": "51",
+      "nom_original": "Production",
+      "nom": "Production industrielle"
+    },
+    {
+      "code": "53",
+      "nom_original": "Transportation and Material Moving",
+      "nom": "Transport et manutention"
+    }
+  ]
+}

@@ -1,20 +1,25 @@
 import { describe, expect, it } from 'vitest';
-import { calculerProfil } from './scores';
-import type { ItemCotation } from './types';
+import { calculerProfil, compterReponses } from './scores';
+import type { ConfigCotation } from './types';
 
-// Items fictifs, réservés aux tests.
-const items: ItemCotation[] = [
-  { id: 'C2-01', trait: 'C', facette: 'C2', cle: 'plus' },
-  { id: 'C2-02', trait: 'C', facette: 'C2', cle: 'moins' },
-  { id: 'C5-01', trait: 'C', facette: 'C5', cle: 'plus' },
-  { id: 'C5-02', trait: 'C', facette: 'C5', cle: 'plus' },
-  { id: 'E2-01', trait: 'E', facette: 'E2', cle: 'plus' },
-  { id: 'E2-02', trait: 'E', facette: 'E2', cle: 'moins' },
-];
+// Configuration fictive, réservée aux tests.
+const config: ConfigCotation = {
+  echelle: { min: 1, max: 5 },
+  agregation: 'moyenne',
+  seuil_completude: 0.5,
+  items: [
+    { id: 'C2-01', domaine: 'C', facette: 'C2', cle: 'plus' },
+    { id: 'C2-02', domaine: 'C', facette: 'C2', cle: 'moins' },
+    { id: 'C5-01', domaine: 'C', facette: 'C5', cle: 'plus' },
+    { id: 'C5-02', domaine: 'C', facette: 'C5', cle: 'plus' },
+    { id: 'E2-01', domaine: 'E', facette: 'E2', cle: 'plus' },
+    { id: 'E2-02', domaine: 'E', facette: 'E2', cle: 'moins' },
+  ],
+};
 
-describe('calculerProfil', () => {
-  it('calcule les moyennes par facette et par trait en inversant les items négatifs', () => {
-    const profil = calculerProfil(items, {
+describe('calculerProfil (moyenne)', () => {
+  it('calcule les moyennes par facette et par domaine en inversant les items négatifs', () => {
+    const profil = calculerProfil(config, {
       'C2-01': 5,
       'C2-02': 1, // inversé → 5
       'C5-01': 2,
@@ -22,59 +27,66 @@ describe('calculerProfil', () => {
       'E2-01': 4,
       'E2-02': 4, // inversé → 2
     });
-    expect(profil.facettes.C2).toEqual({ moyenne: 5, nbRepondus: 2, nbItems: 2 });
-    expect(profil.facettes.C5).toEqual({ moyenne: 3, nbRepondus: 2, nbItems: 2 });
-    expect(profil.traits.C).toEqual({ moyenne: 4, nbRepondus: 4, nbItems: 4 });
-    expect(profil.traits.E?.moyenne).toBe(3);
+    expect(profil.facettes['C2']).toEqual({ valeur: 5, nbRepondus: 2, nbItems: 2, min: 1, max: 5 });
+    expect(profil.facettes['C5']?.valeur).toBe(3);
+    expect(profil.domaines['C']?.valeur).toBe(4);
+    expect(profil.domaines['E']?.valeur).toBe(3);
   });
 
-  it("n'inclut que les traits et facettes présents dans les items", () => {
-    const profil = calculerProfil(items, {});
-    expect(Object.keys(profil.traits).sort()).toEqual(['C', 'E']);
-    expect(profil.traits.O).toBeUndefined();
+  it('renvoie null sous le seuil de complétude', () => {
+    const profil = calculerProfil(config, { 'C2-01': 4 });
+    expect(profil.facettes['C2']?.valeur).toBe(4); // 1/2 = 50 %
+    expect(profil.domaines['C']?.valeur).toBeNull(); // 1/4 = 25 %
   });
 
-  it('renvoie null sans aucune réponse', () => {
-    const profil = calculerProfil(items, {});
-    expect(profil.traits.C).toEqual({ moyenne: null, nbRepondus: 0, nbItems: 4 });
-  });
-
-  it('calcule le score sur les items répondus si le seuil de complétude est atteint', () => {
-    const profil = calculerProfil(items, { 'C2-01': 4 });
-    // Facette C2 : 1 item sur 2 = 50 % → calculée ; trait C : 1 sur 4 = 25 % → null.
-    expect(profil.facettes.C2?.moyenne).toBe(4);
-    expect(profil.traits.C?.moyenne).toBeNull();
-  });
-
-  it('respecte un seuil de complétude personnalisé', () => {
-    const profil = calculerProfil(items, { 'C2-01': 4 }, { seuilCompletude: 1 });
-    expect(profil.facettes.C2?.moyenne).toBeNull();
-  });
-
-  it('refuse un seuil invalide', () => {
-    expect(() => calculerProfil(items, {}, { seuilCompletude: 0 })).toThrow(RangeError);
-    expect(() => calculerProfil(items, {}, { seuilCompletude: 1.5 })).toThrow(RangeError);
-  });
-
-  it('refuse une réponse hors échelle', () => {
-    expect(() => calculerProfil(items, { 'C2-01': 7 })).toThrow(/C2-01/);
+  it('refuse un seuil invalide et une réponse hors échelle', () => {
+    expect(() => calculerProfil({ ...config, seuil_completude: 0 }, {})).toThrow(RangeError);
+    expect(() => calculerProfil(config, { 'C2-01': 7 })).toThrow(/C2-01/);
   });
 
   it('refuse les items en double', () => {
-    const premier = items[0];
-    if (!premier) throw new Error('jeu de test vide');
-    expect(() => calculerProfil([...items, premier], {})).toThrow(/double/);
+    const items = [...config.items, { id: 'C2-01', domaine: 'C', cle: 'plus' as const }];
+    expect(() => calculerProfil({ ...config, items }, {})).toThrow(/double/);
   });
 
   it('ignore les réponses à des items inconnus', () => {
-    const profil = calculerProfil(items, { 'X9-99': 5, 'E2-01': 5, 'E2-02': 1 });
-    expect(profil.traits.E?.moyenne).toBe(5);
+    const profil = calculerProfil(config, { 'IP-R01': 4, 'E2-01': 5, 'E2-02': 1 });
+    expect(profil.domaines['E']?.valeur).toBe(5);
+  });
+});
+
+describe('calculerProfil (somme)', () => {
+  const somme: ConfigCotation = {
+    echelle: { min: 0, max: 4 },
+    agregation: 'somme',
+    seuil_completude: 1,
+    items: [
+      { id: 'IP-R01', domaine: 'R', cle: 'plus' },
+      { id: 'IP-R02', domaine: 'R', cle: 'plus' },
+    ],
+  };
+
+  it('additionne les réponses et indique les bornes du score', () => {
+    expect(calculerProfil(somme, { 'IP-R01': 3, 'IP-R02': 4 }).domaines['R']).toEqual({
+      valeur: 7,
+      nbRepondus: 2,
+      nbItems: 2,
+      min: 0,
+      max: 8,
+    });
   });
 
-  it('borne les scores entre 1 et 5', () => {
-    const tousA5 = Object.fromEntries(items.map((i) => [i.id, i.cle === 'plus' ? 5 : 1]));
-    const tousA1 = Object.fromEntries(items.map((i) => [i.id, i.cle === 'plus' ? 1 : 5]));
-    expect(calculerProfil(items, tousA5).traits.C?.moyenne).toBe(5);
-    expect(calculerProfil(items, tousA1).traits.C?.moyenne).toBe(1);
+  it('exige toutes les réponses : pas de somme partielle', () => {
+    expect(calculerProfil(somme, { 'IP-R01': 3 }).domaines['R']?.valeur).toBeNull();
+  });
+
+  it('refuse un seuil inférieur à 1', () => {
+    expect(() => calculerProfil({ ...somme, seuil_completude: 0.5 }, {})).toThrow(RangeError);
+  });
+});
+
+describe('compterReponses', () => {
+  it('ne compte que les réponses valides aux items du questionnaire', () => {
+    expect(compterReponses(config, { 'C2-01': 3, 'C2-02': 9, 'X-01': 3 })).toBe(1);
   });
 });

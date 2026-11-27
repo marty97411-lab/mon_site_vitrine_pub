@@ -1,6 +1,6 @@
 # 0003. Calculs dans le navigateur, aucune donnée envoyée
 
-- **Statut** : accepté (2026-11-27)
+- **Statut** : accepté (2026-11-27) ; stockage remplacé par le localStorage (voir 0006)
 
 ## Décision
 

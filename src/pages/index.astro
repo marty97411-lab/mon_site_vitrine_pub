@@ -9,15 +9,12 @@ import Avertissement from '../components/Avertissement.astro';
 >
   <h1>Mieux vous connaître pour réfléchir à votre orientation</h1>
   <p>
-    Ce site vous propose un questionnaire de personnalité fondé sur le modèle du Big Five, avec des
-    items libres de droits issus de l'International Personality Item Pool. Vos résultats sont
-    présentés comme des positions sur des échelles continues, jamais comme des « types ».
+    Ce site vous propose deux questionnaires : l'un sur votre personnalité (modèle du Big Five,
+    items libres de droits de l'International Personality Item Pool), l'autre sur vos intérêts
+    professionnels (modèle RIASEC, O*NET Interest Profiler). Vos résultats sont présentés comme des
+    positions sur des échelles continues, jamais comme des « types ».
   </p>
   <Avertissement />
-  <p class="avertissement">
-    <strong>Prototype.</strong> Le questionnaire actuel ne compte que 10 items d'exemple : il ne
-    permet pas d'établir un profil fiable.
-  </p>
   <p>
     <a class="bouton" href="/test">
       Commencer le questionnaire
@@ -25,11 +22,16 @@ import Avertissement from '../components/Avertissement.astro';
   </p>
   <h2>Comment ça marche ?</h2>
   <ol>
-    <li>Vous répondez à des affirmations sur une échelle de 1 à 5.</li>
-    <li>Votre navigateur calcule vos scores, sans rien envoyer à un serveur.</li>
     <li>
-      Vous découvrez votre profil et des pistes de familles de métiers, avec leurs explications et
-      leurs sources.
+      Vous choisissez un parcours rapide (environ 80 questions) ou complet (environ 180 questions).
+    </li>
+    <li>
+      Votre navigateur calcule vos scores et enregistre vos réponses localement, sans rien envoyer à
+      un serveur.
+    </li>
+    <li>
+      Vous découvrez votre profil et des familles de métiers proches de vos intérêts, avec leurs
+      explications et leurs sources.
     </li>
   </ol>
 </Base>
