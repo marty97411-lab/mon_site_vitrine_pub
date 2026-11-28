@@ -26,8 +26,15 @@
 - Décision du 2026-11-28 : les auteurs dont les livres n'ont pas pu être vérifiés peuvent être cités
   sur la page « Livres conseillés », sans titre de livre précis, avec leur domaine, une note de
   prudence pour les ouvrages contestés et la mention « références en cours de vérification »
-  (`src/content/livres/auteurs-a-verifier.json`, 20 auteurs). Un auteur déjà présent dans la
+  (`src/content/livres/auteurs-a-verifier.json`, 17 auteurs). Un auteur déjà présent dans la
   sélection vérifiée n'y figure pas (contrôlé par un test).
+
+## Livres en anglais
+
+- Décision du 2026-11-28 : quand aucune édition française n'est vérifiable, un petit nombre de livres
+  en anglais peut être conseillé (`langue: "en"`, mention « En anglais » sur la carte et la fiche).
+  Ajouts : Gilbert, _Stumbling on Happiness_ ; Ibarra, _Working Identity_ ; Duckworth, _Grit_ (avec
+  note de controverse).
 
 ## Suggestions de lecture
 

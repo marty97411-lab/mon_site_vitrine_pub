@@ -14,26 +14,12 @@
     "themes": ["bien-etre"]
   },
   {
-    "id": "daniel-gilbert",
-    "nom": "Daniel Gilbert",
-    "presentation": "Psychologue, chercheur sur la façon dont nous prévoyons ce qui nous rendra heureux.",
-    "etiquette": "recherche",
-    "themes": ["bien-etre", "connaissance-de-soi"]
-  },
-  {
     "id": "martin-seligman",
     "nom": "Martin Seligman",
     "presentation": "Psychologue, l'une des figures fondatrices de la psychologie positive.",
     "etiquette": "recherche",
     "themes": ["bien-etre", "motivation"],
     "note": "La psychologie positive est un courant parfois critiqué pour ses promesses ; certains de ses résultats sont discutés."
-  },
-  {
-    "id": "herminia-ibarra",
-    "nom": "Herminia Ibarra",
-    "presentation": "Professeure de comportement organisationnel, spécialiste des transitions et reconversions professionnelles.",
-    "etiquette": "recherche",
-    "themes": ["reconversion", "orientation"]
   },
   {
     "id": "adam-grant",
@@ -48,14 +34,6 @@
     "presentation": "Auteur de travaux sur le conseil psychologique et l'accompagnement (« tenir conseil »).",
     "etiquette": "recherche",
     "themes": ["orientation"]
-  },
-  {
-    "id": "angela-duckworth",
-    "nom": "Angela Duckworth",
-    "presentation": "Psychologue, connue pour ses travaux sur la persévérance (« grit »).",
-    "etiquette": "recherche",
-    "themes": ["motivation"],
-    "note": "Notion très populaire mais contestée : des chercheurs estiment qu'elle recouvre largement la conscienciosité et que ses effets ont été surestimés."
   },
   {
     "id": "barry-schwartz",

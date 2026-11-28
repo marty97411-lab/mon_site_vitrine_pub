@@ -6,84 +6,128 @@
     {
       "id": "nevrosisme-eleve",
       "raison": "votre sensibilité au stress et aux émotions négatives est plutôt marquée",
-      "si": { "type": "trait", "trait": "N", "min": 3.5 },
+      "si": {
+        "type": "trait",
+        "trait": "N",
+        "min": 3.5
+      },
       "articles": ["philosophie/stoiciens", "traits/nevrosisme"],
       "livres": ["epictete-manuel", "lecomte-psychologie-positive", "haidt-hypothese-bonheur"]
     },
     {
       "id": "riasec-peu-differencie",
       "raison": "vos intérêts professionnels sont peu différenciés : aucun domaine ne se détache nettement",
-      "si": { "type": "riasec-peu-differencie", "ecart_max": 0.25 },
+      "si": {
+        "type": "riasec-peu-differencie",
+        "ecart_max": 0.25
+      },
       "articles": ["situations/je-ne-sais-pas", "philosophie/montaigne"],
-      "livres": ["cohen-scali-orientation-vie", "guichard-huteau-75-concepts"]
+      "livres": [
+        "cohen-scali-orientation-vie",
+        "guichard-huteau-75-concepts",
+        "ibarra-working-identity"
+      ]
     },
     {
       "id": "ouverture-elevee",
       "raison": "votre ouverture aux idées et à la nouveauté est plutôt élevée",
-      "si": { "type": "trait", "trait": "O", "min": 3.5 },
+      "si": {
+        "type": "trait",
+        "trait": "O",
+        "min": 3.5
+      },
       "articles": ["philosophie/weil-arendt", "philosophie/sartre", "philosophie/aristote"],
       "livres": ["rosa-resonance", "hadot-philosophie-antique", "kahneman-systeme-1-systeme-2"]
     },
     {
       "id": "conscienciosite-basse",
       "raison": "votre score de conscienciosité (organisation, persévérance) est plutôt bas",
-      "si": { "type": "trait", "trait": "C", "max": 2.5 },
+      "si": {
+        "type": "trait",
+        "trait": "C",
+        "max": 2.5
+      },
       "articles": ["traits/conscienciosite"],
       "livres": ["csikszentmihalyi-vivre", "dweck-changer-etat-esprit"]
     },
     {
       "id": "extraversion-basse",
       "raison": "votre score d'extraversion est plutôt bas",
-      "si": { "type": "trait", "trait": "E", "max": 2.5 },
+      "si": {
+        "type": "trait",
+        "trait": "E",
+        "max": 2.5
+      },
       "articles": ["traits/extraversion", "philosophie/montaigne"],
       "livres": ["montaigne-essais", "marc-aurele-pensees"]
     },
     {
       "id": "agreabilite-elevee",
       "raison": "votre agréabilité (coopération, attention aux autres) est plutôt élevée",
-      "si": { "type": "trait", "trait": "A", "min": 3.5 },
+      "si": {
+        "type": "trait",
+        "trait": "A",
+        "min": 3.5
+      },
       "articles": ["philosophie/weil-arendt"],
       "livres": ["linhart-pourquoi-travaillons-nous"]
     },
     {
       "id": "riasec-social-entreprenant",
       "raison": "vos intérêts dominants sont de type social ou entreprenant",
-      "si": { "type": "riasec-dominant", "lettres": ["S", "E"] },
+      "si": {
+        "type": "riasec-dominant",
+        "lettres": ["S", "E"]
+      },
       "articles": ["situations/travail-ne-plait-plus"],
       "livres": ["clot-travail-a-coeur", "linhart-pourquoi-travaillons-nous"]
     },
     {
       "id": "riasec-realiste",
       "raison": "votre intérêt dominant est de type réaliste (concret, manuel)",
-      "si": { "type": "riasec-dominant", "lettres": ["R"] },
+      "si": {
+        "type": "riasec-dominant",
+        "lettres": ["R"]
+      },
       "articles": ["situations/reconversion"],
       "livres": ["crawford-eloge-carburateur"]
     },
     {
       "id": "riasec-investigateur",
       "raison": "votre intérêt dominant est de type investigateur (comprendre, analyser)",
-      "si": { "type": "riasec-dominant", "lettres": ["I"] },
+      "si": {
+        "type": "riasec-dominant",
+        "lettres": ["I"]
+      },
       "articles": ["philosophie/aristote"],
       "livres": ["kahneman-systeme-1-systeme-2", "nettle-personality"]
     },
     {
       "id": "riasec-artistique",
       "raison": "votre intérêt dominant est de type artistique (créer, imaginer)",
-      "si": { "type": "riasec-dominant", "lettres": ["A"] },
+      "si": {
+        "type": "riasec-dominant",
+        "lettres": ["A"]
+      },
       "articles": ["philosophie/aristote"],
       "livres": ["csikszentmihalyi-vivre"]
     },
     {
       "id": "riasec-conventionnel",
       "raison": "votre intérêt dominant est de type conventionnel (organiser, vérifier)",
-      "si": { "type": "riasec-dominant", "lettres": ["C"] },
+      "si": {
+        "type": "riasec-dominant",
+        "lettres": ["C"]
+      },
       "articles": ["situations/travail-ne-plait-plus"],
       "livres": ["meda-le-travail"]
     },
     {
       "id": "pour-tous",
       "raison": "ces lectures conviennent à tous les profils pour commencer",
-      "si": { "type": "toujours" },
+      "si": {
+        "type": "toujours"
+      },
       "articles": ["philosophie/montaigne", "situations/je-ne-sais-pas"],
       "livres": ["alain-propos-bonheur", "hadot-philosophie-antique"]
     }

@@ -120,6 +120,8 @@ qu'une partie de la réussite et de la satisfaction au travail.
   l'auteur, son domaine et une note de prudence, **jamais un titre de livre précis**, avec la mention
   « références en cours de vérification ». Dès qu'un livre est vérifié, il passe dans `livres.json`
   et l'auteur sort de cette liste.
+- **Livres en anglais** : possibles en petit nombre quand aucune édition française n'est vérifiable
+  (`langue: "en"`, signalé sur la carte et la fiche) ; mêmes exigences de vérification.
 
 ## Suggestions de lecture (recommandations)
 

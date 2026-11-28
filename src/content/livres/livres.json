@@ -816,5 +816,85 @@
     "direction": false,
     "domaine_public": false,
     "brouillon": true
+  },
+  {
+    "id": "gilbert-stumbling-on-happiness",
+    "titre": "Stumbling on Happiness",
+    "auteurs": ["Daniel Gilbert"],
+    "direction": false,
+    "traducteurs": [],
+    "annee": 2007,
+    "note_edition": "Édition de poche (Vintage Books) ; première édition chez Alfred A. Knopf en 2006.",
+    "editeur": "Vintage Books",
+    "isbn": "9781400077427",
+    "langue": "en",
+    "domaine_public": false,
+    "etiquette": "recherche",
+    "niveau": "accessible",
+    "themes": ["bien-etre", "connaissance-de-soi"],
+    "resume": "Un psychologue explique, avec humour, pourquoi nous nous trompons souvent en imaginant ce qui nous rendra heureux plus tard, en s'appuyant sur des recherches sur l'imagination et la prévision.",
+    "pour_qui": "Pour qui hésite entre plusieurs choix de vie et se demande à quel point il peut se fier à ce qu'il imagine.",
+    "a_garder_en_tete": "En anglais ; aucune édition française n'a pu être vérifiée. Ouvrage de vulgarisation, publié en 2006 : certaines études citées ont pu être nuancées depuis.",
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": [
+        "doi:10.1007/s10902-007-9073-2 (compte rendu : Vintage Books, 2007, ISBN 978-1-4000-7742-7)",
+        "doi:10.1108/09534810710760108 (compte rendu : Alfred A. Knopf, 2006)"
+      ]
+    },
+    "brouillon": true
+  },
+  {
+    "id": "ibarra-working-identity",
+    "titre": "Working Identity",
+    "sous_titre": "Unconventional Strategies for Reinventing Your Career",
+    "auteurs": ["Herminia Ibarra"],
+    "direction": false,
+    "traducteurs": [],
+    "annee": 2003,
+    "editeur": "Harvard Business School Press",
+    "isbn": null,
+    "langue": "en",
+    "domaine_public": false,
+    "etiquette": "recherche",
+    "niveau": "accessible",
+    "themes": ["reconversion", "orientation"],
+    "resume": "Une professeure de comportement organisationnel s'appuie sur des parcours de personnes en reconversion pour montrer qu'on change de carrière en expérimentant et en testant de nouvelles identités, plutôt qu'en planifiant tout à l'avance.",
+    "pour_qui": "Pour qui envisage une reconversion et se sent bloqué par l'idée de devoir d'abord savoir exactement ce qu'il veut.",
+    "a_garder_en_tete": "En anglais ; aucune édition française n'a pu être vérifiée. Fondé sur des études de cas de cadres, publié en 2003.",
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": [
+        "doi:10.5465/ame.2003.10954811 (compte rendu : Harvard Business School Press, Boston, 2003)"
+      ],
+      "reste_a_verifier": "ISBN et existence d'une traduction française."
+    },
+    "brouillon": true
+  },
+  {
+    "id": "duckworth-grit",
+    "titre": "Grit",
+    "sous_titre": "The Power of Passion and Perseverance",
+    "auteurs": ["Angela Duckworth"],
+    "direction": false,
+    "traducteurs": [],
+    "annee": 2016,
+    "editeur": "Scribner",
+    "isbn": null,
+    "langue": "en",
+    "domaine_public": false,
+    "etiquette": "recherche",
+    "niveau": "accessible",
+    "themes": ["motivation"],
+    "note_controverse": "Notion très populaire mais contestée : des méta-analyses suggèrent que la « grit » recouvre largement la conscienciosité et que ses effets ont été surestimés. TODO : citer une méta-analyse vérifiée.",
+    "resume": "Une psychologue défend l'idée que la persévérance et la passion pour des objectifs de long terme comptent autant que le talent, en s'appuyant sur ses recherches et sur des portraits.",
+    "pour_qui": "Pour qui s'interroge sur la persévérance et le rapport à l'effort, avec un regard critique.",
+    "a_garder_en_tete": "En anglais ; une traduction française existe peut-être mais n'a pas pu être vérifiée. Lire en gardant en tête les critiques scientifiques de la notion.",
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.1111/peps.12198 (compte rendu : Scribner, New York, 2016, 352 p.)"],
+      "reste_a_verifier": "ISBN et édition française éventuelle."
+    },
+    "brouillon": true
   }
 ]
