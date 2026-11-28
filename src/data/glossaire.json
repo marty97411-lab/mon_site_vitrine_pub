@@ -62,5 +62,19 @@
     "terme": "méta-analyse",
     "court": "une étude qui rassemble statistiquement les résultats de nombreuses études sur une même question",
     "definition": "Étude qui combine statistiquement les résultats de nombreuses recherches sur une même question. Elle donne une estimation plus fiable qu'une étude isolée, mais dépend de la qualité des études rassemblées."
+  },
+  {
+    "id": "introversion-extraversion",
+    "terme": "introversion / extraversion",
+    "court": "les deux extrémités d'un même trait, qui décrit le goût pour les contacts, l'activité et la stimulation",
+    "definition": "Dans le modèle Big Five, l'extraversion est un trait continu : elle décrit le goût pour les contacts sociaux, l'activité et la stimulation. L'introversion n'est pas un trait à part, c'est le côté bas de ce même trait. Elle ne se confond ni avec la timidité ni avec l'anxiété sociale.",
+    "voir": "/explication/introversion-extraversion"
+  },
+  {
+    "id": "ambiversion",
+    "terme": "ambiversion",
+    "court": "le fait de se situer vers le milieu du continuum introversion–extraversion",
+    "definition": "Mot employé pour les personnes qui se situent vers le milieu du continuum entre introversion et extraversion. Ce n'est pas une troisième catégorie, mais une position intermédiaire sur une même échelle.",
+    "voir": "/explication/introversion-extraversion/ce-que-c-est"
   }
 ]

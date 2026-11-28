@@ -14,7 +14,9 @@ export type TermeGlossaire =
   | 'onet'
   | 'job-zone'
   | 'correlation'
-  | 'meta-analyse';
+  | 'meta-analyse'
+  | 'introversion-extraversion'
+  | 'ambiversion';
 
 export interface Definition {
   id: TermeGlossaire;

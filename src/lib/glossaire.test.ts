@@ -14,6 +14,8 @@ const TERMES: TermeGlossaire[] = [
   'job-zone',
   'correlation',
   'meta-analyse',
+  'introversion-extraversion',
+  'ambiversion',
 ];
 
 describe('glossaire', () => {
