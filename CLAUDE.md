@@ -160,6 +160,10 @@ Approfondir), **sans nouvel onglet dans le menu sauf nécessité**, et la page d
     commence par « Pour qui… » ou « Pour les… ») ; pas de section « Pour qui ? » séparée ; puis le
     menu « Résumé détaillé » ; « Ce qu'il faut garder en tête » est secondaire et discret, comme
     les encadrés « Source » (≥ 15 px, couleur atténuée, contraste AA).
+- **Classiques** (édition de référence ancienne, souvent Wikisource) : indiquer une édition française
+  accessible, de préférence en poche (`edition_accessible` : ISBN valide, preuves ; `a_confirmer:
+true` si la référence ne vient que d'une source secondaire, affiché « référence à confirmer »).
+  Un titre courant différent du titre de la fiche va dans `autres_titres`.
 - Liens : DOI ou Wikisource si vérifiés, plus recherches BnF et Amazon **sans affiliation**.
 - **Auteurs non encore vérifiés** (`src/content/livres/auteurs-a-verifier.json`) : on peut citer
   l'auteur, son domaine et une note de prudence, **jamais un titre de livre précis**, avec la mention

@@ -14,7 +14,20 @@ export async function getStaticPaths() {
 
 const { livre } = Astro.props;
 const l = livre.data;
-const requete = l.isbn ?? `${l.titre} ${l.auteurs.join(' ')}`;
+const ea = l.edition_accessible;
+// Les recherches BnF et Amazon visent l'édition accessible quand la fiche en propose une.
+/** Ligne « traducteurs, éditeur, collection, année » de l'édition accessible (sans espaces parasites). */
+const detailsEa = ea
+  ? [
+      ea.traducteurs.length > 0 ? `trad. ${ea.traducteurs.join(', ')}` : '',
+      ea.editeur,
+      ea.collection ? `coll. « ${ea.collection} »` : '',
+      ea.annee ? String(ea.annee) : '',
+    ]
+      .filter(Boolean)
+      .join(', ')
+  : '';
+const requete = ea?.isbn ?? l.isbn ?? `${l.titre} ${l.auteurs.join(' ')}`;
 /** Affiche les adresses encodées (%C3%A9…) sous une forme lisible. */
 const lisible = (texte: string) => {
   try {
@@ -59,6 +72,29 @@ const description = `${l.titre}, de ${l.auteurs.join(', ')} (${l.editeur}, ${l.a
     {l.isbn && <> · ISBN {l.isbn}</>}
     {l.langue === 'en' && <> · en anglais</>}
   </p>
+  {l.autres_titres.length > 0 && (
+    <p class="discret">
+      Aussi publié sous le titre :{' '}
+      {l.autres_titres.map((t, i) => (
+        <>
+          {i > 0 && ', '}
+          <cite>{t}</cite>
+        </>
+      ))}
+    </p>
+  )}
+  {ea && (
+    <p class="edition-accessible">
+      <strong>Édition française accessible{ea.poche && ' (poche)'} :</strong>{' '}
+      {ea.titre && (
+        <>
+          <cite>{ea.titre}</cite>,{' '}
+        </>
+      )}
+      {detailsEa} · ISBN {ea.isbn}
+      {ea.a_confirmer && <span class="a-confirmer"> · référence à confirmer</span>}
+    </p>
+  )}
   {l.brouillon && (
     <p class="avertissement">
       <strong>Fiche à relire.</strong> Résumé et commentaires rédigés par l'équipe, en cours de
@@ -115,7 +151,7 @@ const description = `${l.titre}, de ${l.auteurs.join(', ')} (${l.editeur}, ${l.a
     <a class="bouton secondaire" href={lienBnf(requete)}>
       Chercher dans le catalogue de la BnF
     </a>
-    {!l.domaine_public && (
+    {(!l.domaine_public || ea) && (
       <a class="bouton secondaire" href={lienAmazon(requete)}>
         Chercher sur Amazon
       </a>
@@ -138,6 +174,19 @@ const description = `${l.titre}, de ${l.auteurs.join(', ')} (${l.editeur}, ${l.a
         <p>Reste à vérifier : {l.verification.reste_a_verifier}</p>
       )}
       {l.note_edition && <p>Édition : {l.note_edition}</p>}
+      {ea && (
+        <>
+          <p>
+            Édition accessible{ea.a_confirmer ? ' (référence à confirmer sur la notice BnF)' : ''} :
+            vérifiée le {l.verification.date} à partir de :
+          </p>
+          <ul class="preuves">
+            {ea.preuves.map((p) => (
+              <li>{lisible(p)}</li>
+            ))}
+          </ul>
+        </>
+      )}
     </EnSavoirPlus>
   </div>
   <p>
@@ -182,6 +231,11 @@ const description = `${l.titre}, de ${l.auteurs.join(', ')} (${l.editeur}, ${l.a
   .partie-resume {
     font-size: 1.2rem;
     margin-top: var(--espace-4);
+  }
+  .edition-accessible {
+    font-size: max(0.9rem, 15px);
+    color: var(--c-texte-doux);
+    max-width: var(--mesure);
   }
   .preuves li {
     overflow-wrap: anywhere;

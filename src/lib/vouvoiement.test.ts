@@ -22,8 +22,11 @@ const EXCEPTIONS: { motif: RegExp; raison: string }[] = [
     motif: /Suis ton plan, cher Lucilius ; reprends possession de toi-même/i,
     raison: 'citation de Sénèque (domaine public)',
   },
-  { motif: /le ton volontariste/i, raison: '« ton » au sens de tonalité' },
-  { motif: /son ton est sombre/i, raison: '« ton » au sens de tonalité (résumé de Dejours)' },
+  {
+    // « le ton », « un ton », « son ton » : le nom « ton » (tonalité), jamais un tutoiement.
+    motif: /(?<![\p{L}])(?:le|un|son) ton(?![\p{L}])/iu,
+    raison: "« ton » au sens de tonalité, précédé d'un déterminant",
+  },
 ];
 
 function fichiers(dossier: string): string[] {
@@ -43,7 +46,7 @@ function texteVisible(chemin: string, contenu: string): string {
     );
   }
   t = t.replace(/https?:\/\/\S+/g, ' ').replace(/lang="en"[^>]*>[^<]*/g, ' ');
-  for (const e of EXCEPTIONS) t = t.replace(new RegExp(e.motif.source, 'gi'), ' ');
+  for (const e of EXCEPTIONS) t = t.replace(new RegExp(e.motif.source, 'giu'), ' ');
   return t;
 }
 

@@ -880,5 +880,31 @@
     "statut": "metadonnees-verifiees",
     "consulte_le": "2026-11-28",
     "notes": "Métadonnées vérifiées via Crossref (ISBN 9782100759958). Contenu non relu. Cité dans le résumé détaillé du « Traité de psychologie existentielle » (Bernaud)."
+  },
+  {
+    "id": "soffia-wood-burchell-2022",
+    "type": "article",
+    "auteurs": ["Soffia, M.", "Wood, A. J.", "Burchell, B."],
+    "annee": 2022,
+    "titre": "Alienation is not ‘bullshit’: An empirical critique of Graeber’s theory of BS jobs",
+    "publication": "Work, Employment and Society",
+    "volume": "36",
+    "pages": "816-840",
+    "doi": "10.1177/09500170211015067",
+    "statut": "metadonnees-verifiees",
+    "consulte_le": "2026-11-28",
+    "notes": "Métadonnées vérifiées via Crossref (vol. 36, n° 5 ; en ligne le 2 juin 2021). Contenu non relu (dont la proportion d'environ 5 %). Cité dans le résumé détaillé de « Bullshit jobs » (Graeber)."
+  },
+  {
+    "id": "marquis-2014",
+    "type": "livre",
+    "auteurs": ["Marquis, N."],
+    "annee": 2014,
+    "titre": "Du bien-être au marché du malaise. La société du développement personnel",
+    "publication": "Presses universitaires de France",
+    "doi": "10.3917/puf.marq.2014.01",
+    "statut": "metadonnees-verifiees",
+    "consulte_le": "2026-11-28",
+    "notes": "Métadonnées vérifiées via Crossref (ISBN 9782130628262). Contenu non relu : le lien avec les lecteurs de Boris Cyrulnik, avancé par le résumé, reste à confirmer. Cité dans le résumé détaillé de « Un merveilleux malheur » (Cyrulnik)."
   }
 ]

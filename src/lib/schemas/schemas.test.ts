@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { affirmationSchema, metierSchema, normesSchema, questionnaireSchema } from './index';
+import {
+  affirmationSchema,
+  livreSchema,
+  metierSchema,
+  normesSchema,
+  questionnaireSchema,
+} from './index';
 
 describe('affirmationSchema', () => {
   it('refuse une affirmation sans source ni TODO', () => {
@@ -96,5 +102,49 @@ describe('normesSchema', () => {
   it('refuse des normes « verifie » sans source', () => {
     expect(normesSchema.safeParse(normes).success).toBe(true);
     expect(normesSchema.safeParse({ ...normes, statut: 'verifie' }).success).toBe(false);
+  });
+});
+
+describe('livreSchema', () => {
+  // Livre fictif, pour le test uniquement.
+  const livre = {
+    id: 'livre-test',
+    titre: 'Titre',
+    auteurs: ['Auteur'],
+    annee: 1900,
+    editeur: 'Éditeur',
+    isbn: null,
+    langue: 'fr',
+    domaine_public: true,
+    etiquette: 'philosophie',
+    niveau: 'accessible',
+    themes: ['philosophie-de-vie'],
+    resume: 'Résumé',
+    pour_qui: 'Pour qui…',
+    a_garder_en_tete: 'À garder en tête',
+    verification: { date: '2026-11-28', preuves: ['notice'] },
+  };
+  const edition = {
+    editeur: 'Éditeur',
+    isbn: '9782080709479',
+    poche: true,
+    preuves: ['notice'],
+    a_confirmer: true,
+  };
+  it('accepte une édition accessible avec un ISBN valide et des preuves', () => {
+    const r = livreSchema.safeParse({ ...livre, edition_accessible: edition });
+    expect(r.success).toBe(true);
+    expect(r.success && r.data.autres_titres).toEqual([]);
+  });
+  it("refuse une édition accessible à l'ISBN invalide ou sans preuve", () => {
+    expect(
+      livreSchema.safeParse({
+        ...livre,
+        edition_accessible: { ...edition, isbn: '9782080709470' },
+      }).success,
+    ).toBe(false);
+    expect(
+      livreSchema.safeParse({ ...livre, edition_accessible: { ...edition, preuves: [] } }).success,
+    ).toBe(false);
   });
 });
