@@ -1,0 +1,72 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Carte from '../../../components/Carte.astro';
+import Badge from '../../../components/Badge.astro';
+import Essentiel from '../../../components/Essentiel.astro';
+import Definition from '../../../components/Definition.astro';
+import { chargerContenu } from '../../../lib/contenu';
+import { minutesDeLecture } from '../../../lib/lecture';
+
+const { introversion } = await chargerContenu();
+---
+
+<Base
+  titre="Introversion et extraversion"
+  description="Un dossier en cinq pages courtes : ce qu'est vraiment ce trait, les idées reçues, ce que dit la recherche sur le travail, les environnements de travail et le fait d'agir hors de son caractère."
+  fil={[
+    { libelle: 'Explication', href: '/explication' },
+    { libelle: 'Introversion et extraversion' },
+  ]}
+>
+  <h1>Introversion et extraversion</h1>
+  <Essentiel>
+    <p>
+      Il n'existe pas deux camps, les introvertis et les extravertis : chacun se situe quelque part
+      sur une même échelle, et aucune position n'est meilleure qu'une autre.
+    </p>
+  </Essentiel>
+  <p class="lecture">
+    Ce dossier porte sur le couple <Definition terme="introversion-extraversion" />. Il s'appuie sur
+    le <Definition terme="big-five" /> et sur des études vérifiées ; quand une idée vient seulement
+    de l'expérience courante, la page le dit. Chaque page se lit seule, en quelques minutes.
+  </p>
+
+  <h2>Sommaire</h2>
+  <ol class="sommaire grille deux">
+    {introversion.map(({ id, data, body }) => (
+      <li>
+        <Carte titre={data.titre} href={`/explication/introversion-extraversion/${id}`}>
+          <p slot="haut" class="meta">
+            <Badge type={data.badge} />{' '}
+            <span class="discret">
+              {minutesDeLecture(data.essentiel, data.comprendre, body)} min
+            </span>
+            {data.brouillon && <span class="etiquette">brouillon</span>}
+          </p>
+          <p>{data.essentiel}</p>
+        </Carte>
+      </li>
+    ))}
+  </ol>
+
+  <p class="lecture">
+    Pour situer votre propre score, consultez la{' '}
+    <a href="/traits/extraversion">fiche du trait Extraversion</a> ou{' '}
+    <a href="/parcours">faites le test</a>. Si la gêne face aux autres vous fait souffrir, la page{' '}
+    <a href="/besoin-d-en-parler">Besoin d'en parler ?</a> indique à qui s'adresser.
+  </p>
+</Base>
+
+<style>
+  .sommaire {
+    list-style: none;
+    padding: 0;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espace-2);
+    align-items: center;
+    margin: 0;
+  }
+</style>
