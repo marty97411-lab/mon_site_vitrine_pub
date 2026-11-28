@@ -43,7 +43,9 @@ describe('données françaises (ROME, RNCP, Onisep)', () => {
     for (const fiche of Object.values(metiersRome.fiches)) {
       for (const o of fiche.onet) {
         expect(
-          o.statut === 'valide' || ['exacte', 'approchee'].includes(o.qualite),
+          o.statut === 'valide' ||
+            o.origine === 'revue' ||
+            ['exacte', 'approchee'].includes(o.qualite),
           `${o.code} → ${fiche.code}`,
         ).toBe(true);
       }

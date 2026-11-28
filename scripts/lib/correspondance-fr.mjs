@@ -32,6 +32,9 @@ export function qualiteChaine(t1, t2) {
   return 'incertaine';
 }
 
+/** Types de choix de la revue éditoriale (règles du propriétaire, ADR 0010 § 12). */
+export const TYPES_CHOIX = ['exacte', 'approchee', 'specialisee', 'appellation'];
+
 export const RANG_QUALITE = { validee: -1, exacte: 0, approchee: 1, incertaine: 2, proche: 3 };
 
 /** Qualités affichées sans relecture (décision du propriétaire, ADR 0010). */
@@ -70,6 +73,10 @@ export function coherenceRiasec(codeOnet, rome) {
  *   `appellation` (code OGR, facultatif) : appellation ROME à afficher à la place de l'intitulé de
  *   la fiche ; elle doit appartenir à cette fiche.
  * @param {Map<string, string>} [p.libellesAppellations] code OGR → libellé de l'appellation
+ * @param {{ onet: string, choix: { rome: string, type: string, appellation?: string, specialite?: string, justification: string }[], justification: string }[]} [p.revues]
+ *   revue éditoriale selon les règles du propriétaire (ADR 0010, § 12) : pour un métier O*NET
+ *   revu, seuls les choix listés sont affichés (aucun si la liste est vide), au statut « a_valider ».
+ *   Les décisions du propriétaire (validations) priment.
  */
 export function construireCorrespondances({
   metiersOnet,
@@ -79,6 +86,7 @@ export function construireCorrespondances({
   fiches,
   validations,
   libellesAppellations = new Map(),
+  revues = [],
 }) {
   const parOnet = groupe(onetEsco, (l) => l.onet);
   const parEsco = groupe(escoRome, (l) => l.esco);
@@ -105,6 +113,33 @@ export function construireCorrespondances({
     }
   }
 
+  const revueParOnet = new Map();
+  for (const r of revues) {
+    if (revueParOnet.has(r.onet)) throw new Error(`Revue : métier O*NET en double ${r.onet}`);
+    if (!r.justification) throw new Error(`Revue : justification manquante (${r.onet})`);
+    for (const c of r.choix) {
+      if (!fiches.has(c.rome)) throw new Error(`Revue : code ROME inconnu ${c.rome} (${r.onet})`);
+      if (!TYPES_CHOIX.includes(c.type)) {
+        throw new Error(`Revue : type de choix inconnu « ${c.type} » (${r.onet})`);
+      }
+      if (!c.justification)
+        throw new Error(`Revue : justification manquante (${r.onet} → ${c.rome})`);
+      if (c.type === 'specialisee' && !c.specialite) {
+        throw new Error(`Revue : spécialité manquante (${r.onet} → ${c.rome})`);
+      }
+      if (
+        c.appellation !== undefined &&
+        (appellationVersFiche.get(c.appellation) !== c.rome ||
+          !libellesAppellations.has(c.appellation))
+      ) {
+        throw new Error(
+          `Revue : l'appellation ${c.appellation} n'appartient pas à la fiche ${c.rome}`,
+        );
+      }
+    }
+    revueParOnet.set(r.onet, r);
+  }
+
   /** @type {Map<string, object[]>} */
   const resultat = new Map();
   for (const m of metiersOnet) {
@@ -123,16 +158,23 @@ export function construireCorrespondances({
       }
     }
     // Correspondances ajoutées à la main (absentes de la chaîne automatique).
-    for (const v of validations) {
-      if (v.onet === m.code && v.decision === 'valide' && !candidats.has(v.rome)) {
-        candidats.set(v.rome, { rome: v.rome, qualite: 'manuelle', chemins: [], esco: new Set() });
+    const revue = revueParOnet.get(m.code);
+    const ajouts = [
+      ...validations.filter((v) => v.onet === m.code && v.decision === 'valide').map((v) => v.rome),
+      ...(revue?.choix.map((c) => c.rome) ?? []),
+    ];
+    for (const rome of ajouts) {
+      if (!candidats.has(rome)) {
+        candidats.set(rome, { rome, qualite: 'manuelle', chemins: [], esco: new Set() });
       }
     }
 
     const liste = [...candidats.values()].map((c) => {
       const fiche = fiches.get(c.rome);
       const decision = decisions.get(`${m.code}|${c.rome}`);
+      const choix = revue?.choix.find((x) => x.rome === c.rome);
       const coherence = coherenceRiasec(m.code_riasec, fiche?.riasec);
+      const appellation = decision?.appellation ?? choix?.appellation;
       return {
         rome: c.rome,
         libelle: fiche?.libelle ?? c.rome,
@@ -142,13 +184,18 @@ export function construireCorrespondances({
         esco: [...c.esco].sort(),
         coherence,
         statut: decision ? (decision.decision === 'valide' ? 'valide' : 'rejete') : 'a_valider',
-        appellation: decision?.appellation
-          ? { code: decision.appellation, libelle: libellesAppellations.get(decision.appellation) }
+        appellation: appellation
+          ? { code: appellation, libelle: libellesAppellations.get(appellation) }
           : null,
+        origine: decision ? 'proprietaire' : revue ? 'revue' : 'automatique',
+        revue: revue ? (choix ? 'retenue' : 'ecartee') : null,
+        typeChoix: choix?.type ?? '',
+        specialite: choix?.specialite ?? null,
+        justification: choix?.justification ?? (revue ? revue.justification : ''),
         note: decision?.note ?? '',
       };
     });
-    resultat.set(m.code, choisirAffichage(liste));
+    resultat.set(m.code, choisirAffichage(liste, revue));
   }
   return resultat;
 }
@@ -159,10 +206,11 @@ export function construireCorrespondances({
  * sinon, seules les qualités exacte et approchée sont retenues (une approchée est écartée si
  * les codes RIASEC O*NET et ROME se contredisent ; une exacte est gardée, la divergence restant
  * signalée dans le fichier de relecture), triées par qualité, cohérence RIASEC puis nombre de
- * chemins, au plus 3.
+ * chemins, au plus 3. Un métier O*NET revu n'affiche que les choix de la revue.
  * @param {object[]} liste
+ * @param {object} [revue] revue éditoriale de ce métier O*NET, s'il y en a une
  */
-export function choisirAffichage(liste) {
+export function choisirAffichage(liste, revue) {
   const trie = [...liste].sort(
     (a, b) =>
       rangStatut(a) - rangStatut(b) ||
@@ -180,6 +228,9 @@ export function choisirAffichage(liste) {
     else if (c.statut === 'valide') {
       affiche = true;
       raison = 'validée à la relecture';
+    } else if (revue) {
+      affiche = c.revue === 'retenue';
+      raison = affiche ? 'retenue à la revue (à valider)' : 'écartée à la revue (à valider)';
     } else if (!QUALITES_AFFICHABLES.has(c.qualite)) raison = `qualité ${c.qualite}`;
     else if (c.coherence === false && c.qualite !== 'exacte') {
       raison = 'codes RIASEC O*NET et ROME incompatibles';
@@ -188,7 +239,7 @@ export function choisirAffichage(liste) {
       affiche = true;
       raison = 'automatique, non relue';
     }
-    if (affiche && c.statut !== 'valide') places--;
+    if (affiche && c.statut !== 'valide' && !revue) places--;
     return { ...c, affiche, raison };
   });
 }

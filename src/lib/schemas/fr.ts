@@ -16,6 +16,8 @@ export const qualiteCorrespondance = z.enum([
   'manuelle',
 ]);
 export const statutCorrespondance = z.enum(['valide', 'a_valider']);
+/** Origine de la décision : propriétaire (validations.json), revue éditoriale (revue.json) ou chaîne automatique. */
+export const origineCorrespondance = z.enum(['proprietaire', 'revue', 'automatique']);
 
 const versions = z.object({
   onet_esco: z.object({ titre: z.string(), url: z.url() }),
@@ -42,6 +44,9 @@ const lien = z.object({
   statut: statutCorrespondance,
   /** Appellation ROME affichée à la place de l'intitulé de la fiche (choisie à la relecture). */
   appellation: codeOgr.optional(),
+  origine: origineCorrespondance,
+  /** Spécialité précisée quand le métier O*NET est plus spécialisé que la fiche ROME. */
+  specialite: z.string().min(1).optional(),
 });
 
 export const correspondancesFrSchema = z
@@ -60,8 +65,12 @@ export const correspondancesFrSchema = z
         if (vus.has(l.rome))
           ctx.addIssue({ code: 'custom', message: `${onet} : doublon ${l.rome}` });
         vus.add(l.rome);
-        // Jamais de métier affiché sans correspondance validée ou de type acceptable.
-        if (l.statut !== 'valide' && !['exacte', 'approchee'].includes(l.qualite)) {
+        // Jamais de métier affiché sans correspondance validée, retenue à la revue ou de type acceptable.
+        if (
+          l.statut !== 'valide' &&
+          l.origine !== 'revue' &&
+          !['exacte', 'approchee'].includes(l.qualite)
+        ) {
           ctx.addIssue({
             code: 'custom',
             message: `${onet} → ${l.rome} : qualité ${l.qualite} affichée sans validation`,
@@ -72,7 +81,7 @@ export const correspondancesFrSchema = z
         }
         if (
           l.appellation !== undefined &&
-          (l.statut !== 'valide' || !d.appellations[l.appellation])
+          (l.origine === 'automatique' || !d.appellations[l.appellation])
         ) {
           ctx.addIssue({
             code: 'custom',
@@ -116,6 +125,8 @@ export const metierRomeSchema = z.object({
         qualite: qualiteCorrespondance,
         statut: statutCorrespondance,
         appellation: z.string().min(1).optional(),
+        origine: origineCorrespondance,
+        specialite: z.string().min(1).optional(),
       }),
     )
     .min(1),

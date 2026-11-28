@@ -83,6 +83,18 @@ describe('versMetiersFrancais', () => {
     ]);
   });
 
+  it('garde la spécialité et distingue deux spécialités d’une même fiche', () => {
+    const r = versMetiersFrancais(
+      [corr('00-0001.00', '11', 0.9), corr('00-0002.00', '11', 0.8)],
+      {
+        '00-0001.00': [{ rome: 'Z0001', statut: 'a_valider', specialite: 'spécialité A' }],
+        '00-0002.00': [{ rome: 'Z0001', statut: 'a_valider', specialite: 'spécialité B' }],
+      },
+      libelles,
+    );
+    expect(r[0]?.metiers.map((m) => m.specialite)).toEqual(['spécialité A', 'spécialité B']);
+  });
+
   it('construit le lien vers la fiche avec le niveau dans l’adresse', () => {
     expect(lienFicheRome('Z0001', 'forte')).toBe('/metiers/rome/Z0001?niveau=forte');
     expect(lienFicheRome('Z0001')).toBe('/metiers/rome/Z0001');

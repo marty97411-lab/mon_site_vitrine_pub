@@ -621,6 +621,7 @@ const donnees = {
             'li',
             {},
             el('a', { href: lienFicheRome(m.rome, m.niveau) }, m.libelle),
+            m.specialite ? ` (spécialité : ${m.specialite})` : '',
             ` · ${LIBELLES_NIVEAU[m.niveau]}`,
           ),
         );

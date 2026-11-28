@@ -39,6 +39,7 @@ const sourcesPrecision = precision
   : [];
 const [essentiel, ...suite] = fiche.definition;
 const nonRelue = fiche.onet.some((o) => o.statut !== 'valide');
+const specialites = [...new Set(fiche.onet.flatMap((o) => (o.specialite ? [o.specialite] : [])))];
 const appellations = [
   ...new Set(fiche.onet.flatMap((o) => (o.appellation ? [o.appellation] : []))),
 ];
@@ -73,6 +74,13 @@ const appellations = [
     <Essentiel>
       {essentiel ? <p>{essentiel}</p> : <p>Définition non disponible dans le ROME.</p>}
       <p class="discret">Définition : ROME 4.0, France Travail.</p>
+      {specialites.length > 0 && (
+        <p>
+          Dans les résultats, ce métier est aussi proposé pour{' '}
+          {specialites.length === 1 ? 'une spécialité' : 'des spécialités'} :{' '}
+          {specialites.join(', ')}.
+        </p>
+      )}
       {precision && (
         <>
           <p>{precision.texte}</p>
@@ -183,7 +191,12 @@ const appellations = [
           <li>
             <span lang="en">{o.titre}</span> ({o.code}) · {LIBELLES_QUALITE[o.qualite]}
             {o.appellation && <> · appellation affichée : « {o.appellation} »</>}
-            {o.statut === 'valide' ? ' · relue' : ' · pas encore relue'}
+            {o.specialite && <> · spécialité : {o.specialite}</>}
+            {o.statut === 'valide'
+              ? ' · relue'
+              : o.origine === 'revue'
+                ? ' · choisie selon les règles de l’équipe, à valider'
+                : ' · pas encore relue'}
           </li>
         ))}
       </ul>

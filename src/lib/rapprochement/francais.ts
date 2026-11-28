@@ -12,11 +12,14 @@ export interface LienRome {
   statut: StatutCorrespondance;
   /** Code OGR de l'appellation à afficher à la place de l'intitulé de la fiche. */
   appellation?: string;
+  /** Spécialité à préciser (métier O*NET plus spécialisé que la fiche ROME). */
+  specialite?: string;
 }
 
 export interface MetierFrancais<M extends MetierProfil> {
   rome: string;
   libelle: string;
+  specialite?: string;
   /** Niveau du métier O*NET le plus proche du profil parmi ceux qui mènent à cette fiche. */
   niveau: NiveauCorrespondance;
   r: number;
@@ -52,7 +55,7 @@ export function versMetiersFrancais<M extends MetierProfil>(
     const liens = table[c.metier.code];
     if (!liens || liens.length === 0) continue;
     for (const lien of liens) {
-      const cle = `${lien.rome}|${lien.appellation ?? ''}`;
+      const cle = `${lien.rome}|${lien.appellation ?? ''}|${lien.specialite ?? ''}`;
       const deja = parRome.get(cle);
       if (deja) {
         if (!deja.onet.includes(c)) deja.onet.push(c);
@@ -72,6 +75,7 @@ export function versMetiersFrancais<M extends MetierProfil>(
           (lien.appellation ? appellations[lien.appellation] : undefined) ??
           libelles[lien.rome] ??
           lien.rome,
+        ...(lien.specialite ? { specialite: lien.specialite } : {}),
         niveau: c.niveau,
         r: c.r,
         nonRelue: lien.statut !== 'valide',

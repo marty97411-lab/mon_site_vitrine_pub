@@ -176,6 +176,70 @@ describe('construireCorrespondances', () => {
       }),
     ).toThrow(/décision « valide »/);
   });
+  it('un métier revu n’affiche que les choix de la revue, au statut à valider', () => {
+    const t = construireCorrespondances({
+      ...base,
+      revues: [
+        {
+          onet: '00-0001.00',
+          justification: 'Revue fictive.',
+          choix: [
+            {
+              rome: 'Z2001',
+              type: 'specialisee',
+              specialite: 'spécialité fictive',
+              justification: 'Choix fictif.',
+            },
+          ],
+        },
+      ],
+    });
+    const liste = t.get('00-0001.00');
+    expect(liste.filter((c) => c.affiche).map((c) => c.rome)).toEqual(['Z2001']);
+    expect(liste.find((c) => c.rome === 'Z2001')).toMatchObject({
+      statut: 'a_valider',
+      origine: 'revue',
+      specialite: 'spécialité fictive',
+      qualite: 'manuelle',
+    });
+    // La correspondance exacte automatique est écartée par la revue.
+    expect(liste.find((c) => c.rome === 'Z1001')).toMatchObject({ affiche: false });
+  });
+  it('une revue sans choix n’affiche rien (règle 4)', () => {
+    const t = construireCorrespondances({
+      ...base,
+      revues: [{ onet: '00-0001.00', justification: 'Pas d’équivalent.', choix: [] }],
+    });
+    expect(t.get('00-0001.00').some((c) => c.affiche)).toBe(false);
+  });
+  it('les décisions du propriétaire priment sur la revue', () => {
+    const t = construireCorrespondances({
+      ...base,
+      validations: [{ onet: '00-0001.00', rome: 'Z1001', decision: 'valide' }],
+      revues: [{ onet: '00-0001.00', justification: 'Pas d’équivalent.', choix: [] }],
+    });
+    expect(t.get('00-0001.00').find((c) => c.rome === 'Z1001')).toMatchObject({
+      affiche: true,
+      statut: 'valide',
+    });
+  });
+  it('refuse une revue incomplète', () => {
+    const revue = (choix) => ({
+      ...base,
+      revues: [{ onet: '00-0001.00', justification: 'x', choix }],
+    });
+    expect(() =>
+      construireCorrespondances(
+        revue([{ rome: 'Z1001', type: 'specialisee', justification: 'x' }]),
+      ),
+    ).toThrow(/spécialité manquante/);
+    expect(() =>
+      construireCorrespondances(revue([{ rome: 'Z1001', type: 'exacte', justification: '' }])),
+    ).toThrow(/justification manquante/);
+    expect(() =>
+      construireCorrespondances(revue([{ rome: 'Z1001', type: 'peut-etre', justification: 'x' }])),
+    ).toThrow(/type de choix inconnu/);
+  });
   it('refuse une validation vers un code ROME inconnu ou une décision inconnue', () => {
     expect(() =>
       construireCorrespondances({

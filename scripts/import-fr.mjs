@@ -73,6 +73,9 @@ const [onetEscoTxt, escoRomeTxt, romeZip, onisepJson, metiersOnetJson, validatio
       .then(JSON.parse)
       .catch(() => ({ validations: [] })),
   ]);
+const revueJson = await readFile(chemin('src/data/fr/revue.json'), 'utf8')
+  .then(JSON.parse)
+  .catch(() => ({ revues: [] }));
 
 // 1. O*NET → ESCO
 const onetEsco = lignesApresEntete(analyserCsv(onetEscoTxt), 'O*NET Id').map((l) => ({
@@ -199,8 +202,10 @@ const table = construireCorrespondances({
   fiches,
   validations: validationsJson.validations,
   libellesAppellations,
+  revues: revueJson.revues,
 });
 const apparitions = simulerApparitions(metiersOnet);
+const revueParOnet = new Map(revueJson.revues.map((r) => [r.onet, r]));
 
 const correspondances = {};
 const fichesAffichees = new Map();
@@ -211,7 +216,9 @@ for (const m of metiersOnet) {
     rome: c.rome,
     qualite: c.qualite,
     statut: c.statut,
+    origine: c.origine,
     ...(c.appellation ? { appellation: c.appellation.code } : {}),
+    ...(c.specialite ? { specialite: c.specialite } : {}),
   }));
   for (const c of affichees) {
     const f = fichesAffichees.get(c.rome) ?? [];
@@ -220,7 +227,9 @@ for (const m of metiersOnet) {
       titre: m.titre,
       qualite: c.qualite,
       statut: c.statut,
+      origine: c.origine,
       ...(c.appellation ? { appellation: c.appellation.libelle } : {}),
+      ...(c.specialite ? { specialite: c.specialite } : {}),
     });
     fichesAffichees.set(c.rome, f);
   }
@@ -316,6 +325,10 @@ const colonnes = [
   'esco_intermediaires',
   'affiche',
   'raison',
+  'origine_decision',
+  'type_choix',
+  'specialite',
+  'justification',
   'statut',
   'note',
 ];
@@ -348,7 +361,14 @@ for (const { n, m, c } of lignes) {
       c?.chemins.join(' | ') ?? '',
       c?.esco.join(' | ') ?? '',
       c?.affiche ? 'oui' : 'non',
-      c?.raison ?? 'aucune correspondance dans les tables officielles',
+      c?.raison ??
+        (revueParOnet.has(m.code)
+          ? 'aucune fiche retenue à la revue (à valider)'
+          : 'aucune correspondance dans les tables officielles'),
+      c?.origine ?? (revueParOnet.has(m.code) ? 'revue' : 'automatique'),
+      c?.typeChoix ?? '',
+      c?.specialite ?? '',
+      c?.justification ?? revueParOnet.get(m.code)?.justification ?? '',
       c?.statut ?? 'a_valider',
       c?.note ?? '',
     ]
