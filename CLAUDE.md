@@ -4,7 +4,7 @@ Référence pour toutes les sessions de travail sur ce dépôt. À lire avant to
 
 ## Le projet
 
-**Personnalisé** : site web en français d'aide à la réflexion sur l'orientation professionnelle, fondé sur la
+**Personalis** : site web en français d'aide à la réflexion sur l'orientation professionnelle, fondé sur la
 personnalité :
 
 1. le visiteur passe un questionnaire de personnalité ;
@@ -92,6 +92,46 @@ qu'une partie de la réussite et de la satisfaction au travail.
   Illustration, ScienceOuReflexion, ListeSources, Logo). Mise en page d'article :
   `src/layouts/Article.astro`.
 - Vérifier le rendu à 375, 768 et 1280 px (aucun défilement horizontal).
+- **Nom du site : « Personalis »** (du latin _personalis_), partout : logo, bouton d'accueil,
+  titres, balises SEO et Open Graph, documents. « Personnalisé » n'est plus le nom du site.
+- **Mentions de licence discrètes** : pied de page réduit à une ligne courte avec un lien vers
+  `/credits` (textes complets d'attribution O*NET, IPIP, polices, licences du site). La mention
+  O*NET Tools reste affichée en entier sur la page du questionnaire d'intérêts (« launch screen »
+  exigé par la licence), avec le lien « modifications and disclaimers ».
+- Encadrés « Source » et listes de références : petits et atténués (≥ 15 px, contraste AA).
+- L'encadré « Science ou réflexion ? » n'apparaît que sur la page d'accueil de la section
+  Philosophie ; les pages individuelles portent seulement le badge.
+- Page « Besoin d'en parler ? » : l'accompagnement professionnel en haut ; le 3114 en bas, sobre
+  mais lisible (≥ 15 px), visible sans clic, lien `tel:` cliquable.
+
+## Livres conseillés
+
+- Collection `src/content/livres/livres.json` (schéma `livreSchema`). **N'ajouter un livre que s'il
+  est vérifié** (titre, auteur, année, éditeur, ISBN quand il est connu) sur une notice ou un compte
+  rendu, preuves dans `verification.preuves` ; sinon, ne pas l'ajouter. Jamais de livre ni de résumé
+  inventés.
+- Étiquette honnête : `recherche`, `philosophie` ou `temoignage` ; `note_controverse` obligatoire pour
+  un livre populaire mais contesté ; écarter les ouvrages sans base (MBTI, typologies, méthodes
+  « miracles »).
+- Résumé, « pour qui » et « à garder en tête » rédigés par l'équipe ; `brouillon: true` jusqu'à
+  relecture.
+- Liens : DOI ou Wikisource si vérifiés, plus recherches BnF et Amazon **sans affiliation**.
+- **Auteurs non encore vérifiés** (`src/content/livres/auteurs-a-verifier.json`) : on peut citer
+  l'auteur, son domaine et une note de prudence, **jamais un titre de livre précis**, avec la mention
+  « références en cours de vérification ». Dès qu'un livre est vérifié, il passe dans `livres.json`
+  et l'auteur sort de cette liste.
+- **Livres en anglais** : possibles en petit nombre quand aucune édition française n'est vérifiable
+  (`langue: "en"`, signalé sur la carte et la fiche) ; mêmes exigences de vérification.
+
+## Suggestions de lecture (recommandations)
+
+- Règles **uniquement** dans `src/data/recommandations.json`, jamais en dur dans le code ; moteur pur
+  `src/lib/recommandations/` avec tests.
+- Seuils éditoriaux : 3,5 / 2,5 (traits, échelle 1–5) et 25 % (différenciation RIASEC) ; ne jamais les
+  présenter comme des catégories.
+- Toujours afficher la raison de chaque suggestion, la phrase « pistes choisies par l'équipe, pas un
+  résultat scientifique », le lien vers `/suggestions` et des liens vers les listes complètes.
+- Toute référence d'une règle doit exister (contrôle au build dans `src/lib/contenu.ts` et test).
 
 ## Choix techniques
 
@@ -115,6 +155,8 @@ src/
   content/philosophie/   pages « Philosophie » (badge Réflexion)
   content/metiers/       fiches métiers (Markdown + frontmatter structuré)
   content/sources/       sources.json : bibliographie, citée par identifiant
+  content/livres/        livres.json : livres conseillés (vérifiés, étiquetés)
+  data/recommandations.json  règles des suggestions de lecture
   data/questionnaires/   un JSON par questionnaire (items, clés, échelle, licence)
   data/parcours.json     parcours rapide et complet
   data/onet/             metiers.json (généré), familles.json, job-zones.json
@@ -128,11 +170,14 @@ src/
   lib/contraste.ts       calcul des contrastes WCAG (+ test sur tokens.css)
   lib/visualisation.ts   géométrie des barres et de l'hexagone RIASEC (+ tests)
   lib/lecture.ts         temps de lecture estimé
+  lib/isbn.ts            validation des ISBN, liens de recherche BnF et Amazon (+ tests)
+  lib/recommandations/   moteur des suggestions de lecture (+ tests)
   styles/tokens.css      design tokens (source unique)
   components/, layouts/  composants et mises en page (Base, Article)
   pages/                 accueil, parcours, questionnaire/[parcours], résultats, situations,
                          philosophie, comprendre, traits, la-science, besoin-d-en-parler,
-                         plan-du-site, sources, a-propos, mentions-legales, metiers
+                         plan-du-site, sources, a-propos, mentions-legales, metiers, livres,
+                         suggestions, credits
 scripts/
   import-onet.mjs        import des profils RIASEC O*NET (CC BY 4.0)
 docs/
@@ -184,4 +229,5 @@ Avant chaque commit : `npm run lint && npm test && npm run build`.
 Voir les sections « TODO » de `docs/sources.md` : relecture du contenu des articles cités
 (statut `metadonnees-verifiees`), relecture des brouillons, étude de validation de la traduction
 O*NET (avant toute mise en ligne publique), liens sourcés personnalité → métiers, origine du
-diagramme de l'ikigai, correspondance ROME, nom de domaine (sitemap, Open Graph), hébergeur.
+diagramme de l'ikigai, étymologie de « Personalis » (note de la page À propos), ISBN manquants
+des livres, correspondance ROME, nom de domaine (sitemap, Open Graph), hébergeur.

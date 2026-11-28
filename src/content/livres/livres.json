@@ -1,0 +1,900 @@
+[
+  {
+    "id": "haidt-hypothese-bonheur",
+    "titre": "L'hypothèse du bonheur",
+    "sous_titre": "La redécouverte de la sagesse ancienne dans la science contemporaine",
+    "auteurs": ["Jonathan Haidt"],
+    "annee": 2010,
+    "editeur": "Mardaga",
+    "isbn": "9782804700331",
+    "langue": "fr",
+    "etiquette": "recherche",
+    "niveau": "accessible",
+    "themes": ["bien-etre", "philosophie-de-vie", "connaissance-de-soi"],
+    "resume": "Un psychologue confronte de grandes idées de sagesse anciennes (sur le bonheur, l'adversité, les relations ou le sens) à ce qu'en disent les recherches en psychologie. Il en garde certaines, en nuance d'autres.",
+    "pour_qui": "Pour qui aime faire le lien entre philosophie et psychologie, sans prérequis.",
+    "a_garder_en_tete": "Ouvrage de vulgarisation : certaines études citées ont pu être nuancées depuis sa parution originale. À lire comme une introduction, pas comme une synthèse à jour.",
+    "lien": {
+      "url": "https://doi.org/10.14375/np.9782804700331",
+      "libelle": "Notice de l'éditeur (DOI)"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.14375/np.9782804700331"]
+    },
+    "direction": false,
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "dweck-changer-etat-esprit",
+    "titre": "Changer d'état d'esprit",
+    "sous_titre": "Une nouvelle psychologie de la réussite",
+    "auteurs": ["Carol Dweck"],
+    "annee": 2010,
+    "editeur": "Mardaga",
+    "isbn": "9782804700348",
+    "langue": "fr",
+    "etiquette": "recherche",
+    "niveau": "accessible",
+    "themes": ["motivation", "connaissance-de-soi"],
+    "note_controverse": "Livre très populaire, mais contesté : les recherches plus récentes sur l'« état d'esprit de croissance » trouvent des effets nettement plus modestes que ce que laisse penser l'ouvrage. TODO : citer une méta-analyse vérifiée.",
+    "resume": "Une chercheuse en psychologie oppose deux façons de voir ses capacités : comme fixes, ou comme pouvant se développer. Elle décrit comment ces croyances peuvent influencer la manière d'apprendre et de réagir aux échecs.",
+    "pour_qui": "Pour qui se sent bloqué par la peur de l'échec ou par l'idée qu'il « n'est pas fait pour » quelque chose.",
+    "a_garder_en_tete": "Les effets des interventions sur l'état d'esprit sont débattus. Changer de croyance ne suffit pas toujours : les conditions matérielles et l'accompagnement comptent aussi.",
+    "lien": {
+      "url": "https://doi.org/10.14375/np.9782804700348",
+      "libelle": "Notice de l'éditeur (DOI)"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.14375/np.9782804700348"]
+    },
+    "direction": false,
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "kahneman-systeme-1-systeme-2",
+    "titre": "Système 1, système 2",
+    "sous_titre": "Les deux vitesses de la pensée",
+    "auteurs": ["Daniel Kahneman"],
+    "annee": 2012,
+    "editeur": "Flammarion",
+    "isbn": null,
+    "langue": "fr",
+    "etiquette": "recherche",
+    "niveau": "exigeant",
+    "themes": ["connaissance-de-soi"],
+    "note_controverse": "Certains chapitres s'appuient sur des effets (notamment d'« amorçage ») que des tentatives de réplication n'ont pas confirmés ; l'auteur l'a lui-même reconnu. TODO : sourcer cette précision.",
+    "resume": "Un psychologue, prix Nobel d'économie, présente des décennies de recherches sur le jugement et la décision : nos raccourcis de pensée rapides, leurs avantages et les erreurs systématiques qu'ils entraînent.",
+    "pour_qui": "Pour qui veut comprendre comment nous prenons nos décisions, y compris nos choix de vie. Lecture longue et dense.",
+    "a_garder_en_tete": "Un livre de référence, mais pas parole d'évangile : une partie des études citées a été remise en question depuis.",
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.3917/sh.255.0062 (compte rendu : Flammarion, 2012)"],
+      "reste_a_verifier": "ISBN de l'édition française."
+    },
+    "direction": false,
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "csikszentmihalyi-vivre",
+    "titre": "Vivre",
+    "sous_titre": "La psychologie du bonheur",
+    "auteurs": ["Mihaly Csikszentmihalyi"],
+    "annee": 2004,
+    "editeur": "Robert Laffont",
+    "isbn": null,
+    "langue": "fr",
+    "etiquette": "recherche",
+    "niveau": "accessible",
+    "themes": ["bien-etre", "motivation", "sens-du-travail"],
+    "resume": "Le psychologue qui a décrit l'expérience de « flow » (l'état d'absorption dans une activité exigeante et maîtrisée) explique ses recherches et ce qu'elles suggèrent pour le travail, les loisirs et la vie quotidienne.",
+    "pour_qui": "Pour qui se demande dans quelles activités il se sent pleinement engagé.",
+    "a_garder_en_tete": "Le flow décrit un type d'expérience positive, pas une recette pour choisir un métier ; tous les métiers et toutes les conditions de travail ne le permettent pas.",
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.3917/sh.255.0063 (compte rendu : Robert Laffont, 2004)"],
+      "reste_a_verifier": "ISBN de l'édition française."
+    },
+    "direction": false,
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "lecomte-psychologie-positive",
+    "titre": "Introduction à la psychologie positive",
+    "auteurs": ["Jacques Lecomte"],
+    "annee": 2014,
+    "editeur": "Dunod",
+    "isbn": "9782100705337",
+    "langue": "fr",
+    "etiquette": "recherche",
+    "niveau": "exigeant",
+    "themes": ["bien-etre", "motivation"],
+    "resume": "Un manuel qui présente les thèmes et les résultats de la psychologie positive : émotions positives, sens, relations, résilience, bien-être au travail.",
+    "pour_qui": "Pour qui veut une vue d'ensemble sérieuse du domaine, au-delà des livres de développement personnel.",
+    "a_garder_en_tete": "La psychologie positive est un champ jeune et parfois critiqué pour ses promesses ; un manuel présente l'état des connaissances à sa date de publication.",
+    "lien": {
+      "url": "https://doi.org/10.3917/dunod.lecom.2014.01.0002",
+      "libelle": "Sur Cairn (DOI)"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.3917/dunod.lecom.2014.01.0002"]
+    },
+    "direction": false,
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "guichard-huteau-75-concepts",
+    "titre": "Orientation et insertion professionnelle",
+    "sous_titre": "75 concepts clés",
+    "auteurs": ["Jean Guichard", "Michel Huteau"],
+    "annee": 2007,
+    "editeur": "Dunod",
+    "isbn": "9782100489756",
+    "langue": "fr",
+    "etiquette": "recherche",
+    "niveau": "exigeant",
+    "themes": ["orientation", "reconversion"],
+    "resume": "Deux spécialistes de la psychologie de l'orientation présentent, sous forme de courtes entrées, les notions et les théories utilisées pour comprendre et accompagner les choix d'orientation.",
+    "pour_qui": "Pour les curieux qui veulent comprendre les théories de l'orientation, et pour les professionnels de l'accompagnement.",
+    "a_garder_en_tete": "Ouvrage de référence technique, à consulter par entrées plutôt qu'à lire d'une traite ; son édition date de 2007.",
+    "lien": {
+      "url": "https://doi.org/10.3917/dunod.guich.2008.01.0001",
+      "libelle": "Sur Cairn (DOI)"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.3917/dunod.guich.2008.01.0001", "doi:10.4000/osp.1339"]
+    },
+    "direction": false,
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "cohen-scali-orientation-vie",
+    "titre": "Psychologie de l'orientation tout au long de la vie",
+    "auteurs": ["Valérie Cohen-Scali"],
+    "direction": true,
+    "annee": 2021,
+    "editeur": "Dunod",
+    "isbn": "9782100810819",
+    "langue": "fr",
+    "etiquette": "recherche",
+    "niveau": "exigeant",
+    "themes": ["orientation", "reconversion"],
+    "resume": "Un ouvrage collectif qui présente les recherches actuelles sur l'orientation, de l'école aux transitions professionnelles de l'âge adulte.",
+    "pour_qui": "Pour qui veut un état des lieux récent de la recherche sur l'orientation et l'accompagnement.",
+    "a_garder_en_tete": "Ouvrage universitaire ; les chapitres sont de niveaux et d'auteurs différents.",
+    "lien": {
+      "url": "https://doi.org/10.3917/dunod.cohen.2021.01.0003",
+      "libelle": "Sur Cairn (DOI)"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.3917/dunod.cohen.2021.01.0003"]
+    },
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "bernaud-psychologie-existentielle",
+    "titre": "Traité de psychologie existentielle",
+    "auteurs": ["Jean-Luc Bernaud"],
+    "direction": true,
+    "annee": 2021,
+    "editeur": "Dunod",
+    "isbn": "9782100806218",
+    "langue": "fr",
+    "etiquette": "recherche",
+    "niveau": "exigeant",
+    "themes": ["sens-du-travail", "philosophie-de-vie"],
+    "resume": "Un traité qui rassemble les apports de la psychologie sur les grandes questions existentielles : le sens de la vie et du travail, la liberté, la finitude.",
+    "pour_qui": "Pour qui s'intéresse aux liens entre psychologie, sens et choix de vie, et accepte un texte universitaire.",
+    "a_garder_en_tete": "Ouvrage dense et spécialisé ; il croise des approches de recherche différentes, plus ou moins établies.",
+    "lien": {
+      "url": "https://doi.org/10.14375/np.9782100822867",
+      "libelle": "Notice de l'éditeur (DOI)"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.14375/np.9782100822867"]
+    },
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "bernaud-lemoine-psychologie-travail",
+    "titre": "Traité de psychologie du travail et des organisations",
+    "auteurs": ["Jean-Luc Bernaud", "Claude Lemoine"],
+    "direction": true,
+    "annee": 2012,
+    "editeur": "Dunod",
+    "isbn": "9782100576890",
+    "langue": "fr",
+    "etiquette": "recherche",
+    "niveau": "exigeant",
+    "themes": ["sens-du-travail", "motivation"],
+    "resume": "Un traité universitaire qui couvre les grands thèmes de la psychologie du travail : motivation, santé, évaluation, organisation, orientation professionnelle.",
+    "pour_qui": "Pour qui veut aller au fond des connaissances sur le travail et les organisations.",
+    "a_garder_en_tete": "Manuel de référence pour étudiants et professionnels, pas un livre de conseils.",
+    "lien": {
+      "url": "https://doi.org/10.3917/dunod.berna.2012.01.0007",
+      "libelle": "Sur Cairn (DOI)"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.3917/dunod.berna.2012.01.0007"]
+    },
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "clot-travail-a-coeur",
+    "titre": "Le travail à cœur",
+    "sous_titre": "Pour en finir avec les risques psychosociaux",
+    "auteurs": ["Yves Clot"],
+    "annee": 2015,
+    "note_edition": "Édition de 2015 avec postface ; première édition en 2010.",
+    "editeur": "La Découverte",
+    "isbn": "9782707185310",
+    "langue": "fr",
+    "etiquette": "recherche",
+    "niveau": "exigeant",
+    "themes": ["sens-du-travail"],
+    "resume": "Un psychologue du travail soutient que beaucoup de souffrances au travail viennent de l'impossibilité de faire un travail de qualité, et plaide pour redonner aux salariés prise sur la manière de bien faire leur métier.",
+    "pour_qui": "Pour qui ressent un malaise au travail et cherche à le comprendre au-delà des explications individuelles.",
+    "a_garder_en_tete": "Un essai engagé, issu d'une tradition de recherche précise (la clinique de l'activité) ; d'autres approches de la santé au travail existent.",
+    "lien": {
+      "url": "https://doi.org/10.3917/dec.cloty.2015.01",
+      "libelle": "Sur Cairn (DOI)"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.3917/dec.cloty.2015.01", "doi:10.4000/activites.2540"]
+    },
+    "direction": false,
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "dejours-souffrance-en-france",
+    "titre": "Souffrance en France",
+    "sous_titre": "La banalisation de l'injustice sociale",
+    "auteurs": ["Christophe Dejours"],
+    "annee": 2009,
+    "note_edition": "Réédition de 2009 (coll. « Essais ») ; première édition en 1998.",
+    "editeur": "Seuil",
+    "isbn": null,
+    "langue": "fr",
+    "etiquette": "recherche",
+    "niveau": "exigeant",
+    "themes": ["sens-du-travail"],
+    "resume": "Un psychiatre et psychanalyste spécialiste du travail analyse comment la souffrance au travail est devenue banale, et comment chacun peut en venir à tolérer ou à participer à des pratiques qu'il désapprouve.",
+    "pour_qui": "Pour qui veut une lecture critique et approfondie du monde du travail.",
+    "a_garder_en_tete": "Essai d'inspiration psychanalytique, discuté ; il éclaire des mécanismes plus qu'il ne mesure des faits.",
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.3917/lhs.191.0177f (compte rendu : Seuil, 2009, 1re éd. 1998)"],
+      "reste_a_verifier": "ISBN de l'édition de 2009."
+    },
+    "direction": false,
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "meda-le-travail",
+    "titre": "Le travail",
+    "sous_titre": "Une valeur en voie de disparition ?",
+    "auteurs": ["Dominique Méda"],
+    "annee": 2010,
+    "note_edition": "Première édition chez Aubier en 1995.",
+    "editeur": "Flammarion",
+    "isbn": "9782081237681",
+    "langue": "fr",
+    "etiquette": "recherche",
+    "niveau": "exigeant",
+    "themes": ["sens-du-travail", "philosophie-de-vie"],
+    "resume": "Une philosophe et sociologue retrace l'histoire de l'idée de travail et interroge la place centrale qu'il a prise dans nos sociétés et dans nos vies.",
+    "pour_qui": "Pour qui se demande quelle place donner au travail dans sa vie.",
+    "a_garder_en_tete": "Essai de réflexion, publié pour la première fois en 1995 : le contexte économique a changé depuis.",
+    "lien": {
+      "url": "https://doi.org/10.3917/flam.meda.2010.01",
+      "libelle": "Sur Cairn (DOI)"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.3917/flam.meda.2010.01", "doi:10.3406/forem.1996.2179"]
+    },
+    "direction": false,
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "linhart-pourquoi-travaillons-nous",
+    "titre": "Pourquoi travaillons-nous ?",
+    "auteurs": ["Danièle Linhart"],
+    "direction": true,
+    "annee": 2008,
+    "editeur": "Érès",
+    "isbn": "9782749208794",
+    "langue": "fr",
+    "etiquette": "recherche",
+    "niveau": "exigeant",
+    "themes": ["sens-du-travail", "motivation"],
+    "resume": "Un ouvrage collectif de sociologues qui explore les raisons de travailler et les attentes vis-à-vis du travail, au-delà du seul revenu.",
+    "pour_qui": "Pour qui s'interroge sur ce qu'il attend de son travail.",
+    "a_garder_en_tete": "Recueil de contributions de recherche, inégal et daté de 2008.",
+    "lien": {
+      "url": "https://doi.org/10.3917/eres.linha.2008.01.0007",
+      "libelle": "Sur Cairn (DOI)"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.3917/eres.linha.2008.01.0007"]
+    },
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "nettle-personality",
+    "titre": "Personality",
+    "sous_titre": "What makes you the way you are",
+    "auteurs": ["Daniel Nettle"],
+    "annee": 2007,
+    "editeur": "Oxford University Press",
+    "isbn": "9780199211425",
+    "langue": "en",
+    "etiquette": "recherche",
+    "niveau": "accessible",
+    "themes": ["connaissance-de-soi"],
+    "resume": "Un chercheur présente le modèle des cinq grands traits de personnalité (Big Five), ce que chacun décrit, et ce que la recherche sait de leurs effets dans la vie.",
+    "pour_qui": "Pour qui lit l'anglais et veut comprendre le modèle de personnalité utilisé par ce site.",
+    "a_garder_en_tete": "En anglais ; aucune traduction française n'a été vérifiée. Publié en 2007.",
+    "lien": {
+      "url": "https://doi.org/10.1093/oso/9780199211425.001.0001",
+      "libelle": "Notice de l'éditeur (DOI)"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.1093/oso/9780199211425.001.0001"],
+      "reste_a_verifier": "Existence d'une traduction française."
+    },
+    "direction": false,
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "mathews-what-makes-life-worth-living",
+    "titre": "What Makes Life Worth Living?",
+    "sous_titre": "How Japanese and Americans Make Sense of Their Worlds",
+    "auteurs": ["Gordon Mathews"],
+    "annee": 1996,
+    "editeur": "University of California Press",
+    "isbn": "9780520916470",
+    "langue": "en",
+    "etiquette": "recherche",
+    "niveau": "exigeant",
+    "themes": ["philosophie-de-vie", "sens-du-travail"],
+    "resume": "Un anthropologue compare, à partir d'entretiens, ce qui donne sens à la vie de personnes au Japon et aux États-Unis, notamment autour de la notion japonaise d'ikigai.",
+    "pour_qui": "Pour qui veut découvrir l'ikigai par une étude sérieuse plutôt que par le diagramme populaire.",
+    "a_garder_en_tete": "En anglais ; enquête de 1996, qualitative et située.",
+    "lien": {
+      "url": "https://doi.org/10.1525/9780520916470",
+      "libelle": "Notice de l'éditeur (DOI)"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.1525/9780520916470", "doi:10.2307/2655667"]
+    },
+    "direction": false,
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "savickas-career-counseling",
+    "titre": "Career Counseling",
+    "auteurs": ["Mark L. Savickas"],
+    "note_edition": "Deuxième édition.",
+    "annee": 2019,
+    "editeur": "American Psychological Association",
+    "isbn": "9781433829550",
+    "langue": "en",
+    "etiquette": "recherche",
+    "niveau": "exigeant",
+    "themes": ["orientation", "reconversion"],
+    "resume": "Le principal auteur de la théorie de la construction de carrière présente sa démarche d'accompagnement, fondée sur le récit que chacun fait de sa vie.",
+    "pour_qui": "Pour les professionnels de l'accompagnement et les lecteurs anglophones curieux de la théorie citée sur ce site.",
+    "a_garder_en_tete": "En anglais ; ouvrage destiné aux praticiens.",
+    "lien": {
+      "url": "https://doi.org/10.1037/0000105-000",
+      "libelle": "Notice de l'éditeur (DOI)"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.1037/0000105-000", "doi:10.1891/0889-8391.33.4.357"]
+    },
+    "direction": false,
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "brown-lent-career-development",
+    "titre": "Career Development and Counseling",
+    "sous_titre": "Putting Theory and Research to Work",
+    "auteurs": ["Steven D. Brown", "Robert W. Lent"],
+    "direction": true,
+    "annee": 2020,
+    "editeur": "Wiley",
+    "isbn": "9781394258994",
+    "langue": "en",
+    "etiquette": "recherche",
+    "niveau": "exigeant",
+    "themes": ["orientation"],
+    "resume": "Un manuel de référence qui rassemble les grandes théories du développement de carrière et les recherches qui les évaluent.",
+    "pour_qui": "Pour les lecteurs anglophones qui veulent l'état de la recherche sur l'orientation.",
+    "a_garder_en_tete": "En anglais ; manuel universitaire très complet, pas un guide pratique.",
+    "lien": {
+      "url": "https://doi.org/10.1002/9781394258994",
+      "libelle": "Notice de l'éditeur (DOI)"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.1002/9781394258994"],
+      "reste_a_verifier": "Numéro d'édition (la notice Crossref indique 1, à confirmer)."
+    },
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "cyrulnik-merveilleux-malheur",
+    "titre": "Un merveilleux malheur",
+    "auteurs": ["Boris Cyrulnik"],
+    "annee": 1999,
+    "editeur": "Odile Jacob",
+    "isbn": null,
+    "langue": "fr",
+    "etiquette": "temoignage",
+    "niveau": "accessible",
+    "themes": ["bien-etre", "connaissance-de-soi"],
+    "note_controverse": "Livre qui a popularisé la notion de résilience en France ; il mêle récits et références scientifiques, et la façon dont la notion a été vulgarisée a été critiquée.",
+    "resume": "Un psychiatre raconte, à travers des histoires de vie, comment des personnes se reconstruisent après des épreuves graves, et popularise la notion de résilience.",
+    "pour_qui": "Pour qui traverse ou a traversé une période difficile et cherche des récits qui donnent de l'élan.",
+    "a_garder_en_tete": "Les histoires individuelles inspirent mais ne prouvent pas ; la résilience n'est pas une obligation ni un mérite personnel.",
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.3917/lautr.002.0385d (compte rendu : Odile Jacob, 1999)"],
+      "reste_a_verifier": "ISBN."
+    },
+    "direction": false,
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "graeber-bullshit-jobs",
+    "titre": "Bullshit jobs",
+    "auteurs": ["David Graeber"],
+    "annee": 2018,
+    "editeur": "Les Liens qui libèrent",
+    "isbn": null,
+    "langue": "fr",
+    "etiquette": "temoignage",
+    "niveau": "accessible",
+    "themes": ["sens-du-travail"],
+    "note_controverse": "Essai d'un anthropologue fondé sur des témoignages recueillis, pas sur une enquête représentative : l'ampleur des « emplois inutiles » qu'il avance est discutée.",
+    "resume": "Un anthropologue défend l'idée que de nombreux emplois paraissent inutiles à ceux qui les occupent, et réfléchit aux souffrances et aux questions de sens que cela pose.",
+    "pour_qui": "Pour qui a le sentiment que son travail n'a pas de sens et veut mettre des mots sur ce malaise.",
+    "a_garder_en_tete": "Un essai provocateur et militant ; ses chiffres et sa généralisation sont contestés.",
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.3917/etu.4258.0119ac (compte rendu : Les Liens qui libèrent, 2018)"],
+      "reste_a_verifier": "ISBN et traducteur."
+    },
+    "direction": false,
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "aristote-morale-nicomaque",
+    "titre": "Morale à Nicomaque",
+    "auteurs": ["Aristote"],
+    "traducteurs": ["Jules Barthélemy-Saint-Hilaire"],
+    "annee": 1856,
+    "editeur": "Ladrange",
+    "isbn": null,
+    "langue": "fr",
+    "domaine_public": true,
+    "etiquette": "philosophie",
+    "niveau": "exigeant",
+    "themes": ["philosophie-de-vie", "bien-etre"],
+    "resume": "Le grand texte d'Aristote sur la vie bonne : le bonheur comme activité, l'excellence, l'amitié. La traduction du XIXe siècle est lisible gratuitement en ligne.",
+    "pour_qui": "Pour qui veut lire à la source l'idée d'une vie réussie présentée sur ce site.",
+    "a_garder_en_tete": "Traduction ancienne ; une édition récente avec notes facilite la lecture.",
+    "lien": {
+      "url": "https://fr.wikisource.org/wiki/Morale_%C3%A0_Nicomaque",
+      "libelle": "Lire sur Wikisource"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["https://fr.wikisource.org/wiki/Morale_%C3%A0_Nicomaque/1"]
+    },
+    "direction": false,
+    "brouillon": true
+  },
+  {
+    "id": "epictete-manuel",
+    "titre": "Manuel d'Épictète",
+    "auteurs": ["Épictète"],
+    "traducteurs": ["Jean-Marie Guyau"],
+    "annee": 1875,
+    "editeur": "Delagrave",
+    "isbn": null,
+    "langue": "fr",
+    "domaine_public": true,
+    "etiquette": "philosophie",
+    "niveau": "accessible",
+    "themes": ["philosophie-de-vie", "bien-etre"],
+    "resume": "Un court recueil de préceptes stoïciens, qui s'ouvre sur la distinction entre ce qui dépend de nous et ce qui n'en dépend pas.",
+    "pour_qui": "Pour qui veut un texte bref et concret pour apprendre à faire la part des choses.",
+    "a_garder_en_tete": "Texte ancien, écrit dans un tout autre contexte social ; certains conseils sont à prendre avec recul.",
+    "lien": {
+      "url": "https://fr.wikisource.org/wiki/Manuel_d%E2%80%99%C3%89pict%C3%A8te_(trad._Guyau)/Manuel",
+      "libelle": "Lire sur Wikisource"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": [
+        "https://fr.wikisource.org/wiki/Manuel_d%E2%80%99%C3%89pict%C3%A8te_(trad._Guyau)/Manuel"
+      ]
+    },
+    "direction": false,
+    "brouillon": true
+  },
+  {
+    "id": "marc-aurele-pensees",
+    "titre": "Pensées pour moi-même",
+    "auteurs": ["Marc Aurèle"],
+    "traducteurs": ["Jules Barthélemy-Saint-Hilaire"],
+    "annee": 1876,
+    "editeur": "Germer-Baillière",
+    "isbn": null,
+    "langue": "fr",
+    "domaine_public": true,
+    "etiquette": "philosophie",
+    "niveau": "accessible",
+    "themes": ["philosophie-de-vie", "bien-etre"],
+    "resume": "Les notes personnelles d'un empereur romain stoïcien, qui s'exhorte à rester juste, calme et attentif à l'essentiel.",
+    "pour_qui": "Pour qui aime les textes courts à méditer, un fragment à la fois.",
+    "a_garder_en_tete": "Ce sont des notes pour soi, répétitives et non systématiques ; traduction ancienne.",
+    "lien": {
+      "url": "https://fr.wikisource.org/wiki/Pens%C3%A9es_pour_moi-m%C3%AAme",
+      "libelle": "Lire sur Wikisource"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["https://fr.wikisource.org/wiki/Pens%C3%A9es_pour_moi-m%C3%AAme/Livre_IV"]
+    },
+    "direction": false,
+    "brouillon": true
+  },
+  {
+    "id": "seneque-lettres-lucilius",
+    "titre": "Lettres à Lucilius",
+    "auteurs": ["Sénèque"],
+    "traducteurs": ["Joseph Baillard"],
+    "annee": 1914,
+    "editeur": "Hachette",
+    "isbn": null,
+    "langue": "fr",
+    "domaine_public": true,
+    "etiquette": "philosophie",
+    "niveau": "accessible",
+    "themes": ["philosophie-de-vie", "bien-etre"],
+    "resume": "Des lettres d'un philosophe stoïcien à un ami, sur le temps, l'amitié, l'adversité et l'art de bien vivre.",
+    "pour_qui": "Pour qui préfère une philosophie en conversation, lettre après lettre.",
+    "a_garder_en_tete": "Recueil long ; on peut le lire par lettres isolées. Traduction ancienne.",
+    "lien": {
+      "url": "https://fr.wikisource.org/wiki/Lettres_%C3%A0_Lucilius",
+      "libelle": "Lire sur Wikisource"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["https://fr.wikisource.org/wiki/Lettres_%C3%A0_Lucilius/Lettre_1"]
+    },
+    "direction": false,
+    "brouillon": true
+  },
+  {
+    "id": "montaigne-essais",
+    "titre": "Essais",
+    "auteurs": ["Michel de Montaigne"],
+    "annee": 1595,
+    "note_edition": "Texte de l'édition de Bordeaux (exemplaire annoté par Montaigne), lisible sur Wikisource ; 1595 est la date de l'édition posthume, l'édition de Bordeaux est antérieure.",
+    "editeur": "Wikisource (édition de Bordeaux)",
+    "isbn": null,
+    "langue": "fr",
+    "domaine_public": true,
+    "etiquette": "philosophie",
+    "niveau": "exigeant",
+    "themes": ["connaissance-de-soi", "philosophie-de-vie"],
+    "resume": "Montaigne se prend lui-même pour sujet et s'observe avec curiosité et humilité, sur mille sujets, de l'amitié à la mort.",
+    "pour_qui": "Pour qui veut une lecture au long cours, à picorer, sur la connaissance de soi.",
+    "a_garder_en_tete": "Langue du XVIe siècle, difficile sans édition modernisée.",
+    "lien": {
+      "url": "https://fr.wikisource.org/wiki/Essais",
+      "libelle": "Lire sur Wikisource"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["https://fr.wikisource.org/wiki/Essais/Livre_III/Chapitre_2"],
+      "reste_a_verifier": "Date de l'édition de Bordeaux à préciser ; 1595 (édition posthume) est à confirmer par une source."
+    },
+    "direction": false,
+    "traducteurs": [],
+    "brouillon": true
+  },
+  {
+    "id": "weil-condition-ouvriere",
+    "titre": "La Condition ouvrière",
+    "auteurs": ["Simone Weil"],
+    "annee": 1951,
+    "note_edition": "Textes établis par Albert Camus.",
+    "editeur": "Gallimard",
+    "isbn": null,
+    "langue": "fr",
+    "domaine_public": true,
+    "etiquette": "philosophie",
+    "niveau": "exigeant",
+    "themes": ["sens-du-travail", "philosophie-de-vie"],
+    "resume": "Lettres, journal d'usine et articles d'une philosophe qui a travaillé comme ouvrière, sur ce que le travail fait aux personnes et sur ce qui pourrait le rendre digne.",
+    "pour_qui": "Pour qui s'interroge sur le sens du travail d'exécution et la dignité au travail.",
+    "a_garder_en_tete": "Témoignage et réflexion des années 1930, exigeants ; ils ne se transposent pas tels quels aujourd'hui.",
+    "lien": {
+      "url": "https://fr.wikisource.org/wiki/La_Condition_ouvri%C3%A8re",
+      "libelle": "Lire sur Wikisource"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["https://fr.wikisource.org/wiki/La_Condition_ouvri%C3%A8re/17"]
+    },
+    "direction": false,
+    "traducteurs": [],
+    "brouillon": true
+  },
+  {
+    "id": "alain-propos-bonheur",
+    "titre": "Propos sur le bonheur",
+    "auteurs": ["Alain"],
+    "annee": 1985,
+    "editeur": "Gallimard",
+    "isbn": "9782070323210",
+    "langue": "fr",
+    "etiquette": "philosophie",
+    "niveau": "accessible",
+    "themes": ["bien-etre", "philosophie-de-vie"],
+    "resume": "De courts textes d'un philosophe qui défend une idée simple : le bonheur se travaille, il dépend en partie de notre volonté et de nos habitudes.",
+    "pour_qui": "Pour qui aime lire par petites touches, un propos de deux pages à la fois.",
+    "a_garder_en_tete": "Une philosophie de l'humeur et de la volonté, pas une étude scientifique ; le ton volontariste ne convient pas à toutes les situations.",
+    "lien": {
+      "url": "https://doi.org/10.3917/gall.alain.1985.01",
+      "libelle": "Sur Cairn (DOI)"
+    },
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.3917/gall.alain.1985.01", "doi:10.14375/np.9782070323210"]
+    },
+    "direction": false,
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "hadot-philosophie-antique",
+    "titre": "Qu'est-ce que la philosophie antique ?",
+    "auteurs": ["Pierre Hadot"],
+    "annee": 1996,
+    "editeur": "Gallimard",
+    "isbn": null,
+    "langue": "fr",
+    "etiquette": "philosophie",
+    "niveau": "exigeant",
+    "themes": ["philosophie-de-vie"],
+    "resume": "Un historien de la philosophie montre que, dans l'Antiquité, la philosophie était d'abord une manière de vivre, avec ses exercices, plus qu'un ensemble de théories.",
+    "pour_qui": "Pour qui veut comprendre ce que les stoïciens ou Aristote cherchaient vraiment.",
+    "a_garder_en_tete": "Ouvrage savant ; la date d'édition indiquée vient d'un compte rendu.",
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.15581/009.31.30913 (compte rendu : Gallimard, 1996, 461 p.)"],
+      "reste_a_verifier": "ISBN et date exacte de l'édition."
+    },
+    "direction": false,
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "crawford-eloge-carburateur",
+    "titre": "Éloge du carburateur",
+    "sous_titre": "Essai sur le sens et la valeur du travail",
+    "auteurs": ["Matthew B. Crawford"],
+    "traducteurs": ["Marc Saint-Upéry"],
+    "annee": 2010,
+    "editeur": "La Découverte",
+    "isbn": null,
+    "langue": "fr",
+    "etiquette": "philosophie",
+    "niveau": "accessible",
+    "themes": ["sens-du-travail", "reconversion"],
+    "resume": "Un philosophe devenu réparateur de motos défend la valeur intellectuelle et humaine du travail manuel, face à des emplois de bureau parfois vides de sens.",
+    "pour_qui": "Pour qui hésite à quitter un travail abstrait pour un métier concret, ou s'interroge sur la valeur du travail manuel.",
+    "a_garder_en_tete": "Récit personnel et essai philosophique : un parcours ne vaut pas pour tous, et les conditions matérielles d'une reconversion ne sont pas au centre du livre.",
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": [
+        "doi:10.3917/rfsp.612.0322x (compte rendu : La Découverte, 2010)",
+        "doi:10.3917/admed.143.0137b (traduction de Marc Saint-Upéry)"
+      ],
+      "reste_a_verifier": "ISBN."
+    },
+    "direction": false,
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "rosa-acceleration",
+    "titre": "Accélération",
+    "sous_titre": "Une critique sociale du temps",
+    "auteurs": ["Hartmut Rosa"],
+    "annee": 2013,
+    "note_edition": "Édition citée par un compte rendu (collection « Théorie critique »).",
+    "editeur": "La Découverte",
+    "isbn": null,
+    "langue": "fr",
+    "etiquette": "philosophie",
+    "niveau": "exigeant",
+    "themes": ["philosophie-de-vie", "sens-du-travail"],
+    "resume": "Un sociologue et philosophe décrit l'accélération des rythmes de vie et de travail dans les sociétés modernes, et ce qu'elle fait à notre rapport au temps.",
+    "pour_qui": "Pour qui a le sentiment de courir sans cesse et veut comprendre ce phénomène au-delà de sa situation personnelle.",
+    "a_garder_en_tete": "Théorie sociale ambitieuse et discutée, plutôt qu'un livre de conseils.",
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.3917/ris.094.0179l (compte rendu : La Découverte, 2013, 474 p.)"],
+      "reste_a_verifier": "ISBN et date de la première édition française."
+    },
+    "direction": false,
+    "traducteurs": [],
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "rosa-resonance",
+    "titre": "Résonance",
+    "sous_titre": "Une sociologie de la relation au monde",
+    "auteurs": ["Hartmut Rosa"],
+    "traducteurs": ["Sarah Raquillet", "Sacha Zilberfarb"],
+    "annee": 2018,
+    "editeur": "La Découverte",
+    "isbn": null,
+    "langue": "fr",
+    "etiquette": "philosophie",
+    "niveau": "exigeant",
+    "themes": ["philosophie-de-vie", "sens-du-travail", "bien-etre"],
+    "resume": "Rosa propose de juger une vie réussie à la qualité de notre relation au monde : des moments où quelque chose nous « parle » et nous transforme, au travail comme ailleurs.",
+    "pour_qui": "Pour qui cherche une manière de penser le sens au-delà de la réussite ou de la performance.",
+    "a_garder_en_tete": "Livre long et théorique ; le concept de résonance est débattu par les sociologues.",
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": [
+        "doi:10.3917/etu.4257.0119ae (compte rendu : La Découverte, 2018, 544 p., trad. S. Raquillet et S. Zilberfarb)"
+      ],
+      "reste_a_verifier": "ISBN."
+    },
+    "direction": false,
+    "domaine_public": false,
+    "brouillon": true
+  },
+  {
+    "id": "gilbert-stumbling-on-happiness",
+    "titre": "Stumbling on Happiness",
+    "auteurs": ["Daniel Gilbert"],
+    "direction": false,
+    "traducteurs": [],
+    "annee": 2007,
+    "note_edition": "Édition de poche (Vintage Books) ; première édition chez Alfred A. Knopf en 2006.",
+    "editeur": "Vintage Books",
+    "isbn": "9781400077427",
+    "langue": "en",
+    "domaine_public": false,
+    "etiquette": "recherche",
+    "niveau": "accessible",
+    "themes": ["bien-etre", "connaissance-de-soi"],
+    "resume": "Un psychologue explique, avec humour, pourquoi nous nous trompons souvent en imaginant ce qui nous rendra heureux plus tard, en s'appuyant sur des recherches sur l'imagination et la prévision.",
+    "pour_qui": "Pour qui hésite entre plusieurs choix de vie et se demande à quel point il peut se fier à ce qu'il imagine.",
+    "a_garder_en_tete": "En anglais ; aucune édition française n'a pu être vérifiée. Ouvrage de vulgarisation, publié en 2006 : certaines études citées ont pu être nuancées depuis.",
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": [
+        "doi:10.1007/s10902-007-9073-2 (compte rendu : Vintage Books, 2007, ISBN 978-1-4000-7742-7)",
+        "doi:10.1108/09534810710760108 (compte rendu : Alfred A. Knopf, 2006)"
+      ]
+    },
+    "brouillon": true
+  },
+  {
+    "id": "ibarra-working-identity",
+    "titre": "Working Identity",
+    "sous_titre": "Unconventional Strategies for Reinventing Your Career",
+    "auteurs": ["Herminia Ibarra"],
+    "direction": false,
+    "traducteurs": [],
+    "annee": 2003,
+    "editeur": "Harvard Business School Press",
+    "isbn": null,
+    "langue": "en",
+    "domaine_public": false,
+    "etiquette": "recherche",
+    "niveau": "accessible",
+    "themes": ["reconversion", "orientation"],
+    "resume": "Une professeure de comportement organisationnel s'appuie sur des parcours de personnes en reconversion pour montrer qu'on change de carrière en expérimentant et en testant de nouvelles identités, plutôt qu'en planifiant tout à l'avance.",
+    "pour_qui": "Pour qui envisage une reconversion et se sent bloqué par l'idée de devoir d'abord savoir exactement ce qu'il veut.",
+    "a_garder_en_tete": "En anglais ; aucune édition française n'a pu être vérifiée. Fondé sur des études de cas de cadres, publié en 2003.",
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": [
+        "doi:10.5465/ame.2003.10954811 (compte rendu : Harvard Business School Press, Boston, 2003)"
+      ],
+      "reste_a_verifier": "ISBN et existence d'une traduction française."
+    },
+    "brouillon": true
+  },
+  {
+    "id": "duckworth-grit",
+    "titre": "Grit",
+    "sous_titre": "The Power of Passion and Perseverance",
+    "auteurs": ["Angela Duckworth"],
+    "direction": false,
+    "traducteurs": [],
+    "annee": 2016,
+    "editeur": "Scribner",
+    "isbn": null,
+    "langue": "en",
+    "domaine_public": false,
+    "etiquette": "recherche",
+    "niveau": "accessible",
+    "themes": ["motivation"],
+    "note_controverse": "Notion très populaire mais contestée : des méta-analyses suggèrent que la « grit » recouvre largement la conscienciosité et que ses effets ont été surestimés. TODO : citer une méta-analyse vérifiée.",
+    "resume": "Une psychologue défend l'idée que la persévérance et la passion pour des objectifs de long terme comptent autant que le talent, en s'appuyant sur ses recherches et sur des portraits.",
+    "pour_qui": "Pour qui s'interroge sur la persévérance et le rapport à l'effort, avec un regard critique.",
+    "a_garder_en_tete": "En anglais ; une traduction française existe peut-être mais n'a pas pu être vérifiée. Lire en gardant en tête les critiques scientifiques de la notion.",
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": ["doi:10.1111/peps.12198 (compte rendu : Scribner, New York, 2016, 352 p.)"],
+      "reste_a_verifier": "ISBN et édition française éventuelle."
+    },
+    "brouillon": true
+  }
+]

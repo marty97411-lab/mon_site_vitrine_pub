@@ -1,0 +1,83 @@
+---
+import Base from '../layouts/Base.astro';
+import Essentiel from '../components/Essentiel.astro';
+import { catalogueArticles, chargerContenu } from '../lib/contenu';
+import { decrireCondition } from '../lib/recommandations';
+import { recommandationsSchema } from '../lib/schemas';
+import recommandationsJson from '../data/recommandations.json';
+
+const contenu = await chargerContenu();
+const config = recommandationsSchema.parse(recommandationsJson);
+const articles = catalogueArticles(contenu);
+const livres = new Map(contenu.livres.map((l) => [l.data.id, l.data]));
+---
+
+<Base
+  titre="Comment ces suggestions sont choisies"
+  description="Les règles simples et transparentes qui choisissent les lectures proposées sur la page de résultats."
+  fil={[
+    { libelle: 'Le test', href: '/parcours' },
+    { libelle: 'Comment ces suggestions sont choisies' },
+  ]}
+>
+  <h1>Comment ces suggestions sont choisies</h1>
+  <Essentiel>
+    <p>
+      Les lectures proposées sur la page de résultats sont des pistes choisies par l'équipe du site,
+      à partir de règles simples. Ce n'est pas un résultat scientifique : vous pouvez tout à fait
+      lire autre chose.
+    </p>
+  </Essentiel>
+  <div class="lecture">
+    <h2>Le principe</h2>
+    <p>
+      Chaque règle associe une condition sur vos scores à quelques articles et livres. Les règles
+      sont appliquées dans l'ordre ci-dessous ; nous gardons au plus {config.maximum} articles et{' '}
+      {config.maximum}
+      livres, et nous complétons avec des lectures pour tous si besoin, pour en proposer au moins
+      {config.minimum} de chaque.
+    </p>
+    <p>{config.note}</p>
+    <p>
+      Le calcul se fait dans votre navigateur : rien n'est envoyé. Vous pouvez consulter
+      <a href="/livres">tous les livres</a>, <a href="/situations">toutes les situations</a> et
+      <a href="/philosophie">toutes les pages de philosophie</a>.
+    </p>
+  </div>
+
+  <h2>Les règles, dans l'ordre</h2>
+  <ol class="regles">
+    {config.regles.map((r) => (
+      <li>
+        <p class="condition">{decrireCondition(r.si)}</p>
+        <p class="discret">Raison affichée : « {r.raison} ».</p>
+        <ul>
+          {r.articles.map((id) => (
+            <li>
+              Article : <a href={articles[id]?.url}>{articles[id]?.titre}</a>
+            </li>
+          ))}
+          {r.livres.map((id) => (
+            <li>
+              Livre : <a href={`/livres/${id}`}>{livres.get(id)?.titre}</a>
+            </li>
+          ))}
+        </ul>
+      </li>
+    ))}
+  </ol>
+</Base>
+
+<style>
+  .regles {
+    max-width: var(--mesure);
+    padding-left: 1.3rem;
+  }
+  .regles > li {
+    margin-block: var(--espace-4);
+  }
+  .condition {
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+</style>

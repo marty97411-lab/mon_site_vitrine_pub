@@ -1,0 +1,126 @@
+[
+  {
+    "id": "kristin-neff",
+    "nom": "Kristin Neff",
+    "presentation": "Psychologue, chercheuse sur la compassion envers soi-même.",
+    "etiquette": "recherche",
+    "themes": ["bien-etre", "connaissance-de-soi"]
+  },
+  {
+    "id": "sonja-lyubomirsky",
+    "nom": "Sonja Lyubomirsky",
+    "presentation": "Psychologue, chercheuse sur le bonheur et le bien-être.",
+    "etiquette": "recherche",
+    "themes": ["bien-etre"]
+  },
+  {
+    "id": "martin-seligman",
+    "nom": "Martin Seligman",
+    "presentation": "Psychologue, l'une des figures fondatrices de la psychologie positive.",
+    "etiquette": "recherche",
+    "themes": ["bien-etre", "motivation"],
+    "note": "La psychologie positive est un courant parfois critiqué pour ses promesses ; certains de ses résultats sont discutés."
+  },
+  {
+    "id": "adam-grant",
+    "nom": "Adam Grant",
+    "presentation": "Psychologue des organisations, auteur d'ouvrages de vulgarisation sur le travail et la motivation.",
+    "etiquette": "recherche",
+    "themes": ["motivation", "sens-du-travail"]
+  },
+  {
+    "id": "alexandre-lhotellier",
+    "nom": "Alexandre Lhotellier",
+    "presentation": "Auteur de travaux sur le conseil psychologique et l'accompagnement (« tenir conseil »).",
+    "etiquette": "recherche",
+    "themes": ["orientation"]
+  },
+  {
+    "id": "barry-schwartz",
+    "nom": "Barry Schwartz",
+    "presentation": "Psychologue, auteur de travaux sur le choix et sur le sens du travail.",
+    "etiquette": "recherche",
+    "themes": ["sens-du-travail", "bien-etre"],
+    "note": "L'idée qu'un excès de choix rendrait malheureux est discutée : l'effet est mal répliqué dans certaines études."
+  },
+  {
+    "id": "christophe-andre",
+    "nom": "Christophe André",
+    "presentation": "Psychiatre, auteur d'ouvrages de vulgarisation sur l'estime de soi et les émotions.",
+    "etiquette": "temoignage",
+    "themes": ["bien-etre", "connaissance-de-soi"]
+  },
+  {
+    "id": "susan-cain",
+    "nom": "Susan Cain",
+    "presentation": "Autrice d'ouvrages grand public sur l'introversion.",
+    "etiquette": "temoignage",
+    "themes": ["connaissance-de-soi"],
+    "note": "Livre de vulgarisation et de témoignage plutôt que de recherche : utile pour réfléchir, pas une preuve scientifique."
+  },
+  {
+    "id": "viktor-frankl",
+    "nom": "Viktor Frankl",
+    "presentation": "Psychiatre, survivant des camps de concentration, fondateur de la logothérapie centrée sur la recherche de sens.",
+    "etiquette": "temoignage",
+    "themes": ["philosophie-de-vie", "sens-du-travail"]
+  },
+  {
+    "id": "tal-ben-shahar",
+    "nom": "Tal Ben-Shahar",
+    "presentation": "Enseignant et auteur d'ouvrages de vulgarisation sur la psychologie positive.",
+    "etiquette": "temoignage",
+    "themes": ["bien-etre"]
+  },
+  {
+    "id": "daniel-pink",
+    "nom": "Daniel Pink",
+    "presentation": "Auteur d'ouvrages de vulgarisation sur la motivation au travail.",
+    "etiquette": "temoignage",
+    "themes": ["motivation"],
+    "note": "Synthèse de recherches par un non-chercheur : à lire comme une porte d'entrée, en remontant aux sources."
+  },
+  {
+    "id": "bill-burnett-dave-evans",
+    "nom": "Bill Burnett et Dave Evans",
+    "presentation": "Enseignants en design, qui appliquent les méthodes du design à la construction de sa vie professionnelle.",
+    "etiquette": "temoignage",
+    "themes": ["orientation", "reconversion"],
+    "note": "Méthode pratique issue de l'enseignement, pas de la recherche."
+  },
+  {
+    "id": "jean-paul-sartre",
+    "nom": "Jean-Paul Sartre",
+    "presentation": "Philosophe existentialiste (voir la page Sartre du site).",
+    "etiquette": "philosophie",
+    "themes": ["philosophie-de-vie"]
+  },
+  {
+    "id": "hannah-arendt",
+    "nom": "Hannah Arendt",
+    "presentation": "Philosophe, autrice d'une réflexion sur le travail, l'œuvre et l'action (voir la page du site).",
+    "etiquette": "philosophie",
+    "themes": ["sens-du-travail", "philosophie-de-vie"]
+  },
+  {
+    "id": "andre-gorz",
+    "nom": "André Gorz",
+    "presentation": "Philosophe et journaliste, auteur d'une critique de la place du travail dans nos sociétés.",
+    "etiquette": "philosophie",
+    "themes": ["sens-du-travail"]
+  },
+  {
+    "id": "bertrand-russell",
+    "nom": "Bertrand Russell",
+    "presentation": "Philosophe et logicien, auteur d'essais sur le bonheur et sur le travail.",
+    "etiquette": "philosophie",
+    "themes": ["philosophie-de-vie", "bien-etre"]
+  },
+  {
+    "id": "andre-comte-sponville",
+    "nom": "André Comte-Sponville",
+    "presentation": "Philosophe, auteur d'essais accessibles sur le bonheur et la sagesse.",
+    "etiquette": "philosophie",
+    "themes": ["philosophie-de-vie", "bien-etre"]
+  }
+]

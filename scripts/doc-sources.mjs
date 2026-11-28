@@ -8,6 +8,9 @@ import { readFile, writeFile } from 'node:fs/promises';
 const sources = JSON.parse(
   await readFile(new URL('../src/content/sources/sources.json', import.meta.url), 'utf8'),
 );
+const livres = JSON.parse(
+  await readFile(new URL('../src/content/livres/livres.json', import.meta.url), 'utf8'),
+);
 
 const CATEGORIES = [
   ['Questionnaires de personnalité (IPIP)', /^(ipip|johnson|goldberg|thiry)/],
@@ -76,6 +79,19 @@ ajouterSection(
   'Autres',
   sources.filter((s) => restantes.has(s.id)),
 );
+
+md += `## Livres conseillés (${livres.length})
+
+Détail et preuves dans \`src/content/livres/livres.json\`. Étiquettes : recherche, philosophie,
+témoignage. Tous les livres sont vérifiés (notice Crossref, compte rendu ou Wikisource).
+
+| Id | Livre | Éditeur, année | ISBN | Étiquette | Preuves | Reste à vérifier |
+| --- | --- | --- | --- | --- | --- | --- |
+`;
+for (const l of livres) {
+  md += `| \`${l.id}\` | ${echapper(`${l.auteurs.join(', ')}, *${l.titre}*`)} | ${echapper(`${l.editeur}, ${l.annee}`)} | ${l.isbn ?? '—'} | ${l.etiquette} | ${echapper(l.verification.preuves.join(' ; '))} | ${echapper(l.verification.reste_a_verifier ?? '—')} |\n`;
+}
+md += '\n';
 
 const compte = (st) => sources.filter((s) => s.statut === st).length;
 md += `## Bilan

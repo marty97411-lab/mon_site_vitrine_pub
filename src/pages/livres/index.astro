@@ -1,0 +1,171 @@
+---
+import Base from '../../layouts/Base.astro';
+import Essentiel from '../../components/Essentiel.astro';
+import CarteLivre from '../../components/CarteLivre.astro';
+import EnSavoirPlus from '../../components/EnSavoirPlus.astro';
+import { getCollection } from 'astro:content';
+import { chargerContenu } from '../../lib/contenu';
+import { LIBELLES_ETIQUETTES, LIBELLES_THEMES, THEMES_LIVRES } from '../../lib/schemas';
+
+const { livres } = await chargerContenu();
+const auteurs = (await getCollection('auteurs')).sort((a, b) =>
+  a.data.nom.localeCompare(b.data.nom, 'fr'),
+);
+---
+
+<Base
+  titre="Livres conseillés"
+  description="Une sélection de livres sur la connaissance de soi, l'orientation, le sens du travail et la philosophie de vie, avec une étiquette honnête sur leur nature."
+  fil={[{ libelle: 'Livres conseillés' }]}
+>
+  <h1>Livres conseillés</h1>
+  <Essentiel>
+    <p>
+      {livres.length} livres choisis par l'équipe du site. Chacun porte une étiquette honnête :
+      fondé sur la recherche, philosophie, ou témoignage. Un livre inspirant n'est pas une preuve
+      scientifique.
+    </p>
+  </Essentiel>
+  <div class="lecture">
+    <EnSavoirPlus titre="Comment ces livres ont été choisis">
+      <p>
+        Chaque livre a été vérifié (titre, auteur, éditeur, année et, quand c'était possible, ISBN)
+        à partir de notices bibliographiques ou de comptes rendus parus dans des revues. Les livres
+        que nous n'avons pas pu vérifier n'apparaissent pas. Certains livres très populaires mais
+        contestés sont accompagnés d'une note ; d'autres, sans base solide, ont été écartés.
+      </p>
+      <p>
+        Les résumés sont rédigés par l'équipe, pas copiés des éditeurs. Les liens vers la BnF et
+        Amazon sont de simples recherches, sans affiliation : le site ne touche rien.
+      </p>
+    </EnSavoirPlus>
+  </div>
+
+  <form class="filtres" id="filtres" aria-label="Filtrer les livres">
+    <label>
+      Thème
+      <select name="theme">
+        <option value="">Tous les thèmes</option>
+        {THEMES_LIVRES.map((t) => (
+          <option value={t}>{LIBELLES_THEMES[t]}</option>
+        ))}
+      </select>
+    </label>
+    <label>
+      Étiquette
+      <select name="etiquette">
+        <option value="">Toutes</option>
+        {Object.entries(LIBELLES_ETIQUETTES).map(([v, l]) => (
+          <option value={v}>{l}</option>
+        ))}
+      </select>
+    </label>
+    <label>
+      Niveau
+      <select name="niveau">
+        <option value="">Tous</option>
+        <option value="accessible">Accessible</option>
+        <option value="exigeant">Exigeant</option>
+      </select>
+    </label>
+  </form>
+  <p id="compteur" class="discret" aria-live="polite">
+    {livres.length} livres affichés.
+  </p>
+
+  <div class="grille deux" id="liste-livres">
+    {livres.map((livre) => (
+      <CarteLivre livre={livre} />
+    ))}
+  </div>
+  <p id="aucun" hidden>
+    Aucun livre ne correspond à ces filtres.
+  </p>
+
+  <section class="auteurs" aria-labelledby="titre-auteurs">
+    <h2 id="titre-auteurs">Autres auteurs à découvrir</h2>
+    <p class="lecture">
+      Ces auteurs abordent les thèmes du site, mais nous n'avons pas encore pu vérifier les
+      références précises de leurs livres (éditeur, année, édition française). Nous ajouterons leurs
+      ouvrages à la sélection une fois cette vérification faite. Les présentations ci-dessous sont
+      elles aussi à vérifier.
+    </p>
+    <ul class="liste-auteurs">
+      {auteurs.map(({ data: a }) => (
+        <li>
+          <strong>{a.nom}</strong>
+          <span class="discret"> · {LIBELLES_ETIQUETTES[a.etiquette]}</span>
+          <br />
+          {a.presentation}
+          {a.note && <span class="note-auteur"> {a.note}</span>}
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>
+
+<script>
+  const formulaire = document.querySelector<HTMLFormElement>('#filtres');
+  const cartes = [...document.querySelectorAll<HTMLElement>('.carte-livre')];
+  const compteur = document.querySelector<HTMLElement>('#compteur');
+  const aucun = document.querySelector<HTMLElement>('#aucun');
+  const filtrer = () => {
+    if (!formulaire) return;
+    const f = new FormData(formulaire);
+    const theme = String(f.get('theme') ?? '');
+    const etiquette = String(f.get('etiquette') ?? '');
+    const niveau = String(f.get('niveau') ?? '');
+    let visibles = 0;
+    for (const c of cartes) {
+      const ok =
+        (!theme || (c.dataset['themes'] ?? '').split(' ').includes(theme)) &&
+        (!etiquette || c.dataset['etiquette'] === etiquette) &&
+        (!niveau || c.dataset['niveau'] === niveau);
+      c.hidden = !ok;
+      if (ok) visibles++;
+    }
+    if (compteur) compteur.textContent = `${visibles} livre(s) affiché(s).`;
+    if (aucun) aucun.hidden = visibles > 0;
+  };
+  formulaire?.addEventListener('change', filtrer);
+</script>
+
+<style>
+  .auteurs {
+    margin-top: var(--espace-6);
+    padding-top: var(--espace-4);
+    border-top: 1px solid var(--c-bordure);
+  }
+  .liste-auteurs {
+    display: grid;
+    gap: var(--espace-3);
+    padding-left: 1.1rem;
+    max-width: var(--mesure);
+  }
+  .note-auteur {
+    color: var(--c-secondaire-texte);
+    font-size: 0.92rem;
+  }
+  .filtres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espace-3);
+    margin-block: var(--espace-4) var(--espace-2);
+  }
+  .filtres label {
+    display: grid;
+    gap: var(--espace-1);
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+  .filtres select {
+    font: inherit;
+    font-weight: 400;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid var(--c-bordure);
+    border-radius: var(--rayon-petit);
+    background: var(--c-surface);
+    color: var(--c-texte);
+    min-width: 12rem;
+  }
+</style>

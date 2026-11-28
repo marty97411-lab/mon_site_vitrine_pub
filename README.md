@@ -1,6 +1,6 @@
-# Personnalisé
+# Personalis
 
-**Personnalisé** est un site web en français d'aide à la réflexion sur l'orientation
+**Personalis** est un site web en français d'aide à la réflexion sur l'orientation
 professionnelle et sur la vie que l'on veut mener. Le visiteur choisit
 un parcours rapide (80 questions) ou complet (180 questions) et répond à deux questionnaires :
 
@@ -9,7 +9,9 @@ un parcours rapide (80 questions) ou complet (180 questions) et répond à deux 
   de métiers de la base O*NET, selon la méthode de corrélation documentée par O*NET.
 
 Le site propose aussi des contenus à lire sans faire le test : « Ma situation » (repères
-scientifiques), « Comprendre », « Philosophie » (réflexion) et « Besoin d'en parler ? ».
+scientifiques), « Comprendre », « Philosophie » (réflexion), « Livres conseillés » (sélection vérifiée et
+étiquetée) et « Besoin d'en parler ? ». La page de résultats propose des pistes de lecture selon
+le profil, à partir de règles transparentes (`src/data/recommandations.json`).
 
 > **Statut : prototype.** Les traductions des items ne sont pas validées, les métiers sont
 > américains (intitulés en anglais) et plusieurs références restent à vérifier. La traduction des

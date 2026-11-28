@@ -4,10 +4,11 @@ import Avertissement from '../components/Avertissement.astro';
 import Badge from '../components/Badge.astro';
 import Illustration from '../components/Illustration.astro';
 import ListeSources from '../components/ListeSources.astro';
-import { chargerContenu, sourcesParIds } from '../lib/contenu';
-import { jobZonesSchema } from '../lib/schemas';
+import { catalogueArticles, chargerContenu, sourcesParIds } from '../lib/contenu';
+import { jobZonesSchema, LIBELLES_ETIQUETTES } from '../lib/schemas';
 import { SEUIL_FORTE, SEUIL_TRES_FORTE } from '../lib/rapprochement';
 import jobZonesJson from '../data/onet/job-zones.json';
+import recommandationsJson from '../data/recommandations.json';
 
 const contenu = await chargerContenu();
 // Les zones 1 et 2 sont regroupées dans O*NET 31.0 : une seule ligne pour les deux.
@@ -34,6 +35,18 @@ const donnees = {
     items: q.items.map((i) => ({ id: i.id, domaine: i.domaine, facette: i.facette, cle: i.cle })),
   })),
   traits: contenu.traits.map(({ id, data }) => ({ trait: data.trait, nom: data.nom, fiche: id })),
+  recommandations: recommandationsJson,
+  articles: catalogueArticles(contenu),
+  livres: Object.fromEntries(
+    contenu.livres.map(({ data: l }) => [
+      l.id,
+      {
+        titre: l.titre,
+        auteurs: l.auteurs.join(', '),
+        etiquette: LIBELLES_ETIQUETTES[l.etiquette],
+      },
+    ]),
+  ),
 };
 ---
 
@@ -207,6 +220,8 @@ const donnees = {
   import { LIBELLES_NIVEAU, rapprocher, regrouperParFamille } from '../lib/rapprochement';
   import { pointsProfil, pourcentageBarre, sommet, versAttribut } from '../lib/visualisation';
   import { effacerTout, lireEtat } from '../lib/stockage';
+  import { suggerer, type ProfilPourSuggestions } from '../lib/recommandations';
+  import type { ConfigRecommandations } from '../lib/schemas/recommandations';
 
   interface QuestionnaireClient extends ConfigCotation {
     id: string;
@@ -218,6 +233,9 @@ const donnees = {
     parcours: { id: string; nom: string; precision: string; questionnaires: string[] }[];
     questionnaires: QuestionnaireClient[];
     traits: { trait: TraitId; nom: string; fiche: string }[];
+    recommandations: ConfigRecommandations;
+    articles: Record<string, { titre: string; url: string; badge: string }>;
+    livres: Record<string, { titre: string; auteurs: string; etiquette: string }>;
   }
 
   const donnees = JSON.parse(
@@ -519,6 +537,61 @@ const donnees = {
     return section;
   }
 
+  function sectionSuggestions(profil: ProfilPourSuggestions) {
+    const { articles, livres } = suggerer(donnees.recommandations, profil);
+    const section = el('section', { 'aria-labelledby': 'titre-suggestions', class: 'suggestions' });
+    section.append(
+      el('h2', { id: 'titre-suggestions' }, 'Pour aller plus loin, selon votre profil'),
+      el(
+        'p',
+        { class: 'phrase-graphique' },
+        'Des pistes de lecture choisies par l’équipe du site à partir de règles simples, pas un résultat scientifique. ',
+        lien('/suggestions', 'Comment ces suggestions sont choisies'),
+      ),
+    );
+    const raison = (r: string[]) =>
+      el('span', { class: 'discret raison' }, `Parce que ${r.join(' ; ')}.`);
+    const grille = el('div', { class: 'grille deux' });
+    const blocArticles = el(
+      'div',
+      { class: 'bloc-suggestions' },
+      el('h3', {}, 'À lire sur le site'),
+    );
+    const ulA = el('ul');
+    for (const s of articles) {
+      const a = donnees.articles[s.id];
+      if (!a) continue;
+      ulA.append(el('li', {}, lien(a.url, a.titre), ` (${a.badge})`, el('br'), raison(s.raisons)));
+    }
+    blocArticles.append(
+      ulA,
+      el('p', { class: 'discret' }, lien('/plan-du-site', 'Tous les articles')),
+    );
+    const blocLivres = el('div', { class: 'bloc-suggestions' }, el('h3', {}, 'Livres'));
+    const ulL = el('ul');
+    for (const s of livres) {
+      const l = donnees.livres[s.id];
+      if (!l) continue;
+      ulL.append(
+        el(
+          'li',
+          {},
+          lien(`/livres/${s.id}`, l.titre),
+          `, ${l.auteurs} (${l.etiquette})`,
+          el('br'),
+          raison(s.raisons),
+        ),
+      );
+    }
+    blocLivres.append(
+      ulL,
+      el('p', { class: 'discret' }, lien('/livres', 'Tous les livres conseillés')),
+    );
+    grille.append(blocArticles, blocLivres);
+    section.append(grille);
+    return section;
+  }
+
   const etat = lireEtat();
   const demande = new URLSearchParams(window.location.search).get('parcours');
   const idParcours = demande === 'rapide' || demande === 'complet' ? demande : etat.parcours;
@@ -557,15 +630,22 @@ const donnees = {
       const deux = el('div', { class: 'grille deux' });
       let metiers: Node | null = null;
       let codeInterets = '';
+      const pourSuggestions: ProfilPourSuggestions = { traits: {}, riasec: null, riasecMax: 0 };
       for (const q of qs) {
         if (q.modele === 'big-five') {
           deux.prepend(sectionPersonnalite(q, etat.reponses));
+          const domaines = calculerProfil(q, etat.reponses).domaines;
+          for (const { trait } of donnees.traits) {
+            pourSuggestions.traits[trait] = domaines[trait]?.valeur ?? null;
+          }
         } else {
           const { section, scores } = sectionInterets(q, etat.reponses);
           deux.append(section);
           if (scores) {
             metiers = sectionMetiers(scores);
             codeInterets = codeRiasec(scores).code;
+            pourSuggestions.riasec = scores;
+            pourSuggestions.riasecMax = calculerProfil(q, etat.reponses).domaines['R']?.max ?? 0;
           }
         }
       }
@@ -589,6 +669,7 @@ const donnees = {
         deux,
       );
       if (metiers) contenu.push(metiers);
+      contenu.push(sectionSuggestions(pourSuggestions));
       if (parcours.id === 'rapide') {
         contenu.push(
           el(
@@ -785,6 +866,24 @@ const donnees = {
     background: var(--c-primaire-clair);
     border-radius: var(--rayon-pilule);
     padding: 0.15rem 0.65rem;
+  }
+  #resultats :global(.suggestions) {
+    margin-top: var(--espace-5);
+  }
+  #resultats :global(.bloc-suggestions) {
+    background: var(--c-surface);
+    border: 1px solid var(--c-bordure);
+    border-radius: var(--rayon);
+    padding: var(--espace-3) var(--espace-4);
+  }
+  #resultats :global(.bloc-suggestions h3) {
+    margin-top: var(--espace-2);
+  }
+  #resultats :global(.bloc-suggestions li) {
+    margin-block: var(--espace-2);
+  }
+  #resultats :global(.raison) {
+    font-size: 0.88rem;
   }
   #resultats :global(.aide-resultats) {
     margin-top: var(--espace-5);

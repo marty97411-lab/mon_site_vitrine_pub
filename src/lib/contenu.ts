@@ -8,12 +8,14 @@ import {
   famillesSchema,
   jobZonesSchema,
   metiersOnetSchema,
+  recommandationsSchema,
   type Affirmation,
   type Questionnaire,
 } from './schemas';
 import metiersJson from '../data/onet/metiers.json';
 import famillesJson from '../data/onet/familles.json';
 import jobZonesJson from '../data/onet/job-zones.json';
+import recommandationsJson from '../data/recommandations.json';
 
 export interface Contenu {
   sources: CollectionEntry<'sources'>[];
@@ -23,6 +25,7 @@ export interface Contenu {
   metiers: CollectionEntry<'metiers'>[];
   situations: CollectionEntry<'situations'>[];
   philosophie: CollectionEntry<'philosophie'>[];
+  livres: CollectionEntry<'livres'>[];
 }
 
 let cache: Promise<Contenu> | undefined;
@@ -34,7 +37,7 @@ function refsAffirmations(origine: string, affirmations: readonly Affirmation[])
 }
 
 async function charger(): Promise<Contenu> {
-  const [sources, questionnaires, parcours, traits, metiers, situations, philosophie] =
+  const [sources, questionnaires, parcours, traits, metiers, situations, philosophie, livres] =
     await Promise.all([
       getCollection('sources'),
       getCollection('questionnaires'),
@@ -43,6 +46,7 @@ async function charger(): Promise<Contenu> {
       getCollection('metiers'),
       getCollection('situations'),
       getCollection('philosophie'),
+      getCollection('livres'),
     ]);
 
   const refs: Reference[] = [];
@@ -99,10 +103,29 @@ async function charger(): Promise<Contenu> {
 
   traits.sort((a, b) => a.data.ordre - b.data.ordre);
   metiers.sort((a, b) => a.data.intitule.localeCompare(b.data.intitule, 'fr'));
+  // Recommandations : toute référence à un livre ou à un article doit exister.
+  const config = recommandationsSchema.parse(recommandationsJson);
+  const idsLivres = new Set(livres.map((l) => l.data.id));
+  const idsArticles = new Set([
+    ...situations.map((e) => `situations/${e.id}`),
+    ...philosophie.map((e) => `philosophie/${e.id}`),
+    ...traits.map((e) => `traits/${e.id}`),
+  ]);
+  for (const regle of config.regles) {
+    for (const id of regle.livres) {
+      if (!idsLivres.has(id)) throw new Error(`Recommandation ${regle.id} : livre inconnu ${id}`);
+    }
+    for (const id of regle.articles) {
+      if (!idsArticles.has(id))
+        throw new Error(`Recommandation ${regle.id} : article inconnu ${id}`);
+    }
+  }
+
   parcours.sort((a) => (a.data.id === 'rapide' ? -1 : 1));
+  livres.sort((a, b) => a.data.titre.localeCompare(b.data.titre, 'fr'));
   situations.sort((a, b) => a.data.ordre - b.data.ordre);
   philosophie.sort((a, b) => a.data.ordre - b.data.ordre);
-  return { sources, questionnaires, parcours, traits, metiers, situations, philosophie };
+  return { sources, questionnaires, parcours, traits, metiers, situations, philosophie, livres };
 }
 
 export function chargerContenu(): Promise<Contenu> {
@@ -121,4 +144,29 @@ export function questionnaireParId(contenu: Contenu, id: string): Questionnaire 
   const q = contenu.questionnaires.find((x) => x.data.id === id);
   if (!q) throw new Error(`Questionnaire inconnu : ${id}`);
   return q.data;
+}
+
+/** Titre et adresse de chaque article recommandable (« situations/… », « philosophie/… », « traits/… »). */
+export function catalogueArticles(
+  contenu: Contenu,
+): Record<string, { titre: string; url: string; badge: string }> {
+  const catalogue: Record<string, { titre: string; url: string; badge: string }> = {};
+  for (const e of contenu.situations) {
+    catalogue[`situations/${e.id}`] = {
+      titre: e.data.titre,
+      url: `/situations/${e.id}`,
+      badge: 'Science',
+    };
+  }
+  for (const e of contenu.philosophie) {
+    catalogue[`philosophie/${e.id}`] = {
+      titre: e.data.titre,
+      url: `/philosophie/${e.id}`,
+      badge: 'Réflexion',
+    };
+  }
+  for (const e of contenu.traits) {
+    catalogue[`traits/${e.id}`] = { titre: e.data.nom, url: `/traits/${e.id}`, badge: 'Science' };
+  }
+  return catalogue;
 }

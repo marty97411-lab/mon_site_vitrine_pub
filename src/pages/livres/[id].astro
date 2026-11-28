@@ -1,0 +1,149 @@
+---
+import Base from '../../layouts/Base.astro';
+import Essentiel from '../../components/Essentiel.astro';
+import EnSavoirPlus from '../../components/EnSavoirPlus.astro';
+import { chargerContenu } from '../../lib/contenu';
+import { lienAmazon, lienBnf } from '../../lib/isbn';
+import { LIBELLES_ETIQUETTES, LIBELLES_THEMES } from '../../lib/schemas';
+
+export async function getStaticPaths() {
+  const { livres } = await chargerContenu();
+  return livres.map((livre) => ({ params: { id: livre.data.id }, props: { livre } }));
+}
+
+const { livre } = Astro.props;
+const l = livre.data;
+const requete = l.isbn ?? `${l.titre} ${l.auteurs.join(' ')}`;
+/** Affiche les adresses encodées (%C3%A9…) sous une forme lisible. */
+const lisible = (texte: string) => {
+  try {
+    return decodeURI(texte);
+  } catch {
+    return texte;
+  }
+};
+const description = `${l.titre}, de ${l.auteurs.join(', ')} (${l.editeur}, ${l.annee}) : résumé, pour qui, limites.`;
+---
+
+<Base
+  titre={l.titre}
+  description={description}
+  fil={[{ libelle: 'Livres conseillés', href: '/livres' }, { libelle: l.titre }]}
+  typeOg="article"
+>
+  <p class="haut">
+    <span class:list={['etiquette-livre', l.etiquette]}>{LIBELLES_ETIQUETTES[l.etiquette]}</span>
+    <span class="discret">
+      {l.niveau === 'accessible' ? 'Lecture accessible' : 'Lecture exigeante'}
+    </span>
+  </p>
+  <h1>{l.titre}</h1>
+  {l.sous_titre && <p class="sous-titre">{l.sous_titre}</p>}
+  <p class="discret">
+    {l.auteurs.join(', ')}
+    {l.direction && ' (dir.)'}
+    {l.traducteurs.length > 0 && <> · traduction : {l.traducteurs.join(', ')}</>} · {l.editeur},{' '}
+    {l.annee}
+    {l.isbn && <> · ISBN {l.isbn}</>}
+    {l.langue === 'en' && <> · en anglais</>}
+  </p>
+  {l.brouillon && (
+    <p class="avertissement">
+      <strong>Fiche à relire.</strong> Résumé et commentaires rédigés par l'équipe, en cours de
+      relecture.
+    </p>
+  )}
+
+  <Essentiel>
+    <p>{l.resume}</p>
+  </Essentiel>
+
+  <section class="lecture" aria-labelledby="comprendre">
+    <h2 id="comprendre">Pour qui ?</h2>
+    <p>{l.pour_qui}</p>
+    <h2>Ce qu'il faut garder en tête</h2>
+    <p>{l.a_garder_en_tete}</p>
+    {l.note_controverse && (
+      <p class="avertissement">
+        <strong>Livre discuté.</strong> {l.note_controverse}
+      </p>
+    )}
+    <p class="discret">Thèmes : {l.themes.map((t) => LIBELLES_THEMES[t]).join(', ')}.</p>
+  </section>
+
+  <div class="actions">
+    {l.lien && (
+      <a class="bouton" href={l.lien.url}>
+        {l.lien.libelle}
+      </a>
+    )}
+    <a class="bouton secondaire" href={lienBnf(requete)}>
+      Chercher dans le catalogue de la BnF
+    </a>
+    {!l.domaine_public && (
+      <a class="bouton secondaire" href={lienAmazon(requete)}>
+        Chercher sur Amazon
+      </a>
+    )}
+  </div>
+  <p class="discret">
+    Liens de recherche, sans affiliation : le site ne touche aucune commission et n'envoie aucune
+    donnée.
+  </p>
+
+  <div class="lecture">
+    <EnSavoirPlus titre="Approfondir : vérification de cette fiche">
+      <p>Fiche vérifiée le {l.verification.date} à partir de :</p>
+      <ul class="preuves">
+        {l.verification.preuves.map((p) => (
+          <li>{lisible(p)}</li>
+        ))}
+      </ul>
+      {l.verification.reste_a_verifier && (
+        <p>Reste à vérifier : {l.verification.reste_a_verifier}</p>
+      )}
+      {l.note_edition && <p>Édition : {l.note_edition}</p>}
+    </EnSavoirPlus>
+  </div>
+  <p>
+    <a href="/livres">Voir tous les livres conseillés</a>
+  </p>
+</Base>
+
+<style>
+  .haut {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espace-2);
+    align-items: center;
+    margin-top: var(--espace-4);
+  }
+  .preuves li {
+    overflow-wrap: anywhere;
+  }
+  .sous-titre {
+    font-family: var(--police-titre);
+    font-variation-settings: 'SOFT' 100;
+    font-size: 1.2rem;
+    color: var(--c-texte-doux);
+    margin-top: 0;
+  }
+  .etiquette-livre {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.15rem 0.65rem;
+    border-radius: var(--rayon-pilule);
+  }
+  .recherche {
+    background: var(--c-science-fond);
+    color: var(--c-science);
+  }
+  .philosophie {
+    background: var(--c-reflexion-fond);
+    color: var(--c-reflexion);
+  }
+  .temoignage {
+    background: var(--c-primaire-clair);
+    color: var(--c-primaire-fonce);
+  }
+</style>
