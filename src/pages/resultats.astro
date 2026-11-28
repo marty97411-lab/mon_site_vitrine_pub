@@ -596,6 +596,7 @@ const donnees = {
       correspondancesFr.correspondances as Record<string, LienRome[]>,
       correspondancesFr.libelles,
       { familles: 6, parFamille: 5 },
+      correspondancesFr.appellations,
     );
     const nomFamille = new Map(famillesOnet.familles.map((f) => [f.code, f]));
     const nomZone = new Map(

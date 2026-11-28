@@ -33,10 +33,15 @@ const versions = z.object({
     .nullable(),
 });
 
+/** Code OGR d'une appellation ROME (ex. « 38400 »). */
+const codeOgr = z.string().regex(/^\d+$/);
+
 const lien = z.object({
   rome: codeRome,
   qualite: qualiteCorrespondance,
   statut: statutCorrespondance,
+  /** Appellation ROME affichée à la place de l'intitulé de la fiche (choisie à la relecture). */
+  appellation: codeOgr.optional(),
 });
 
 export const correspondancesFrSchema = z
@@ -46,6 +51,7 @@ export const correspondancesFrSchema = z
     note: z.string(),
     correspondances: z.record(codeOnet, z.array(lien).min(1)),
     libelles: z.record(codeRome, z.string().min(1)),
+    appellations: z.record(codeOgr, z.string().min(1)),
   })
   .superRefine((d, ctx) => {
     for (const [onet, liens] of Object.entries(d.correspondances)) {
@@ -63,6 +69,15 @@ export const correspondancesFrSchema = z
         }
         if (!d.libelles[l.rome]) {
           ctx.addIssue({ code: 'custom', message: `${l.rome} : libellé manquant` });
+        }
+        if (
+          l.appellation !== undefined &&
+          (l.statut !== 'valide' || !d.appellations[l.appellation])
+        ) {
+          ctx.addIssue({
+            code: 'custom',
+            message: `${onet} → ${l.rome} : appellation ${l.appellation} non validée ou sans libellé`,
+          });
         }
       }
     }
@@ -100,6 +115,7 @@ export const metierRomeSchema = z.object({
         titre: z.string().min(1),
         qualite: qualiteCorrespondance,
         statut: statutCorrespondance,
+        appellation: z.string().min(1).optional(),
       }),
     )
     .min(1),
@@ -136,6 +152,7 @@ export const validationsFrSchema = z.object({
       onet: codeOnet,
       rome: codeRome,
       decision: z.enum(['valide', 'rejete']),
+      appellation: codeOgr.optional(),
       note: z.string().optional(),
       date: z.iso.date().optional(),
     }),

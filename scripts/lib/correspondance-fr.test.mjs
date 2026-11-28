@@ -146,6 +146,36 @@ describe('construireCorrespondances', () => {
       affiche: true,
     });
   });
+  it('affiche une appellation choisie à la relecture si elle appartient à la fiche', () => {
+    const avecAppellations = {
+      ...base,
+      appellationVersFiche: new Map([...base.appellationVersFiche, ['13', 'Z2001']]),
+      libellesAppellations: new Map([
+        ['12', 'Appellation fictive de Z1001'],
+        ['13', 'Appellation fictive de Z2001'],
+      ]),
+    };
+    const t = construireCorrespondances({
+      ...avecAppellations,
+      validations: [{ onet: '00-0002.00', rome: 'Z2001', decision: 'valide', appellation: '13' }],
+    });
+    expect(t.get('00-0002.00')[0].appellation).toEqual({
+      code: '13',
+      libelle: 'Appellation fictive de Z2001',
+    });
+    expect(() =>
+      construireCorrespondances({
+        ...avecAppellations,
+        validations: [{ onet: '00-0002.00', rome: 'Z2001', decision: 'valide', appellation: '12' }],
+      }),
+    ).toThrow(/n'appartient pas/);
+    expect(() =>
+      construireCorrespondances({
+        ...avecAppellations,
+        validations: [{ onet: '00-0002.00', rome: 'Z2001', decision: 'rejete', appellation: '13' }],
+      }),
+    ).toThrow(/décision « valide »/);
+  });
   it('refuse une validation vers un code ROME inconnu ou une décision inconnue', () => {
     expect(() =>
       construireCorrespondances({

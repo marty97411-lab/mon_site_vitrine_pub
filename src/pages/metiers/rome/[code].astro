@@ -25,6 +25,9 @@ const onisep = onisepRomeSchema.parse(onisepJson).fiches[fiche.code] ?? [];
 const contenu = await chargerContenu();
 const [essentiel, ...suite] = fiche.definition;
 const nonRelue = fiche.onet.some((o) => o.statut !== 'valide');
+const appellations = [
+  ...new Set(fiche.onet.flatMap((o) => (o.appellation ? [o.appellation] : []))),
+];
 ---
 
 <Base
@@ -42,6 +45,14 @@ const nonRelue = fiche.onet.some((o) => o.statut !== 'valide');
       {fiche.grand_domaine && <> · {fiche.grand_domaine}</>}
     </p>
     <h1>{fiche.libelle}</h1>
+
+    {appellations.length > 0 && (
+      <p>
+        Dans les résultats, ce métier apparaît aussi sous{' '}
+        {appellations.length === 1 ? 'l’appellation' : 'les appellations'} «{' '}
+        {appellations.join(' », « ')} », qui fait partie de cette fiche du ROME.
+      </p>
+    )}
 
     <p id="niveau-visiteur" class="niveau-visiteur" hidden></p>
 
@@ -142,6 +153,7 @@ const nonRelue = fiche.onet.some((o) => o.statut !== 'valide');
         {fiche.onet.map((o) => (
           <li>
             <span lang="en">{o.titre}</span> ({o.code}) · {LIBELLES_QUALITE[o.qualite]}
+            {o.appellation && <> · appellation affichée : « {o.appellation} »</>}
             {o.statut === 'valide' ? ' · relue' : ' · pas encore relue'}
           </li>
         ))}

@@ -66,6 +66,23 @@ describe('versMetiersFrancais', () => {
     ]);
   });
 
+  it('affiche l’appellation choisie et la distingue de l’intitulé de la fiche', () => {
+    const r = versMetiersFrancais(
+      [corr('00-0001.00', '11', 0.9), corr('00-0002.00', '11', 0.8)],
+      {
+        '00-0001.00': [{ rome: 'Z0001', statut: 'valide' }],
+        '00-0002.00': [{ rome: 'Z0001', statut: 'valide', appellation: '99' }],
+      },
+      libelles,
+      {},
+      { '99': 'Appellation fictive' },
+    );
+    expect(r[0]?.metiers.map((m) => [m.rome, m.libelle])).toEqual([
+      ['Z0001', 'Un'],
+      ['Z0001', 'Appellation fictive'],
+    ]);
+  });
+
   it('construit le lien vers la fiche avec le niveau dans l’adresse', () => {
     expect(lienFicheRome('Z0001', 'forte')).toBe('/metiers/rome/Z0001?niveau=forte');
     expect(lienFicheRome('Z0001')).toBe('/metiers/rome/Z0001');

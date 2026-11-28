@@ -66,7 +66,10 @@ export function coherenceRiasec(codeOnet, rome) {
  * @param {{ esco: string, ogr: string, type: string }[]} p.escoRome
  * @param {Map<string, string>} p.appellationVersFiche code OGR → code ROME (ROME 4.0)
  * @param {Map<string, { libelle: string, riasec?: { majeur: string, mineur: string } }>} p.fiches
- * @param {{ onet: string, rome: string, decision: 'valide'|'rejete', note?: string }[]} p.validations
+ * @param {{ onet: string, rome: string, decision: 'valide'|'rejete', appellation?: string, note?: string }[]} p.validations
+ *   `appellation` (code OGR, facultatif) : appellation ROME à afficher à la place de l'intitulé de
+ *   la fiche ; elle doit appartenir à cette fiche.
+ * @param {Map<string, string>} [p.libellesAppellations] code OGR → libellé de l'appellation
  */
 export function construireCorrespondances({
   metiersOnet,
@@ -75,6 +78,7 @@ export function construireCorrespondances({
   appellationVersFiche,
   fiches,
   validations,
+  libellesAppellations = new Map(),
 }) {
   const parOnet = groupe(onetEsco, (l) => l.onet);
   const parEsco = groupe(escoRome, (l) => l.esco);
@@ -83,6 +87,21 @@ export function construireCorrespondances({
     if (!fiches.has(v.rome)) throw new Error(`Validation : code ROME inconnu ${v.rome}`);
     if (!['valide', 'rejete'].includes(v.decision)) {
       throw new Error(`Validation : décision inconnue « ${v.decision} » (${v.onet})`);
+    }
+    if (v.appellation !== undefined) {
+      if (
+        appellationVersFiche.get(v.appellation) !== v.rome ||
+        !libellesAppellations.has(v.appellation)
+      ) {
+        throw new Error(
+          `Validation : l'appellation ${v.appellation} n'appartient pas à la fiche ${v.rome}`,
+        );
+      }
+      if (v.decision !== 'valide') {
+        throw new Error(
+          `Validation : une appellation n'a de sens que pour une décision « valide » (${v.onet})`,
+        );
+      }
     }
   }
 
@@ -123,6 +142,9 @@ export function construireCorrespondances({
         esco: [...c.esco].sort(),
         coherence,
         statut: decision ? (decision.decision === 'valide' ? 'valide' : 'rejete') : 'a_valider',
+        appellation: decision?.appellation
+          ? { code: decision.appellation, libelle: libellesAppellations.get(decision.appellation) }
+          : null,
         note: decision?.note ?? '',
       };
     });

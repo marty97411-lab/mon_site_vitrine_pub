@@ -10,6 +10,8 @@ export type StatutCorrespondance = 'valide' | 'a_valider';
 export interface LienRome {
   rome: string;
   statut: StatutCorrespondance;
+  /** Code OGR de l'appellation à afficher à la place de l'intitulé de la fiche. */
+  appellation?: string;
 }
 
 export interface MetierFrancais<M extends MetierProfil> {
@@ -34,13 +36,15 @@ export interface FamilleFrancaise<M extends MetierProfil> {
  * Regroupe les correspondances par famille (ordre du meilleur métier, comme regrouperParFamille)
  * et remplace chaque métier O*NET par ses fiches ROME. Un métier O*NET sans fiche affichable
  * est ignoré ; une fiche atteinte par plusieurs métiers O*NET n'apparaît qu'une fois, dans la
- * famille où elle apparaît en premier.
+ * famille où elle apparaît en premier. Un lien qui précise une appellation (choisie à la
+ * relecture) affiche cette appellation et compte comme une entrée distincte.
  */
 export function versMetiersFrancais<M extends MetierProfil>(
   correspondances: readonly Correspondance<M>[],
   table: Readonly<Record<string, readonly LienRome[]>>,
   libelles: Readonly<Record<string, string>>,
   { familles: maxFamilles = 6, parFamille = 5 } = {},
+  appellations: Readonly<Record<string, string>> = {},
 ): FamilleFrancaise<M>[] {
   const parRome = new Map<string, MetierFrancais<M>>();
   const resultat = new Map<string, FamilleFrancaise<M>>();
@@ -48,7 +52,8 @@ export function versMetiersFrancais<M extends MetierProfil>(
     const liens = table[c.metier.code];
     if (!liens || liens.length === 0) continue;
     for (const lien of liens) {
-      const deja = parRome.get(lien.rome);
+      const cle = `${lien.rome}|${lien.appellation ?? ''}`;
+      const deja = parRome.get(cle);
       if (deja) {
         if (!deja.onet.includes(c)) deja.onet.push(c);
         if (lien.statut !== 'valide') deja.nonRelue = true;
@@ -63,14 +68,17 @@ export function versMetiersFrancais<M extends MetierProfil>(
       if (famille.metiers.length >= parFamille) continue;
       const m: MetierFrancais<M> = {
         rome: lien.rome,
-        libelle: libelles[lien.rome] ?? lien.rome,
+        libelle:
+          (lien.appellation ? appellations[lien.appellation] : undefined) ??
+          libelles[lien.rome] ??
+          lien.rome,
         niveau: c.niveau,
         r: c.r,
         nonRelue: lien.statut !== 'valide',
         onet: [c],
       };
       famille.metiers.push(m);
-      parRome.set(lien.rome, m);
+      parRome.set(cle, m);
     }
   }
   return [...resultat.values()];

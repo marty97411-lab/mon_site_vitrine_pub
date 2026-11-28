@@ -117,6 +117,9 @@ const grandsDomaines = new Map(
 
 const nettoyer = (t) => t.replace(/''/g, '’').replace(/'/g, '’').replace(/\s+/g, ' ').trim();
 const appellationVersFiche = new Map(appellations.map((a) => [a.code_ogr, a.code_rome]));
+const libellesAppellations = new Map(
+  appellations.map((a) => [a.code_ogr, nettoyer(a.libelle_appellation_long)]),
+);
 const riasecParFiche = new Map(
   riasecRome.map((r) => [r.code_rome, { majeur: r.riasec_majeur, mineur: r.riasec_mineur }]),
 );
@@ -195,6 +198,7 @@ const table = construireCorrespondances({
   appellationVersFiche,
   fiches,
   validations: validationsJson.validations,
+  libellesAppellations,
 });
 const apparitions = simulerApparitions(metiersOnet);
 
@@ -207,10 +211,17 @@ for (const m of metiersOnet) {
     rome: c.rome,
     qualite: c.qualite,
     statut: c.statut,
+    ...(c.appellation ? { appellation: c.appellation.code } : {}),
   }));
   for (const c of affichees) {
     const f = fichesAffichees.get(c.rome) ?? [];
-    f.push({ code: m.code, titre: m.titre, qualite: c.qualite, statut: c.statut });
+    f.push({
+      code: m.code,
+      titre: m.titre,
+      qualite: c.qualite,
+      statut: c.statut,
+      ...(c.appellation ? { appellation: c.appellation.libelle } : {}),
+    });
     fichesAffichees.set(c.rome, f);
   }
 }
@@ -264,6 +275,12 @@ await ecrireJson('src/data/fr/correspondances.json', {
   note: 'Métiers O*NET → fiches ROME 4.0 affichées. Généré par scripts/import-fr.mjs : ne pas modifier à la main (utiliser validations.json).',
   correspondances,
   libelles: Object.fromEntries(Object.values(metiersRome).map((f) => [f.code, f.libelle])),
+  appellations: Object.fromEntries(
+    Object.values(correspondances)
+      .flat()
+      .filter((l) => l.appellation)
+      .map((l) => [l.appellation, libellesAppellations.get(l.appellation)]),
+  ),
 });
 await ecrireJson('src/data/fr/metiers-rome.json', {
   genere_le: date,
@@ -291,6 +308,7 @@ const colonnes = [
   'onet_riasec',
   'rome_code',
   'rome_libelle',
+  'appellation_affichee',
   'rome_riasec',
   'coherence_riasec',
   'qualite',
@@ -323,6 +341,7 @@ for (const { n, m, c } of lignes) {
       m.code_riasec,
       c?.rome ?? '',
       c?.libelle ?? '',
+      c?.appellation?.libelle ?? '',
       r ? `${r.majeur}${r.mineur}` : '',
       c ? (c.coherence === null ? 'inconnue' : c.coherence ? 'oui' : 'non') : '',
       c?.qualite ?? 'absente',
