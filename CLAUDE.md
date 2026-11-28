@@ -107,6 +107,21 @@ Approfondir), **sans nouvel onglet dans le menu sauf nécessité**, et la page d
   nouvel onglet. Exemple : `/explication/introversion-extraversion` (ADR 0009). Ce qui relève de
   l'expérience courante est signalé dans un encadré « Expérience courante, pas une preuve ».
 - Toute page mentionnant une situation difficile renvoie vers « Besoin d'en parler ? ».
+- **Modèle d'article « Ma situation »** (identique pour tous, schéma `situationSchema`, page
+  `src/pages/situations/[id].astro`) : sommaire ; L'essentiel (3-4 phrases) ; Ce que vous ressentez
+  peut-être (chiffres sourcés, exemple toujours marqué « Exemple fictif », jamais de faux
+  témoignage) ; Ce que dit la recherche (essentiel, comprendre, Approfondir = corps Markdown,
+  `cas_particuliers` dépliables) ; Idées reçues (3 à 5, Vrai / Faux / C'est plus nuancé, sourcées ou
+  `todo_source`) ; Questions (5 à 8) + zone de notes (localStorage, effacer / copier / imprimer) ;
+  Pistes concrètes ; Aides et dispositifs ; Le regard des philosophes (1-2 pages) ; Pour aller plus
+  loin (2 à 4 livres) ; Quand demander de l'aide (bas de page, discret, lien « Besoin d'en
+  parler ? »). Visible sans dépliage : 2 à 3 minutes de lecture.
+- **Dispositifs** : uniquement dans `src/data/dispositifs.json`, avec lien officiel, date de
+  vérification et source ; sinon `lien: null` et `todo` (jamais de lien deviné). Les règles
+  changent souvent : revérifier les dates. Épuisement professionnel : sources de santé officielles
+  et rappel que le diagnostic relève d'un médecin.
+- Page « Où en êtes-vous ? » : cartes par moment de vie (`src/data/situations.json`, qui porte
+  aussi la question facultative de la page de résultats et sa correspondance vers les articles).
 - Les nouvelles pages de contenu portent `brouillon: true` jusqu'à relecture humaine.
 
 ## Charte graphique
@@ -200,13 +215,15 @@ src/
   content.config.ts      collections Astro (sources, questionnaires, parcours, traits, metiers,
                          situations, philosophie, introversion, livres, auteurs)
   content/traits/        une fiche Markdown par trait Big Five (trois niveaux, atouts / coûts)
-  content/situations/    pages « Ma situation » (badge Science)
+  content/situations/    articles « Ma situation » (11, modèle enrichi, badge Science)
   content/philosophie/   pages « Philosophie » (badge Réflexion)
   content/introversion/  dossier « Introversion et extraversion » (5 pages, badge Science)
   content/metiers/       fiches métiers (Markdown + frontmatter structuré)
   content/sources/       sources.json : bibliographie, citée par identifiant
   content/livres/        livres.json : livres conseillés (vérifiés, étiquetés)
   data/recommandations.json  règles des suggestions de lecture
+  data/situations.json   moments de vie, question facultative des résultats
+  data/dispositifs.json  aides et dispositifs en France (lien officiel, date de vérification)
   data/glossaire.json    définitions des termes techniques (source unique)
   data/questionnaires/   un JSON par questionnaire (items, clés, échelle, licence)
   data/parcours.json     parcours rapide et complet

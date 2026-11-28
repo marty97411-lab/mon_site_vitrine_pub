@@ -16,6 +16,7 @@ import metiersJson from '../data/onet/metiers.json';
 import famillesJson from '../data/onet/familles.json';
 import jobZonesJson from '../data/onet/job-zones.json';
 import recommandationsJson from '../data/recommandations.json';
+import { configSituations, dispositifs, verifierSituations } from './situations';
 
 export interface Contenu {
   sources: CollectionEntry<'sources'>[];
@@ -81,8 +82,32 @@ async function charger(): Promise<Contenu> {
     refs.push(...refsAffirmations(`traits/${id} → atouts`, data.atouts));
     refs.push(...refsAffirmations(`traits/${id} → couts`, data.couts));
   }
+  for (const { id, data } of situations) {
+    const o = `situations/${id}`;
+    refs.push(
+      ...data.recherche.sources.map((idSource) => ({ origine: `${o} → recherche`, idSource })),
+    );
+    refs.push(...refsAffirmations(`${o} → ressenti.chiffres`, data.ressenti.chiffres));
+    refs.push(
+      ...refsAffirmations(
+        `${o} → idees_recues`,
+        data.idees_recues.map((i) => ({
+          texte: i.affirmation,
+          sources: i.sources,
+          todo_source: i.todo_source,
+        })),
+      ),
+    );
+    data.cas_particuliers.forEach((c, i) =>
+      refs.push(
+        ...c.sources.map((idSource) => ({ origine: `${o} → cas_particuliers[${i}]`, idSource })),
+      ),
+    );
+  }
+  for (const d of dispositifs.dispositifs) {
+    if (d.source) refs.push({ origine: `dispositifs.json → ${d.id}`, idSource: d.source });
+  }
   for (const [nom, entrees] of [
-    ['situations', situations],
     ['philosophie', philosophie],
     ['introversion', introversion],
   ] as const) {
@@ -112,6 +137,15 @@ async function charger(): Promise<Contenu> {
     );
   }
   verifierReferences(new Set(sources.map((s) => s.id)), refs);
+  verifierSituations(
+    situations.map((e) => ({ id: e.id, data: e.data })),
+    {
+      dispositifs: new Set(dispositifs.dispositifs.map((d) => d.id)),
+      philosophie: new Set(philosophie.map((e) => e.id)),
+      livres: new Set(livres.map((l) => l.data.id)),
+    },
+    configSituations,
+  );
 
   const idsQuestionnaires = new Set(questionnaires.map((q) => q.data.id));
   for (const { data: p } of parcours) {

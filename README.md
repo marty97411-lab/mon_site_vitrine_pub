@@ -208,7 +208,7 @@ Le propriétaire du projet n'est pas développeur : chaque session doit pouvoir 
 
 - [ ] Correspondance O*NET → ROME (intitulés et liens adaptés à la France).
 - [ ] Normes de percentiles sourcées pour chaque questionnaire.
-- [ ] Section « Ma situation » enrichie (11 articles, modèle commun) : 4 rédigés à ce jour (je ne sais pas, études et orientation, mon travail ne me plaît plus, reconversion).
+- [x] Section « Ma situation » enrichie (11 articles, modèle commun, en brouillon) ; restent à vérifier les dispositifs et chiffres officiels marqués TODO (sites non joignables lors de la rédaction).
 - [ ] Relecture des brouillons (pages philosophie, Ma situation, dossier introversion/extraversion).
 - [ ] Relecture des 34 fiches livres (toutes encore en `brouillon: true`).
 - [ ] Vérification des ISBN et éditions françaises signalés « à vérifier ».

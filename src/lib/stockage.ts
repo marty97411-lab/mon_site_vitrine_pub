@@ -63,8 +63,38 @@ export function lireReponses(): Reponses {
   return lireEtat().reponses;
 }
 
+/** Notes personnelles des articles « Ma situation » : une clé par article. */
+export const PREFIXE_NOTES = 'personalis:notes:';
+/** Réponse facultative « Quelle situation vous ressemble le plus ? » (page de résultats). */
+export const CLE_SITUATION = 'personalis:situation';
+
+export function lireTexte(cle: string): string {
+  try {
+    return localStorage.getItem(cle) ?? '';
+  } catch {
+    return '';
+  }
+}
+
+export function ecrireTexte(cle: string, valeur: string): boolean {
+  try {
+    if (valeur === '') localStorage.removeItem(cle);
+    else localStorage.setItem(cle, valeur);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 export function effacerTout(): void {
   try {
+    // Notes personnelles et situation choisie.
+    const cles: string[] = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const cle = localStorage.key(i);
+      if (cle?.startsWith(PREFIXE_NOTES) || cle === CLE_SITUATION) cles.push(cle);
+    }
+    for (const cle of cles) localStorage.removeItem(cle);
     localStorage.removeItem(CLE);
     // Ancienne clé de l'étape 1 (sessionStorage).
     sessionStorage.removeItem('orientation-personnalite:reponses');

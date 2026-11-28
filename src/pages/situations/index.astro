@@ -1,46 +1,89 @@
 ---
+/**
+ * Page d'accueil de « Ma situation » : « Où en êtes-vous ? ». Cartes regroupées par moment de vie
+ * (src/data/situations.json), avec accroche et temps de lecture.
+ */
 import Base from '../../layouts/Base.astro';
 import Carte from '../../components/Carte.astro';
-import Badge from '../../components/Badge.astro';
-import Essentiel from '../../components/Essentiel.astro';
 import { chargerContenu } from '../../lib/contenu';
-import { minutesDeLecture } from '../../lib/lecture';
+import { configSituations, minutes, texteReplie, texteVisible } from '../../lib/situations';
 
 const { situations } = await chargerContenu();
+const groupes = configSituations.moments
+  .map((m) => ({ ...m, articles: situations.filter((s) => s.data.moment === m.id) }))
+  .filter((g) => g.articles.length > 0);
 ---
 
 <Base
   titre="Ma situation"
-  description="Des repères honnêtes, fondés sur la recherche, pour quatre situations fréquentes : ne pas savoir, se reconvertir, ne plus aimer son travail, choisir ses études."
+  description="Où en êtes-vous ? Des repères honnêtes, fondés sur la recherche, pour les grands moments de la vie professionnelle : études, premier emploi, doutes, transitions, fin de carrière."
   fil={[{ libelle: 'Ma situation' }]}
 >
-  <h1>Ma situation</h1>
-  <Essentiel>
-    <p>
-      Choisissez la situation qui vous ressemble le plus. Chaque page commence simplement, puis
-      propose des détails et des références pour qui veut approfondir.
-    </p>
-  </Essentiel>
-  <div class="grille deux">
-    {situations.map(({ id, data, body }) => (
-      <Carte titre={data.titre} href={`/situations/${id}`}>
-        <p slot="haut" class="meta">
-          <Badge type={data.badge} />{' '}
-          <span class="discret">{minutesDeLecture(data.essentiel, data.comprendre, body)} min</span>
-          {data.brouillon && <span class="etiquette">brouillon</span>}
-        </p>
-        <p>{data.description}</p>
-      </Carte>
-    ))}
-  </div>
+  <h1>Où en êtes-vous ?</h1>
+  <p class="intro lecture">{configSituations.introduction}</p>
+
+  {groupes.map((g) => (
+    <section
+      class:list={['groupe', { transversal: g.id === 'transversal' }]}
+      aria-labelledby={`moment-${g.id}`}
+    >
+      <h2 id={`moment-${g.id}`}>{g.titre}</h2>
+      <p class="discret">{g.description}</p>
+      <div class="grille deux">
+        {g.articles.map(({ id, data, body }) => (
+          <Carte titre={data.titre} href={`/situations/${id}`}>
+            <p slot="haut" class="meta">
+              <span class="discret">
+                {minutes(texteVisible(data))} min
+                <span class="sr"> de lecture</span> ·{' '}
+                {minutes([...texteVisible(data), ...texteReplie(data, body)])} min avec les parties
+                dépliées
+              </span>
+              {data.brouillon && <span class="etiquette">brouillon</span>}
+            </p>
+            <p>{data.accroche}</p>
+          </Carte>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <p class="aide-discrete">
+    Une situation pèse trop lourd ? <a href="/besoin-d-en-parler">Besoin d'en parler ?</a>
+  </p>
 </Base>
 
 <style>
+  .intro {
+    font-size: 1.1rem;
+  }
+  .groupe {
+    margin-top: var(--espace-5);
+  }
+  .groupe h2 {
+    margin-bottom: var(--espace-1);
+  }
+  .transversal :global(.carte) {
+    background: var(--c-surface-douce);
+  }
   .meta {
     display: flex;
     flex-wrap: wrap;
     gap: var(--espace-2);
     align-items: center;
     margin: 0;
+  }
+  .sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .aide-discrete {
+    margin-top: var(--espace-5);
+    font-size: max(0.95rem, 15px);
+    color: var(--c-texte-doux);
   }
 </style>

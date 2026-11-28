@@ -1,8 +1,26 @@
 ---
+/**
+ * Article « Ma situation » : modèle enrichi identique pour tous (voir CLAUDE.md).
+ * Visible sans dépliage : l'essentiel, le ressenti, la recherche (essentiel et comprendre), les
+ * pistes, les liens et l'aide. Replié : approfondir, idées reçues, questions et notes, dispositifs.
+ */
 import { render } from 'astro:content';
-import Article from '../../layouts/Article.astro';
-import Bouton from '../../components/Bouton.astro';
-import { chargerContenu } from '../../lib/contenu';
+import Base from '../../layouts/Base.astro';
+import Badge from '../../components/Badge.astro';
+import Essentiel from '../../components/Essentiel.astro';
+import EnSavoirPlus from '../../components/EnSavoirPlus.astro';
+import Illustration from '../../components/Illustration.astro';
+import ListeSources from '../../components/ListeSources.astro';
+import NotesSituation from '../../components/NotesSituation.astro';
+import { chargerContenu, sourcesParIds } from '../../lib/contenu';
+import { LIBELLES_VERDICT } from '../../lib/schemas';
+import {
+  dispositifs as tousDispositifs,
+  dispositifsParIds,
+  minutes,
+  texteReplie,
+  texteVisible,
+} from '../../lib/situations';
 
 export async function getStaticPaths() {
   const { situations } = await chargerContenu();
@@ -12,26 +30,399 @@ export async function getStaticPaths() {
 const { page } = Astro.props;
 const { Content } = await render(page);
 const d = page.data;
+const contenu = await chargerContenu();
+const paragraphes = (texte: string) => texte.split(/\n\s*\n/).map((p) => p.trim());
+const minutesVisibles = minutes(texteVisible(d));
+const minutesTotal = minutes([...texteVisible(d), ...texteReplie(d, page.body)]);
+const disp = dispositifsParIds(d.dispositifs);
+const pagesPhilo = d.philosophie
+  .map((id) => contenu.philosophie.find((p) => p.id === id))
+  .filter((p) => p !== undefined);
+const livres = d.livres
+  .map((id) => contenu.livres.find((l) => l.data.id === id))
+  .filter((l) => l !== undefined);
+const lies = d.articles_lies
+  .map((id) => contenu.situations.find((s) => s.id === id))
+  .filter((s) => s !== undefined);
+const toutesSources = [
+  ...d.recherche.sources,
+  ...d.ressenti.chiffres.flatMap((c) => c.sources),
+  ...d.cas_particuliers.flatMap((c) => c.sources),
+  ...d.idees_recues.flatMap((i) => i.sources),
+];
+const dateFr = (iso: string) =>
+  new Date(`${iso}T12:00:00`).toLocaleDateString('fr-FR', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+const sommaire = [
+  ['ressenti', 'Ce que vous ressentez peut-être'],
+  ['recherche', 'Ce que dit la recherche'],
+  ['idees-recues', 'Idées reçues'],
+  ['questions', 'Questions pour faire le point'],
+  ['pistes', 'Pistes concrètes'],
+  ...(disp.length > 0 ? [['dispositifs', 'Aides et dispositifs en France']] : []),
+  ['philosophes', 'Le regard des philosophes'],
+  ['plus-loin', 'Pour aller plus loin'],
+  ['aide', 'Quand demander de l’aide'],
+];
 ---
 
-<Article
+<Base
   titre={d.titre}
   description={d.description}
-  badge={d.badge}
-  essentiel={d.essentiel}
-  comprendre={d.comprendre}
-  corps={page.body}
-  sources={d.sources}
-  pourAllerPlusLoin={d.pour_aller_plus_loin}
-  brouillon={d.brouillon}
   fil={[{ libelle: 'Ma situation', href: '/situations' }, { libelle: d.titre }]}
-  illustration="chemin"
+  typeOg="article"
 >
-  <div slot="apres-comprendre" class="actions">
-    <Bouton href="/parcours">Faire le test</Bouton>
-    <Bouton href="/besoin-d-en-parler" variante="secondaire">
-      Parler à quelqu'un
-    </Bouton>
-  </div>
-  <Content />
-</Article>
+  <header class="tete">
+    <Illustration variante="chemin" class="deco" />
+    <div class="tete-texte">
+      <p class="meta">
+        <Badge type="science" />
+        <span class="discret">
+          {minutesVisibles} min de lecture ({minutesTotal} min avec les parties dépliées)
+        </span>
+      </p>
+      <h1>{d.titre}</h1>
+      <p class="chapeau">{d.description}</p>
+    </div>
+  </header>
+
+  {d.brouillon && (
+    <p class="avertissement brouillon">
+      <strong>Brouillon à relire.</strong> Cette page est une première version : son contenu doit
+      encore être relu et validé.
+    </p>
+  )}
+
+  <nav class="sommaire" aria-labelledby="titre-sommaire">
+    <p id="titre-sommaire" class="titre-sommaire">
+      Sommaire
+    </p>
+    <ol>
+      {sommaire.map(([ancre, libelle]) => (
+        <li>
+          <a href={`#${ancre}`}>{libelle}</a>
+        </li>
+      ))}
+    </ol>
+  </nav>
+
+  <Essentiel>
+    {paragraphes(d.essentiel).map((p) => (
+      <p>{p}</p>
+    ))}
+  </Essentiel>
+
+  <section class="lecture" id="ressenti" aria-labelledby="t-ressenti">
+    <h2 id="t-ressenti">Ce que vous ressentez peut-être</h2>
+    {paragraphes(d.ressenti.texte).map((p) => (
+      <p>{p}</p>
+    ))}
+    {d.ressenti.chiffres.length > 0 ? (
+      <ul class="chiffres">
+        {d.ressenti.chiffres.map((c) => (
+          <li>
+            {c.texte}
+            {c.todo_source && <span class="a-sourcer"> (donnée à sourcer)</span>}
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="discret petit">
+        Des données françaises (DARES, INSEE, France Travail) sont en cours de vérification pour
+        compléter cette partie.
+      </p>
+    )}
+    {d.ressenti.exemple_fictif && (
+      <aside class="exemple" aria-label="Exemple fictif">
+        <p class="etiquette-exemple">Exemple fictif</p>
+        {paragraphes(d.ressenti.exemple_fictif).map((p) => (
+          <p>{p}</p>
+        ))}
+      </aside>
+    )}
+  </section>
+
+  <section class="lecture" id="recherche" aria-labelledby="t-recherche">
+    <h2 id="t-recherche">Ce que dit la recherche</h2>
+    <p class="essentiel-recherche">
+      <strong>L’essentiel :</strong>
+      {d.recherche.essentiel}
+    </p>
+    <h3>Comprendre</h3>
+    {paragraphes(d.recherche.comprendre).map((p) => (
+      <p>{p}</p>
+    ))}
+    {d.cas_particuliers.map((c) => (
+      <EnSavoirPlus titre={c.titre}>
+        {paragraphes(c.texte).map((p) => (
+          <p>{p}</p>
+        ))}
+      </EnSavoirPlus>
+    ))}
+    <EnSavoirPlus titre="Approfondir : études, limites et références">
+      <Content />
+      <ListeSources
+        sources={sourcesParIds(contenu, toutesSources)}
+        titre="Références"
+        niveau={3}
+        idTitre="references-situation"
+      />
+    </EnSavoirPlus>
+  </section>
+
+  <section class="lecture" id="idees-recues" aria-labelledby="t-idees">
+    <h2 id="t-idees">Idées reçues</h2>
+    <EnSavoirPlus titre={`Voir les ${d.idees_recues.length} idées reçues et ce qu’on en sait`}>
+      <ul class="idees">
+        {d.idees_recues.map((i) => (
+          <li>
+            <p class="affirmation">« {i.affirmation} »</p>
+            <p>
+              <span class="verdict">{LIBELLES_VERDICT[i.verdict]}</span> {i.explication}
+              {i.todo_source && <span class="a-sourcer"> (source à ajouter)</span>}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </EnSavoirPlus>
+  </section>
+
+  <section class="lecture" id="questions" aria-labelledby="t-questions">
+    <h2 id="t-questions">Questions pour faire le point</h2>
+    <EnSavoirPlus titre={`Voir les ${d.questions.length} questions et prendre des notes`}>
+      <ol class="questions">
+        {d.questions.map((q) => (
+          <li>{q}</li>
+        ))}
+      </ol>
+      <NotesSituation id={page.id} titre={d.titre} />
+    </EnSavoirPlus>
+  </section>
+
+  <section class="lecture" id="pistes" aria-labelledby="t-pistes">
+    <h2 id="t-pistes">Pistes concrètes</h2>
+    <ol class="pistes">
+      {d.pistes.map((p) => (
+        <li>
+          <strong>{p.titre}.</strong> {p.texte}
+          {p.lien && (
+            <>
+              {' '}
+              <a href={p.lien.href}>{p.lien.libelle}</a>
+            </>
+          )}
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  {disp.length > 0 && (
+    <section class="lecture" id="dispositifs" aria-labelledby="t-dispositifs">
+      <h2 id="t-dispositifs">Aides et dispositifs en France</h2>
+      <p class="discret petit">{tousDispositifs.avertissement}</p>
+      <EnSavoirPlus titre={`Voir les ${disp.length} dispositifs utiles dans cette situation`}>
+        <ul class="dispositifs">
+          {disp.map((x) => (
+            <li>
+              <p class="nom-dispositif">
+                {x.nom}
+                {x.sigle && <> ({x.sigle})</>}
+              </p>
+              <p>{x.description}</p>
+              <p class="petit">
+                <strong>Pour qui :</strong> {x.pour_qui}
+              </p>
+              {x.lien && x.verifie_le ? (
+                <p class="petit">
+                  <a href={x.lien.url}>{x.lien.libelle}</a>{' '}
+                  <span class="discret">· vérifié le {dateFr(x.verifie_le)}</span>
+                </p>
+              ) : (
+                <p class="petit discret">
+                  Informations et lien officiel en cours de vérification : renseignez-vous auprès
+                  d’un conseiller en évolution professionnelle.
+                </p>
+              )}
+            </li>
+          ))}
+        </ul>
+      </EnSavoirPlus>
+    </section>
+  )}
+
+  <section class="lecture" id="philosophes" aria-labelledby="t-philo">
+    <h2 id="t-philo">Le regard des philosophes</h2>
+    <ul class="liens">
+      {pagesPhilo.map((p) => (
+        <li>
+          <a href={`/philosophie/${p.id}`}>{p.data.titre}</a>
+          <span class="discret"> : {p.data.description}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="lecture" id="plus-loin" aria-labelledby="t-plus-loin">
+    <h2 id="t-plus-loin">Pour aller plus loin</h2>
+    <h3>Livres conseillés</h3>
+    <ul class="liens">
+      {livres.map(({ data: l }) => (
+        <li>
+          <a href={`/livres/${l.id}`}>{l.titre}</a>
+          <span class="discret">
+            {' '}
+            ({l.auteurs.join(', ')}){l.langue === 'en' && ', en anglais'}
+          </span>
+        </li>
+      ))}
+    </ul>
+    {lies.length > 0 && (
+      <>
+        <h3>Sur le même sujet</h3>
+        <ul class="liens">
+          {lies.map((s) => (
+            <li>
+              <a href={`/situations/${s.id}`}>{s.data.titre}</a>
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
+    <p>
+      <a href="/parcours">Faire le test de personnalité et d’intérêts</a>
+    </p>
+  </section>
+
+  <section class="aide" id="aide" aria-labelledby="t-aide">
+    <h2 id="t-aide">Quand demander de l’aide</h2>
+    {d.aide && <p>{d.aide}</p>}
+    <p>
+      Si la situation devient lourde, si vous dormez mal, si vous n’arrivez plus à faire face, ne
+      restez pas seul : parlez-en à votre médecin traitant, au médecin du travail ou à un
+      psychologue. <a href="/besoin-d-en-parler">Besoin d’en parler ?</a>
+    </p>
+  </section>
+</Base>
+
+<style>
+  .tete {
+    position: relative;
+    overflow: hidden;
+    background: var(--c-surface-douce);
+    border-radius: var(--rayon);
+    padding: var(--espace-4);
+    margin-top: var(--espace-3);
+  }
+  .tete-texte {
+    position: relative;
+    max-width: 44rem;
+  }
+  :global(.deco) {
+    position: absolute;
+    right: -2rem;
+    top: -1rem;
+    width: 14rem;
+    opacity: 0.5;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espace-2);
+    align-items: center;
+    margin: 0;
+  }
+  .chapeau {
+    font-size: 1.1rem;
+    color: var(--c-texte-doux);
+  }
+  .sommaire {
+    max-width: var(--mesure);
+    margin-top: var(--espace-4);
+    font-size: max(0.95rem, 15px);
+  }
+  .titre-sommaire {
+    font-weight: 700;
+    margin-bottom: var(--espace-1);
+  }
+  .sommaire ol {
+    columns: 2 16rem;
+    margin: 0;
+  }
+  .lecture {
+    margin-top: var(--espace-5);
+  }
+  .petit {
+    font-size: max(0.9rem, 15px);
+  }
+  .chiffres li,
+  .pistes li,
+  .questions li,
+  .liens li {
+    margin-bottom: var(--espace-2);
+  }
+  .a-sourcer {
+    color: var(--c-texte-doux);
+    font-size: max(0.9rem, 15px);
+  }
+  .exemple {
+    background: var(--c-surface-douce);
+    border-radius: var(--rayon-petit);
+    padding: var(--espace-3);
+    margin-top: var(--espace-3);
+  }
+  .etiquette-exemple {
+    font-size: max(0.85rem, 15px);
+    font-weight: 700;
+    color: var(--c-texte-doux);
+    margin: 0 0 var(--espace-1);
+  }
+  .essentiel-recherche {
+    border-left: 3px solid var(--c-primaire);
+    padding-left: var(--espace-3);
+  }
+  .idees,
+  .dispositifs {
+    list-style: none;
+    padding: 0;
+  }
+  .idees li,
+  .dispositifs li {
+    border-bottom: 1px solid var(--c-bordure);
+    padding: var(--espace-2) 0;
+  }
+  .affirmation {
+    font-weight: 700;
+    margin-bottom: var(--espace-1);
+  }
+  .verdict {
+    display: inline-block;
+    font-size: max(0.85rem, 15px);
+    font-weight: 700;
+    padding: 0 0.6rem;
+    border-radius: var(--rayon-pilule);
+    background: var(--c-primaire-clair);
+    color: var(--c-primaire-fonce);
+  }
+  .nom-dispositif {
+    font-weight: 700;
+    margin-bottom: var(--espace-1);
+  }
+  .aide {
+    max-width: var(--mesure);
+    margin-top: var(--espace-5);
+    font-size: max(0.95rem, 15px);
+    color: var(--c-texte-doux);
+    border-top: 1px solid var(--c-bordure);
+    padding-top: var(--espace-3);
+  }
+  .aide h2 {
+    font-size: 1.1rem;
+    color: var(--c-texte);
+  }
+  .aide a {
+    color: var(--c-texte);
+  }
+</style>
