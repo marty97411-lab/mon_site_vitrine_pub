@@ -58,6 +58,13 @@ const facettes = t.facettes.map((f) => FACETTES[f].nomFr);
       Il n'existe pas de bon ou de mauvais profil : chaque pôle a ses avantages et ses
       inconvénients, selon les situations. Facettes mesurées : {facettes.join(', ')}.
     </p>
+    {trait.id === 'extraversion' && (
+      <p class="carte-simple dossier">
+        <strong>Pour aller plus loin :</strong> le dossier{' '}
+        <a href="/explication/introversion-extraversion">Introversion et extraversion</a> (idées
+        reçues, travail, environnements, agir hors de son caractère).
+      </p>
+    )}
   </div>
   <Content />
 </Article>
@@ -75,6 +82,10 @@ const facettes = t.facettes.map((f) => FACETTES[f].nomFr);
   .carte-simple h2 {
     margin-top: var(--espace-2);
     font-size: 1.25rem;
+  }
+  .dossier {
+    grid-column: 1 / -1;
+    margin: 0;
   }
   .note {
     grid-column: 1 / -1;

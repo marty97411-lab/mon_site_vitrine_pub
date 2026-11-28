@@ -297,6 +297,41 @@ const donnees = {
     return ligne;
   }
 
+  /**
+   * Lien contextuel vers le dossier « Introversion et extraversion ». Les seuils 2,5 et 3,5
+   * (les mêmes que pour les suggestions de lecture) choisissent seulement la page proposée :
+   * ils ne définissent aucune catégorie.
+   */
+  function lienDossierExtraversion(valeur: number) {
+    const base = '/explication/introversion-extraversion';
+    const [debut, page, libelle] =
+      valeur <= 2.5
+        ? [
+            'Votre position est plutôt du côté de l’introversion, ce qui n’est ni de la timidité ni un défaut. ',
+            'idees-recues',
+            'Idées reçues sur l’introversion',
+          ]
+        : valeur >= 3.5
+          ? [
+              'Votre position est plutôt du côté de l’extraversion. ',
+              'travail-recherche',
+              'Ce que dit la recherche sur le travail',
+            ]
+          : [
+              'Votre position est vers le milieu de l’échelle. ',
+              'ce-que-c-est',
+              'Un continuum plutôt que deux camps',
+            ];
+    return el(
+      'p',
+      { class: 'discret lien-dossier' },
+      debut,
+      lien(`${base}/${page}`, libelle),
+      ' · ',
+      lien(base, 'tout le dossier'),
+    );
+  }
+
   function sectionPersonnalite(q: QuestionnaireClient, reponses: Record<string, number>) {
     const profil = calculerProfil(q, reponses);
     const section = el('section', {
@@ -332,6 +367,7 @@ const donnees = {
         }
         item.append(details);
       }
+      if (trait === 'E' && s.valeur !== null) item.append(lienDossierExtraversion(s.valeur));
       graphique.append(item);
     }
     section.append(
