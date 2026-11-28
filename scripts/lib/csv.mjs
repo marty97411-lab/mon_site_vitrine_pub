@@ -2,9 +2,10 @@
  * Analyseur CSV minimal (RFC 4180) : champs entre guillemets, guillemets doublés,
  * sauts de ligne dans les champs. Suffisant pour les fichiers CSV de la base O*NET.
  * @param {string} texte
+ * @param {string} [separateur] virgule par défaut ; point-virgule pour les tables françaises
  * @returns {string[][]}
  */
-export function analyserCsv(texte) {
+export function analyserCsv(texte, separateur = ',') {
   const lignes = [];
   let ligne = [];
   let champ = '';
@@ -25,7 +26,7 @@ export function analyserCsv(texte) {
       }
     } else if (c === '"') {
       entreGuillemets = true;
-    } else if (c === ',') {
+    } else if (c === separateur) {
       ligne.push(champ);
       champ = '';
     } else if (c === '\n' || c === '\r') {
@@ -48,10 +49,11 @@ export function analyserCsv(texte) {
 /**
  * Convertit un CSV avec en-tête en tableau d'objets.
  * @param {string} texte
+ * @param {string} [separateur]
  * @returns {Record<string, string>[]}
  */
-export function csvVersObjets(texte) {
-  const [entete, ...lignes] = analyserCsv(texte);
+export function csvVersObjets(texte, separateur = ',') {
+  const [entete, ...lignes] = analyserCsv(texte, separateur);
   if (!entete) return [];
   return lignes
     .filter((l) => l.length > 1 || (l.length === 1 && l[0] !== ''))

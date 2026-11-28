@@ -1,0 +1,9 @@
+{
+  "note": "Précisions rédigées par l'équipe, affichées sous la définition ROME d'une fiche (le texte du ROME n'est jamais modifié). Chaque précision doit citer au moins une source de sources.json.",
+  "notes": {
+    "K1801": {
+      "texte": "Ce métier peut s’exercer auprès de personnes en situation de handicap : par exemple, des conseillers du réseau Cap emploi accompagnent les demandeurs d’emploi en situation de handicap, avec les conseillers de France Travail, dans chaque agence France Travail.",
+      "sources": ["france-travail-team-handicap"]
+    }
+  }
+}

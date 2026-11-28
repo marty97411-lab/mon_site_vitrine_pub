@@ -53,7 +53,18 @@ Approfondir), **sans nouvel onglet dans le menu sauf nécessité**, et la page d
   libellés sans pourcentage, plusieurs familles (voir `docs/decisions/0005-…`). Pas de formule
   maison non justifiée.
 - **Métiers** : base O*NET 31.0 (CC BY 4.0, attribution obligatoire), importée par
-  `scripts/import-onet.mjs` ; à terme, correspondance vers le ROME (France Travail).
+  `scripts/import-onet.mjs`, sert **au calcul** ; l'**affichage** montre les métiers français du
+  ROME 4.0 reliés par la chaîne officielle O*NET → ESCO → ROME (→ RNCP pour les certifications),
+  construite par `scripts/import-fr.mjs` (ADR 0010). Ne jamais forcer une correspondance : seules
+  les qualités `exacte` et `approchee` (ou une correspondance validée dans
+  `src/data/fr/validations.json`) sont affichées ; ne jamais modifier à la main les fichiers
+  générés de `src/data/fr/` (sauf `validations.json`). ROME = métiers ; RNCP = certifications.
+- **Revue des correspondances O\*NET → ROME** (règles du propriétaire, ADR 0010 § 12, sans lui
+  redemander) : intitulé général de la fiche sauf appellation officielle nettement meilleure ;
+  jamais d'appellation au sens courant différent ; métier O*NET plus spécialisé → garder la fiche
+  et préciser la spécialité ; aucune fiche au même cœur de métier (activité, public) → rien
+  afficher ; chaque choix noté (type, justification) dans `src/data/fr/revue.json`, au statut
+  `a_valider`. Questions au propriétaire : seulement les cas vraiment ambigus, en une liste.
 - **Licences des items** : IPIP = domaine public. O*NET Interest Profiler = items **traduits** par
   le projet sous \**O*NET Tools Developer License** : garder le texte original intact, afficher la
   mention de modification (pied de page, questionnaire, README) et la page `/modifications-onet`.
@@ -228,11 +239,18 @@ src/
   data/questionnaires/   un JSON par questionnaire (items, clés, échelle, licence)
   data/parcours.json     parcours rapide et complet
   data/onet/             metiers.json (généré), familles.json, job-zones.json
+  data/fr/               correspondances.json, metiers-rome.json, onisep-rome.json (générés par
+                         import-fr.mjs) ; validations.json (relecture manuelle, jamais écrasé,
+                         appellation affichable) ; revue.json (revue éditoriale selon les
+                         règles du propriétaire, à valider) ; notes-fiches.json (précisions
+                         sourcées de l'équipe sous une définition ROME)
   data/normes/           normes.json : non utilisé (pas de percentile)
   lib/big-five.ts        traits, 30 facettes, RIASEC
   lib/schemas/           schémas Zod (questionnaire, parcours, O*NET, trait, métier, source) + tests
   lib/scoring/           cotation (moyenne ou somme), code RIASEC, percentiles + tests
-  lib/rapprochement/     corrélation de profils, seuils O*NET, familles + tests
+  lib/rapprochement/     corrélation de profils, seuils O*NET, familles + tests ; francais.ts :
+                         passage aux métiers ROME (fusion des doublons) + tests
+  lib/metiers-fr.ts      libellés des qualités de correspondance et des niveaux RNCP (+ tests)
   lib/contenu.ts         accès au contenu + contrôle des références au build
   lib/integrite.ts       contrôle d'intégrité des sources citées (+ tests)
   lib/sources.ts         libellés des statuts de vérification des sources
@@ -253,12 +271,15 @@ src/
                          intérêts, dossier introversion-extraversion/)
 scripts/
   import-onet.mjs        import des profils RIASEC O*NET (CC BY 4.0)
+  import-fr.mjs          correspondance O*NET → ESCO → ROME 4.0 → RNCP, liens Onisep
   doc-sources.mjs        génération de docs/sources.md depuis sources.json
-  lib/                   utilitaires des scripts (lecture CSV, + tests)
+  lib/                   utilitaires des scripts (lecture CSV, correspondance FR, export RNCP,
+                         + tests)
 docs/
   sources.md             sources, licences, statut de vérification
   methodologie-score.md  règles de calcul
   decisions/             décisions de conception (ADR)
+  controle/              correspondances-onet-rome.csv : fichier de relecture (généré)
 ```
 
 ## Commandes
@@ -272,11 +293,14 @@ npm test             # tests unitaires Vitest
 npm run lint         # ESLint
 npm run format       # Prettier (écriture) ; format:check pour vérifier
 npm run import:onet  # régénérer src/data/onet/metiers.json (réseau requis)
+npm run import:fr    # régénérer src/data/fr/ et docs/controle/ (réseau requis ;
+                     # -- --rncp archive.zip pour un export RNCP téléchargé à la main)
 npm run doc:sources  # régénérer docs/sources.md depuis sources.json (après toute modification)
 ```
 
 Dans l'environnement cloud, le `fetch` de Node exige `NODE_USE_ENV_PROXY=1` pour passer par le
-proxy : `NODE_USE_ENV_PROXY=1 npm run import:onet`.
+proxy : `NODE_USE_ENV_PROXY=1 npm run import:onet` (idem pour `import:fr`). data.gouv.fr n'y est pas
+joignable (export RNCP) : passer l'archive avec `--rncp`.
 
 Avant chaque commit : `npm run lint && npm test && npm run build`.
 
@@ -304,6 +328,6 @@ Avant chaque commit : `npm run lint && npm test && npm run build`.
 
 Liste tenue à jour : section 10 du `README.md`. Détails : voir les sections « TODO » de `docs/sources.md` : relecture du contenu des articles cités
 (statut `metadonnees-verifiees`), relecture des brouillons, étude de validation de la traduction
-O*NET (avant toute mise en ligne publique), liens sourcés personnalité → métiers, origine du
-diagramme de l'ikigai, étymologie de « Personalis » (note de la page À propos), ISBN manquants
-des livres, correspondance ROME, nom de domaine (sitemap, Open Graph), hébergeur.
+O*NET (avant toute mise en ligne publique), liens sourcés personnalité → métiers, import de l'export RNCP et relecture des correspondances
+O*NET → ROME (`docs/controle/`), origine du diagramme de l'ikigai, étymologie de « Personalis » (note de la page À propos), ISBN manquants
+des livres, nom de domaine (sitemap, Open Graph), hébergeur.

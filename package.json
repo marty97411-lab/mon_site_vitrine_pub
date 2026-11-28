@@ -19,7 +19,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "import:onet": "node scripts/import-onet.mjs",
-    "doc:sources": "node scripts/doc-sources.mjs && prettier --write docs/sources.md"
+    "doc:sources": "node scripts/doc-sources.mjs && prettier --write docs/sources.md",
+    "import:fr": "node scripts/import-fr.mjs && prettier --write src/data/fr"
   },
   "dependencies": {
     "@fontsource-variable/fraunces": "^5.3.0",
@@ -33,6 +34,7 @@
     "eslint": "^10.15.0",
     "eslint-config-prettier": "^10.1.9",
     "eslint-plugin-astro": "^1.1.2",
+    "fflate": "^0.8.2",
     "globals": "^17.14.0",
     "prettier": "^3.10.1",
     "prettier-plugin-astro": "^1.1.2",

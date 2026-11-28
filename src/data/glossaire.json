@@ -42,7 +42,7 @@
     "id": "onet",
     "terme": "O*NET",
     "court": "la grande base de données américaine sur les métiers, publiée par le département du Travail des États-Unis",
-    "definition": "Base de données publique sur les métiers, publiée par le département du Travail des États-Unis (USDOL/ETA). Elle décrit environ un millier de métiers, dont leur profil d'intérêts RIASEC. Le site s'en sert pour rapprocher votre profil de familles de métiers ; les intitulés sont américains.",
+    "definition": "Base de données publique sur les métiers, publiée par le département du Travail des États-Unis (USDOL/ETA). Elle décrit environ un millier de métiers, dont leur profil d'intérêts RIASEC. Le site s'en sert pour le calcul du rapprochement ; les métiers affichés sont ensuite des métiers français (ROME), reliés aux métiers américains par des tables de correspondance officielles.",
     "voir": "/credits"
   },
   {
@@ -76,5 +76,26 @@
     "court": "le fait de se situer vers le milieu du continuum introversion–extraversion",
     "definition": "Mot employé pour les personnes qui se situent vers le milieu du continuum entre introversion et extraversion. Ce n'est pas une troisième catégorie, mais une position intermédiaire sur une même échelle.",
     "voir": "/explication/introversion-extraversion/ce-que-c-est"
+  },
+  {
+    "id": "rome",
+    "terme": "ROME",
+    "court": "le répertoire officiel des métiers en France, tenu par France Travail",
+    "definition": "Répertoire opérationnel des métiers et des emplois, publié par France Travail. Il décrit environ 1 900 métiers (fiches avec un code comme M1607) et plus de 14 000 appellations. Le site l'utilise pour afficher des métiers français, avec leur définition et les conditions d'accès.",
+    "voir": "/metiers"
+  },
+  {
+    "id": "rncp",
+    "terme": "RNCP",
+    "court": "le répertoire national des certifications (diplômes, titres professionnels) qui permettent d'accéder à un métier",
+    "definition": "Répertoire national des certifications professionnelles, tenu par France compétences. Il recense les diplômes, titres professionnels et certificats de qualification reconnus par l'État, avec leur niveau (de 3, CAP, à 8, doctorat). Il ne décrit pas des métiers, mais les certifications qui y mènent.",
+    "voir": "/credits"
+  },
+  {
+    "id": "esco",
+    "terme": "ESCO",
+    "court": "la classification européenne des métiers et des compétences, qui sert de passerelle entre les répertoires nationaux",
+    "definition": "Classification européenne des aptitudes, compétences, certifications et professions, publiée par la Commission européenne. Des tables officielles la relient à la base américaine O*NET et au ROME français : le site s'en sert comme passerelle entre les deux.",
+    "voir": "/credits"
   }
 ]

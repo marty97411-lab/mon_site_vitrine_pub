@@ -116,16 +116,6 @@
     "doi": "10.1016/j.jvb.2008.06.003"
   },
   {
-    "id": "rome-france-travail",
-    "type": "base-de-donnees",
-    "auteurs": ["France Travail"],
-    "annee": null,
-    "titre": "Répertoire opérationnel des métiers et des emplois (ROME)",
-    "licence": "Licence Ouverte Etalab 2.0 (supposée, à vérifier)",
-    "statut": "a-verifier",
-    "notes": "Prévu pour la correspondance avec les métiers français. URL officielle, version et licence à vérifier."
-  },
-  {
     "id": "abramowitz-stegun-1964",
     "type": "livre",
     "auteurs": ["Abramowitz, M.", "Stegun, I. A."],
@@ -1295,5 +1285,88 @@
     "titre": "Repérage et prise en charge cliniques du syndrome d'épuisement professionnel ou burnout (fiche mémo)",
     "statut": "a-verifier",
     "notes": "Recommandation citée de mémoire : titre, date et contenu à vérifier sur has-sante.fr (site non joignable lors de la rédaction). Ne citer aucun contenu précis avant vérification."
+  },
+  {
+    "id": "esco-onet-crosswalk-2022",
+    "type": "base-de-donnees",
+    "auteurs": [
+      "Commission européenne, secrétariat ESCO",
+      "U.S. Department of Labor, Employment and Training Administration (USDOL/ETA)"
+    ],
+    "annee": 2022,
+    "titre": "O*NET - ESCO Crosswalk (Occupations), version 1 (septembre 2022 ; fichier mis à jour en août 2023)",
+    "url": "https://esco.ec.europa.eu/en/use-esco/other-crosswalks",
+    "licence": "Décision 2011/833/UE de la Commission (réutilisation libre ; mention « This service uses the ESCO classification of the European Commission. » et signalement des modifications)",
+    "statut": "verifie",
+    "consulte_le": "2026-11-28",
+    "notes": "Table officielle O*NET-SOC 2019 → ESCO v1.1.0, téléchargée en CSV (ONET_(Occupations)_0_updated.csv). Types de lien : exactMatch, narrowMatch, broadMatch, closeMatch, exactISCO. Conditions de réutilisation lues dans la FAQ ESCO (https://esco.ec.europa.eu/en/about-esco/faq). Utilisée sans modification du contenu ; le projet ne garde que les colonnes code, URI et type de lien."
+  },
+  {
+    "id": "esco-onet-rapport-2022",
+    "type": "site-web",
+    "auteurs": ["Commission européenne, secrétariat ESCO"],
+    "annee": 2022,
+    "titre": "Crosswalk between ESCO and O*NET. Technical Report",
+    "url": "https://esco.ec.europa.eu/system/files/2022-12/ONET%20ESCO%20Technical%20Report.pdf",
+    "licence": "Décision 2011/833/UE de la Commission",
+    "statut": "verifie",
+    "consulte_le": "2026-11-28",
+    "notes": "Définitions lues dans le rapport : « Narrow match: A concept in O*NET is more specific than a concept in ESCO » ; « Broad match: A concept in O*NET is more general than a concept in ESCO » ; « Close Match: … not an exact, broad, or narrow match, but it covers similar or a large part of the scope ». Correspondances proposées par apprentissage automatique puis validées par des personnes."
+  },
+  {
+    "id": "france-travail-esco-rome-2025",
+    "type": "base-de-donnees",
+    "auteurs": ["France Travail"],
+    "annee": 2025,
+    "titre": "ROME 4.0 - ESCO 1.0.9, table de correspondance des métiers, version V1.1 (19 novembre 2025)",
+    "url": "https://esco.ec.europa.eu/en/use-esco/eures-countries-mapping-tables",
+    "statut": "verifie",
+    "consulte_le": "2026-11-28",
+    "notes": "Table nationale publiée sur la page « EURES countries mapping tables » du portail ESCO (fichier EURESmapping_occs_FR.csv, encodage Windows-1252). Relie 2 051 métiers ESCO 1.0.9 à 13 120 appellations du ROME 4.0 (version 25M06) ; types exactMatch, narrowMatch, broadMatch, closeMatch. Le fichier n'indique pas de licence propre : TODO confirmer auprès de France Travail ou de la Commission la licence applicable (a priori conditions du portail ESCO). Écart de versions signalé : la table O*NET utilise ESCO v1.1.0, celle-ci ESCO 1.0.9 (les URI communes sont rapprochées telles quelles)."
+  },
+  {
+    "id": "rome-4-0",
+    "type": "base-de-donnees",
+    "auteurs": ["France Travail"],
+    "annee": 2026,
+    "titre": "Répertoire opérationnel des métiers et des emplois (ROME 4.0), version 62 (26M10), publiée le 19 octobre 2026",
+    "url": "https://www.francetravail.org/opendata/repertoire-operationnel-des-meti.html?type=article",
+    "licence": "Licence Ouverte ROME (mention obligatoire : France Travail et date de la dernière actualisation)",
+    "statut": "verifie",
+    "consulte_le": "2026-11-28",
+    "notes": "Export open data complet téléchargé (https://api.francetravail.fr/api-nomenclatureemploi/v1/open-data/csv). Licence lue dans rome_licence_ouverte.pdf : « La seule obligation du réutilisateur est de mentionner la paternité de l'Information, c'est-à-dire sa source, laquelle comprend a minima le nom de Pôle emploi et la date de la dernière actualisation ». Fichiers utilisés : appellations, fiches, textes (définition, accès au métier), codes RIASEC des fiches. Prochaine actualisation annoncée : mars 2027."
+  },
+  {
+    "id": "rncp-france-competences",
+    "type": "base-de-donnees",
+    "auteurs": ["France compétences"],
+    "annee": null,
+    "titre": "Répertoire national des certifications professionnelles et répertoire spécifique (RNCP et RS), export open data",
+    "url": "https://www.data.gouv.fr/datasets/repertoire-national-des-certifications-professionnelles-et-repertoire-specifique/",
+    "licence": "Licence Ouverte / Etalab 2.0 (à confirmer sur la page du jeu de données)",
+    "statut": "a-verifier",
+    "notes": "TODO : data.gouv.fr n'était pas joignable depuis l'environnement de développement le 28/11/2026 ; ni la licence ni le format de l'export n'ont pu être contrôlés. Les liens vers les fiches suivent le format https://www.francecompetences.fr/recherche/rncp/<numéro>/ (page consultée le 28/11/2026)."
+  },
+  {
+    "id": "onisep-ideo-metiers",
+    "type": "base-de-donnees",
+    "auteurs": ["Onisep"],
+    "annee": null,
+    "titre": "Idéo-Métiers Onisep (jeu de données open data)",
+    "url": "https://opendata.onisep.fr/data/5fa5949243f97/2-ideo-metiers-onisep.htm",
+    "licence": "ODbL 1.0 (d'après l'intitulé du jeu de données ; à reconfirmer)",
+    "statut": "a-verifier",
+    "notes": "Données téléchargées par l'API de l'Onisep (https://data.onisep.fr/api/v1/dataset/5fa5949243f97/search) le 28/11/2026 : 1 560 lignes, dont 1 331 avec un code ROME. Les codes ROME de ce jeu correspondent à l'ancienne version du ROME (V3) : un lien n'est affiché que si le code existe aussi dans le ROME 4.0. TODO : la page du jeu de données était « en maintenance » ; licence relevée dans son titre (« Licence ODBL ») via un moteur de recherche, à reconfirmer. L'extrait réutilisé (src/data/fr/onisep-rome.json) reste sous ODbL."
+  },
+  {
+    "id": "france-travail-team-handicap",
+    "type": "site-web",
+    "auteurs": ["France Travail"],
+    "annee": null,
+    "titre": "Accompagnement des personnes en situation de handicap avec la « Team Handicap »",
+    "url": "https://www.francetravail.fr/candidat/handicap-et-talents/conseils-pratiques/accompagnement-personne-handicap.html",
+    "statut": "verifie",
+    "consulte_le": "2026-11-28",
+    "notes": "Page lue le 28/11/2026 : « Les demandeurs d’emploi en situation de handicap bénéficient d’un accompagnement unique dans toutes les agences France Travail grâce à des équipes mixtes composées de conseillers France Travail et Cap emploi : les Teams Handicap. » ; accompagnement « Expert Handicap par Cap emploi (pour des situations plus complexes nécessitant une expertise de compensation du handicap) »."
   }
 ]

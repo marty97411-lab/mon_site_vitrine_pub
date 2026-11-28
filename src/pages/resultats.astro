@@ -10,6 +10,10 @@ import { catalogueArticles, chargerContenu, sourcesParIds } from '../lib/contenu
 import { jobZonesSchema, LIBELLES_ETIQUETTES } from '../lib/schemas';
 import { SEUIL_FORTE, SEUIL_TRES_FORTE } from '../lib/rapprochement';
 import jobZonesJson from '../data/onet/job-zones.json';
+import metiersOnetJson from '../data/onet/metiers.json';
+import correspondancesFrJson from '../data/fr/correspondances.json';
+import { correspondancesFrSchema } from '../lib/schemas';
+import { dateFr } from '../lib/metiers-fr';
 import recommandationsJson from '../data/recommandations.json';
 
 const contenu = await chargerContenu();
@@ -17,6 +21,13 @@ const contenu = await chargerContenu();
 const zones = jobZonesSchema
   .parse(jobZonesJson)
   .zones.filter((z, i, toutes) => toutes.findIndex((x) => x.nom_original === z.nom_original) === i);
+const correspondancesFr = correspondancesFrSchema.parse(correspondancesFrJson);
+const nbOnet = metiersOnetJson.metiers.length;
+const nbCouverts = Object.keys(correspondancesFr.correspondances).length;
+const { versions, genere_le: genereLe } = correspondancesFr;
+const versionRome = versions.rome.titre ?? 'version inconnue';
+const versionEscoRome = versions.esco_rome.titre;
+const versionRncp = versions.rncp ? versions.rncp.fichier : 'pas encore importées';
 const virgule = (n: number) => n.toLocaleString('fr-FR', { maximumFractionDigits: 3 });
 // Données minimales transmises au script client.
 const donnees = {
@@ -130,8 +141,8 @@ const donnees = {
           de votre personnalité.
         </li>
         <li>
-          Il ne dit rien de l'accès au métier ni de l'emploi en France : les données décrivent des
-          métiers américains.
+          Il repose sur des profils de métiers américains : l'accès au métier en France est décrit
+          sur la fiche de chaque métier.
         </li>
       </ul>
       <ListeSources
@@ -145,15 +156,69 @@ const donnees = {
 
   <template id="explication-preparation">
     <p>
-      Le niveau de préparation indique la formation et l'expérience habituellement demandées pour le
-      métier aux États-Unis. L'équivalent français indiqué entre parenthèses est approximatif.
+      Chaque intitulé ouvre la fiche du métier : ce que l'on y fait, l'accès au métier en France,
+      des formations qui y mènent et les liens vers les fiches de France Travail et de l'Onisep.
     </p>
+  </template>
+
+  <template id="approfondir-metiers-fr">
     <details class="depliable">
-      <summary>En savoir plus sur les niveaux de préparation</summary>
+      <summary>Approfondir : des métiers américains aux métiers français</summary>
+      <h3>Pourquoi passer par des données américaines ?</h3>
       <p>
-        La base O*NET classe les métiers en <Definition terme="job-zone" texte="« Job Zones »" />,
-        de 1 (peu de préparation) à 5 (préparation très importante). Dans la version 31.0 utilisée
-        ici, les zones 1 et 2 sont regroupées.
+        Pour comparer vos intérêts à ceux d'un métier, il faut connaître le profil d'intérêts de
+        chaque métier. Seule la base américaine <Definition terme="onet" /> le fournit, pour
+        {nbOnet} métiers. Le calcul se fait donc sur ces métiers américains ; les métiers affichés
+        sont ensuite leurs équivalents français dans le <Definition terme="rome" />.
+      </p>
+      <h3>La chaîne de correspondance</h3>
+      <ol>
+        <li>
+          <strong>O*NET → ESCO</strong> : table officielle publiée par la Commission européenne et
+          le département du Travail américain, qui relie chaque métier O*NET à la classification
+          européenne <Definition terme="esco" /> (lien exact, plus large, plus étroit ou proche).
+        </li>
+        <li>
+          <strong>ESCO → ROME</strong> : table publiée par France Travail ({versionEscoRome}), qui
+          relie les métiers ESCO aux appellations du ROME 4.0.
+        </li>
+        <li>
+          <strong>ROME → RNCP</strong> : les fiches du <Definition terme="rncp" /> de France
+          compétences indiquent les métiers ROME auxquels chaque certification prépare.
+        </li>
+      </ol>
+      <p>
+        Le site garde la trace de la qualité de chaque lien. Il n'affiche que les correspondances
+        exactes ou approchées (un des deux liens exact, ou deux liens dans le même sens), écarte
+        celles dont les codes d'intérêts O*NET et ROME se contredisent, et garde au plus trois
+        métiers français par métier américain. Les correspondances seulement « proches » ne sont
+        affichées qu'après relecture. Aujourd'hui, {nbCouverts} métiers américains sur {nbOnet}
+        ont un équivalent français affiché.
+      </p>
+      <h3>Les limites</h3>
+      <ul>
+        <li>
+          Les profils d'intérêts décrivent des métiers <strong>américains</strong>. Un métier
+          français proche peut s'exercer autrement.
+        </li>
+        <li>
+          Chaque table perd un peu de précision : deux liens « approchés » à la suite peuvent mener
+          à un métier voisin plutôt qu'équivalent. Les correspondances n'ont pas encore été relues
+          par l'équipe.
+        </li>
+        <li>
+          Les certifications évoluent souvent : le site ne retient que celles qui sont actives à la
+          date des données, et les données doivent être mises à jour régulièrement.
+        </li>
+      </ul>
+      <h3>Les métiers américains utilisés pour vos résultats</h3>
+      <div data-liste-onet></div>
+      <h3>Niveaux de préparation aux États-Unis</h3>
+      <p>
+        La base O*NET classe aussi les métiers en{' '}
+        <Definition terme="job-zone" texte="« Job Zones »" />, de 1 (peu de préparation) à 5
+        (préparation très importante), pour le système de formation américain. Les fiches françaises
+        indiquent plutôt l'accès au métier en France.
       </p>
       <div
         class="tableau-defilant"
@@ -186,17 +251,22 @@ const donnees = {
           </tbody>
         </table>
       </div>
-      <p class="avertissement">
-        <strong>Équivalence approximative.</strong> Elle est proposée par le projet : aucune table
-        de correspondance officielle entre les niveaux O*NET et les diplômes français n'a été
-        trouvée. Les données décrivent le système de formation américain, et les conditions d'accès
-        en France (diplômes, concours, professions réglementées) peuvent être très différentes.
+      <p class="discret">
+        Données : ROME {versionRome} ; table ESCO–ROME {versionEscoRome} ; certifications RNCP :
+        {versionRncp}. Correspondance générée le {dateFr(genereLe)}.
       </p>
       <ListeSources
-        sources={sourcesParIds(contenu, ['onet-31', 'cadre-national-certifications-2019'])}
+        sources={sourcesParIds(contenu, [
+          'onet-31',
+          'esco-onet-crosswalk-2022',
+          'esco-onet-rapport-2022',
+          'france-travail-esco-rome-2025',
+          'rome-4-0',
+          'rncp-france-competences',
+        ])}
         titre="Sources"
         niveau={3}
-        idTitre="sources-preparation"
+        idTitre="sources-metiers-fr"
       />
     </details>
   </template>
@@ -220,7 +290,9 @@ const donnees = {
     profilRiasec,
     type ConfigCotation,
   } from '../lib/scoring';
-  import { LIBELLES_NIVEAU, rapprocher, regrouperParFamille } from '../lib/rapprochement';
+  import correspondancesFr from '../data/fr/correspondances.json';
+  import { LIBELLES_NIVEAU, rapprocher } from '../lib/rapprochement';
+  import { lienFicheRome, versMetiersFrancais, type LienRome } from '../lib/rapprochement/francais';
   import { pointsProfil, pourcentageBarre, sommet, versAttribut } from '../lib/visualisation';
   import { effacerTout, lireEtat } from '../lib/stockage';
   import { suggerer, type ProfilPourSuggestions } from '../lib/recommandations';
@@ -504,7 +576,7 @@ const donnees = {
       el(
         'p',
         {},
-        'Ces pistes comparent la forme de votre profil d’intérêts à celle de 923 métiers de la base O*NET, selon la méthode de l’O*NET Interest Profiler. Il n’y a pas de « métier idéal » : ce sont des idées à explorer. ',
+        `Ces pistes comparent la forme de votre profil d’intérêts à celle de ${metiersOnet.metiers.length} métiers décrits dans la base américaine O*NET, selon la méthode de l’O*NET Interest Profiler, puis affichent leurs équivalents français. Il n’y a pas de « métier idéal » : ce sont des idées à explorer. `,
       ),
       cloner('explication-correspondance'),
     );
@@ -519,54 +591,96 @@ const donnees = {
       );
       return section;
     }
-    const familles = regrouperParFamille(resultat.correspondances, 5).slice(0, 6);
+    const familles = versMetiersFrancais(
+      resultat.correspondances,
+      correspondancesFr.correspondances as Record<string, LienRome[]>,
+      correspondancesFr.libelles,
+      { familles: 6, parFamille: 5 },
+      correspondancesFr.appellations,
+    );
     const nomFamille = new Map(famillesOnet.familles.map((f) => [f.code, f]));
     const nomZone = new Map(
       jobZonesOnet.zones.map((z) => [z.zone, `${z.nom} (≈ ${z.equivalence_fr})`]),
     );
     const grille = el('div', { class: 'grille deux familles' });
+    const listeOnet = el('ul');
+    let nonRelues = false;
     for (const f of familles) {
       const info = nomFamille.get(f.famille);
       const bloc = el('article', { class: 'famille' });
       bloc.append(
         el('span', { class: 'niveau' }, LIBELLES_NIVEAU[f.niveau]),
         el('h3', {}, info?.nom ?? f.famille),
-        el(
-          'p',
-          { class: 'discret' },
-          'Famille O*NET « ',
-          el('span', { lang: 'en' }, info?.nom_original ?? ''),
-          ' » · niveau du métier le plus proche',
-        ),
+        el('p', { class: 'discret' }, 'Niveau du métier le plus proche'),
       );
       const ul = el('ul');
-      for (const c of f.metiers) {
-        const zone = c.metier.job_zone === null ? '' : ` · ${nomZone.get(c.metier.job_zone) ?? ''}`;
+      for (const m of f.metiers) {
+        if (m.nonRelue) nonRelues = true;
         ul.append(
           el(
             'li',
             {},
-            el(
-              'a',
-              { href: `https://www.onetonline.org/link/summary/${c.metier.code}`, lang: 'en' },
-              c.metier.titre,
-            ),
-            ` (${c.metier.code}, code ${c.metier.code_riasec || '—'}) · ${LIBELLES_NIVEAU[c.niveau]}${zone}`,
+            el('a', { href: lienFicheRome(m.rome, m.niveau) }, m.libelle),
+            m.specialite ? ` (spécialité : ${m.specialite})` : '',
+            ` · ${LIBELLES_NIVEAU[m.niveau]}`,
           ),
         );
+        for (const c of m.onet) {
+          const zone =
+            c.metier.job_zone === null ? '' : ` · ${nomZone.get(c.metier.job_zone) ?? ''}`;
+          listeOnet.append(
+            el(
+              'li',
+              {},
+              `${m.libelle} ← `,
+              el(
+                'a',
+                { href: `https://www.onetonline.org/link/summary/${c.metier.code}`, lang: 'en' },
+                c.metier.titre,
+              ),
+              ` (${c.metier.code}, code ${c.metier.code_riasec || '—'}) · ${LIBELLES_NIVEAU[c.niveau]}${zone}`,
+            ),
+          );
+        }
       }
       bloc.append(ul);
       grille.append(bloc);
     }
+    const approfondir = cloner('approfondir-metiers-fr');
+    if (approfondir instanceof DocumentFragment) {
+      approfondir
+        .querySelector('[data-liste-onet]')
+        ?.append(
+          el(
+            'p',
+            {},
+            'Pour chaque métier français affiché, les métiers américains (O*NET, intitulés en anglais) dont viennent les profils d’intérêts :',
+          ),
+          listeOnet,
+        );
+    }
+    if (familles.length === 0) {
+      section.append(
+        el(
+          'p',
+          {},
+          'Aucun métier français ne peut être proposé pour votre profil avec les correspondances disponibles aujourd’hui.',
+        ),
+      );
+    }
     section.append(
       grille,
-      el('h3', {}, 'Niveaux de préparation'),
       cloner('explication-preparation'),
-      el(
-        'p',
-        { class: 'discret' },
-        'Intitulés en anglais (base américaine O*NET 31.0) ; la correspondance avec les métiers français (ROME) est en préparation. Pour en savoir plus sur un métier, son intitulé renvoie à sa fiche O*NET OnLine (en anglais).',
-      ),
+      ...(nonRelues
+        ? [
+            el(
+              'p',
+              { class: 'discret' },
+              'Les métiers français sont reliés aux métiers américains de la base O*NET par des tables officielles ; ces correspondances sont automatiques et n’ont pas encore toutes été relues.',
+            ),
+          ]
+        : []),
+      approfondir,
       el(
         'p',
         {},

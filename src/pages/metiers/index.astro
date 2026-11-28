@@ -1,16 +1,55 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Definition from '../../components/Definition.astro';
 import { chargerContenu } from '../../lib/contenu';
+import { metiersRomeSchema } from '../../lib/schemas';
+import metiersRomeJson from '../../data/fr/metiers-rome.json';
 
 const { metiers } = await chargerContenu();
+const { fiches, versions } = metiersRomeSchema.parse(metiersRomeJson);
+const parDomaine = new Map<string, { code: string; libelle: string }[]>();
+for (const f of Object.values(fiches)) {
+  const d = f.grand_domaine ?? 'Autres';
+  parDomaine.set(d, [...(parDomaine.get(d) ?? []), { code: f.code, libelle: f.libelle }]);
+}
+const domaines = [...parDomaine.entries()]
+  .sort(([a], [b]) => a.localeCompare(b, 'fr'))
+  .map(([d, l]) => [d, l.sort((a, b) => a.libelle.localeCompare(b.libelle, 'fr'))] as const);
 ---
 
 <Base
   fil={[{ libelle: 'Explication', href: '/explication' }, { libelle: 'Fiches métiers' }]}
   titre="Fiches métiers"
-  description="Fiches métiers d'exemple (prototype)."
+  description="Les métiers français (ROME) proposés dans les résultats du test, avec leurs conditions d'accès et les formations qui y mènent."
 >
   <h1>Fiches métiers</h1>
+  <div class="lecture">
+    <p>
+      Voici les {Object.keys(fiches).length} métiers du <Definition terme="rome" /> que la page de
+      résultats peut vous proposer. Chaque fiche présente le métier, son accès en France et des
+      liens vers les fiches officielles de France Travail et de l’Onisep.
+    </p>
+    <p class="discret">
+      ROME {versions.rome.titre}. Les métiers sans équivalent français fiable ne sont pas proposés.
+    </p>
+  </div>
+
+  {domaines.map(([domaine, liste]) => (
+    <details class="depliable">
+      <summary>
+        {domaine} ({liste.length})
+      </summary>
+      <ul>
+        {liste.map((m) => (
+          <li>
+            <a href={`/metiers/rome/${m.code}`}>{m.libelle}</a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  ))}
+
+  <h2>Fiches d’exemple</h2>
   <p class="avertissement">
     Ces fiches sont des <strong>exemples</strong> destinés à tester la structure du site. Leur
     contenu n'est pas validé.
