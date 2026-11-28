@@ -1,0 +1,212 @@
+---
+/**
+ * Fiche d'un métier français (ROME 4.0) affiché dans les résultats.
+ * Données générées par scripts/import-fr.mjs (src/data/fr/), modèle identique pour toutes.
+ */
+import Base from '../../../layouts/Base.astro';
+import Definition from '../../../components/Definition.astro';
+import Essentiel from '../../../components/Essentiel.astro';
+import EnSavoirPlus from '../../../components/EnSavoirPlus.astro';
+import ListeSources from '../../../components/ListeSources.astro';
+import { chargerContenu, sourcesParIds } from '../../../lib/contenu';
+import { metiersRomeSchema, onisepRomeSchema, type MetierRome } from '../../../lib/schemas';
+import metiersRomeJson from '../../../data/fr/metiers-rome.json';
+import onisepJson from '../../../data/fr/onisep-rome.json';
+import { LIBELLES_QUALITE, NIVEAUX_CERTIFICATION, dateFr } from '../../../lib/metiers-fr';
+
+export function getStaticPaths() {
+  const { fiches } = metiersRomeSchema.parse(metiersRomeJson);
+  return Object.values(fiches).map((fiche) => ({ params: { code: fiche.code }, props: { fiche } }));
+}
+
+const { fiche } = Astro.props as { fiche: MetierRome };
+const { versions } = metiersRomeSchema.parse(metiersRomeJson);
+const onisep = onisepRomeSchema.parse(onisepJson).fiches[fiche.code] ?? [];
+const contenu = await chargerContenu();
+const [essentiel, ...suite] = fiche.definition;
+const nonRelue = fiche.onet.some((o) => o.statut !== 'valide');
+---
+
+<Base
+  titre={fiche.libelle}
+  description={`Fiche métier : ${fiche.libelle} (code ROME ${fiche.code}). Définition, accès au métier en France, formations et liens vers les fiches officielles.`}
+  fil={[
+    { libelle: 'Explication', href: '/explication' },
+    { libelle: 'Fiches métiers', href: '/metiers' },
+    { libelle: fiche.libelle },
+  ]}
+>
+  <article class="lecture fiche-rome">
+    <p class="discret">
+      Métier du <Definition terme="rome" /> · code {fiche.code}
+      {fiche.grand_domaine && <> · {fiche.grand_domaine}</>}
+    </p>
+    <h1>{fiche.libelle}</h1>
+
+    <p id="niveau-visiteur" class="niveau-visiteur" hidden></p>
+
+    <Essentiel>
+      {essentiel ? <p>{essentiel}</p> : <p>Définition non disponible dans le ROME.</p>}
+      <p class="discret">Définition : ROME 4.0, France Travail.</p>
+    </Essentiel>
+
+    {suite.length > 0 && (
+      <section aria-labelledby="titre-activites">
+        <h2 id="titre-activites">Ce que l’on y fait</h2>
+        <ul>
+          {suite.map((p) => (
+            <li>{p}</li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <section aria-labelledby="titre-acces">
+      <h2 id="titre-acces">Accès au métier en France</h2>
+      {fiche.acces_metier.length > 0 ? (
+        fiche.acces_metier.map((p) => <p>{p}</p>)
+      ) : (
+        <p>Le ROME ne décrit pas les conditions d’accès à ce métier.</p>
+      )}
+      <p class="discret">Source : ROME 4.0, rubrique « Accès au métier », France Travail.</p>
+    </section>
+
+    <section aria-labelledby="titre-formations">
+      <h2 id="titre-formations">Formations pour y accéder</h2>
+      {fiche.certifications === null ? (
+        <p class="avertissement">
+          La liste des certifications <Definition terme="rncp" /> qui mènent à ce métier est en
+          cours de préparation : les données de France compétences n’ont pas encore pu être
+          importées. En attendant, la rubrique « Accès au métier » ci-dessus indique les diplômes
+          habituellement demandés.
+        </p>
+      ) : fiche.certifications.length === 0 ? (
+        <p>
+          Aucune certification <Definition terme="rncp" /> active n’est rattachée à ce métier dans
+          les données de France compétences.
+        </p>
+      ) : (
+        <>
+          <p>
+            Quelques certifications <Definition terme="rncp" /> actives (diplômes, titres
+            professionnels) rattachées à ce métier. Ce n’est pas une liste complète : d’autres
+            chemins existent, dont l’expérience.
+          </p>
+          <ul class="certifications">
+            {fiche.certifications.map((c) => (
+              <li>
+                <a href={c.lien}>{c.intitule}</a>
+                <span class="discret">
+                  {' '}
+                  · {c.niveau === null ? 'sans niveau' : NIVEAUX_CERTIFICATION[c.niveau]} ·{' '}
+                  {c.numero}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p class="discret">
+            Choix des certifications : celles qui visent le plus spécifiquement ce métier, puis par
+            niveau. Les fiches RNCP changent souvent ; vérifiez l’état d’une certification sur sa
+            fiche officielle.
+          </p>
+        </>
+      )}
+    </section>
+
+    <section aria-labelledby="titre-liens">
+      <h2 id="titre-liens">Pour en savoir plus</h2>
+      <ul>
+        <li>
+          <a href={fiche.lien_metierscope}>Fiche métier France Travail (MétierScope)</a>
+        </li>
+        {onisep.map((o) => (
+          <li>
+            <a href={o.lien}>Fiche métier Onisep : {o.libelle}</a>
+          </li>
+        ))}
+      </ul>
+      {onisep.length === 0 && (
+        <p class="discret">Pas de fiche Onisep reliée à ce code dans les données de l’Onisep.</p>
+      )}
+    </section>
+
+    <EnSavoirPlus titre="Approfondir : d’où vient ce rapprochement ?">
+      <p>
+        Le calcul compare votre profil d’intérêts à ceux de métiers américains, car seule la base{' '}
+        <Definition terme="onet" /> fournit des profils d’intérêts mesurés pour chaque métier. Ces
+        métiers sont ensuite reliés au ROME par deux tables officielles : de O*NET vers la
+        classification européenne <Definition terme="esco" />, puis d’ESCO vers le ROME.
+      </p>
+      <p>Métiers américains (O*NET) qui mènent à cette fiche :</p>
+      <ul>
+        {fiche.onet.map((o) => (
+          <li>
+            <span lang="en">{o.titre}</span> ({o.code}) · {LIBELLES_QUALITE[o.qualite]}
+            {o.statut === 'valide' ? ' · relue' : ' · pas encore relue'}
+          </li>
+        ))}
+      </ul>
+      {nonRelue && (
+        <p>
+          Ces correspondances sont automatiques : elles n’ont pas encore été relues par l’équipe.
+          Les métiers américains et français ne se recouvrent jamais exactement.
+        </p>
+      )}
+      {fiche.riasec && (
+        <p>
+          Pour information, le ROME attribue à ce métier la dimension d’intérêts dominante «{' '}
+          {fiche.riasec.majeur} »{fiche.riasec.mineur && <>, puis « {fiche.riasec.mineur} »</>}. Ce
+          code ne sert pas au calcul ; il sert à repérer les correspondances douteuses.
+        </p>
+      )}
+      <p class="discret">
+        Données : ROME {versions.rome.titre ?? ''}
+        {versions.rome.publie_le && <> (publiée le {versions.rome.publie_le})</>} ; table ESCO–ROME{' '}
+        {versions.esco_rome.titre} ; Onisep
+        {versions.onisep.modifie_le && <> (mise à jour du {dateFr(versions.onisep.modifie_le)})</>};
+        RNCP : {versions.rncp ? versions.rncp.fichier : 'non importé'}.
+      </p>
+      <ListeSources
+        sources={sourcesParIds(contenu, [
+          'rome-4-0',
+          'france-travail-esco-rome-2025',
+          'esco-onet-crosswalk-2022',
+          'onet-31',
+          'onisep-ideo-metiers',
+          'rncp-france-competences',
+        ])}
+        titre="Sources"
+        niveau={3}
+        idTitre="sources-fiche-rome"
+      />
+    </EnSavoirPlus>
+
+    <p class="discret">
+      Fiche générée automatiquement à partir des données officielles ; elle n’a pas été relue par
+      l’équipe. Voir la page <a href="/credits">Crédits et licences</a>.
+    </p>
+  </article>
+</Base>
+
+<script>
+  import { LIBELLES_NIVEAU } from '../../../lib/rapprochement';
+  // Le niveau de correspondance est transmis dans l'adresse par la page de résultats.
+  const niveau = new URLSearchParams(location.search).get('niveau');
+  const zone = document.getElementById('niveau-visiteur');
+  if (zone && niveau && niveau in LIBELLES_NIVEAU) {
+    zone.textContent = `D’après vos résultats : ${LIBELLES_NIVEAU[niveau as keyof typeof LIBELLES_NIVEAU].toLowerCase()} entre votre profil d’intérêts et ce métier. C’est une piste à explorer, pas un verdict.`;
+    zone.hidden = false;
+  }
+</script>
+
+<style>
+  .niveau-visiteur {
+    background: var(--c-primaire-clair);
+    color: var(--c-primaire-fonce);
+    border-radius: var(--rayon-petit);
+    padding: var(--espace-2) var(--espace-3);
+  }
+  .certifications li {
+    margin-block: var(--espace-1);
+  }
+</style>

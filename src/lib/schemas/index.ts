@@ -10,3 +10,4 @@ export * from './livre';
 export * from './recommandations';
 export * from './glossaire';
 export * from './situation';
+export * from './fr';
