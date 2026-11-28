@@ -14,7 +14,7 @@ sources:
 pour_aller_plus_loin:
   - href: /situations/je-ne-sais-pas
     libelle: Je ne sais pas ce que je veux faire
-  - href: /comprendre
+  - href: /explication
     libelle: Ce que mesure (et ne mesure pas) un test de personnalité
 brouillon: true
 ---

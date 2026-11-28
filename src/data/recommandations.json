@@ -58,8 +58,23 @@
         "trait": "E",
         "max": 2.5
       },
-      "articles": ["traits/extraversion", "philosophie/montaigne"],
-      "livres": ["montaigne-essais", "marc-aurele-pensees"]
+      "articles": [
+        "introversion/idees-recues",
+        "introversion/agir-hors-de-son-caractere",
+        "traits/extraversion"
+      ],
+      "livres": ["cain-quiet", "montaigne-essais", "marc-aurele-pensees"]
+    },
+    {
+      "id": "extraversion-elevee",
+      "raison": "votre score d'extraversion est plutôt élevé",
+      "si": {
+        "type": "trait",
+        "trait": "E",
+        "min": 3.5
+      },
+      "articles": ["introversion/travail-recherche", "introversion/environnements"],
+      "livres": []
     },
     {
       "id": "agreabilite-elevee",

@@ -1,6 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
 import Avertissement from '../components/Avertissement.astro';
+import EnSavoirPlus from '../components/EnSavoirPlus.astro';
+import ListeSources from '../components/ListeSources.astro';
+import { chargerContenu, sourcesParIds } from '../lib/contenu';
+
+const contenu = await chargerContenu();
+const lienAgir = '/explication/introversion-extraversion/agir-hors-de-son-caractere';
 ---
 
 <Base
@@ -62,11 +68,50 @@ import Avertissement from '../components/Avertissement.astro';
     moment depuis la page des résultats.
   </p>
   <h2>D'où vient le nom « Personalis » ?</h2>
-  <p class="discret">
-    TODO : note sur l'origine du nom, à écrire après vérification de l'étymologie du latin
-    <em>personalis</em> (et, avec prudence, du mot <em>persona</em>, dont l'origine est débattue)
-    dans un dictionnaire de référence.
+  <p class="lecture">
+    <em>Personalis</em> est un mot latin formé sur <em>persona</em>, qui a donné en français «
+    personne », « personnel » et « personnalité ». Le nom rappelle l'objet du site : vous aider à
+    réfléchir à partir de ce qui vous est propre, sans vous ranger dans une case.
   </p>
+  <EnSavoirPlus>
+    <p>
+      <strong>Personalis.</strong> Adjectif du latin tardif, généralement traduit par « personnel,
+      qui concerne la personne ».{' '}
+      <span class="discret">(À vérifier dans un dictionnaire de référence.)</span>
+    </p>
+    <p>
+      <strong>Persona.</strong> Le mot désignait le masque de théâtre, puis le rôle tenu, avant de
+      prendre, notamment en droit et en philosophie, le sens de « personne ». Une étude récente
+      relie la notion juridique de personne au latin <em>persona</em>, au grec <em>prosōpon</em> et
+      à l'étrusque <em>phersu</em>, en lien avec le théâtre et la sculpture antiques (van den Berge,
+      2023). L'anthropologue Marcel Mauss a consacré en 1938 une étude classique à l'histoire de la
+      notion de personne.
+    </p>
+    <p>
+      <strong>Un débat ancien.</strong> On a longtemps expliqué <em>persona</em> par{' '}
+      <em>per-sonare</em> (« résonner à travers », la voix passant par le masque). Cette explication
+      est aujourd'hui discutée, et un rapprochement avec l'étrusque <em>phersu</em> est souvent
+      proposé.{' '}
+      <span class="discret">
+        (À vérifier dans un dictionnaire étymologique de référence ; l'origine exacte du mot reste
+        incertaine.)
+      </span>
+    </p>
+    <p>
+      <strong>Le lien avec le site.</strong> Le masque et le rôle évoquent aussi une idée utile pour
+      l'orientation : on peut adopter des comportements différents selon les situations, sans cesser
+      d'être soi (voir le dossier {[<a href={lienAgir}>Agir « hors de son caractère »</a>, ').']}
+    </p>
+    <ListeSources
+      sources={sourcesParIds(contenu, [
+        'van-den-berge-2023',
+        'mauss-1938',
+        'dictionnaire-etymologique',
+      ])}
+      niveau={3}
+      idTitre="sources-nom"
+    />
+  </EnSavoirPlus>
   <h2>Le projet</h2>
   <p>
     Projet ouvert : code sous licence MIT, contenu sous licence CC BY 4.0. Toute affirmation

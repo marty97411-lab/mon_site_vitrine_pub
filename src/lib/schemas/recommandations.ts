@@ -1,8 +1,10 @@
 import { z } from 'astro/zod';
 import { RIASEC, TRAITS } from '../big-five';
 
-/** Identifiant d'article : « situations/… », « philosophie/… » ou « traits/… ». */
-export const idArticle = z.string().regex(/^(situations|philosophie|traits)\/[a-z0-9-]+$/);
+/** Identifiant d'article : « situations/… », « philosophie/… », « traits/… » ou « introversion/… ». */
+export const idArticle = z
+  .string()
+  .regex(/^(situations|philosophie|traits|introversion)\/[a-z0-9-]+$/);
 
 export const conditionSchema = z.discriminatedUnion('type', [
   z.object({

@@ -8,3 +8,4 @@ export * from './normes';
 export * from './article';
 export * from './livre';
 export * from './recommandations';
+export * from './glossaire';

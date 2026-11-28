@@ -17,6 +17,13 @@ personnalité :
 personnalité est une aide à la réflexion, pas un verdict, et que la personnalité n'explique
 qu'une partie de la réussite et de la satisfaction au travail.
 
+## Règle de simplicité (prioritaire)
+
+Le site ne doit **pas devenir plus compliqué** à mesure qu'on ajoute des sujets. Chaque nouveau
+contenu s'intègre dans la structure existante (trois niveaux : L'essentiel / Comprendre /
+Approfondir), **sans nouvel onglet dans le menu sauf nécessité**, et la page d'accueil reste simple
+(au plus une carte par nouveau sujet).
+
 ## Principes scientifiques (non négociables)
 
 - **Modèle** : Big Five (OCEAN) avec ses 30 facettes (structure de l'IPIP-NEO-120, Johnson 2014).
@@ -58,7 +65,9 @@ qu'une partie de la réussite et de la satisfaction au travail.
 
 ## Ton et structure des contenus
 
-- **Vouvoiement** partout. Ton chaleureux, rassurant, mais toujours honnête : pas de promesse
+- **Vouvoiement partout** (pages, questionnaires, consignes, résultats, boutons, messages,
+  fiches) ; vérifié automatiquement par `src/lib/vouvoiement.test.ts` (exceptions justifiées :
+  citations historiques). Ton chaleureux, rassurant, mais toujours honnête : pas de promesse
   (« trouvez le métier de vos rêves »), pas de positivité forcée, pas de dramatisation.
 - **Il n'existe pas de bon ou de mauvais profil** : chaque trait est présenté avec ses atouts et ses
   coûts (champs `atouts` et `couts`, sourcés ou `todo_source: true`).
@@ -72,6 +81,17 @@ qu'une partie de la réussite et de la satisfaction au travail.
 - **Citations** : courtes, avec leur référence complète ; de préférence des œuvres ou traductions du
   domaine public vérifiées (Wikisource). Œuvres protégées : très courte citation ou simple
   présentation des idées.
+- **Aucun visiteur perdu face au jargon** : à la première apparition d'un terme technique sur une
+  page (Big Five, RIASEC, facette, percentile, O*NET, Job Zone…), utiliser le composant
+  `<Definition terme="…" />` : terme cliquable vers `/glossaire` + explication courte entre
+  parenthèses. Définitions centralisées dans `src/data/glossaire.json` (identiques partout).
+- La section « Explication » (`/explication`, anciennement « Comprendre ») regroupe traits,
+  intérêts, science du test et glossaire. Ne pas la confondre avec le niveau de lecture
+  « Comprendre » des trois niveaux, qui garde son nom.
+- **Dossiers thématiques** : un sujet vaste devient un dossier de la section Explication (page
+  sommaire + pages courtes en trois niveaux, une collection dédiée), pas une nouvelle section ni un
+  nouvel onglet. Exemple : `/explication/introversion-extraversion` (ADR 0009). Ce qui relève de
+  l'expérience courante est signalé dans un encadré « Expérience courante, pas une preuve ».
 - Toute page mentionnant une situation difficile renvoie vers « Besoin d'en parler ? ».
 - Les nouvelles pages de contenu portent `brouillon: true` jusqu'à relecture humaine.
 
@@ -115,6 +135,8 @@ qu'une partie de la réussite et de la satisfaction au travail.
   « miracles »).
 - Résumé, « pour qui » et « à garder en tête » rédigés par l'équipe ; `brouillon: true` jusqu'à
   relecture.
+- **Résumé détaillé** (`resume_detaille`, menu déroulant « Résumé détaillé » fermé par défaut) :
+  **fourni par l’équipe éditoriale du projet**, ne pas le rédiger soi-même.
 - Liens : DOI ou Wikisource si vérifiés, plus recherches BnF et Amazon **sans affiliation**.
 - **Auteurs non encore vérifiés** (`src/content/livres/auteurs-a-verifier.json`) : on peut citer
   l'auteur, son domaine et une note de prudence, **jamais un titre de livre précis**, avec la mention
@@ -149,14 +171,16 @@ qu'une partie de la réussite et de la satisfaction au travail.
 ```
 src/
   content.config.ts      collections Astro (sources, questionnaires, parcours, traits, metiers,
-                         situations, philosophie)
+                         situations, philosophie, introversion, livres, auteurs)
   content/traits/        une fiche Markdown par trait Big Five (trois niveaux, atouts / coûts)
   content/situations/    pages « Ma situation » (badge Science)
   content/philosophie/   pages « Philosophie » (badge Réflexion)
+  content/introversion/  dossier « Introversion et extraversion » (5 pages, badge Science)
   content/metiers/       fiches métiers (Markdown + frontmatter structuré)
   content/sources/       sources.json : bibliographie, citée par identifiant
   content/livres/        livres.json : livres conseillés (vérifiés, étiquetés)
   data/recommandations.json  règles des suggestions de lecture
+  data/glossaire.json    définitions des termes techniques (source unique)
   data/questionnaires/   un JSON par questionnaire (items, clés, échelle, licence)
   data/parcours.json     parcours rapide et complet
   data/onet/             metiers.json (généré), familles.json, job-zones.json
@@ -175,9 +199,10 @@ src/
   styles/tokens.css      design tokens (source unique)
   components/, layouts/  composants et mises en page (Base, Article)
   pages/                 accueil, parcours, questionnaire/[parcours], résultats, situations,
-                         philosophie, comprendre, traits, la-science, besoin-d-en-parler,
+                         philosophie, traits, la-science, besoin-d-en-parler,
                          plan-du-site, sources, a-propos, mentions-legales, metiers, livres,
-                         suggestions, credits
+                         suggestions, credits, glossaire ; section explication/ (index,
+                         intérêts, dossier introversion-extraversion/)
 scripts/
   import-onet.mjs        import des profils RIASEC O*NET (CC BY 4.0)
 docs/

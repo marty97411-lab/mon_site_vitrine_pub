@@ -17,7 +17,7 @@ sources:
 pour_aller_plus_loin:
   - href: /parcours
     libelle: Faire le test (personnalité et intérêts)
-  - href: /comprendre/interets
+  - href: /explication/interets
     libelle: Comprendre les intérêts professionnels (RIASEC)
   - href: /philosophie/montaigne
     libelle: Montaigne, se connaître avec humilité

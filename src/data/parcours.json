@@ -7,7 +7,7 @@
     "precision": "indicative",
     "apporte": [
       "Un aperçu de vos cinq grands traits de personnalité.",
-      "Votre profil d'intérêts RIASEC et des familles de métiers proches."
+      "Votre profil d'intérêts RIASEC (six grands types d'intérêts professionnels) et des familles de métiers proches."
     ],
     "limites": ["Moins précis : moins d'items par échelle.", "Pas de facettes de personnalité."]
   },
@@ -19,7 +19,7 @@
     "precision": "plus-fine",
     "apporte": [
       "Vos cinq grands traits et leurs 30 facettes.",
-      "Un profil d'intérêts RIASEC mesuré avec deux fois plus d'items."
+      "Un profil d'intérêts RIASEC (six grands types d'intérêts professionnels) mesuré avec deux fois plus de questions."
     ],
     "limites": ["Plus long : prévoyez un moment au calme."]
   }

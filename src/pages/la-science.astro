@@ -1,4 +1,5 @@
 ---
+import Definition from '../components/Definition.astro';
 import Base from '../layouts/Base.astro';
 import ListeSources from '../components/ListeSources.astro';
 import Badge from '../components/Badge.astro';
@@ -12,7 +13,10 @@ const contenu = await chargerContenu();
 <Base
   titre="La science derrière"
   description="Pourquoi deux questionnaires, comment les scores sont calculés et comment les métiers sont rapprochés de votre profil, avec les sources."
-  fil={[{ libelle: 'Comprendre', href: '/comprendre' }, { libelle: 'La science derrière le test' }]}
+  fil={[
+    { libelle: 'Explication', href: '/explication' },
+    { libelle: 'La science derrière le test' },
+  ]}
 >
   <p>
     <Badge type="science" />
@@ -28,17 +32,18 @@ const contenu = await chargerContenu();
 
   <h2 id="deux-questionnaires">Pourquoi deux questionnaires ?</h2>
   <p>
-    Personnalité et intérêts sont liés, mais ce ne sont pas les mêmes choses. Une méta-analyse
-    (Barrick, Mount et Gupta, 2003) décrit des liens réels entre certains traits et certains types
-    d'intérêts : les plus forts relient l'extraversion au type Entreprenant et l'ouverture au type
-    Artistique, avec des corrélations d'environ 0,4. D'autres liens sont plus faibles, et le type
-    Réaliste n'est lié à aucun trait. La personnalité seule ne suffit donc pas pour décrire vos
-    intérêts.
+    Personnalité et intérêts sont liés, mais ce ne sont pas les mêmes choses. Une{' '}
+    <Definition terme="meta-analyse" /> (Barrick, Mount et Gupta, 2003) décrit des liens réels entre
+    certains traits et certains types d'intérêts : les plus forts relient l'extraversion au type
+    Entreprenant et l'ouverture au type Artistique, avec des{' '}
+    <Definition terme="correlation" texte="corrélations" /> d'environ 0,4. D'autres liens sont plus
+    faibles, et le type Réaliste n'est lié à aucun trait. La personnalité seule ne suffit donc pas
+    pour décrire vos intérêts.
   </p>
   <p>
-    Le site utilise ainsi deux questionnaires distincts : un questionnaire de personnalité (Big
-    Five) pour décrire votre façon de fonctionner, et un questionnaire d'intérêts (RIASEC) pour le
-    rapprochement avec les métiers.
+    Le site utilise ainsi deux questionnaires distincts : un questionnaire de personnalité, le{' '}
+    <Definition terme="big-five" />, pour décrire votre façon de fonctionner, et un questionnaire
+    d'intérêts, le <Definition terme="riasec" />, pour le rapprochement avec les métiers.
   </p>
   <EnSavoirPlus titre="Approfondir : les méta-analyses sur personnalité et intérêts">
     <p>
@@ -52,11 +57,13 @@ const contenu = await chargerContenu();
 
   <h2>Le modèle des cinq grands facteurs (Big Five)</h2>
   <p>
-    Le parcours complet utilise l'IPIP-NEO-120 (Johnson, 2014) : 120 questions, 5 traits et 30
-    facettes. Le parcours rapide utilise les 50 marqueurs du Big Five de Goldberg (1992). Ces deux
-    questionnaires appartiennent à l'International Personality Item Pool et sont dans le domaine
-    public. Dans les marqueurs de Goldberg, le quatrième facteur mesure la stabilité émotionnelle :
-    le site l'exprime dans le sens du névrosisme, pour rester cohérent avec l'IPIP-NEO.
+    Le parcours complet utilise l'IPIP-NEO-120 (Johnson, 2014) : 120 questions, 5 traits et 30{' '}
+    <Definition terme="facette" texte="facettes" />. Le parcours rapide utilise les 50 marqueurs du
+    Big Five de Goldberg (1992). Ces deux questionnaires appartiennent à l'
+    <Definition terme="ipip" texte="International Personality Item Pool (IPIP)" /> et sont dans le
+    domaine public. Dans les marqueurs de Goldberg, le quatrième facteur mesure la stabilité
+    émotionnelle : le site l'exprime dans le sens du névrosisme, pour rester cohérent avec
+    l'IPIP-NEO.
   </p>
   <ul>
     {contenu.traits.map(({ id, data }) => (
@@ -69,11 +76,11 @@ const contenu = await chargerContenu();
   <h2 id="scores">Pourquoi pas de percentile ?</h2>
   <p>
     Votre score à un trait est la moyenne de vos réponses (de 1 à 5), après inversion des questions
-    formulées en sens contraire. Un percentile vous situerait par rapport à une population de
-    référence. Le site de l'IPIP ne fournit pas de normes et déconseille d'utiliser des normes «
-    toutes faites », car on trouve rarement une population dont on fait vraiment partie. Les normes
-    publiées portent en outre surtout sur des populations anglophones. Le site affiche donc votre
-    position sur l'échelle de 1 à 5, sans comparaison à une population.
+    formulées en sens contraire. Un <Definition terme="percentile" /> vous situerait par rapport à
+    une population de référence. Le site de l'IPIP ne fournit pas de normes et déconseille
+    d'utiliser des normes « toutes faites », car on trouve rarement une population dont on fait
+    vraiment partie. Les normes publiées portent en outre surtout sur des populations anglophones.
+    Le site affiche donc votre position sur l'échelle de 1 à 5, sans comparaison à une population.
   </p>
 
   <h2>Les intérêts professionnels : le modèle RIASEC</h2>
@@ -94,9 +101,10 @@ const contenu = await chargerContenu();
   <h2 id="rapprochement">Comment les métiers sont-ils rapprochés de votre profil ?</h2>
   <p>
     Le site applique la méthode décrite dans le manuel de l'O*NET Interest Profiler. Il calcule la
-    corrélation entre votre profil d'intérêts et celui de chacun des 923 métiers de la base O*NET.
-    La corrélation compare la <em>forme</em> des profils (quelles dimensions sont hautes ou basses),
-    et non leur niveau. Les seuils du manuel servent à qualifier la correspondance :
+    corrélation entre votre profil d'intérêts et celui de chacun des 923 métiers de la base{' '}
+    <Definition terme="onet" />. La corrélation compare la <em>forme</em> des profils (quelles
+    dimensions sont hautes ou basses), et non leur niveau. Les seuils du manuel servent à qualifier
+    la correspondance :
   </p>
   <ul>
     <li>corrélation d'au moins 0,729 : correspondance très forte (« Best Fit ») ;</li>
