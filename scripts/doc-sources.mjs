@@ -28,7 +28,7 @@ const CATEGORIES = [
   ['Ikigai', /^(mathews|kumano|kamiya)/],
   ['Ressources d’accompagnement', /^(site-3114|mon-cep|onisep|france-travail)/],
   ['Formation en France', /^cadre-national/],
-  ['Livres discutés : réévaluations', /^(sisk|crede|schimmack)/],
+  ['Livres discutés : réévaluations', /^(sisk|crede|schimmack|fredrickson|brown-sokal)/],
   ['Méthodes', /^abramowitz/],
 ];
 

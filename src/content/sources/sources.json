@@ -840,5 +840,45 @@
     "titre": "Étymologie de « personnel » et de « persona » (dictionnaires de référence)",
     "statut": "a-verifier",
     "notes": "TODO : vérifier dans le CNRTL (TLFi, rubrique étymologie) et le Gaffiot le sens de personalis (latin tardif), l'évolution de persona et le débat sur per-sonare et l'étrusque phersu. Sites inaccessibles depuis l'environnement de travail."
+  },
+  {
+    "id": "fredrickson-losada-2005",
+    "type": "article",
+    "auteurs": ["Fredrickson, B. L.", "Losada, M. F."],
+    "annee": 2005,
+    "titre": "Positive affect and the complex dynamics of human flourishing",
+    "publication": "American Psychologist",
+    "volume": "60",
+    "pages": "678-686",
+    "doi": "10.1037/0003-066X.60.7.678",
+    "statut": "metadonnees-verifiees",
+    "consulte_le": "2026-11-28",
+    "notes": "Métadonnées vérifiées via Crossref (vol. 60, n° 7). Article du « ratio de positivité », dont la base mathématique a été réfutée (voir brown-sokal-friedman-2013). Cité dans le résumé détaillé de « Introduction à la psychologie positive » (Lecomte)."
+  },
+  {
+    "id": "brown-sokal-friedman-2013",
+    "type": "article",
+    "auteurs": ["Brown, N. J. L.", "Sokal, A. D.", "Friedman, H. L."],
+    "annee": 2013,
+    "titre": "The complex dynamics of wishful thinking: The critical positivity ratio",
+    "publication": "American Psychologist",
+    "volume": "68",
+    "pages": "801-813",
+    "doi": "10.1037/a0032850",
+    "statut": "metadonnees-verifiees",
+    "consulte_le": "2026-11-28",
+    "notes": "Métadonnées vérifiées via Crossref (vol. 68, n° 9). Contenu non relu. Cité dans le résumé détaillé de « Introduction à la psychologie positive » (Lecomte)."
+  },
+  {
+    "id": "bernaud-2018",
+    "type": "livre",
+    "auteurs": ["Bernaud, J.-L."],
+    "annee": 2018,
+    "titre": "Introduction à la psychologie existentielle",
+    "publication": "Dunod",
+    "doi": "10.3917/dunod.berna.2018.01",
+    "statut": "metadonnees-verifiees",
+    "consulte_le": "2026-11-28",
+    "notes": "Métadonnées vérifiées via Crossref (ISBN 9782100759958). Contenu non relu. Cité dans le résumé détaillé du « Traité de psychologie existentielle » (Bernaud)."
   }
 ]

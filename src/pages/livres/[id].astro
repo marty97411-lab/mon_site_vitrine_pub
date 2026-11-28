@@ -68,6 +68,8 @@ const description = `${l.titre}, de ${l.auteurs.join(', ')} (${l.editeur}, ${l.a
 
   <Essentiel>
     <p>{l.resume}</p>
+    {/* « Pour qui » : le texte commence déjà par « Pour qui… » ou « Pour les… ». */}
+    <p class="pour-qui">{l.pour_qui}</p>
   </Essentiel>
 
   <div class="lecture">
@@ -90,23 +92,12 @@ const description = `${l.titre}, de ${l.auteurs.join(', ')} (${l.editeur}, ${l.a
       )}
     </EnSavoirPlus>
   </div>
-  <script>
-    // Ouvre le menu « Résumé détaillé » quand on arrive depuis la liste (lien #resume-detaille).
-    const ouvrir = () => {
-      const bloc = document.getElementById('resume-detaille');
-      if (location.hash === '#resume-detaille' && bloc instanceof HTMLDetailsElement) {
-        bloc.open = true;
-      }
-    };
-    ouvrir();
-    window.addEventListener('hashchange', ouvrir);
-  </script>
 
-  <section class="lecture" aria-labelledby="comprendre">
-    <h2 id="comprendre">Pour qui ?</h2>
-    <p>{l.pour_qui}</p>
-    <h2>Ce qu'il faut garder en tête</h2>
-    <p>{l.a_garder_en_tete}</p>
+  <section class="lecture">
+    <div class="a-garder">
+      <h2>Ce qu'il faut garder en tête</h2>
+      <p>{l.a_garder_en_tete}</p>
+    </div>
     {l.note_controverse && (
       <p class="avertissement">
         <strong>Livre discuté.</strong> {l.note_controverse}
@@ -161,6 +152,32 @@ const description = `${l.titre}, de ${l.auteurs.join(', ')} (${l.editeur}, ${l.a
     gap: var(--espace-2);
     align-items: center;
     margin-top: var(--espace-4);
+  }
+  /* « Pour qui » : ligne courte dans « L'essentiel », sous le bref résumé. */
+  :global(.contenu) .pour-qui {
+    font-size: 0.95rem;
+    border-top: 1px solid currentColor;
+    padding-top: var(--espace-2);
+    margin-top: var(--espace-2);
+  }
+  /* Partie secondaire, discrète comme les encadrés « Source » (≥ 15 px, contraste AA). */
+  .a-garder {
+    font-size: max(0.85rem, 15px);
+    line-height: 1.5;
+    color: var(--c-texte-doux);
+    border-left: 2px solid var(--c-bordure);
+    padding: 0.1rem 0 0.1rem 0.7rem;
+    margin: var(--espace-3) 0;
+  }
+  .a-garder h2 {
+    font-family: var(--police-texte);
+    font-size: 1em;
+    font-weight: 700;
+    color: inherit;
+    margin: 0 0 var(--espace-1);
+  }
+  .a-garder p {
+    margin: 0;
   }
   .partie-resume {
     font-size: 1.2rem;

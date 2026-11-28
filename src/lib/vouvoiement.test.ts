@@ -23,6 +23,7 @@ const EXCEPTIONS: { motif: RegExp; raison: string }[] = [
     raison: 'citation de Sénèque (domaine public)',
   },
   { motif: /le ton volontariste/i, raison: '« ton » au sens de tonalité' },
+  { motif: /son ton est sombre/i, raison: '« ton » au sens de tonalité (résumé de Dejours)' },
 ];
 
 function fichiers(dossier: string): string[] {

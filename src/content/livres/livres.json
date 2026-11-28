@@ -173,13 +173,27 @@
     "resume": "Un manuel qui présente les thèmes et les résultats de la psychologie positive : émotions positives, sens, relations, résilience, bien-être au travail.",
     "pour_qui": "Pour qui veut une vue d'ensemble sérieuse du domaine, au-delà des livres de développement personnel.",
     "a_garder_en_tete": "La psychologie positive est un champ jeune et parfois critiqué pour ses promesses ; un manuel présente l'état des connaissances à sa date de publication.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Jacques Lecomte, docteur en psychologie, présente en français la psychologie positive, un courant scientifique apparu à la fin des années 1990. Plutôt que d'étudier uniquement les troubles et les difficultés, ce courant s'intéresse à ce qui permet aux personnes et aux groupes de bien fonctionner : les émotions positives, la résilience face aux épreuves, le sens de la vie, les forces de caractère, l'engagement dans ses activités, la qualité des relations, la gratitude ou le pardon.",
+        "L'ouvrage, collectif, aborde aussi les applications de ces recherches dans l'éducation, la santé, le travail et les organisations. Il insiste sur le fait que la psychologie positive ne nie pas la souffrance : elle cherche à compléter l'approche classique."
+      ],
+      "a_retenir": [
+        "Pour votre vie professionnelle, la psychologie positive invite à vous demander non seulement ce qui ne va pas, mais aussi ce qui vous fait du bien et ce que vous faites bien : vos forces, les situations où vous êtes engagé, les relations qui vous soutiennent. C'est une base utile pour choisir un métier ou réaménager votre poste."
+      ],
+      "limites": [
+        "La psychologie positive a été critiquée : risque d'injonction au bonheur, tendance à faire reposer le bien-être sur l'individu plutôt que sur les conditions de travail, et certaines études vedettes qui n'ont pas résisté à l'examen (par exemple le « ratio de positivité » de Fredrickson et Losada, dont la base mathématique a été réfutée par Brown, Sokal et Friedman en 2013). Le livre date de 2009 : à lire comme une introduction, en gardant un esprit critique."
+      ],
+      "sources": ["fredrickson-losada-2005", "brown-sokal-friedman-2013"]
+    },
     "lien": {
       "url": "https://doi.org/10.3917/dunod.lecom.2014.01.0002",
       "libelle": "Sur Cairn (DOI)"
     },
     "verification": {
       "date": "2026-11-28",
-      "preuves": ["doi:10.3917/dunod.lecom.2014.01.0002"]
+      "preuves": ["doi:10.3917/dunod.lecom.2014.01.0002"],
+      "reste_a_verifier": "Une édition de 2009 est signalée par l'équipe éditoriale mais n'a pas été trouvée dans Crossref (seule l'édition de 2014 y figure). Ouvrage collectif : vérifier si Jacques Lecomte en est l'auteur ou le directeur (« dir. »)."
     },
     "direction": false,
     "traducteurs": [],
@@ -201,18 +215,35 @@
     "resume": "Deux spécialistes de la psychologie de l'orientation présentent, sous forme de courtes entrées, les notions et les théories utilisées pour comprendre et accompagner les choix d'orientation.",
     "pour_qui": "Pour les curieux qui veulent comprendre les théories de l'orientation, et pour les professionnels de l'accompagnement.",
     "a_garder_en_tete": "Ouvrage de référence technique, à consulter par entrées plutôt qu'à lire d'une traite ; son édition date de 2007.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Cet ouvrage est un dictionnaire de référence, dirigé par deux grands spécialistes français de la psychologie de l'orientation. Il présente, par ordre alphabétique, 75 notions essentielles pour comprendre l'orientation scolaire et professionnelle et l'insertion dans l'emploi : intérêts professionnels, bilan de compétences, conseil en orientation, transitions, identité, chômage, apprentissage, alternance, choix, décision, et bien d'autres.",
+        "Chaque article fait le point sur la définition de la notion, son histoire, les principales théories et les recherches associées. L'ouvrage croise plusieurs disciplines : psychologie, sociologie, économie, sciences de l'éducation."
+      ],
+      "a_retenir": [
+        "C'est le livre idéal si vous voulez comprendre un mot précis rencontré sur Personalis ou ailleurs, et savoir ce que la recherche en dit, en français. Il montre aussi que l'orientation n'est pas seulement une affaire individuelle : elle dépend des institutions, du marché du travail et des inégalités sociales."
+      ],
+      "limites": [
+        "C'est un ouvrage de consultation, pas un livre à lire d'une traite ni un guide pratique. Le niveau est universitaire. Préférez l'édition de 2022, plus à jour."
+      ]
+    },
     "lien": {
       "url": "https://doi.org/10.3917/dunod.guich.2008.01.0001",
       "libelle": "Sur Cairn (DOI)"
     },
     "verification": {
       "date": "2026-11-28",
-      "preuves": ["doi:10.3917/dunod.guich.2008.01.0001", "doi:10.4000/osp.1339"]
+      "preuves": [
+        "doi:10.3917/dunod.guich.2008.01.0001",
+        "doi:10.4000/osp.1339",
+        "doi:10.3917/dunod.guich.2022.01.0001 (nouvelle édition : Dunod, 2022)"
+      ]
     },
     "direction": false,
     "traducteurs": [],
     "domaine_public": false,
-    "brouillon": true
+    "brouillon": true,
+    "note_edition": "Nouvelle édition chez Dunod en 2022 (ISBN 9782100825622)."
   },
   {
     "id": "cohen-scali-orientation-vie",
@@ -229,6 +260,18 @@
     "resume": "Un ouvrage collectif qui présente les recherches actuelles sur l'orientation, de l'école aux transitions professionnelles de l'âge adulte.",
     "pour_qui": "Pour qui veut un état des lieux récent de la recherche sur l'orientation et l'accompagnement.",
     "a_garder_en_tete": "Ouvrage universitaire ; les chapitres sont de niveaux et d'auteurs différents.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Valérie Cohen-Scali, professeure de psychologie de l'orientation au Cnam, a coordonné cet ouvrage collectif récent. Il part d'un constat : l'orientation ne se joue plus seulement à la sortie de l'école. Elle accompagne aujourd'hui toute la vie, à travers de multiples transitions : premier emploi, reconversion, chômage, mobilité, retour à l'emploi, fin de carrière.",
+        "Le livre présente les approches et méthodes récentes du conseil en orientation : la construction de carrière, l'accompagnement centré sur le sens de la vie et du travail, l'orientation scolaire face aux enjeux du XXIe siècle, le travail décent, le lien entre orientation et développement durable. Il montre que l'orientation est à la fois un champ de recherche et un ensemble de pratiques, qui mobilise plusieurs disciplines."
+      ],
+      "a_retenir": [
+        "Il est normal de se poser des questions d'orientation à 20, 40 ou 55 ans. Les chercheurs considèrent aujourd'hui l'orientation comme un processus continu, et non comme un choix unique et définitif. Des professionnels sont formés pour vous accompagner à chaque étape."
+      ],
+      "limites": [
+        "C'est un ouvrage universitaire destiné d'abord aux étudiants, chercheurs et conseillers. Les chapitres sont rédigés par différents auteurs et peuvent être techniques. Il ne propose pas de méthode pratique à appliquer seul."
+      ]
+    },
     "lien": {
       "url": "https://doi.org/10.3917/dunod.cohen.2021.01.0003",
       "libelle": "Sur Cairn (DOI)"
@@ -256,13 +299,29 @@
     "resume": "Un traité qui rassemble les apports de la psychologie sur les grandes questions existentielles : le sens de la vie et du travail, la liberté, la finitude.",
     "pour_qui": "Pour qui s'intéresse aux liens entre psychologie, sens et choix de vie, et accepte un texte universitaire.",
     "a_garder_en_tete": "Ouvrage dense et spécialisé ; il croise des approches de recherche différentes, plus ou moins établies.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Jean-Luc Bernaud, professeur de psychologie de l'orientation et du conseil au Cnam, présente la psychologie existentielle : une approche qui s'intéresse aux grandes questions de l'existence et à leur place dans nos choix de vie. Elle s'inspire de la philosophie existentialiste (Kierkegaard, Heidegger, Sartre), tout en s'appuyant sur des recherches en psychologie.",
+        "L'ouvrage aborde les crises de l'existence (dans le travail comme dans la vie), l'angoisse, la liberté, la responsabilité, la solitude, le rapport à la mort, la spiritualité, l'authenticité et, surtout, le sens de la vie et du travail. Il présente aussi des méthodes d'accompagnement pour aider les personnes à clarifier ce qui compte pour elles et à faire des choix qui leur ressemblent."
+      ],
+      "a_retenir": [
+        "Les questions « à quoi bon ? », « est-ce vraiment la vie que je veux ? » ne sont pas des signes de faiblesse : elles font partie de l'existence humaine et peuvent devenir le point de départ d'un choix plus authentique. Ce livre fait le lien entre la réflexion philosophique de la section « Philosophie » de Personalis et la psychologie scientifique de l'orientation."
+      ],
+      "limites": [
+        "C'est un traité universitaire de près de 500 pages, exigeant. La psychologie existentielle est un courant plus récent et moins étudié statistiquement que d'autres domaines de la psychologie. Pour une première approche, le même auteur a publié une *Introduction à la psychologie existentielle* (Dunod, 2018), plus courte."
+      ],
+      "sources": ["bernaud-2018"]
+    },
     "lien": {
       "url": "https://doi.org/10.14375/np.9782100822867",
       "libelle": "Notice de l'éditeur (DOI)"
     },
     "verification": {
       "date": "2026-11-28",
-      "preuves": ["doi:10.14375/np.9782100822867"]
+      "preuves": [
+        "doi:10.14375/np.9782100822867",
+        "doi:10.3917/dunod.berna.2021.01.0071 (chapitres signés Jean-Luc Bernaud, auteur unique selon Crossref)"
+      ]
     },
     "traducteurs": [],
     "domaine_public": false,
@@ -283,13 +342,26 @@
     "resume": "Un traité universitaire qui couvre les grands thèmes de la psychologie du travail : motivation, santé, évaluation, organisation, orientation professionnelle.",
     "pour_qui": "Pour qui veut aller au fond des connaissances sur le travail et les organisations.",
     "a_garder_en_tete": "Manuel de référence pour étudiants et professionnels, pas un livre de conseils.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Ce traité collectif est un ouvrage de référence en français sur la psychologie appliquée au monde du travail. Il couvre les grands domaines de la discipline : le recrutement et l'évaluation des personnes, la motivation et la satisfaction au travail, le stress et la santé, les groupes et le leadership, l'ergonomie, la formation, le changement dans les organisations et l'orientation professionnelle.",
+        "Chaque chapitre, écrit par un spécialiste, présente les concepts, les théories principales, les résultats de recherche et les applications pratiques. On y retrouve notamment le rôle des tests de personnalité dans le recrutement, avec leurs apports et leurs limites."
+      ],
+      "a_retenir": [
+        "Si vous voulez comprendre ce que la science sait réellement de la motivation, du stress ou de l'évaluation au travail, ce livre est une base solide. Il vous aidera aussi à porter un regard critique sur certaines méthodes utilisées en entreprise, par exemple des tests de recrutement peu fiables."
+      ],
+      "limites": [
+        "C'est un manuel universitaire, dense et technique, à consulter par chapitre. Selon l'édition, certaines données peuvent dater : vérifiez la date de l'édition que vous consultez."
+      ]
+    },
     "lien": {
       "url": "https://doi.org/10.3917/dunod.berna.2012.01.0007",
       "libelle": "Sur Cairn (DOI)"
     },
     "verification": {
       "date": "2026-11-28",
-      "preuves": ["doi:10.3917/dunod.berna.2012.01.0007"]
+      "preuves": ["doi:10.3917/dunod.berna.2012.01.0007"],
+      "reste_a_verifier": "Édition la plus récente : seule l'édition de 2012 a été trouvée dans Crossref ; une édition plus récente reste à rechercher (notice BnF)."
     },
     "traducteurs": [],
     "domaine_public": false,
@@ -311,6 +383,18 @@
     "resume": "Un psychologue du travail soutient que beaucoup de souffrances au travail viennent de l'impossibilité de faire un travail de qualité, et plaide pour redonner aux salariés prise sur la manière de bien faire leur métier.",
     "pour_qui": "Pour qui ressent un malaise au travail et cherche à le comprendre au-delà des explications individuelles.",
     "a_garder_en_tete": "Un essai engagé, issu d'une tradition de recherche précise (la clinique de l'activité) ; d'autres approches de la santé au travail existent.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Yves Clot, psychologue du travail au Conservatoire national des arts et métiers (Cnam), s'appuie sur de longues années d'interventions dans les entreprises. Il critique la façon dont on traite souvent la souffrance au travail : en mesurant le stress, en proposant des cellules d'écoute ou des activités de détente, sans toucher au cœur du problème.",
+        "Pour lui, une grande source de souffrance est la « qualité empêchée » : ne pas pouvoir faire un travail dont on peut être fier, parce que les objectifs, les délais ou l'organisation imposent de bâcler ou de faire autrement que ce que l'on juge juste. Il défend l'idée que le remède passe par le travail lui-même : permettre aux salariés de discuter entre eux, et avec leur hiérarchie, de ce qu'est un travail bien fait, y compris par des désaccords constructifs entre collègues."
+      ],
+      "a_retenir": [
+        "Le plaisir au travail ne vient pas seulement d'un bon salaire ou d'une bonne ambiance : il vient aussi de la possibilité de bien faire son métier. Pour choisir un poste ou comprendre un mal-être, demandez-vous : ai-je les moyens de faire un travail dont je suis fier ? Puis-je en parler avec mes collègues ?"
+      ],
+      "limites": [
+        "L'approche de Clot (la « clinique de l'activité ») repose surtout sur des interventions de terrain et des analyses qualitatives, plutôt que sur des études statistiques. Le livre est engagé, et son vocabulaire peut sembler technique pour un lecteur non spécialiste."
+      ]
+    },
     "lien": {
       "url": "https://doi.org/10.3917/dec.cloty.2015.01",
       "libelle": "Sur Cairn (DOI)"
@@ -340,6 +424,18 @@
     "resume": "Un psychiatre et psychanalyste spécialiste du travail analyse comment la souffrance au travail est devenue banale, et comment chacun peut en venir à tolérer ou à participer à des pratiques qu'il désapprouve.",
     "pour_qui": "Pour qui veut une lecture critique et approfondie du monde du travail.",
     "a_garder_en_tete": "Essai d'inspiration psychanalytique, discuté ; il éclaire des mécanismes plus qu'il ne mesure des faits.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Christophe Dejours, psychiatre et psychanalyste, fondateur de la « psychodynamique du travail », pose une question dérangeante : comment des personnes ordinaires, honnêtes, en viennent-elles à accepter, voire à participer, à des pratiques qui font souffrir d'autres personnes au travail (licenciements brutaux, pressions, mise à l'écart) ?",
+        "Il explique que la peur (de perdre son emploi, d'être mal vu) pousse chacun à développer des stratégies de défense : ne pas voir, minimiser, se dire que « c'est comme ça ». Ces défenses protègent psychologiquement, mais elles contribuent à banaliser l'injustice. Il souligne aussi l'écart entre le travail prescrit (ce qu'on vous demande) et le travail réel (ce que vous devez réellement faire pour que ça marche), et la souffrance qui naît quand cet effort n'est pas reconnu."
+      ],
+      "a_retenir": [
+        "La souffrance au travail n'est pas toujours une faiblesse individuelle : elle a souvent des causes dans l'organisation du travail. Ce livre aide à mettre des mots sur un malaise, et à comprendre l'importance de la reconnaissance du travail réel et de la solidarité entre collègues."
+      ],
+      "limites": [
+        "L'approche de Dejours s'appuie sur la clinique et la psychanalyse, plutôt que sur des études statistiques ; ses interprétations sont discutées par d'autres chercheurs. Le livre date de 1998 et son ton est sombre. Si vous traversez vous-même une période de souffrance au travail, n'hésitez pas à en parler à un professionnel (médecin du travail, psychologue)."
+      ]
+    },
     "verification": {
       "date": "2026-11-28",
       "preuves": ["doi:10.3917/lhs.191.0177f (compte rendu : Seuil, 2009, 1re éd. 1998)"],
@@ -366,6 +462,18 @@
     "resume": "Une philosophe et sociologue retrace l'histoire de l'idée de travail et interroge la place centrale qu'il a prise dans nos sociétés et dans nos vies.",
     "pour_qui": "Pour qui se demande quelle place donner au travail dans sa vie.",
     "a_garder_en_tete": "Essai de réflexion, publié pour la première fois en 1995 : le contexte économique a changé depuis.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Dominique Méda, philosophe et sociologue, pose une question qui a fait débat : pourquoi le travail occupe-t-il une place aussi centrale dans nos vies et dans nos sociétés ? Elle montre, en retraçant l'histoire des idées, que cette place n'a rien d'éternel. Dans l'Antiquité, le travail n'était pas valorisé. Ce n'est qu'à partir du XVIIIe et du XIXe siècle, avec l'économie politique, puis avec la philosophie (Hegel, Marx) et l'État social, que le travail devient à la fois source de richesse, moyen de se réaliser et fondement du lien social.",
+        "Selon elle, on a demandé au travail de remplir trop de rôles à la fois. Elle plaide pour « désenchanter » le travail : lui redonner une place plus mesurée, pour laisser de la place à d'autres activités essentielles, comme la vie familiale et amicale, l'engagement citoyen, les loisirs ou la culture."
+      ],
+      "a_retenir": [
+        "Si votre travail ne donne pas tout le sens que vous attendez de votre vie, ce n'est pas forcément un échec personnel : c'est peut-être une attente trop lourde que notre société fait peser sur le travail. Ce livre aide à prendre du recul et à penser votre équilibre entre travail et autres dimensions de la vie."
+      ],
+      "limites": [
+        "C'est un essai philosophique, écrit dans le contexte du chômage de masse des années 1990. Dominique Méda a elle-même nuancé et prolongé sa réflexion dans des travaux ultérieurs, qui montrent notamment que les Français restent très attachés au travail et en attendent beaucoup. Lecture exigeante par moments."
+      ]
+    },
     "lien": {
       "url": "https://doi.org/10.3917/flam.meda.2010.01",
       "libelle": "Sur Cairn (DOI)"
@@ -394,6 +502,18 @@
     "resume": "Un ouvrage collectif de sociologues qui explore les raisons de travailler et les attentes vis-à-vis du travail, au-delà du seul revenu.",
     "pour_qui": "Pour qui s'interroge sur ce qu'il attend de son travail.",
     "a_garder_en_tete": "Recueil de contributions de recherche, inégal et daté de 2008.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Danièle Linhart, sociologue et directrice de recherche émérite au CNRS, a dirigé ce livre collectif autour d'une question simple en apparence : pourquoi les gens s'investissent-ils dans leur travail, au-delà du salaire ? Les auteurs étudient la « subjectivité » au travail, c'est-à-dire ce que chacun y met de lui-même : ses valeurs, son envie de bien faire, son besoin de reconnaissance, son identité, ses relations aux autres.",
+        "Le livre montre que le management moderne cherche de plus en plus à mobiliser cette subjectivité (engagement, adhésion aux valeurs de l'entreprise, autonomie), ce qui peut être source d'épanouissement, mais aussi de pression et de déception quand les salariés ne peuvent pas travailler selon leurs propres critères. Certains chapitres examinent aussi le rôle du genre dans le rapport au travail."
+      ],
+      "a_retenir": [
+        "Votre investissement au travail est précieux. Ce livre aide à reconnaître ce qui vous motive vraiment, mais aussi à repérer quand votre engagement est sollicité au-delà du raisonnable. Il permet de mieux comprendre certaines formes d'épuisement ou de perte de sens."
+      ],
+      "limites": [
+        "C'est un ouvrage sociologique et universitaire, composé de contributions d'auteurs différents, donc de style et de niveau inégaux. Son regard est souvent critique envers le management : c'est un point de vue argumenté, à confronter à d'autres approches."
+      ]
+    },
     "lien": {
       "url": "https://doi.org/10.3917/eres.linha.2008.01.0007",
       "libelle": "Sur Cairn (DOI)"
@@ -543,6 +663,18 @@
     "resume": "Un manuel de référence qui rassemble les grandes théories du développement de carrière et les recherches qui les évaluent.",
     "pour_qui": "Pour les lecteurs anglophones qui veulent l'état de la recherche sur l'orientation.",
     "a_garder_en_tete": "En anglais ; manuel universitaire très complet, pas un guide pratique.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Ce gros manuel universitaire, dirigé par deux chercheurs de premier plan en psychologie de l'orientation, rassemble les principales théories du développement de carrière et ce que la recherche en dit. On y trouve notamment : la théorie de l'ajustement au travail (l'accord entre ce que la personne attend et ce que l'emploi offre), le modèle RIASEC de Holland, l'approche de Super sur les rôles tout au long de la vie, la théorie de la construction de carrière de Savickas, et la théorie sociocognitive de carrière, développée par Lent et Brown eux-mêmes.",
+        "Cette dernière insiste sur trois éléments : le sentiment de compétence (« suis-je capable de réussir dans ce domaine ? »), les attentes de résultats (« qu'est-ce que cela m'apportera ? ») et les objectifs que l'on se fixe. L'édition de 2020 ajoute des chapitres sur l'avenir du travail, la psychologie du travail décent, les personnes au chômage ou sous-employées, les seniors, ainsi que les notions de vocation, de sens du travail et d'adaptabilité."
+      ],
+      "a_retenir": [
+        "Vos intérêts ne suffisent pas à expliquer vos choix : votre confiance en vos capacités, vos expériences passées et votre environnement (soutiens, obstacles, contraintes économiques) comptent aussi beaucoup. Le livre montre aussi que tout le monde n'a pas la même liberté de choix, et que les théories doivent en tenir compte."
+      ],
+      "limites": [
+        "C'est un ouvrage de référence pour les étudiants et les professionnels, très dense (plus de 800 pages) et en anglais. La plupart des recherches citées viennent des États-Unis. À consulter chapitre par chapitre selon vos questions, plutôt qu'à lire d'une traite."
+      ]
+    },
     "lien": {
       "url": "https://doi.org/10.1002/9781394258994",
       "libelle": "Notice de l'éditeur (DOI)"
