@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import Carte from '../../components/Carte.astro';
+import Badge from '../../components/Badge.astro';
+import Essentiel from '../../components/Essentiel.astro';
+import ScienceOuReflexion from '../../components/ScienceOuReflexion.astro';
+import { chargerContenu } from '../../lib/contenu';
+import { minutesDeLecture } from '../../lib/lecture';
+
+const { philosophie } = await chargerContenu();
+---
+
+<Base
+  titre="Philosophie du travail et de la vie"
+  description="Aristote, les stoïciens, Montaigne, Sartre, Simone Weil, Hannah Arendt et l'ikigai : des idées pour réfléchir à la vie que vous voulez mener."
+  fil={[{ libelle: 'Philosophie' }]}
+>
+  <h1>Philosophie du travail et de la vie</h1>
+  <Essentiel>
+    <p>
+      Les philosophes ne disent pas quel métier choisir. Ils aident à se poser de meilleures
+      questions : qu'est-ce qu'une vie réussie ? qu'est-ce qui dépend de moi ? que m'apporte mon
+      travail ?
+    </p>
+  </Essentiel>
+  <ScienceOuReflexion />
+  <div class="grille trois">
+    {philosophie.map(({ id, data, body }) => (
+      <Carte titre={data.titre} href={`/philosophie/${id}`}>
+        <p slot="haut" class="meta">
+          <Badge type={data.badge} />{' '}
+          <span class="discret">{minutesDeLecture(data.essentiel, data.comprendre, body)} min</span>
+          {data.brouillon && <span class="etiquette">brouillon</span>}
+        </p>
+        <p>{data.description}</p>
+      </Carte>
+    ))}
+  </div>
+</Base>
+
+<style>
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espace-2);
+    align-items: center;
+    margin: 0;
+  }
+</style>

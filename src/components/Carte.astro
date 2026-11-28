@@ -1,0 +1,53 @@
+---
+/** Carte aux coins arrondis ; avec `href`, toute la carte est cliquable (lien sur le titre). */
+interface Props {
+  titre?: string;
+  href?: string;
+  niveauTitre?: 2 | 3;
+  class?: string;
+}
+const { titre, href, niveauTitre = 3, class: classe } = Astro.props;
+const Titre = `h${niveauTitre}` as 'h2' | 'h3';
+---
+
+<article class:list={['carte', classe, { cliquable: href }]}>
+  <slot name="haut" />
+  {titre && <Titre class="titre-carte">{href ? <a href={href}>{titre}</a> : titre}</Titre>}
+  <slot />
+</article>
+
+<style>
+  .carte {
+    position: relative;
+    background: var(--c-surface);
+    border: 1px solid var(--c-bordure);
+    border-radius: var(--rayon);
+    box-shadow: var(--ombre);
+    padding: var(--espace-4);
+    transition:
+      transform var(--duree) ease,
+      box-shadow var(--duree) ease;
+  }
+  .cliquable:hover,
+  .cliquable:focus-within {
+    transform: translateY(-2px);
+    box-shadow: var(--ombre-survol);
+  }
+  .titre-carte {
+    margin-top: var(--espace-2);
+  }
+  .titre-carte a {
+    color: var(--c-texte);
+    text-decoration: none;
+  }
+  /* Toute la carte devient la zone cliquable du lien de titre. */
+  .cliquable .titre-carte a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--rayon);
+  }
+  .carte :global(p:last-child) {
+    margin-bottom: 0;
+  }
+</style>

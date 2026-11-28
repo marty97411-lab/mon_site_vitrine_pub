@@ -1,0 +1,15 @@
+---
+/** Bloc dépliable « En savoir plus » / « Approfondir » (élément natif <details>, sans JavaScript). */
+interface Props {
+  titre?: string;
+  ouvert?: boolean;
+}
+const { titre = 'En savoir plus', ouvert = false } = Astro.props;
+---
+
+<details class="depliable" open={ouvert}>
+  <summary>{titre}</summary>
+  <div class="corps">
+    <slot />
+  </div>
+</details>

@@ -14,7 +14,11 @@ const total = questionnaires.reduce((n, q) => n + q.items.length, 0);
 const ITEMS_PAR_PAGE = 10;
 ---
 
-<Base titre={parcours.nom} description={`Questionnaires du ${parcours.nom.toLowerCase()}.`}>
+<Base
+  fil={[{ libelle: 'Le test', href: '/parcours' }, { libelle: parcours.nom }]}
+  titre={parcours.nom}
+  description={`Questionnaires du ${parcours.nom.toLowerCase()}.`}
+>
   <h1>{parcours.nom}</h1>
   <p>
     {total} questions en deux parties. Vos réponses sont enregistrées au fur et à mesure dans votre
@@ -237,7 +241,7 @@ const ITEMS_PAR_PAGE = 10;
   .progression {
     position: sticky;
     top: 0;
-    background: var(--couleur-fond);
+    background: var(--c-fond);
     padding-block: 0.5rem;
     display: flex;
     flex-wrap: wrap;
@@ -249,9 +253,9 @@ const ITEMS_PAR_PAGE = 10;
     flex: 1 1 10rem;
   }
   fieldset {
-    border: 1px solid var(--couleur-bordure);
+    border: 1px solid var(--c-bordure);
     border-radius: 0.4rem;
-    margin-block: var(--espace);
+    margin-block: var(--espace-3);
   }
   legend {
     font-weight: 600;
@@ -261,7 +265,7 @@ const ITEMS_PAR_PAGE = 10;
     display: block;
     font-weight: normal;
     font-size: 0.85rem;
-    color: var(--couleur-texte-doux);
+    color: var(--c-texte-doux);
   }
   .choix label {
     display: block;
@@ -271,6 +275,6 @@ const ITEMS_PAR_PAGE = 10;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-block: var(--espace);
+    margin-block: var(--espace-3);
   }
 </style>

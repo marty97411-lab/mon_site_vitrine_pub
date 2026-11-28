@@ -1,6 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import Avertissement from '../components/Avertissement.astro';
+import Badge from '../components/Badge.astro';
+import Illustration from '../components/Illustration.astro';
 import ListeSources from '../components/ListeSources.astro';
 import { chargerContenu, sourcesParIds } from '../lib/contenu';
 import { jobZonesSchema } from '../lib/schemas';
@@ -38,8 +40,19 @@ const donnees = {
 <Base
   titre="Vos résultats"
   description="Votre profil de personnalité, vos intérêts professionnels et des familles de métiers proches."
+  fil={[{ libelle: 'Le test', href: '/parcours' }, { libelle: 'Vos résultats' }]}
 >
-  <h1>Vos résultats</h1>
+  <header class="tete-resultats">
+    <Illustration variante="chemin" class="deco" />
+    <p>
+      <Badge type="science" />
+    </p>
+    <h1>Vos résultats</h1>
+    <p class="discret">
+      Une photographie de qui vous êtes aujourd'hui. Pas un verdict : un point de départ pour
+      réfléchir.
+    </p>
+  </header>
   <Avertissement />
   <div id="resultats" aria-live="polite">
     <p>
@@ -59,7 +72,7 @@ const donnees = {
       Le niveau de correspondance indique à quel point vos intérêts ressemblent à ceux qui
       caractérisent un métier. Ce n'est ni une note, ni une probabilité de réussite.
     </p>
-    <details class="explication">
+    <details class="depliable">
       <summary>En savoir plus sur la correspondance</summary>
       <h3>Ce que signifie le niveau affiché</h3>
       <ul>
@@ -119,7 +132,7 @@ const donnees = {
       Le niveau de préparation indique la formation et l'expérience habituellement demandées pour le
       métier aux États-Unis. L'équivalent français indiqué entre parenthèses est approximatif.
     </p>
-    <details class="explication">
+    <details class="depliable">
       <summary>En savoir plus sur les niveaux de préparation</summary>
       <p>
         La base O*NET classe les métiers en « Job Zones », de 1 (peu de préparation) à 5
@@ -192,6 +205,7 @@ const donnees = {
     type ConfigCotation,
   } from '../lib/scoring';
   import { LIBELLES_NIVEAU, rapprocher, regrouperParFamille } from '../lib/rapprochement';
+  import { pointsProfil, pourcentageBarre, sommet, versAttribut } from '../lib/visualisation';
   import { effacerTout, lireEtat } from '../lib/stockage';
 
   interface QuestionnaireClient extends ConfigCotation {
@@ -237,67 +251,79 @@ const donnees = {
     return el('a', { href }, texte);
   }
 
+  const SVG = 'http://www.w3.org/2000/svg';
+  function svg(balise: string, attributs: Record<string, string> = {}, ...enfants: Node[]) {
+    const e = document.createElementNS(SVG, balise);
+    for (const [k, v] of Object.entries(attributs)) e.setAttribute(k, v);
+    e.append(...enfants);
+    return e;
+  }
+
+  /** Barre horizontale d'un score moyen (1 à 5), avec repère du milieu de l'échelle. */
+  function barre(nom: Node | string, valeur: number | null, niveau: 'trait' | 'facette') {
+    const ligne = el('div', { class: `barre-ligne ${niveau}` });
+    const entete = el('div', { class: 'barre-entete' });
+    entete.append(
+      el('span', { class: 'barre-nom' }, nom),
+      el('span', { class: 'barre-valeur' }, valeur === null ? '—' : `${fmt(valeur)} / 5`),
+    );
+    const piste = el('div', { class: 'barre-piste', 'aria-hidden': 'true' });
+    if (valeur !== null) {
+      piste.append(
+        el('span', { class: 'barre-remplie', style: `width:${pourcentageBarre(valeur, 1, 5)}%` }),
+      );
+    }
+    ligne.append(entete, piste);
+    return ligne;
+  }
+
   function sectionPersonnalite(q: QuestionnaireClient, reponses: Record<string, number>) {
     const profil = calculerProfil(q, reponses);
-    const section = el('section', { 'aria-labelledby': 'titre-personnalite' });
+    const section = el('section', {
+      'aria-labelledby': 'titre-personnalite',
+      class: 'carte-resultat',
+    });
     section.append(
       el('h2', { id: 'titre-personnalite' }, 'Votre personnalité'),
       el(
         'p',
-        {},
-        'Chaque score est la moyenne de vos réponses (de 1 à 5) aux questions du trait. C’est une position sur un continuum, pas une catégorie. Le milieu de l’échelle (3) n’est pas la moyenne de la population : le site ne vous compare à aucune population de référence, faute de normes adaptées. ',
-        lien('/la-science#scores', 'Pourquoi ?'),
+        { class: 'phrase-graphique' },
+        'Chaque barre montre votre position entre 1 et 5 : aucun côté n’est meilleur que l’autre. Le trait vertical marque le milieu de l’échelle, qui n’est pas la moyenne de la population. ',
+        lien('/la-science#scores', 'Pourquoi pas de comparaison ?'),
       ),
     );
-    const liste = el('dl', { class: 'scores' });
+    const graphique = el('div', { class: 'barres', role: 'list' });
     for (const { trait, nom, fiche } of donnees.traits) {
       const s = profil.domaines[trait];
       if (!s) continue;
-      const dt = el('dt', {}, lien(`/traits/${fiche}`, nom));
-      const dd = el('dd');
-      if (s.valeur === null) {
-        dd.append('Réponses insuffisantes');
-      } else {
-        dd.append(
-          el('meter', { min: '1', max: '5', value: String(s.valeur), 'aria-hidden': 'true' }),
-          ` ${fmt(s.valeur)} sur une échelle de 1 à 5`,
-        );
-      }
-      liste.append(dt, dd);
+      const item = el('div', { role: 'listitem' });
+      item.append(barre(lien(`/traits/${fiche}`, nom), s.valeur, 'trait'));
       if (q.avec_facettes) {
-        const details = el('details', {}, el('summary', {}, `Les 6 facettes de « ${nom} »`));
-        const table = el('table');
-        table.append(
-          el(
-            'thead',
-            {},
-            el(
-              'tr',
-              {},
-              el('th', { scope: 'col' }, 'Facette'),
-              el('th', { scope: 'col' }, 'Score (1 à 5)'),
-            ),
-          ),
+        const details = el(
+          'details',
+          { class: 'depliable facettes' },
+          el('summary', {}, `Les 6 facettes`),
         );
-        const corps = el('tbody');
         for (const [id, f] of Object.entries(FACETTES)) {
           if (f.trait !== trait) continue;
-          const sf = profil.facettes[id as FacetteId];
-          corps.append(
-            el(
-              'tr',
-              {},
-              el('th', { scope: 'row' }, f.nomFr),
-              el('td', {}, sf?.valeur === null || !sf ? '—' : fmt(sf.valeur)),
-            ),
+          details.append(
+            barre(f.nomFr, profil.facettes[id as FacetteId]?.valeur ?? null, 'facette'),
           );
         }
-        table.append(corps);
-        details.append(table);
-        dd.append(details);
+        item.append(details);
       }
+      graphique.append(item);
     }
-    section.append(liste);
+    section.append(
+      graphique,
+      el(
+        'div',
+        { class: 'echelle', 'aria-hidden': 'true' },
+        el('span', {}, '1'),
+        el('span', {}, 'milieu'),
+        el('span', {}, '5'),
+      ),
+    );
     if (!q.avec_facettes) {
       section.append(
         el(
@@ -310,9 +336,52 @@ const donnees = {
     return section;
   }
 
+  function hexagone(scores: Record<(typeof RIASEC)[number], number>, max: number) {
+    const R = 92;
+    const texte = RIASEC.map((l) => `${RIASEC_NOMS[l].nomFr} ${scores[l]} sur ${max}`).join(', ');
+    const titre = svg('title', { id: 'hex-titre' });
+    titre.textContent = `Profil d’intérêts : ${texte}.`;
+    const groupe = svg('g', { transform: 'translate(180 130)' });
+    for (const part of [1, 0.5]) {
+      groupe.append(
+        svg('polygon', {
+          points: versAttribut(RIASEC.map((_, i) => sommet(i, R * part))),
+          class: part === 1 ? 'hex-fond' : 'hex-grille',
+        }),
+      );
+    }
+    RIASEC.forEach((_, i) => {
+      const p = sommet(i, R);
+      groupe.append(
+        svg('line', { x1: '0', y1: '0', x2: String(p.x), y2: String(p.y), class: 'hex-grille' }),
+      );
+    });
+    groupe.append(
+      svg('polygon', { points: versAttribut(pointsProfil(scores, max, R)), class: 'hex-profil' }),
+    );
+    RIASEC.forEach((l, i) => {
+      const p = sommet(i, R + 16);
+      const ancre = Math.abs(p.x) < 1 ? 'middle' : p.x > 0 ? 'start' : 'end';
+      const t = svg('text', {
+        x: String(p.x),
+        y: String(p.y + (p.y > 0 ? 12 : p.y < -R ? -2 : 4)),
+        'text-anchor': ancre,
+        class: 'hex-libelle',
+      });
+      t.textContent = RIASEC_NOMS[l].nomFr;
+      groupe.append(t);
+    });
+    return svg(
+      'svg',
+      { viewBox: '0 0 360 260', role: 'img', 'aria-labelledby': 'hex-titre', class: 'hexagone' },
+      titre,
+      groupe,
+    );
+  }
+
   function sectionInterets(q: QuestionnaireClient, reponses: Record<string, number>) {
-    const section = el('section', { 'aria-labelledby': 'titre-interets' });
-    section.append(el('h2', { id: 'titre-interets' }, 'Vos intérêts professionnels (RIASEC)'));
+    const section = el('section', { 'aria-labelledby': 'titre-interets', class: 'carte-resultat' });
+    section.append(el('h2', { id: 'titre-interets' }, 'Vos intérêts professionnels'));
     const profil = calculerProfil(q, reponses);
     const scores = profilRiasec(profil);
     if (!scores) {
@@ -320,6 +389,27 @@ const donnees = {
       return { section, scores: null };
     }
     const max = profil.domaines['R']?.max ?? 0;
+    const { code, egalite } = codeRiasec(scores);
+    section.append(
+      el(
+        'p',
+        { class: 'phrase-graphique' },
+        'Plus une pointe s’éloigne du centre, plus cette famille d’activités vous attire. Votre code d’intérêts : ',
+        el('strong', {}, code),
+        '.',
+      ),
+      hexagone(scores, max),
+    );
+    if (egalite) {
+      section.append(
+        el(
+          'p',
+          { class: 'discret' },
+          'Certaines dimensions sont à égalité : l’ordre des lettres concernées est alors arbitraire. Choisissez celle dont les activités vous parlent le plus.',
+        ),
+      );
+    }
+    const details = el('details', { class: 'depliable' }, el('summary', {}, 'Voir les valeurs'));
     const table = el('table');
     table.append(
       el('caption', {}, `Score par dimension (somme des réponses, de 0 à ${max})`),
@@ -341,17 +431,11 @@ const donnees = {
       );
     }
     table.append(corps);
-    const { code, egalite } = codeRiasec(scores);
-    section.append(table, el('p', {}, 'Votre code d’intérêts : ', el('strong', {}, code), '.'));
-    if (egalite) {
-      section.append(
-        el(
-          'p',
-          { class: 'discret' },
-          'Certaines dimensions sont à égalité : l’ordre des lettres concernées est alors arbitraire. Choisissez celle dont les activités vous parlent le plus.',
-        ),
-      );
-    }
+    details.append(
+      table,
+      el('p', {}, lien('/comprendre/interets', 'Que signifient les six dimensions ?')),
+    );
+    section.append(details);
     return { section, scores };
   }
 
@@ -382,17 +466,19 @@ const donnees = {
     const nomZone = new Map(
       jobZonesOnet.zones.map((z) => [z.zone, `${z.nom} (≈ ${z.equivalence_fr})`]),
     );
+    const grille = el('div', { class: 'grille deux familles' });
     for (const f of familles) {
       const info = nomFamille.get(f.famille);
       const bloc = el('article', { class: 'famille' });
       bloc.append(
+        el('span', { class: 'niveau' }, LIBELLES_NIVEAU[f.niveau]),
         el('h3', {}, info?.nom ?? f.famille),
         el(
           'p',
           { class: 'discret' },
-          `${LIBELLES_NIVEAU[f.niveau]} pour le métier le plus proche · famille O*NET « `,
+          'Famille O*NET « ',
           el('span', { lang: 'en' }, info?.nom_original ?? ''),
-          ' »',
+          ' » · niveau du métier le plus proche',
         ),
       );
       const ul = el('ul');
@@ -412,9 +498,10 @@ const donnees = {
         );
       }
       bloc.append(ul);
-      section.append(bloc);
+      grille.append(bloc);
     }
     section.append(
+      grille,
       el('h3', {}, 'Niveaux de préparation'),
       cloner('explication-preparation'),
       el(
@@ -467,15 +554,41 @@ const donnees = {
         ),
       );
     } else {
+      const deux = el('div', { class: 'grille deux' });
+      let metiers: Node | null = null;
+      let codeInterets = '';
       for (const q of qs) {
         if (q.modele === 'big-five') {
-          contenu.push(sectionPersonnalite(q, etat.reponses));
+          deux.prepend(sectionPersonnalite(q, etat.reponses));
         } else {
           const { section, scores } = sectionInterets(q, etat.reponses);
-          contenu.push(section);
-          if (scores) contenu.push(sectionMetiers(scores));
+          deux.append(section);
+          if (scores) {
+            metiers = sectionMetiers(scores);
+            codeInterets = codeRiasec(scores).code;
+          }
         }
       }
+      const premieres = codeInterets
+        .slice(0, 2)
+        .split('')
+        .map((l) => RIASEC_NOMS[l as (typeof RIASEC)[number]].nomFr.toLowerCase());
+      contenu.push(
+        el(
+          'aside',
+          { class: 'essentiel-resultats', 'aria-label': 'L’essentiel' },
+          el('p', { class: 'titre-essentiel' }, 'L’essentiel'),
+          el(
+            'p',
+            {},
+            premieres.length === 2
+              ? `Vos intérêts les plus marqués sont de type ${premieres[0]} et ${premieres[1]}. Les familles de métiers ci-dessous partagent cette forme de profil : ce sont des pistes à explorer, pas des destinations.`
+              : 'Voici une photographie de votre personnalité et de vos intérêts aujourd’hui : un point de départ pour réfléchir, pas un verdict.',
+          ),
+        ),
+        deux,
+      );
+      if (metiers) contenu.push(metiers);
       if (parcours.id === 'rapide') {
         contenu.push(
           el(
@@ -487,6 +600,14 @@ const donnees = {
           ),
         );
       }
+      contenu.push(
+        el(
+          'p',
+          { class: 'aide-resultats' },
+          'Ces questions remuent parfois beaucoup. Si vous souhaitez en parler, des personnes peuvent vous écouter et vous accompagner : ',
+          lien('/besoin-d-en-parler', 'Besoin d’en parler ?'),
+        ),
+      );
     }
     zone.replaceChildren(...contenu);
   }
@@ -498,28 +619,177 @@ const donnees = {
 </script>
 
 <style>
-  .scores dt {
-    font-weight: 600;
-    margin-top: var(--espace);
+  .tete-resultats {
+    position: relative;
+    overflow: hidden;
+    background: var(--c-surface-douce);
+    border-radius: var(--rayon);
+    padding: var(--espace-4);
+    margin-top: var(--espace-3);
   }
-  .scores dd {
-    margin-left: 0;
+  .tete-resultats > :not(:global(.deco)) {
+    position: relative;
+    max-width: 40rem;
   }
-  meter {
-    width: min(100%, 16rem);
-    vertical-align: middle;
+  .tete-resultats :global(.deco) {
+    position: absolute;
+    right: -3.5rem;
+    top: -3.5rem;
+    width: 10rem;
+    opacity: 0.35;
   }
-  .explication {
-    margin-block: var(--espace);
+  @media (min-width: 48rem) {
+    .tete-resultats {
+      padding: var(--espace-5);
+    }
+    .tete-resultats :global(.deco) {
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 1;
+    }
   }
-  .explication summary {
-    cursor: pointer;
-    font-weight: 600;
-    color: var(--couleur-primaire);
+  #resultats :global(.essentiel-resultats) {
+    background: var(--c-primaire-clair);
+    color: var(--c-primaire-fonce);
+    border-radius: var(--rayon);
+    padding: var(--espace-3) var(--espace-4);
+    margin-block: var(--espace-4);
+    max-width: var(--mesure);
+    font-size: 1.05rem;
   }
-  .famille {
-    border-left: 4px solid var(--couleur-primaire);
-    padding-left: var(--espace);
-    margin-block: var(--espace);
+  #resultats :global(.titre-essentiel) {
+    margin: 0 0 var(--espace-1);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  #resultats :global(.essentiel-resultats p:last-child) {
+    margin-bottom: 0;
+  }
+  #resultats :global(.carte-resultat),
+  #resultats :global(.famille) {
+    background: var(--c-surface);
+    border: 1px solid var(--c-bordure);
+    border-radius: var(--rayon);
+    box-shadow: var(--ombre);
+    padding: var(--espace-4);
+  }
+  #resultats :global(.carte-resultat h2) {
+    margin-top: 0;
+  }
+  #resultats :global(.phrase-graphique) {
+    color: var(--c-texte-doux);
+  }
+  #resultats :global(.barre-ligne) {
+    margin-block: var(--espace-3);
+  }
+  #resultats :global(.barre-ligne.facette) {
+    margin-block: var(--espace-2);
+    font-size: 0.92rem;
+  }
+  #resultats :global(.barre-entete) {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--espace-2);
+    font-weight: 700;
+  }
+  #resultats :global(.facette .barre-entete) {
+    font-weight: 400;
+  }
+  #resultats :global(.barre-valeur) {
+    font-weight: 400;
+    color: var(--c-texte-doux);
+    white-space: nowrap;
+  }
+  #resultats :global(.barre-piste) {
+    position: relative;
+    height: 0.8rem;
+    margin-top: 0.35rem;
+    border-radius: var(--rayon-pilule);
+    background: var(--c-surface-douce);
+  }
+  #resultats :global(.facette .barre-piste) {
+    height: 0.5rem;
+  }
+  #resultats :global(.barre-piste::after) {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -3px;
+    bottom: -3px;
+    width: 2px;
+    background: var(--c-bordure);
+  }
+  #resultats :global(.barre-remplie) {
+    position: absolute;
+    inset: 0 auto 0 0;
+    border-radius: var(--rayon-pilule);
+    background: linear-gradient(90deg, var(--c-graphique-doux), var(--c-graphique));
+    transition: width var(--duree) ease;
+  }
+  #resultats :global(.echelle) {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--c-texte-doux);
+  }
+  #resultats :global(.facettes) {
+    margin-block: var(--espace-2) var(--espace-3);
+    padding-top: var(--espace-2);
+  }
+  #resultats :global(.hexagone) {
+    display: block;
+    width: 100%;
+    max-width: 26rem;
+    margin: var(--espace-3) auto;
+  }
+  #resultats :global(.hex-fond) {
+    fill: var(--c-surface-douce);
+    stroke: var(--c-bordure);
+  }
+  #resultats :global(.hex-grille) {
+    fill: none;
+    stroke: var(--c-bordure);
+  }
+  #resultats :global(.hex-profil) {
+    fill: color-mix(in srgb, var(--c-graphique) 25%, transparent);
+    stroke: var(--c-graphique);
+    stroke-width: 2.5;
+    stroke-linejoin: round;
+  }
+  #resultats :global(.hex-libelle) {
+    font-family: var(--police-texte);
+    font-size: 13px;
+    fill: var(--c-texte-doux);
+  }
+  #resultats :global(.familles) {
+    margin-block: var(--espace-4);
+  }
+  #resultats :global(.famille h3) {
+    margin-top: var(--espace-2);
+  }
+  #resultats :global(.famille ul) {
+    padding-left: 1.1rem;
+    font-size: 0.95rem;
+  }
+  #resultats :global(.famille li) {
+    margin-block: 0.35rem;
+  }
+  #resultats :global(.niveau) {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--c-primaire-fonce);
+    background: var(--c-primaire-clair);
+    border-radius: var(--rayon-pilule);
+    padding: 0.15rem 0.65rem;
+  }
+  #resultats :global(.aide-resultats) {
+    margin-top: var(--espace-5);
+    background: var(--c-surface-douce);
+    border-radius: var(--rayon);
+    padding: var(--espace-3) var(--espace-4);
   }
 </style>

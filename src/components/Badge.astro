@@ -1,0 +1,51 @@
+---
+/** Badge de nature du contenu : « Science » (recherche) ou « Réflexion » (philosophie). */
+interface Props {
+  type: 'science' | 'reflexion';
+}
+const { type } = Astro.props;
+const libelle = type === 'science' ? 'Science' : 'Réflexion';
+const titre =
+  type === 'science'
+    ? 'Contenu fondé sur la recherche scientifique'
+    : 'Contenu de réflexion philosophique, pas de la science';
+---
+
+<span class:list={['badge', type]} title={titre}>
+  <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+    {type === 'science' ? (
+      <circle cx="5" cy="5" r="4" fill="currentColor" />
+    ) : (
+      <rect
+        x="1"
+        y="1"
+        width="8"
+        height="8"
+        rx="2"
+        transform="rotate(45 5 5)"
+        fill="currentColor"
+      />
+    )}
+  </svg>
+  {libelle}
+</span>
+
+<style>
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.2rem 0.7rem;
+    border-radius: var(--rayon-pilule);
+  }
+  .science {
+    background: var(--c-science-fond);
+    color: var(--c-science);
+  }
+  .reflexion {
+    background: var(--c-reflexion-fond);
+    color: var(--c-reflexion);
+  }
+</style>

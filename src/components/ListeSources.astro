@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { libelleStatut } from '../lib/sources';
 
 interface Props {
   sources: CollectionEntry<'sources'>[];
@@ -35,7 +36,7 @@ const Titre = `h${niveau}` as 'h2' | 'h3' | 'h4';
               <a href={s.url}>{s.url}</a>
             </>
           )}{' '}
-          {s.statut === 'a-verifier' && <span class="etiquette">référence à vérifier</span>}
+          {libelleStatut(s.statut) && <span class="etiquette">{libelleStatut(s.statut)}</span>}
         </li>
       ))}
     </ul>

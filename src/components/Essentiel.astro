@@ -1,0 +1,38 @@
+---
+/** Encadré « L'essentiel » : une ou deux phrases simples, visibles tout de suite. */
+interface Props {
+  titre?: string;
+}
+const { titre = "L'essentiel" } = Astro.props;
+---
+
+<aside class="essentiel" aria-label={titre}>
+  <p class="titre">{titre}</p>
+  <div class="contenu">
+    <slot />
+  </div>
+</aside>
+
+<style>
+  .essentiel {
+    background: var(--c-primaire-clair);
+    color: var(--c-primaire-fonce);
+    border-radius: var(--rayon);
+    padding: var(--espace-3) var(--espace-4);
+    margin-block: var(--espace-4);
+    max-width: var(--mesure);
+  }
+  .titre {
+    margin: 0 0 var(--espace-1);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .contenu {
+    font-size: 1.08rem;
+  }
+  .contenu :global(p) {
+    margin: 0.3em 0;
+  }
+</style>

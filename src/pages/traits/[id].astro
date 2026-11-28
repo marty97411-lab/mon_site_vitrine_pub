@@ -1,8 +1,9 @@
 ---
 import { render } from 'astro:content';
-import Base from '../../layouts/Base.astro';
-import ListeSources from '../../components/ListeSources.astro';
-import { chargerContenu, sourcesParIds } from '../../lib/contenu';
+import Article from '../../layouts/Article.astro';
+import { chargerContenu } from '../../lib/contenu';
+import { FACETTES } from '../../lib/big-five';
+import type { Affirmation } from '../../lib/schemas';
 
 export async function getStaticPaths() {
   const { traits } = await chargerContenu();
@@ -10,14 +11,73 @@ export async function getStaticPaths() {
 }
 
 const { trait } = Astro.props;
-const contenu = await chargerContenu();
 const { Content } = await render(trait);
+const t = trait.data;
+const marque = (a: Affirmation) =>
+  a.todo_source ? ' (formulation provisoire, source à ajouter)' : '';
+const facettes = t.facettes.map((f) => FACETTES[f].nomFr);
 ---
 
-<Base titre={trait.data.nom} description={trait.data.resume}>
-  <h1>{trait.data.nom}</h1>
-  {trait.data.brouillon && <p class="etiquette">Brouillon à valider</p>}
-  <p>{trait.data.resume}</p>
+<Article
+  titre={t.nom}
+  description={t.description}
+  badge="science"
+  essentiel={t.essentiel}
+  comprendre={t.comprendre}
+  corps={trait.body}
+  sources={t.sources}
+  pourAllerPlusLoin={t.pour_aller_plus_loin}
+  brouillon={t.brouillon}
+  fil={[{ libelle: 'Comprendre', href: '/comprendre' }, { libelle: t.nom }]}
+  illustration="bulles"
+>
+  <div slot="apres-comprendre" class="grille deux atouts-couts">
+    <section class="carte-simple" aria-labelledby="atouts">
+      <h2 id="atouts">Ses atouts</h2>
+      <ul>
+        {t.atouts.map((a) => (
+          <li>
+            {a.texte}
+            <span class="discret">{marque(a)}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+    <section class="carte-simple" aria-labelledby="couts">
+      <h2 id="couts">Ses coûts</h2>
+      <ul>
+        {t.couts.map((a) => (
+          <li>
+            {a.texte}
+            <span class="discret">{marque(a)}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+    <p class="discret note">
+      Il n'existe pas de bon ou de mauvais profil : chaque pôle a ses avantages et ses
+      inconvénients, selon les situations. Facettes mesurées : {facettes.join(', ')}.
+    </p>
+  </div>
   <Content />
-  <ListeSources sources={sourcesParIds(contenu, trait.data.sources)} />
-</Base>
+</Article>
+
+<style>
+  .atouts-couts {
+    margin-block: var(--espace-4);
+  }
+  .carte-simple {
+    background: var(--c-surface);
+    border: 1px solid var(--c-bordure);
+    border-radius: var(--rayon);
+    padding: var(--espace-3) var(--espace-4);
+  }
+  .carte-simple h2 {
+    margin-top: var(--espace-2);
+    font-size: 1.25rem;
+  }
+  .note {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+</style>

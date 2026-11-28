@@ -11,7 +11,7 @@ export const sourceSchema = z
     id: idSource,
     type: z.enum(['article', 'livre', 'chapitre', 'base-de-donnees', 'site-web', 'instrument']),
     auteurs: z.array(z.string().min(1)).min(1),
-    annee: z.number().int().min(1900).max(2100).nullable(),
+    annee: z.number().int().min(1500).max(2100).nullable(),
     titre: z.string().min(1),
     publication: z.string().optional(),
     volume: z.string().optional(),
@@ -22,8 +22,12 @@ export const sourceSchema = z
       .optional(),
     url: z.url().optional(),
     licence: z.string().min(1).optional(),
-    /** « verifie » : la référence a été consultée et contrôlée ; « a-verifier » sinon. */
-    statut: z.enum(['verifie', 'a-verifier']),
+    /**
+     * « verifie » : source consultée et contenu contrôlé ;
+     * « metadonnees-verifiees » : référence bibliographique vérifiée (Crossref), contenu non relu ;
+     * « a-verifier » : référence citée de mémoire ou incomplète.
+     */
+    statut: z.enum(['verifie', 'metadonnees-verifiees', 'a-verifier']),
     consulte_le: z.iso.date().optional(),
     notes: z.string().optional(),
   })

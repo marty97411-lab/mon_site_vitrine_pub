@@ -1,0 +1,47 @@
+---
+/** Encadré « Source » : référence complète d'une source de sources.json. */
+import { chargerContenu } from '../lib/contenu';
+import { libelleStatut } from '../lib/sources';
+
+interface Props {
+  id: string;
+  precision?: string;
+}
+const { id, precision } = Astro.props;
+const { sources } = await chargerContenu();
+const s = sources.find((x) => x.id === id)?.data;
+if (!s) throw new Error(`Source inconnue : ${id}`);
+const statut = libelleStatut(s.statut);
+---
+
+<p class="source">
+  <strong>Source</strong> · {s.auteurs.join(', ')} ({s.annee ?? 's. d.'}). <cite>{s.titre}</cite>
+  {s.publication && <>. {s.publication}</>}
+  {s.volume && <>, {s.volume}</>}
+  {s.pages && <>, {s.pages}</>}.{precision && <> {precision}.</>}
+  {s.doi ? (
+    <>
+      {' '}
+      <a href={`https://doi.org/${s.doi}`}>doi:{s.doi}</a>
+    </>
+  ) : (
+    s.url && (
+      <>
+        {' '}
+        <a href={s.url}>{s.url}</a>
+      </>
+    )
+  )}
+  {statut && <span class="etiquette">{statut}</span>}
+</p>
+
+<style>
+  .source {
+    font-size: 0.88rem;
+    border-left: 3px solid var(--c-secondaire);
+    background: var(--c-secondaire-clair);
+    padding: 0.6rem 0.9rem;
+    border-radius: 0 var(--rayon-petit) var(--rayon-petit) 0;
+    max-width: var(--mesure);
+  }
+</style>

@@ -1,32 +1,6 @@
-/* Styles de base, mobile d'abord. Design volontairement sobre (pas de design final). */
-:root {
-  --couleur-texte: #1b1f24;
-  --couleur-texte-doux: #4a525c;
-  --couleur-fond: #ffffff;
-  --couleur-fond-doux: #f3f5f7;
-  --couleur-primaire: #1f4e79;
-  --couleur-bordure: #c9d1d9;
-  --couleur-alerte-fond: #fff8e1;
-  --couleur-alerte-bordure: #8a6d00;
-  --couleur-focus: #b35c00;
-  --police: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --largeur-max: 46rem;
-  --espace: 1rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --couleur-texte: #e6e9ec;
-    --couleur-texte-doux: #b3bac2;
-    --couleur-fond: #14181c;
-    --couleur-fond-doux: #1e242a;
-    --couleur-primaire: #8cc4f5;
-    --couleur-bordure: #3a434c;
-    --couleur-alerte-fond: #2b2510;
-    --couleur-alerte-bordure: #e0b84a;
-    --couleur-focus: #ffb366;
-  }
-}
+/* Styles globaux de « Personnalisé » (mobile d'abord). Les valeurs viennent de tokens.css. */
+@import './tokens.css';
+@import './polices.css';
 
 *,
 *::before,
@@ -35,32 +9,180 @@
 }
 
 html {
-  font-family: var(--police);
-  line-height: 1.6;
-  color: var(--couleur-texte);
-  background: var(--couleur-fond);
+  font-family: var(--police-texte);
+  font-size: var(--taille-base);
+  line-height: var(--interligne);
+  color: var(--c-texte);
+  background: var(--c-fond);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--police-titre);
+  font-variation-settings: 'SOFT' 100;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.1rem);
+  margin: 0.3em 0 0.4em;
+}
+
+h2 {
+  font-size: clamp(1.45rem, 4vw, 1.95rem);
+  margin: 1.8em 0 0.5em;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 1.4em 0 0.4em;
+}
+
+p,
+li {
+  text-wrap: pretty;
 }
 
 a {
-  color: var(--couleur-primaire);
+  color: var(--c-primaire);
+  text-underline-offset: 0.18em;
   /* Les longues URL (sources) se coupent au lieu d'élargir la page. */
   overflow-wrap: anywhere;
 }
 
-:focus-visible {
-  outline: 3px solid var(--couleur-focus);
-  outline-offset: 2px;
+a:hover {
+  text-decoration-thickness: 2px;
 }
 
+:focus-visible {
+  outline: 3px solid var(--c-focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+blockquote {
+  margin: var(--espace-4) 0;
+  padding: var(--espace-3) var(--espace-4);
+  border-left: 4px solid var(--c-secondaire);
+  background: var(--c-secondaire-clair);
+  border-radius: 0 var(--rayon-petit) var(--rayon-petit) 0;
+  font-family: var(--police-titre);
+  font-variation-settings: 'SOFT' 100;
+  font-size: 1.1rem;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+blockquote footer,
+blockquote cite {
+  display: block;
+  margin-top: var(--espace-2);
+  font-family: var(--police-texte);
+  font-size: 0.85rem;
+  font-style: normal;
+  color: var(--c-texte-doux);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--c-bordure);
+  padding: 0.55rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+caption {
+  text-align: left;
+  font-weight: 700;
+  padding-bottom: var(--espace-2);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--c-bordure);
+  margin: var(--espace-5) 0;
+}
+
+/* --- Mise en page --- */
 .conteneur {
   width: 100%;
   max-width: var(--largeur-max);
   margin-inline: auto;
-  padding-inline: var(--espace);
+  padding-inline: var(--espace-3);
+}
+
+@media (min-width: 48rem) {
+  .conteneur {
+    padding-inline: var(--espace-4);
+  }
+}
+
+.lecture {
+  max-width: var(--mesure);
+}
+
+.grille {
+  display: grid;
+  gap: var(--espace-4);
+}
+
+@media (min-width: 48rem) {
+  .grille.deux {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grille.trois {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .grille.trois {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.discret {
+  color: var(--c-texte-doux);
+  font-size: 0.9rem;
+}
+
+.visuellement-masque {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .lien-evitement {
@@ -69,34 +191,19 @@ a {
 }
 
 .lien-evitement:focus {
-  left: var(--espace);
-  top: var(--espace);
-  background: var(--couleur-fond);
-  padding: 0.5rem;
+  left: var(--espace-3);
+  top: var(--espace-3);
+  z-index: 10;
+  background: var(--c-surface);
+  padding: var(--espace-2) var(--espace-3);
+  border-radius: var(--rayon-petit);
 }
 
-.avertissement {
-  border-left: 4px solid var(--couleur-alerte-bordure);
-  background: var(--couleur-alerte-fond);
-  padding: 0.75rem var(--espace);
-  margin-block: var(--espace);
+[hidden] {
+  display: none !important;
 }
 
-.etiquette {
-  display: inline-block;
-  font-size: 0.8rem;
-  padding: 0.1rem 0.5rem;
-  border: 1px solid var(--couleur-bordure);
-  border-radius: 999px;
-  color: var(--couleur-texte-doux);
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-/* Tableau large : défilement horizontal limité au tableau, jamais à la page. */
+/* --- Tableau large : défilement horizontal limité au tableau --- */
 .tableau-defilant {
   overflow-x: auto;
   max-width: 100%;
@@ -106,46 +213,125 @@ table {
   min-width: 36rem;
 }
 
-th,
-td {
-  overflow-wrap: anywhere;
+/* --- Encadré d'avertissement (ton doux, pas d'alarme) --- */
+.avertissement {
+  border-left: 4px solid var(--c-secondaire);
+  background: var(--c-secondaire-clair);
+  padding: var(--espace-3) var(--espace-4);
+  margin-block: var(--espace-4);
+  border-radius: 0 var(--rayon-petit) var(--rayon-petit) 0;
 }
 
-th,
-td {
-  border: 1px solid var(--couleur-bordure);
-  padding: 0.4rem 0.6rem;
-  text-align: left;
+.avertissement > :first-child {
+  margin-top: 0;
 }
 
-.discret {
-  color: var(--couleur-texte-doux);
-  font-size: 0.9rem;
+.avertissement > :last-child {
+  margin-bottom: 0;
+}
+
+/* --- Étiquettes --- */
+.etiquette {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.12rem 0.6rem;
+  border-radius: var(--rayon-pilule);
+  background: var(--c-surface-douce);
+  color: var(--c-texte-doux);
+  vertical-align: middle;
+}
+
+/* --- Boutons (aussi utilisés par le composant Bouton) --- */
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espace-2);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 0.8rem 1.35rem;
+  border: 2px solid var(--c-primaire);
+  border-radius: var(--rayon-pilule);
+  background: var(--c-primaire);
+  color: var(--c-sur-primaire);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform var(--duree) ease,
+    box-shadow var(--duree) ease;
+}
+
+.bouton:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--ombre);
 }
 
 .bouton.secondaire {
   background: transparent;
-  color: var(--couleur-primaire);
+  color: var(--c-primaire);
 }
 
-[hidden] {
-  display: none !important;
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espace-3);
+  margin-block: var(--espace-4);
 }
 
-.bouton {
-  display: inline-block;
-  font: inherit;
-  padding: 0.6rem 1.2rem;
-  border: 2px solid var(--couleur-primaire);
-  border-radius: 0.4rem;
-  background: var(--couleur-primaire);
-  color: var(--couleur-fond);
-  text-decoration: none;
+/* --- Blocs dépliables « En savoir plus » / « Approfondir » --- */
+details.depliable {
+  border-top: 1px solid var(--c-bordure);
+  margin-block: var(--espace-4);
+  padding-top: var(--espace-3);
+}
+
+details.depliable > summary {
   cursor: pointer;
+  font-weight: 700;
+  color: var(--c-primaire);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--espace-2);
+}
+
+details.depliable > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.depliable > summary::before {
+  content: '+';
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--c-primaire-clair);
+  color: var(--c-primaire-fonce);
+  transition: transform var(--duree) ease;
+}
+
+details.depliable[open] > summary::before {
+  content: '–';
+}
+
+details.depliable[open] > :not(summary) {
+  animation: apparition var(--duree) ease;
+}
+
+@keyframes apparition {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *,
+  *::before,
+  *::after {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;

@@ -1,37 +1,147 @@
 ---
 import Base from '../layouts/Base.astro';
-import Avertissement from '../components/Avertissement.astro';
+import Carte from '../components/Carte.astro';
+import Bouton from '../components/Bouton.astro';
+import Badge from '../components/Badge.astro';
+import Illustration from '../components/Illustration.astro';
+import { chargerContenu, questionnaireParId } from '../lib/contenu';
+
+const contenu = await chargerContenu();
+const parcours = contenu.parcours.map(({ data: p }) => ({
+  ...p,
+  nbQuestions: p.questionnaires.reduce(
+    (n, id) => n + questionnaireParId(contenu, id).items.length,
+    0,
+  ),
+}));
 ---
 
 <Base
-  titre="Accueil"
-  description="Un questionnaire de personnalité (Big Five) pour nourrir votre réflexion sur l'orientation professionnelle, avec des explications sourcées."
+  titre="Personnalisé"
+  description="Mieux vous connaître pour réfléchir à votre orientation : un test de personnalité et d'intérêts, des explications sourcées, et aucune promesse miracle."
 >
-  <h1>Mieux vous connaître pour réfléchir à votre orientation</h1>
-  <p>
-    Ce site vous propose deux questionnaires : l'un sur votre personnalité (modèle du Big Five,
-    items libres de droits de l'International Personality Item Pool), l'autre sur vos intérêts
-    professionnels (modèle RIASEC, O*NET Interest Profiler). Vos résultats sont présentés comme des
-    positions sur des échelles continues, jamais comme des « types ».
-  </p>
-  <Avertissement />
-  <p>
-    <a class="bouton" href="/test">
-      Commencer le questionnaire
-    </a>
-  </p>
-  <h2>Comment ça marche ?</h2>
-  <ol>
-    <li>
-      Vous choisissez un parcours rapide (environ 80 questions) ou complet (environ 180 questions).
-    </li>
-    <li>
-      Votre navigateur calcule vos scores et enregistre vos réponses localement, sans rien envoyer à
-      un serveur.
-    </li>
-    <li>
-      Vous découvrez votre profil et des familles de métiers proches de vos intérêts, avec leurs
-      explications et leurs sources.
-    </li>
-  </ol>
+  <section class="accroche">
+    <div class="accroche-texte">
+      <h1>Mieux vous connaître pour réfléchir à la vie que vous voulez mener</h1>
+      <p class="chapeau">
+        Un test de personnalité et d'intérêts professionnels, des explications claires et sourcées,
+        et des pistes de métiers à explorer. Pas de verdict, pas de métier idéal : des repères pour
+        réfléchir, à votre rythme.
+      </p>
+      <div class="actions">
+        <Bouton href="/parcours">Faire le test</Bouton>
+        <Bouton href="/situations" variante="secondaire">
+          Lire sans faire le test
+        </Bouton>
+      </div>
+      <p class="discret">
+        Gratuit, sans compte. Vos réponses restent dans votre navigateur : rien n'est envoyé.
+      </p>
+    </div>
+    <Illustration variante="chemin" class="accroche-illu" />
+  </section>
+
+  <section aria-labelledby="honnete" class="lecture">
+    <h2 id="honnete">Ce que ce site peut vous apporter, et ce qu'il ne peut pas</h2>
+    <p>
+      Un questionnaire de personnalité donne une photographie de vous à un moment donné. Il peut
+      vous aider à mettre des mots sur vos tendances et vos envies. Il ne peut pas décider à votre
+      place : la personnalité n'explique qu'une partie de la réussite et de la satisfaction au
+      travail, et elle évolue au cours de la vie.
+    </p>
+  </section>
+
+  <section aria-labelledby="parcours">
+    <h2 id="parcours">Deux parcours au choix</h2>
+    <div class="grille deux">
+      {parcours.map((p) => (
+        <Carte titre={p.nom} href={`/questionnaire/${p.id}`}>
+          <p slot="haut" class="discret">
+            {p.nbQuestions} questions · environ {p.duree}
+          </p>
+          <ul>
+            {p.apporte.map((a) => (
+              <li>{a}</li>
+            ))}
+          </ul>
+        </Carte>
+      ))}
+    </div>
+    <p>
+      <a href="/parcours">Comparer les deux parcours en détail</a>
+    </p>
+  </section>
+
+  <section aria-labelledby="lire">
+    <h2 id="lire">Vous préférez lire d'abord ?</h2>
+    <div class="grille trois">
+      <Carte titre="Ma situation" href="/situations">
+        <p slot="haut">
+          <Badge type="science" />
+        </p>
+        <p>
+          Je ne sais pas quoi faire, je veux me reconvertir, mon travail ne me plaît plus, je dois
+          choisir mes études.
+        </p>
+      </Carte>
+      <Carte titre="Comprendre" href="/comprendre">
+        <p slot="haut">
+          <Badge type="science" />
+        </p>
+        <p>
+          Les cinq grands traits de personnalité, les intérêts professionnels et la science du test.
+        </p>
+      </Carte>
+      <Carte titre="Philosophie" href="/philosophie">
+        <p slot="haut">
+          <Badge type="reflexion" />
+        </p>
+        <p>Aristote, les stoïciens, Montaigne, Sartre, Simone Weil, Hannah Arendt et l'ikigai.</p>
+      </Carte>
+    </div>
+  </section>
+
+  <section class="aide-accueil">
+    <p>
+      <strong>Un moment difficile ?</strong> Des personnes peuvent vous écouter, gratuitement.
+      <a href="/besoin-d-en-parler">Besoin d'en parler ?</a>
+    </p>
+  </section>
 </Base>
+
+<style>
+  .accroche {
+    display: grid;
+    gap: var(--espace-4);
+    align-items: center;
+    padding-block: var(--espace-5) var(--espace-4);
+  }
+  :global(.accroche-illu) {
+    width: min(70%, 18rem);
+    justify-self: center;
+  }
+  @media (min-width: 48rem) {
+    .accroche {
+      grid-template-columns: 3fr 2fr;
+      padding-block: var(--espace-6) var(--espace-5);
+    }
+    :global(.accroche-illu) {
+      width: 100%;
+      max-width: 24rem;
+    }
+  }
+  .chapeau {
+    font-size: 1.15rem;
+    color: var(--c-texte-doux);
+    max-width: 40rem;
+  }
+  .aide-accueil {
+    margin-top: var(--espace-5);
+    background: var(--c-surface-douce);
+    border-radius: var(--rayon);
+    padding: var(--espace-3) var(--espace-4);
+  }
+  .aide-accueil p {
+    margin: 0;
+  }
+</style>

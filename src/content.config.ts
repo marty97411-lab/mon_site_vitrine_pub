@@ -5,6 +5,7 @@
 import { defineCollection } from 'astro:content';
 import { file, glob } from 'astro/loaders';
 import {
+  articleSchema,
   metierSchema,
   parcoursSchema,
   questionnaireSchema,
@@ -37,4 +38,22 @@ const metiers = defineCollection({
   schema: metierSchema,
 });
 
-export const collections = { sources, questionnaires, parcours, traits, metiers };
+const situations = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/situations' }),
+  schema: articleSchema,
+});
+
+const philosophie = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/philosophie' }),
+  schema: articleSchema,
+});
+
+export const collections = {
+  sources,
+  questionnaires,
+  parcours,
+  traits,
+  metiers,
+  situations,
+  philosophie,
+};

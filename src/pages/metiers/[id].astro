@@ -30,7 +30,15 @@ const toutesSources = [
 const marqueur = (a: Affirmation) => (a.todo_source ? ' [source à ajouter]' : '');
 ---
 
-<Base titre={m.intitule} description={`Fiche métier : ${m.intitule} (exemple).`}>
+<Base
+  fil={[
+    { libelle: 'Comprendre', href: '/comprendre' },
+    { libelle: 'Fiches métiers', href: '/metiers' },
+    { libelle: m.intitule },
+  ]}
+  titre={m.intitule}
+  description={`Fiche métier : ${m.intitule} (exemple).`}
+>
   <h1>{m.intitule}</h1>
   {m.statut !== 'valide' && <p class="etiquette">Statut : {m.statut}, à valider</p>}
   <dl>

@@ -1,0 +1,41 @@
+---
+/** Fil d'Ariane : liste ordonnée de liens ; le dernier élément est la page courante. */
+interface Props {
+  elements: { libelle: string; href?: string }[];
+}
+const { elements } = Astro.props;
+---
+
+<nav class="fil-ariane" aria-label="Fil d'Ariane">
+  <ol>
+    <li>
+      <a href="/">Accueil</a>
+    </li>
+    {elements.map((e) => (
+      <li>
+        {e.href ? <a href={e.href}>{e.libelle}</a> : <span aria-current="page">{e.libelle}</span>}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<style>
+  .fil-ariane ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+    margin: var(--espace-3) 0 0;
+    padding: 0;
+    font-size: 0.85rem;
+    color: var(--c-texte-doux);
+  }
+  .fil-ariane li + li::before {
+    content: '›';
+    margin-right: 0.5rem;
+    color: var(--c-texte-doux);
+  }
+  .fil-ariane a {
+    color: var(--c-texte-doux);
+  }
+</style>
