@@ -52,7 +52,10 @@ métiers.
    raison, le statut (`a_valider`). Ordre de priorité : simulation déterministe des 120 ordres de
    trois dimensions RIASEC dominantes, avec la présentation de la page de résultats. Les décisions
    vont dans `src/data/fr/validations.json` (`valide` / `rejete`), relu à chaque import et jamais
-   écrasé.
+   écrasé. Une validation peut préciser une **appellation** ROME (code OGR, contrôlé : elle doit
+   appartenir à la fiche) affichée à la place de l'intitulé de la fiche, quand le métier n'a pas
+   de fiche propre (ex. Fundraisers → « Fundraiser - Collecteur / Collectrice de fonds », fiche
+   M1705 Responsable marketing). Premières décisions du propriétaire le 28/11/2026 (9 lignes).
 7. **Certifications** : fiches RNCP actives uniquement (jamais le RS) ; d'abord les plus
    spécifiques (rattachées au moins de codes ROME), puis par niveau, puis les numéros les plus
    récents ; au plus 5 ; lien `https://www.francecompetences.fr/recherche/rncp/<n>/`. Niveaux du

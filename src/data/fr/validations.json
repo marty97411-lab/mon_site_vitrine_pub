@@ -1,4 +1,69 @@
 {
-  "note": "Décisions de relecture manuelle des correspondances O*NET → ROME. Une ligne par couple (code O*NET, code ROME). decision : « valide » (affichée même si la qualité automatique est faible, ou ajoutée si absente de la chaîne) ou « rejete » (jamais affichée). Relues par le script import-fr.mjs à chaque import ; ce fichier n'est jamais écrasé.",
-  "validations": []
+  "note": "Décisions de relecture manuelle des correspondances O*NET → ROME. Une ligne par couple (code O*NET, code ROME). decision : « valide » (affichée même si la qualité automatique est faible, ou ajoutée si absente de la chaîne) ou « rejete » (jamais affichée). appellation (facultatif, code OGR du ROME) : appellation affichée à la place de l'intitulé de la fiche ; elle doit appartenir à la fiche. Relues par le script import-fr.mjs à chaque import ; ce fichier n'est jamais écrasé.",
+  "validations": [
+    {
+      "onet": "39-5091.00",
+      "rome": "L1501",
+      "decision": "valide",
+      "note": "Maquilleur spectacle plus juste (propriétaire).",
+      "date": "2026-11-28"
+    },
+    {
+      "onet": "39-5091.00",
+      "rome": "D1208",
+      "decision": "rejete",
+      "note": "Esthéticien : maquillage beauté, pas spectacle (propriétaire).",
+      "date": "2026-11-28"
+    },
+    {
+      "onet": "35-2013.00",
+      "rome": "G1609",
+      "decision": "valide",
+      "note": "Cooks, Private Household → Cuisinier : correct (propriétaire).",
+      "date": "2026-11-28"
+    },
+    {
+      "onet": "39-9011.01",
+      "rome": "K1303",
+      "decision": "valide",
+      "note": "Nannies = auxiliaire parentale (propriétaire). Dans le ROME, l'appellation « Auxiliaire parental / Auxiliaire parentale » (11462) est rangée sous K1309 Assistant familial (famille d'accueil) : fiche K1303 Garde d'enfant retenue, définie comme la garde au domicile des parents.",
+      "date": "2026-11-28"
+    },
+    {
+      "onet": "13-1131.00",
+      "rome": "M1705",
+      "decision": "valide",
+      "appellation": "38400",
+      "note": "Fundraisers = chargé / responsable de levée de fonds (propriétaire). Pas de fiche dédiée dans le ROME : appellation officielle « Fundraiser - Collecteur / Collectrice de fonds » de la fiche M1705.",
+      "date": "2026-11-28"
+    },
+    {
+      "onet": "39-9011.00",
+      "rome": "K1202",
+      "decision": "valide",
+      "note": "Childcare Workers = professionnels de la petite enfance (propriétaire).",
+      "date": "2026-11-28"
+    },
+    {
+      "onet": "39-9011.00",
+      "rome": "K1307",
+      "decision": "valide",
+      "note": "Childcare Workers = professionnels de la petite enfance (propriétaire).",
+      "date": "2026-11-28"
+    },
+    {
+      "onet": "39-9011.00",
+      "rome": "K1310",
+      "decision": "valide",
+      "note": "Childcare Workers = professionnels de la petite enfance (propriétaire) ; ajoutée à la main.",
+      "date": "2026-11-28"
+    },
+    {
+      "onet": "39-9011.00",
+      "rome": "G1237",
+      "decision": "rejete",
+      "note": "Accueil de loisirs : pas la petite enfance (propriétaire).",
+      "date": "2026-11-28"
+    }
+  ]
 }

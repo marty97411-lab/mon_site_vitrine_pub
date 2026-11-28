@@ -738,6 +738,14 @@
         "statut": "a_valider"
       }
     ],
+    "13-1131.00": [
+      {
+        "rome": "M1705",
+        "qualite": "proche",
+        "statut": "valide",
+        "appellation": "38400"
+      }
+    ],
     "13-1151.00": [
       {
         "rome": "K2111",
@@ -4312,7 +4320,7 @@
       {
         "rome": "G1609",
         "qualite": "approchee",
-        "statut": "a_valider"
+        "statut": "valide"
       }
     ],
     "35-2014.00": [
@@ -4695,14 +4703,9 @@
     ],
     "39-5091.00": [
       {
-        "rome": "D1208",
-        "qualite": "exacte",
-        "statut": "a_valider"
-      },
-      {
         "rome": "L1501",
         "qualite": "approchee",
-        "statut": "a_valider"
+        "statut": "valide"
       }
     ],
     "39-5092.00": [
@@ -4796,19 +4799,31 @@
     ],
     "39-9011.00": [
       {
-        "rome": "G1237",
-        "qualite": "approchee",
-        "statut": "a_valider"
+        "rome": "K1310",
+        "qualite": "manuelle",
+        "statut": "valide"
       },
       {
         "rome": "K1202",
         "qualite": "approchee",
-        "statut": "a_valider"
+        "statut": "valide"
+      },
+      {
+        "rome": "K1307",
+        "qualite": "approchee",
+        "statut": "valide"
       },
       {
         "rome": "K1308",
         "qualite": "approchee",
         "statut": "a_valider"
+      }
+    ],
+    "39-9011.01": [
+      {
+        "rome": "K1303",
+        "qualite": "proche",
+        "statut": "valide"
       }
     ],
     "39-9031.00": [
@@ -8827,7 +8842,6 @@
     "G1231": "Accompagnateur / Accompagnatrice nature",
     "G1235": "Animateur / Animatrice de séjour de vacances",
     "G1236": "Animateur / Animatrice de club de vacances",
-    "G1237": "Directeur / Directrice d’accueil de loisirs sans hébergement",
     "G1244": "Directeur / Directrice des jeux",
     "G1301": "Concepteur / Conceptrice de produits touristiques",
     "G1303": "Conseiller / Conseillère en voyages",
@@ -9109,10 +9123,13 @@
     "K1221": "Ecoutant social / Ecoutante sociale",
     "K1230": "Coordonnateur / Coordonnatrice de service social",
     "K1302": "Assistant / Assistante de vie dépendance",
+    "K1303": "Garde d’enfant",
     "K1304": "Employé familial / Employée familiale",
     "K1306": "Accompagnant Educatif et Social (AES) / Accompagnante Educative et Sociale (AES)",
+    "K1307": "Animateur / Animatrice petite enfance",
     "K1308": "Agent territorial spécialisé / Agente territoriale spécialisée des écoles maternelles (ATSEM)",
     "K1309": "Assistant familial / Assistante familiale",
+    "K1310": "Assistant maternel / Assistante maternelle",
     "K1311": "Assistant / Assistante de vie aux familles",
     "K1401": "Directeur / Directrice d’administration centrale",
     "K1407": "Directeur / Directrice d’établissement médicosocial",
@@ -9384,5 +9401,8 @@
     "N4306": "Agent / Agente d’accompagnement des trains",
     "N4401": "Aiguilleur / Aiguilleure du rail",
     "N4403": "Opérateur / Opératrice ferroviaire"
+  },
+  "appellations": {
+    "38400": "Fundraiser - Collecteur / Collectrice de fonds"
   }
 }
