@@ -613,5 +613,43 @@
     "titre": "Ikigai ni tsuite (« À propos de l'ikigai »)",
     "statut": "a-verifier",
     "notes": "Ouvrage japonais souvent cité comme référence sur l'ikigai ; cité de mémoire, à vérifier."
+  },
+  {
+    "id": "sisk-2018",
+    "type": "article",
+    "auteurs": ["Sisk, V. F.", "Burgoyne, A. P.", "Sun, J.", "Butler, J. L.", "Macnamara, B. N."],
+    "annee": 2018,
+    "titre": "To what extent and under which circumstances are growth mind-sets important to academic achievement? Two meta-analyses",
+    "publication": "Psychological Science",
+    "volume": "29",
+    "pages": "549-571",
+    "doi": "10.1177/0956797617739704",
+    "statut": "metadonnees-verifiees",
+    "consulte_le": "2026-11-28",
+    "notes": "Métadonnées vérifiées via Crossref (vol. 29, n° 4). Contenu non relu. Cité dans le résumé détaillé de « Changer d'état d'esprit » (Dweck)."
+  },
+  {
+    "id": "crede-2017",
+    "type": "article",
+    "auteurs": ["Credé, M.", "Tynan, M. C.", "Harms, P. D."],
+    "annee": 2017,
+    "titre": "Much ado about grit: A meta-analytic synthesis of the grit literature",
+    "publication": "Journal of Personality and Social Psychology",
+    "volume": "113",
+    "pages": "492-511",
+    "doi": "10.1037/pspp0000102",
+    "statut": "metadonnees-verifiees",
+    "consulte_le": "2026-11-28",
+    "notes": "Métadonnées vérifiées via Crossref (vol. 113, n° 3). Contenu non relu (dont le nombre de 88 études). Cité dans le résumé détaillé de « Grit » (Duckworth)."
+  },
+  {
+    "id": "schimmack-heene-kesavan-2017",
+    "type": "site-web",
+    "auteurs": ["Schimmack, U.", "Heene, M.", "Kesavan, K."],
+    "annee": 2017,
+    "titre": "Reconstruction of a train wreck: How priming research went off the rails",
+    "publication": "Replicability-Index (blog)",
+    "statut": "a-verifier",
+    "notes": "Billet de blog cité de mémoire (analyse du chapitre sur l'amorçage de « Thinking, Fast and Slow », commentée par Kahneman). Site non joignable depuis l'environnement de travail : URL, date et titre exact à vérifier. Cité dans le résumé détaillé de « Système 1, système 2 »."
   }
 ]

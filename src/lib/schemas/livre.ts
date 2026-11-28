@@ -1,5 +1,6 @@
 import { z } from 'astro/zod';
 import { isbnValide } from '../isbn';
+import { idSource } from './source';
 
 export const THEMES_LIVRES = [
   'connaissance-de-soi',
@@ -55,6 +56,21 @@ export const livreSchema = z
     resume: z.string().min(1),
     pour_qui: z.string().min(1),
     a_garder_en_tete: z.string().min(1),
+    /**
+     * Résumé détaillé rédigé par l'équipe, affiché dans un bloc dépliable fermé par défaut.
+     * Chaque entrée est un paragraphe ; « *texte* » est rendu en italique.
+     */
+    resume_detaille: z
+      .object({
+        idees_principales: z.array(z.string().min(1)).min(1),
+        a_retenir: z.array(z.string().min(1)).min(1),
+        limites: z.array(z.string().min(1)).min(1),
+        /** Ajoute « (livre discuté) » au titre de la partie « Limites ». */
+        livre_discute: z.boolean().default(false),
+        /** Références citées dans les limites (identifiants de sources.json). */
+        sources: z.array(idSource).default([]),
+      })
+      .optional(),
     /** Lien de lecture ou de notice vérifié (DOI, Wikisource), en plus des recherches BnF/Amazon. */
     lien: z.object({ url: z.url(), libelle: z.string().min(1) }).optional(),
     verification: z.object({
