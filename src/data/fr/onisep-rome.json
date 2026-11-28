@@ -1,0 +1,3411 @@
+{
+  "genere_le": "2026-11-28",
+  "licence": "ODbL 1.0",
+  "attribution": "Extrait du jeu de données Idéo-Métiers Onisep (Onisep), sous licence ODbL : sélection des colonnes libellé, lien et code ROME. Cet extrait reste sous ODbL.",
+  "source": "https://data.onisep.fr/api/v1/dataset/5fa5949243f97/search?size=5000",
+  "modifie_le": "2026-10-17",
+  "fiches": {
+    "A1101": [
+      {
+        "libelle": "conducteur / conductrice d'engins forestiers de récolte en entreprises de travaux forestiers",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.741"
+      },
+      {
+        "libelle": "conducteur / conductrice de machines agricoles",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.287"
+      }
+    ],
+    "A1201": [
+      {
+        "libelle": "bûcheron / bûcheronne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.705"
+      },
+      {
+        "libelle": "élagueur / élagueuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.900"
+      }
+    ],
+    "A1203": [
+      {
+        "libelle": "ouvrier / ouvrière paysagiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.120"
+      },
+      {
+        "libelle": "responsable des espaces verts",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8117"
+      },
+      {
+        "libelle": "technicien / technicienne paysagiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.197"
+      }
+    ],
+    "A1204": [
+      {
+        "libelle": "garde (chasse, pêche, littoral, rivière, parcs nationaux)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.71"
+      },
+      {
+        "libelle": "technicien / technicienne de rivière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8121"
+      }
+    ],
+    "A1205": [
+      {
+        "libelle": "ouvrier forestier / ouvrière forestière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.50"
+      }
+    ],
+    "A1301": [
+      {
+        "libelle": "conseiller / conseillère agricole",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.265"
+      },
+      {
+        "libelle": "conseiller / conseillère d'élevage",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.234"
+      },
+      {
+        "libelle": "technicien forestier / technicienne forestière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.290"
+      }
+    ],
+    "A1303": [
+      {
+        "libelle": "agronome",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.428"
+      },
+      {
+        "libelle": "animateur / animatrice de bassin versant",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.227"
+      },
+      {
+        "libelle": "chargé / chargée d'études naturalistes",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.610"
+      },
+      {
+        "libelle": "chef / cheffe de projet biodiversité",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.944"
+      },
+      {
+        "libelle": "halieute",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.620"
+      },
+      {
+        "libelle": "ingénieur / ingénieure hydroécologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.349"
+      },
+      {
+        "libelle": "ingénieur forestier / ingénieure forestière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.156"
+      },
+      {
+        "libelle": "inséminateur / inséminatrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.831"
+      },
+      {
+        "libelle": "paysagiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.158"
+      }
+    ],
+    "A1403": [
+      {
+        "libelle": "palefrenier / palefrenière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.19"
+      }
+    ],
+    "A1404": [
+      {
+        "libelle": "aquaculteur / aquacultrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.90"
+      }
+    ],
+    "A1410": [
+      {
+        "libelle": "berger / bergère",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7915"
+      }
+    ],
+    "A1414": [
+      {
+        "libelle": "chef / cheffe de cultures légumières",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.76"
+      },
+      {
+        "libelle": "horticulteur / horticultrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.157"
+      },
+      {
+        "libelle": "maraîcher / maraîchère",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.200"
+      },
+      {
+        "libelle": "pépiniériste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.233"
+      }
+    ],
+    "A1416": [
+      {
+        "libelle": "agriculteur / agricultrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.547"
+      },
+      {
+        "libelle": "céréalier / céréalière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8073"
+      },
+      {
+        "libelle": "conducteur / conductrice de travaux en entreprise de travaux agricoles",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.116"
+      },
+      {
+        "libelle": "ouvrier / ouvrière agricole",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.903"
+      }
+    ],
+    "A1503": [
+      {
+        "libelle": "toiletteur / toiletteuse d'animaux",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.559"
+      }
+    ],
+    "A1504": [
+      {
+        "libelle": "ostéopathe animalier / animalière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7948"
+      },
+      {
+        "libelle": "vétérinaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.171"
+      }
+    ],
+    "B1101": [
+      {
+        "libelle": "artiste graffeur professionnel / artiste graffeuse professionnelle",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7834"
+      },
+      {
+        "libelle": "illustrateur / illustratrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.780"
+      }
+    ],
+    "B1201": [
+      {
+        "libelle": "céramiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.309"
+      }
+    ],
+    "B1302": [
+      {
+        "libelle": "décorateur / décoratrice sur verre",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7937"
+      },
+      {
+        "libelle": "restaurateur / restauratrice d'oeuvres d'art",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.52"
+      }
+    ],
+    "B1303": [
+      {
+        "libelle": "graveur / graveuse sur métal",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.533"
+      }
+    ],
+    "B1402": [
+      {
+        "libelle": "relieur-doreur / relieuse-doreuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.581"
+      }
+    ],
+    "B1501": [
+      {
+        "libelle": "accordeur de piano / accordeuse de piano",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7935"
+      },
+      {
+        "libelle": "archetier / archetière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7941"
+      },
+      {
+        "libelle": "facteur / factrice d'instruments",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.859"
+      },
+      {
+        "libelle": "luthier / luthière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.966"
+      }
+    ],
+    "B1601": [
+      {
+        "libelle": "bronzier / bronzière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.62"
+      },
+      {
+        "libelle": "ferronnier / ferronnière d'art",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.781"
+      },
+      {
+        "libelle": "fondeur / fondeuse de cloches",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7944"
+      }
+    ],
+    "B1603": [
+      {
+        "libelle": "bijoutier / bijoutière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.681"
+      },
+      {
+        "libelle": "joaillier / joaillière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8208"
+      },
+      {
+        "libelle": "monteur-assembleur / monteuse-assembleuse en bijouterie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8223"
+      },
+      {
+        "libelle": "orfèvre",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.310"
+      }
+    ],
+    "B1604": [
+      {
+        "libelle": "campaniste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7913"
+      },
+      {
+        "libelle": "horloger / horlogère",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.605"
+      }
+    ],
+    "B1801": [
+      {
+        "libelle": "modiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.897"
+      }
+    ],
+    "B1802": [
+      {
+        "libelle": "bottier / bottière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.447"
+      },
+      {
+        "libelle": "maroquinier / maroquinière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.566"
+      },
+      {
+        "libelle": "sellier / sellière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.98"
+      }
+    ],
+    "B1803": [
+      {
+        "libelle": "fourreur / fourreuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7938"
+      },
+      {
+        "libelle": "tailleur-couturier / tailleuse-couturière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.291"
+      }
+    ],
+    "B1804": [
+      {
+        "libelle": "brodeur / brodeuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.188"
+      },
+      {
+        "libelle": "rentrayeur / rentrayeuse de tapis et tapisserie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7939"
+      }
+    ],
+    "B1805": [
+      {
+        "libelle": "créateur / créatrice textile",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.97"
+      },
+      {
+        "libelle": "styliste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.25"
+      }
+    ],
+    "B1806": [
+      {
+        "libelle": "tapissier / tapissière d'ameublement",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.177"
+      }
+    ],
+    "C1102": [
+      {
+        "libelle": "conseiller / conseillère en assurances",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.909"
+      }
+    ],
+    "C1103": [
+      {
+        "libelle": "agent général / agente générale d'assurances",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.409"
+      },
+      {
+        "libelle": "courtier / courtière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.925"
+      }
+    ],
+    "C1105": [
+      {
+        "libelle": "actuaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.861"
+      },
+      {
+        "libelle": "gestionnaire actif / passif",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.815"
+      }
+    ],
+    "C1106": [
+      {
+        "libelle": "expert / experte en assurances",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.329"
+      }
+    ],
+    "C1110": [
+      {
+        "libelle": "souscripteur / souscriptrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.483"
+      }
+    ],
+    "C1201": [
+      {
+        "libelle": "guichetier / guichetière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.271"
+      }
+    ],
+    "C1202": [
+      {
+        "libelle": "analyste de crédit",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.661"
+      }
+    ],
+    "C1206": [
+      {
+        "libelle": "chargé / chargée de clientèle banque",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.671"
+      }
+    ],
+    "C1207": [
+      {
+        "libelle": "directeur / directrice d'agence bancaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.544"
+      }
+    ],
+    "C1501": [
+      {
+        "libelle": "administrateur / administratrice de biens",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.396"
+      },
+      {
+        "libelle": "syndic de copropriété",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.764"
+      }
+    ],
+    "C1504": [
+      {
+        "libelle": "agent immobilier / agente immobilière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.270"
+      }
+    ],
+    "D1101": [
+      {
+        "libelle": "boucher / bouchère",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.268"
+      }
+    ],
+    "D1102": [
+      {
+        "libelle": "boulanger / boulangère",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.17"
+      }
+    ],
+    "D1104": [
+      {
+        "libelle": "chocolatier-confiseur / chocolatière-confiseuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.88"
+      },
+      {
+        "libelle": "glacier-sorbetier / glacière-sorbetière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.377"
+      },
+      {
+        "libelle": "pâtissier / pâtissière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.152"
+      }
+    ],
+    "D1106": [
+      {
+        "libelle": "commerçant / commerçante en alimentation",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.16"
+      },
+      {
+        "libelle": "vendeur / vendeuse conseil caviste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.631"
+      }
+    ],
+    "D1202": [
+      {
+        "libelle": "coiffeur / coiffeuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.39"
+      }
+    ],
+    "D1205": [
+      {
+        "libelle": "teinturier-blanchisseur / teinturière-blanchisseuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.694"
+      }
+    ],
+    "D1206": [
+      {
+        "libelle": "cordonnier / cordonnière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.425"
+      }
+    ],
+    "D1208": [
+      {
+        "libelle": "esthéticien-cosméticien / esthéticienne-cosméticienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.448"
+      }
+    ],
+    "D1209": [
+      {
+        "libelle": "fleuriste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.18"
+      }
+    ],
+    "D1211": [
+      {
+        "libelle": "kiosquier / kiosquière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7833"
+      },
+      {
+        "libelle": "libraire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.269"
+      },
+      {
+        "libelle": "vendeur / vendeuse d'articles de sport",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.135"
+      }
+    ],
+    "D1212": [
+      {
+        "libelle": "vendeur / vendeuse en micro-informatique et multimédia",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.594"
+      },
+      {
+        "libelle": "vendeur spécialisé en bricolage / vendeuse spécialisée en bricolage",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.857"
+      },
+      {
+        "libelle": "vendeur-magasinier / vendeuse-magasinière en fournitures automobiles",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.317"
+      }
+    ],
+    "D1401": [
+      {
+        "libelle": "assistant commercial / assistante commerciale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.28"
+      }
+    ],
+    "D1402": [
+      {
+        "libelle": "commercial / commerciale export",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.453"
+      },
+      {
+        "libelle": "commercial / commerciale sédentaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8012"
+      },
+      {
+        "libelle": "commercial itinérant / commerciale itinérante",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8011"
+      }
+    ],
+    "D1405": [
+      {
+        "libelle": "visiteur médical / visiteuse médicale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.418"
+      }
+    ],
+    "D1406": [
+      {
+        "libelle": "chef / cheffe des ventes",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.541"
+      }
+    ],
+    "D1407": [
+      {
+        "libelle": "ingénieur technico-commercial / ingénieure technico-commerciale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.74"
+      },
+      {
+        "libelle": "ingénieur technico-commercial / ingénieure technico-commerciale en chimie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.826"
+      },
+      {
+        "libelle": "ingénieur technico-commercial / ingénieure technico-commerciale en électronique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.104"
+      },
+      {
+        "libelle": "ingénieur technico-commercial / ingénieure technico-commerciale en informatique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.204"
+      },
+      {
+        "libelle": "technico-commercial / technico-commerciale en agroalimentaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.548"
+      },
+      {
+        "libelle": "technico-commercial / technico-commerciale en biologie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8065"
+      }
+    ],
+    "D1408": [
+      {
+        "libelle": "conseiller / conseillère relation client à distance",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.762"
+      }
+    ],
+    "D1504": [
+      {
+        "libelle": "directeur / directrice de magasin à grande surface",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.542"
+      }
+    ],
+    "D1505": [
+      {
+        "libelle": "caissier / caissière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.151"
+      }
+    ],
+    "D1506": [
+      {
+        "libelle": "e-merchandiser (marchandiseur / marchandiseuse) en mode",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.967"
+      },
+      {
+        "libelle": "marchandiseur / marchandiseuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.150"
+      }
+    ],
+    "E1102": [
+      {
+        "libelle": "écrivain / écrivaine",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.463"
+      },
+      {
+        "libelle": "écrivain / écrivaine public",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.477"
+      },
+      {
+        "libelle": "scénariste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.754"
+      }
+    ],
+    "E1103": [
+      {
+        "libelle": "attaché / attachée de presse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.879"
+      },
+      {
+        "libelle": "chargé / chargée de communication interne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.66"
+      },
+      {
+        "libelle": "chargé / chargée des relations publiques",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.314"
+      },
+      {
+        "libelle": "chef / cheffe de projet communication digitale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.802"
+      },
+      {
+        "libelle": "directeur / directrice de communication",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.650"
+      },
+      {
+        "libelle": "rédacteur / rédactrice on line (en ligne)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.334"
+      }
+    ],
+    "E1104": [
+      {
+        "libelle": "concepteur / conceptrice de jeux vidéo",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.885"
+      },
+      {
+        "libelle": "concepteur / conceptrice de niveaux de jeu Web",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.823"
+      },
+      {
+        "libelle": "concepteur / conceptrice multimédia",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.564"
+      },
+      {
+        "libelle": "concepteur-rédacteur / conceptrice-rédactrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.316"
+      },
+      {
+        "libelle": "directeur / directrice artistique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.537"
+      },
+      {
+        "libelle": "webmestre (administrateur / administratrice de site)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.422"
+      }
+    ],
+    "E1105": [
+      {
+        "libelle": "éditeur / éditrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.678"
+      },
+      {
+        "libelle": "secrétaire d'édition",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.67"
+      }
+    ],
+    "E1107": [
+      {
+        "libelle": "chargé / chargée de projet événementiel",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.473"
+      }
+    ],
+    "E1108": [
+      {
+        "libelle": "codeur / codeuse en LfPC (langue française parlée complétée)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7899"
+      },
+      {
+        "libelle": "intermédiateur / intermédiatrice LSF (langue des signes française)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7903"
+      },
+      {
+        "libelle": "interprète de l'écrit",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7898"
+      },
+      {
+        "libelle": "interprète français / LSF (langue des signes française)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7744"
+      },
+      {
+        "libelle": "traducteur / traductrice français écrit / LSF",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7902"
+      },
+      {
+        "libelle": "traducteur / traductrice technique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.354"
+      },
+      {
+        "libelle": "traducteur-interprète / traductrice-interprète",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.768"
+      }
+    ],
+    "E1201": [
+      {
+        "libelle": "photographe",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.883"
+      }
+    ],
+    "E1203": [
+      {
+        "libelle": "technicien / technicienne photo",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7947"
+      }
+    ],
+    "E1205": [
+      {
+        "libelle": "designer / designeuse d'interaction",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.928"
+      },
+      {
+        "libelle": "designer / designeuse graphique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.5"
+      },
+      {
+        "libelle": "dessinateur / dessinatrice de BD",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.693"
+      },
+      {
+        "libelle": "maquettiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.536"
+      },
+      {
+        "libelle": "modeleur / modeleuse 3D",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.743"
+      },
+      {
+        "libelle": "UI designer (concepteur / conceptrice d'interface utilisateur)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7901"
+      },
+      {
+        "libelle": "UX designer (concepteur / conceptrice de l'expérience utilisateur)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.936"
+      },
+      {
+        "libelle": "webdesigner",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.450"
+      }
+    ],
+    "E1301": [
+      {
+        "libelle": "conducteur / conductrice de machine à imprimer",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.274"
+      },
+      {
+        "libelle": "sérigraphe",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.176"
+      }
+    ],
+    "E1302": [
+      {
+        "libelle": "façonnier / façonnière des industries graphiques",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.318"
+      }
+    ],
+    "E1305": [
+      {
+        "libelle": "correcteur / correctrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.331"
+      }
+    ],
+    "E1306": [
+      {
+        "libelle": "opérateur / opératrice en signalétique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7945"
+      },
+      {
+        "libelle": "opérateur / opératrice prépresse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.406"
+      }
+    ],
+    "F1101": [
+      {
+        "libelle": "architecte",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.161"
+      },
+      {
+        "libelle": "architecte du patrimoine",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.374"
+      },
+      {
+        "libelle": "architecte-ingénieur / architecte-ingénieure",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8071"
+      }
+    ],
+    "F1103": [
+      {
+        "libelle": "diagnostiqueur / diagnostiqueuse immobilier",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.910"
+      }
+    ],
+    "F1104": [
+      {
+        "libelle": "assistant / assistante en architecture",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.648"
+      },
+      {
+        "libelle": "dessinateur-projeteur / dessinatrice-projeteuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.455"
+      }
+    ],
+    "F1105": [
+      {
+        "libelle": "géochimiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.475"
+      },
+      {
+        "libelle": "géologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.570"
+      },
+      {
+        "libelle": "géologue minier / minière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.337"
+      },
+      {
+        "libelle": "géologue modélisateur / modélisatrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.105"
+      },
+      {
+        "libelle": "géophysicien / géophysicienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.773"
+      },
+      {
+        "libelle": "géotechnicien / géotechnicienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.709"
+      },
+      {
+        "libelle": "géothermicien / géothermicienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.443"
+      },
+      {
+        "libelle": "glaciologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.829"
+      },
+      {
+        "libelle": "hydrogéologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.607"
+      },
+      {
+        "libelle": "hydrologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.912"
+      },
+      {
+        "libelle": "ingénieur / ingénieure réservoir",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.821"
+      },
+      {
+        "libelle": "pédologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.369"
+      },
+      {
+        "libelle": "volcanologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.703"
+      }
+    ],
+    "F1106": [
+      {
+        "libelle": "BIM manager / manageuse (responsable modélisation des données du bâtiment)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.902"
+      },
+      {
+        "libelle": "chargé / chargée d'affaires en génie climatique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.107"
+      },
+      {
+        "libelle": "chargé / chargée d'études de prix",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.498"
+      },
+      {
+        "libelle": "domoticien / domoticienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.795"
+      },
+      {
+        "libelle": "ingénieur / ingénieure du BTP",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.182"
+      },
+      {
+        "libelle": "ingénieur / ingénieure efficacité énergétique du bâtiment",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.500"
+      },
+      {
+        "libelle": "ingénieur / ingénieure en acoustique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.728"
+      },
+      {
+        "libelle": "ingénieur / ingénieure en génie climatique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.61"
+      },
+      {
+        "libelle": "ingénieur / ingénieure structures",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.947"
+      },
+      {
+        "libelle": "technicien BIM modeleur / technicienne BIM modeleuse (modélisation des données du bâtiment)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7931"
+      }
+    ],
+    "F1107": [
+      {
+        "libelle": "géomètre-topographe",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.408"
+      }
+    ],
+    "F1202": [
+      {
+        "libelle": "chef / cheffe d'équipe TP (travaux publics)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7968"
+      },
+      {
+        "libelle": "chef / cheffe de chantier",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.438"
+      },
+      {
+        "libelle": "chef / cheffe de chantier en installations électriques",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.286"
+      }
+    ],
+    "F1301": [
+      {
+        "libelle": "grutier / grutière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.698"
+      }
+    ],
+    "F1302": [
+      {
+        "libelle": "conducteur / conductrice d'engins de damage",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7957"
+      },
+      {
+        "libelle": "conducteur / conductrice d'engins de travaux publics",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.27"
+      }
+    ],
+    "F1401": [
+      {
+        "libelle": "technicien / technicienne forage",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7956"
+      }
+    ],
+    "F1402": [
+      {
+        "libelle": "préposé / préposée au tir",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7778"
+      }
+    ],
+    "F1502": [
+      {
+        "libelle": "monteur-échafaudeur / monteuse-échafaudeuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7917"
+      }
+    ],
+    "F1503": [
+      {
+        "libelle": "charpentier / charpentière bois",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.9"
+      },
+      {
+        "libelle": "charpentier / charpentière de marine",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.915"
+      }
+    ],
+    "F1601": [
+      {
+        "libelle": "plâtrier / plâtrière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.538"
+      },
+      {
+        "libelle": "staffeur-ornemaniste / staffeuse-ornemaniste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.456"
+      }
+    ],
+    "F1602": [
+      {
+        "libelle": "électricien installateur / électricienne installatrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.56"
+      }
+    ],
+    "F1603": [
+      {
+        "libelle": "monteur / monteuse en installations thermiques et climatiques",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.264"
+      },
+      {
+        "libelle": "plombier / plombière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.266"
+      }
+    ],
+    "F1605": [
+      {
+        "libelle": "installateur / installatrice en télécoms",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.298"
+      },
+      {
+        "libelle": "monteur / monteuse en réseaux d'énergie (électricité)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.573"
+      },
+      {
+        "libelle": "technicien / technicienne en lignes haute tension",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.862"
+      }
+    ],
+    "F1606": [
+      {
+        "libelle": "peintre en bâtiment",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.10"
+      }
+    ],
+    "F1608": [
+      {
+        "libelle": "carreleur / carreleuse-mosaïste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.435"
+      }
+    ],
+    "F1609": [
+      {
+        "libelle": "solier-moquettiste / solière-moquettiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.658"
+      }
+    ],
+    "F1610": [
+      {
+        "libelle": "couvreur / couvreuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.263"
+      }
+    ],
+    "F1611": [
+      {
+        "libelle": "façadier / façadière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.78"
+      }
+    ],
+    "F1612": [
+      {
+        "libelle": "mosaïste d'art",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.514"
+      },
+      {
+        "libelle": "sculpteur / sculptrice ornemaniste sur pierre",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7914"
+      },
+      {
+        "libelle": "tailleur / tailleuse de pierre",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.295"
+      }
+    ],
+    "F1613": [
+      {
+        "libelle": "étanchéiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.55"
+      }
+    ],
+    "F1701": [
+      {
+        "libelle": "constructeur / constructrice en ouvrages d'art",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.162"
+      }
+    ],
+    "F1702": [
+      {
+        "libelle": "constructeur / constructrice de routes et d'aménagements urbains",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.904"
+      },
+      {
+        "libelle": "poseur / poseuse de voies ferrées",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7776"
+      }
+    ],
+    "F1703": [
+      {
+        "libelle": "maçon / maçonne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.94"
+      }
+    ],
+    "F1704": [
+      {
+        "libelle": "démolisseur / démolisseuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7951"
+      }
+    ],
+    "F1705": [
+      {
+        "libelle": "constructeur / constructrice de réseaux de canalisations",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.49"
+      }
+    ],
+    "G1102": [
+      {
+        "libelle": "agent / agente de développement touristique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.919"
+      },
+      {
+        "libelle": "animateur / animatrice du patrimoine",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.445"
+      },
+      {
+        "libelle": "directeur / directrice d'office de tourisme",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.434"
+      }
+    ],
+    "G1201": [
+      {
+        "libelle": "accompagnateur / accompagnatrice de tourisme équestre",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.785"
+      },
+      {
+        "libelle": "accompagnateur / accompagnatrice de voyages",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.41"
+      },
+      {
+        "libelle": "accompagnateur / accompagnatrice en moyenne montagne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.784"
+      },
+      {
+        "libelle": "guide de haute montagne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.918"
+      },
+      {
+        "libelle": "guide-conférencier / guide-conférencière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.941"
+      }
+    ],
+    "G1202": [
+      {
+        "libelle": "animateur / animatrice de tourisme",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.803"
+      },
+      {
+        "libelle": "animateur nature / animatrice nature",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.77"
+      }
+    ],
+    "G1203": [
+      {
+        "libelle": "directeur / directrice d'accueil collectif de mineurs (ACM)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.713"
+      }
+    ],
+    "G1204": [
+      {
+        "libelle": "animateur / animatrice d'activités physiques et sportives pour tous",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.808"
+      },
+      {
+        "libelle": "conseiller sportif / conseillère sportive en salle de remise en forme",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.723"
+      },
+      {
+        "libelle": "éducateur sportif / éducatrice sportive",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.783"
+      },
+      {
+        "libelle": "maître-nageur sauveteur / maîtresse-nageuse sauveteuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.569"
+      },
+      {
+        "libelle": "moniteur / monitrice d'activités équestres",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.345"
+      },
+      {
+        "libelle": "moniteur / monitrice d'escalade",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.115"
+      },
+      {
+        "libelle": "moniteur / monitrice de judo",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8105"
+      },
+      {
+        "libelle": "moniteur / monitrice de ski",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.312"
+      },
+      {
+        "libelle": "moniteur / monitrice de voile",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.647"
+      },
+      {
+        "libelle": "professeur / professeure de sport",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.522"
+      }
+    ],
+    "G1301": [
+      {
+        "libelle": "chef / cheffe de produit touristique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.753"
+      }
+    ],
+    "G1303": [
+      {
+        "libelle": "conseiller / conseillère en voyages",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.604"
+      }
+    ],
+    "G1402": [
+      {
+        "libelle": "directeur / directrice d'hôtel",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.2"
+      },
+      {
+        "libelle": "directeur / directrice de restaurant",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.144"
+      },
+      {
+        "libelle": "manager opérationnel / manageuse opérationnelle en restauration rapide",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8039"
+      }
+    ],
+    "G1404": [
+      {
+        "libelle": "gérant / gérante de restauration collective",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.283"
+      }
+    ],
+    "G1501": [
+      {
+        "libelle": "femme / valet de chambre",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.534"
+      }
+    ],
+    "G1601": [
+      {
+        "libelle": "chef de cuisine / cheffe de cuisine",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.420"
+      }
+    ],
+    "G1602": [
+      {
+        "libelle": "chef / cheffe de partie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7991"
+      },
+      {
+        "libelle": "commis / commise de cuisine",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7992"
+      },
+      {
+        "libelle": "pâtissier / pâtissière de restaurant",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7993"
+      },
+      {
+        "libelle": "traiteur organisateur de réception / traiteuse organisatrice de réception",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.121"
+      }
+    ],
+    "G1603": [
+      {
+        "libelle": "employé polyvalent / employée polyvalente en restauration rapide",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7999"
+      }
+    ],
+    "G1703": [
+      {
+        "libelle": "réceptionniste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.3"
+      }
+    ],
+    "G1801": [
+      {
+        "libelle": "barman / barmaid",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.145"
+      },
+      {
+        "libelle": "serveur / serveuse en restauration (restaurant, café-bar-brasserie)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.535"
+      }
+    ],
+    "G1803": [
+      {
+        "libelle": "chef / cheffe de rang",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7990"
+      },
+      {
+        "libelle": "employé / employée de restaurant (restauration collective)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.655"
+      }
+    ],
+    "H1102": [
+      {
+        "libelle": "chargé / chargée d'affaires en génie mécanique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.348"
+      }
+    ],
+    "H1201": [
+      {
+        "libelle": "coloriste (textile)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8082"
+      }
+    ],
+    "H1203": [
+      {
+        "libelle": "dessinateur / dessinatrice en construction mécanique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.306"
+      },
+      {
+        "libelle": "technicien / technicienne en mécanique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.528"
+      }
+    ],
+    "H1204": [
+      {
+        "libelle": "designer / designeuse d'objet de mode",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8088"
+      },
+      {
+        "libelle": "designer / designeuse d'objets sportifs",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8087"
+      },
+      {
+        "libelle": "designer industriel / designeuse industrielle",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.568"
+      }
+    ],
+    "H1206": [
+      {
+        "libelle": "aérodynamicien / aérodynamicienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.371"
+      },
+      {
+        "libelle": "architecte naval / navale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.864"
+      },
+      {
+        "libelle": "architecte produit industriel",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.611"
+      },
+      {
+        "libelle": "attaché / attachée de recherche clinique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.300"
+      },
+      {
+        "libelle": "bio-informaticien / bio-informaticienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.201"
+      },
+      {
+        "libelle": "coordonnateur / coordonnatrice d'études cliniques",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.827"
+      },
+      {
+        "libelle": "ingénieur / ingénieure brevets",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.95"
+      },
+      {
+        "libelle": "ingénieur / ingénieure calcul",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.206"
+      },
+      {
+        "libelle": "ingénieur / ingénieure d'application",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.208"
+      },
+      {
+        "libelle": "ingénieur / ingénieure en automatisme",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.326"
+      },
+      {
+        "libelle": "ingénieur / ingénieure en caractérisation des matériaux",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.721"
+      },
+      {
+        "libelle": "ingénieur / ingénieure en imagerie médicale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.602"
+      },
+      {
+        "libelle": "ingénieur / ingénieure en métrologie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.460"
+      },
+      {
+        "libelle": "ingénieur / ingénieure essais",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.370"
+      },
+      {
+        "libelle": "ingénieur / ingénieure frigoriste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.603"
+      },
+      {
+        "libelle": "ingénieur / ingénieure intégration satellite",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.231"
+      },
+      {
+        "libelle": "ingénieur / ingénieure métallurgiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.351"
+      },
+      {
+        "libelle": "ingénieur / ingénieure recherche et développement en énergies renouvelables",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.303"
+      },
+      {
+        "libelle": "ingénieur / ingénieure recherche et développement textile",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8202"
+      },
+      {
+        "libelle": "ingénieur / ingénieure textile",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.480"
+      },
+      {
+        "libelle": "ingénieur analogicien / ingénieure analogicienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.125"
+      },
+      {
+        "libelle": "ingénieur biomédical / ingénieure biomédicale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.911"
+      },
+      {
+        "libelle": "ingénieur papetier / ingénieure papetière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.675"
+      },
+      {
+        "libelle": "mécatronicien / mécatronicienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.948"
+      },
+      {
+        "libelle": "physicien médical / physicienne médicale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.366"
+      },
+      {
+        "libelle": "responsable de fabrication en chimie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.628"
+      },
+      {
+        "libelle": "roboticien / roboticienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.813"
+      },
+      {
+        "libelle": "rudologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.726"
+      }
+    ],
+    "H1207": [
+      {
+        "libelle": "rédacteur / rédactrice technique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.360"
+      },
+      {
+        "libelle": "rédacteur médical / rédactrice médicale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.828"
+      }
+    ],
+    "H1208": [
+      {
+        "libelle": "informaticien industriel / informaticienne industrielle",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.57"
+      }
+    ],
+    "H1210": [
+      {
+        "libelle": "technicien / technicienne de police technique et scientifique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.892"
+      },
+      {
+        "libelle": "technicien / technicienne en optique de précision",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.165"
+      }
+    ],
+    "H1303": [
+      {
+        "libelle": "technicien / technicienne de mesure de la pollution",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.747"
+      },
+      {
+        "libelle": "technicien / technicienne radioprotection",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.205"
+      }
+    ],
+    "H1402": [
+      {
+        "libelle": "ingénieur / ingénieure méthodes mécaniques",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.499"
+      }
+    ],
+    "H1502": [
+      {
+        "libelle": "auditeur / auditrice qualité",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.729"
+      },
+      {
+        "libelle": "chargé / chargée de pharmacovigilance",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.215"
+      },
+      {
+        "libelle": "consultant / consultante en validation",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.825"
+      },
+      {
+        "libelle": "ingénieur / ingénieure qualité moteur",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.492"
+      },
+      {
+        "libelle": "responsable assurance qualité",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.202"
+      },
+      {
+        "libelle": "responsable qualité en agroalimentaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.113"
+      },
+      {
+        "libelle": "spécialiste des affaires réglementaires en chimie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.736"
+      }
+    ],
+    "H1503": [
+      {
+        "libelle": "aide-chimiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.952"
+      },
+      {
+        "libelle": "technicien / technicienne de contrôle",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.649"
+      }
+    ],
+    "H1504": [
+      {
+        "libelle": "technicien / technicienne d'essais",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.574"
+      }
+    ],
+    "H1505": [
+      {
+        "libelle": "formulateur / formulatrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.80"
+      },
+      {
+        "libelle": "ingénieur aromaticien / ingénieure aromaticienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.79"
+      },
+      {
+        "libelle": "parfumeur / parfumeuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.440"
+      }
+    ],
+    "H1506": [
+      {
+        "libelle": "technicien / technicienne en métrologie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.462"
+      }
+    ],
+    "H2102": [
+      {
+        "libelle": "conducteur / conductrice de ligne de production alimentaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.549"
+      },
+      {
+        "libelle": "opérateur / opératrice de fabrication de produits alimentaires",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.20"
+      }
+    ],
+    "H2205": [
+      {
+        "libelle": "conducteur-opérateur / conductrice-opératrice de scierie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.426"
+      }
+    ],
+    "H2206": [
+      {
+        "libelle": "agenceur / agenceuse de cuisines et salles de bains",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.405"
+      },
+      {
+        "libelle": "tonnelier / tonnelière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.804"
+      }
+    ],
+    "H2207": [
+      {
+        "libelle": "ébéniste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.289"
+      }
+    ],
+    "H2401": [
+      {
+        "libelle": "piqueur / piqueuse en maroquinerie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8108"
+      }
+    ],
+    "H2402": [
+      {
+        "libelle": "couturier industriel / couturière industrielle",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7768"
+      }
+    ],
+    "H2408": [
+      {
+        "libelle": "conducteur / conductrice d'équipement d'ennoblissement textile",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8205"
+      }
+    ],
+    "H2409": [
+      {
+        "libelle": "coupeur / coupeuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.714"
+      }
+    ],
+    "H2412": [
+      {
+        "libelle": "patronnier-gradeur / patronnière-gradeuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8106"
+      }
+    ],
+    "H2502": [
+      {
+        "libelle": "ingénieur / ingénieure chimiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.170"
+      },
+      {
+        "libelle": "ingénieur / ingénieure chimiste en développement analytique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.738"
+      },
+      {
+        "libelle": "ingénieur / ingénieure en expérimentation et production végétales",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.103"
+      },
+      {
+        "libelle": "ingénieur / ingénieure en fonderie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.706"
+      },
+      {
+        "libelle": "ingénieur / ingénieure procédés en chimie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.502"
+      },
+      {
+        "libelle": "ingénieur / ingénieure production dans les biotechnologies",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.843"
+      },
+      {
+        "libelle": "ingénieur / ingénieure production en aéronautique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.211"
+      },
+      {
+        "libelle": "ingénieur / ingénieure production en mécanique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.242"
+      },
+      {
+        "libelle": "ingénieur concepteur / ingénieure conceptrice en mécanique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.949"
+      },
+      {
+        "libelle": "pharmacien industriel / pharmacienne industrielle",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.412"
+      },
+      {
+        "libelle": "responsable des ouvrages hydroélectriques",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.739"
+      }
+    ],
+    "H2504": [
+      {
+        "libelle": "responsable de production alimentaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.207"
+      }
+    ],
+    "H2601": [
+      {
+        "libelle": "électrobobinier / électrobobinière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7816"
+      }
+    ],
+    "H2701": [
+      {
+        "libelle": "opérateur / opératrice de raffinerie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.305"
+      },
+      {
+        "libelle": "technicien / technicienne d'exploitation du réseau gaz",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.169"
+      }
+    ],
+    "H2805": [
+      {
+        "libelle": "technicien / technicienne des industries du verre",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.35"
+      }
+    ],
+    "H2901": [
+      {
+        "libelle": "ajusteur-monteur / ajusteuse-monteuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.575"
+      },
+      {
+        "libelle": "armurier / armurière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7926"
+      },
+      {
+        "libelle": "mécanicien-outilleur / mécanicienne-outilleuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.686"
+      }
+    ],
+    "H2902": [
+      {
+        "libelle": "chaudronnier / chaudronnière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.576"
+      }
+    ],
+    "H2903": [
+      {
+        "libelle": "affûteur / affûteuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.663"
+      },
+      {
+        "libelle": "décolleteur / décolleteuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.595"
+      }
+    ],
+    "H2904": [
+      {
+        "libelle": "technicien / technicienne de forge",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.550"
+      }
+    ],
+    "H2907": [
+      {
+        "libelle": "fondeur / fondeuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.641"
+      }
+    ],
+    "H2908": [
+      {
+        "libelle": "modeleur céramiste industriel / modeleuse céramiste industrielle",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7925"
+      }
+    ],
+    "H2910": [
+      {
+        "libelle": "mouleur-noyauteur / mouleuse-noyauteuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.34"
+      }
+    ],
+    "H2911": [
+      {
+        "libelle": "charpentier / charpentière métallique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.296"
+      }
+    ],
+    "H2913": [
+      {
+        "libelle": "soudeur / soudeuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.899"
+      }
+    ],
+    "H3203": [
+      {
+        "libelle": "stratifieur / stratifieuse mouliste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7923"
+      }
+    ],
+    "H3402": [
+      {
+        "libelle": "opérateur / opératrice en traitement des matériaux",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.841"
+      }
+    ],
+    "I1101": [
+      {
+        "libelle": "chef / cheffe d'exploitation des remontées mécaniques",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.934"
+      }
+    ],
+    "I1102": [
+      {
+        "libelle": "ingénieur / ingénieure de maintenance industrielle",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.491"
+      },
+      {
+        "libelle": "ingénieur / ingénieure maintenance aéronautique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.920"
+      },
+      {
+        "libelle": "ingénieur électronicien / ingénieure électronicienne des systèmes de la sécurité aérienne (Iessa)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.474"
+      }
+    ],
+    "I1202": [
+      {
+        "libelle": "ouvrier autoroutier / ouvrière autoroutière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7997"
+      }
+    ],
+    "I1203": [
+      {
+        "libelle": "adjoint / adjointe technique des établissements d'enseignement",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7830"
+      }
+    ],
+    "I1301": [
+      {
+        "libelle": "ascensoriste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.775"
+      }
+    ],
+    "I1304": [
+      {
+        "libelle": "électromécanicien / électromécanicienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.436"
+      },
+      {
+        "libelle": "électromécanicien / électromécanicienne de chantier TP (travaux publics)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7777"
+      },
+      {
+        "libelle": "nivoculteur / nivocultrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.466"
+      },
+      {
+        "libelle": "responsable de maintenance des installations ferroviaires",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.853"
+      },
+      {
+        "libelle": "technicien / technicienne de maintenance en infrastructure aéroportuaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7994"
+      },
+      {
+        "libelle": "technicien / technicienne de maintenance éolienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.383"
+      },
+      {
+        "libelle": "technicien / technicienne de maintenance industrielle",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.866"
+      },
+      {
+        "libelle": "technicien / technicienne en énergies renouvelables",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.391"
+      }
+    ],
+    "I1305": [
+      {
+        "libelle": "technicien biomédical / technicienne biomédicale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7983"
+      },
+      {
+        "libelle": "technicien intégrateur électronique / technicienne intégratrice électronique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.198"
+      }
+    ],
+    "I1306": [
+      {
+        "libelle": "technicien / technicienne frigoriste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.390"
+      }
+    ],
+    "I1401": [
+      {
+        "libelle": "hotliner / hotlineuse (téléassistant / téléassistante en informatique)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.799"
+      },
+      {
+        "libelle": "technicien / technicienne de maintenance en informatique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.554"
+      }
+    ],
+    "I1402": [
+      {
+        "libelle": "dépanneur / dépanneuse en électroménager",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.881"
+      },
+      {
+        "libelle": "responsable du service après-vente",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.543"
+      }
+    ],
+    "I1503": [
+      {
+        "libelle": "chef / cheffe de projet démantèlement nucléaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.791"
+      }
+    ],
+    "I1602": [
+      {
+        "libelle": "mécanicien / mécanicienne d'entretien d'avion",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.23"
+      }
+    ],
+    "I1603": [
+      {
+        "libelle": "mécanicien / mécanicienne de maintenance des matériels agricoles ou d'espaces verts",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.324"
+      },
+      {
+        "libelle": "mécanicien / mécanicienne en engins de travaux publics",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.430"
+      },
+      {
+        "libelle": "technicien / technicienne de maintenance des matériels agricoles ou d'espaces verts",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7764"
+      }
+    ],
+    "I1604": [
+      {
+        "libelle": "contrôleur / contrôleuse technique automobile",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.297"
+      },
+      {
+        "libelle": "électronicien / électronicienne automobile",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.404"
+      },
+      {
+        "libelle": "expert / experte automobile",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.886"
+      },
+      {
+        "libelle": "mécanicien-réparateur / mécanicienne-réparatrice de véhicules industriels",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8000"
+      },
+      {
+        "libelle": "technicien / technicienne automobile",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.664"
+      }
+    ],
+    "I1605": [
+      {
+        "libelle": "mécanicien / mécanicienne bateaux",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.685"
+      },
+      {
+        "libelle": "mécanicien / mécanicienne marine navigant",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.596"
+      }
+    ],
+    "I1607": [
+      {
+        "libelle": "mécanicien / mécanicienne et technicien / technicienne moto",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.22"
+      }
+    ],
+    "J1102": [
+      {
+        "libelle": "anesthésiste-réanimateur / anesthésiste-réanimatrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.710"
+      },
+      {
+        "libelle": "chirurgien / chirurgienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.332"
+      },
+      {
+        "libelle": "gynécologue-obstétricien / obstétricienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.845"
+      },
+      {
+        "libelle": "médecin de secours en montagne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.111"
+      },
+      {
+        "libelle": "médecin du sport",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.637"
+      },
+      {
+        "libelle": "médecin généraliste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.869"
+      },
+      {
+        "libelle": "médecin humanitaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.344"
+      },
+      {
+        "libelle": "médecin régulateur / régulatrice du Samu",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7900"
+      },
+      {
+        "libelle": "médecin spécialiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.419"
+      },
+      {
+        "libelle": "médecin urgentiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7820"
+      },
+      {
+        "libelle": "pédiatre",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.335"
+      },
+      {
+        "libelle": "psychiatre",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.731"
+      }
+    ],
+    "J1103": [
+      {
+        "libelle": "chirurgien-dentiste / chirurgienne-dentiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.870"
+      },
+      {
+        "libelle": "orthodontiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.962"
+      }
+    ],
+    "J1104": [
+      {
+        "libelle": "maïeuticien / sage-femme",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.787"
+      }
+    ],
+    "J1202": [
+      {
+        "libelle": "pharmacien / pharmacienne d'officine",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.767"
+      },
+      {
+        "libelle": "pharmacien distributeur / pharmacienne distributrice en gros",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7860"
+      },
+      {
+        "libelle": "pharmacien hospitalier / pharmacienne hospitalière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7859"
+      }
+    ],
+    "J1301": [
+      {
+        "libelle": "brancardier / brancardière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.635"
+      }
+    ],
+    "J1302": [
+      {
+        "libelle": "technicien / technicienne d'analyses biomédicales",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.771"
+      }
+    ],
+    "J1303": [
+      {
+        "libelle": "assistant / assistante dentaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.330"
+      },
+      {
+        "libelle": "assistant médical / assistante médicale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7819"
+      }
+    ],
+    "J1305": [
+      {
+        "libelle": "ambulancier / ambulancière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.417"
+      }
+    ],
+    "J1306": [
+      {
+        "libelle": "manipulateur / manipulatrice d'électroradiologie médicale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.416"
+      }
+    ],
+    "J1307": [
+      {
+        "libelle": "préparateur / préparatrice en pharmacie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.868"
+      }
+    ],
+    "J1401": [
+      {
+        "libelle": "audioprothésiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.676"
+      }
+    ],
+    "J1402": [
+      {
+        "libelle": "diététicien / diététicienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.672"
+      }
+    ],
+    "J1403": [
+      {
+        "libelle": "ergothérapeute",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.280"
+      }
+    ],
+    "J1404": [
+      {
+        "libelle": "masseur / masseuse kinésithérapeute du sport",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.375"
+      },
+      {
+        "libelle": "masseur-kinésithérapeute",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.29"
+      }
+    ],
+    "J1405": [
+      {
+        "libelle": "monteur-vendeur / monteuse-vendeuse en optique-lunetterie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.744"
+      },
+      {
+        "libelle": "opticien-lunetier / opticienne-lunetière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.281"
+      }
+    ],
+    "J1406": [
+      {
+        "libelle": "orthophoniste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.765"
+      }
+    ],
+    "J1407": [
+      {
+        "libelle": "orthoptiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.877"
+      }
+    ],
+    "J1409": [
+      {
+        "libelle": "pédicure-podologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.875"
+      }
+    ],
+    "J1410": [
+      {
+        "libelle": "prothésiste dentaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.411"
+      }
+    ],
+    "J1411": [
+      {
+        "libelle": "orthoprothésiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.276"
+      },
+      {
+        "libelle": "podo-orthésiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.282"
+      }
+    ],
+    "J1501": [
+      {
+        "libelle": "aide-soignant / aide-soignante",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.561"
+      }
+    ],
+    "J1506": [
+      {
+        "libelle": "infirmier / infirmière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.38"
+      },
+      {
+        "libelle": "infirmier / infirmière humanitaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.343"
+      }
+    ],
+    "J1507": [
+      {
+        "libelle": "puériculteur / puéricultrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.163"
+      }
+    ],
+    "K1101": [
+      {
+        "libelle": "médiateur / médiatrice familiale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.89"
+      }
+    ],
+    "K1103": [
+      {
+        "libelle": "réflexologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.497"
+      },
+      {
+        "libelle": "spécialiste en shiatsu",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7767"
+      }
+    ],
+    "K1104": [
+      {
+        "libelle": "art-thérapeute",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.939"
+      },
+      {
+        "libelle": "psychanalyste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.279"
+      },
+      {
+        "libelle": "psychologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.871"
+      }
+    ],
+    "K1201": [
+      {
+        "libelle": "assistant / assistante de service social",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.64"
+      },
+      {
+        "libelle": "conseiller / conseillère en économie sociale et familiale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.669"
+      }
+    ],
+    "K1202": [
+      {
+        "libelle": "éducateur / éducatrice de jeunes enfants",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.668"
+      }
+    ],
+    "K1401": [
+      {
+        "libelle": "attaché / attachée parlementaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8230"
+      }
+    ],
+    "K1501": [
+      {
+        "libelle": "agent / agente de constatation des douanes",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.173"
+      }
+    ],
+    "K1502": [
+      {
+        "libelle": "inspecteur / inspectrice du travail",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8101"
+      }
+    ],
+    "K1503": [
+      {
+        "libelle": "contrôleur / contrôleuse des finances publiques",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.515"
+      },
+      {
+        "libelle": "inspecteur / inspectrice des finances publiques",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7987"
+      }
+    ],
+    "K1602": [
+      {
+        "libelle": "conservateur / conservatrice du patrimoine",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.692"
+      }
+    ],
+    "K1705": [
+      {
+        "libelle": "démineur / démineuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.810"
+      },
+      {
+        "libelle": "maître-chien / maîtresse-chien",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7812"
+      },
+      {
+        "libelle": "pisteur / pisteuse secouriste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.832"
+      },
+      {
+        "libelle": "sapeur-pompier / sapeuse-pompière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.572"
+      }
+    ],
+    "K1706": [
+      {
+        "libelle": "gardien / gardienne de la paix",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.336"
+      },
+      {
+        "libelle": "gendarme",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.313"
+      },
+      {
+        "libelle": "motard / motarde de la police ou de la gendarmerie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.493"
+      },
+      {
+        "libelle": "surveillant / surveillante de centre pénitentiaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.926"
+      }
+    ],
+    "K1802": [
+      {
+        "libelle": "agent / agente de développement local",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.922"
+      },
+      {
+        "libelle": "conseiller / conseillère en développement rural",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.386"
+      },
+      {
+        "libelle": "développeur / développeuse économique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.923"
+      },
+      {
+        "libelle": "développeur rural / développeuse rurale humanitaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.100"
+      },
+      {
+        "libelle": "responsable de projets culturels",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.580"
+      },
+      {
+        "libelle": "responsable de service urbanisme",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8116"
+      },
+      {
+        "libelle": "urbaniste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.407"
+      }
+    ],
+    "K1903": [
+      {
+        "libelle": "avocat / avocate",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.33"
+      },
+      {
+        "libelle": "avocat / avocate d'affaires",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.1264"
+      },
+      {
+        "libelle": "délégué / déléguée à la protection des données (data protection officer)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7932"
+      },
+      {
+        "libelle": "fiscaliste (conformité et contrôle interne)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.606"
+      },
+      {
+        "libelle": "juriste contentieux",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.1190"
+      },
+      {
+        "libelle": "juriste d'entreprise",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.82"
+      },
+      {
+        "libelle": "juriste droit de l'environnement",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.806"
+      },
+      {
+        "libelle": "juriste droit immobilier",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.749"
+      },
+      {
+        "libelle": "juriste du sport",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8102"
+      },
+      {
+        "libelle": "juriste en droit social",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.92"
+      },
+      {
+        "libelle": "juriste en propriété intellectuelle",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.333"
+      },
+      {
+        "libelle": "juriste international / internationale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.1189"
+      },
+      {
+        "libelle": "juriste RGPD",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8104"
+      }
+    ],
+    "K1904": [
+      {
+        "libelle": "juge d'instruction",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.805"
+      },
+      {
+        "libelle": "juge des contentieux de la protection",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.91"
+      },
+      {
+        "libelle": "juge des enfants",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.472"
+      },
+      {
+        "libelle": "magistrat / magistrate",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.769"
+      },
+      {
+        "libelle": "magistrat administratif / magistrate administrative",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8200"
+      },
+      {
+        "libelle": "substitut / substitute du procureur",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.615"
+      }
+    ],
+    "K2103": [
+      {
+        "libelle": "chef / cheffe d'établissement scolaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7832"
+      }
+    ],
+    "K2105": [
+      {
+        "libelle": "enseignant / enseignante d'art",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.277"
+      },
+      {
+        "libelle": "musicien intervenant / musicienne intervenante",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7815"
+      },
+      {
+        "libelle": "professeur / professeure de musique ou de danse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.293"
+      }
+    ],
+    "K2106": [
+      {
+        "libelle": "professeur des écoles / professeure des écoles",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.557"
+      }
+    ],
+    "K2107": [
+      {
+        "libelle": "professeur / professeure de collège et de lycée",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.51"
+      },
+      {
+        "libelle": "professeur / professeure de mathématiques ou de physique-chimie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.85"
+      },
+      {
+        "libelle": "professeur-documentaliste / professeure-documentaliste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.890"
+      },
+      {
+        "libelle": "professeure / professeure d'EPS (éducation physique et sportive)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.43"
+      }
+    ],
+    "K2108": [
+      {
+        "libelle": "enseignant-chercheur / enseignante-chercheuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.880"
+      }
+    ],
+    "K2109": [
+      {
+        "libelle": "enseignant spécialisé / enseignante spécialisée",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.766"
+      },
+      {
+        "libelle": "professeur / professeure dans l'enseignement agricole",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.423"
+      },
+      {
+        "libelle": "professeur / professeure de lycée professionnel",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.431"
+      }
+    ],
+    "K2111": [
+      {
+        "libelle": "concepteur pédagogique multimodal / conceptrice pédagogique multimodale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8007"
+      },
+      {
+        "libelle": "formateur / formatrice d'adultes",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.292"
+      },
+      {
+        "libelle": "formateur / formatrice en informatique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.593"
+      }
+    ],
+    "K2112": [
+      {
+        "libelle": "chargé / chargée d'orientation et d'insertion profesionnelle",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8191"
+      },
+      {
+        "libelle": "psychologue de l'Éducation nationale spécialité éducation, développement et apprentissages",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.361"
+      },
+      {
+        "libelle": "psychologue de l'éducation nationale spécialité éducation, développement et conseil en orientation scolaire et professionnelle",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.634"
+      }
+    ],
+    "K2204": [
+      {
+        "libelle": "agent / agente de propreté et d'hygiène",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.562"
+      },
+      {
+        "libelle": "agent / agente machiniste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8005"
+      }
+    ],
+    "K2301": [
+      {
+        "libelle": "agent / agente d'exploitation de l'eau",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.509"
+      }
+    ],
+    "K2303": [
+      {
+        "libelle": "agent / agente de propreté urbaine",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.588"
+      }
+    ],
+    "K2304": [
+      {
+        "libelle": "agent / agente valoriste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7818"
+      },
+      {
+        "libelle": "technicien / technicienne valoriste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7837"
+      }
+    ],
+    "K2401": [
+      {
+        "libelle": "archéologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.166"
+      },
+      {
+        "libelle": "démographe",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.179"
+      },
+      {
+        "libelle": "ethnologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.414"
+      },
+      {
+        "libelle": "linguiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.449"
+      },
+      {
+        "libelle": "paléontologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.929"
+      },
+      {
+        "libelle": "sociologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.180"
+      }
+    ],
+    "K2402": [
+      {
+        "libelle": "astrophysicien / astrophysicienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.24"
+      },
+      {
+        "libelle": "bactériologiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.716"
+      },
+      {
+        "libelle": "biologiste en environnement",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.589"
+      },
+      {
+        "libelle": "biostatisticien / biostatisticienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.126"
+      },
+      {
+        "libelle": "botaniste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.424"
+      },
+      {
+        "libelle": "chercheur / chercheuse en biologie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.699"
+      },
+      {
+        "libelle": "chercheur / chercheuse en biologie du sport",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.820"
+      },
+      {
+        "libelle": "chercheur / chercheuse en chimie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.590"
+      },
+      {
+        "libelle": "chercheur / chercheuse en physique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.800"
+      },
+      {
+        "libelle": "climatologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.223"
+      },
+      {
+        "libelle": "écotoxicologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.372"
+      },
+      {
+        "libelle": "hydrobiologiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.232"
+      },
+      {
+        "libelle": "ingénieur / ingénieure de la police technique et scientifique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.598"
+      },
+      {
+        "libelle": "ingénieur / ingénieure de recherche clinique et épidémiologique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.844"
+      },
+      {
+        "libelle": "ingénieur mathématicien / ingénieure mathématicienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.931"
+      },
+      {
+        "libelle": "ingénieur opticien / ingénieure opticienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.32"
+      },
+      {
+        "libelle": "microbiologiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.701"
+      },
+      {
+        "libelle": "neurobiologiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.824"
+      },
+      {
+        "libelle": "océanologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.413"
+      },
+      {
+        "libelle": "pharmacien chercheur / pharmacienne chercheuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7858"
+      },
+      {
+        "libelle": "responsable de laboratoire de recherche",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.109"
+      },
+      {
+        "libelle": "zoologiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.48"
+      }
+    ],
+    "K2502": [
+      {
+        "libelle": "enquêteur privé / enquêtrice privée",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.817"
+      }
+    ],
+    "K2503": [
+      {
+        "libelle": "agent / agente de sécurité",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.347"
+      },
+      {
+        "libelle": "agent / agente de sûreté aéroportuaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8001"
+      },
+      {
+        "libelle": "agent / agente de sûreté ferroviaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.185"
+      },
+      {
+        "libelle": "convoyeur / convoyeuse de fonds",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.484"
+      },
+      {
+        "libelle": "opérateur / opératrice en station de télésurveillance",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8002"
+      }
+    ],
+    "K2602": [
+      {
+        "libelle": "conseiller / conseillère funéraire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7765"
+      }
+    ],
+    "K2603": [
+      {
+        "libelle": "thanatopracteur / thanatopractrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.247"
+      }
+    ],
+    "L1101": [
+      {
+        "libelle": "disc-jockey (disque-jockey)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.339"
+      }
+    ],
+    "L1102": [
+      {
+        "libelle": "mannequin",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.504"
+      }
+    ],
+    "L1103": [
+      {
+        "libelle": "animateur / animatrice de radio et de télévision",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.582"
+      }
+    ],
+    "L1201": [
+      {
+        "libelle": "chorégraphe",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.608"
+      },
+      {
+        "libelle": "danseur / danseuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.42"
+      }
+    ],
+    "L1202": [
+      {
+        "libelle": "auteur-compositeur-interprète / autrice-compositrice-interprète",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.584"
+      },
+      {
+        "libelle": "chanteur / chanteuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7"
+      },
+      {
+        "libelle": "chef / cheffe d'orchestre",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.601"
+      },
+      {
+        "libelle": "musicien / musicienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.6"
+      }
+    ],
+    "L1203": [
+      {
+        "libelle": "audiodescripteur / audiodescriptrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.327"
+      },
+      {
+        "libelle": "cascadeur / cascadeuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.914"
+      },
+      {
+        "libelle": "comédien / comédienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.146"
+      }
+    ],
+    "L1204": [
+      {
+        "libelle": "artiste de cirque",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.779"
+      }
+    ],
+    "L1301": [
+      {
+        "libelle": "metteur / metteuse en scène",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.86"
+      }
+    ],
+    "L1302": [
+      {
+        "libelle": "administrateur / administratrice de spectacle",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.469"
+      },
+      {
+        "libelle": "chargé / chargée de production",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.193"
+      },
+      {
+        "libelle": "producteur / productrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.833"
+      }
+    ],
+    "L1303": [
+      {
+        "libelle": "agent / agente artistique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.214"
+      },
+      {
+        "libelle": "agent / agente de joueurs",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.849"
+      },
+      {
+        "libelle": "responsable de casting (régisseur / régisseuse de distribution)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.382"
+      }
+    ],
+    "L1304": [
+      {
+        "libelle": "assistant réalisateur / assistante réalisatrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.178"
+      },
+      {
+        "libelle": "documentariste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7813"
+      },
+      {
+        "libelle": "réalisateur / réalisatrice 3D",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.252"
+      },
+      {
+        "libelle": "réalisateur / réalisatrice de films",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.476"
+      },
+      {
+        "libelle": "scripte",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.421"
+      }
+    ],
+    "L1401": [
+      {
+        "libelle": "arbitre",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.704"
+      },
+      {
+        "libelle": "cavalier / cavalière d'entraînement (lad-jockey, lad-driver)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.155"
+      },
+      {
+        "libelle": "entraîneur / entraîneuse de chevaux",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.471"
+      },
+      {
+        "libelle": "footballeur / footballeuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.651"
+      },
+      {
+        "libelle": "pilote automobile",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.521"
+      },
+      {
+        "libelle": "sportif / sportive de haut niveau",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.167"
+      }
+    ],
+    "L1501": [
+      {
+        "libelle": "maquilleur / maquilleuse artistique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.110"
+      }
+    ],
+    "L1502": [
+      {
+        "libelle": "costumier / costumière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.446"
+      }
+    ],
+    "L1503": [
+      {
+        "libelle": "accessoiriste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.69"
+      },
+      {
+        "libelle": "décorateur-scénographe / décoratrice-scénographe",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.261"
+      }
+    ],
+    "L1504": [
+      {
+        "libelle": "éclairagiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.307"
+      },
+      {
+        "libelle": "régisseur / régisseuse lumière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.359"
+      }
+    ],
+    "L1505": [
+      {
+        "libelle": "cadreur / cadreuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.262"
+      },
+      {
+        "libelle": "directeur / directrice de la photographie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.755"
+      }
+    ],
+    "L1507": [
+      {
+        "libelle": "bruiteur / bruiteuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.467"
+      },
+      {
+        "libelle": "chef monteur / cheffe monteuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.656"
+      },
+      {
+        "libelle": "designer / designeuse sonore",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.621"
+      },
+      {
+        "libelle": "mixeur / mixeuse son",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.315"
+      },
+      {
+        "libelle": "truqueur / truqueuse, truquiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.959"
+      }
+    ],
+    "L1508": [
+      {
+        "libelle": "ingénieur / ingénieure du son",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.585"
+      },
+      {
+        "libelle": "perchman / perchwoman (perchiste)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.746"
+      },
+      {
+        "libelle": "technicien réalisateur / technicienne réalisatrice radio",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.506"
+      }
+    ],
+    "L1509": [
+      {
+        "libelle": "régisseur / régisseuse de spectacles",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.452"
+      },
+      {
+        "libelle": "régisseur général / régisseuse générale cinéma",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.194"
+      }
+    ],
+    "L1510": [
+      {
+        "libelle": "animateur / animatrice 2D et 3D",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.778"
+      }
+    ],
+    "M1101": [
+      {
+        "libelle": "acheteur / acheteuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.571"
+      },
+      {
+        "libelle": "acheteur / acheteuse (mode)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8066"
+      }
+    ],
+    "M1102": [
+      {
+        "libelle": "responsable achats en chimie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.625"
+      },
+      {
+        "libelle": "responsable des achats",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8004"
+      }
+    ],
+    "M1201": [
+      {
+        "libelle": "analyste financier / financière et ESG",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.397"
+      },
+      {
+        "libelle": "conseiller / conseillère en fusion-acquisition",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.101"
+      },
+      {
+        "libelle": "manager / manageuse de risques (risk manager)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.555"
+      }
+    ],
+    "M1202": [
+      {
+        "libelle": "auditeur / auditrice interne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.81"
+      },
+      {
+        "libelle": "collaborateur / collaboratrice de cabinet d'expertise comptable",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7772"
+      },
+      {
+        "libelle": "expert-comptable / experte-comptable",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.149"
+      }
+    ],
+    "M1203": [
+      {
+        "libelle": "comptable",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.11"
+      },
+      {
+        "libelle": "responsable de rémunération (payroll manager)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.196"
+      }
+    ],
+    "M1204": [
+      {
+        "libelle": "contrôleur / contrôleuse de gestion",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.410"
+      }
+    ],
+    "M1207": [
+      {
+        "libelle": "credit manager (responsable du crédit)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.458"
+      }
+    ],
+    "M1403": [
+      {
+        "libelle": "chargé / chargée d'études économiques",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.667"
+      },
+      {
+        "libelle": "chargé / chargée d'études en marketing (mercatique)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.540"
+      },
+      {
+        "libelle": "data analyst (analyste de données)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7930"
+      },
+      {
+        "libelle": "data scientist (expert en mégadonnées)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.512"
+      },
+      {
+        "libelle": "économètre statisticien / statisticienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.468"
+      },
+      {
+        "libelle": "spécialiste pricing (tarification)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8010"
+      },
+      {
+        "libelle": "statisticien / statisticienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.461"
+      },
+      {
+        "libelle": "statisticien / statisticienne en analyse sensorielle",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.230"
+      },
+      {
+        "libelle": "statisticien / statisticienne en géomarketing",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.932"
+      },
+      {
+        "libelle": "statisticien industriel / statisticienne industrielle",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.627"
+      }
+    ],
+    "M1501": [
+      {
+        "libelle": "assistant / assistante en RH (ressources humaines)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.798"
+      }
+    ],
+    "M1502": [
+      {
+        "libelle": "chargé / chargée de recherche en recrutement",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.209"
+      },
+      {
+        "libelle": "chargé / chargée de recrutement en agence d'emploi",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8006"
+      },
+      {
+        "libelle": "responsable de formation",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.30"
+      },
+      {
+        "libelle": "responsable du recrutement",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.756"
+      }
+    ],
+    "M1503": [
+      {
+        "libelle": "responsable des ressources humaines",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.697"
+      }
+    ],
+    "M1601": [
+      {
+        "libelle": "hôte / hôtesse d'accueil",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.285"
+      }
+    ],
+    "M1603": [
+      {
+        "libelle": "facteur / factrice",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.763"
+      }
+    ],
+    "M1604": [
+      {
+        "libelle": "assistant / assistante de direction",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.319"
+      }
+    ],
+    "M1605": [
+      {
+        "libelle": "assistant / assistante de gestion en PME",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.797"
+      }
+    ],
+    "M1607": [
+      {
+        "libelle": "secrétaire (office-manager)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.670"
+      },
+      {
+        "libelle": "secrétaire administratif / administrative",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.891"
+      },
+      {
+        "libelle": "secrétaire juridique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.819"
+      }
+    ],
+    "M1609": [
+      {
+        "libelle": "secrétaire médical / médicale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.556"
+      }
+    ],
+    "M1704": [
+      {
+        "libelle": "responsable e-CRM (gestion de la relation client digitale)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.353"
+      }
+    ],
+    "M1705": [
+      {
+        "libelle": "collecteur / collectrice de fonds",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.614"
+      },
+      {
+        "libelle": "responsable marketing (mercatique) (mode)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8118"
+      },
+      {
+        "libelle": "responsable marketing sportif",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8112"
+      }
+    ],
+    "M1706": [
+      {
+        "libelle": "responsable de la promotion des ventes",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.659"
+      }
+    ],
+    "M1801": [
+      {
+        "libelle": "administrateur / administratrice de base de données",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.14"
+      },
+      {
+        "libelle": "administrateur / administratrice de réseaux",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.665"
+      }
+    ],
+    "M1802": [
+      {
+        "libelle": "architecte réseaux",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.551"
+      },
+      {
+        "libelle": "chargé / chargée des méthodes outils et qualité en informatique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.618"
+      },
+      {
+        "libelle": "data manager (gestionnaire des données)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.613"
+      },
+      {
+        "libelle": "expert / experte en sécurité informatique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.459"
+      },
+      {
+        "libelle": "gestionnaire de données cliniques",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.700"
+      },
+      {
+        "libelle": "ingénieur / ingénieure cloud computing (informatique en nuage)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.228"
+      },
+      {
+        "libelle": "ingénieur / ingénieure système",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.13"
+      },
+      {
+        "libelle": "responsable biométrie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.487"
+      }
+    ],
+    "M1803": [
+      {
+        "libelle": "chef / cheffe de projet informatique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.203"
+      },
+      {
+        "libelle": "chef / cheffe de projet multimédia",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.696"
+      }
+    ],
+    "M1804": [
+      {
+        "libelle": "ingénieur / ingénieure télécoms et réseaux",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.887"
+      }
+    ],
+    "M1805": [
+      {
+        "libelle": "chef / cheffe de projet web-mobile",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.490"
+      },
+      {
+        "libelle": "développeur / développeuse informatique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.12"
+      },
+      {
+        "libelle": "ingénieur / ingénieure études et développement en logiciels de simulation",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.124"
+      },
+      {
+        "libelle": "ingénieur / ingénieure logiciel",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.707"
+      },
+      {
+        "libelle": "ingénieur / ingénieure réalité virtuelle",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.245"
+      },
+      {
+        "libelle": "scrum master (animateur / animatrice d'équipe Agile)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7959"
+      },
+      {
+        "libelle": "testeur / testeuse en informatique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.84"
+      }
+    ],
+    "M1806": [
+      {
+        "libelle": "architecte big data (mégadonnées)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.848"
+      },
+      {
+        "libelle": "architecte des systèmes d'information",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.478"
+      },
+      {
+        "libelle": "architecte IOT",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7929"
+      },
+      {
+        "libelle": "consultant / consultante en informatique décisionnelle",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.916"
+      },
+      {
+        "libelle": "consultant / consultante en solutions intégrées",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.599"
+      },
+      {
+        "libelle": "consultant / consultante en systèmes d'information",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.212"
+      },
+      {
+        "libelle": "consultant / consultante informatique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.622"
+      },
+      {
+        "libelle": "consultant / consultante SaaS (logiciel à la demande)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.328"
+      },
+      {
+        "libelle": "product owner (responsable de produit numérique)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7958"
+      },
+      {
+        "libelle": "spécialiste de l'accessibilité numérique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.623"
+      }
+    ],
+    "M1808": [
+      {
+        "libelle": "cartographe",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.31"
+      },
+      {
+        "libelle": "géographe",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.73"
+      },
+      {
+        "libelle": "géomaticien / géomaticienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.192"
+      },
+      {
+        "libelle": "ingénieur / ingénieure hydrogéomorphologue",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.106"
+      }
+    ],
+    "M1809": [
+      {
+        "libelle": "météorologiste",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.164"
+      }
+    ],
+    "N1201": [
+      {
+        "libelle": "affréteur / affréteuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8067"
+      }
+    ],
+    "N1301": [
+      {
+        "libelle": "chef / cheffe de mission humanitaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.219"
+      },
+      {
+        "libelle": "ingénieur / ingénieure logistique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.733"
+      },
+      {
+        "libelle": "responsable approvisionnement",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.730"
+      }
+    ],
+    "N1303": [
+      {
+        "libelle": "chef / cheffe de quai",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8078"
+      },
+      {
+        "libelle": "logisticien / logisticienne de l'humanitaire",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.511"
+      },
+      {
+        "libelle": "responsable d'entrepôt",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8110"
+      },
+      {
+        "libelle": "technicien / technicienne logistique",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.143"
+      }
+    ],
+    "N2101": [
+      {
+        "libelle": "hôtesse de l'air / steward",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.772"
+      }
+    ],
+    "N2102": [
+      {
+        "libelle": "pilote d'hélicoptère",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.358"
+      },
+      {
+        "libelle": "pilote de ligne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.400"
+      }
+    ],
+    "N2201": [
+      {
+        "libelle": "agent / agente d'escale et relation client",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.597"
+      }
+    ],
+    "N2202": [
+      {
+        "libelle": "contrôleur aérien / contrôleuse aérienne",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.1"
+      }
+    ],
+    "N2204": [
+      {
+        "libelle": "agent / agente d'opérations aériennes",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7821"
+      }
+    ],
+    "N3102": [
+      {
+        "libelle": "matelot / matelote à la pêche",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.674"
+      },
+      {
+        "libelle": "matelot / matelote de la marine marchande",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.54"
+      },
+      {
+        "libelle": "matelot / matelote de la Marine nationale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.889"
+      },
+      {
+        "libelle": "skipper",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.834"
+      }
+    ],
+    "N3103": [
+      {
+        "libelle": "batelier / batelière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.577"
+      }
+    ],
+    "N4101": [
+      {
+        "libelle": "conducteur routier / conductrice routière",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.679"
+      }
+    ],
+    "N4102": [
+      {
+        "libelle": "chauffeur / chauffeuse de taxi",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.662"
+      }
+    ],
+    "N4103": [
+      {
+        "libelle": "conducteur / conductrice de bus ou d'autocar",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.907"
+      }
+    ],
+    "N4105": [
+      {
+        "libelle": "chauffeur-livreur / chauffeuse-livreuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.210"
+      },
+      {
+        "libelle": "conducteur / conductrice de matériel roulant de collecte de déchets",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7998"
+      }
+    ],
+    "N4203": [
+      {
+        "libelle": "dispatcheur / dispatcheuse",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8093"
+      }
+    ],
+    "N4204": [
+      {
+        "libelle": "agent / agente de planning (planification)",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8069"
+      }
+    ],
+    "N4301": [
+      {
+        "libelle": "conducteur / conductrice de métro",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.444"
+      },
+      {
+        "libelle": "conducteur / conductrice de train",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.154"
+      }
+    ],
+    "N4302": [
+      {
+        "libelle": "commercial / commerciale à bord des trains",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.186"
+      }
+    ]
+  }
+}
