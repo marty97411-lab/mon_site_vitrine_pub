@@ -1,13 +1,13 @@
-# 0007. Identité visuelle « Personnalisé » et contenus en trois niveaux
+# 0007. Identité visuelle « Personalis » et contenus en trois niveaux
 
-- **Statut** : accepté (2026-11-27)
+- **Statut** : accepté (2026-11-27) ; site renommé « Personalis » le 2026-11-28 (voir 0008)
 
 ## Identité visuelle
 
-- **Nom et logo** : « Personnalisé ». Logotype en Fraunces précédé de deux cercles qui se
+- **Nom et logo** : « Personalis » (nom adopté le 2026-11-28). Logotype en Fraunces précédé de deux cercles qui se
   chevauchent (violet et pêche, « deux facettes d'une même personne »). Fichiers :
-  `src/components/Logo.astro`, `public/logo-personnalise.svg`, `public/favicon.svg`,
-  `public/og-personnalise.png` (image de partage 1200 × 630).
+  `src/components/Logo.astro`, `public/logo-personalis.svg`, `public/favicon.svg`,
+  `public/og-personalis.png` (image de partage 1200 × 630).
 - **Palette** : définie uniquement dans `src/styles/tokens.css` (préfixe `--c-`). Fond crème
   lumineux, violet vif `#5A3FD9` en couleur principale, pêche `#FF9E6D` en couleur secondaire
   décorative, bleu-vert pour le badge « Science », ambre pour le badge « Réflexion ». Contrastes

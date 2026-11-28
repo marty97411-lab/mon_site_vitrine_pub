@@ -7,40 +7,20 @@ import Source from '../components/Source.astro';
 
 <Base
   titre="Besoin d'en parler ?"
-  description="Des personnes peuvent vous écouter et vous accompagner, gratuitement : 3114, conseil en évolution professionnelle, Onisep, France Travail."
+  description="Des conseillers peuvent vous accompagner gratuitement dans vos questions d'orientation : conseil en évolution professionnelle, Onisep, CIO, France Travail."
   fil={[{ libelle: "Besoin d'en parler ?" }]}
 >
   <h1>Besoin d'en parler ?</h1>
   <Essentiel>
     <p>
-      Réfléchir à sa vie et à son travail peut remuer beaucoup de choses. Vous n'avez pas à le faire
-      seul : des personnes sont là pour vous écouter et vous accompagner, gratuitement.
+      Vous n'avez pas à réfléchir seul à votre orientation : des conseillers peuvent vous écouter et
+      vous accompagner, gratuitement.
     </p>
   </Essentiel>
 
-  <section aria-labelledby="ecoute">
-    <h2 id="ecoute">Si vous traversez un moment difficile</h2>
-    <Carte class="carte-3114">
-      <p class="numero">
-        <a href="tel:3114">3114</a>
-      </p>
-      <p>
-        <strong>Numéro national de prévention du suicide.</strong> Si vous êtes en détresse, si vous
-        avez des pensées suicidaires, ou si vous vous inquiétez pour un proche, vous pouvez appeler
-        le 3114. Un professionnel du soin, formé à la prévention du suicide, vous écoute.
-      </p>
-      <p>
-        Gratuit, 24 h/24 et 7 j/7, en métropole et en outre-mer.{' '}
-        <a href="https://3114.fr/">3114.fr</a>
-      </p>
-      <p class="discret">En cas de danger immédiat, appelez le 15 ou le 112.</p>
-    </Carte>
-    <Source id="site-3114" />
-  </section>
-
   <section aria-labelledby="accompagnement">
-    <h2 id="accompagnement">Pour être accompagné dans votre parcours</h2>
-    <div class="grille deux">
+    <h2 id="accompagnement">Être accompagné dans votre parcours</h2>
+    <div class="grille trois">
       <Carte titre="Conseil en évolution professionnelle (CEP)">
         <p>
           Un conseiller vous aide à faire le point et à construire un projet professionnel. Le
@@ -72,28 +52,60 @@ import Source from '../components/Source.astro';
     </div>
   </section>
 
-  <div class="lecture">
-    <h2>Sources</h2>
+  <div class="lecture sources-aide">
     <Source id="mon-cep" />
     <Source id="onisep-moel" />
     <Source id="france-travail" />
-    <p class="discret">
-      Informations vérifiées sur les sites officiels le 27 novembre 2026. TODO : vérifier le numéro
-      d'urgence 15/112 sur une source officielle et un lien officiel vers l'annuaire des CIO.
-    </p>
   </div>
+
+  <section class="ecoute" aria-labelledby="ecoute">
+    <h2 id="ecoute">Si vous traversez un moment très difficile</h2>
+    <p>
+      Si vous êtes en détresse, si vous avez des pensées suicidaires ou si vous vous inquiétez pour
+      un proche, vous pouvez appeler le numéro national de prévention du suicide :
+    </p>
+    <p class="appel">
+      <a href="tel:3114" class="numero">
+        3114
+      </a>
+    </p>
+    <p>
+      Un professionnel du soin vous écoute, gratuitement, 24 h/24 et 7 j/7, en métropole et en
+      outre-mer. Site officiel : <a href="https://3114.fr/">3114.fr</a>
+    </p>
+    <p>En cas de danger immédiat, appelez le 15 ou le 112.</p>
+    <Source id="site-3114" />
+    <p class="discret">
+      Informations vérifiées sur les sites officiels le 27 novembre 2026. TODO : vérifier les
+      numéros d'urgence 15 et 112 sur une source officielle, et ajouter un lien officiel vers
+      l'annuaire des CIO.
+    </p>
+  </section>
 </Base>
 
 <style>
-  .numero {
-    font-family: var(--police-titre);
-    font-variation-settings: 'SOFT' 100;
-    font-size: 2.6rem;
-    font-weight: 650;
+  .sources-aide {
+    margin-top: var(--espace-3);
+  }
+  /* Bloc sobre en bas de page : lisible (≥ 15 px, contraste AA), visible sans clic. */
+  .ecoute {
+    margin-top: var(--espace-6);
+    padding-top: var(--espace-3);
+    border-top: 1px solid var(--c-bordure);
+    max-width: var(--mesure);
+    font-size: 0.875rem; /* 15,75 px */
+    color: var(--c-texte-doux);
+  }
+  .ecoute h2 {
+    font-size: 1rem;
+    color: var(--c-texte);
+    margin-top: 0;
+  }
+  .appel {
     margin: 0;
   }
-  .numero a {
-    color: var(--c-primaire);
-    text-decoration: none;
+  .numero {
+    font-weight: 700;
+    font-size: 1.1rem;
   }
 </style>

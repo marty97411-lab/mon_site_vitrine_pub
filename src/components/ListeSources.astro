@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { libelleStatut } from '../lib/sources';
+import { libelleStatut, partiesReference } from '../lib/sources';
 
 interface Props {
   sources: CollectionEntry<'sources'>[];
@@ -20,10 +20,7 @@ const Titre = `h${niveau}` as 'h2' | 'h3' | 'h4';
     <ul>
       {sources.map(({ data: s }) => (
         <li>
-          {s.auteurs.join(', ')} ({s.annee ?? 's. d.'}). <cite>{s.titre}</cite>
-          {s.publication && <>. {s.publication}</>}
-          {s.volume && <>, {s.volume}</>}
-          {s.pages && <>, {s.pages}</>}.
+          {[partiesReference(s).avant, <cite>{s.titre}</cite>, partiesReference(s).apres]}
           {s.doi && (
             <>
               {' '}
@@ -42,3 +39,27 @@ const Titre = `h${niveau}` as 'h2' | 'h3' | 'h4';
     </ul>
   </section>
 )}
+
+<style>
+  section {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--c-texte-doux);
+    max-width: var(--mesure);
+  }
+  ul {
+    padding-left: 1rem;
+  }
+  li {
+    margin-block: 0.3rem;
+  }
+  a {
+    color: var(--c-texte-doux);
+  }
+  h2,
+  h3,
+  h4 {
+    font-size: 1rem;
+    color: var(--c-texte);
+  }
+</style>

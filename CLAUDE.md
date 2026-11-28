@@ -4,7 +4,7 @@ Référence pour toutes les sessions de travail sur ce dépôt. À lire avant to
 
 ## Le projet
 
-**Personnalisé** : site web en français d'aide à la réflexion sur l'orientation professionnelle, fondé sur la
+**Personalis** : site web en français d'aide à la réflexion sur l'orientation professionnelle, fondé sur la
 personnalité :
 
 1. le visiteur passe un questionnaire de personnalité ;
@@ -92,6 +92,17 @@ qu'une partie de la réussite et de la satisfaction au travail.
   Illustration, ScienceOuReflexion, ListeSources, Logo). Mise en page d'article :
   `src/layouts/Article.astro`.
 - Vérifier le rendu à 375, 768 et 1280 px (aucun défilement horizontal).
+- **Nom du site : « Personalis »** (du latin _personalis_), partout : logo, bouton d'accueil,
+  titres, balises SEO et Open Graph, documents. « Personnalisé » n'est plus le nom du site.
+- **Mentions de licence discrètes** : pied de page réduit à une ligne courte avec un lien vers
+  `/credits` (textes complets d'attribution O*NET, IPIP, polices, licences du site). La mention
+  O*NET Tools reste affichée en entier sur la page du questionnaire d'intérêts (« launch screen »
+  exigé par la licence), avec le lien « modifications and disclaimers ».
+- Encadrés « Source » et listes de références : petits et atténués (≥ 15 px, contraste AA).
+- L'encadré « Science ou réflexion ? » n'apparaît que sur la page d'accueil de la section
+  Philosophie ; les pages individuelles portent seulement le badge.
+- Page « Besoin d'en parler ? » : l'accompagnement professionnel en haut ; le 3114 en bas, sobre
+  mais lisible (≥ 15 px), visible sans clic, lien `tel:` cliquable.
 
 ## Choix techniques
 

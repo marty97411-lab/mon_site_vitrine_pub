@@ -8,7 +8,6 @@ import Badge from '../components/Badge.astro';
 import Essentiel from '../components/Essentiel.astro';
 import EnSavoirPlus from '../components/EnSavoirPlus.astro';
 import ListeSources from '../components/ListeSources.astro';
-import ScienceOuReflexion from '../components/ScienceOuReflexion.astro';
 import Illustration from '../components/Illustration.astro';
 import { chargerContenu, sourcesParIds } from '../lib/contenu';
 import { minutesDeLecture } from '../lib/lecture';
@@ -62,8 +61,6 @@ const minutes = minutesDeLecture(essentiel, comprendre, corps);
       encore être relu et validé.
     </p>
   )}
-
-  {badge === 'reflexion' && <ScienceOuReflexion />}
 
   <Essentiel>
     <p>{essentiel}</p>

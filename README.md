@@ -1,6 +1,6 @@
-# Personnalisé
+# Personalis
 
-**Personnalisé** est un site web en français d'aide à la réflexion sur l'orientation
+**Personalis** est un site web en français d'aide à la réflexion sur l'orientation
 professionnelle et sur la vie que l'on veut mener. Le visiteur choisit
 un parcours rapide (80 questions) ou complet (180 questions) et répond à deux questionnaires :
 

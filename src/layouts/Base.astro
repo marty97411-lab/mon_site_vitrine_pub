@@ -12,7 +12,7 @@ interface Props {
 }
 
 const { titre, description, fil, typeOg = 'website' } = Astro.props;
-const NOM = 'Personnalisé';
+const NOM = 'Personalis';
 const titreComplet = titre === NOM ? NOM : `${titre} · ${NOM}`;
 const navigation = [
   { href: '/', libelle: 'Accueil' },
@@ -28,7 +28,7 @@ const actif = (href: string) =>
 // TODO(domaine) : renseigner `site` dans astro.config.mjs pour activer l'URL canonique,
 // og:url et og:image (qui exigent des adresses absolues).
 const urlCanonique = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
-const imageOg = Astro.site ? new URL('/og-personnalise.png', Astro.site).href : undefined;
+const imageOg = Astro.site ? new URL('/og-personalis.png', Astro.site).href : undefined;
 ---
 
 <!doctype html>
@@ -56,7 +56,7 @@ const imageOg = Astro.site ? new URL('/og-personnalise.png', Astro.site).href : 
     </a>
     <header class="entete">
       <div class="conteneur barre">
-        <a class="accueil" href="/" aria-label="Personnalisé, accueil">
+        <a class="accueil" href="/" aria-label="Personalis, accueil">
           <Logo />
         </a>
         <nav aria-label="Navigation principale" class="nav-large">
@@ -97,66 +97,31 @@ const imageOg = Astro.site ? new URL('/og-personnalise.png', Astro.site).href : 
 
     <footer class="pied">
       <div class="conteneur">
-        <div class="pied-haut">
-          <div>
-            <Logo taille={28} />
-            <p class="discret">
-              Une aide à la réflexion sur l'orientation, pas un verdict. Vos réponses restent dans
-              votre navigateur : rien n'est envoyé, aucun traceur.
-            </p>
-          </div>
-          <p class="aide">
-            <a href="/besoin-d-en-parler">Besoin d'en parler ?</a>
-            <span class="discret">Des personnes peuvent vous écouter et vous accompagner.</span>
-          </p>
+        <div class="pied-ligne">
+          <Logo taille={20} />
+          <ul class="liens-pied">
+            <li>
+              <a href="/besoin-d-en-parler">Besoin d'en parler ?</a>
+            </li>
+            <li>
+              <a href="/plan-du-site">Plan du site</a>
+            </li>
+            <li>
+              <a href="/sources">Sources</a>
+            </li>
+            <li>
+              <a href="/a-propos">À propos</a>
+            </li>
+            <li>
+              <a href="/mentions-legales">Mentions légales</a>
+            </li>
+          </ul>
         </div>
-        <ul class="liens-pied">
-          <li>
-            <a href="/comprendre">Comprendre</a>
-          </li>
-          <li>
-            <a href="/sources">Sources</a>
-          </li>
-          <li>
-            <a href="/plan-du-site">Plan du site</a>
-          </li>
-          <li>
-            <a href="/a-propos">À propos et limites</a>
-          </li>
-          <li>
-            <a href="/mentions-legales">Mentions légales</a>
-          </li>
-          <li>
-            <a href="/modifications-onet">Modifications O*NET</a>
-          </li>
-        </ul>
-        <p class="discret">
-          Items de personnalité : International Personality Item Pool (IPIP), domaine public.
-          Contenu sous licence CC BY 4.0, code sous licence MIT.
-        </p>
-        <p class="discret" lang="en">
-          This page includes information from the
-          <a href="https://www.onetcenter.org/database.html">O*NET 31.0 Database</a> by the U.S.
-          Department of Labor, Employment and Training Administration (USDOL/ETA). Used under the
-          <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> license. O*NET® is a
-          trademark of USDOL/ETA. The contributors of this project have modified all or some of this
-          information. USDOL/ETA has not approved, endorsed, or tested these modifications.
-        </p>
-        <p class="discret" lang="en">
-          This site includes information from the
-          <a href="https://www.onetcenter.org/tools.html">O*NET Career Exploration Tools</a> by the
-          U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). Used under
-          the
-          <a href="https://www.onetcenter.org/license_toolsdev.html">
-            O*NET Tools Developer License
-          </a>
-          . O*NET® is a trademark of USDOL/ETA. The contributors of this project have modified all
-          or some of this information. USDOL/ETA has not approved, endorsed, or tested these
-          modifications.
-          <a href="/modifications-onet" lang="fr">
-            Modifications et avertissements (modifications and disclaimers)
-          </a>
-          .
+        <p class="licences">
+          Vos réponses restent dans votre navigateur. Contient des informations de la base et des
+          outils O*NET® (USDOL/ETA), modifiées par le projet ; items IPIP (domaine public).
+          <a href="/credits">Crédits et licences</a> ·
+          <a href="/modifications-onet">modifications et avertissements O*NET</a>
         </p>
       </div>
     </footer>
@@ -248,40 +213,34 @@ const imageOg = Astro.site ? new URL('/og-personnalise.png', Astro.site).href : 
   }
   .pied {
     margin-top: var(--espace-6);
-    background: var(--c-surface-douce);
-    padding-block: var(--espace-5);
+    border-top: 1px solid var(--c-bordure);
+    padding-block: var(--espace-3);
+    font-size: 0.85rem;
+    color: var(--c-texte-doux);
   }
-  .pied-haut {
-    display: grid;
-    gap: var(--espace-4);
+  .pied-ligne {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--espace-2) var(--espace-4);
   }
-  @media (min-width: 48rem) {
-    .pied-haut {
-      grid-template-columns: 2fr 1fr;
-      align-items: start;
-    }
-  }
-  .aide {
-    background: var(--c-surface);
-    border-radius: var(--rayon);
-    padding: var(--espace-3) var(--espace-4);
-    box-shadow: var(--ombre);
-    margin: 0;
-  }
-  .aide a {
-    display: block;
-    font-weight: 700;
-    font-size: 1.05rem;
+  .pied-ligne :global(.logo-texte) {
+    font-size: 1rem;
   }
   .liens-pied {
     list-style: none;
     padding: 0;
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: var(--espace-2) var(--espace-4);
-    margin: var(--espace-4) 0;
+    gap: var(--espace-1) var(--espace-3);
   }
-  .pied p.discret {
-    max-width: var(--mesure);
+  .liens-pied a,
+  .licences a {
+    color: var(--c-texte-doux);
+  }
+  .licences {
+    margin: var(--espace-2) 0 0;
+    max-width: none;
   }
 </style>

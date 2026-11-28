@@ -1,7 +1,7 @@
 ---
 /** Encadré « Source » : référence complète d'une source de sources.json. */
 import { chargerContenu } from '../lib/contenu';
-import { libelleStatut } from '../lib/sources';
+import { libelleStatut, partiesReference } from '../lib/sources';
 
 interface Props {
   id: string;
@@ -12,13 +12,12 @@ const { sources } = await chargerContenu();
 const s = sources.find((x) => x.id === id)?.data;
 if (!s) throw new Error(`Source inconnue : ${id}`);
 const statut = libelleStatut(s.statut);
+const { avant, apres } = partiesReference(s);
+const fin = precision ? `${apres} ${precision}.` : apres;
 ---
 
 <p class="source">
-  <strong>Source</strong> · {s.auteurs.join(', ')} ({s.annee ?? 's. d.'}). <cite>{s.titre}</cite>
-  {s.publication && <>. {s.publication}</>}
-  {s.volume && <>, {s.volume}</>}
-  {s.pages && <>, {s.pages}</>}.{precision && <> {precision}.</>}
+  <strong>Source</strong> · {[avant, <cite>{s.titre}</cite>, fin]}
   {s.doi ? (
     <>
       {' '}
@@ -37,11 +36,18 @@ const statut = libelleStatut(s.statut);
 
 <style>
   .source {
-    font-size: 0.88rem;
-    border-left: 3px solid var(--c-secondaire);
-    background: var(--c-secondaire-clair);
-    padding: 0.6rem 0.9rem;
-    border-radius: 0 var(--rayon-petit) var(--rayon-petit) 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--c-texte-doux);
+    border-left: 2px solid var(--c-bordure);
+    padding: 0.1rem 0 0.1rem 0.7rem;
+    margin: var(--espace-2) 0;
     max-width: var(--mesure);
+  }
+  .source strong {
+    font-weight: 700;
+  }
+  .source a {
+    color: var(--c-texte-doux);
   }
 </style>

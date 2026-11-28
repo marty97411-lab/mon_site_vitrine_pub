@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  titre="Crédits et licences"
+  description="Textes complets des mentions de licence et d'attribution : O*NET, IPIP, polices, code et contenu du site."
+  fil={[{ libelle: 'Crédits et licences' }]}
+>
+  <h1>Crédits et licences</h1>
+  <div class="lecture">
+    <h2>Base de données O*NET</h2>
+    <p lang="en">
+      This page includes information from the
+      <a href="https://www.onetcenter.org/database.html">O*NET 31.0 Database</a> by the U.S.
+      Department of Labor, Employment and Training Administration (USDOL/ETA). Used under the
+      <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> license. O*NET® is a
+      trademark of USDOL/ETA. The contributors of this project have modified all or some of this
+      information. USDOL/ETA has not approved, endorsed, or tested these modifications.
+    </p>
+    <p>
+      Modifications apportées : sélection de colonnes (profils d'intérêts, intitulés, niveaux de
+      préparation), exclusion de la famille « Military Specific », conversion des points hauts en
+      lettres RIASEC, traduction des noms de familles et de niveaux.
+    </p>
+
+    <h2>Outils O*NET (Interest Profiler)</h2>
+    <p lang="en">
+      This site includes information from the
+      <a href="https://www.onetcenter.org/tools.html">O*NET Career Exploration Tools</a> by the U.S.
+      Department of Labor, Employment and Training Administration (USDOL/ETA). Used under the
+      <a href="https://www.onetcenter.org/license_toolsdev.html">O*NET Tools Developer License</a>.
+      O*NET® is a trademark of USDOL/ETA. The contributors of this project have modified all or some
+      of this information. USDOL/ETA has not approved, endorsed, or tested these modifications.
+    </p>
+    <p>
+      La description des modifications et l'avertissement de non-responsabilité figurent sur la page
+      <a href="/modifications-onet">
+        modifications et avertissements (modifications and disclaimers)
+      </a>
+      . La mention complète est aussi affichée sur la page du questionnaire d'intérêts.
+    </p>
+
+    <h2>Questionnaires de personnalité (IPIP)</h2>
+    <p>
+      Les items de personnalité viennent de l'
+      <a href="https://ipip.ori.org/">International Personality Item Pool</a>, placé dans le domaine
+      public (IPIP-NEO-120, Johnson, 2014 ; marqueurs du Big Five, Goldberg, 1992). Les traductions
+      françaises sont du projet.
+    </p>
+
+    <h2>Polices de caractères</h2>
+    <p>
+      Atkinson Hyperlegible Next (Braille Institute) et Fraunces, distribuées sous licence SIL Open
+      Font License 1.1, hébergées sur ce site (paquets Fontsource).
+    </p>
+
+    <h2>Ce site</h2>
+    <p>
+      Code sous licence MIT ; contenu rédactionnel sous licence
+      <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a>. Citations
+      d'œuvres du domaine public : voir les références sur chaque page et la page{' '}
+      <a href="/sources">Sources</a>.
+    </p>
+  </div>
+</Base>
