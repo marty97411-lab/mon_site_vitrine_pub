@@ -70,10 +70,10 @@ const description = `${l.titre}, de ${l.auteurs.join(', ')} (${l.editeur}, ${l.a
     <p>{l.resume}</p>
   </Essentiel>
 
-  {rd && (
-    <div class="lecture">
-      <EnSavoirPlus titre="Résumé détaillé">
-        {parties.map((partie) => (
+  <div class="lecture">
+    <EnSavoirPlus titre="Résumé détaillé" id="resume-detaille">
+      {rd ? (
+        parties.map((partie) => (
           <>
             <h2 class="partie-resume">{partie.titre}</h2>
             {partie.paragraphes.map((paragraphe) => (
@@ -84,10 +84,23 @@ const description = `${l.titre}, de ${l.auteurs.join(', ')} (${l.editeur}, ${l.a
               </p>
             ))}
           </>
-        ))}
-      </EnSavoirPlus>
-    </div>
-  )}
+        ))
+      ) : (
+        <p class="discret">Le résumé détaillé de ce livre est en cours de rédaction.</p>
+      )}
+    </EnSavoirPlus>
+  </div>
+  <script>
+    // Ouvre le menu « Résumé détaillé » quand on arrive depuis la liste (lien #resume-detaille).
+    const ouvrir = () => {
+      const bloc = document.getElementById('resume-detaille');
+      if (location.hash === '#resume-detaille' && bloc instanceof HTMLDetailsElement) {
+        bloc.open = true;
+      }
+    };
+    ouvrir();
+    window.addEventListener('hashchange', ouvrir);
+  </script>
 
   <section class="lecture" aria-labelledby="comprendre">
     <h2 id="comprendre">Pour qui ?</h2>

@@ -73,8 +73,8 @@ const parcours = contenu.parcours.map(({ data: p }) => ({
   </section>
 
   <section aria-labelledby="lire">
-    <h2 id="lire">Vous préférez lire d'abord ?</h2>
-    <div class="grille trois">
+    <h2 id="lire">Vous préférez vous renseigner d'abord ?</h2>
+    <div class="grille deux">
       <Carte titre="Ma situation" href="/situations">
         <p slot="haut">
           <Badge type="science" />
@@ -84,7 +84,7 @@ const parcours = contenu.parcours.map(({ data: p }) => ({
           choisir mes études.
         </p>
       </Carte>
-      <Carte titre="Comprendre" href="/comprendre">
+      <Carte titre="Explication" href="/explication">
         <p slot="haut">
           <Badge type="science" />
         </p>
@@ -97,6 +97,15 @@ const parcours = contenu.parcours.map(({ data: p }) => ({
           <Badge type="reflexion" />
         </p>
         <p>Aristote, les stoïciens, Montaigne, Sartre, Simone Weil, Hannah Arendt et l'ikigai.</p>
+      </Carte>
+      <Carte titre="Introversion et extraversion" href="/explication/introversion-extraversion">
+        <p slot="haut">
+          <Badge type="science" />
+        </p>
+        <p>
+          Un dossier en cinq pages courtes : idées reçues, travail, environnements, et ce que dit la
+          recherche.
+        </p>
       </Carte>
     </div>
   </section>

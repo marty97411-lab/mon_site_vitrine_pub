@@ -25,7 +25,7 @@ sources: [johnson-2014, goldberg-1992, roberts-walton-viechtbauer-2006]
 pour_aller_plus_loin:
   - href: /parcours
     libelle: Faire le test
-  - href: /comprendre
+  - href: /explication
     libelle: Les autres traits et la science derrière
   - href: /besoin-d-en-parler
     libelle: Besoin d'en parler ?

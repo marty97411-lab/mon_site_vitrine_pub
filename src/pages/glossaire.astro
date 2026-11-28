@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+import Essentiel from '../components/Essentiel.astro';
+import { glossaireSchema } from '../lib/schemas';
+import donnees from '../data/glossaire.json';
+
+const entrees = glossaireSchema
+  .parse(donnees)
+  .sort((a, b) => a.terme.localeCompare(b.terme, 'fr', { sensitivity: 'base' }));
+---
+
+<Base
+  titre="Glossaire"
+  description="Les termes techniques du site expliqués simplement : Big Five, RIASEC, facette, percentile, O*NET, Job Zone…"
+  fil={[{ libelle: 'Explication', href: '/explication' }, { libelle: 'Glossaire' }]}
+>
+  <h1>Glossaire</h1>
+  <Essentiel>
+    <p>
+      Les mots techniques utilisés sur le site, expliqués simplement. Sur chaque page, ces termes
+      sont cliquables et renvoient ici.
+    </p>
+  </Essentiel>
+  <dl class="glossaire lecture">
+    {entrees.map((e) => (
+      <>
+        <dt id={e.id}>{e.terme}</dt>
+        <dd>
+          <p>{e.definition}</p>
+          {e.voir && (
+            <p class="discret">
+              <a href={e.voir}>En savoir plus</a>
+            </p>
+          )}
+        </dd>
+      </>
+    ))}
+  </dl>
+</Base>
+
+<style>
+  .glossaire dt {
+    font-family: var(--police-titre);
+    font-variation-settings: 'SOFT' 100;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-top: var(--espace-4);
+    scroll-margin-top: 5rem;
+  }
+  .glossaire dd {
+    margin: 0;
+  }
+  .glossaire dd p {
+    margin: var(--espace-1) 0;
+  }
+  .glossaire dt:target {
+    color: var(--c-primaire);
+  }
+</style>

@@ -1,4 +1,5 @@
 ---
+import Definition from '../components/Definition.astro';
 import Base from '../layouts/Base.astro';
 import Avertissement from '../components/Avertissement.astro';
 import Badge from '../components/Badge.astro';
@@ -108,11 +109,11 @@ const donnees = {
       <p>
         Votre profil d'intérêts se compose de vos six scores RIASEC (Réaliste, Investigateur,
         Artistique, Social, Entreprenant, Conventionnel). Chaque métier a lui aussi un profil de six
-        scores dans la base américaine O*NET 31.0. Le site compare la <em>forme</em> des deux
-        profils : quelles dimensions sont hautes et lesquelles sont basses, chez vous et dans le
-        métier. Le niveau de vos scores ne compte pas, seulement leur ordre et leurs écarts. Cette
-        comparaison (une corrélation) et les seuils ci-dessus sont ceux du manuel de l'O*NET
-        Interest Profiler.
+        scores dans la base américaine <Definition terme="onet" /> (version 31.0). Le site compare
+        la <em>forme</em> des deux profils : quelles dimensions sont hautes et lesquelles sont
+        basses, chez vous et dans le métier. Le niveau de vos scores ne compte pas, seulement leur
+        ordre et leurs écarts. Cette comparaison (une <Definition terme="correlation" />) et les
+        seuils ci-dessus sont ceux du manuel de l'O*NET Interest Profiler.
       </p>
       <p>
         Les profils des métiers sont estimés par O*NET par apprentissage automatique contrôlé par
@@ -148,9 +149,9 @@ const donnees = {
     <details class="depliable">
       <summary>En savoir plus sur les niveaux de préparation</summary>
       <p>
-        La base O*NET classe les métiers en « Job Zones », de 1 (peu de préparation) à 5
-        (préparation très importante). Dans la version 31.0 utilisée ici, les zones 1 et 2 sont
-        regroupées.
+        La base O*NET classe les métiers en <Definition terme="job-zone" texte="« Job Zones »" />,
+        de 1 (peu de préparation) à 5 (préparation très importante). Dans la version 31.0 utilisée
+        ici, les zones 1 et 2 sont regroupées.
       </p>
       <div
         class="tableau-defilant"
@@ -221,6 +222,7 @@ const donnees = {
   import { pointsProfil, pourcentageBarre, sommet, versAttribut } from '../lib/visualisation';
   import { effacerTout, lireEtat } from '../lib/stockage';
   import { suggerer, type ProfilPourSuggestions } from '../lib/recommandations';
+  import { GLOSSAIRE } from '../lib/glossaire';
   import type { ConfigRecommandations } from '../lib/schemas/recommandations';
 
   interface QuestionnaireClient extends ConfigCotation {
@@ -295,6 +297,41 @@ const donnees = {
     return ligne;
   }
 
+  /**
+   * Lien contextuel vers le dossier « Introversion et extraversion ». Les seuils 2,5 et 3,5
+   * (les mêmes que pour les suggestions de lecture) choisissent seulement la page proposée :
+   * ils ne définissent aucune catégorie.
+   */
+  function lienDossierExtraversion(valeur: number) {
+    const base = '/explication/introversion-extraversion';
+    const [debut, page, libelle] =
+      valeur <= 2.5
+        ? [
+            'Votre position est plutôt du côté de l’introversion, ce qui n’est ni de la timidité ni un défaut. ',
+            'idees-recues',
+            'Idées reçues sur l’introversion',
+          ]
+        : valeur >= 3.5
+          ? [
+              'Votre position est plutôt du côté de l’extraversion. ',
+              'travail-recherche',
+              'Ce que dit la recherche sur le travail',
+            ]
+          : [
+              'Votre position est vers le milieu de l’échelle. ',
+              'ce-que-c-est',
+              'Un continuum plutôt que deux camps',
+            ];
+    return el(
+      'p',
+      { class: 'discret lien-dossier' },
+      debut,
+      lien(`${base}/${page}`, libelle),
+      ' · ',
+      lien(base, 'tout le dossier'),
+    );
+  }
+
   function sectionPersonnalite(q: QuestionnaireClient, reponses: Record<string, number>) {
     const profil = calculerProfil(q, reponses);
     const section = el('section', {
@@ -306,7 +343,7 @@ const donnees = {
       el(
         'p',
         { class: 'phrase-graphique' },
-        'Chaque barre montre votre position entre 1 et 5 : aucun côté n’est meilleur que l’autre. Le trait vertical marque le milieu de l’échelle, qui n’est pas la moyenne de la population. ',
+        `Vos cinq grands traits selon le Big Five (${GLOSSAIRE['big-five']}). Chaque barre montre votre position entre 1 et 5 : aucun côté n’est meilleur que l’autre. Le trait vertical marque le milieu de l’échelle, qui n’est pas la moyenne de la population. `,
         lien('/la-science#scores', 'Pourquoi pas de comparaison ?'),
       ),
     );
@@ -320,7 +357,7 @@ const donnees = {
         const details = el(
           'details',
           { class: 'depliable facettes' },
-          el('summary', {}, `Les 6 facettes`),
+          el('summary', {}, `Les 6 facettes (aspects plus précis de ce trait)`),
         );
         for (const [id, f] of Object.entries(FACETTES)) {
           if (f.trait !== trait) continue;
@@ -330,6 +367,7 @@ const donnees = {
         }
         item.append(details);
       }
+      if (trait === 'E' && s.valeur !== null) item.append(lienDossierExtraversion(s.valeur));
       graphique.append(item);
     }
     section.append(
@@ -412,7 +450,7 @@ const donnees = {
       el(
         'p',
         { class: 'phrase-graphique' },
-        'Plus une pointe s’éloigne du centre, plus cette famille d’activités vous attire. Votre code d’intérêts : ',
+        `Votre profil selon le modèle RIASEC (${GLOSSAIRE.riasec}). Plus une pointe s’éloigne du centre, plus cette famille d’activités vous attire. Votre code d’intérêts : `,
         el('strong', {}, code),
         '.',
       ),
@@ -451,7 +489,7 @@ const donnees = {
     table.append(corps);
     details.append(
       table,
-      el('p', {}, lien('/comprendre/interets', 'Que signifient les six dimensions ?')),
+      el('p', {}, lien('/explication/interets', 'Que signifient les six dimensions ?')),
     );
     section.append(details);
     return { section, scores };

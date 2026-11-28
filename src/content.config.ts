@@ -50,6 +50,12 @@ const philosophie = defineCollection({
   schema: articleSchema,
 });
 
+/** Dossier « Introversion et extraversion » (section Explication). */
+const introversion = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/introversion' }),
+  schema: articleSchema,
+});
+
 const livres = defineCollection({
   loader: file('src/content/livres/livres.json'),
   schema: livreSchema,
@@ -70,4 +76,5 @@ export const collections = {
   metiers,
   situations,
   philosophie,
+  introversion,
 };

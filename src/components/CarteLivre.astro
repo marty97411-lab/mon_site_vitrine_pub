@@ -29,6 +29,11 @@ const l = livre.data;
     {l.direction && ' (dir.)'} · {l.editeur}, {l.annee}
   </p>
   <p>{l.resume}</p>
+  {l.resume_detaille && (
+    <p class="lien-resume">
+      <a href={`/livres/${l.id}#resume-detaille`}>Lire le résumé détaillé</a>
+    </p>
+  )}
   {l.note_controverse && <p class="controverse">À savoir : livre discuté (voir la fiche).</p>}
   <p class="discret themes">{l.themes.map((t) => LIBELLES_THEMES[t]).join(' · ')}</p>
 </article>
@@ -69,6 +74,12 @@ const l = livre.data;
     position: absolute;
     inset: 0;
     border-radius: var(--rayon);
+  }
+  /* Au-dessus du lien de la carte entière (h3 a::after), pour rester cliquable. */
+  .lien-resume a {
+    position: relative;
+    z-index: 1;
+    font-weight: 700;
   }
   .auteurs {
     color: var(--c-texte-doux);

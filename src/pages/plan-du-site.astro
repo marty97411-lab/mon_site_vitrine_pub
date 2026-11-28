@@ -2,7 +2,8 @@
 import Base from '../layouts/Base.astro';
 import { chargerContenu } from '../lib/contenu';
 
-const { traits, situations, philosophie, metiers, parcours, livres } = await chargerContenu();
+const { traits, situations, philosophie, introversion, metiers, parcours, livres } =
+  await chargerContenu();
 ---
 
 <Base
@@ -54,10 +55,10 @@ const { traits, situations, philosophie, metiers, parcours, livres } = await cha
       </ul>
     </section>
     <section>
-      <h2>Comprendre</h2>
+      <h2>Explication</h2>
       <ul>
         <li>
-          <a href="/comprendre">Comprendre</a>
+          <a href="/explication">Explication</a>
         </li>
         {traits.map(({ id, data }) => (
           <li>
@@ -65,10 +66,23 @@ const { traits, situations, philosophie, metiers, parcours, livres } = await cha
           </li>
         ))}
         <li>
-          <a href="/comprendre/interets">Les intérêts professionnels (RIASEC)</a>
+          <a href="/explication/interets">Les intérêts professionnels (RIASEC)</a>
+        </li>
+        <li>
+          <a href="/explication/introversion-extraversion">Introversion et extraversion</a>
+          <ul>
+            {introversion.map(({ id, data }) => (
+              <li>
+                <a href={`/explication/introversion-extraversion/${id}`}>{data.titre}</a>
+              </li>
+            ))}
+          </ul>
         </li>
         <li>
           <a href="/la-science">La science derrière le test</a>
+        </li>
+        <li>
+          <a href="/glossaire">Glossaire</a>
         </li>
         <li>
           <a href="/metiers">Fiches métiers d'exemple</a>

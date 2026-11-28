@@ -51,14 +51,6 @@
     "themes": ["bien-etre", "connaissance-de-soi"]
   },
   {
-    "id": "susan-cain",
-    "nom": "Susan Cain",
-    "presentation": "Autrice d'ouvrages grand public sur l'introversion.",
-    "etiquette": "temoignage",
-    "themes": ["connaissance-de-soi"],
-    "note": "Livre de vulgarisation et de témoignage plutôt que de recherche : utile pour réfléchir, pas une preuve scientifique."
-  },
-  {
     "id": "viktor-frankl",
     "nom": "Viktor Frankl",
     "presentation": "Psychiatre, survivant des camps de concentration, fondateur de la logothérapie centrée sur la recherche de sens.",

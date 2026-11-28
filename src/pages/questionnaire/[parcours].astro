@@ -1,4 +1,5 @@
 ---
+import Definition from '../../components/Definition.astro';
 import Base from '../../layouts/Base.astro';
 import { chargerContenu, questionnaireParId } from '../../lib/contenu';
 
@@ -54,6 +55,17 @@ const ITEMS_PAR_PAGE = 10;
             ? 'traduction française non validée'
             : 'version originale'}{' '}
           · licence <a href={q.licence.url}>{q.licence.nom}</a>
+        </p>
+        <p class="discret">
+          {q.modele === 'big-five' ? (
+            <>
+              Ce questionnaire repose sur le <Definition terme="big-five" />.
+            </>
+          ) : (
+            <>
+              Ce questionnaire repose sur le modèle <Definition terme="riasec" />.
+            </>
+          )}
         </p>
         <p>{q.consigne}</p>
         {q.modele === 'riasec' && (

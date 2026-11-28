@@ -25,6 +25,7 @@ export interface Contenu {
   metiers: CollectionEntry<'metiers'>[];
   situations: CollectionEntry<'situations'>[];
   philosophie: CollectionEntry<'philosophie'>[];
+  introversion: CollectionEntry<'introversion'>[];
   livres: CollectionEntry<'livres'>[];
 }
 
@@ -37,17 +38,27 @@ function refsAffirmations(origine: string, affirmations: readonly Affirmation[])
 }
 
 async function charger(): Promise<Contenu> {
-  const [sources, questionnaires, parcours, traits, metiers, situations, philosophie, livres] =
-    await Promise.all([
-      getCollection('sources'),
-      getCollection('questionnaires'),
-      getCollection('parcours'),
-      getCollection('traits'),
-      getCollection('metiers'),
-      getCollection('situations'),
-      getCollection('philosophie'),
-      getCollection('livres'),
-    ]);
+  const [
+    sources,
+    questionnaires,
+    parcours,
+    traits,
+    metiers,
+    situations,
+    philosophie,
+    introversion,
+    livres,
+  ] = await Promise.all([
+    getCollection('sources'),
+    getCollection('questionnaires'),
+    getCollection('parcours'),
+    getCollection('traits'),
+    getCollection('metiers'),
+    getCollection('situations'),
+    getCollection('philosophie'),
+    getCollection('introversion'),
+    getCollection('livres'),
+  ]);
 
   const refs: Reference[] = [];
   for (const { data: q } of questionnaires) {
@@ -73,6 +84,7 @@ async function charger(): Promise<Contenu> {
   for (const [nom, entrees] of [
     ['situations', situations],
     ['philosophie', philosophie],
+    ['introversion', introversion],
   ] as const) {
     for (const { id, data } of entrees) {
       refs.push(...data.sources.map((idSource) => ({ origine: `${nom}/${id}`, idSource })));
@@ -118,6 +130,7 @@ async function charger(): Promise<Contenu> {
     ...situations.map((e) => `situations/${e.id}`),
     ...philosophie.map((e) => `philosophie/${e.id}`),
     ...traits.map((e) => `traits/${e.id}`),
+    ...introversion.map((e) => `introversion/${e.id}`),
   ]);
   for (const regle of config.regles) {
     for (const id of regle.livres) {
@@ -133,7 +146,18 @@ async function charger(): Promise<Contenu> {
   livres.sort((a, b) => a.data.titre.localeCompare(b.data.titre, 'fr'));
   situations.sort((a, b) => a.data.ordre - b.data.ordre);
   philosophie.sort((a, b) => a.data.ordre - b.data.ordre);
-  return { sources, questionnaires, parcours, traits, metiers, situations, philosophie, livres };
+  introversion.sort((a, b) => a.data.ordre - b.data.ordre);
+  return {
+    sources,
+    questionnaires,
+    parcours,
+    traits,
+    metiers,
+    situations,
+    philosophie,
+    introversion,
+    livres,
+  };
 }
 
 export function chargerContenu(): Promise<Contenu> {
@@ -154,7 +178,7 @@ export function questionnaireParId(contenu: Contenu, id: string): Questionnaire 
   return q.data;
 }
 
-/** Titre et adresse de chaque article recommandable (« situations/… », « philosophie/… », « traits/… »). */
+/** Titre et adresse de chaque article recommandable (« situations/… », « philosophie/… », « traits/… », « introversion/… »). */
 export function catalogueArticles(
   contenu: Contenu,
 ): Record<string, { titre: string; url: string; badge: string }> {
@@ -175,6 +199,13 @@ export function catalogueArticles(
   }
   for (const e of contenu.traits) {
     catalogue[`traits/${e.id}`] = { titre: e.data.nom, url: `/traits/${e.id}`, badge: 'Science' };
+  }
+  for (const e of contenu.introversion) {
+    catalogue[`introversion/${e.id}`] = {
+      titre: e.data.titre,
+      url: `/explication/introversion-extraversion/${e.id}`,
+      badge: 'Science',
+    };
   }
   return catalogue;
 }

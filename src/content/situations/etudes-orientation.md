@@ -16,7 +16,7 @@ sources:
 pour_aller_plus_loin:
   - href: /parcours
     libelle: Faire le test (parcours rapide, 10 à 15 minutes)
-  - href: /comprendre/interets
+  - href: /explication/interets
     libelle: Comprendre les intérêts professionnels
   - href: /philosophie/sartre
     libelle: Sartre, votre personnalité ne décide pas à votre place

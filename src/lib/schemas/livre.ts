@@ -57,8 +57,9 @@ export const livreSchema = z
     pour_qui: z.string().min(1),
     a_garder_en_tete: z.string().min(1),
     /**
-     * Résumé détaillé rédigé par l'équipe, affiché dans un bloc dépliable fermé par défaut.
-     * Chaque entrée est un paragraphe ; « *texte* » est rendu en italique.
+     * Résumé détaillé rédigé et relu par l'équipe, affiché dans un menu déroulant fermé par défaut
+     * (absent tant qu'il n'est pas prêt). Chaque entrée est un paragraphe ; « *texte* » est rendu
+     * en italique.
      */
     resume_detaille: z
       .object({
