@@ -2,16 +2,28 @@
 
 Référence pour toutes les sessions de travail sur ce dépôt. À lire avant toute modification.
 
+> **Au début de chaque session, lire `README.md` en entier**, en particulier les sections
+> **3** (principes non négociables), **4** (règles éditoriales), **8** (méthode de travail) et
+> **10** (feuille de route et chantiers ouverts). Le README est la référence pour la vision et les
+> règles ; ce fichier précise les conventions techniques et l'organisation du code. En cas de
+> contradiction, suivre le README et corriger ce fichier.
+>
+> **À la fin de chaque session, mettre à jour les sections 9 (historique des décisions) et 10
+> (feuille de route et chantiers ouverts) du README.**
+
 ## Le projet
 
-**Personalis** : site web en français d'aide à la réflexion sur l'orientation professionnelle, fondé sur la
-personnalité :
+**Personalis** (du latin _personalis_, « personnel ») : site web en français d'aide à la
+réflexion sur l'orientation professionnelle et sur la vie que l'on veut mener :
 
-1. le visiteur passe un questionnaire de personnalité ;
+1. le visiteur choisit un parcours (rapide ou complet) et répond à deux questionnaires :
+   personnalité (Big Five) et intérêts professionnels (RIASEC) ;
 2. son profil est calculé **dans son navigateur** ;
-3. le site propose des familles de métiers, en expliquant pourquoi le profil y correspond, avec
-   les points forts et les points de vigilance du profil ;
-4. les explications sont d'abord simples, puis détaillées et sourcées pour qui veut creuser.
+3. la personnalité sert à **décrire** (points forts, points de vigilance, environnements
+   adaptés) ; les **intérêts RIASEC** servent au rapprochement avec plusieurs familles de métiers ;
+4. les explications sont d'abord simples, puis détaillées et sourcées pour qui veut creuser ;
+5. des contenus se lisent sans faire le test (menu : Accueil, Le test, Ma situation, Explication,
+   Philosophie, Livres conseillés, À propos ; plus « Besoin d'en parler ? »).
 
 **Ton** : sérieux, honnête, sans « vendre du rêve ». Le site dit clairement qu'un test de
 personnalité est une aide à la réflexion, pas un verdict, et que la personnalité n'explique
@@ -49,8 +61,9 @@ Approfondir), **sans nouvel onglet dans le menu sauf nécessité**, et la page d
   ne pas présenter la traduction comme validée.
 - **Pas d'écriture inclusive** (ni point médian ni doublets) : formes neutres si naturelles, sinon
   masculin générique.
-- **Pas de percentile** : l'IPIP déconseille les normes « toutes faites » ; on affiche la position
-  sur l'échelle 1–5.
+- **Pas de percentile sans norme publiée et sourcée** : l'IPIP déconseille les normes « toutes
+  faites » ; aucune norme n'est sourcée à ce jour (`src/data/normes/normes.json` reste à `null`),
+  on affiche donc la position sur l'échelle 1–5.
 - **Toute affirmation affichée doit être reliée à une source** de
   `src/content/sources/sources.json` (référence avec DOI ou lien). Dans les fiches, une
   affirmation sans source doit porter `todo_source: true` ; sinon, le schéma la refuse.
@@ -85,9 +98,10 @@ Approfondir), **sans nouvel onglet dans le menu sauf nécessité**, et la page d
   page (Big Five, RIASEC, facette, percentile, O*NET, Job Zone…), utiliser le composant
   `<Definition terme="…" />` : terme cliquable vers `/glossaire` + explication courte entre
   parenthèses. Définitions centralisées dans `src/data/glossaire.json` (identiques partout).
-- La section « Explication » (`/explication`, anciennement « Comprendre ») regroupe traits,
-  intérêts, science du test et glossaire. Ne pas la confondre avec le niveau de lecture
-  « Comprendre » des trois niveaux, qui garde son nom.
+- La section « Explication » (`/explication`) regroupe traits, intérêts, science du test, le
+  dossier Introversion et extraversion et le glossaire. Ne pas la confondre avec le niveau de
+  lecture « Comprendre » des trois niveaux, qui garde son nom. (Les anciennes URL `/comprendre`
+  redirigent vers `/explication`, voir `astro.config.mjs`.)
 - **Dossiers thématiques** : un sujet vaste devient un dossier de la section Explication (page
   sommaire + pages courtes en trois niveaux, une collection dédiée), pas une nouvelle section ni un
   nouvel onglet. Exemple : `/explication/introversion-extraversion` (ADR 0009). Ce qui relève de
@@ -123,12 +137,13 @@ Approfondir), **sans nouvel onglet dans le menu sauf nécessité**, et la page d
 - Illustrations : formes abstraites SVG (`Illustration.astro`), jamais de photos de banque d'images.
 - Graphiques : une seule teinte (violet), jamais de rouge/vert qui jugerait un score ; toujours une
   phrase explicative et une alternative textuelle (titre SVG, tableau de valeurs).
-- Composants : `src/components/` (Bouton, Carte, Essentiel, EnSavoirPlus, Source, Badge, FilAriane,
-  Illustration, ScienceOuReflexion, ListeSources, Logo). Mise en page d'article :
+- Composants : `src/components/` (Bouton, Carte, CarteLivre, Essentiel, EnSavoirPlus, Source,
+  Badge, FilAriane, Illustration, ScienceOuReflexion, ListeSources, Logo, Definition,
+  Avertissement). Mise en page d'article :
   `src/layouts/Article.astro`.
 - Vérifier le rendu à 375, 768 et 1280 px (aucun défilement horizontal).
 - **Nom du site : « Personalis »** (du latin _personalis_), partout : logo, bouton d'accueil,
-  titres, balises SEO et Open Graph, documents. « Personnalisé » n'est plus le nom du site.
+  titres, balises SEO et Open Graph, documents.
 - **Mentions de licence discrètes** : pied de page réduit à une ligne courte avec un lien vers
   `/credits` (textes complets d'attribution O*NET, IPIP, polices, licences du site). La mention
   O*NET Tools reste affichée en entier sur la page du questionnaire d'intérêts (« launch screen »
@@ -160,6 +175,10 @@ Approfondir), **sans nouvel onglet dans le menu sauf nécessité**, et la page d
     commence par « Pour qui… » ou « Pour les… ») ; pas de section « Pour qui ? » séparée ; puis le
     menu « Résumé détaillé » ; « Ce qu'il faut garder en tête » est secondaire et discret, comme
     les encadrés « Source » (≥ 15 px, couleur atténuée, contraste AA).
+- **Classiques** (édition de référence ancienne, souvent Wikisource) : indiquer une édition française
+  accessible, de préférence en poche (`edition_accessible` : ISBN valide, preuves ; `a_confirmer:
+true` si la référence ne vient que d'une source secondaire, affiché « référence à confirmer »).
+  Un titre courant différent du titre de la fiche va dans `autres_titres`.
 - Liens : DOI ou Wikisource si vérifiés, plus recherches BnF et Amazon **sans affiliation**.
 - **Auteurs non encore vérifiés** (`src/content/livres/auteurs-a-verifier.json`) : on peut citer
   l'auteur, son domaine et une note de prudence, **jamais un titre de livre précis**, avec la mention
@@ -215,6 +234,10 @@ src/
   lib/scoring/           cotation (moyenne ou somme), code RIASEC, percentiles + tests
   lib/rapprochement/     corrélation de profils, seuils O*NET, familles + tests
   lib/contenu.ts         accès au contenu + contrôle des références au build
+  lib/integrite.ts       contrôle d'intégrité des sources citées (+ tests)
+  lib/sources.ts         libellés des statuts de vérification des sources
+  lib/glossaire.ts       accès au glossaire (+ tests)
+  lib/texte.ts           mise en forme de texte (italiques) (+ tests)
   lib/stockage.ts        localStorage
   lib/contraste.ts       calcul des contrastes WCAG (+ test sur tokens.css)
   lib/visualisation.ts   géométrie des barres et de l'hexagone RIASEC (+ tests)
@@ -230,6 +253,8 @@ src/
                          intérêts, dossier introversion-extraversion/)
 scripts/
   import-onet.mjs        import des profils RIASEC O*NET (CC BY 4.0)
+  doc-sources.mjs        génération de docs/sources.md depuis sources.json
+  lib/                   utilitaires des scripts (lecture CSV, + tests)
 docs/
   sources.md             sources, licences, statut de vérification
   methodologie-score.md  règles de calcul
@@ -272,11 +297,12 @@ Avant chaque commit : `npm run lint && npm test && npm run build`.
     régénère `docs/sources.md`.
 - **Accessibilité** : HTML sémantique, `lang="fr"`, labels sur tous les champs, focus visible,
   contraste AA, `prefers-reduced-motion` respecté.
-- **Git** : petits commits explicites ; ne jamais committer de secrets.
+- **Git** : branche dédiée et petits commits explicites en français (voir README, section 8) ; ne
+  jamais committer de secrets.
 
 ## Points ouverts
 
-Voir les sections « TODO » de `docs/sources.md` : relecture du contenu des articles cités
+Liste tenue à jour : section 10 du `README.md`. Détails : voir les sections « TODO » de `docs/sources.md` : relecture du contenu des articles cités
 (statut `metadonnees-verifiees`), relecture des brouillons, étude de validation de la traduction
 O*NET (avant toute mise en ligne publique), liens sourcés personnalité → métiers, origine du
 diagramme de l'ikigai, étymologie de « Personalis » (note de la page À propos), ISBN manquants

@@ -2,9 +2,7 @@
   {
     "id": "ipip",
     "type": "site-web",
-    "auteurs": [
-      "Goldberg, L. R."
-    ],
+    "auteurs": ["Goldberg, L. R."],
     "annee": null,
     "titre": "International Personality Item Pool: A Scientific Collaboratory for the Development of Advanced Measures of Personality Traits and Other Individual Differences",
     "url": "https://ipip.ori.org/",
@@ -16,9 +14,7 @@
   {
     "id": "johnson-2014",
     "type": "article",
-    "auteurs": [
-      "Johnson, J. A."
-    ],
+    "auteurs": ["Johnson, J. A."],
     "annee": 2014,
     "titre": "Measuring thirty facets of the Five Factor Model with a 120-item public domain inventory: Development of the IPIP-NEO-120",
     "publication": "Journal of Research in Personality",
@@ -34,9 +30,7 @@
   {
     "id": "onet-31",
     "type": "base-de-donnees",
-    "auteurs": [
-      "U.S. Department of Labor, Employment and Training Administration (USDOL/ETA)"
-    ],
+    "auteurs": ["U.S. Department of Labor, Employment and Training Administration (USDOL/ETA)"],
     "annee": null,
     "titre": "O*NET 31.0 Database",
     "url": "https://www.onetcenter.org/database.html",
@@ -48,9 +42,7 @@
   {
     "id": "onet-online",
     "type": "site-web",
-    "auteurs": [
-      "National Center for O*NET Development"
-    ],
+    "auteurs": ["National Center for O*NET Development"],
     "annee": null,
     "titre": "O*NET OnLine",
     "url": "https://www.onetonline.org/",
@@ -62,9 +54,7 @@
   {
     "id": "onet-tools-licence",
     "type": "site-web",
-    "auteurs": [
-      "National Center for O*NET Development"
-    ],
+    "auteurs": ["National Center for O*NET Development"],
     "annee": null,
     "titre": "O*NET Tools Developer License",
     "url": "https://www.onetcenter.org/license_toolsdev.html",
@@ -76,9 +66,7 @@
   {
     "id": "holland-1997",
     "type": "livre",
-    "auteurs": [
-      "Holland, J. L."
-    ],
+    "auteurs": ["Holland, J. L."],
     "annee": 1997,
     "titre": "Making vocational choices: A theory of vocational personalities and work environments (3e éd.)",
     "publication": "Psychological Assessment Resources",
@@ -88,11 +76,7 @@
   {
     "id": "larson-2002",
     "type": "article",
-    "auteurs": [
-      "Larson, L. M.",
-      "Rottinghaus, P. J.",
-      "Borgen, F. H."
-    ],
+    "auteurs": ["Larson, L. M.", "Rottinghaus, P. J.", "Borgen, F. H."],
     "annee": 2002,
     "titre": "Meta-analyses of Big Six interests and Big Five personality factors",
     "publication": "Journal of Vocational Behavior",
@@ -106,10 +90,7 @@
   {
     "id": "barrick-mount-1991",
     "type": "article",
-    "auteurs": [
-      "Barrick, M. R.",
-      "Mount, M. K."
-    ],
+    "auteurs": ["Barrick, M. R.", "Mount, M. K."],
     "annee": 1991,
     "titre": "The Big Five personality dimensions and job performance: A meta-analysis",
     "publication": "Personnel Psychology",
@@ -123,11 +104,7 @@
   {
     "id": "armstrong-2008",
     "type": "article",
-    "auteurs": [
-      "Armstrong, P. I.",
-      "Allison, W.",
-      "Rounds, J."
-    ],
+    "auteurs": ["Armstrong, P. I.", "Allison, W.", "Rounds, J."],
     "annee": 2008,
     "titre": "Development and initial validation of brief public domain RIASEC marker scales",
     "publication": "Journal of Vocational Behavior",
@@ -141,9 +118,7 @@
   {
     "id": "rome-france-travail",
     "type": "base-de-donnees",
-    "auteurs": [
-      "France Travail"
-    ],
+    "auteurs": ["France Travail"],
     "annee": null,
     "titre": "Répertoire opérationnel des métiers et des emplois (ROME)",
     "licence": "Licence Ouverte Etalab 2.0 (supposée, à vérifier)",
@@ -153,10 +128,7 @@
   {
     "id": "abramowitz-stegun-1964",
     "type": "livre",
-    "auteurs": [
-      "Abramowitz, M.",
-      "Stegun, I. A."
-    ],
+    "auteurs": ["Abramowitz, M.", "Stegun, I. A."],
     "annee": 1964,
     "titre": "Handbook of Mathematical Functions with Formulas, Graphs, and Mathematical Tables",
     "publication": "National Bureau of Standards",
@@ -166,9 +138,7 @@
   {
     "id": "goldberg-1992",
     "type": "article",
-    "auteurs": [
-      "Goldberg, L. R."
-    ],
+    "auteurs": ["Goldberg, L. R."],
     "annee": 1992,
     "titre": "The development of markers for the Big-Five factor structure",
     "publication": "Psychological Assessment",
@@ -184,9 +154,7 @@
   {
     "id": "ipip-bffm-50",
     "type": "instrument",
-    "auteurs": [
-      "International Personality Item Pool"
-    ],
+    "auteurs": ["International Personality Item Pool"],
     "annee": null,
     "titre": "Administering IPIP Measures, with a 50-item Sample Questionnaire",
     "url": "https://ipip.ori.org/New_IPIP-50-item-scale.htm",
@@ -198,9 +166,7 @@
   {
     "id": "ipip-scoring",
     "type": "site-web",
-    "auteurs": [
-      "International Personality Item Pool"
-    ],
+    "auteurs": ["International Personality Item Pool"],
     "annee": null,
     "titre": "IPIP Scale Scoring Instructions",
     "url": "https://ipip.ori.org/newScoringInstructions.htm",
@@ -212,9 +178,7 @@
   {
     "id": "ipip-normes",
     "type": "site-web",
-    "auteurs": [
-      "International Personality Item Pool"
-    ],
+    "auteurs": ["International Personality Item Pool"],
     "annee": null,
     "titre": "Information about Norms and Data Sets",
     "url": "https://ipip.ori.org/newNorms.htm",
@@ -225,9 +189,7 @@
   {
     "id": "ipip-traductions",
     "type": "site-web",
-    "auteurs": [
-      "International Personality Item Pool"
-    ],
+    "auteurs": ["International Personality Item Pool"],
     "annee": null,
     "titre": "IPIP Item Translations",
     "url": "https://ipip.ori.org/newItemTranslations.htm",
@@ -238,10 +200,7 @@
   {
     "id": "thiry-piolti-2023",
     "type": "site-web",
-    "auteurs": [
-      "Thiry, B.",
-      "Piolti, M."
-    ],
+    "auteurs": ["Thiry, B.", "Piolti, M."],
     "annee": 2023,
     "titre": "Adaptation en français européen de l'IPIP-NEO-300",
     "url": "https://benjaminthiry.netlify.app/posts/2023-02-12-ipipneo300fr",
@@ -251,11 +210,7 @@
   {
     "id": "onet-ip-manual-2021",
     "type": "livre",
-    "auteurs": [
-      "Rounds, J. (dir.)",
-      "Hoff, K. (dir.)",
-      "Lewis, P. (dir.)"
-    ],
+    "auteurs": ["Rounds, J. (dir.)", "Hoff, K. (dir.)", "Lewis, P. (dir.)"],
     "annee": 2021,
     "titre": "O*NET Interest Profiler Manual",
     "publication": "National Center for O*NET Development",
@@ -267,13 +222,7 @@
   {
     "id": "rounds-2016-mini-ip",
     "type": "article",
-    "auteurs": [
-      "Rounds, J.",
-      "Colin Wee Jian Ming",
-      "Cao, M.",
-      "Song, C.",
-      "Lewis, P."
-    ],
+    "auteurs": ["Rounds, J.", "Colin Wee Jian Ming", "Cao, M.", "Song, C.", "Lewis, P."],
     "annee": 2016,
     "titre": "Development of an O*NET Mini Interest Profiler (Mini-IP) for Mobile Devices: Psychometric Characteristics",
     "publication": "National Center for O*NET Development",
@@ -285,9 +234,7 @@
   {
     "id": "onet-ip-short-form",
     "type": "instrument",
-    "auteurs": [
-      "National Center for O*NET Development"
-    ],
+    "auteurs": ["National Center for O*NET Development"],
     "annee": null,
     "titre": "O*NET Interest Profiler Short Form (version papier)",
     "url": "https://www.onetcenter.org/dl_tools/ipsf/Interest_Profiler.pdf",
@@ -299,9 +246,7 @@
   {
     "id": "onet-career-tools-licence",
     "type": "site-web",
-    "auteurs": [
-      "National Center for O*NET Development"
-    ],
+    "auteurs": ["National Center for O*NET Development"],
     "annee": null,
     "titre": "O*NET Career Exploration Tools Content License",
     "url": "https://www.onetcenter.org/license_tools.html",
@@ -313,9 +258,7 @@
   {
     "id": "onet-familles",
     "type": "site-web",
-    "auteurs": [
-      "National Center for O*NET Development"
-    ],
+    "auteurs": ["National Center for O*NET Development"],
     "annee": null,
     "titre": "O*NET OnLine — Browse by Job Family",
     "url": "https://www.onetonline.org/find/family",
@@ -326,10 +269,7 @@
   {
     "id": "gregory-lewis-2016",
     "type": "livre",
-    "auteurs": [
-      "Gregory",
-      "Lewis"
-    ],
+    "auteurs": ["Gregory", "Lewis"],
     "annee": 2016,
     "titre": "Linking Client Assessment Profiles to O*NET Occupational Profiles Within the O*NET Interest Profiler Short Form and Mini Interest Profiler (Mini-IP)",
     "publication": "National Center for O*NET Development",
@@ -339,11 +279,7 @@
   {
     "id": "barrick-mount-gupta-2003",
     "type": "article",
-    "auteurs": [
-      "Barrick, M. R.",
-      "Mount, M. K.",
-      "Gupta, R."
-    ],
+    "auteurs": ["Barrick, M. R.", "Mount, M. K.", "Gupta, R."],
     "annee": 2003,
     "titre": "Meta-analysis of the relationship between the five-factor model of personality and Holland's occupational types",
     "publication": "Personnel Psychology",
@@ -357,9 +293,7 @@
   {
     "id": "cadre-national-certifications-2019",
     "type": "site-web",
-    "auteurs": [
-      "République française"
-    ],
+    "auteurs": ["République française"],
     "annee": 2019,
     "titre": "Décret n° 2019-14 du 8 janvier 2019 relatif au cadre national des certifications professionnelles",
     "statut": "a-verifier",
@@ -369,11 +303,7 @@
   {
     "id": "roberts-walton-viechtbauer-2006",
     "type": "article",
-    "auteurs": [
-      "Roberts, B. W.",
-      "Walton, K. E.",
-      "Viechtbauer, W."
-    ],
+    "auteurs": ["Roberts, B. W.", "Walton, K. E.", "Viechtbauer, W."],
     "annee": 2006,
     "titre": "Patterns of mean-level change in personality traits across the life course: A meta-analysis of longitudinal studies",
     "publication": "Psychological Bulletin",
@@ -387,12 +317,7 @@
   {
     "id": "low-2005",
     "type": "article",
-    "auteurs": [
-      "Low, K. S. D.",
-      "Yoon, M.",
-      "Roberts, B. W.",
-      "Rounds, J."
-    ],
+    "auteurs": ["Low, K. S. D.", "Yoon, M.", "Roberts, B. W.", "Rounds, J."],
     "annee": 2005,
     "titre": "The stability of vocational interests from early adolescence to middle adulthood: A quantitative review of longitudinal studies",
     "publication": "Psychological Bulletin",
@@ -406,9 +331,7 @@
   {
     "id": "savickas-2012",
     "type": "article",
-    "auteurs": [
-      "Savickas, M. L."
-    ],
+    "auteurs": ["Savickas, M. L."],
     "annee": 2012,
     "titre": "Life design: A paradigm for career intervention in the 21st century",
     "publication": "Journal of Counseling & Development",
@@ -446,11 +369,7 @@
   {
     "id": "mitchell-levin-krumboltz-1999",
     "type": "article",
-    "auteurs": [
-      "Mitchell, K. E.",
-      "Levin, A. S.",
-      "Krumboltz, J. D."
-    ],
+    "auteurs": ["Mitchell, K. E.", "Levin, A. S.", "Krumboltz, J. D."],
     "annee": 1999,
     "titre": "Planned happenstance: Constructing unexpected career opportunities",
     "publication": "Journal of Counseling & Development",
@@ -464,9 +383,7 @@
   {
     "id": "krumboltz-2009",
     "type": "article",
-    "auteurs": [
-      "Krumboltz, J. D."
-    ],
+    "auteurs": ["Krumboltz, J. D."],
     "annee": 2009,
     "titre": "The happenstance learning theory",
     "publication": "Journal of Career Assessment",
@@ -480,10 +397,7 @@
   {
     "id": "wrzesniewski-dutton-2001",
     "type": "article",
-    "auteurs": [
-      "Wrzesniewski, A.",
-      "Dutton, J. E."
-    ],
+    "auteurs": ["Wrzesniewski, A.", "Dutton, J. E."],
     "annee": 2001,
     "titre": "Crafting a job: Revisioning employees as active crafters of their work",
     "publication": "Academy of Management Review",
@@ -497,10 +411,7 @@
   {
     "id": "deci-ryan-2000",
     "type": "article",
-    "auteurs": [
-      "Deci, E. L.",
-      "Ryan, R. M."
-    ],
+    "auteurs": ["Deci, E. L.", "Ryan, R. M."],
     "annee": 2000,
     "titre": "The \"what\" and \"why\" of goal pursuits: Human needs and the self-determination of behavior",
     "publication": "Psychological Inquiry",
@@ -514,10 +425,7 @@
   {
     "id": "ryan-deci-2000",
     "type": "article",
-    "auteurs": [
-      "Ryan, R. M.",
-      "Deci, E. L."
-    ],
+    "auteurs": ["Ryan, R. M.", "Deci, E. L."],
     "annee": 2000,
     "titre": "Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being",
     "publication": "American Psychologist",
@@ -531,9 +439,7 @@
   {
     "id": "site-3114",
     "type": "site-web",
-    "auteurs": [
-      "Ministère chargé de la santé"
-    ],
+    "auteurs": ["Ministère chargé de la santé"],
     "annee": null,
     "titre": "3114 — Numéro national de prévention du suicide",
     "url": "https://3114.fr/",
@@ -544,9 +450,7 @@
   {
     "id": "mon-cep",
     "type": "site-web",
-    "auteurs": [
-      "France compétences"
-    ],
+    "auteurs": ["France compétences"],
     "annee": null,
     "titre": "Mon conseil en évolution professionnelle (CEP)",
     "url": "https://mon-cep.org/",
@@ -557,9 +461,7 @@
   {
     "id": "onisep-moel",
     "type": "site-web",
-    "auteurs": [
-      "Onisep"
-    ],
+    "auteurs": ["Onisep"],
     "annee": null,
     "titre": "Mon orientation en ligne",
     "url": "https://www.onisep.fr/mon-orientation-en-ligne",
@@ -570,9 +472,7 @@
   {
     "id": "france-travail",
     "type": "site-web",
-    "auteurs": [
-      "France Travail"
-    ],
+    "auteurs": ["France Travail"],
     "annee": null,
     "titre": "France Travail",
     "url": "https://www.francetravail.fr/",
@@ -583,10 +483,7 @@
   {
     "id": "aristote-nicomaque",
     "type": "livre",
-    "auteurs": [
-      "Aristote",
-      "Barthélemy-Saint-Hilaire, J. (trad.)"
-    ],
+    "auteurs": ["Aristote", "Barthélemy-Saint-Hilaire, J. (trad.)"],
     "annee": 1856,
     "titre": "Morale à Nicomaque, livre I",
     "publication": "Ladrange",
@@ -599,10 +496,7 @@
   {
     "id": "epictete-manuel",
     "type": "livre",
-    "auteurs": [
-      "Épictète",
-      "Guyau, J.-M. (trad.)"
-    ],
+    "auteurs": ["Épictète", "Guyau, J.-M. (trad.)"],
     "annee": 1875,
     "titre": "Manuel d'Épictète",
     "publication": "Delagrave",
@@ -615,10 +509,7 @@
   {
     "id": "marc-aurele-pensees",
     "type": "livre",
-    "auteurs": [
-      "Marc Aurèle",
-      "Barthélemy-Saint-Hilaire, J. (trad.)"
-    ],
+    "auteurs": ["Marc Aurèle", "Barthélemy-Saint-Hilaire, J. (trad.)"],
     "annee": 1876,
     "titre": "Pensées pour moi-même, livre IV",
     "publication": "Germer-Baillière",
@@ -631,10 +522,7 @@
   {
     "id": "seneque-lucilius",
     "type": "livre",
-    "auteurs": [
-      "Sénèque",
-      "Baillard, J. (trad.)"
-    ],
+    "auteurs": ["Sénèque", "Baillard, J. (trad.)"],
     "annee": 1914,
     "titre": "Lettres à Lucilius, lettre I",
     "publication": "Hachette",
@@ -647,9 +535,7 @@
   {
     "id": "montaigne-essais",
     "type": "livre",
-    "auteurs": [
-      "Montaigne, M. de"
-    ],
+    "auteurs": ["Montaigne, M. de"],
     "annee": null,
     "titre": "Essais, livre III, chapitre 2 « Du repentir » (édition de Bordeaux)",
     "url": "https://fr.wikisource.org/wiki/Essais/Livre_III/Chapitre_2",
@@ -661,9 +547,7 @@
   {
     "id": "weil-condition-ouvriere",
     "type": "livre",
-    "auteurs": [
-      "Weil, S."
-    ],
+    "auteurs": ["Weil, S."],
     "annee": 1951,
     "titre": "La Condition ouvrière (texte établi par Albert Camus) — « Condition première d'un travail non servile » (1941-1942)",
     "publication": "Gallimard",
@@ -676,9 +560,7 @@
   {
     "id": "sartre-1946",
     "type": "livre",
-    "auteurs": [
-      "Sartre, J.-P."
-    ],
+    "auteurs": ["Sartre, J.-P."],
     "annee": 1946,
     "titre": "L'existentialisme est un humanisme",
     "publication": "Nagel",
@@ -689,9 +571,7 @@
   {
     "id": "arendt-1958",
     "type": "livre",
-    "auteurs": [
-      "Arendt, H."
-    ],
+    "auteurs": ["Arendt, H."],
     "annee": 1958,
     "titre": "The Human Condition (trad. fr. Condition de l'homme moderne, Calmann-Lévy, 1961)",
     "publication": "University of Chicago Press",
@@ -702,9 +582,7 @@
   {
     "id": "mathews-1996",
     "type": "livre",
-    "auteurs": [
-      "Mathews, G."
-    ],
+    "auteurs": ["Mathews, G."],
     "annee": 1996,
     "titre": "What Makes Life Worth Living? How Japanese and Americans Make Sense of Their Worlds (chap. 8, « Ikigai and the Meaning of Life », p. 232-256)",
     "publication": "University of California Press",
@@ -716,9 +594,7 @@
   {
     "id": "kumano-2017",
     "type": "article",
-    "auteurs": [
-      "Kumano, M."
-    ],
+    "auteurs": ["Kumano, M."],
     "annee": 2017,
     "titre": "On the concept of well-being in Japan: Feeling shiawase as hedonic well-being and feeling ikigai as eudaimonic well-being",
     "publication": "Applied Research in Quality of Life",
@@ -732,9 +608,7 @@
   {
     "id": "kamiya-1966",
     "type": "livre",
-    "auteurs": [
-      "Kamiya, M."
-    ],
+    "auteurs": ["Kamiya, M."],
     "annee": 1966,
     "titre": "Ikigai ni tsuite (« À propos de l'ikigai »)",
     "statut": "a-verifier",
@@ -743,13 +617,7 @@
   {
     "id": "sisk-2018",
     "type": "article",
-    "auteurs": [
-      "Sisk, V. F.",
-      "Burgoyne, A. P.",
-      "Sun, J.",
-      "Butler, J. L.",
-      "Macnamara, B. N."
-    ],
+    "auteurs": ["Sisk, V. F.", "Burgoyne, A. P.", "Sun, J.", "Butler, J. L.", "Macnamara, B. N."],
     "annee": 2018,
     "titre": "To what extent and under which circumstances are growth mind-sets important to academic achievement? Two meta-analyses",
     "publication": "Psychological Science",
@@ -763,11 +631,7 @@
   {
     "id": "crede-2017",
     "type": "article",
-    "auteurs": [
-      "Credé, M.",
-      "Tynan, M. C.",
-      "Harms, P. D."
-    ],
+    "auteurs": ["Credé, M.", "Tynan, M. C.", "Harms, P. D."],
     "annee": 2017,
     "titre": "Much ado about grit: A meta-analytic synthesis of the grit literature",
     "publication": "Journal of Personality and Social Psychology",
@@ -781,11 +645,7 @@
   {
     "id": "schimmack-heene-kesavan-2017",
     "type": "site-web",
-    "auteurs": [
-      "Schimmack, U.",
-      "Heene, M.",
-      "Kesavan, K."
-    ],
+    "auteurs": ["Schimmack, U.", "Heene, M.", "Kesavan, K."],
     "annee": 2017,
     "titre": "Reconstruction of a train wreck: How priming research went off the rails",
     "publication": "Replicability-Index (blog)",
@@ -795,9 +655,7 @@
   {
     "id": "grant-2013",
     "type": "article",
-    "auteurs": [
-      "Grant, A. M."
-    ],
+    "auteurs": ["Grant, A. M."],
     "annee": 2013,
     "titre": "Rethinking the extraverted sales ideal: The ambivert advantage",
     "publication": "Psychological Science",
@@ -811,11 +669,7 @@
   {
     "id": "grant-gino-hofmann-2011",
     "type": "article",
-    "auteurs": [
-      "Grant, A. M.",
-      "Gino, F.",
-      "Hofmann, D. A."
-    ],
+    "auteurs": ["Grant, A. M.", "Gino, F.", "Hofmann, D. A."],
     "annee": 2011,
     "titre": "Reversing the extraverted leadership advantage: The role of employee proactivity",
     "publication": "Academy of Management Journal",
@@ -829,12 +683,7 @@
   {
     "id": "judge-bono-ilies-gerhardt-2002",
     "type": "article",
-    "auteurs": [
-      "Judge, T. A.",
-      "Bono, J. E.",
-      "Ilies, R.",
-      "Gerhardt, M. W."
-    ],
+    "auteurs": ["Judge, T. A.", "Bono, J. E.", "Ilies, R.", "Gerhardt, M. W."],
     "annee": 2002,
     "titre": "Personality and leadership: A qualitative and quantitative review",
     "publication": "Journal of Applied Psychology",
@@ -848,11 +697,7 @@
   {
     "id": "judge-heller-mount-2002",
     "type": "article",
-    "auteurs": [
-      "Judge, T. A.",
-      "Heller, D.",
-      "Mount, M. K."
-    ],
+    "auteurs": ["Judge, T. A.", "Heller, D.", "Mount, M. K."],
     "annee": 2002,
     "titre": "Five-factor model of personality and job satisfaction: A meta-analysis",
     "publication": "Journal of Applied Psychology",
@@ -866,12 +711,7 @@
   {
     "id": "wilmot-2019",
     "type": "article",
-    "auteurs": [
-      "Wilmot, M. P.",
-      "Wanberg, C. R.",
-      "Kammeyer-Mueller, J. D.",
-      "Ones, D. S."
-    ],
+    "auteurs": ["Wilmot, M. P.", "Wanberg, C. R.", "Kammeyer-Mueller, J. D.", "Ones, D. S."],
     "annee": 2019,
     "titre": "Extraversion advantages at work: A quantitative review and synthesis of the meta-analytic evidence",
     "publication": "Journal of Applied Psychology",
@@ -885,9 +725,7 @@
   {
     "id": "little-2008",
     "type": "article",
-    "auteurs": [
-      "Little, B. R."
-    ],
+    "auteurs": ["Little, B. R."],
     "annee": 2008,
     "titre": "Personal projects and free traits: Personality and motivation reconsidered",
     "publication": "Social and Personality Psychology Compass",
@@ -901,11 +739,7 @@
   {
     "id": "jacques-hamilton-2019",
     "type": "article",
-    "auteurs": [
-      "Jacques-Hamilton, R.",
-      "Sun, J.",
-      "Smillie, L. D."
-    ],
+    "auteurs": ["Jacques-Hamilton, R.", "Sun, J.", "Smillie, L. D."],
     "annee": 2019,
     "titre": "Costs and benefits of acting extraverted: A randomized controlled trial",
     "publication": "Journal of Experimental Psychology: General",
@@ -919,11 +753,7 @@
   {
     "id": "fleeson-2002",
     "type": "article",
-    "auteurs": [
-      "Fleeson, W.",
-      "Malanos, A. B.",
-      "Achille, N. M."
-    ],
+    "auteurs": ["Fleeson, W.", "Malanos, A. B.", "Achille, N. M."],
     "annee": 2002,
     "titre": "An intraindividual process approach to the relationship between extraversion and positive affect: Is acting extraverted as \"good\" as being extraverted?",
     "publication": "Journal of Personality and Social Psychology",
@@ -937,11 +767,7 @@
   {
     "id": "zelenski-2012",
     "type": "article",
-    "auteurs": [
-      "Zelenski, J. M.",
-      "Santoro, M. S.",
-      "Whelan, D. C."
-    ],
+    "auteurs": ["Zelenski, J. M.", "Santoro, M. S.", "Whelan, D. C."],
     "annee": 2012,
     "titre": "Would introverts be better off if they acted more like extraverts? Exploring emotional and cognitive consequences of counterdispositional behavior",
     "publication": "Emotion",
@@ -955,9 +781,7 @@
   {
     "id": "smillie-2013",
     "type": "article",
-    "auteurs": [
-      "Smillie, L. D."
-    ],
+    "auteurs": ["Smillie, L. D."],
     "annee": 2013,
     "titre": "Extraversion and reward processing",
     "publication": "Current Directions in Psychological Science",
@@ -971,10 +795,7 @@
   {
     "id": "cheek-buss-1981",
     "type": "article",
-    "auteurs": [
-      "Cheek, J. M.",
-      "Buss, A. H."
-    ],
+    "auteurs": ["Cheek, J. M.", "Buss, A. H."],
     "annee": 1981,
     "titre": "Shyness and sociability",
     "publication": "Journal of Personality and Social Psychology",
@@ -988,9 +809,7 @@
   {
     "id": "van-den-berge-2023",
     "type": "article",
-    "auteurs": [
-      "van den Berge, L."
-    ],
+    "auteurs": ["van den Berge, L."],
     "annee": 2023,
     "titre": "Phersu, Prosōpon, Persona: On Legal Personhood, Roman Sculpture and the Art of Law",
     "publication": "SSRN (prépublication)",
@@ -1002,9 +821,7 @@
   {
     "id": "mauss-1938",
     "type": "article",
-    "auteurs": [
-      "Mauss, M."
-    ],
+    "auteurs": ["Mauss, M."],
     "annee": 1938,
     "titre": "Une catégorie de l'esprit humain : la notion de personne, celle de « moi »",
     "publication": "The Journal of the Royal Anthropological Institute of Great Britain and Ireland",
@@ -1018,9 +835,7 @@
   {
     "id": "dictionnaire-etymologique",
     "type": "site-web",
-    "auteurs": [
-      "CNRTL / Gaffiot"
-    ],
+    "auteurs": ["CNRTL / Gaffiot"],
     "annee": null,
     "titre": "Étymologie de « personnel » et de « persona » (dictionnaires de référence)",
     "statut": "a-verifier",
@@ -1029,10 +844,7 @@
   {
     "id": "fredrickson-losada-2005",
     "type": "article",
-    "auteurs": [
-      "Fredrickson, B. L.",
-      "Losada, M. F."
-    ],
+    "auteurs": ["Fredrickson, B. L.", "Losada, M. F."],
     "annee": 2005,
     "titre": "Positive affect and the complex dynamics of human flourishing",
     "publication": "American Psychologist",
@@ -1046,11 +858,7 @@
   {
     "id": "brown-sokal-friedman-2013",
     "type": "article",
-    "auteurs": [
-      "Brown, N. J. L.",
-      "Sokal, A. D.",
-      "Friedman, H. L."
-    ],
+    "auteurs": ["Brown, N. J. L.", "Sokal, A. D.", "Friedman, H. L."],
     "annee": 2013,
     "titre": "The complex dynamics of wishful thinking: The critical positivity ratio",
     "publication": "American Psychologist",
@@ -1064,9 +872,7 @@
   {
     "id": "bernaud-2018",
     "type": "livre",
-    "auteurs": [
-      "Bernaud, J.-L."
-    ],
+    "auteurs": ["Bernaud, J.-L."],
     "annee": 2018,
     "titre": "Introduction à la psychologie existentielle",
     "publication": "Dunod",
@@ -1078,12 +884,7 @@
   {
     "id": "mckee-ryan-2005",
     "type": "article",
-    "auteurs": [
-      "McKee-Ryan, F.",
-      "Song, Z.",
-      "Wanberg, C. R.",
-      "Kinicki, A. J."
-    ],
+    "auteurs": ["McKee-Ryan, F.", "Song, Z.", "Wanberg, C. R.", "Kinicki, A. J."],
     "annee": 2005,
     "titre": "Psychological and Physical Well-Being During Unemployment: A Meta-Analytic Study",
     "publication": "Journal of Applied Psychology",
@@ -1097,10 +898,7 @@
   {
     "id": "paul-moser-2009",
     "type": "article",
-    "auteurs": [
-      "Paul, K. I.",
-      "Moser, K."
-    ],
+    "auteurs": ["Paul, K. I.", "Moser, K."],
     "annee": 2009,
     "titre": "Unemployment impairs mental health: Meta-analyses",
     "publication": "Journal of Vocational Behavior",
@@ -1114,11 +912,7 @@
   {
     "id": "tims-bakker-derks-2012",
     "type": "article",
-    "auteurs": [
-      "Tims, M.",
-      "Bakker, A. B.",
-      "Derks, D."
-    ],
+    "auteurs": ["Tims, M.", "Bakker, A. B.", "Derks, D."],
     "annee": 2012,
     "titre": "Development and validation of the job crafting scale",
     "publication": "Journal of Vocational Behavior",
@@ -1132,12 +926,7 @@
   {
     "id": "rudolph-2017",
     "type": "article",
-    "auteurs": [
-      "Rudolph, C. W.",
-      "Katz, I. M.",
-      "Lavigne, K. N.",
-      "Zacher, H."
-    ],
+    "auteurs": ["Rudolph, C. W.", "Katz, I. M.", "Lavigne, K. N.", "Zacher, H."],
     "annee": 2017,
     "titre": "Job crafting: A meta-analysis of relationships with individual differences, job characteristics, and work outcomes",
     "publication": "Journal of Vocational Behavior",
@@ -1151,12 +940,7 @@
   {
     "id": "allen-2000",
     "type": "article",
-    "auteurs": [
-      "Allen, T. D.",
-      "Herst, D. E. L.",
-      "Bruck, C. S.",
-      "Sutton, M."
-    ],
+    "auteurs": ["Allen, T. D.", "Herst, D. E. L.", "Bruck, C. S.", "Sutton, M."],
     "annee": 2000,
     "titre": "Consequences associated with work-to-family conflict: A review and agenda for future research",
     "publication": "Journal of Occupational Health Psychology",
@@ -1170,11 +954,7 @@
   {
     "id": "maslach-schaufeli-leiter-2001",
     "type": "article",
-    "auteurs": [
-      "Maslach, C.",
-      "Schaufeli, W. B.",
-      "Leiter, M. P."
-    ],
+    "auteurs": ["Maslach, C.", "Schaufeli, W. B.", "Leiter, M. P."],
     "annee": 2001,
     "titre": "Job Burnout",
     "publication": "Annual Review of Psychology",
@@ -1188,10 +968,7 @@
   {
     "id": "ng-feldman-2012",
     "type": "article",
-    "auteurs": [
-      "Ng, T. W. H.",
-      "Feldman, D. C."
-    ],
+    "auteurs": ["Ng, T. W. H.", "Feldman, D. C."],
     "annee": 2012,
     "titre": "Evaluating Six Common Stereotypes About Older Workers with Meta‐Analytical Data",
     "publication": "Personnel Psychology",
@@ -1205,10 +982,7 @@
   {
     "id": "wang-shi-2014",
     "type": "article",
-    "auteurs": [
-      "Wang, M.",
-      "Shi, J."
-    ],
+    "auteurs": ["Wang, M.", "Shi, J."],
     "annee": 2014,
     "titre": "Psychological Research on Retirement",
     "publication": "Annual Review of Psychology",
@@ -1222,11 +996,7 @@
   {
     "id": "kanfer-wanberg-kantrowitz-2001",
     "type": "article",
-    "auteurs": [
-      "Kanfer, R.",
-      "Wanberg, C. R.",
-      "Kantrowitz, T. M."
-    ],
+    "auteurs": ["Kanfer, R.", "Wanberg, C. R.", "Kantrowitz, T. M."],
     "annee": 2001,
     "titre": "Job search and employment: A personality–motivational analysis and meta-analytic review",
     "publication": "Journal of Applied Psychology",
@@ -1240,9 +1010,7 @@
   {
     "id": "granovetter-1973",
     "type": "article",
-    "auteurs": [
-      "Granovetter, M. S."
-    ],
+    "auteurs": ["Granovetter, M. S."],
     "annee": 1973,
     "titre": "The Strength of Weak Ties",
     "publication": "American Journal of Sociology",
@@ -1256,11 +1024,7 @@
   {
     "id": "liu-huang-wang-2014",
     "type": "article",
-    "auteurs": [
-      "Liu, S.",
-      "Huang, J. L.",
-      "Wang, M."
-    ],
+    "auteurs": ["Liu, S.", "Huang, J. L.", "Wang, M."],
     "annee": 2014,
     "titre": "Effectiveness of job search interventions: A meta-analytic review",
     "publication": "Psychological Bulletin",
@@ -1274,10 +1038,7 @@
   {
     "id": "benz-frey-2008",
     "type": "article",
-    "auteurs": [
-      "Benz, M.",
-      "Frey, B. S."
-    ],
+    "auteurs": ["Benz, M.", "Frey, B. S."],
     "annee": 2008,
     "titre": "Being Independent is a Great Thing: Subjective Evaluations of Self‐Employment and Hierarchy",
     "publication": "Economica",
@@ -1291,10 +1052,7 @@
   {
     "id": "zhao-seibert-2006",
     "type": "article",
-    "auteurs": [
-      "Zhao, H.",
-      "Seibert, S. E."
-    ],
+    "auteurs": ["Zhao, H.", "Seibert, S. E."],
     "annee": 2006,
     "titre": "The Big Five personality dimensions and entrepreneurial status: A meta-analytical review",
     "publication": "Journal of Applied Psychology",
@@ -1308,10 +1066,7 @@
   {
     "id": "bakker-demerouti-2007",
     "type": "article",
-    "auteurs": [
-      "Bakker, A. B.",
-      "Demerouti, E."
-    ],
+    "auteurs": ["Bakker, A. B.", "Demerouti, E."],
     "annee": 2007,
     "titre": "The Job Demands‐Resources model: state of the art",
     "publication": "Journal of Managerial Psychology",
@@ -1325,9 +1080,7 @@
   {
     "id": "wanberg-2012",
     "type": "article",
-    "auteurs": [
-      "Wanberg, C. R."
-    ],
+    "auteurs": ["Wanberg, C. R."],
     "annee": 2012,
     "titre": "The Individual Experience of Unemployment",
     "publication": "Annual Review of Psychology",
@@ -1341,10 +1094,7 @@
   {
     "id": "ng-feldman-2010",
     "type": "article",
-    "auteurs": [
-      "Ng, T. W. H.",
-      "Feldman, D. C."
-    ],
+    "auteurs": ["Ng, T. W. H.", "Feldman, D. C."],
     "annee": 2010,
     "titre": "The relationships of age with job attitudes: a meta-analysis",
     "publication": "Personnel Psychology",
@@ -1358,10 +1108,7 @@
   {
     "id": "greenhaus-beutell-1985",
     "type": "article",
-    "auteurs": [
-      "Greenhaus, J. H.",
-      "Beutell, N. J."
-    ],
+    "auteurs": ["Greenhaus, J. H.", "Beutell, N. J."],
     "annee": 1985,
     "titre": "Sources of conflict between work and family roles",
     "publication": "Academy of Management Review",
@@ -1374,9 +1121,7 @@
   {
     "id": "byron-2005",
     "type": "article",
-    "auteurs": [
-      "Byron, K."
-    ],
+    "auteurs": ["Byron, K."],
     "annee": 2005,
     "titre": "A meta-analytic review of work–family conflict and its antecedents",
     "publication": "Journal of Vocational Behavior",
@@ -1390,10 +1135,7 @@
   {
     "id": "kanfer-ackerman-2004",
     "type": "article",
-    "auteurs": [
-      "Kanfer, R.",
-      "Ackerman, P. L."
-    ],
+    "auteurs": ["Kanfer, R.", "Ackerman, P. L."],
     "annee": 2004,
     "titre": "Aging, adult development, and work motivation",
     "publication": "Academy of Management Review",
@@ -1406,12 +1148,7 @@
   {
     "id": "wrzesniewski-1997",
     "type": "article",
-    "auteurs": [
-      "Wrzesniewski, A.",
-      "McCauley, C.",
-      "Rozin, P.",
-      "Schwartz, B."
-    ],
+    "auteurs": ["Wrzesniewski, A.", "McCauley, C.", "Rozin, P.", "Schwartz, B."],
     "annee": 1997,
     "titre": "Jobs, careers, and callings: People's relations to their work",
     "publication": "Journal of Research in Personality",
@@ -1425,11 +1162,7 @@
   {
     "id": "ahola-2017",
     "type": "article",
-    "auteurs": [
-      "Ahola, K.",
-      "Toppinen-Tanner, S.",
-      "Seppänen, J."
-    ],
+    "auteurs": ["Ahola, K.", "Toppinen-Tanner, S.", "Seppänen, J."],
     "annee": 2017,
     "titre": "Interventions to alleviate burnout symptoms and to support return to work among employees with burnout: Systematic review and meta-analysis",
     "publication": "Burnout Research",
@@ -1443,9 +1176,7 @@
   {
     "id": "cep-depliant-2021",
     "type": "site-web",
-    "auteurs": [
-      "Ministère du Travail, de l'Emploi et de l'Insertion"
-    ],
+    "auteurs": ["Ministère du Travail, de l'Emploi et de l'Insertion"],
     "annee": 2021,
     "titre": "Mon conseil en évolution professionnelle — Faites le point sur votre projet professionnel (dépliant)",
     "url": "https://mon-cep.org/app/uploads/2024/05/Presentation-CEP.pdf",
@@ -1456,9 +1187,7 @@
   {
     "id": "ft-cpf",
     "type": "site-web",
-    "auteurs": [
-      "France Travail"
-    ],
+    "auteurs": ["France Travail"],
     "annee": null,
     "titre": "Le compte personnel de formation (CPF)",
     "url": "https://www.francetravail.fr/candidat/en-formation/mes-aides-financieres/le-compte-personnel-de-formation.html",
@@ -1469,9 +1198,7 @@
   {
     "id": "ft-apprentissage",
     "type": "site-web",
-    "auteurs": [
-      "France Travail"
-    ],
+    "auteurs": ["France Travail"],
     "annee": null,
     "titre": "Le contrat d'apprentissage",
     "url": "https://www.francetravail.fr/candidat/en-formation/mes-aides-financieres/le-contrat-dapprentissage.html",
@@ -1482,9 +1209,7 @@
   {
     "id": "ft-jeunes",
     "type": "site-web",
-    "auteurs": [
-      "France Travail"
-    ],
+    "auteurs": ["France Travail"],
     "annee": null,
     "titre": "Jeunes",
     "url": "https://www.francetravail.fr/candidat/jeunes.html",
@@ -1495,9 +1220,7 @@
   {
     "id": "ft-50-ans",
     "type": "site-web",
-    "auteurs": [
-      "France Travail"
-    ],
+    "auteurs": ["France Travail"],
     "annee": null,
     "titre": "50 ans et plus",
     "url": "https://www.francetravail.fr/candidat/50-ans-et-plus.html",
@@ -1508,9 +1231,7 @@
   {
     "id": "ft-droits",
     "type": "site-web",
-    "auteurs": [
-      "France Travail"
-    ],
+    "auteurs": ["France Travail"],
     "annee": null,
     "titre": "Mes droits aux allocations et aides",
     "url": "https://www.francetravail.fr/candidat/mes-droits-aux-aides-et-allocati.html",
@@ -1521,9 +1242,7 @@
   {
     "id": "ft-creation-aides",
     "type": "site-web",
-    "auteurs": [
-      "France Travail"
-    ],
+    "auteurs": ["France Travail"],
     "annee": null,
     "titre": "Les aides financières (création d'entreprise)",
     "url": "https://www.francetravail.fr/candidat/je-creereprends-une-entreprise/les-aides-financieres-creation-d.html",
@@ -1534,9 +1253,7 @@
   {
     "id": "ft-creation",
     "type": "site-web",
-    "auteurs": [
-      "France Travail"
-    ],
+    "auteurs": ["France Travail"],
     "annee": null,
     "titre": "Je crée/reprends une entreprise",
     "url": "https://www.francetravail.fr/candidat/je-creereprends-une-entreprise.html",
@@ -1545,11 +1262,35 @@
     "notes": "« France Travail accompagne les chercheurs d'emploi ayant un projet entrepreneurial à passer de l'émergence du projet à un plan d'action concret » ; ressources : avant de se lancer, création et reprise pas à pas, aides financières."
   },
   {
+    "id": "soffia-wood-burchell-2022",
+    "type": "article",
+    "auteurs": ["Soffia, M.", "Wood, A. J.", "Burchell, B."],
+    "annee": 2022,
+    "titre": "Alienation is not ‘bullshit’: An empirical critique of Graeber’s theory of BS jobs",
+    "statut": "metadonnees-verifiees",
+    "notes": "Métadonnées vérifiées via Crossref (vol. 36, n° 5 ; en ligne le 2 juin 2021). Contenu non relu (dont la proportion d'environ 5 %). Cité dans le résumé détaillé de « Bullshit jobs » (Graeber).",
+    "publication": "Work, Employment and Society",
+    "volume": "36",
+    "pages": "816-840",
+    "doi": "10.1177/09500170211015067",
+    "consulte_le": "2026-11-28"
+  },
+  {
+    "id": "marquis-2014",
+    "type": "livre",
+    "auteurs": ["Marquis, N."],
+    "annee": 2014,
+    "titre": "Du bien-être au marché du malaise. La société du développement personnel",
+    "publication": "Presses universitaires de France",
+    "doi": "10.3917/puf.marq.2014.01",
+    "statut": "metadonnees-verifiees",
+    "consulte_le": "2026-11-28",
+    "notes": "Métadonnées vérifiées via Crossref (ISBN 9782130628262). Contenu non relu : le lien avec les lecteurs de Boris Cyrulnik, avancé par le résumé, reste à confirmer. Cité dans le résumé détaillé de « Un merveilleux malheur » (Cyrulnik)."
+  },
+  {
     "id": "has-epuisement-2017",
     "type": "site-web",
-    "auteurs": [
-      "Haute Autorité de santé"
-    ],
+    "auteurs": ["Haute Autorité de santé"],
     "annee": 2017,
     "titre": "Repérage et prise en charge cliniques du syndrome d'épuisement professionnel ou burnout (fiche mémo)",
     "statut": "a-verifier",
