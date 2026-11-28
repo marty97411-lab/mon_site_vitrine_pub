@@ -37,6 +37,8 @@ export const livreSchema = z
     id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
     titre: z.string().min(1),
     sous_titre: z.string().optional(),
+    /** Autres titres sous lesquels l'œuvre est connue (ex. « Éthique à Nicomaque »). */
+    autres_titres: z.array(z.string().min(1)).default([]),
     auteurs: z.array(z.string().min(1)).min(1),
     /** « dir. » pour un ouvrage collectif. */
     direction: z.boolean().default(false),
@@ -70,6 +72,24 @@ export const livreSchema = z
         livre_discute: z.boolean().default(false),
         /** Références citées dans les limites (identifiants de sources.json). */
         sources: z.array(idSource).default([]),
+      })
+      .optional(),
+    /**
+     * Édition française accessible (de préférence en poche) conseillée pour un classique, en plus
+     * de l'édition de référence de la fiche. `a_confirmer` : référence trouvée sur une seule source
+     * secondaire (librairie, presse professionnelle), à confirmer sur la notice BnF.
+     */
+    edition_accessible: z
+      .object({
+        titre: z.string().min(1).optional(),
+        editeur: z.string().min(1),
+        collection: z.string().min(1).optional(),
+        traducteurs: z.array(z.string().min(1)).default([]),
+        annee: z.number().int().min(1500).max(2100).optional(),
+        isbn: z.string().refine(isbnValide, 'ISBN invalide (clé de contrôle)'),
+        poche: z.boolean(),
+        preuves: z.array(z.string().min(1)).min(1),
+        a_confirmer: z.boolean(),
       })
       .optional(),
     /** Lien de lecture ou de notice vérifié (DOI, Wikisource), en plus des recherches BnF/Amazon. */

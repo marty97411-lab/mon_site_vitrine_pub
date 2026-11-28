@@ -704,6 +704,20 @@
     "resume": "Un psychiatre raconte, à travers des histoires de vie, comment des personnes se reconstruisent après des épreuves graves, et popularise la notion de résilience.",
     "pour_qui": "Pour qui traverse ou a traversé une période difficile et cherche des récits qui donnent de l'élan.",
     "a_garder_en_tete": "Les histoires individuelles inspirent mais ne prouvent pas ; la résilience n'est pas une obligation ni un mérite personnel.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Boris Cyrulnik, neuropsychiatre et éthologue, a lui-même vécu une enfance marquée par la guerre et la perte de ses parents. Dans ce livre, qui a rendu célèbre en France la notion de résilience, il s'intéresse à une question : comment certaines personnes parviennent-elles à se reconstruire et à vivre une vie riche après des traumatismes graves, en particulier dans l'enfance ?",
+        "Son titre est volontairement paradoxal : aucun malheur n'est merveilleux, mais on peut parfois en faire quelque chose. Il montre que la résilience n'est pas une qualité magique ou innée : c'est un processus, qui dépend beaucoup des liens tissés avec d'autres. Il insiste sur le rôle des « tuteurs de résilience », des personnes (un enseignant, un proche, un éducateur) qui offrent un appui et permettent de reprendre un développement. Il souligne aussi l'importance de pouvoir donner un sens à ce que l'on a vécu, par exemple en le racontant."
+      ],
+      "a_retenir": [
+        "Après un licenciement, un échec, une maladie ou une épreuve personnelle, il est possible de rebondir, et cela passe rarement par la seule force de volonté : les relations, le soutien et le temps comptent énormément. Ce livre apporte de l'espoir, sans nier la douleur."
+      ],
+      "limites": [
+        "Le livre s'appuie surtout sur des récits de cas et des observations cliniques, plutôt que sur des études statistiques ; il relève davantage de l'essai que de la démonstration scientifique. La notion de résilience a connu un succès considérable, et certains chercheurs ont critiqué son usage grand public, qui peut devenir une injonction à « rebondir » et faire porter la responsabilité sur la personne (voir par exemple les travaux du sociologue Nicolas Marquis sur les lecteurs de Cyrulnik). Personne n'est obligé d'être résilient, et demander de l'aide n'est pas un échec."
+      ],
+      "livre_discute": true,
+      "sources": ["marquis-2014"]
+    },
     "verification": {
       "date": "2026-11-28",
       "preuves": ["doi:10.3917/lautr.002.0385d (compte rendu : Odile Jacob, 1999)"],
@@ -729,6 +743,20 @@
     "resume": "Un anthropologue défend l'idée que de nombreux emplois paraissent inutiles à ceux qui les occupent, et réfléchit aux souffrances et aux questions de sens que cela pose.",
     "pour_qui": "Pour qui a le sentiment que son travail n'a pas de sens et veut mettre des mots sur ce malaise.",
     "a_garder_en_tete": "Un essai provocateur et militant ; ses chiffres et sa généralisation sont contestés.",
+    "resume_detaille": {
+      "idees_principales": [
+        "David Graeber, anthropologue, part d'un article qui avait connu un énorme succès : de nombreuses personnes lui avaient écrit pour dire que leur emploi ne servait à rien, et qu'elles le savaient. Il définit un « bullshit job » comme un emploi si inutile, voire nuisible, que même la personne qui l'occupe ne peut en justifier l'existence, tout en étant obligée de faire semblant du contraire.",
+        "À partir de centaines de témoignages, il propose une classification de ces emplois : ceux qui servent à faire paraître quelqu'un important, ceux qui existent parce que les concurrents en ont aussi, ceux qui réparent des problèmes qui ne devraient pas exister, ceux qui consistent à remplir des formulaires pour donner l'illusion d'agir, et ceux qui consistent à superviser des gens qui n'en ont pas besoin. Il décrit la souffrance morale que provoque le fait de travailler sans utilité, et la relie à l'organisation de l'économie moderne."
+      ],
+      "a_retenir": [
+        "Si vous avez le sentiment que votre travail ne sert à rien, vous n'êtes pas seul, et ce ressenti peut réellement peser sur votre bien-être. Ce livre aide à mettre des mots sur ce malaise et à faire du sentiment d'utilité un critère important dans vos choix professionnels."
+      ],
+      "limites": [
+        "Le livre repose surtout sur des témoignages, pas sur des données représentatives. Une étude sur les grandes enquêtes européennes sur les conditions de travail (Soffia, Wood & Burchell, 2022, *Work, Employment and Society*) a trouvé qu'environ 5 % des salariés européens ont le sentiment de ne pas faire un travail utile, une proportion en baisse, et bien loin des estimations de Graeber. Ce sentiment n'est pas plus fréquent dans la finance ou le conseil que dans d'autres métiers ; il est surtout lié à un mauvais management et à un environnement de travail dégradé. Les auteurs reconnaissent toutefois à Graeber d'avoir mis en lumière le lien fort entre sentiment d'inutilité et mal-être."
+      ],
+      "livre_discute": true,
+      "sources": ["soffia-wood-burchell-2022"]
+    },
     "verification": {
       "date": "2026-11-28",
       "preuves": ["doi:10.3917/etu.4258.0119ac (compte rendu : Les Liens qui libèrent, 2018)"],
@@ -742,6 +770,7 @@
   {
     "id": "aristote-morale-nicomaque",
     "titre": "Morale à Nicomaque",
+    "autres_titres": ["Éthique à Nicomaque"],
     "auteurs": ["Aristote"],
     "traducteurs": ["Jules Barthélemy-Saint-Hilaire"],
     "annee": 1856,
@@ -755,6 +784,32 @@
     "resume": "Le grand texte d'Aristote sur la vie bonne : le bonheur comme activité, l'excellence, l'amitié. La traduction du XIXe siècle est lisible gratuitement en ligne.",
     "pour_qui": "Pour qui veut lire à la source l'idée d'une vie réussie présentée sur ce site.",
     "a_garder_en_tete": "Traduction ancienne ; une édition récente avec notes facilite la lecture.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Aristote cherche à répondre à une question qui traverse toute l'histoire de la philosophie : qu'est-ce qu'une vie réussie ? Sa réponse tient en un mot grec, eudaimonia, souvent traduit par « bonheur », mais qui signifie plutôt « s'épanouir », « bien vivre ». Pour lui, le bonheur n'est pas un plaisir passager ni une émotion : c'est une activité, une façon de vivre tout au long de sa vie en développant au mieux ses capacités humaines.",
+        "Il explique que les qualités morales (le courage, la générosité, la justice…) ne sont pas innées : elles s'acquièrent par l'habitude, en les pratiquant. Chaque qualité se situe entre deux excès : le courage entre la lâcheté et la témérité, par exemple. Trouver ce « juste milieu » demande de la sagesse pratique, c'est-à-dire la capacité à bien juger dans chaque situation concrète. Il consacre aussi une large place à l'amitié, qu'il juge indispensable à une vie heureuse."
+      ],
+      "a_retenir": [
+        "Une vie professionnelle épanouissante ne se trouve pas toute faite : elle se construit par la pratique, en développant vos capacités et en agissant avec justesse. Aristote rappelle aussi que l'excellence se cultive jour après jour, et que les relations de qualité sont une partie essentielle du bonheur, au travail comme ailleurs."
+      ],
+      "limites": [
+        "Aristote écrit pour des citoyens libres d'une cité grecque où l'esclavage existait et où les femmes étaient exclues de la vie publique ; il jugeait d'ailleurs le travail manuel peu compatible avec la vie bonne. Ses idées doivent donc être lues dans leur contexte. Le texte est dense : une édition commentée ou une introduction est recommandée."
+      ]
+    },
+    "edition_accessible": {
+      "titre": "Éthique à Nicomaque",
+      "editeur": "Flammarion",
+      "collection": "GF",
+      "traducteurs": ["Richard Bodéüs"],
+      "annee": 2004,
+      "isbn": "9782080709479",
+      "poche": true,
+      "preuves": [
+        "https://find.library.upatras.gr/Record/114400/Description (notice : GF Flammarion, 2004, 560 p., ISBN 9782080709479)",
+        "Notice des bibliothèques numériques du ministère des Armées (Flammarion, 2004, éd. Richard Bodéüs)"
+      ],
+      "a_confirmer": true
+    },
     "lien": {
       "url": "https://fr.wikisource.org/wiki/Morale_%C3%A0_Nicomaque",
       "libelle": "Lire sur Wikisource"
@@ -782,6 +837,31 @@
     "resume": "Un court recueil de préceptes stoïciens, qui s'ouvre sur la distinction entre ce qui dépend de nous et ce qui n'en dépend pas.",
     "pour_qui": "Pour qui veut un texte bref et concret pour apprendre à faire la part des choses.",
     "a_garder_en_tete": "Texte ancien, écrit dans un tout autre contexte social ; certains conseils sont à prendre avec recul.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Épictète était un ancien esclave devenu l'un des grands maîtres du stoïcisme. Son Manuel est un petit recueil de conseils pratiques, mis par écrit par son élève Arrien. Il s'ouvre sur l'idée qui a fait sa célébrité : certaines choses dépendent de nous (nos jugements, nos désirs, nos actions), d'autres non (notre corps, notre réputation, nos biens, ce que les autres pensent et font).",
+        "Selon lui, beaucoup de nos souffrances viennent du fait que nous attachons notre bonheur à ce qui ne dépend pas de nous. Ce ne sont pas les événements eux-mêmes qui nous troublent, mais l'opinion que nous nous en faisons. Le sage concentre son énergie sur ce qu'il peut réellement changer : sa façon de juger et d'agir."
+      ],
+      "a_retenir": [
+        "Dans une recherche d'emploi, une reconversion ou un conflit au travail, cette distinction est très utile. Vous ne contrôlez pas la décision d'un recruteur, ni le marché de l'emploi ; vous contrôlez la qualité de votre candidature, vos efforts, votre façon d'interpréter un refus. Cette idée a d'ailleurs inspiré certaines thérapies modernes, comme les thérapies cognitives."
+      ],
+      "limites": [
+        "Lu trop vite, le Manuel peut sembler inviter à tout accepter, y compris des situations injustes. Or ce qui « dépend de nous » inclut aussi l'action : demander de l'aide, changer de poste, s'engager collectivement. Le texte est très court, mais certains passages sont austères."
+      ]
+    },
+    "edition_accessible": {
+      "titre": "Manuel",
+      "editeur": "Flammarion",
+      "collection": "GF",
+      "traducteurs": ["Emmanuel Cattin"],
+      "annee": 2015,
+      "isbn": "9782081366633",
+      "poche": true,
+      "preuves": [
+        "https://www.livreshebdo.fr/livres/manuel-depictete-flammarion-9782081366633 (GF n° 797, trad. Emmanuel Cattin)"
+      ],
+      "a_confirmer": true
+    },
     "lien": {
       "url": "https://fr.wikisource.org/wiki/Manuel_d%E2%80%99%C3%89pict%C3%A8te_(trad._Guyau)/Manuel",
       "libelle": "Lire sur Wikisource"
@@ -811,6 +891,31 @@
     "resume": "Les notes personnelles d'un empereur romain stoïcien, qui s'exhorte à rester juste, calme et attentif à l'essentiel.",
     "pour_qui": "Pour qui aime les textes courts à méditer, un fragment à la fois.",
     "a_garder_en_tete": "Ce sont des notes pour soi, répétitives et non systématiques ; traduction ancienne.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Marc Aurèle était empereur romain, l'homme le plus puissant de son temps. Ses Pensées sont des notes personnelles, écrites pour lui-même, souvent pendant des campagnes militaires. Il n'y cherche pas à convaincre un lecteur : il s'exhorte à vivre selon les principes stoïciens qu'il a appris, notamment d'Épictète.",
+        "Il y revient sans cesse sur quelques thèmes : faire son devoir avec soin, sans attendre de reconnaissance ; accepter que tout change et passe ; garder son calme face à l'ingratitude ou à la malveillance des autres ; se rappeler que chacun fait partie d'une communauté humaine plus large ; vivre le moment présent plutôt que de s'inquiéter de l'avenir."
+      ],
+      "a_retenir": [
+        "Ce livre montre qu'on peut occuper un rôle très exigeant tout en cherchant à rester fidèle à ses valeurs. Il aide à prendre du recul face aux tensions du quotidien professionnel, à faire son travail correctement pour lui-même plutôt que pour les félicitations, et à relativiser les petites contrariétés."
+      ],
+      "limites": [
+        "Ce sont des notes répétitives, sans ordre logique, qui se lisent mieux par petits morceaux. Le ton peut sembler résigné ou mélancolique. Et il est plus facile de prôner le détachement quand on est empereur que dans une situation précaire."
+      ]
+    },
+    "edition_accessible": {
+      "titre": "Pensées pour moi-même, suivies du Manuel d'Épictète",
+      "editeur": "Flammarion",
+      "collection": "GF",
+      "traducteurs": ["Mario Meunier"],
+      "isbn": "9782080700162",
+      "poche": true,
+      "preuves": [
+        "Notice des bibliothèques numériques du ministère des Armées (GF n° 16, ISBN 2-08-070016-2)",
+        "https://classiques.uqam.ca/classiques/Marc_Aurele/Pensees_pour_moi_meme/Pensees_pour_moi_meme.docx (édition numérique citant ISBN 978-2-0807-0016-2)"
+      ],
+      "a_confirmer": false
+    },
     "lien": {
       "url": "https://fr.wikisource.org/wiki/Pens%C3%A9es_pour_moi-m%C3%AAme",
       "libelle": "Lire sur Wikisource"
@@ -838,6 +943,31 @@
     "resume": "Des lettres d'un philosophe stoïcien à un ami, sur le temps, l'amitié, l'adversité et l'art de bien vivre.",
     "pour_qui": "Pour qui préfère une philosophie en conversation, lettre après lettre.",
     "a_garder_en_tete": "Recueil long ; on peut le lire par lettres isolées. Traduction ancienne.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Sénèque, philosophe stoïcien et homme politique romain, écrit à la fin de sa vie 124 lettres à son ami Lucilius. Il y aborde, sur un ton familier et vivant, les grandes questions de la vie quotidienne : comment bien employer son temps, comment faire face à la peur de la mort, à la maladie, aux revers de fortune, comment choisir ses amis, comment lire et apprendre.",
+        "La première lettre donne le ton : notre temps est notre bien le plus précieux, et nous le gaspillons sans y penser. Sénèque invite aussi à se ménager des moments de retrait pour réfléchir (ce que les Romains appelaient otium), à ne pas suivre aveuglément la foule, et à progresser chaque jour, même un peu."
+      ],
+      "a_retenir": [
+        "Ces lettres sont une invitation à se demander : à quoi est-ce que je consacre réellement mon temps ? Ce que je fais chaque jour correspond-il à ce qui compte pour moi ? Elles encouragent aussi à prendre le temps de penser sa vie, plutôt que de la subir dans l'urgence permanente."
+      ],
+      "limites": [
+        "Sénèque était l'un des hommes les plus riches de Rome, ce qui rend parfois ses éloges de la simplicité difficiles à prendre au pied de la lettre. Le recueil complet est long : on peut commencer par une sélection de lettres."
+      ]
+    },
+    "edition_accessible": {
+      "titre": "Lettres à Lucilius (lettres 1 à 29)",
+      "editeur": "Flammarion",
+      "collection": "GF",
+      "traducteurs": ["Marie-Ange Jourdan-Gueyer"],
+      "annee": 2017,
+      "isbn": "9782081404496",
+      "poche": true,
+      "preuves": [
+        "https://www.critiqueslibres.com/i.php/vcrit/56550 (GF, ISBN 9782081404496, 2017, 208 p.)"
+      ],
+      "a_confirmer": true
+    },
     "lien": {
       "url": "https://fr.wikisource.org/wiki/Lettres_%C3%A0_Lucilius",
       "libelle": "Lire sur Wikisource"
@@ -865,6 +995,32 @@
     "resume": "Montaigne se prend lui-même pour sujet et s'observe avec curiosité et humilité, sur mille sujets, de l'amitié à la mort.",
     "pour_qui": "Pour qui veut une lecture au long cours, à picorer, sur la connaissance de soi.",
     "a_garder_en_tete": "Langue du XVIe siècle, difficile sans édition modernisée.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Montaigne, magistrat puis maire de Bordeaux, se retire dans sa tour pour écrire. Son projet est unique à son époque : se prendre lui-même comme sujet d'étude, avec ses défauts, ses humeurs, ses contradictions. Les Essais abordent des sujets très variés : l'amitié, l'éducation, la mort, l'expérience, les coutumes des autres peuples, le corps, la vieillesse.",
+        "Il y observe que l'être humain est changeant, divers, souvent incohérent, et qu'il est difficile de se connaître vraiment. Il se méfie des certitudes et des jugements tranchés. Sa célèbre question « Que sais-je ? » résume son attitude : douter avec humilité, observer, essayer (c'est le sens du mot « essai »), plutôt que d'affirmer."
+      ],
+      "a_retenir": [
+        "Montaigne est un excellent compagnon pour réfléchir à soi. Il montre qu'on peut se connaître peu à peu, en s'observant avec bienveillance et lucidité, sans chercher à entrer dans une case. C'est un utile contrepoint à tout test de personnalité : un résultat décrit des tendances, mais une personne reste toujours plus riche et plus changeante que son profil."
+      ],
+      "limites": [
+        "Le texte original, en français du XVIe siècle, est difficile à lire : préférez une édition en français modernisé. L'œuvre est très longue et sans plan : on peut picorer des chapitres selon ses envies."
+      ]
+    },
+    "edition_accessible": {
+      "titre": "Les Essais, adaptation en français moderne",
+      "editeur": "Gallimard",
+      "collection": "Quarto",
+      "traducteurs": ["André Lanly"],
+      "annee": 2009,
+      "isbn": "9782070122424",
+      "poche": false,
+      "preuves": [
+        "Notice des bibliothèques numériques du ministère des Armées (Quarto, adaptation en français moderne par André Lanly, 2009, ISBN 978-2-07-012242-4)",
+        "https://cir.nii.ac.jp/crid/1130000796686038784 (notice : Les essais en français moderne, 2009)"
+      ],
+      "a_confirmer": false
+    },
     "lien": {
       "url": "https://fr.wikisource.org/wiki/Essais",
       "libelle": "Lire sur Wikisource"
@@ -894,6 +1050,29 @@
     "resume": "Lettres, journal d'usine et articles d'une philosophe qui a travaillé comme ouvrière, sur ce que le travail fait aux personnes et sur ce qui pourrait le rendre digne.",
     "pour_qui": "Pour qui s'interroge sur le sens du travail d'exécution et la dignité au travail.",
     "a_garder_en_tete": "Témoignage et réflexion des années 1930, exigeants ; ils ne se transposent pas tels quels aujourd'hui.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Simone Weil, jeune agrégée de philosophie, décide en 1934 de quitter l'enseignement pendant près d'un an pour travailler comme ouvrière à la chaîne, notamment chez Alsthom et Renault. Elle veut comprendre de l'intérieur ce que vivent les ouvriers. Ce livre rassemble son journal d'usine, des lettres et des articles, publiés après sa mort.",
+        "Elle y décrit avec précision la fatigue, la cadence, la peur de ne pas aller assez vite, les ordres incompréhensibles, l'impossibilité de penser pendant le travail. Selon elle, le pire n'est pas seulement la pénibilité physique, mais l'humiliation et la perte de dignité, quand on est réduit à exécuter sans comprendre le sens de ce que l'on fait. Elle réfléchit aussi aux conditions qui permettraient un travail plus humain : comprendre l'ensemble de ce que l'on fabrique, pouvoir y mettre son attention et son intelligence."
+      ],
+      "a_retenir": [
+        "Ce livre rappelle que le sens du travail ne dépend pas seulement de la personne, mais aussi de l'organisation. Comprendre ce à quoi sert son travail, pouvoir y engager sa pensée et être traité avec respect sont des besoins fondamentaux. Il fait écho aux recherches modernes sur l'autonomie et la qualité du travail présentées ailleurs sur Personalis."
+      ],
+      "limites": [
+        "Il s'agit de l'expérience d'une intellectuelle, sur une durée limitée, dans l'industrie des années 1930 : elle ne vivait pas les contraintes d'un ouvrier sans autre choix. Le livre rassemble des textes de nature différente, parfois fragmentaires, et la lecture est éprouvante par moments."
+      ]
+    },
+    "edition_accessible": {
+      "editeur": "Flammarion",
+      "collection": "GF",
+      "annee": 2022,
+      "isbn": "9782080282958",
+      "poche": true,
+      "preuves": [
+        "https://actualitte.com/livres/517949/extraits/la-condition-ouvriere-simone-weil-9782080282958 (GF n° 1645, 2022)"
+      ],
+      "a_confirmer": true
+    },
     "lien": {
       "url": "https://fr.wikisource.org/wiki/La_Condition_ouvri%C3%A8re",
       "libelle": "Lire sur Wikisource"
@@ -920,6 +1099,18 @@
     "resume": "De courts textes d'un philosophe qui défend une idée simple : le bonheur se travaille, il dépend en partie de notre volonté et de nos habitudes.",
     "pour_qui": "Pour qui aime lire par petites touches, un propos de deux pages à la fois.",
     "a_garder_en_tete": "Une philosophie de l'humeur et de la volonté, pas une étude scientifique ; le ton volontariste ne convient pas à toutes les situations.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Alain, de son vrai nom Émile Chartier, était un professeur de philosophie très influent. Il écrivait chaque jour de courts textes pour des journaux, appelés « propos ». Ce recueil rassemble ceux qui parlent du bonheur, en deux ou trois pages chacun, dans un style simple et vivant.",
+        "Son idée centrale : le bonheur n'est pas quelque chose qui nous arrive, c'est en grande partie une affaire de volonté et d'habitude. Notre mauvaise humeur, nos plaintes et nos inquiétudes se nourrissent d'elles-mêmes si on les laisse faire. Alain conseille d'agir plutôt que de ruminer, de bouger, de s'occuper avec les mains, d'être poli et aimable avec les autres, et de considérer le bonheur comme un devoir envers soi-même et envers son entourage."
+      ],
+      "a_retenir": [
+        "Ces textes courts se lisent facilement, un par jour. Ils donnent des pistes simples pour ne pas se laisser envahir par l'humeur du moment, notamment dans les périodes de doute professionnel : agir, même modestement, aide souvent plus que de tourner en rond dans ses pensées."
+      ],
+      "limites": [
+        "Alain sous-estime la part des circonstances (pauvreté, maladie, conditions de travail difficiles) et des troubles comme la dépression, qui ne relèvent pas de la simple volonté. Ses conseils sont utiles pour les petits tracas, mais ne remplacent pas une aide professionnelle quand le mal-être est profond ou durable."
+      ]
+    },
     "lien": {
       "url": "https://doi.org/10.3917/gall.alain.1985.01",
       "libelle": "Sur Cairn (DOI)"
@@ -947,6 +1138,18 @@
     "resume": "Un historien de la philosophie montre que, dans l'Antiquité, la philosophie était d'abord une manière de vivre, avec ses exercices, plus qu'un ensemble de théories.",
     "pour_qui": "Pour qui veut comprendre ce que les stoïciens ou Aristote cherchaient vraiment.",
     "a_garder_en_tete": "Ouvrage savant ; la date d'édition indiquée vient d'un compte rendu.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Pierre Hadot, historien de la philosophie et professeur au Collège de France, défend une thèse qui a profondément changé la façon de lire les philosophes anciens. Pour les Grecs et les Romains, la philosophie n'était pas d'abord un ensemble de théories abstraites : c'était une manière de vivre, un choix d'existence.",
+        "Il montre que les grandes écoles antiques (Platon, Aristote, les épicuriens, les stoïciens, les sceptiques) proposaient chacune un mode de vie et des « exercices spirituels » : se concentrer sur le présent, méditer sur la mort, examiner sa conscience chaque soir, prendre de la hauteur en imaginant le monde vu d'en haut. L'objectif était de se transformer soi-même pour vivre mieux."
+      ],
+      "a_retenir": [
+        "Ce livre est une excellente porte d'entrée pour comprendre les pages philosophiques de Personalis. Il montre que la philosophie peut être une ressource concrète pour réfléchir à la vie que l'on veut mener, et pas seulement une matière scolaire."
+      ],
+      "limites": [
+        "Certains spécialistes trouvent que Hadot insiste trop sur la dimension pratique au détriment de la dimension théorique de la philosophie antique. Le livre est clair, mais suppose une certaine curiosité pour l'histoire des idées."
+      ]
+    },
     "verification": {
       "date": "2026-11-28",
       "preuves": ["doi:10.15581/009.31.30913 (compte rendu : Gallimard, 1996, 461 p.)"],
@@ -973,6 +1176,18 @@
     "resume": "Un philosophe devenu réparateur de motos défend la valeur intellectuelle et humaine du travail manuel, face à des emplois de bureau parfois vides de sens.",
     "pour_qui": "Pour qui hésite à quitter un travail abstrait pour un métier concret, ou s'interroge sur la valeur du travail manuel.",
     "a_garder_en_tete": "Récit personnel et essai philosophique : un parcours ne vaut pas pour tous, et les conditions matérielles d'une reconversion ne sont pas au centre du livre.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Matthew Crawford, docteur en philosophie, a travaillé dans un think tank à Washington, un emploi bien payé mais qu'il trouvait vide de sens. Il a fini par ouvrir un atelier de réparation de motos. Dans ce livre, il mêle récit personnel et réflexion philosophique pour défendre la valeur du travail manuel.",
+        "Selon lui, réparer une moto demande une intelligence réelle : diagnostiquer, raisonner, tenir compte de la réalité matérielle, qui ne se laisse pas tromper par les beaux discours. Il critique l'idée qu'un emploi de bureau serait forcément plus intelligent ou épanouissant, et montre que beaucoup de travaux intellectuels sont devenus routiniers et dépendants de règles venues d'ailleurs. Il déplore aussi que l'école oriente presque tout le monde vers les études longues, en dévalorisant les métiers manuels."
+      ],
+      "a_retenir": [
+        "Ce livre est précieux si vous hésitez à vous orienter, ou à vous reconvertir, vers un métier manuel ou technique. Il montre que la satisfaction au travail vient souvent de la maîtrise d'un savoir-faire, d'un résultat concret et visible, et de la responsabilité de son propre travail. Il fait écho au profil « Réaliste » du modèle RIASEC."
+      ],
+      "limites": [
+        "Crawford idéalise parfois l'artisanat indépendant, sans toujours tenir compte de la pénibilité, de la précarité ou de l'usure physique de nombreux métiers manuels. Son propre parcours (docteur en philosophie devenu artisan) reste exceptionnel. Le livre est à la fois une réflexion philosophique et un témoignage personnel."
+      ]
+    },
     "verification": {
       "date": "2026-11-28",
       "preuves": [
@@ -1001,6 +1216,18 @@
     "resume": "Un sociologue et philosophe décrit l'accélération des rythmes de vie et de travail dans les sociétés modernes, et ce qu'elle fait à notre rapport au temps.",
     "pour_qui": "Pour qui a le sentiment de courir sans cesse et veut comprendre ce phénomène au-delà de sa situation personnelle.",
     "a_garder_en_tete": "Théorie sociale ambitieuse et discutée, plutôt qu'un livre de conseils.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Hartmut Rosa, sociologue et philosophe allemand, part d'un paradoxe : nous disposons de plus en plus de technologies pour gagner du temps, et pourtant nous avons le sentiment d'en manquer toujours davantage. Il distingue trois formes d'accélération qui se renforcent mutuellement : l'accélération technique (transports, communication, production), l'accélération des changements sociaux (métiers, modes, relations, savoirs deviennent vite obsolètes) et l'accélération du rythme de vie (faire plus de choses en moins de temps).",
+        "Selon lui, cette accélération crée une pression permanente : il faut sans cesse s'adapter, se former, rester à jour, pour ne pas « décrocher ». Elle peut produire de l'épuisement et un sentiment d'aliénation, c'est-à-dire de perte de prise sur sa propre vie."
+      ],
+      "a_retenir": [
+        "Si vous vous sentez débordé, sous pression ou incapable de trouver le temps de réfléchir à votre avenir, ce n'est peut-être pas un défaut personnel d'organisation : c'est aussi un phénomène de société. Ce livre aide à comprendre ce sentiment et à questionner la course permanente, par exemple dans le choix d'un métier ou d'un rythme de travail."
+      ],
+      "limites": [
+        "C'est un ouvrage de théorie sociale, assez exigeant. Certains critiques estiment que Rosa généralise des expériences propres aux classes moyennes des pays riches, et que toutes les accélérations ne sont pas négatives."
+      ]
+    },
     "verification": {
       "date": "2026-11-28",
       "preuves": ["doi:10.3917/ris.094.0179l (compte rendu : La Découverte, 2013, 474 p.)"],
@@ -1027,6 +1254,18 @@
     "resume": "Rosa propose de juger une vie réussie à la qualité de notre relation au monde : des moments où quelque chose nous « parle » et nous transforme, au travail comme ailleurs.",
     "pour_qui": "Pour qui cherche une manière de penser le sens au-delà de la réussite ou de la performance.",
     "a_garder_en_tete": "Livre long et théorique ; le concept de résonance est débattu par les sociologues.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Dans ce livre, qui prolonge Accélération, Hartmut Rosa propose une réponse : ce qui rend une vie bonne, ce n'est pas d'accumuler des ressources (argent, diplômes, contacts) ni d'aller plus vite, mais de vivre des relations de « résonance » avec le monde. Il y a résonance quand quelque chose nous touche, que nous y répondons, et que cette rencontre nous transforme : une conversation, une œuvre, un paysage, un travail bien fait.",
+        "À l'inverse, le monde peut devenir « muet » : on fait les choses mécaniquement, sans rien ressentir. Rosa explique que la résonance ne peut pas être forcée ni achetée : on peut seulement créer des conditions favorables. Il examine différents domaines où elle peut naître, dont le travail, la famille, l'amitié, la nature, l'art et la religion."
+      ],
+      "a_retenir": [
+        "Pour votre vie professionnelle, la question devient : dans quelles activités vous sentez-vous vraiment en lien, touché, vivant ? Un métier n'a pas besoin d'être prestigieux pour offrir de la résonance ; il a besoin de vous permettre une relation vivante avec ce que vous faites et avec les personnes concernées."
+      ],
+      "limites": [
+        "C'est un livre très long (plus de 500 pages) et théorique. La notion de résonance est riche mais difficile à mesurer précisément, ce qui la rend plus philosophique que scientifique. Commencer par des entretiens ou des présentations de l'auteur peut aider."
+      ]
+    },
     "verification": {
       "date": "2026-11-28",
       "preuves": [
