@@ -103,6 +103,14 @@ async function charger(): Promise<Contenu> {
     refs.push(...refsAffirmations(`${o} → points_forts`, data.points_forts));
     refs.push(...refsAffirmations(`${o} → points_vigilance`, data.points_vigilance));
   }
+  for (const { data } of livres) {
+    refs.push(
+      ...(data.resume_detaille?.sources ?? []).map((idSource) => ({
+        origine: `livres/${data.id} → resume_detaille`,
+        idSource,
+      })),
+    );
+  }
   verifierReferences(new Set(sources.map((s) => s.id)), refs);
 
   const idsQuestionnaires = new Set(questionnaires.map((q) => q.data.id));

@@ -3,11 +3,12 @@
 interface Props {
   titre?: string;
   ouvert?: boolean;
+  id?: string;
 }
-const { titre = 'En savoir plus', ouvert = false } = Astro.props;
+const { titre = 'En savoir plus', ouvert = false, id } = Astro.props;
 ---
 
-<details class="depliable" open={ouvert}>
+<details class="depliable" open={ouvert} id={id}>
   <summary>{titre}</summary>
   <div class="corps">
     <slot />

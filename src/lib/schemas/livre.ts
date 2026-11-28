@@ -1,5 +1,6 @@
 import { z } from 'astro/zod';
 import { isbnValide } from '../isbn';
+import { idSource } from './source';
 
 export const THEMES_LIVRES = [
   'connaissance-de-soi',
@@ -53,13 +54,24 @@ export const livreSchema = z
     niveau: z.enum(['accessible', 'exigeant']),
     themes: z.array(z.enum(THEMES_LIVRES)).min(1),
     resume: z.string().min(1),
-    /**
-     * Résumé détaillé (environ 200 à 400 mots, paragraphes séparés par une ligne vide), affiché dans un
-     * menu déroulant fermé par défaut. Fourni et relu par l'équipe ; absent tant qu'il n'est pas prêt.
-     */
-    resume_detaille: z.string().min(1).optional(),
     pour_qui: z.string().min(1),
     a_garder_en_tete: z.string().min(1),
+    /**
+     * Résumé détaillé rédigé et relu par l'équipe, affiché dans un menu déroulant fermé par défaut
+     * (absent tant qu'il n'est pas prêt). Chaque entrée est un paragraphe ; « *texte* » est rendu
+     * en italique.
+     */
+    resume_detaille: z
+      .object({
+        idees_principales: z.array(z.string().min(1)).min(1),
+        a_retenir: z.array(z.string().min(1)).min(1),
+        limites: z.array(z.string().min(1)).min(1),
+        /** Ajoute « (livre discuté) » au titre de la partie « Limites ». */
+        livre_discute: z.boolean().default(false),
+        /** Références citées dans les limites (identifiants de sources.json). */
+        sources: z.array(idSource).default([]),
+      })
+      .optional(),
     /** Lien de lecture ou de notice vérifié (DOI, Wikisource), en plus des recherches BnF/Amazon. */
     lien: z.object({ url: z.url(), libelle: z.string().min(1) }).optional(),
     verification: z.object({

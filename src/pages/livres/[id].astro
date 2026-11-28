@@ -5,6 +5,7 @@ import EnSavoirPlus from '../../components/EnSavoirPlus.astro';
 import { chargerContenu } from '../../lib/contenu';
 import { lienAmazon, lienBnf } from '../../lib/isbn';
 import { LIBELLES_ETIQUETTES, LIBELLES_THEMES } from '../../lib/schemas';
+import { segmenterItalique } from '../../lib/texte';
 
 export async function getStaticPaths() {
   const { livres } = await chargerContenu();
@@ -22,6 +23,17 @@ const lisible = (texte: string) => {
     return texte;
   }
 };
+const rd = l.resume_detaille;
+const parties = rd
+  ? [
+      { titre: 'Les idées principales', paragraphes: rd.idees_principales },
+      { titre: 'Ce que vous pouvez en retenir', paragraphes: rd.a_retenir },
+      {
+        titre: `Limites à garder en tête${rd.livre_discute ? ' (livre discuté)' : ''}`,
+        paragraphes: rd.limites,
+      },
+    ]
+  : [];
 const description = `${l.titre}, de ${l.auteurs.join(', ')} (${l.editeur}, ${l.annee}) : résumé, pour qui, limites.`;
 ---
 
@@ -59,14 +71,36 @@ const description = `${l.titre}, de ${l.auteurs.join(', ')} (${l.editeur}, ${l.a
   </Essentiel>
 
   <div class="lecture">
-    <EnSavoirPlus titre="Résumé détaillé">
-      {l.resume_detaille ? (
-        l.resume_detaille.split(/\n\s*\n/).map((p) => <p>{p}</p>)
+    <EnSavoirPlus titre="Résumé détaillé" id="resume-detaille">
+      {rd ? (
+        parties.map((partie) => (
+          <>
+            <h2 class="partie-resume">{partie.titre}</h2>
+            {partie.paragraphes.map((paragraphe) => (
+              <p>
+                {segmenterItalique(paragraphe).map((s) =>
+                  s.italique ? <em>{s.texte}</em> : s.texte,
+                )}
+              </p>
+            ))}
+          </>
+        ))
       ) : (
         <p class="discret">Le résumé détaillé de ce livre est en cours de rédaction.</p>
       )}
     </EnSavoirPlus>
   </div>
+  <script>
+    // Ouvre le menu « Résumé détaillé » quand on arrive depuis la liste (lien #resume-detaille).
+    const ouvrir = () => {
+      const bloc = document.getElementById('resume-detaille');
+      if (location.hash === '#resume-detaille' && bloc instanceof HTMLDetailsElement) {
+        bloc.open = true;
+      }
+    };
+    ouvrir();
+    window.addEventListener('hashchange', ouvrir);
+  </script>
 
   <section class="lecture" aria-labelledby="comprendre">
     <h2 id="comprendre">Pour qui ?</h2>
@@ -126,6 +160,10 @@ const description = `${l.titre}, de ${l.auteurs.join(', ')} (${l.editeur}, ${l.a
     flex-wrap: wrap;
     gap: var(--espace-2);
     align-items: center;
+    margin-top: var(--espace-4);
+  }
+  .partie-resume {
+    font-size: 1.2rem;
     margin-top: var(--espace-4);
   }
   .preuves li {

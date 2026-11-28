@@ -14,6 +14,18 @@
     "resume": "Un psychologue confronte de grandes idées de sagesse anciennes (sur le bonheur, l'adversité, les relations ou le sens) à ce qu'en disent les recherches en psychologie. Il en garde certaines, en nuance d'autres.",
     "pour_qui": "Pour qui aime faire le lien entre philosophie et psychologie, sans prérequis.",
     "a_garder_en_tete": "Ouvrage de vulgarisation : certaines études citées ont pu être nuancées depuis sa parution originale. À lire comme une introduction, pas comme une synthèse à jour.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Jonathan Haidt, psychologue social, confronte dix grandes idées de sagesse ancienne (Bouddha, les stoïciens, Platon, la Bible, les philosophes chinois) aux résultats de la psychologie moderne. Il propose une image restée célèbre : notre esprit ressemble à un cavalier (la pensée consciente) monté sur un éléphant (les émotions et les automatismes). Le cavalier croit diriger, mais l'éléphant est bien plus puissant ; pour changer, il faut apprendre à l'entraîner plutôt qu'à le forcer.",
+        "Il examine aussi ce que l'on sait du bonheur : une part dépend de notre tempérament, une part de nos conditions de vie, et une part de nos activités volontaires. Il conclut que le bonheur ne vient pas seulement de l'intérieur ni seulement de l'extérieur, mais de l'« entre-deux » : de bonnes relations avec les autres, un travail qui nous engage, et le lien avec quelque chose de plus grand que soi."
+      ],
+      "a_retenir": [
+        "Pour le travail, Haidt souligne l'importance de l'engagement : un travail où l'on utilise ses forces, où l'on progresse et où l'on se sent utile contribue bien plus au bien-être qu'un simple niveau de revenu au-delà d'un certain seuil. Il distingue aussi le travail vécu comme un emploi, une carrière ou une vocation, et montre que cela dépend en partie de la façon dont on investit son poste."
+      ],
+      "limites": [
+        "Certaines études citées sont antérieures à la crise de réplication, et la répartition chiffrée des sources du bonheur, souvent reprise dans les livres grand public, a été critiquée par des chercheurs depuis. Le livre reste une bonne porte d'entrée, à lire comme une synthèse de 2006 et non comme le dernier état de la science."
+      ]
+    },
     "lien": {
       "url": "https://doi.org/10.14375/np.9782804700331",
       "libelle": "Notice de l'éditeur (DOI)"
@@ -43,6 +55,20 @@
     "resume": "Une chercheuse en psychologie oppose deux façons de voir ses capacités : comme fixes, ou comme pouvant se développer. Elle décrit comment ces croyances peuvent influencer la manière d'apprendre et de réagir aux échecs.",
     "pour_qui": "Pour qui se sent bloqué par la peur de l'échec ou par l'idée qu'il « n'est pas fait pour » quelque chose.",
     "a_garder_en_tete": "Les effets des interventions sur l'état d'esprit sont débattus. Changer de croyance ne suffit pas toujours : les conditions matérielles et l'accompagnement comptent aussi.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Carol Dweck, psychologue à Stanford, distingue deux façons de voir ses capacités. Avec un état d'esprit « fixe », on pense que l'intelligence et les talents sont donnés une fois pour toutes : chaque échec semble alors révéler une limite, et l'on évite les défis. Avec un état d'esprit « de croissance », on pense que les capacités se développent par l'effort, de bonnes stratégies et l'aide des autres : l'échec devient une occasion d'apprendre.",
+        "Le livre applique cette idée à l'école, au sport, au travail, à l'éducation des enfants et aux relations. Dweck conseille par exemple de féliciter l'effort et la démarche plutôt que le « don », et montre comment l'état d'esprit influence la manière de réagir aux critiques et aux difficultés."
+      ],
+      "a_retenir": [
+        "Croire que l'on peut progresser aide à oser apprendre un nouveau métier, se former ou se relever d'un échec. C'est cohérent avec ce que montre la recherche sur la personnalité : nos traits sont assez stables, mais nos compétences, elles, se développent."
+      ],
+      "limites": [
+        "Les effets décrits dans le livre ont été largement revus à la baisse. Deux méta-analyses (Sisk, Burgoyne, Sun, Butler & Macnamara, 2018, *Psychological Science*) ont trouvé un lien faible entre état d'esprit et réussite scolaire, et un effet faible des programmes visant à le développer ; le lien est plus net chez les enfants et adolescents que chez les adultes. D'autres chercheurs estiment que ces petits effets restent intéressants pour certains élèves en difficulté. Retenez l'idée générale, mais méfiez-vous des promesses de transformation spectaculaire."
+      ],
+      "livre_discute": true,
+      "sources": ["sisk-2018"]
+    },
     "lien": {
       "url": "https://doi.org/10.14375/np.9782804700348",
       "libelle": "Notice de l'éditeur (DOI)"
@@ -72,6 +98,20 @@
     "resume": "Un psychologue, prix Nobel d'économie, présente des décennies de recherches sur le jugement et la décision : nos raccourcis de pensée rapides, leurs avantages et les erreurs systématiques qu'ils entraînent.",
     "pour_qui": "Pour qui veut comprendre comment nous prenons nos décisions, y compris nos choix de vie. Lecture longue et dense.",
     "a_garder_en_tete": "Un livre de référence, mais pas parole d'évangile : une partie des études citées a été remise en question depuis.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Daniel Kahneman, psychologue et prix Nobel d'économie, résume des décennies de recherche sur le jugement et la décision. Il décrit deux modes de pensée : un système rapide, automatique et intuitif (système 1), et un système lent, réfléchi et coûteux en effort (système 2). Le premier nous rend de grands services au quotidien, mais il produit aussi des erreurs systématiques, appelées biais.",
+        "Parmi les phénomènes présentés : l'excès de confiance, l'erreur de planification (sous-estimer le temps et le coût d'un projet), l'aversion à la perte (une perte pèse plus lourd qu'un gain équivalent), l'illusion de focalisation (ce à quoi l'on pense semble toujours plus important qu'il ne l'est), et la différence entre le « soi qui vit » les expériences et le « soi qui s'en souvient »."
+      ],
+      "a_retenir": [
+        "Ces biais concernent directement les choix de carrière. L'aversion à la perte peut vous retenir dans un poste qui ne vous convient plus. L'illusion de focalisation peut vous faire surestimer l'effet d'un salaire ou d'un titre sur votre bonheur. Connaître ces pièges aide à prendre des décisions plus lucides : demander l'avis de personnes qui exercent déjà le métier, se baser sur des données concrètes plutôt que sur une seule impression."
+      ],
+      "limites": [
+        "Le chapitre sur l'amorçage (« priming »), qui décrit comment des indices subtils influenceraient fortement nos comportements, repose sur des études qui n'ont pas résisté aux tentatives de réplication ; Kahneman lui-même a reconnu ce problème (voir Schimmack, Heene & Kesavan, 2017). Les deux « systèmes » sont une image pratique, pas deux zones distinctes du cerveau. Les travaux principaux de Kahneman et Tversky sur les biais restent en revanche très solides."
+      ],
+      "livre_discute": true,
+      "sources": ["schimmack-heene-kesavan-2017"]
+    },
     "verification": {
       "date": "2026-11-28",
       "preuves": ["doi:10.3917/sh.255.0062 (compte rendu : Flammarion, 2012)"],
@@ -97,6 +137,18 @@
     "resume": "Le psychologue qui a décrit l'expérience de « flow » (l'état d'absorption dans une activité exigeante et maîtrisée) explique ses recherches et ce qu'elles suggèrent pour le travail, les loisirs et la vie quotidienne.",
     "pour_qui": "Pour qui se demande dans quelles activités il se sent pleinement engagé.",
     "a_garder_en_tete": "Le flow décrit un type d'expérience positive, pas une recette pour choisir un métier ; tous les métiers et toutes les conditions de travail ne le permettent pas.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Mihaly Csikszentmihalyi, psychologue, a étudié les moments où les gens se sentent pleinement engagés dans ce qu'ils font, au point d'oublier le temps. Il appelle cet état le « flow » (parfois traduit par « expérience optimale »). Pour le mesurer, il a notamment demandé à des personnes de noter leur activité et leur ressenti à des moments aléatoires de la journée.",
+        "Le flow apparaît le plus souvent quand plusieurs conditions sont réunies : un objectif clair, un retour immédiat sur ce que l'on fait, et surtout un équilibre entre la difficulté de la tâche et ses compétences. Trop facile, on s'ennuie ; trop difficile, on s'angoisse. Il observe un paradoxe : beaucoup de gens vivent plus de moments de flow au travail que pendant leurs loisirs, tout en disant préférer leur temps libre."
+      ],
+      "a_retenir": [
+        "Pour choisir ou réaménager un métier, demandez-vous dans quelles activités vous perdez la notion du temps et vous sentez progresser. Un bon poste n'est pas forcément facile : il offre des défis à votre mesure, qui évoluent à mesure que vous progressez. Vous pouvez aussi agir sur votre travail actuel en vous fixant des objectifs plus clairs ou en cherchant davantage de retours."
+      ],
+      "limites": [
+        "Le flow est un concept solide et largement étudié, mais le livre en fait parfois une clé presque universelle du bonheur. Toutes les activités en flow ne sont pas bénéfiques (certains jeux ou activités à risque peuvent devenir envahissants), et le sens ou les relations comptent aussi. Le livre date de 1990 : la recherche s'est enrichie depuis."
+      ]
+    },
     "verification": {
       "date": "2026-11-28",
       "preuves": ["doi:10.3917/sh.255.0063 (compte rendu : Robert Laffont, 2004)"],
@@ -369,6 +421,18 @@
     "resume": "Un chercheur présente le modèle des cinq grands traits de personnalité (le Big Five : ouverture, conscienciosité, extraversion, agréabilité, névrosisme), ce que chacun décrit, et ce que la recherche sait de leurs effets dans la vie.",
     "pour_qui": "Pour qui lit l'anglais et veut comprendre le modèle de personnalité utilisé par ce site.",
     "a_garder_en_tete": "En anglais ; aucune traduction française n'a été vérifiée. Publié en 2007.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Daniel Nettle, chercheur en psychologie, présente le modèle du Big Five à partir d'études scientifiques et de portraits de personnes réelles. Il consacre un chapitre à chaque grand trait : l'extraversion, le névrosisme (la sensibilité émotionnelle), la conscienciosité, l'agréabilité et l'ouverture. Pour chacun, il explique ce que mesurent les questionnaires, ce que l'on sait de son origine (gènes, cerveau, environnement) et pourquoi l'évolution a pu conserver toute la palette des niveaux, du plus bas au plus élevé.",
+        "Son message central : il n'existe pas de personnalité idéale. Chaque trait apporte des avantages dans certaines situations et des coûts dans d'autres. Une personne très consciencieuse est fiable, mais peut devenir rigide ; une personne très ouverte est créative, mais peut se disperser. Le livre contient aussi un court questionnaire pour situer son propre profil."
+      ],
+      "a_retenir": [
+        "Plutôt que de chercher à changer de personnalité, Nettle invite à trouver une « niche » : un environnement, un métier, des relations où vos traits deviennent des atouts. C'est exactement l'esprit de Personalis. Il montre aussi qu'on peut agir sur ses comportements, même si le fond du tempérament reste assez stable."
+      ],
+      "limites": [
+        "Le livre date de 2007 : certaines explications biologiques (cerveau, gènes) sont simplifiées et la recherche a progressé depuis. L'angle évolutionniste est intéressant mais reste en partie spéculatif. Il n'existe pas, à notre connaissance, de traduction française."
+      ]
+    },
     "lien": {
       "url": "https://doi.org/10.1093/oso/9780199211425.001.0001",
       "libelle": "Notice de l'éditeur (DOI)"
@@ -398,6 +462,18 @@
     "resume": "Un anthropologue compare, à partir d'entretiens, ce qui donne sens à la vie de personnes au Japon et aux États-Unis, notamment autour de la notion japonaise d'ikigai.",
     "pour_qui": "Pour qui veut découvrir l'ikigai par une étude sérieuse plutôt que par le diagramme populaire.",
     "a_garder_en_tete": "En anglais ; enquête de 1996, qualitative et située.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Gordon Mathews est anthropologue. Pour sa thèse, il a interrogé longuement une centaine de Japonais et d'Américains sur ce qui donne de la valeur à leur vie. Dans ce livre, il compare neuf paires de personnes aux situations proches dans les deux pays. Il utilise le mot japonais ikigai, qui désigne ce qui rend la vie digne d'être vécue, et montre que ce concept s'applique aussi aux vies américaines, même si l'anglais n'a pas de mot équivalent.",
+        "Il observe que l'ikigai peut se trouver dans des domaines très différents : le travail, la famille, une passion, une communauté, une foi. Il distingue notamment l'engagement envers un groupe ou envers les autres, et la réalisation de soi. Surtout, la réponse à la question « qu'est-ce qui rend ma vie digne d'être vécue ? » n'est jamais définitive : elle évolue avec les étapes de la vie, les pertes, les changements de rôle."
+      ],
+      "a_retenir": [
+        "Ce livre est un excellent antidote au schéma populaire de l'« ikigai » en quatre cercles (ce que vous aimez, ce en quoi vous êtes doué, ce dont le monde a besoin, ce pour quoi vous pouvez être payé). Pour beaucoup de Japonais étudiés, l'ikigai n'est pas forcément le travail : ce peut être les enfants, un loisir ou un engagement. Il n'est donc pas nécessaire de trouver le métier parfait pour avoir une vie qui a du sens."
+      ],
+      "limites": [
+        "L'étude repose sur des entretiens approfondis d'un nombre limité de personnes, menés au début des années 1990 : les sociétés japonaise et américaine ont changé depuis. C'est un livre universitaire, plus exigeant qu'un livre grand public. Pas de traduction française connue."
+      ]
+    },
     "lien": {
       "url": "https://doi.org/10.1525/9780520916470",
       "libelle": "Notice de l'éditeur (DOI)"
@@ -426,6 +502,18 @@
     "resume": "Le principal auteur de la théorie de la construction de carrière présente sa démarche d'accompagnement, fondée sur le récit que chacun fait de sa vie.",
     "pour_qui": "Pour les professionnels de l'accompagnement et les lecteurs anglophones curieux de la théorie citée sur ce site.",
     "a_garder_en_tete": "En anglais ; ouvrage destiné aux praticiens.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Mark Savickas est l'un des chercheurs les plus influents en psychologie de l'orientation. Dans ce livre destiné aux conseillers, il présente sa théorie de la construction de carrière. Selon lui, une carrière n'est pas le simple appariement entre un profil et un métier : c'est une histoire que chacun construit et réinterprète au fil de sa vie.",
+        "Il propose de regarder une personne sous trois angles. Comme acteur : quels sont ses traits, ses façons habituelles d'agir (c'est ce que mesurent les tests de personnalité et d'intérêts). Comme agent : quels objectifs elle se fixe et comment elle s'adapte aux transitions. Comme auteur : quel sens elle donne à son parcours, quels thèmes reviennent dans son histoire. Il décrit aussi un entretien structuré, fondé sur des questions simples (vos modèles d'enfance, vos magazines ou émissions préférés, votre devise, vos premiers souvenirs), qui aide à faire émerger ces thèmes."
+      ],
+      "a_retenir": [
+        "Les tests comme celui de Personalis décrivent surtout « l'acteur » : utile, mais incomplet. Votre histoire personnelle, vos valeurs et la façon dont vous racontez votre parcours comptent tout autant. Savickas insiste aussi sur l'adaptabilité de carrière : la capacité à se préoccuper de son avenir, à garder la main sur ses choix, à rester curieux et à avoir confiance en soi."
+      ],
+      "limites": [
+        "C'est un ouvrage professionnel, écrit pour des conseillers en orientation : la lecture est exigeante. L'approche narrative est riche, mais plus difficile à évaluer par des études quantitatives que les tests classiques. Pas de traduction française de ce livre, mais les idées de Savickas sont présentées dans plusieurs ouvrages français de psychologie de l'orientation."
+      ]
+    },
     "lien": {
       "url": "https://doi.org/10.1037/0000105-000",
       "libelle": "Notice de l'éditeur (DOI)"
@@ -835,6 +923,18 @@
     "resume": "Un psychologue explique, avec humour, pourquoi nous nous trompons souvent en imaginant ce qui nous rendra heureux plus tard, en s'appuyant sur des recherches sur l'imagination et la prévision.",
     "pour_qui": "Pour qui hésite entre plusieurs choix de vie et se demande à quel point il peut se fier à ce qu'il imagine.",
     "a_garder_en_tete": "En anglais ; aucune édition française n'a pu être vérifiée. Ouvrage de vulgarisation, publié en 2006 : certaines études citées ont pu être nuancées depuis.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Daniel Gilbert, psychologue à Harvard, s'intéresse à une question simple : pourquoi sommes-nous si mauvais pour prévoir ce qui nous rendra heureux ? Il montre que notre imagination nous trompe de plusieurs façons. Elle complète le futur avec des détails inventés et en oublie d'autres ; elle projette nos émotions présentes sur l'avenir ; et elle sous-estime notre capacité à nous adapter, aussi bien aux bonnes qu'aux mauvaises nouvelles.",
+        "Il décrit notamment notre « système immunitaire psychologique » : après un échec ou une perte, nous trouvons généralement des façons de rebondir et de donner du sens à ce qui s'est passé, plus vite que nous ne l'aurions imaginé."
+      ],
+      "a_retenir": [
+        "Pour savoir si un métier ou une vie vous plairait, votre imagination est un guide peu fiable. Gilbert propose une solution surprenante et efficace : interroger des personnes qui vivent déjà la situation que vous envisagez, car leur expérience prédit souvent mieux votre ressenti futur que vos propres projections. Concrètement : rencontrez des professionnels, faites un stage ou une immersion avant de vous décider."
+      ],
+      "limites": [
+        "Le livre est très accessible et plein d'humour, mais certaines expériences de psychologie sociale citées datent d'avant la crise de réplication des années 2010 et mériteraient d'être revérifiées. Le conseil de se fier à l'expérience des autres a aussi ses limites : les gens diffèrent, et la personnalité compte justement dans la façon dont on vit un métier."
+      ]
+    },
     "verification": {
       "date": "2026-11-28",
       "preuves": [
@@ -862,6 +962,18 @@
     "resume": "Une professeure de comportement organisationnel s'appuie sur des parcours de personnes en reconversion pour montrer qu'on change de carrière en expérimentant et en testant de nouvelles identités, plutôt qu'en planifiant tout à l'avance.",
     "pour_qui": "Pour qui envisage une reconversion et se sent bloqué par l'idée de devoir d'abord savoir exactement ce qu'il veut.",
     "a_garder_en_tete": "En anglais ; aucune édition française n'a pu être vérifiée. Fondé sur des études de cas de cadres, publié en 2003.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Herminia Ibarra, professeure de comportement organisationnel à la London Business School, a suivi des dizaines de cadres et de professionnels en pleine reconversion. Elle remet en cause un conseil très répandu : il faudrait d'abord savoir précisément ce que l'on veut faire, puis agir. Selon elle, c'est l'inverse qui se produit chez la plupart des gens : c'est en agissant et en expérimentant que l'on découvre ce que l'on veut.",
+        "Elle décrit trois leviers que partagent les reconversions réussies : tester de nouvelles activités à petite échelle (un projet parallèle, une formation courte, du bénévolat) ; fréquenter de nouveaux réseaux de personnes, car les proches et collègues actuels ont tendance à nous maintenir dans notre ancienne identité ; et donner du sens à ce qui se passe, en construisant peu à peu un récit cohérent de son évolution."
+      ],
+      "a_retenir": [
+        "Une reconversion est rarement une décision brutale prise après une longue introspection. C'est un chemin sinueux, fait d'essais, de petites victoires et parfois de retours en arrière. Vous n'avez pas besoin d'avoir toutes les réponses pour commencer : de petites expériences concrètes valent souvent mieux qu'une réflexion sans fin. Un test comme celui de Personalis peut donner des pistes, mais c'est l'expérience qui permettra de les vérifier."
+      ],
+      "limites": [
+        "Les personnes étudiées sont surtout des cadres et des professions qualifiées, qui disposent souvent de marges financières pour expérimenter. Les conseils sont plus difficiles à appliquer avec de fortes contraintes économiques ou familiales. La méthode repose sur des entretiens approfondis et des récits de cas, pas sur des études statistiques à grande échelle."
+      ]
+    },
     "verification": {
       "date": "2026-11-28",
       "preuves": [
@@ -890,6 +1002,20 @@
     "resume": "Une psychologue défend l'idée que la persévérance et la passion pour des objectifs de long terme comptent autant que le talent, en s'appuyant sur ses recherches et sur des portraits.",
     "pour_qui": "Pour qui s'interroge sur la persévérance et le rapport à l'effort, avec un regard critique.",
     "a_garder_en_tete": "En anglais ; une traduction française existe peut-être mais n'a pas pu être vérifiée. Lire en gardant en tête les critiques scientifiques de la notion.",
+    "resume_detaille": {
+      "idees_principales": [
+        "Angela Duckworth, psychologue à l'université de Pennsylvanie, définit le « grit » comme l'association de la passion et de la persévérance pour des objectifs à long terme. Elle soutient que cette qualité prédit la réussite parfois mieux que le talent ou l'intelligence, en s'appuyant sur des études menées auprès d'élèves officiers de West Point, de participants à des concours d'orthographe ou de vendeurs.",
+        "Elle décrit comment le grit se développe : cultiver un intérêt, pratiquer de façon délibérée pour progresser, relier son activité à un but qui dépasse sa personne, garder espoir face aux revers. Elle insiste aussi sur le rôle des parents, des enseignants et des organisations."
+      ],
+      "a_retenir": [
+        "Dans la plupart des métiers, les compétences se construisent avec le temps, et l'on traverse des périodes difficiles avant de se sentir à l'aise. La persévérance dans un projet qui compte pour vous est un vrai atout. Mais persévérer n'est pas s'acharner : changer de voie quand un projet ne vous correspond plus est aussi une décision saine."
+      ],
+      "limites": [
+        "Une méta-analyse de 88 études (Credé, Tynan & Harms, 2017, *Journal of Personality and Social Psychology*) a montré que le grit est très fortement corrélé à la conscienciosité, l'un des traits du Big Five, et ne prédit la réussite que modestement. La facette « persévérance de l'effort » semble plus utile que la facette « constance des intérêts ». Autrement dit, le grit ressemble beaucoup à un trait que la psychologie connaît depuis longtemps. Sur Personalis, c'est la conscienciosité qui couvre en grande partie cette dimension."
+      ],
+      "livre_discute": true,
+      "sources": ["crede-2017"]
+    },
     "verification": {
       "date": "2026-11-28",
       "preuves": ["doi:10.1111/peps.12198 (compte rendu : Scribner, New York, 2016, 352 p.)"],
