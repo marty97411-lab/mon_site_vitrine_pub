@@ -18,7 +18,11 @@ const CATEGORIES = [
     'Questionnaires d’intérêts et rapprochement (O*NET)',
     /^(onet-ip|rounds|onet-career|onet-tools|gregory)/,
   ],
-  ['Métiers et données O*NET', /^(onet-31|onet-online|onet-familles|rome)/],
+  ['Métiers et données O*NET', /^(onet-31|onet-online|onet-familles)/],
+  [
+    'Métiers en France : correspondances, ROME, RNCP, Onisep',
+    /^(esco-onet|france-travail-esco|rome-|rncp-|onisep-ideo)/,
+  ],
   ['Personnalité, intérêts et travail', /^(larson|barrick|holland|armstrong)/],
   [
     'Évolution de la personnalité et des intérêts, carrière, motivation',
@@ -28,7 +32,10 @@ const CATEGORIES = [
   ['Ikigai', /^(mathews|kumano|kamiya)/],
   ['Ressources d’accompagnement', /^(site-3114|mon-cep|onisep|france-travail)/],
   ['Formation en France', /^cadre-national/],
-  ['Livres discutés : réévaluations', /^(sisk|crede|schimmack|fredrickson|brown-sokal|soffia|marquis)/],
+  [
+    'Livres discutés : réévaluations',
+    /^(sisk|crede|schimmack|fredrickson|brown-sokal|soffia|marquis)/,
+  ],
   ['Méthodes', /^abramowitz/],
 ];
 

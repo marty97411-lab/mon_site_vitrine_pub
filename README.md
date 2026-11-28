@@ -146,6 +146,7 @@ npm run dev       # http://localhost:4321
 | `npm run lint`        | Analyse le code (ESLint)                              |
 | `npm run format`      | Formate le code (Prettier)                            |
 | `npm run import:onet` | Régénère les profils de métiers O*NET (réseau requis) |
+| `npm run import:fr`   | Régénère la correspondance O*NET → ROME → RNCP        |
 | `npm run doc:sources` | Régénère `docs/sources.md` depuis `sources.json`      |
 
 ---
@@ -178,19 +179,21 @@ Le propriétaire du projet n'est pas développeur : chaque session doit pouvoir 
 
 ## 9. Historique des décisions
 
-| Décision                                                                                      | Détail                                                          |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| Modèles Big Five (IPIP) + RIASEC (O*NET)                                                      | Le RIASEC sert au lien avec les métiers                         |
-| Deux parcours : rapide (~80 questions) et complet (~180)                                      | `docs/decisions/0004-…`                                         |
-| Site statique, tout dans le navigateur, aucune donnée collectée                               | RGPD, confiance                                                 |
-| Nom « Personalis » (remplace « Personnalisé »)                                                | Origine du nom sur la page À propos                             |
-| Ambiance lumineuse et moderne                                                                 | `docs/decisions/0007-…`                                         |
-| Vouvoiement partout                                                                           | Remplace le tutoiement initial                                  |
-| « Comprendre » renommé « Explication »                                                        | Avec redirection de l'ancienne URL                              |
-| Règle de simplicité                                                                           | Pas de nouvel onglet sauf nécessité                             |
-| Livres : étiquettes, pas de lien d'affiliation, résumés détaillés fournis par le propriétaire | Ne pas réécrire le fond des résumés                             |
-| Page « Besoin d'en parler ? » : accompagnement en haut, 3114 en bas, plus petit mais lisible  | Ne pas effrayer, rester accessible                              |
-| README comme référence principale, CLAUDE.md pour les conventions techniques                  | Sections 9 et 10 du README mises à jour à chaque fin de session |
+| Décision                                                                                      | Détail                                                             |
+| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Modèles Big Five (IPIP) + RIASEC (O*NET)                                                      | Le RIASEC sert au lien avec les métiers                            |
+| Deux parcours : rapide (~80 questions) et complet (~180)                                      | `docs/decisions/0004-…`                                            |
+| Site statique, tout dans le navigateur, aucune donnée collectée                               | RGPD, confiance                                                    |
+| Nom « Personalis » (remplace « Personnalisé »)                                                | Origine du nom sur la page À propos                                |
+| Ambiance lumineuse et moderne                                                                 | `docs/decisions/0007-…`                                            |
+| Vouvoiement partout                                                                           | Remplace le tutoiement initial                                     |
+| « Comprendre » renommé « Explication »                                                        | Avec redirection de l'ancienne URL                                 |
+| Règle de simplicité                                                                           | Pas de nouvel onglet sauf nécessité                                |
+| Livres : étiquettes, pas de lien d'affiliation, résumés détaillés fournis par le propriétaire | Ne pas réécrire le fond des résumés                                |
+| Page « Besoin d'en parler ? » : accompagnement en haut, 3114 en bas, plus petit mais lisible  | Ne pas effrayer, rester accessible                                 |
+| README comme référence principale, CLAUDE.md pour les conventions techniques                  | Sections 9 et 10 du README mises à jour à chaque fin de session    |
+| Résultats : métiers français (ROME 4.0) et certifications (RNCP), calcul O*NET inchangé       | `docs/decisions/0010-…`, chaîne O*NET → ESCO → ROME officielle     |
+| Correspondances affichées : exactes ou approchées seulement, « proches » après relecture      | Relecture dans `docs/controle/`, décisions dans `validations.json` |
 
 ---
 
@@ -206,7 +209,16 @@ Le propriétaire du projet n'est pas développeur : chaque session doit pouvoir 
 
 **Contenus**
 
-- [ ] Correspondance O*NET → ROME (intitulés et liens adaptés à la France).
+- [ ] **En cours** : correspondance O*NET → ROME (intitulés et liens adaptés à la France). Fait :
+      chaîne officielle O*NET → ESCO → ROME 4.0, 698 métiers O*NET sur 923 avec un équivalent
+      français affiché, fiches `/metiers/rome/…`, liens MétierScope et Onisep. Reste :
+  - [ ] importer l'export RNCP (data.gouv.fr injoignable depuis l'environnement en ligne :
+        `npm run import:fr -- --rncp archive.zip`) et confirmer son format ;
+  - [ ] relire les correspondances par ordre de priorité (`docs/controle/correspondances-onet-rome.csv`)
+        et reporter les décisions dans `src/data/fr/validations.json` ;
+  - [ ] reconfirmer les licences de la table ESCO–ROME, du RNCP et d'Idéo-Métiers (Onisep) ;
+  - [ ] relancer `npm run import:fr` à chaque nouvelle version du ROME (prochaine : mars 2027) et
+        régulièrement pour le RNCP.
 - [ ] Normes de percentiles sourcées pour chaque questionnaire.
 - [x] Section « Ma situation » enrichie (11 articles, modèle commun, en brouillon) ; restent à vérifier les dispositifs et chiffres officiels marqués TODO (sites non joignables lors de la rédaction).
 - [ ] Relecture des brouillons (pages philosophie, Ma situation, dossier introversion/extraversion).
@@ -229,7 +241,10 @@ Le propriétaire du projet n'est pas développeur : chaque session doit pouvoir 
 - Code : [MIT](LICENSE).
 - Contenu : [CC BY 4.0](LICENSE-CONTENU.md).
 - Items : International Personality Item Pool, domaine public.
-- Données métiers : base O*NET 31.0 (USDOL/ETA), CC BY 4.0.
+- Données métiers : base O*NET 31.0 (USDOL/ETA), CC BY 4.0 ; ESCO (Commission européenne,
+  décision 2011/833/UE) ; ROME 4.0 (France Travail, licence ouverte) ; RNCP (France compétences,
+  Licence Ouverte / Etalab 2.0) ; extrait Idéo-Métiers (Onisep, ODbL). Détails : page « Crédits et
+  licences ».
 - Questionnaires d'intérêts : O*NET Interest Profiler (USDOL/ETA), traduits sous O*NET Tools Developer License. O*NET® est une marque déposée de l'USDOL/ETA.
 
 ### Mention O*NET (obligatoire)
