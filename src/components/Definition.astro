@@ -14,21 +14,18 @@ interface Props {
 }
 const { terme, texte, seul = false } = Astro.props;
 const d = definition(terme);
+const href = lienGlossaire(terme);
+const libelle = texte ?? d.terme;
+const parenthese = `(${d.court})`;
 ---
 
-{seul ? (
-  <span class="definition">
-    (<a href={lienGlossaire(terme)}>{d.court}</a>)
-  </span>
-) : (
-  <>
-    <a href={lienGlossaire(terme)} class="terme">
-      {texte ?? d.terme}
-    </a>{' '}
-    <span class="definition">({d.court})</span>
-  </>
-)}
-
+{
+  // Balises sur une ligne : aucun espace parasite dans le lien ni avant la ponctuation.
+  // prettier-ignore
+  seul
+    ? [<span class="definition">{['(', <a href={href}>{d.court}</a>, ')']}</span>]
+    : [<a href={href} class="terme">{libelle}</a>, ' ', <span class="definition">{parenthese}</span>]
+}
 <style>
   .definition {
     color: var(--c-texte-doux);
