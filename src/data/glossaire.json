@@ -1,0 +1,66 @@
+[
+  {
+    "id": "big-five",
+    "terme": "Big Five",
+    "court": "le modèle scientifique de référence qui décrit la personnalité selon cinq grands traits",
+    "definition": "Modèle de la personnalité le plus utilisé en recherche. Il décrit chacun selon cinq grands traits : ouverture à l'expérience, conscienciosité, extraversion, agréabilité et névrosisme. Chaque trait est un continuum : on se situe quelque part entre deux pôles, sans « bon » ou « mauvais » côté.",
+    "voir": "/explication"
+  },
+  {
+    "id": "riasec",
+    "terme": "RIASEC",
+    "court": "un modèle qui classe les intérêts professionnels en six grands types : Réaliste, Investigateur, Artistique, Social, Entreprenant, Conventionnel",
+    "definition": "Modèle des intérêts professionnels proposé par le psychologue John Holland. Les six types (Réaliste, Investigateur, Artistique, Social, Entreprenant, Conventionnel) décrivent les activités qui attirent une personne. On combine généralement plusieurs types ; les trois plus marqués forment un code (par exemple « SEA »).",
+    "voir": "/explication/interets"
+  },
+  {
+    "id": "trait",
+    "terme": "trait de personnalité",
+    "court": "une tendance assez stable à penser, ressentir et agir d'une certaine façon",
+    "definition": "Tendance relativement stable à penser, à ressentir et à agir d'une certaine manière, dans différentes situations. Un trait n'est pas une case : c'est une position sur un continuum, qui peut évoluer au cours de la vie."
+  },
+  {
+    "id": "facette",
+    "terme": "facette",
+    "court": "un aspect plus précis d'un grand trait de personnalité ; chaque trait en compte six",
+    "definition": "Aspect plus précis d'un grand trait. Dans le questionnaire IPIP-NEO-120 du parcours complet, chacun des cinq traits est décomposé en six facettes (par exemple, pour l'extraversion : chaleur, grégarité, affirmation de soi, niveau d'activité, recherche de sensations, émotions positives)."
+  },
+  {
+    "id": "ipip",
+    "terme": "IPIP",
+    "court": "une banque de questions de personnalité libres de droits, utilisée par les chercheurs",
+    "definition": "International Personality Item Pool : une banque de questions de personnalité placée dans le domaine public, utilisée par les chercheurs du monde entier. Les questionnaires de personnalité du site (IPIP-NEO-120 et marqueurs du Big Five) en sont issus."
+  },
+  {
+    "id": "percentile",
+    "terme": "percentile",
+    "court": "le pourcentage de personnes d'une population de référence qui ont un score inférieur au vôtre",
+    "definition": "Indique le pourcentage de personnes d'une population de référence qui obtiennent un score inférieur au vôtre. Le site n'en affiche pas : il faudrait des normes adaptées, et le site de l'IPIP déconseille les normes « toutes faites ».",
+    "voir": "/la-science#scores"
+  },
+  {
+    "id": "onet",
+    "terme": "O*NET",
+    "court": "la grande base de données américaine sur les métiers, publiée par le département du Travail des États-Unis",
+    "definition": "Base de données publique sur les métiers, publiée par le département du Travail des États-Unis (USDOL/ETA). Elle décrit environ un millier de métiers, dont leur profil d'intérêts RIASEC. Le site s'en sert pour rapprocher votre profil de familles de métiers ; les intitulés sont américains.",
+    "voir": "/credits"
+  },
+  {
+    "id": "job-zone",
+    "terme": "Job Zone",
+    "court": "le niveau de préparation (formation, expérience) habituellement demandé pour un métier dans la base O*NET",
+    "definition": "Niveau de préparation habituellement demandé pour exercer un métier (formation, expérience), selon la base O*NET. Les niveaux vont de 1 (peu de préparation) à 5 (préparation très importante) ; la version utilisée regroupe les niveaux 1 et 2. L'équivalence avec les diplômes français indiquée sur le site est approximative."
+  },
+  {
+    "id": "correlation",
+    "terme": "corrélation",
+    "court": "une mesure, de −1 à +1, de la façon dont deux séries de valeurs évoluent ensemble",
+    "definition": "Mesure statistique, comprise entre −1 et +1, de la façon dont deux séries de valeurs varient ensemble. Une corrélation proche de +1 signifie qu'elles montent et descendent ensemble ; proche de 0, qu'il n'y a pas de lien linéaire. Une corrélation ne prouve pas une relation de cause à effet."
+  },
+  {
+    "id": "meta-analyse",
+    "terme": "méta-analyse",
+    "court": "une étude qui rassemble statistiquement les résultats de nombreuses études sur une même question",
+    "definition": "Étude qui combine statistiquement les résultats de nombreuses recherches sur une même question. Elle donne une estimation plus fiable qu'une étude isolée, mais dépend de la qualité des études rassemblées."
+  }
+]

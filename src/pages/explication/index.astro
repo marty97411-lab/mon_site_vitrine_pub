@@ -23,8 +23,8 @@ const { traits } = await chargerContenu();
 
   <h2>Les cinq grands traits de personnalité</h2>
   <p class="lecture">
-    Le site utilise le Big Five <Definition terme="big-five" />. Chaque trait est un continuum :
-    chacun se situe quelque part entre deux pôles, et chaque pôle a ses atouts et ses coûts.
+    Le site utilise le <Definition terme="big-five" />. Chaque trait est un continuum : chacun se
+    situe quelque part entre deux pôles, et chaque pôle a ses atouts et ses coûts.
   </p>
   <div class="grille trois">
     {traits.map(({ id, data }) => (
@@ -38,8 +38,8 @@ const { traits } = await chargerContenu();
   <div class="grille deux">
     <Carte titre="Les intérêts professionnels (RIASEC)" href="/explication/interets">
       <p>
-        Le modèle RIASEC <Definition terme="riasec" />, et comment il sert à rapprocher votre profil
-        de métiers.
+        Le modèle <Definition terme="riasec" />, et comment il sert à rapprocher votre profil de
+        métiers.
       </p>
     </Carte>
     <Carte titre="La science derrière le test" href="/la-science">
@@ -47,6 +47,9 @@ const { traits } = await chargerContenu();
         Pourquoi deux questionnaires, comment sont calculés les scores, et pourquoi il n'y a pas de
         percentile.
       </p>
+    </Carte>
+    <Carte titre="Glossaire" href="/glossaire">
+      <p>Les termes techniques du site (Big Five, RIASEC, facette, O*NET…) expliqués simplement.</p>
     </Carte>
   </div>
 </Base>

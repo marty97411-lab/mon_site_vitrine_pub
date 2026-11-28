@@ -1,4 +1,5 @@
 ---
+import Definition from '../../components/Definition.astro';
 import Base from '../../layouts/Base.astro';
 import Badge from '../../components/Badge.astro';
 import Essentiel from '../../components/Essentiel.astro';
@@ -29,8 +30,9 @@ const exemples: Record<string, string> = {
   <h1>Les intérêts professionnels (RIASEC)</h1>
   <Essentiel>
     <p>
-      Vos intérêts décrivent les activités qui vous attirent. Le modèle de Holland en distingue six
-      grands types ; la plupart des personnes en combinent plusieurs.
+      Vos intérêts décrivent les activités qui vous attirent. Le modèle{' '}
+      <Definition terme="riasec" /> en distingue six grands types ; la plupart des personnes en
+      combinent plusieurs.
     </p>
   </Essentiel>
 
@@ -63,11 +65,12 @@ const exemples: Record<string, string> = {
   <div class="lecture">
     <EnSavoirPlus titre="Approfondir : personnalité, intérêts et rapprochement avec les métiers">
       <p>
-        Personnalité et intérêts sont liés, mais distincts. Une méta-analyse (Barrick, Mount et
-        Gupta, 2003) décrit des liens réels entre certains traits et certains types d'intérêts : les
-        plus forts relient l'extraversion au type Entreprenant et l'ouverture au type Artistique
-        (corrélations d'environ 0,4), tandis que le type Réaliste n'est lié à aucun trait. Ces liens
-        restent partiels : c'est pourquoi le site mesure les intérêts séparément.
+        Personnalité et intérêts sont liés, mais distincts. Une <Definition terme="meta-analyse" />{' '}
+        (Barrick, Mount et Gupta, 2003) décrit des liens réels entre certains traits et certains
+        types d'intérêts : les plus forts relient l'extraversion au type Entreprenant et l'ouverture
+        au type Artistique (corrélations d'environ 0,4), tandis que le type Réaliste n'est lié à
+        aucun trait. Ces liens restent partiels : c'est pourquoi le site mesure les intérêts
+        séparément.
       </p>
       <p>
         La stabilité des intérêts a été étudiée de l'adolescence au milieu de la vie (Low et coll.,
@@ -75,7 +78,8 @@ const exemples: Record<string, string> = {
       </p>
       <p>
         Le rapprochement avec les métiers compare la forme de votre profil RIASEC à celle de 923
-        métiers de la base O*NET, selon la méthode du manuel de l'O*NET Interest Profiler. Voir
+        métiers de la base <Definition terme="onet" />, selon la méthode du manuel de l'O*NET
+        Interest Profiler. Voir
         <a href="/la-science#rapprochement">la science derrière le test</a>.
       </p>
       <ListeSources

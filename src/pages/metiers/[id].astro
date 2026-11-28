@@ -1,4 +1,5 @@
 ---
+import Definition from '../../components/Definition.astro';
 import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import ListeSources from '../../components/ListeSources.astro';
@@ -32,7 +33,7 @@ const marqueur = (a: Affirmation) => (a.todo_source ? ' [source à ajouter]' : '
 
 <Base
   fil={[
-    { libelle: 'Comprendre', href: '/comprendre' },
+    { libelle: 'Explication', href: '/explication' },
     { libelle: 'Fiches métiers', href: '/metiers' },
     { libelle: m.intitule },
   ]}
@@ -56,7 +57,9 @@ const marqueur = (a: Affirmation) => (a.todo_source ? ' [source à ajouter]' : '
         <dd>{m.codes.rome}</dd>
       </>
     )}
-    <dt>Code d'intérêts RIASEC</dt>
+    <dt>
+      Code d'intérêts <Definition terme="riasec" />
+    </dt>
     <dd>{m.riasec.code}</dd>
   </dl>
   <Content />

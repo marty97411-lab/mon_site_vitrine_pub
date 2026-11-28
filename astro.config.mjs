@@ -10,5 +10,10 @@ export default defineConfig({
   // (« navigateur.<a> »). On la désactive : le gain de poids est négligeable pour ce site.
   compressHTML: false,
   // Ancienne adresse du questionnaire (étape 1).
-  redirects: { '/test': '/parcours' },
+  redirects: {
+    '/test': '/parcours',
+    // Section « Comprendre » renommée « Explication » (étape 5).
+    '/comprendre': '/explication',
+    '/comprendre/interets': '/explication/interets',
+  },
 });

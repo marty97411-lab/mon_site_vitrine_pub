@@ -1,0 +1,39 @@
+---
+/**
+ * Terme technique cliquable vers le glossaire, suivi de son explication courte entre parenthèses.
+ * Usage : <Definition terme="riasec" /> (affiche le terme du glossaire) ou
+ * <Definition terme="facette" texte="facettes" /> (forme accordée).
+ * Avec `seul`, n'affiche que la parenthèse (le terme figure déjà dans la phrase).
+ */
+import { definition, lienGlossaire, type TermeGlossaire } from '../lib/glossaire';
+
+interface Props {
+  terme: TermeGlossaire;
+  texte?: string;
+  seul?: boolean;
+}
+const { terme, texte, seul = false } = Astro.props;
+const d = definition(terme);
+---
+
+{seul ? (
+  <span class="definition">
+    (<a href={lienGlossaire(terme)}>{d.court}</a>)
+  </span>
+) : (
+  <>
+    <a href={lienGlossaire(terme)} class="terme">
+      {texte ?? d.terme}
+    </a>{' '}
+    <span class="definition">({d.court})</span>
+  </>
+)}
+
+<style>
+  .definition {
+    color: var(--c-texte-doux);
+  }
+  .definition a {
+    color: inherit;
+  }
+</style>
