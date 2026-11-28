@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { chargerContenu } from '../lib/contenu';
 
-const { traits, situations, philosophie, metiers, parcours } = await chargerContenu();
+const { traits, situations, philosophie, metiers, parcours, livres } = await chargerContenu();
 ---
 
 <Base
@@ -25,6 +25,9 @@ const { traits, situations, philosophie, metiers, parcours } = await chargerCont
         ))}
         <li>
           <a href="/resultats">Vos résultats</a>
+        </li>
+        <li>
+          <a href="/suggestions">Comment les suggestions de lecture sont choisies</a>
         </li>
       </ul>
       <h2>Ma situation</h2>
@@ -76,6 +79,17 @@ const { traits, situations, philosophie, metiers, parcours } = await chargerCont
           </li>
         ))}
       </ul>
+      <h2>Livres conseillés</h2>
+      <ul>
+        <li>
+          <a href="/livres">Tous les livres conseillés</a>
+        </li>
+        {livres.map(({ data }) => (
+          <li>
+            <a href={`/livres/${data.id}`}>{data.titre}</a>
+          </li>
+        ))}
+      </ul>
       <h2>Le projet</h2>
       <ul>
         <li>
@@ -86,6 +100,9 @@ const { traits, situations, philosophie, metiers, parcours } = await chargerCont
         </li>
         <li>
           <a href="/sources">Sources</a>
+        </li>
+        <li>
+          <a href="/credits">Crédits et licences</a>
         </li>
         <li>
           <a href="/modifications-onet">Modifications et avertissements O*NET</a>

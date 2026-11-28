@@ -1,0 +1,102 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { LIBELLES_ETIQUETTES, LIBELLES_THEMES } from '../lib/schemas';
+
+interface Props {
+  livre: CollectionEntry<'livres'>;
+  raisons?: string[];
+}
+const { livre } = Astro.props;
+const l = livre.data;
+---
+
+<article
+  class="carte-livre"
+  data-etiquette={l.etiquette}
+  data-niveau={l.niveau}
+  data-themes={l.themes.join(' ')}
+>
+  <p class="haut">
+    <span class:list={['etiquette-livre', l.etiquette]}>{LIBELLES_ETIQUETTES[l.etiquette]}</span>
+    <span class="discret">{l.niveau === 'accessible' ? 'Accessible' : 'Exigeant'}</span>
+    {l.langue === 'en' && <span class="discret">En anglais</span>}
+  </p>
+  <h3>
+    <a href={`/livres/${l.id}`}>{l.titre}</a>
+  </h3>
+  <p class="auteurs">
+    {l.auteurs.join(', ')}
+    {l.direction && ' (dir.)'} · {l.editeur}, {l.annee}
+  </p>
+  <p>{l.resume}</p>
+  {l.note_controverse && <p class="controverse">À savoir : livre discuté (voir la fiche).</p>}
+  <p class="discret themes">{l.themes.map((t) => LIBELLES_THEMES[t]).join(' · ')}</p>
+</article>
+
+<style>
+  .carte-livre {
+    position: relative;
+    background: var(--c-surface);
+    border: 1px solid var(--c-bordure);
+    border-radius: var(--rayon);
+    box-shadow: var(--ombre);
+    padding: var(--espace-4);
+    transition:
+      transform var(--duree) ease,
+      box-shadow var(--duree) ease;
+  }
+  .carte-livre:hover,
+  .carte-livre:focus-within {
+    transform: translateY(-2px);
+    box-shadow: var(--ombre-survol);
+  }
+  .haut {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espace-2);
+    align-items: center;
+    margin: 0;
+  }
+  h3 {
+    margin-top: var(--espace-2);
+  }
+  h3 a {
+    color: var(--c-texte);
+    text-decoration: none;
+  }
+  h3 a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--rayon);
+  }
+  .auteurs {
+    color: var(--c-texte-doux);
+    font-size: 0.95rem;
+  }
+  .controverse {
+    font-size: 0.9rem;
+    color: var(--c-secondaire-texte);
+  }
+  .themes {
+    margin-bottom: 0;
+  }
+  .etiquette-livre {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.15rem 0.65rem;
+    border-radius: var(--rayon-pilule);
+  }
+  .recherche {
+    background: var(--c-science-fond);
+    color: var(--c-science);
+  }
+  .philosophie {
+    background: var(--c-reflexion-fond);
+    color: var(--c-reflexion);
+  }
+  .temoignage {
+    background: var(--c-primaire-clair);
+    color: var(--c-primaire-fonce);
+  }
+</style>

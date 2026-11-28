@@ -6,3 +6,5 @@ export * from './trait';
 export * from './metier';
 export * from './normes';
 export * from './article';
+export * from './livre';
+export * from './recommandations';
