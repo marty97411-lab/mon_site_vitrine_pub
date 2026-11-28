@@ -88,6 +88,10 @@ Approfondir), **sans nouvel onglet dans le menu sauf nécessité**, et la page d
 - La section « Explication » (`/explication`, anciennement « Comprendre ») regroupe traits,
   intérêts, science du test et glossaire. Ne pas la confondre avec le niveau de lecture
   « Comprendre » des trois niveaux, qui garde son nom.
+- **Dossiers thématiques** : un sujet vaste devient un dossier de la section Explication (page
+  sommaire + pages courtes en trois niveaux, une collection dédiée), pas une nouvelle section ni un
+  nouvel onglet. Exemple : `/explication/introversion-extraversion` (ADR 0009). Ce qui relève de
+  l'expérience courante est signalé dans un encadré « Expérience courante, pas une preuve ».
 - Toute page mentionnant une situation difficile renvoie vers « Besoin d'en parler ? ».
 - Les nouvelles pages de contenu portent `brouillon: true` jusqu'à relecture humaine.
 
@@ -167,10 +171,11 @@ Approfondir), **sans nouvel onglet dans le menu sauf nécessité**, et la page d
 ```
 src/
   content.config.ts      collections Astro (sources, questionnaires, parcours, traits, metiers,
-                         situations, philosophie)
+                         situations, philosophie, introversion, livres, auteurs)
   content/traits/        une fiche Markdown par trait Big Five (trois niveaux, atouts / coûts)
   content/situations/    pages « Ma situation » (badge Science)
   content/philosophie/   pages « Philosophie » (badge Réflexion)
+  content/introversion/  dossier « Introversion et extraversion » (5 pages, badge Science)
   content/metiers/       fiches métiers (Markdown + frontmatter structuré)
   content/sources/       sources.json : bibliographie, citée par identifiant
   content/livres/        livres.json : livres conseillés (vérifiés, étiquetés)
@@ -194,10 +199,10 @@ src/
   styles/tokens.css      design tokens (source unique)
   components/, layouts/  composants et mises en page (Base, Article)
   pages/                 accueil, parcours, questionnaire/[parcours], résultats, situations,
-                         philosophie, comprendre, traits, la-science, besoin-d-en-parler,
+                         philosophie, traits, la-science, besoin-d-en-parler,
                          plan-du-site, sources, a-propos, mentions-legales, metiers, livres,
-                         suggestions, credits, glossaire ; section explication/ (traits,
-                         intérêts)
+                         suggestions, credits, glossaire ; section explication/ (index,
+                         intérêts, dossier introversion-extraversion/)
 scripts/
   import-onet.mjs        import des profils RIASEC O*NET (CC BY 4.0)
 docs/
