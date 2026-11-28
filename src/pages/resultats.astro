@@ -5,6 +5,7 @@ import Avertissement from '../components/Avertissement.astro';
 import Badge from '../components/Badge.astro';
 import Illustration from '../components/Illustration.astro';
 import ListeSources from '../components/ListeSources.astro';
+import QuestionSituation from '../components/QuestionSituation.astro';
 import { catalogueArticles, chargerContenu, sourcesParIds } from '../lib/contenu';
 import { jobZonesSchema, LIBELLES_ETIQUETTES } from '../lib/schemas';
 import { SEUIL_FORTE, SEUIL_TRES_FORTE } from '../lib/rapprochement';
@@ -74,9 +75,10 @@ const donnees = {
       (JavaScript nécessaire).
     </p>
   </div>
+  <QuestionSituation />
   <p>
     <button class="bouton secondaire" type="button" id="effacer">
-      Effacer toutes mes réponses de ce navigateur
+      Effacer toutes mes réponses et notes de ce navigateur
     </button>
   </p>
 

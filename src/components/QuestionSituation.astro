@@ -1,0 +1,111 @@
+---
+/**
+ * Question facultative de la page de résultats : « Quelle situation vous ressemble le plus ? ».
+ * La réponse reste dans le navigateur (localStorage) et sert seulement à proposer un article.
+ */
+import { chargerContenu } from '../lib/contenu';
+import { configSituations } from '../lib/situations';
+
+const { situations } = await chargerContenu();
+const q = configSituations.question_resultats;
+const articles = Object.fromEntries(
+  q.options.map((o) => {
+    const s = situations.find((x) => x.id === o.article);
+    return [
+      o.valeur,
+      {
+        titre: s?.data.titre ?? '',
+        accroche: s?.data.accroche ?? '',
+        url: `/situations/${o.article}`,
+      },
+    ];
+  }),
+);
+---
+
+<section class="question-situation" aria-labelledby="titre-situation">
+  <h2 id="titre-situation">Et votre situation ?</h2>
+  <label for="choix-situation">{q.question}</label>
+  <p class="discret aide" id="aide-situation">
+    {q.aide}
+  </p>
+  <select id="choix-situation" aria-describedby="aide-situation">
+    <option value="">Je préfère ne pas répondre</option>
+    {q.options.map((o) => (
+      <option value={o.valeur}>{o.libelle}</option>
+    ))}
+  </select>
+  <div class="proposition" aria-live="polite"></div>
+  <script type="application/json" id="donnees-situation" set:html={JSON.stringify(articles)} />
+</section>
+
+<script>
+  import { CLE_SITUATION, ecrireTexte, lireTexte } from '../lib/stockage';
+
+  const choix = document.querySelector<HTMLSelectElement>('#choix-situation');
+  const zone = document.querySelector<HTMLElement>('.question-situation .proposition');
+  const brut = document.querySelector('#donnees-situation')?.textContent ?? '{}';
+  const articles = JSON.parse(brut) as Record<
+    string,
+    { titre: string; accroche: string; url: string }
+  >;
+
+  function afficher(valeur: string) {
+    if (!zone) return;
+    zone.replaceChildren();
+    const a = articles[valeur];
+    if (!a) return;
+    const p = document.createElement('p');
+    p.append('Un article pour vous : ');
+    const lien = document.createElement('a');
+    lien.href = a.url;
+    lien.textContent = a.titre;
+    p.append(lien);
+    const accroche = document.createElement('p');
+    accroche.className = 'discret';
+    accroche.textContent = a.accroche;
+    zone.append(p, accroche);
+  }
+
+  if (choix) {
+    const enregistre = lireTexte(CLE_SITUATION);
+    if (enregistre in articles) {
+      choix.value = enregistre;
+      afficher(enregistre);
+    }
+    choix.addEventListener('change', () => {
+      ecrireTexte(CLE_SITUATION, choix.value);
+      afficher(choix.value);
+    });
+  }
+</script>
+
+<style>
+  .question-situation {
+    max-width: var(--mesure);
+    margin-block: var(--espace-5);
+    background: var(--c-surface-douce);
+    border-radius: var(--rayon);
+    padding: var(--espace-4);
+  }
+  h2 {
+    margin-top: 0;
+  }
+  label {
+    font-weight: 700;
+    display: block;
+  }
+  .aide {
+    font-size: max(0.9rem, 15px);
+    margin: var(--espace-1) 0 var(--espace-2);
+  }
+  select {
+    font: inherit;
+    max-width: 100%;
+    padding: var(--espace-2);
+    border: 1px solid var(--c-bordure);
+    border-radius: var(--rayon-petit);
+    background: var(--c-surface);
+    color: var(--c-texte);
+  }
+</style>
