@@ -137,6 +137,14 @@ Approfondir), **sans nouvel onglet dans le menu sauf nécessité**, et la page d
   relecture.
 - **Résumé détaillé** (`resume_detaille`, menu déroulant « Résumé détaillé » fermé par défaut) :
   **fourni par l’équipe éditoriale du projet**, ne pas le rédiger soi-même.
+- **Mise en page (identique pour tous les livres, modèles `src/pages/livres/[id].astro` et
+  `src/components/CarteLivre.astro`)** :
+  - carte de la liste : entièrement cliquable vers la fiche ; petite étiquette discrète « Résumé
+    détaillé disponible » seulement si `resume_detaille` existe ;
+  - fiche : bloc « L'essentiel » = bref résumé + ligne « pour qui » (le texte de `pour_qui`
+    commence par « Pour qui… » ou « Pour les… ») ; pas de section « Pour qui ? » séparée ; puis le
+    menu « Résumé détaillé » ; « Ce qu'il faut garder en tête » est secondaire et discret, comme
+    les encadrés « Source » (≥ 15 px, couleur atténuée, contraste AA).
 - Liens : DOI ou Wikisource si vérifiés, plus recherches BnF et Amazon **sans affiliation**.
 - **Auteurs non encore vérifiés** (`src/content/livres/auteurs-a-verifier.json`) : on peut citer
   l'auteur, son domaine et une note de prudence, **jamais un titre de livre précis**, avec la mention
