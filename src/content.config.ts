@@ -13,6 +13,7 @@ import {
   questionnaireSchema,
   sourceSchema,
   traitSchema,
+  situationSchema,
 } from './lib/schemas';
 
 const sources = defineCollection({
@@ -42,7 +43,7 @@ const metiers = defineCollection({
 
 const situations = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/situations' }),
-  schema: articleSchema,
+  schema: situationSchema,
 });
 
 const philosophie = defineCollection({

@@ -1,0 +1,91 @@
+{
+  "introduction": "Il n'y a pas de bon âge ni de bon moment pour se poser des questions sur son travail. Choisissez la situation qui vous ressemble le plus : chaque article commence simplement, puis propose des détails, des références et des pistes concrètes pour qui veut aller plus loin.",
+  "moments": [
+    {
+      "id": "transversal",
+      "titre": "Quel que soit votre âge",
+      "description": "Une question que beaucoup de personnes se posent, à toutes les étapes."
+    },
+    {
+      "id": "etudes",
+      "titre": "J'étudie ou je débute",
+      "description": "Choisir une orientation, trouver un premier emploi."
+    },
+    {
+      "id": "questions",
+      "titre": "Je travaille et je me pose des questions",
+      "description": "Quand le travail ne convient plus tout à fait, ou prend trop de place."
+    },
+    {
+      "id": "transition",
+      "titre": "Je suis en transition",
+      "description": "Changer de métier, retrouver un emploi, reprendre après un arrêt, se lancer à son compte."
+    },
+    {
+      "id": "suite",
+      "titre": "Je prépare la suite",
+      "description": "Deuxième partie de carrière, transmission, approche de la retraite."
+    }
+  ],
+  "question_resultats": {
+    "question": "Quelle situation vous ressemble le plus en ce moment ?",
+    "aide": "Question facultative. Votre réponse reste dans votre navigateur et sert seulement à vous proposer un article de la section « Ma situation ».",
+    "options": [
+      {
+        "valeur": "ne-sait-pas",
+        "libelle": "Je ne sais pas ce que je veux faire",
+        "article": "je-ne-sais-pas"
+      },
+      {
+        "valeur": "etudes",
+        "libelle": "Je suis en études",
+        "article": "etudes-orientation"
+      },
+      {
+        "valeur": "premier-emploi",
+        "libelle": "Je cherche mon premier emploi",
+        "article": "premier-emploi"
+      },
+      {
+        "valeur": "ne-plait-plus",
+        "libelle": "Mon travail ne me plaît plus",
+        "article": "travail-ne-plait-plus"
+      },
+      {
+        "valeur": "sens",
+        "libelle": "Je voudrais plus de sens dans mon travail actuel",
+        "article": "sens-sans-changer"
+      },
+      {
+        "valeur": "conciliation",
+        "libelle": "Mon travail déborde sur ma vie personnelle",
+        "article": "conciliation"
+      },
+      {
+        "valeur": "reconversion",
+        "libelle": "Je veux me reconvertir",
+        "article": "reconversion"
+      },
+      {
+        "valeur": "sans-emploi",
+        "libelle": "Je suis sans emploi",
+        "article": "sans-emploi"
+      },
+      {
+        "valeur": "reprise",
+        "libelle": "Je reprends après un arrêt",
+        "article": "reprise-apres-arret"
+      },
+      {
+        "valeur": "independant",
+        "libelle": "Je pense à me mettre à mon compte",
+        "article": "independant"
+      },
+      {
+        "valeur": "deuxieme-partie",
+        "libelle": "Je suis dans la deuxième partie de ma carrière",
+        "article": "deuxieme-partie-carriere"
+      }
+    ]
+  }
+}

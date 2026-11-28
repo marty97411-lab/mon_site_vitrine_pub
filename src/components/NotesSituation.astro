@@ -1,0 +1,142 @@
+---
+/**
+ * Zone de notes personnelles d'un article « Ma situation ». Les notes restent dans le navigateur
+ * (localStorage), jamais envoyées : boutons pour copier, imprimer ou tout effacer.
+ */
+interface Props {
+  id: string;
+  titre: string;
+}
+const { id, titre } = Astro.props;
+---
+
+<div class="zone-notes" data-notes={id} data-titre={titre}>
+  <label for={`notes-${id}`}>Vos notes (facultatif)</label>
+  <p class="discret aide" id={`aide-notes-${id}`}>
+    Elles restent uniquement dans ce navigateur : rien n'est envoyé. Elles disparaissent si vous
+    effacez les données du site.
+  </p>
+  <textarea id={`notes-${id}`} rows="8" aria-describedby={`aide-notes-${id}`}></textarea>
+  <div class="boutons">
+    <button type="button" class="bouton secondaire" data-action="copier">
+      Copier mes notes
+    </button>
+    <button type="button" class="bouton secondaire" data-action="imprimer">
+      Imprimer mes notes
+    </button>
+    <button type="button" class="bouton secondaire" data-action="effacer">
+      Tout effacer
+    </button>
+  </div>
+  <p class="statut discret" role="status" aria-live="polite"></p>
+  <div class="impression" aria-hidden="true">
+    <h2>{titre}</h2>
+    <p class="impression-texte"></p>
+  </div>
+</div>
+
+<script>
+  import { ecrireTexte, lireTexte, PREFIXE_NOTES } from '../lib/stockage';
+
+  for (const zone of document.querySelectorAll<HTMLElement>('[data-notes]')) {
+    const cle = PREFIXE_NOTES + (zone.dataset.notes ?? '');
+    const champ = zone.querySelector('textarea');
+    const statut = zone.querySelector<HTMLElement>('.statut');
+    const impression = zone.querySelector<HTMLElement>('.impression-texte');
+    if (!champ || !statut || !impression) continue;
+    const dire = (message: string) => {
+      statut.textContent = message;
+    };
+    champ.value = lireTexte(cle);
+    let minuterie: number | undefined;
+    champ.addEventListener('input', () => {
+      window.clearTimeout(minuterie);
+      minuterie = window.setTimeout(() => {
+        dire(
+          ecrireTexte(cle, champ.value)
+            ? 'Notes enregistrées dans ce navigateur.'
+            : 'Enregistrement impossible dans ce navigateur (navigation privée ?).',
+        );
+      }, 400);
+    });
+    zone.querySelector('[data-action="copier"]')?.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(champ.value);
+        dire('Notes copiées.');
+      } catch {
+        champ.select();
+        dire(
+          'Copie automatique impossible : le texte est sélectionné, utilisez Ctrl+C (ou Cmd+C).',
+        );
+      }
+    });
+    zone.querySelector('[data-action="imprimer"]')?.addEventListener('click', () => {
+      impression.textContent = champ.value;
+      document.documentElement.classList.add('impression-notes');
+      zone.classList.add('a-imprimer');
+      const fin = () => {
+        document.documentElement.classList.remove('impression-notes');
+        zone.classList.remove('a-imprimer');
+        window.removeEventListener('afterprint', fin);
+      };
+      window.addEventListener('afterprint', fin);
+      window.print();
+    });
+    zone.querySelector('[data-action="effacer"]')?.addEventListener('click', () => {
+      if (
+        champ.value !== '' &&
+        !window.confirm('Effacer définitivement vos notes pour cet article ?')
+      )
+        return;
+      champ.value = '';
+      ecrireTexte(cle, '');
+      dire('Notes effacées.');
+    });
+  }
+</script>
+
+<style>
+  .zone-notes {
+    margin-top: var(--espace-4);
+  }
+  label {
+    font-weight: 700;
+  }
+  .aide {
+    margin: var(--espace-1) 0 var(--espace-2);
+    font-size: max(0.9rem, 15px);
+  }
+  textarea {
+    width: 100%;
+    font: inherit;
+    padding: var(--espace-2);
+    border: 1px solid var(--c-bordure);
+    border-radius: var(--rayon-petit);
+    background: var(--c-surface);
+    color: var(--c-texte);
+  }
+  .boutons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espace-2);
+    margin-top: var(--espace-2);
+  }
+  .impression {
+    display: none;
+  }
+  @media print {
+    :global(html.impression-notes body *) {
+      visibility: hidden;
+    }
+    :global(html.impression-notes) .a-imprimer .impression,
+    :global(html.impression-notes) .a-imprimer .impression * {
+      visibility: visible;
+    }
+    :global(html.impression-notes) .a-imprimer .impression {
+      display: block;
+      position: absolute;
+      inset: 0 auto auto 0;
+      white-space: pre-wrap;
+    }
+  }
+</style>

@@ -1,0 +1,209 @@
+{
+  "avertissement": "Les règles de ces dispositifs changent souvent : vérifiez toujours les conditions à jour sur le site officiel, ou avec un conseiller, avant toute démarche.",
+  "dispositifs": [
+    {
+      "id": "cep",
+      "nom": "Conseil en évolution professionnelle",
+      "sigle": "CEP",
+      "description": "Un service gratuit, personnalisé et confidentiel pour faire le point sur votre situation professionnelle et être accompagné dans un projet d'évolution, de reconversion ou de création d'activité.",
+      "pour_qui": "Accessible à tous, quels que soient le statut, l'âge, le secteur d'activité et la qualification. Le conseiller dépend de votre situation : France Travail, Apec, mission locale, Cap emploi ou opérateur régional.",
+      "lien": {
+        "url": "https://mon-cep.org/",
+        "libelle": "mon-cep.org (France compétences)"
+      },
+      "verifie_le": "2026-11-28",
+      "source": "cep-depliant-2021"
+    },
+    {
+      "id": "cpf",
+      "nom": "Compte personnel de formation",
+      "sigle": "CPF",
+      "description": "Il permet de consulter vos droits à la formation et de les utiliser tout au long de votre vie professionnelle pour financer une formation liée à votre projet.",
+      "pour_qui": "Tout actif à partir de 16 ans. Les droits se consultent sur le site ou l'application Mon Compte Formation.",
+      "lien": {
+        "url": "https://www.francetravail.fr/candidat/en-formation/mes-aides-financieres/le-compte-personnel-de-formation.html",
+        "libelle": "Le CPF expliqué par France Travail"
+      },
+      "verifie_le": "2026-11-28",
+      "source": "ft-cpf"
+    },
+    {
+      "id": "apprentissage",
+      "nom": "Contrat d'apprentissage",
+      "description": "Un contrat de travail en alternance : vous apprenez un métier en entreprise, accompagné par un maître d'apprentissage, et vous préparez un diplôme ou un titre en centre de formation. Vous êtes salarié et rémunéré.",
+      "pour_qui": "Les jeunes de 16 à 29 ans révolus, et certains publics au-delà.",
+      "lien": {
+        "url": "https://www.francetravail.fr/candidat/en-formation/mes-aides-financieres/le-contrat-dapprentissage.html",
+        "libelle": "Le contrat d'apprentissage (France Travail)"
+      },
+      "verifie_le": "2026-11-28",
+      "source": "ft-apprentissage"
+    },
+    {
+      "id": "cej",
+      "nom": "Contrat d'engagement jeune",
+      "sigle": "CEJ",
+      "description": "Un accompagnement intensif vers l'emploi ou la formation.",
+      "pour_qui": "Les moins de 26 ans sans formation ni emploi depuis plusieurs mois et sans projet professionnel défini.",
+      "lien": {
+        "url": "https://www.francetravail.fr/candidat/jeunes.html",
+        "libelle": "Espace « Jeunes » de France Travail"
+      },
+      "verifie_le": "2026-11-28",
+      "source": "ft-jeunes"
+    },
+    {
+      "id": "immersion",
+      "nom": "Immersion professionnelle",
+      "description": "Découvrir un métier en situation réelle, quelques jours dans une entreprise, pour vérifier qu'il vous convient avant de vous engager (période de mise en situation en milieu professionnel, PMSMP).",
+      "pour_qui": "Proposée notamment par France Travail aux personnes qu'il accompagne ; un conseiller en évolution professionnelle peut aussi en étudier la possibilité avec vous.",
+      "lien": {
+        "url": "https://www.francetravail.fr/candidat/jeunes.html",
+        "libelle": "« Immersion facilitée » (France Travail)"
+      },
+      "verifie_le": "2026-11-28",
+      "source": "ft-jeunes"
+    },
+    {
+      "id": "france-travail-droits",
+      "nom": "Inscription et droits auprès de France Travail",
+      "description": "France Travail informe sur l'allocation chômage et les aides, propose un simulateur pour estimer vos droits et vous accompagne dans votre recherche d'emploi. Les règles d'indemnisation évoluent régulièrement.",
+      "pour_qui": "Les personnes sans emploi, ou qui vont le perdre.",
+      "lien": {
+        "url": "https://www.francetravail.fr/candidat/mes-droits-aux-aides-et-allocati.html",
+        "libelle": "Mes droits aux allocations et aides (France Travail)"
+      },
+      "verifie_le": "2026-11-28",
+      "source": "ft-droits"
+    },
+    {
+      "id": "france-travail-50-ans",
+      "nom": "Services de France Travail pour les 50 ans et plus",
+      "description": "Ateliers de détection de potentiel, formation certifiante avec immersion en entreprise (« Atout Senior »), immersion facilitée, formations à distance.",
+      "pour_qui": "Les personnes de 50 ans et plus accompagnées par France Travail.",
+      "lien": {
+        "url": "https://www.francetravail.fr/candidat/50-ans-et-plus.html",
+        "libelle": "50 ans et plus (France Travail)"
+      },
+      "verifie_le": "2026-11-28",
+      "source": "ft-50-ans"
+    },
+    {
+      "id": "creation-france-travail",
+      "nom": "Accompagnement et aides à la création d'entreprise",
+      "description": "France Travail accompagne les demandeurs d'emploi qui ont un projet de création ou de reprise, de l'idée au plan d'action. Des aides existent, comme l'ARCE (une partie de l'allocation chômage versée en capital, en deux fois) ou l'ACRE (exonération de cotisations pour les nouveaux entrepreneurs).",
+      "pour_qui": "Les créateurs et repreneurs d'entreprise ; certaines aides sont réservées aux demandeurs d'emploi.",
+      "lien": {
+        "url": "https://www.francetravail.fr/candidat/je-creereprends-une-entreprise/les-aides-financieres-creation-d.html",
+        "libelle": "Les aides à la création (France Travail)"
+      },
+      "verifie_le": "2026-11-28",
+      "source": "ft-creation-aides"
+    },
+    {
+      "id": "onisep",
+      "nom": "Mon orientation en ligne (Onisep)",
+      "description": "Un service personnalisé et gratuit : vous pouvez échanger avec des conseillers par téléphone ou par tchat sur vos questions d'orientation.",
+      "pour_qui": "Élèves, étudiants et leurs familles.",
+      "lien": {
+        "url": "https://www.onisep.fr/mon-orientation-en-ligne",
+        "libelle": "Mon orientation en ligne"
+      },
+      "verifie_le": "2026-11-27",
+      "source": "onisep-moel"
+    },
+    {
+      "id": "apec",
+      "nom": "Apec",
+      "description": "L'Apec assure le conseil en évolution professionnelle des cadres.",
+      "pour_qui": "Les cadres, en activité ou en recherche d'emploi.",
+      "lien": null,
+      "verifie_le": null,
+      "source": "cep-depliant-2021",
+      "todo": "Lien officiel et offre de services complète à vérifier (site apec.fr non joignable depuis l'environnement de rédaction)."
+    },
+    {
+      "id": "mission-locale",
+      "nom": "Mission locale",
+      "description": "La mission locale assure le conseil en évolution professionnelle des jeunes de 16 à 25 ans.",
+      "pour_qui": "Les jeunes de 16 à 25 ans, en activité ou en recherche d'emploi.",
+      "lien": null,
+      "verifie_le": null,
+      "source": "cep-depliant-2021",
+      "todo": "Lien officiel (annuaire des missions locales) à vérifier : site non joignable depuis l'environnement de rédaction."
+    },
+    {
+      "id": "cap-emploi",
+      "nom": "Cap emploi",
+      "description": "Cap emploi accompagne les personnes en situation de handicap dans leur parcours professionnel, y compris pour le conseil en évolution professionnelle.",
+      "pour_qui": "Les personnes en situation de handicap, en activité ou en recherche d'emploi.",
+      "lien": null,
+      "verifie_le": null,
+      "source": "cep-depliant-2021",
+      "todo": "Lien officiel à vérifier : site non joignable depuis l'environnement de rédaction."
+    },
+    {
+      "id": "bilan-competences",
+      "nom": "Bilan de compétences",
+      "description": "Une démarche accompagnée pour analyser vos compétences, vos aptitudes et vos motivations, afin de construire un projet professionnel.",
+      "pour_qui": "À vérifier (salariés, demandeurs d'emploi… selon les conditions en vigueur).",
+      "lien": null,
+      "verifie_le": null,
+      "source": null,
+      "todo": "Description, conditions et lien officiel à vérifier sur service-public.gouv.fr : site non joignable depuis l'environnement de rédaction."
+    },
+    {
+      "id": "vae",
+      "nom": "Validation des acquis de l'expérience",
+      "sigle": "VAE",
+      "description": "Une démarche qui permet d'obtenir tout ou partie d'un diplôme ou d'une certification grâce à votre expérience.",
+      "pour_qui": "À vérifier selon les conditions en vigueur.",
+      "lien": null,
+      "verifie_le": null,
+      "source": null,
+      "todo": "Description, conditions et lien officiel à vérifier sur service-public.gouv.fr : site non joignable depuis l'environnement de rédaction."
+    },
+    {
+      "id": "transitions-pro",
+      "nom": "Projet de transition professionnelle (Transitions Pro)",
+      "sigle": "PTP",
+      "description": "Un dispositif qui peut permettre à un salarié de suivre une formation certifiante pour changer de métier, en étant rémunéré sous conditions.",
+      "pour_qui": "À vérifier : salariés remplissant des conditions d'ancienneté.",
+      "lien": null,
+      "verifie_le": null,
+      "source": null,
+      "todo": "Description, conditions et lien officiel à vérifier sur service-public.gouv.fr : site non joignable depuis l'environnement de rédaction."
+    },
+    {
+      "id": "cio",
+      "nom": "Centre d'information et d'orientation",
+      "sigle": "CIO",
+      "description": "Des psychologues de l'Éducation nationale y reçoivent élèves, étudiants et familles pour leurs questions d'orientation.",
+      "pour_qui": "Élèves, étudiants et leurs familles ; à vérifier pour les autres publics.",
+      "lien": null,
+      "verifie_le": null,
+      "source": null,
+      "todo": "Description, conditions et lien officiel à vérifier sur service-public.gouv.fr : site non joignable depuis l'environnement de rédaction."
+    },
+    {
+      "id": "sante-travail",
+      "nom": "Médecine du travail (service de prévention et de santé au travail)",
+      "description": "Le médecin du travail peut vous recevoir, en toute confidentialité, pour parler de votre santé en lien avec votre travail, et étudier avec vous et votre employeur des aménagements, notamment avant ou lors d'une reprise.",
+      "pour_qui": "Les salariés ; les modalités (visites, délais) sont à vérifier.",
+      "lien": null,
+      "verifie_le": null,
+      "source": null,
+      "todo": "Description, conditions et lien officiel à vérifier sur service-public.gouv.fr : site non joignable depuis l'environnement de rédaction."
+    },
+    {
+      "id": "creation-reseaux",
+      "nom": "Réseaux d'accompagnement à la création d'entreprise et Bpifrance Création",
+      "description": "Des réseaux associatifs et publics conseillent les créateurs (étude de projet, financement, suivi après le lancement).",
+      "pour_qui": "Les personnes qui envisagent de créer ou reprendre une entreprise.",
+      "lien": null,
+      "verifie_le": null,
+      "source": null,
+      "todo": "Liens officiels (bpifrance-creation.fr, réseaux) à vérifier : sites non joignables depuis l'environnement de rédaction."
+    }
+  ]
+}
