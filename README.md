@@ -210,10 +210,11 @@ Le propriétaire du projet n'est pas développeur : chaque session doit pouvoir 
 **Contenus**
 
 - [ ] **En cours** : correspondance O*NET → ROME (intitulés et liens adaptés à la France). Fait :
-      chaîne officielle O*NET → ESCO → ROME 4.0, 701 métiers O*NET sur 923 avec un équivalent
+      chaîne officielle O*NET → ESCO → ROME 4.0, 705 métiers O*NET sur 923 avec un équivalent
       français affiché, fiches `/metiers/rome/…`, liens MétierScope et Onisep. Reste :
   - [ ] importer l'export RNCP (data.gouv.fr injoignable depuis l'environnement en ligne :
         `npm run import:fr -- --rncp archive.zip`) et confirmer son format ;
+  - [x] règles de revue fixées (ADR 0010 § 12) ; 80 métiers les plus affichés revus (`revue.json`, à valider) ;
   - [ ] relire les correspondances par ordre de priorité (`docs/controle/correspondances-onet-rome.csv`)
         et reporter les décisions dans `src/data/fr/validations.json` ;
   - [ ] reconfirmer les licences de la table ESCO–ROME, du RNCP et d'Idéo-Métiers (Onisep) ;

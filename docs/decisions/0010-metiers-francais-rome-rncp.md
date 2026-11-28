@@ -80,6 +80,26 @@ métiers.
     retenu pour « Rehabilitation Counselors »), précision sur l'accompagnement des personnes en
     situation de handicap par le réseau Cap emploi (source France Travail, vérifiée).
 
+12. **Règles de revue des correspondances** (fixées par le propriétaire le 28/11/2026, à
+    appliquer sans lui redemander) :
+    1. privilégier l'intitulé général de la fiche ROME, sauf si une appellation officielle du
+       ROME correspond nettement mieux au métier O*NET ;
+    2. ne pas utiliser une appellation dont le sens courant en France est différent (ex.
+       « reclassement » = après un licenciement) ;
+    3. si le métier O*NET est plus spécialisé que la fiche ROME, garder la fiche et préciser la
+       spécialité (affichée dans les résultats et sous la définition de la fiche) ;
+    4. si aucune fiche ROME ne correspond au cœur du métier (même activité, même public), ne rien
+       afficher ;
+    5. noter chaque choix dans le fichier de contrôle (type, courte justification), au statut
+       `a_valider`.
+
+    Ne poser au propriétaire que les cas vraiment ambigus, regroupés en une seule liste. Mise en
+    œuvre : `src/data/fr/revue.json` (une entrée par métier O*NET revu : choix, type `exacte` /
+    `approchee` / `specialisee` / `appellation`, justification). Pour un métier revu, seuls ses
+    choix sont affichés (aucun si la liste est vide) ; les décisions du propriétaire
+    (`validations.json`) priment. Première revue : les 80 métiers O*NET les plus souvent affichés
+    (hors ceux déjà tranchés par le propriétaire).
+
 ## Limites et points ouverts
 
 - **Export RNCP non importé** : data.gouv.fr coupe la connexion depuis l'environnement de

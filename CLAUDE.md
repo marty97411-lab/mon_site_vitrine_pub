@@ -59,6 +59,12 @@ Approfondir), **sans nouvel onglet dans le menu sauf nécessité**, et la page d
   les qualités `exacte` et `approchee` (ou une correspondance validée dans
   `src/data/fr/validations.json`) sont affichées ; ne jamais modifier à la main les fichiers
   générés de `src/data/fr/` (sauf `validations.json`). ROME = métiers ; RNCP = certifications.
+- **Revue des correspondances O\*NET → ROME** (règles du propriétaire, ADR 0010 § 12, sans lui
+  redemander) : intitulé général de la fiche sauf appellation officielle nettement meilleure ;
+  jamais d'appellation au sens courant différent ; métier O*NET plus spécialisé → garder la fiche
+  et préciser la spécialité ; aucune fiche au même cœur de métier (activité, public) → rien
+  afficher ; chaque choix noté (type, justification) dans `src/data/fr/revue.json`, au statut
+  `a_valider`. Questions au propriétaire : seulement les cas vraiment ambigus, en une liste.
 - **Licences des items** : IPIP = domaine public. O*NET Interest Profiler = items **traduits** par
   le projet sous \**O*NET Tools Developer License** : garder le texte original intact, afficher la
   mention de modification (pied de page, questionnaire, README) et la page `/modifications-onet`.
@@ -235,8 +241,9 @@ src/
   data/onet/             metiers.json (généré), familles.json, job-zones.json
   data/fr/               correspondances.json, metiers-rome.json, onisep-rome.json (générés par
                          import-fr.mjs) ; validations.json (relecture manuelle, jamais écrasé,
-                         appellation affichable) ; notes-fiches.json (précisions sourcées de
-                         l'équipe sous une définition ROME)
+                         appellation affichable) ; revue.json (revue éditoriale selon les
+                         règles du propriétaire, à valider) ; notes-fiches.json (précisions
+                         sourcées de l'équipe sous une définition ROME)
   data/normes/           normes.json : non utilisé (pas de percentile)
   lib/big-five.ts        traits, 30 facettes, RIASEC
   lib/schemas/           schémas Zod (questionnaire, parcours, O*NET, trait, métier, source) + tests

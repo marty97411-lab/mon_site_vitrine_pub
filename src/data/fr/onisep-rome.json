@@ -435,16 +435,6 @@
         "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.152"
       }
     ],
-    "D1106": [
-      {
-        "libelle": "commerçant / commerçante en alimentation",
-        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.16"
-      },
-      {
-        "libelle": "vendeur / vendeuse conseil caviste",
-        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.631"
-      }
-    ],
     "D1202": [
       {
         "libelle": "coiffeur / coiffeuse",
@@ -1091,20 +1081,6 @@
       {
         "libelle": "constructeur / constructrice de réseaux de canalisations",
         "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.49"
-      }
-    ],
-    "G1102": [
-      {
-        "libelle": "agent / agente de développement touristique",
-        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.919"
-      },
-      {
-        "libelle": "animateur / animatrice du patrimoine",
-        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.445"
-      },
-      {
-        "libelle": "directeur / directrice d'office de tourisme",
-        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.434"
       }
     ],
     "G1201": [
@@ -2191,10 +2167,18 @@
         "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.479"
       }
     ],
-    "K1401": [
+    "K1404": [
       {
-        "libelle": "attaché / attachée parlementaire",
-        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8230"
+        "libelle": "attaché territorial / attachée territoriale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.441"
+      },
+      {
+        "libelle": "ingénieur en chef territorial / ingénieure en chef territoriale",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.518"
+      },
+      {
+        "libelle": "secrétaire de mairie",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.523"
       }
     ],
     "K1501": [
@@ -2957,12 +2941,6 @@
         "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.196"
       }
     ],
-    "M1204": [
-      {
-        "libelle": "contrôleur / contrôleuse de gestion",
-        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.410"
-      }
-    ],
     "M1207": [
       {
         "libelle": "credit manager (responsable du crédit)",
@@ -3199,48 +3177,6 @@
       {
         "libelle": "testeur / testeuse en informatique",
         "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.84"
-      }
-    ],
-    "M1806": [
-      {
-        "libelle": "architecte big data (mégadonnées)",
-        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.848"
-      },
-      {
-        "libelle": "architecte des systèmes d'information",
-        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.478"
-      },
-      {
-        "libelle": "architecte IOT",
-        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7929"
-      },
-      {
-        "libelle": "consultant / consultante en informatique décisionnelle",
-        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.916"
-      },
-      {
-        "libelle": "consultant / consultante en solutions intégrées",
-        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.599"
-      },
-      {
-        "libelle": "consultant / consultante en systèmes d'information",
-        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.212"
-      },
-      {
-        "libelle": "consultant / consultante informatique",
-        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.622"
-      },
-      {
-        "libelle": "consultant / consultante SaaS (logiciel à la demande)",
-        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.328"
-      },
-      {
-        "libelle": "product owner (responsable de produit numérique)",
-        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7958"
-      },
-      {
-        "libelle": "spécialiste de l'accessibilité numérique",
-        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.623"
       }
     ],
     "M1808": [
