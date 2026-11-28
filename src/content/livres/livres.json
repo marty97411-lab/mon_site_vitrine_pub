@@ -896,5 +896,32 @@
       "reste_a_verifier": "ISBN et édition française éventuelle."
     },
     "brouillon": true
+  },
+  {
+    "id": "cain-quiet",
+    "titre": "Quiet",
+    "sous_titre": "The Power of Introverts in a World That Can't Stop Talking",
+    "auteurs": ["Susan Cain"],
+    "direction": false,
+    "traducteurs": [],
+    "annee": 2012,
+    "editeur": "Crown Publishers",
+    "isbn": "9780307352149",
+    "langue": "en",
+    "domaine_public": false,
+    "etiquette": "temoignage",
+    "niveau": "accessible",
+    "themes": ["connaissance-de-soi", "sens-du-travail"],
+    "resume": "Une ancienne avocate, elle-même introvertie, défend l'idée que l'école et le monde du travail valorisent trop les comportements extravertis, et plaide pour mieux reconnaître les qualités des personnes plus réservées.",
+    "pour_qui": "Pour qui se sent plutôt réservé et a parfois l'impression de devoir se forcer à être quelqu'un d'autre au travail.",
+    "a_garder_en_tete": "En anglais ; aucune édition française n'a pu être vérifiée. Livre de témoignage et de vulgarisation, pas une synthèse scientifique : à lire avec le dossier « Introversion et extraversion » du site, qui confronte ces idées aux études.",
+    "note_controverse": "Très populaire, ce livre oppose souvent introvertis et extravertis comme deux groupes, alors que la recherche décrit un continuum. Les explications biologiques simples de l'introversion restent débattues (Smillie, 2013), et des études récentes nuancent l'idée d'un avantage net des introvertis ou des extravertis au travail (par exemple Grant, 2013).",
+    "verification": {
+      "date": "2026-11-28",
+      "preuves": [
+        "doi:10.18275/fire201603021102 (compte rendu : Crown Publishers, 2012, 333 p., ISBN 9780307352149)"
+      ]
+    },
+    "brouillon": true
   }
 ]
