@@ -75,3 +75,18 @@ export const livreSchema = z
   );
 
 export type Livre = z.infer<typeof livreSchema>;
+
+/**
+ * Auteur à découvrir dont les livres n'ont pas encore pu être vérifiés : on cite l'auteur et son
+ * domaine, jamais un titre précis. La présentation reste à vérifier.
+ */
+export const auteurAVerifierSchema = z.object({
+  id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
+  nom: z.string().min(1),
+  presentation: z.string().min(1).max(200),
+  etiquette: z.enum(['recherche', 'philosophie', 'temoignage']),
+  themes: z.array(z.enum(THEMES_LIVRES)).min(1),
+  note: z.string().optional(),
+});
+
+export type AuteurAVerifier = z.infer<typeof auteurAVerifierSchema>;

@@ -2,7 +2,13 @@ import { existsSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import configJson from '../../data/recommandations.json';
 import livresJson from '../../content/livres/livres.json';
-import { livreSchema, recommandationsSchema, type ConfigRecommandations } from '../schemas';
+import auteursJson from '../../content/livres/auteurs-a-verifier.json';
+import {
+  auteurAVerifierSchema,
+  livreSchema,
+  recommandationsSchema,
+  type ConfigRecommandations,
+} from '../schemas';
 import { conditionRemplie, suggerer, type ProfilPourSuggestions } from './index';
 
 const config = recommandationsSchema.parse(configJson);
@@ -133,6 +139,15 @@ describe('fichiers de données', () => {
         const chemin = new URL(`../../content/${id}.md`, import.meta.url);
         expect(existsSync(chemin), `${regle.id} → ${id}`).toBe(true);
       }
+    }
+  });
+  it('les auteurs à vérifier respectent leur schéma, sans titre de livre ni doublon avec les livres', () => {
+    const auteurs = auteursJson.map((a) => auteurAVerifierSchema.parse(a));
+    expect(new Set(auteurs.map((a) => a.id)).size).toBe(auteurs.length);
+    const auteursLivres = new Set(livres.flatMap((l) => l.auteurs));
+    for (const a of auteurs) {
+      expect(auteursLivres.has(a.nom), a.nom).toBe(false);
+      expect(a.presentation, a.nom).not.toMatch(/[«»].*[«»].*\(\d{4}\)/);
     }
   });
   it('la dernière règle est une règle « toujours »', () => {

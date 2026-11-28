@@ -6,6 +6,7 @@ import { defineCollection } from 'astro:content';
 import { file, glob } from 'astro/loaders';
 import {
   articleSchema,
+  auteurAVerifierSchema,
   livreSchema,
   metierSchema,
   parcoursSchema,
@@ -54,8 +55,14 @@ const livres = defineCollection({
   schema: livreSchema,
 });
 
+const auteurs = defineCollection({
+  loader: file('src/content/livres/auteurs-a-verifier.json'),
+  schema: auteurAVerifierSchema,
+});
+
 export const collections = {
   livres,
+  auteurs,
   sources,
   questionnaires,
   parcours,

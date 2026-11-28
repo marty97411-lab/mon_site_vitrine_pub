@@ -116,6 +116,10 @@ qu'une partie de la réussite et de la satisfaction au travail.
 - Résumé, « pour qui » et « à garder en tête » rédigés par l'équipe ; `brouillon: true` jusqu'à
   relecture.
 - Liens : DOI ou Wikisource si vérifiés, plus recherches BnF et Amazon **sans affiliation**.
+- **Auteurs non encore vérifiés** (`src/content/livres/auteurs-a-verifier.json`) : on peut citer
+  l'auteur, son domaine et une note de prudence, **jamais un titre de livre précis**, avec la mention
+  « références en cours de vérification ». Dès qu'un livre est vérifié, il passe dans `livres.json`
+  et l'auteur sort de cette liste.
 
 ## Suggestions de lecture (recommandations)
 

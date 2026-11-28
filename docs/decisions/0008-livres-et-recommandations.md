@@ -21,6 +21,14 @@
   de la BnF et une recherche Amazon, **sans affiliation** et sans rien charger depuis ces sites
   (décision du 2026-11-28). Le format du lien de recherche BnF n'a pas pu être testé (TODO).
 
+## Auteurs à découvrir (non vérifiés)
+
+- Décision du 2026-11-28 : les auteurs dont les livres n'ont pas pu être vérifiés peuvent être cités
+  sur la page « Livres conseillés », sans titre de livre précis, avec leur domaine, une note de
+  prudence pour les ouvrages contestés et la mention « références en cours de vérification »
+  (`src/content/livres/auteurs-a-verifier.json`, 20 auteurs). Un auteur déjà présent dans la
+  sélection vérifiée n'y figure pas (contrôlé par un test).
+
 ## Suggestions de lecture
 
 - Règles dans `src/data/recommandations.json` (schéma `src/lib/schemas/recommandations.ts`),
