@@ -205,16 +205,16 @@
     "titre": "Orientation et insertion professionnelle",
     "sous_titre": "75 concepts clés",
     "auteurs": ["Jean Guichard", "Michel Huteau"],
-    "annee": 2007,
+    "annee": 2022,
     "editeur": "Dunod",
-    "isbn": "9782100489756",
+    "isbn": "9782100825622",
     "langue": "fr",
     "etiquette": "recherche",
     "niveau": "exigeant",
     "themes": ["orientation", "reconversion"],
     "resume": "Deux spécialistes de la psychologie de l'orientation présentent, sous forme de courtes entrées, les notions et les théories utilisées pour comprendre et accompagner les choix d'orientation.",
     "pour_qui": "Pour les curieux qui veulent comprendre les théories de l'orientation, et pour les professionnels de l'accompagnement.",
-    "a_garder_en_tete": "Ouvrage de référence technique, à consulter par entrées plutôt qu'à lire d'une traite ; son édition date de 2007.",
+    "a_garder_en_tete": "Ouvrage de référence technique, à consulter par entrées plutôt qu'à lire d'une traite.",
     "resume_detaille": {
       "idees_principales": [
         "Cet ouvrage est un dictionnaire de référence, dirigé par deux grands spécialistes français de la psychologie de l'orientation. Il présente, par ordre alphabétique, 75 notions essentielles pour comprendre l'orientation scolaire et professionnelle et l'insertion dans l'emploi : intérêts professionnels, bilan de compétences, conseil en orientation, transitions, identité, chômage, apprentissage, alternance, choix, décision, et bien d'autres.",
@@ -228,22 +228,23 @@
       ]
     },
     "lien": {
-      "url": "https://doi.org/10.3917/dunod.guich.2008.01.0001",
+      "url": "https://doi.org/10.3917/dunod.guich.2022.01.0001",
       "libelle": "Sur Cairn (DOI)"
     },
     "verification": {
       "date": "2026-11-28",
       "preuves": [
-        "doi:10.3917/dunod.guich.2008.01.0001",
-        "doi:10.4000/osp.1339",
-        "doi:10.3917/dunod.guich.2022.01.0001 (nouvelle édition : Dunod, 2022)"
-      ]
+        "doi:10.3917/dunod.guich.2022.01.0001 (édition de 2022)",
+        "doi:10.3917/dunod.guich.2008.01.0001 (première édition, 2007)",
+        "doi:10.4000/osp.1339"
+      ],
+      "reste_a_verifier": "Sous-titre « 75 concepts clés » et numéro de l'édition de 2022 : non indiqués par Crossref."
     },
     "direction": false,
     "traducteurs": [],
     "domaine_public": false,
     "brouillon": true,
-    "note_edition": "Nouvelle édition chez Dunod en 2022 (ISBN 9782100825622)."
+    "note_edition": "Nouvelle édition de 2022 ; première édition en 2007 (ISBN 9782100489756)."
   },
   {
     "id": "cohen-scali-orientation-vie",
