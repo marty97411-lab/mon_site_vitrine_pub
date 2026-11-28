@@ -1,0 +1,4 @@
+{
+  "note": "Décisions de relecture manuelle des correspondances O*NET → ROME. Une ligne par couple (code O*NET, code ROME). decision : « valide » (affichée même si la qualité automatique est faible, ou ajoutée si absente de la chaîne) ou « rejete » (jamais affichée). Relues par le script import-fr.mjs à chaque import ; ce fichier n'est jamais écrasé.",
+  "validations": []
+}
