@@ -1,0 +1,95 @@
+---
+import Base from '../../layouts/Base.astro';
+import Badge from '../../components/Badge.astro';
+import Essentiel from '../../components/Essentiel.astro';
+import EnSavoirPlus from '../../components/EnSavoirPlus.astro';
+import ListeSources from '../../components/ListeSources.astro';
+import { chargerContenu, sourcesParIds } from '../../lib/contenu';
+import { RIASEC, RIASEC_NOMS } from '../../lib/big-five';
+
+const contenu = await chargerContenu();
+const exemples: Record<string, string> = {
+  R: 'fabriquer, réparer, conduire, travailler de ses mains ou en extérieur',
+  I: 'observer, analyser, chercher, expérimenter',
+  A: 'créer, écrire, composer, imaginer',
+  S: 'aider, conseiller, enseigner, soigner',
+  E: 'convaincre, diriger, vendre, entreprendre',
+  C: 'organiser, classer, vérifier, gérer des données',
+};
+---
+
+<Base
+  titre="Les intérêts professionnels (RIASEC)"
+  description="Le modèle RIASEC de Holland décrit six grands types d'intérêts professionnels. Ce qu'ils signifient, et comment le site s'en sert."
+  fil={[{ libelle: 'Explication', href: '/explication' }, { libelle: 'Intérêts professionnels' }]}
+>
+  <p>
+    <Badge type="science" />
+  </p>
+  <h1>Les intérêts professionnels (RIASEC)</h1>
+  <Essentiel>
+    <p>
+      Vos intérêts décrivent les activités qui vous attirent. Le modèle de Holland en distingue six
+      grands types ; la plupart des personnes en combinent plusieurs.
+    </p>
+  </Essentiel>
+
+  <section class="lecture" aria-labelledby="comprendre">
+    <h2 id="comprendre">Comprendre</h2>
+    <p>
+      Le psychologue John Holland a proposé de décrire les intérêts professionnels selon six types,
+      dont les initiales forment le mot RIASEC (en anglais :{' '}
+      <span lang="en">Realistic, Investigative, Artistic, Social, Enterprising, Conventional</span>
+      ). Le questionnaire du site vous demande à quel point diverses activités vous plairaient ;
+      votre profil indique les types les plus marqués chez vous.
+    </p>
+    <ul>
+      {RIASEC.map((l) => (
+        <li>
+          <strong>
+            {RIASEC_NOMS[l].nomFr} ({l})
+          </strong>{' '}
+          : {exemples[l]}.
+        </li>
+      ))}
+    </ul>
+    <p>
+      Vos intérêts ne sont pas vos compétences : on peut aimer une activité sans encore la
+      maîtriser, et inversement. Ils peuvent aussi évoluer : votre résultat est une photographie à
+      un moment donné.
+    </p>
+  </section>
+
+  <div class="lecture">
+    <EnSavoirPlus titre="Approfondir : personnalité, intérêts et rapprochement avec les métiers">
+      <p>
+        Personnalité et intérêts sont liés, mais distincts. Une méta-analyse (Barrick, Mount et
+        Gupta, 2003) décrit des liens réels entre certains traits et certains types d'intérêts : les
+        plus forts relient l'extraversion au type Entreprenant et l'ouverture au type Artistique
+        (corrélations d'environ 0,4), tandis que le type Réaliste n'est lié à aucun trait. Ces liens
+        restent partiels : c'est pourquoi le site mesure les intérêts séparément.
+      </p>
+      <p>
+        La stabilité des intérêts a été étudiée de l'adolescence au milieu de la vie (Low et coll.,
+        2005). TODO : relire cet article avant d'en résumer les résultats.
+      </p>
+      <p>
+        Le rapprochement avec les métiers compare la forme de votre profil RIASEC à celle de 923
+        métiers de la base O*NET, selon la méthode du manuel de l'O*NET Interest Profiler. Voir
+        <a href="/la-science#rapprochement">la science derrière le test</a>.
+      </p>
+      <ListeSources
+        sources={sourcesParIds(contenu, [
+          'holland-1997',
+          'barrick-mount-gupta-2003',
+          'low-2005',
+          'onet-ip-manual-2021',
+          'onet-31',
+        ])}
+        titre="Références"
+        niveau={3}
+        idTitre="references-interets"
+      />
+    </EnSavoirPlus>
+  </div>
+</Base>

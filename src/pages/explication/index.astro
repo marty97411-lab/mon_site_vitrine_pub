@@ -1,0 +1,52 @@
+---
+import Definition from '../../components/Definition.astro';
+import Base from '../../layouts/Base.astro';
+import Carte from '../../components/Carte.astro';
+import Essentiel from '../../components/Essentiel.astro';
+import { chargerContenu } from '../../lib/contenu';
+
+const { traits } = await chargerContenu();
+---
+
+<Base
+  titre="Explication"
+  description="Les cinq grands traits de personnalité, les intérêts professionnels RIASEC et la science derrière le test, expliqués simplement puis en détail."
+  fil={[{ libelle: 'Explication' }]}
+>
+  <h1>Explication</h1>
+  <Essentiel>
+    <p>
+      Le test mesure deux choses différentes : votre personnalité (comment vous fonctionnez) et vos
+      intérêts professionnels (ce que vous aimeriez faire). Voici de quoi il s'agit.
+    </p>
+  </Essentiel>
+
+  <h2>Les cinq grands traits de personnalité</h2>
+  <p class="lecture">
+    Le site utilise le Big Five <Definition terme="big-five" />. Chaque trait est un continuum :
+    chacun se situe quelque part entre deux pôles, et chaque pôle a ses atouts et ses coûts.
+  </p>
+  <div class="grille trois">
+    {traits.map(({ id, data }) => (
+      <Carte titre={data.nom} href={`/traits/${id}`}>
+        <p>{data.resume}</p>
+      </Carte>
+    ))}
+  </div>
+
+  <h2>Les intérêts et la science</h2>
+  <div class="grille deux">
+    <Carte titre="Les intérêts professionnels (RIASEC)" href="/explication/interets">
+      <p>
+        Le modèle RIASEC <Definition terme="riasec" />, et comment il sert à rapprocher votre profil
+        de métiers.
+      </p>
+    </Carte>
+    <Carte titre="La science derrière le test" href="/la-science">
+      <p>
+        Pourquoi deux questionnaires, comment sont calculés les scores, et pourquoi il n'y a pas de
+        percentile.
+      </p>
+    </Carte>
+  </div>
+</Base>

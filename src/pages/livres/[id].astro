@@ -58,6 +58,16 @@ const description = `${l.titre}, de ${l.auteurs.join(', ')} (${l.editeur}, ${l.a
     <p>{l.resume}</p>
   </Essentiel>
 
+  <div class="lecture">
+    <EnSavoirPlus titre="Résumé détaillé">
+      {l.resume_detaille ? (
+        l.resume_detaille.split(/\n\s*\n/).map((p) => <p>{p}</p>)
+      ) : (
+        <p class="discret">Le résumé détaillé de ce livre est en cours de rédaction.</p>
+      )}
+    </EnSavoirPlus>
+  </div>
+
   <section class="lecture" aria-labelledby="comprendre">
     <h2 id="comprendre">Pour qui ?</h2>
     <p>{l.pour_qui}</p>

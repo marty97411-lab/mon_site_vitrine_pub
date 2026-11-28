@@ -53,6 +53,11 @@ export const livreSchema = z
     niveau: z.enum(['accessible', 'exigeant']),
     themes: z.array(z.enum(THEMES_LIVRES)).min(1),
     resume: z.string().min(1),
+    /**
+     * Résumé détaillé (environ 200 à 400 mots, paragraphes séparés par une ligne vide), affiché dans un
+     * menu déroulant fermé par défaut. Fourni et relu par l'équipe ; absent tant qu'il n'est pas prêt.
+     */
+    resume_detaille: z.string().min(1).optional(),
     pour_qui: z.string().min(1),
     a_garder_en_tete: z.string().min(1),
     /** Lien de lecture ou de notice vérifié (DOI, Wikisource), en plus des recherches BnF/Amazon. */
