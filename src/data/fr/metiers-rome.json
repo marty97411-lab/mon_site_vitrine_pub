@@ -20973,6 +20973,37 @@
         }
       ]
     },
+    "K1801": {
+      "code": "K1801",
+      "libelle": "Conseiller / Conseillère en insertion professionnelle",
+      "grand_domaine": "Services à la personne et à la collectivité",
+      "definition": [
+        "Le Conseiller en insertion professionnelle accompagne des personnes en recherche d’emploi ou en difficulté dans leur carrière professionnelle.",
+        "Accompagne les individus dans leur démarche de recherche d’emploi, de reconversion ou de formation",
+        "Pose un diagnostic en analysant les compétences, les besoins et la situation des personnes accompagnées",
+        "Propose des stratégies d’insertion adaptées aux profils des bénéficiaires et accompagne les parcours",
+        "Oriente vers les ressources et les services appropriés et met en relation avec les différents acteurs de l’insertion",
+        "Participe à des actions de sensibilisation et anime des ateliers d’information sur le marché du travail et l’emploi"
+      ],
+      "acces_metier": [
+        "Cet emploi est accessible avec un diplôme de niveau Bac+2.",
+        "Les formations universitaires dans les domaines de l’éducation, de la psychologie ou du travail social sont couramment requises."
+      ],
+      "riasec": {
+        "majeur": "S",
+        "mineur": "E"
+      },
+      "lien_metierscope": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1801",
+      "certifications": null,
+      "onet": [
+        {
+          "code": "21-1015.00",
+          "titre": "Rehabilitation Counselors",
+          "qualite": "proche",
+          "statut": "valide"
+        }
+      ]
+    },
     "K1802": {
       "code": "K1802",
       "libelle": "Chargé / Chargée de développement économique et local",

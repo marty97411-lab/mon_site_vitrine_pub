@@ -1357,5 +1357,16 @@
     "licence": "ODbL 1.0 (d'après l'intitulé du jeu de données ; à reconfirmer)",
     "statut": "a-verifier",
     "notes": "Données téléchargées par l'API de l'Onisep (https://data.onisep.fr/api/v1/dataset/5fa5949243f97/search) le 28/11/2026 : 1 560 lignes, dont 1 331 avec un code ROME. Les codes ROME de ce jeu correspondent à l'ancienne version du ROME (V3) : un lien n'est affiché que si le code existe aussi dans le ROME 4.0. TODO : la page du jeu de données était « en maintenance » ; licence relevée dans son titre (« Licence ODBL ») via un moteur de recherche, à reconfirmer. L'extrait réutilisé (src/data/fr/onisep-rome.json) reste sous ODbL."
+  },
+  {
+    "id": "france-travail-team-handicap",
+    "type": "site-web",
+    "auteurs": ["France Travail"],
+    "annee": null,
+    "titre": "Accompagnement des personnes en situation de handicap avec la « Team Handicap »",
+    "url": "https://www.francetravail.fr/candidat/handicap-et-talents/conseils-pratiques/accompagnement-personne-handicap.html",
+    "statut": "verifie",
+    "consulte_le": "2026-11-28",
+    "notes": "Page lue le 28/11/2026 : « Les demandeurs d’emploi en situation de handicap bénéficient d’un accompagnement unique dans toutes les agences France Travail grâce à des équipes mixtes composées de conseillers France Travail et Cap emploi : les Teams Handicap. » ; accompagnement « Expert Handicap par Cap emploi (pour des situations plus complexes nécessitant une expertise de compensation du handicap) »."
   }
 ]

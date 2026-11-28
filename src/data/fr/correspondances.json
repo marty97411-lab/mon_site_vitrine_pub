@@ -2359,6 +2359,13 @@
         "statut": "a_valider"
       }
     ],
+    "21-1015.00": [
+      {
+        "rome": "K1801",
+        "qualite": "proche",
+        "statut": "valide"
+      }
+    ],
     "21-1021.00": [
       {
         "rome": "K1201",
@@ -9159,6 +9166,7 @@
     "K1743": "Agent de surveillance de la voie publique (ASVP) / Agente de surveillance de la voie publique (ASVP)",
     "K1744": "Chef / Cheffe de centre d’incendie et de secours",
     "K1745": "Pompier / Pompière",
+    "K1801": "Conseiller / Conseillère en insertion professionnelle",
     "K1802": "Chargé / Chargée de développement économique et local",
     "K1807": "Urbaniste",
     "K1813": "Chargé / Chargée de mission eaux pluviales",

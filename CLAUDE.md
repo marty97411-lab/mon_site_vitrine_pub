@@ -234,7 +234,9 @@ src/
   data/parcours.json     parcours rapide et complet
   data/onet/             metiers.json (généré), familles.json, job-zones.json
   data/fr/               correspondances.json, metiers-rome.json, onisep-rome.json (générés par
-                         import-fr.mjs) ; validations.json (relecture manuelle, jamais écrasé)
+                         import-fr.mjs) ; validations.json (relecture manuelle, jamais écrasé,
+                         appellation affichable) ; notes-fiches.json (précisions sourcées de
+                         l'équipe sous une définition ROME)
   data/normes/           normes.json : non utilisé (pas de percentile)
   lib/big-five.ts        traits, 30 facettes, RIASEC
   lib/schemas/           schémas Zod (questionnaire, parcours, O*NET, trait, métier, source) + tests

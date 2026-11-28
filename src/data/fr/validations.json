@@ -64,6 +64,13 @@
       "decision": "rejete",
       "note": "Accueil de loisirs : pas la petite enfance (propriétaire).",
       "date": "2026-11-28"
+    },
+    {
+      "onet": "21-1015.00",
+      "rome": "K1801",
+      "decision": "valide",
+      "note": "Rehabilitation Counselors : pas de « conseiller en réadaptation » dans le ROME ; fiche K1801 avec son intitulé général (propriétaire). Précision handicap / Cap emploi dans notes-fiches.json.",
+      "date": "2026-11-28"
     }
   ]
 }

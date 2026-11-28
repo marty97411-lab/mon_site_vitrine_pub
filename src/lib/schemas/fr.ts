@@ -159,5 +159,14 @@ export const validationsFrSchema = z.object({
   ),
 });
 
+/** Précisions de l'équipe affichées sur une fiche ROME (toujours sourcées). */
+export const notesFichesSchema = z.object({
+  note: z.string(),
+  notes: z.record(
+    codeRome,
+    z.object({ texte: z.string().min(1), sources: z.array(z.string().min(1)).min(1) }),
+  ),
+});
+
 export type MetierRome = z.infer<typeof metierRomeSchema>;
 export type MetiersRome = z.infer<typeof metiersRomeSchema>;

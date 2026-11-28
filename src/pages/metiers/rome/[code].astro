@@ -9,9 +9,15 @@ import Essentiel from '../../../components/Essentiel.astro';
 import EnSavoirPlus from '../../../components/EnSavoirPlus.astro';
 import ListeSources from '../../../components/ListeSources.astro';
 import { chargerContenu, sourcesParIds } from '../../../lib/contenu';
-import { metiersRomeSchema, onisepRomeSchema, type MetierRome } from '../../../lib/schemas';
+import {
+  metiersRomeSchema,
+  notesFichesSchema,
+  onisepRomeSchema,
+  type MetierRome,
+} from '../../../lib/schemas';
 import metiersRomeJson from '../../../data/fr/metiers-rome.json';
 import onisepJson from '../../../data/fr/onisep-rome.json';
+import notesJson from '../../../data/fr/notes-fiches.json';
 import { LIBELLES_QUALITE, NIVEAUX_CERTIFICATION, dateFr } from '../../../lib/metiers-fr';
 
 export function getStaticPaths() {
@@ -23,6 +29,14 @@ const { fiche } = Astro.props as { fiche: MetierRome };
 const { versions } = metiersRomeSchema.parse(metiersRomeJson);
 const onisep = onisepRomeSchema.parse(onisepJson).fiches[fiche.code] ?? [];
 const contenu = await chargerContenu();
+const precision = notesFichesSchema.parse(notesJson).notes[fiche.code];
+const sourcesPrecision = precision
+  ? sourcesParIds(contenu, precision.sources).map((src, i, toutes) => ({
+      url: src.data.url,
+      titre: src.data.titre,
+      suite: ` (${src.data.auteurs.join(', ')})${i === toutes.length - 1 ? '.' : ''}`,
+    }))
+  : [];
 const [essentiel, ...suite] = fiche.definition;
 const nonRelue = fiche.onet.some((o) => o.statut !== 'valide');
 const appellations = [
@@ -59,6 +73,21 @@ const appellations = [
     <Essentiel>
       {essentiel ? <p>{essentiel}</p> : <p>Définition non disponible dans le ROME.</p>}
       <p class="discret">Définition : ROME 4.0, France Travail.</p>
+      {precision && (
+        <>
+          <p>{precision.texte}</p>
+          <p class="discret">
+            Précision de l’équipe ; source :{' '}
+            {sourcesPrecision.map((src, i) => (
+              <>
+                {i > 0 && ' ; '}
+                {src.url ? <a href={src.url}>{src.titre}</a> : src.titre}
+                {src.suite}
+              </>
+            ))}
+          </p>
+        </>
+      )}
     </Essentiel>
 
     {suite.length > 0 && (

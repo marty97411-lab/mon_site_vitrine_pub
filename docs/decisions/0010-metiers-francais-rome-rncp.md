@@ -74,6 +74,12 @@ métiers.
     dépendance) pour lire les archives zip du ROME et du RNCP dans le script d'import. Rien n'est
     ajouté au site publié.
 
+11. **Précisions de l'équipe** : `src/data/fr/notes-fiches.json` permet d'ajouter, sous la
+    définition ROME d'une fiche, une phrase rédigée par l'équipe, toujours sourcée (le texte du
+    ROME n'est jamais modifié). Premier cas : K1801 (conseiller en insertion professionnelle,
+    retenu pour « Rehabilitation Counselors »), précision sur l'accompagnement des personnes en
+    situation de handicap par le réseau Cap emploi (source France Travail, vérifiée).
+
 ## Limites et points ouverts
 
 - **Export RNCP non importé** : data.gouv.fr coupe la connexion depuis l'environnement de

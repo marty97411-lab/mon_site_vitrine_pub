@@ -210,7 +210,7 @@ Le propriétaire du projet n'est pas développeur : chaque session doit pouvoir 
 **Contenus**
 
 - [ ] **En cours** : correspondance O*NET → ROME (intitulés et liens adaptés à la France). Fait :
-      chaîne officielle O*NET → ESCO → ROME 4.0, 700 métiers O*NET sur 923 avec un équivalent
+      chaîne officielle O*NET → ESCO → ROME 4.0, 701 métiers O*NET sur 923 avec un équivalent
       français affiché, fiches `/metiers/rome/…`, liens MétierScope et Onisep. Reste :
   - [ ] importer l'export RNCP (data.gouv.fr injoignable depuis l'environnement en ligne :
         `npm run import:fr -- --rncp archive.zip`) et confirmer son format ;

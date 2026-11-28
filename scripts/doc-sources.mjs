@@ -21,7 +21,7 @@ const CATEGORIES = [
   ['Métiers et données O*NET', /^(onet-31|onet-online|onet-familles)/],
   [
     'Métiers en France : correspondances, ROME, RNCP, Onisep',
-    /^(esco-onet|france-travail-esco|rome-|rncp-|onisep-ideo)/,
+    /^(esco-onet|france-travail-esco|france-travail-team|rome-|rncp-|onisep-ideo)/,
   ],
   ['Personnalité, intérêts et travail', /^(larson|barrick|holland|armstrong)/],
   [

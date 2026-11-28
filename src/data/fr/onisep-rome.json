@@ -2261,6 +2261,12 @@
         "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.926"
       }
     ],
+    "K1801": [
+      {
+        "libelle": "conseiller / conseillère en insertion sociale et professionnelle",
+        "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.342"
+      }
+    ],
     "K1802": [
       {
         "libelle": "agent / agente de développement local",

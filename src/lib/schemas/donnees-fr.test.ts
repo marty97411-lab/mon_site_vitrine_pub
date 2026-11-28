@@ -7,10 +7,13 @@ import correspondancesJson from '../../data/fr/correspondances.json';
 import metiersRomeJson from '../../data/fr/metiers-rome.json';
 import onisepJson from '../../data/fr/onisep-rome.json';
 import validationsJson from '../../data/fr/validations.json';
+import notesJson from '../../data/fr/notes-fiches.json';
+import sourcesJson from '../../content/sources/sources.json';
 import metiersOnetJson from '../../data/onet/metiers.json';
 import {
   correspondancesFrSchema,
   metiersRomeSchema,
+  notesFichesSchema,
   onisepRomeSchema,
   validationsFrSchema,
 } from './index';
@@ -80,6 +83,14 @@ describe('données françaises (ROME, RNCP, Onisep)', () => {
   it('les liens Onisep ne concernent que des fiches ROME affichées', () => {
     for (const code of Object.keys(onisep.fiches)) {
       expect(metiersRome.fiches[code], code).toBeDefined();
+    }
+  });
+
+  it('les précisions de l’équipe portent sur des fiches affichées et citent des sources existantes', () => {
+    const ids = new Set(sourcesJson.map((s) => s.id));
+    for (const [code, n] of Object.entries(notesFichesSchema.parse(notesJson).notes)) {
+      expect(metiersRome.fiches[code], code).toBeDefined();
+      for (const id of n.sources) expect(ids.has(id), id).toBe(true);
     }
   });
 
